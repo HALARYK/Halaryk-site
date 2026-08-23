@@ -37,8 +37,8 @@ body::before{
 
   background-image:
     linear-gradient(
-      rgba(8,7,7,.78),
-      rgba(8,7,7,.78)
+      rgba(8,7,7,.60),
+      rgba(8,7,7,.60)
     ),
     url("assets/fleurs-halaryk.png");
 
