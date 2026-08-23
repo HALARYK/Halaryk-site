@@ -730,3 +730,31 @@ footer a{
     padding:95px 22px;
   }
 }
+/* REMERCIEMENTS CLIPPEURS */
+
+.clip-thanks{
+  margin:42px auto 0;
+  max-width:850px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  text-align:center;
+  color:var(--muted);
+  font:500 17px var(--serif);
+}
+
+.clip-thanks p{
+  margin:0;
+}
+
+.clip-thanks strong{
+  color:var(--gold2);
+  font-weight:600;
+}
+
+.clip-thanks span{
+  color:var(--gold);
+  font-size:12px;
+  opacity:.8;
+}
