@@ -243,11 +243,9 @@ nav a.active{
   align-items:center;
   padding:110px 7vw;
   overflow:hidden;
-  border-top:1px solid rgba(183,147,100,.09);
+  border-top:none;
 
-  /* Transparence contrôlée :
-     le fond floral global reste visible dessous */
-  background:rgba(8,7,7,.82);
+  background:rgba(8,7,7,.35);
 }
 
 /* IMPORTANT :
@@ -258,13 +256,7 @@ nav a.active{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(
-      circle at center,
-      transparent 0%,
-      rgba(8,7,7,.04) 52%,
-      rgba(8,7,7,.22) 100%
-    );
+  background:transparent;
   pointer-events:none;
 }
 
