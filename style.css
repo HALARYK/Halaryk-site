@@ -51,8 +51,6 @@ nav a:hover,nav a.active{color:#fff}
   filter:saturate(.92) brightness(.74) contrast(1.04);
   pointer-events:none;
 }
-.section.left:before{left:-245px;background-position:left center}
-.section.right:before{right:-245px;background-position:right center}
 .section:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 0,rgba(8,7,7,.02) 43%,rgba(8,7,7,.39) 100%);pointer-events:none}
 .wrap{position:relative;z-index:2;width:min(1120px,100%);margin:auto}
 
