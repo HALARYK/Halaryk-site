@@ -1,43 +1,35 @@
-HALARYK — site Twitch
-=====================
+HALARYK — SITE TWITCH V3
+=========================
 
-CONTENU
--------
-- index.html : contenu du site
-- style.css : apparence
-- script.js : menu, animations, FAQ
-- assets/fleurs-halaryk.png : image florale utilisée comme direction artistique
-
-LIENS DIRECTS POUR LES PANNEAUX TWITCH
---------------------------------------
-Une fois le site publié, les panneaux peuvent pointer directement vers :
-
-https://TON-SITE/#reglement
-https://TON-SITE/#planning
-https://TON-SITE/#reseaux
-https://TON-SITE/#config
-https://TON-SITE/#faq
-
-À MODIFIER EN PRIORITÉ
+À REMPLACER SUR GITHUB
 ----------------------
-1. Remplacer les liens "#" dans la section Réseaux par tes vraies URL.
-2. Ajuster le règlement.
-3. Ajuster le planning.
-4. Remplacer/compléter les questions de FAQ.
+Remplace les fichiers suivants dans ton dépôt :
+- index.html
+- style.css
+- script.js
 
-PUBLICATION GRATUITE SUR GITHUB PAGES
--------------------------------------
-1. Crée un compte GitHub si nécessaire.
-2. Crée un nouveau dépôt public, par exemple "halaryk-site".
-3. Envoie le contenu de ce dossier à la racine du dépôt.
-4. Ouvre Settings > Pages.
-5. Dans "Build and deployment", choisis "Deploy from a branch".
-6. Branche : main, dossier : /(root), puis Save.
-7. GitHub donnera une URL du type :
-   https://TON-PSEUDO.github.io/halaryk-site/
+Le fichier assets/fleurs-halaryk.png peut rester tel quel s'il est déjà présent.
 
-Tu peux ensuite utiliser les ancres #reglement, #planning, etc. dans tes panneaux Twitch.
+Ensuite :
+1. Commit changes
+2. Attends généralement 1 à 3 minutes
+3. GitHub Pages republiera automatiquement le site
 
-NOTE
-----
-Le site est entièrement statique. Aucun serveur ni base de données n'est nécessaire.
+NOUVEAUTÉS
+-----------
+- FAQ complète avec les réponses fournies
+- Nouvelle section Commandes Twitch
+- 4 clips Twitch intégrés directement au site
+- Fleurs légèrement plus visibles
+- Règlement et planning ajustés
+- Liens Twitch / Discord / Instagram
+- Kinguin ajouté comme partenaire
+
+IMPORTANT POUR LES CLIPS
+------------------------
+Les lecteurs utilisent :
+parent=halaryk.github.io
+
+Cela correspond au domaine GitHub Pages actuel.
+Si tu passes plus tard sur un nom de domaine personnalisé,
+il faudra remplacer ce parent dans les 4 iframes.
