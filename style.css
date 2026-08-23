@@ -40,7 +40,7 @@ body::before{
       rgba(8,7,7,.46)
     ),
     url("assets/fleurs-halaryk.png") center/cover no-repeat;
-  opacity:.46;
+  opacity:.35;
   filter:saturate(.92) brightness(.78) contrast(1.04);
   pointer-events:none;
 }
