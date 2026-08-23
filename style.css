@@ -39,7 +39,7 @@ nav a:hover,nav a.active{color:#fff}
 .section:before{
   content:"";position:absolute;width:min(760px,70vw);height:min(760px,70vw);top:50%;transform:translateY(-50%);
   background:url("assets/fleurs-halaryk.png") no-repeat;background-size:1500px auto;
-  opacity:.30;filter:saturate(.92) brightness(.74) contrast(1.04);pointer-events:none
+  opacity:.40;filter:saturate(.92) brightness(.74) contrast(1.04);pointer-events:none
 }
 .section.left:before{left:-245px;background-position:left center}
 .section.right:before{right:-245px;background-position:right center}
