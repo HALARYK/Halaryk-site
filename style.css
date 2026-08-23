@@ -34,14 +34,21 @@ body::before{
   position:fixed;
   inset:0;
   z-index:-2;
-  background:
+
+  background-image:
     linear-gradient(
-      rgba(8,7,7,.46),
-      rgba(8,7,7,.46)
+      rgba(8,7,7,.78),
+      rgba(8,7,7,.78)
     ),
-    url("assets/fleurs-halaryk.png") center/cover no-repeat;
-  opacity:.30;
-  filter:saturate(.92) brightness(.78) contrast(1.04);
+    url("assets/fleurs-halaryk.png");
+
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  opacity:1;
+  filter:none;
+
   pointer-events:none;
 }
 
