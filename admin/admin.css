@@ -82,3 +82,92 @@
 .poll-admin-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;color:var(--dim);font-size:10px}
 @media(max-width:900px){.admin-three-cols{grid-template-columns:1fr 1fr}.poll-admin-option{grid-template-columns:1fr 120px}}
 @media(max-width:620px){.admin-three-cols{grid-template-columns:1fr}.library-admin-head{grid-template-columns:auto minmax(0,1fr)}.library-admin-head>small{grid-column:2}.poll-admin-option{grid-template-columns:1fr}.poll-option-stats{text-align:left}}
+
+
+/* ===== V4.1.1 : administration / ajout de jeu ===== */
+.admin-body{
+  background:#0a0909;
+  position:relative;
+}
+.admin-body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:url("../assets/fleurs-halaryk.png"),url("../assets/fleurs-halaryk.png");
+  background-repeat:no-repeat,no-repeat;
+  background-size:760px auto,700px auto;
+  background-position:-230px 14%,calc(100% + 230px) 78%;
+  opacity:.10;
+  filter:saturate(.72) brightness(.74);
+  mix-blend-mode:screen;
+}
+.admin-modal{overflow-y:auto}
+.admin-modal-card{
+  width:min(680px,96vw);
+  max-height:calc(100vh - 44px);
+  overflow-y:auto;
+  padding:28px;
+  background:#0b0909;
+}
+.admin-modal-card .admin-two-cols{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:start;
+  gap:16px;
+}
+.admin-modal-card > label:not(.check-row),
+.admin-modal-card .admin-two-cols > label{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  margin:0;
+  color:var(--gold-light)!important;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.admin-modal-card > label:not(.check-row){margin-top:18px}
+.admin-modal-card input,
+.admin-modal-card select,
+.admin-modal-card textarea{
+  display:block;
+  width:100%;
+  margin:0!important;
+  padding:11px 12px;
+  border:1px solid rgba(183,147,100,.24);
+  background:#080707!important;
+  color:var(--text)!important;
+}
+.admin-modal-card textarea{
+  min-height:116px;
+  resize:vertical;
+  line-height:1.45;
+}
+.game-modal-streamed{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  align-self:auto!important;
+  gap:9px!important;
+  min-height:auto!important;
+  margin:18px 0 0!important;
+  color:var(--text)!important;
+}
+.game-modal-streamed input{
+  flex:0 0 auto;
+  width:auto!important;
+  margin:0!important;
+  padding:0!important;
+}
+.modal-actions{
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid rgba(183,147,100,.10);
+}
+@media(max-width:620px){
+  .admin-modal-card{padding:22px}
+  .admin-modal-card .admin-two-cols{grid-template-columns:1fr}
+  .game-modal-head{align-items:flex-start}
+  .game-modal-cover{width:78px}
+}

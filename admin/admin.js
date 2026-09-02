@@ -1,4 +1,4 @@
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4/+esm";
 import { CONFIG, BACKEND_CONFIGURED } from "../config.js";
 
 const $ = (s, c = document) => c.querySelector(s);

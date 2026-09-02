@@ -112,3 +112,79 @@ button{color:var(--text)}
 .library-detail-note p{margin:8px 0 0;white-space:pre-wrap;color:#d8ccbe;font:500 18px/1.55 var(--serif)}
 @media(max-width:820px){.library-detail{grid-template-columns:1fr}.library-detail-visual{min-height:280px}.library-detail-content{padding:0}.library-detail-facts{grid-template-columns:1fr 1fr}.hero-description{font-size:19px}}
 @media(max-width:540px){.library-detail{padding:18px;gap:18px}.library-detail-facts{grid-template-columns:1fr}.hero-kicker{font-size:11px}.hero-genres{font-size:13px}.hero-description{font-size:18px}.hero-schedule{font-size:12px}.live-card strong,.live-card span:last-child{font-size:12px}}
+
+
+/* ===== V4.1.1 : fond floral diffus, sans bulles ===== */
+body{background:#0a0909}
+.section{
+  isolation:isolate;
+  background:linear-gradient(180deg,#0a0909 0%,#0c0a0a 48%,#0a0909 100%);
+}
+.section::before{
+  inset:-9% -5% !important;
+  left:-5% !important;
+  right:-5% !important;
+  top:-9% !important;
+  bottom:-9% !important;
+  width:auto !important;
+  height:auto !important;
+  transform:none !important;
+  background-image:url("assets/fleurs-halaryk.png"),url("assets/fleurs-halaryk.png"),url("assets/fleurs-halaryk.png");
+  background-repeat:no-repeat,no-repeat,no-repeat;
+  background-size:760px auto,620px auto,720px auto;
+  background-position:-170px 8%,52% 105%,calc(100% + 190px) 43%;
+  opacity:.13;
+  filter:saturate(.76) brightness(.76) contrast(1.08);
+  -webkit-mask-image:none !important;
+  mask-image:none !important;
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+.decor-right::before{
+  background-position:calc(100% + 175px) 4%,46% 104%,-210px 57%;
+  background-size:760px auto,600px auto,690px auto;
+}
+.decor-left::before{
+  background-position:-185px 3%,55% 108%,calc(100% + 210px) 60%;
+  background-size:750px auto,610px auto,700px auto;
+}
+
+/* Suppression des halos permanents sous les cartes publiques */
+.schedule-card,
+.game-card,
+.clip-card,
+.suggestion-card,
+.poll-card,
+.rules-grid article,
+.commands-grid article,
+.config-grid article,
+.partner-card,
+.social-grid a,
+.reputation-explainer,
+.my-reputation-card,
+.leaderboard-panel,
+.collaborator-card,
+.library-detail{
+  box-shadow:none !important;
+}
+
+/* Kinguin : même réponse au survol que les autres cartes interactives */
+.partner-card{
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+  transform-origin:center;
+}
+.partner-card:hover,
+.partner-card:focus-visible{
+  transform:translateY(-3px) scale(1.006);
+  border-color:var(--line-strong);
+  background:linear-gradient(145deg,rgba(126,27,27,.16),rgba(14,11,11,.91));
+  outline:none;
+}
+
+@media(max-width:880px){
+  .section::before{
+    background-size:560px auto,470px auto,540px auto;
+    background-position:-210px 6%,50% 103%,calc(100% + 220px) 50%;
+    opacity:.11;
+  }
+}
