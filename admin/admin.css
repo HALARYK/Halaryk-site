@@ -5,3 +5,80 @@
 .admin-meta-line{display:flex;gap:10px;flex-wrap:wrap;color:var(--dim);font-size:10px}
 @media(max-width:900px){.admin-stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.admin-stats{grid-template-columns:1fr}}
+
+
+/* ===== V4.1 : Ludothèque admin ===== */
+.admin-body button,.admin-body input,.admin-body textarea,.admin-body select{color:var(--text)}
+.admin-body button{background-color:#0b0909}
+.admin-body button.button-primary{background:rgba(111,20,20,.76)}
+.admin-body button.button-ghost{background:rgba(10,8,8,.58)}
+.admin-body input::placeholder,.admin-body textarea::placeholder{color:#8f8378;opacity:1}
+.admin-body select option{background:#080707;color:#eadfce}
+.admin-actions button,.game-search-card button{color:var(--text)}
+.game-search-card small,.admin-item small{color:var(--muted)}
+.admin-searching{grid-column:1/-1;padding:18px;border:1px dashed var(--line);color:var(--muted);text-align:center}
+.library-manager{margin-top:20px}
+.library-manager-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}
+.library-manager-head h2{margin-bottom:3px}
+.library-result-count{margin:0!important;color:var(--muted)!important;font-size:11px!important}
+.library-manager-filters{display:grid;grid-template-columns:minmax(260px,1fr) 190px;gap:10px;width:min(620px,100%)}
+.library-manager-filters input,.library-manager-filters select{margin:0}
+.library-game-item h2{margin-bottom:2px}
+.library-empty{text-align:center;color:var(--muted)}
+.admin-modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:22px}
+.admin-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
+.admin-modal-card{position:relative;z-index:1;width:min(620px,96vw);padding:26px;border:1px solid var(--line-strong);background:#0b0909;box-shadow:0 32px 90px rgba(0,0,0,.65)}
+.admin-modal-close{position:absolute;right:12px;top:10px;width:36px;height:36px;border:0;background:none!important;color:var(--muted)!important;font-size:27px;line-height:1;cursor:pointer}
+.admin-modal-close:hover{color:white!important}
+.game-modal-head{display:flex;gap:18px;align-items:center;padding-right:36px;margin-bottom:22px}
+.game-modal-cover{width:92px;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+.game-modal-head h2{margin:0;font:600 31px/1.05 var(--serif);color:var(--text)}
+.game-modal-year{margin:7px 0 0;color:var(--muted);font-size:11px}
+.game-modal-streamed{align-self:end;min-height:42px;margin-bottom:0!important;color:var(--text)!important;text-transform:none!important;letter-spacing:0!important;font-size:12px!important}
+.modal-actions{justify-content:flex-end;margin-top:22px}
+.modal-open{overflow:hidden}
+@media(max-width:760px){.library-manager-head{align-items:stretch;flex-direction:column}.library-manager-filters{grid-template-columns:1fr;width:100%}}
+
+/* ===== V4.1 finale : lisibilité, gestion massive et sondages ===== */
+.admin-body,.admin-body *{color:var(--text)}
+.admin-body p,.admin-body small,.admin-body .admin-meta-line,.admin-body .library-result-count,.admin-body .game-modal-year{color:var(--muted)}
+.admin-body input,.admin-body textarea,.admin-body select,.admin-body option{color:var(--text)!important;background:#080707!important;caret-color:var(--text)}
+.admin-body input::placeholder,.admin-body textarea::placeholder{color:#9e9185!important;opacity:1}
+.admin-body button{color:var(--text)!important}
+.admin-body label{color:var(--gold-light)!important}
+.admin-actions .danger-action,.button-danger{border-color:rgba(190,76,76,.5)!important;background:rgba(105,19,19,.45)!important;color:#f0c7c7!important}
+.admin-three-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:end}
+.admin-section-title{margin:34px 0 14px;padding-top:22px;border-top:1px solid var(--line)}
+.admin-section-title h2{margin:0;font:600 30px var(--serif)}
+.admin-section-title p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.admin-toast{position:fixed;right:20px;bottom:20px;z-index:999;padding:12px 16px;background:#0b0909;border:1px solid rgba(183,147,100,.35);color:var(--text);box-shadow:0 18px 45px rgba(0,0,0,.42);font-size:12px}
+.library-admin-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;margin-bottom:12px}
+.library-admin-cover{width:54px;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+.library-admin-title h2{margin:0 0 2px}
+.library-admin-title small{display:block}
+.library-load-more{display:flex;margin:18px auto 0}
+.confirm-modal-card{width:min(520px,96vw)}
+.confirm-modal-card h2{margin:0;font:600 34px/1.05 var(--serif)}
+.confirm-message{margin:16px 0 0;color:var(--muted)!important;font-size:13px;line-height:1.6}
+.poll-admin-card{padding:24px}
+.poll-state{display:inline-flex;margin-bottom:6px;padding:4px 8px;border:1px solid var(--line);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.poll-state-active{border-color:rgba(76,154,102,.38);color:#acd0b8}
+.poll-state-upcoming{border-color:rgba(102,131,181,.38);color:#b5c6df}
+.poll-state-ended{border-color:rgba(183,147,100,.28);color:var(--gold-light)}
+.poll-state-disabled{border-color:rgba(130,120,112,.24);color:#9e9185}
+.poll-total-voters{min-width:92px;text-align:right}
+.poll-total-voters strong{display:block;font:600 34px/1 var(--serif);color:var(--gold-light)}
+.poll-total-voters span{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.poll-admin-options{margin:18px 0;padding:16px;border:1px solid rgba(183,147,100,.12);background:rgba(7,6,6,.4)}
+.poll-admin-options h3{margin:0 0 12px;font:600 22px var(--serif)}
+.poll-admin-option{display:grid;grid-template-columns:minmax(0,1fr) 145px;gap:7px 14px;align-items:center;padding:10px 0;border-top:1px solid rgba(183,147,100,.08)}
+.poll-admin-option:first-of-type{border-top:0}
+.poll-admin-option input{margin:0!important}
+.poll-option-stats{text-align:right}
+.poll-option-stats strong{display:block;font:600 20px/1 var(--serif);color:var(--gold-light)}
+.poll-option-stats span{font-size:9px;color:var(--muted)}
+.poll-admin-bar{grid-column:1/-1;height:4px;background:rgba(183,147,100,.09);overflow:hidden}
+.poll-admin-bar span{display:block;height:100%;background:linear-gradient(90deg,rgba(118,25,25,.72),rgba(183,147,100,.72))}
+.poll-admin-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;color:var(--dim);font-size:10px}
+@media(max-width:900px){.admin-three-cols{grid-template-columns:1fr 1fr}.poll-admin-option{grid-template-columns:1fr 120px}}
+@media(max-width:620px){.admin-three-cols{grid-template-columns:1fr}.library-admin-head{grid-template-columns:auto minmax(0,1fr)}.library-admin-head>small{grid-column:2}.poll-admin-option{grid-template-columns:1fr}.poll-option-stats{text-align:left}}

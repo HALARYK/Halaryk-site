@@ -53,7 +53,7 @@
     <p class="hero-kicker">STREAMER TWITCH FRANÇAIS</p>
     <h1>HALARYK</h1>
     <p class="hero-genres">STRATÉGIE · HORREUR · GESTION · MULTIJOUEUR · DÉCOUVERTES</p>
-    <p class="hero-description">Des lives sans prise de tête, une communauté chill et un seul objectif : passer un bon moment.</p>
+    <p class="hero-description">Je streame principalement de la stratégie, de la gestion, de l’horreur et du multijoueur, dans une ambiance posée et sans prise de tête.</p>
     <div id="live-card" class="live-card"><span id="live-dot" class="live-dot"></span><div><strong id="live-label">Statut Twitch</strong><span id="live-detail">Chargement du statut…</span></div></div>
     <div class="hero-actions">
       <a class="button button-primary" href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Regarder sur Twitch ↗</a>
@@ -82,11 +82,27 @@
       <div><strong id="library-total">—</strong><span>Jeux</span></div>
       <div><strong id="library-completed">—</strong><span>Terminés</span></div>
       <div><strong id="library-playing">—</strong><span>En cours</span></div>
-      <div><strong id="library-wishlist">—</strong><span>Wishlist</span></div>
+      <div><strong id="library-wishlist">—</strong><span>Liste de souhaits</span></div>
     </div>
     <div class="segmented-control library-filters">
-      <button class="active" data-library-filter="playing">En cours</button><button data-library-filter="backlog">À faire</button><button data-library-filter="completed">Terminés</button><button data-library-filter="wishlist">Wishlist</button><button data-library-filter="all">Tous</button>
+      <button class="active" data-library-filter="playing">En cours</button><button data-library-filter="backlog">À faire</button><button data-library-filter="completed">Terminés</button><button data-library-filter="wishlist">Liste de souhaits</button><button data-library-filter="all">Tous</button>
     </div>
+    <div id="library-detail" class="library-detail hidden" aria-live="polite">
+      <button id="library-detail-close" class="library-detail-close" type="button" aria-label="Fermer la fiche du jeu">×</button>
+      <div class="library-detail-visual"><img id="library-detail-cover" alt=""></div>
+      <div class="library-detail-content">
+        <p class="eyebrow">Fiche du jeu</p>
+        <h3 id="library-detail-title">Jeu</h3>
+        <p id="library-detail-release" class="library-detail-release"></p>
+        <div class="library-detail-facts">
+          <div><span>Statut</span><strong id="library-detail-status">—</strong></div>
+          <div><span>Temps de jeu</span><strong id="library-detail-playtime">—</strong></div>
+          <div><span>Streamé sur la chaîne</span><strong id="library-detail-streamed">—</strong></div>
+        </div>
+        <div class="library-detail-note"><span>Note personnelle</span><p id="library-detail-note"></p></div>
+      </div>
+    </div>
+    <p class="library-click-hint">Clique sur une jaquette pour ouvrir la fiche complète du jeu.</p>
     <div id="library-grid" class="library-grid"><div class="empty-state"><strong>Ludothèque en cours d’activation</strong><p>Les jeux apparaîtront ici dès que la base V4 sera connectée.</p></div></div>
   </div>
 </section>

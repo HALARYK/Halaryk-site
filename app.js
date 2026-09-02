@@ -2,7 +2,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 import { CONFIG, BACKEND_CONFIGURED } from "./config.js";
 
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
-let supabase=null,session=null,currentCategory="games",currentSort="popular",currentStatus="all",libraryFilter="playing",currentSuggestionFeed=[];
+let supabase=null,session=null,currentCategory="games",currentSort="popular",currentStatus="all",libraryFilter="playing",currentSuggestionFeed=[],libraryGames=[];
 
 const categoryCopy={
   games:["Jeux de semaine","Proposez un jeu à faire en stream.","Cette catégorie concerne les streams du lundi et du mercredi."],
@@ -13,7 +13,7 @@ const categoryCopy={
   other:["Autre","Une idée qui ne rentre nulle part ailleurs ?","Utilisez cette catégorie pour les propositions plus difficiles à classer."]
 };
 const statusLabels={new:"Nouvelle",considering:"En réflexion",planned:"Prévue",completed:"Terminée",rejected:"Refusée",archived:"Archivée"};
-const libraryLabels={playing:"En cours",backlog:"À faire",completed:"Terminé",wishlist:"Wishlist",paused:"En pause",abandoned:"Abandonné"};
+const libraryLabels={playing:"En cours",backlog:"À faire",completed:"Terminé",wishlist:"Liste de souhaits",paused:"En pause",abandoned:"Abandonné"};
 const repIcons={"Traître":"☠️","Inconnu":"👤","Habitué":"🏠","Conseiller":"🗣️","Confident":"⚜️","Favori":"👑"};
 
 function esc(v=""){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
@@ -58,15 +58,43 @@ async function syncAuth(){
 }
 async function loadLive(){try{const{data,error}=await supabase.functions.invoke("live-status",{body:{login:CONFIG.TWITCH_CHANNEL_LOGIN}});if(error)throw error;const card=$("#live-card");if(data?.is_live){card.classList.add("is-live");$("#live-label").textContent="EN DIRECT";$("#live-detail").textContent=`${data.game_name||"Twitch"} — ${data.title||"Live en cours"}`}else{$("#live-label").textContent="Hors ligne";$("#live-detail").textContent="Retrouve les prochains lives sur Twitch."}}catch{$("#live-label").textContent="Twitch";$("#live-detail").textContent="Voir la chaîne"}}
 async function loadLibrary(){
-  if(!supabase)return;const{data,error}=await supabase.from("library_games").select("*").order("updated_at",{ascending:false});if(error)return;
-  const games=data||[];$("#library-total").textContent=games.length;$("#library-completed").textContent=games.filter(g=>g.status==="completed").length;$("#library-playing").textContent=games.filter(g=>g.status==="playing").length;$("#library-wishlist").textContent=games.filter(g=>g.status==="wishlist").length;
-  const list=libraryFilter==="all"?games:games.filter(g=>g.status===libraryFilter),grid=$("#library-grid");
-  if(!list.length){grid.innerHTML=`<div class="empty-state"><strong>Aucun jeu dans cette catégorie</strong><p>La ludothèque sera enrichie depuis l’administration HALARYK.</p></div>`;return}
-  grid.innerHTML=list.map(g=>`<article class="game-card"><img class="game-cover" src="${esc(g.cover_url||"")}" alt="Jaquette de ${esc(g.name)}" loading="lazy"><div class="game-content"><h3>${esc(g.name)}</h3><div class="game-meta"><span class="tag">${esc(libraryLabels[g.status]||g.status)}</span>${g.streamed?`<span class="tag tag-streamed">🎥 Streamé</span>`:""}</div></div></article>`).join("")
+  if(!supabase)return;
+  const{data,error}=await supabase.from("library_games").select("*").order("updated_at",{ascending:false});
+  if(error)return;
+  libraryGames=data||[];
+  $("#library-total").textContent=libraryGames.length;
+  $("#library-completed").textContent=libraryGames.filter(g=>g.status==="completed").length;
+  $("#library-playing").textContent=libraryGames.filter(g=>g.status==="playing").length;
+  $("#library-wishlist").textContent=libraryGames.filter(g=>g.status==="wishlist").length;
+  renderLibraryGrid();
 }
+function renderLibraryGrid(){
+  const list=libraryFilter==="all"?libraryGames:libraryGames.filter(g=>g.status===libraryFilter),grid=$("#library-grid");
+  if(!list.length){grid.innerHTML=`<div class="empty-state"><strong>Aucun jeu dans cette catégorie</strong><p>La ludothèque sera enrichie depuis l’administration HALARYK.</p></div>`;return}
+  grid.innerHTML=list.map(g=>`<article class="game-card" data-public-game="${g.id}" tabindex="0" role="button" aria-label="Ouvrir la fiche de ${esc(g.name)}"><img class="game-cover" src="${esc(g.cover_url||"")}" alt="Jaquette de ${esc(g.name)}" loading="lazy"><div class="game-content"><h3>${esc(g.name)}</h3><div class="game-meta"><span class="tag">${esc(libraryLabels[g.status]||"Statut inconnu")}</span>${g.streamed?`<span class="tag tag-streamed">🎥 Streamé</span>`:""}</div></div></article>`).join("");
+  $$('[data-public-game]').forEach(card=>{
+    card.onclick=()=>openLibraryDetail(card.dataset.publicGame);
+    card.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLibraryDetail(card.dataset.publicGame)}};
+  });
+}
+function openLibraryDetail(id){
+  const g=libraryGames.find(x=>x.id===id);if(!g)return;
+  const panel=$("#library-detail");
+  const cover=$("#library-detail-cover");
+  if(g.cover_url){cover.src=g.cover_url;cover.alt=`Jaquette de ${g.name}`;cover.classList.remove("hidden")}else{cover.removeAttribute("src");cover.classList.add("hidden")}
+  $("#library-detail-title").textContent=g.name;
+  $("#library-detail-release").textContent=g.release_date?new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"long",year:"numeric"}).format(new Date(g.release_date)):"Date de sortie inconnue";
+  $("#library-detail-status").textContent=libraryLabels[g.status]||"Statut inconnu";
+  $("#library-detail-playtime").textContent=g.playtime_hours!=null?`${new Intl.NumberFormat("fr-FR",{maximumFractionDigits:1}).format(Number(g.playtime_hours))} h`:"Non renseigné";
+  $("#library-detail-streamed").textContent=g.streamed?"Oui":"Non";
+  $("#library-detail-note").textContent=g.personal_note||"Aucune note personnelle pour ce jeu pour le moment.";
+  panel.classList.remove("hidden");
+  panel.scrollIntoView({behavior:"smooth",block:"center"});
+}
+function closeLibraryDetail(){$("#library-detail").classList.add("hidden")}
 function renderSuggestion(s,pinned=false){
   const rep=s.rep_rank?`<span class="rep-badge ${repClass(s.rep_rank)}">${repIcons[s.rep_rank]||"✦"} ${esc(s.rep_rank)}</span>`:"";
-  return `<article class="suggestion-card ${pinned?"pinned":""}">${pinned?`<span class="pinned-label">📌 Suggestion à la une</span>`:""}<div class="suggestion-head"><div class="suggestion-author">${s.author_avatar?`<img src="${esc(s.author_avatar)}" alt="">`:""}<span>${esc(s.author_name||"Viewer")} · ${fmtDate(s.created_at)}</span>${rep}</div><span class="status status-${esc(s.status)}">${esc(statusLabels[s.status]||s.status)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p>${s.official_reply?`<div class="official-reply"><strong>Réponse de Halaryk</strong><p>${esc(s.official_reply)}</p></div>`:""}<div class="suggestion-footer"><button class="vote-button ${s.has_voted?"voted":""}" data-vote="${s.id}" type="button">👍 <strong>${s.vote_count||0}</strong></button><span class="tag">${esc(categoryCopy[s.category]?.[0]||s.category)}</span></div></article>`
+  return `<article class="suggestion-card ${pinned?"pinned":""}">${pinned?`<span class="pinned-label">📌 Suggestion à la une</span>`:""}<div class="suggestion-head"><div class="suggestion-author">${s.author_avatar?`<img src="${esc(s.author_avatar)}" alt="">`:""}<span>${esc(s.author_name||"Utilisateur Twitch")} · ${fmtDate(s.created_at)}</span>${rep}</div><span class="status status-${esc(s.status)}">${esc(statusLabels[s.status]||s.status)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p>${s.official_reply?`<div class="official-reply"><strong>Réponse de Halaryk</strong><p>${esc(s.official_reply)}</p></div>`:""}<div class="suggestion-footer"><button class="vote-button ${s.has_voted?"voted":""}" data-vote="${s.id}" type="button">👍 <strong>${s.vote_count||0}</strong></button><span class="tag">${esc(categoryCopy[s.category]?.[0]||s.category)}</span></div></article>`
 }
 async function loadSuggestions(){
   if(!supabase)return;const{data,error}=await supabase.rpc("get_suggestion_feed",{p_category:currentCategory,p_sort:currentSort==="recent"?"recent":"popular"});
@@ -116,14 +144,15 @@ async function loadCollaborators(){
 
 function initInteractions(){
   $("#login-button").onclick=signIn;$("#suggestion-login-cta").onclick=signIn;$("#reputation-login")?.addEventListener("click",signIn);$("#logout-button").onclick=signOut;$("#user-button").onclick=()=>$("#user-menu").classList.toggle("hidden");
-  $$(".library-filters button").forEach(b=>b.onclick=async()=>{$$(".library-filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");libraryFilter=b.dataset.libraryFilter;await loadLibrary()});
+  $("#library-detail-close")?.addEventListener("click",closeLibraryDetail);
+  $$(".library-filters button").forEach(b=>b.onclick=async()=>{$$(".library-filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");libraryFilter=b.dataset.libraryFilter;closeLibraryDetail();await loadLibrary()});
   $$(".category-card").forEach(b=>b.onclick=async()=>{$$(".category-card").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentCategory=b.dataset.category;const c=categoryCopy[currentCategory];$("#category-label").textContent=c[0];$("#category-title").textContent=c[1];$("#category-description").textContent=c[2];await loadSuggestions()});
   $$(".suggestion-tabs button").forEach(b=>b.onclick=()=>{$$(".suggestion-tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");const ideas=b.dataset.suggestionTab==="ideas";$("#ideas-panel").classList.toggle("hidden",!ideas);$("#polls-panel").classList.toggle("hidden",ideas)});
   $$('[data-sort]').forEach(b=>b.onclick=async()=>{$$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
   $("#status-filter").onchange=async e=>{currentStatus=e.target.value;await loadSuggestions()};$("#suggestion-title").oninput=renderSimilar;$("#suggestion-form").onsubmit=submitSuggestion
 }
 async function initBackend(){
-  if(!BACKEND_CONFIGURED){$("#live-label").textContent="Twitch";$("#live-detail").textContent="Backend V4 à connecter";$("#suggestion-login-cta").textContent="Connexion bientôt disponible";$("#suggestion-auth-hint").textContent="La base V4 doit être connectée pour activer les suggestions.";$("#submit-suggestion").disabled=true;return}
+  if(!BACKEND_CONFIGURED){$("#live-label").textContent="Twitch";$("#live-detail").textContent="Service V4 à connecter";$("#suggestion-login-cta").textContent="Connexion bientôt disponible";$("#suggestion-auth-hint").textContent="La base V4 doit être connectée pour activer les suggestions.";$("#submit-suggestion").disabled=true;return}
   supabase=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
   const{data}=await supabase.auth.getSession();session=data.session;await syncAuth();
   supabase.auth.onAuthStateChange(async(_e,s)=>{session=s;await syncAuth();await Promise.all([loadSuggestions(),loadPolls(),loadReputation()])});

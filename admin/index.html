@@ -38,13 +38,30 @@
       <section data-admin-panel="library" class="hidden">
         <p class="eyebrow">Collection</p><h1>Ludothèque</h1>
         <div class="admin-card"><h2>Ajouter un jeu</h2><div class="admin-inline"><input id="game-search-input" placeholder="Rechercher sur IGDB…"><button id="game-search-button" class="button button-primary">Rechercher</button></div><div id="game-search-results" class="game-search-results"></div></div>
+        <div class="admin-card library-manager">
+          <div class="library-manager-head">
+            <div><h2>Jeux déjà ajoutés</h2><p id="library-result-count" class="library-result-count">—</p></div>
+            <div class="library-manager-filters">
+              <input id="library-search-input" type="search" placeholder="Rechercher dans ma ludothèque…" autocomplete="off">
+              <select id="library-status-filter" aria-label="Filtrer par statut">
+                <option value="all">Tous les statuts</option>
+                <option value="playing">En cours</option>
+                <option value="backlog">À faire</option>
+                <option value="completed">Terminé</option>
+                <option value="wishlist">Liste de souhaits</option>
+                <option value="paused">En pause</option>
+                <option value="abandoned">Abandonné</option>
+              </select>
+            </div>
+          </div>
+        </div>
         <div id="admin-library" class="admin-list"></div>
       </section>
 
       <section data-admin-panel="polls" class="hidden">
         <p class="eyebrow">Votes longue durée</p><h1>Sondages</h1>
         <form id="poll-form" class="admin-card"><h2>Nouveau sondage</h2><label>Titre<input id="poll-title" required></label><label>Description<textarea id="poll-description" rows="3"></textarea></label><label>Options <small>Une par ligne</small><textarea id="poll-options" rows="6" required></textarea></label><div class="admin-two-cols"><label>Résultats<select id="poll-visibility"><option value="always">Toujours visibles</option><option value="after_vote">Après avoir voté</option><option value="after_close">Après la fermeture</option></select></label><label>Fin du sondage<input id="poll-end" type="datetime-local"></label></div><label class="check-row"><input id="poll-multiple" type="checkbox"> Autoriser plusieurs réponses</label><button class="button button-primary" type="submit">Créer le sondage</button></form>
-        <div id="admin-polls" class="admin-list"></div>
+        <div class="admin-section-title"><h2>Sondages existants</h2><p>Consulte les résultats, corrige les textes, les dates ou la visibilité, puis enregistre les modifications.</p></div><div id="admin-polls" class="admin-list"></div>
       </section>
 
       <section data-admin-panel="reputation" class="hidden">
@@ -57,7 +74,7 @@
         <p class="eyebrow">Chaînes régulièrement présentes</p><h1>Collaborateurs</h1>
         <form id="collaborator-form" class="admin-card">
           <h2>Ajouter un collaborateur</h2>
-          <div class="admin-two-cols"><label>Login Twitch<input id="collaborator-login" required placeholder="ex. yokouzz"></label><label>Ordre d’affichage<input id="collaborator-order" type="number" value="0"></label></div>
+          <div class="admin-two-cols"><label>Identifiant Twitch<input id="collaborator-login" required placeholder="ex. yokouzz"></label><label>Ordre d’affichage<input id="collaborator-order" type="number" value="0"></label></div>
           <label>Courte description<textarea id="collaborator-description" rows="3" maxlength="300" placeholder="Ex. : Présent régulièrement lors des soirées multijoueur."></textarea></label>
           <button class="button button-primary" type="submit">Ajouter</button>
         </form>
@@ -66,6 +83,54 @@
     </div>
   </div>
 </main>
+
+<div id="game-add-modal" class="admin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="game-add-title">
+  <div class="admin-modal-backdrop" data-close-game-modal></div>
+  <div class="admin-modal-card">
+    <button class="admin-modal-close" type="button" data-close-game-modal aria-label="Fermer">×</button>
+    <div class="game-modal-head">
+      <img id="game-add-cover" class="game-modal-cover hidden" alt="">
+      <div>
+        <p class="eyebrow">Ajouter à la ludothèque</p>
+        <h2 id="game-add-title">Jeu</h2>
+        <p id="game-add-year" class="game-modal-year"></p>
+      </div>
+    </div>
+    <div class="admin-two-cols">
+      <label>Statut
+        <select id="game-add-status">
+          <option value="playing">En cours</option>
+          <option value="backlog">À faire</option>
+          <option value="completed">Terminé</option>
+          <option value="wishlist" selected>Liste de souhaits</option>
+          <option value="paused">En pause</option>
+          <option value="abandoned">Abandonné</option>
+        </select>
+      </label>
+      <label>Temps de jeu (heures)<input id="game-add-playtime" type="number" min="0" step="0.1" placeholder="Ex. : 1714"></label>
+    </div>
+    <label class="check-row game-modal-streamed"><input id="game-add-streamed" type="checkbox"> Déjà streamé sur la chaîne</label>
+    <label>Note personnelle<textarea id="game-add-note" rows="4" placeholder="Ton avis, un souvenir, un commentaire…"></textarea></label>
+    <div class="admin-actions modal-actions">
+      <button id="game-add-confirm" class="button button-primary" type="button">Ajouter le jeu</button>
+      <button class="button button-ghost" type="button" data-close-game-modal>Annuler</button>
+    </div>
+  </div>
+</div>
+
+<div id="confirm-modal" class="admin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+  <div class="admin-modal-backdrop" data-close-confirm></div>
+  <div class="admin-modal-card confirm-modal-card">
+    <button class="admin-modal-close" type="button" data-close-confirm aria-label="Fermer">×</button>
+    <p class="eyebrow">Confirmation</p>
+    <h2 id="confirm-title">Confirmer l’action</h2>
+    <p id="confirm-message" class="confirm-message"></p>
+    <div class="admin-actions modal-actions">
+      <button id="confirm-accept" class="button button-primary" type="button">Confirmer</button>
+      <button class="button button-ghost" type="button" data-close-confirm>Annuler</button>
+    </div>
+  </div>
+</div>
 <script type="module" src="admin.js"></script>
 </body>
 </html>
