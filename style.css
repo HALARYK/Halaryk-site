@@ -281,3 +281,116 @@ main{position:relative;z-index:1}
     opacity:.35;
   }
 }
+
+
+/* =========================================================
+   V4.1.2 CORRIGÉE — COLONNES FLORALES CONTINUES AU SCROLL
+   ========================================================= */
+
+/*
+  Important :
+  - position:absolute = les fleurs appartiennent à la PAGE, pas à l'écran.
+  - repeat-y = la composition continue pendant tout le scroll.
+  - l'accueil et le footer conservent leurs fonds complets V4.1.2.
+*/
+html{background:#000!important}
+body{
+  background:#000!important;
+  position:relative;
+  min-height:100%;
+}
+
+/* Annule le décor latéral figé de la V4.1.2 précédente. */
+body::before,
+body::after{
+  content:"";
+  position:absolute!important;
+  top:0!important;
+  bottom:0!important;
+  height:auto!important;
+  min-height:100%!important;
+  z-index:0!important;
+  width:clamp(240px,20vw,390px)!important;
+  pointer-events:none;
+  background-position:top center!important;
+  background-repeat:repeat-y!important;
+  background-size:100% auto!important;
+  opacity:.98!important;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+}
+
+body::before{
+  left:0!important;
+  right:auto!important;
+  background-image:url("assets/fleurs-colonne-gauche-v412c.png")!important;
+}
+
+body::after{
+  right:0!important;
+  left:auto!important;
+  background-image:url("assets/fleurs-colonne-droite-v412c.png")!important;
+}
+
+/* Le contenu reste au-dessus des colonnes florales. */
+main{
+  position:relative;
+  z-index:1;
+  background:transparent!important;
+}
+
+/* Sections intermédiaires : noir continu, aucun séparateur, aucun vieux décor carré. */
+.section{
+  position:relative;
+  background:transparent!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  box-shadow:none!important;
+}
+.section::before,
+.section::after{
+  content:none!important;
+  display:none!important;
+}
+
+/* On retire aussi les séparateurs hérités de certaines zones. */
+.section + .section{
+  border-top:0!important;
+}
+main > section{
+  border-top:0!important;
+}
+
+/*
+  Accueil / fin :
+  ils doivent rester des tableaux floraux complets, donc ils masquent
+  naturellement les colonnes situées derrière.
+*/
+.hero,
+.footer{
+  position:relative;
+  z-index:3;
+}
+
+/* Mobile : bordures plus discrètes pour préserver l'espace central. */
+@media(max-width:1100px){
+  body::before,
+  body::after{
+    width:clamp(190px,21vw,290px)!important;
+    opacity:.88!important;
+  }
+}
+@media(max-width:760px){
+  body::before,
+  body::after{
+    width:145px!important;
+    opacity:.62!important;
+  }
+}
+@media(max-width:520px){
+  body::before,
+  body::after{
+    width:95px!important;
+    opacity:.42!important;
+  }
+}

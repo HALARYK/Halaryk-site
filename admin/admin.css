@@ -208,3 +208,40 @@
 @media(max-width:700px){
   .admin-body::before,.admin-body::after{width:110px;opacity:.22}
 }
+
+
+/* V4.1.2 corrigée — décor admin continu pendant le scroll */
+.admin-body{
+  background:#000!important;
+  position:relative;
+}
+.admin-body::before,
+.admin-body::after{
+  content:"";
+  position:absolute!important;
+  top:0!important;
+  bottom:0!important;
+  height:auto!important;
+  min-height:100%!important;
+  width:clamp(190px,17vw,320px)!important;
+  z-index:0!important;
+  pointer-events:none;
+  background-position:top center!important;
+  background-repeat:repeat-y!important;
+  background-size:100% auto!important;
+  opacity:.30!important;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+}
+.admin-body::before{
+  left:0!important;
+  right:auto!important;
+  inset:0 auto 0 0!important;
+  background-image:url("../assets/fleurs-colonne-gauche-v412c.png")!important;
+}
+.admin-body::after{
+  right:0!important;
+  left:auto!important;
+  background-image:url("../assets/fleurs-colonne-droite-v412c.png")!important;
+}
+.admin-header,.admin-shell{position:relative;z-index:1}
