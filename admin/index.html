@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HALARYK — Administration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+<header class="admin-header"><a href="../" class="brand"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V4</span><button id="admin-login" class="button button-primary">Connexion Twitch</button><button id="admin-logout" class="button button-ghost hidden">Déconnexion</button></div></header>
+<main class="admin-shell">
+  <section id="admin-gate" class="admin-gate"><p class="eyebrow">Accès privé</p><h1>Administration HALARYK</h1><p id="admin-gate-message">Connexion Twitch nécessaire.</p></section>
+  <div id="admin-app" class="hidden">
+    <aside class="admin-sidebar">
+      <button class="active" data-admin-tab="dashboard">Tableau de bord</button>
+      <button data-admin-tab="suggestions">Suggestions</button>
+      <button data-admin-tab="library">Ludothèque</button>
+      <button data-admin-tab="polls">Sondages</button>
+      <button data-admin-tab="reputation">Réputation</button>
+      <button data-admin-tab="collaborators">Collaborateurs</button>
+    </aside>
+    <div class="admin-content">
+      <section data-admin-panel="dashboard">
+        <p class="eyebrow">Vue d’ensemble</p><h1>Tableau de bord</h1>
+        <div class="admin-stats">
+          <article><strong id="stat-new-suggestions">—</strong><span>Nouvelles suggestions</span></article>
+          <article><strong id="stat-considering">—</strong><span>En réflexion</span></article>
+          <article><strong id="stat-library">—</strong><span>Jeux en ludothèque</span></article>
+          <article><strong id="stat-polls">—</strong><span>Sondages actifs</span></article>
+          <article><strong id="stat-reputation">—</strong><span>Profils réputation</span></article>
+          <article><strong id="stat-collaborators">—</strong><span>Collaborateurs actifs</span></article>
+        </div>
+      </section>
+
+      <section data-admin-panel="suggestions" class="hidden"><p class="eyebrow">Modération communautaire</p><h1>Suggestions</h1><div id="admin-suggestions" class="admin-list"></div></section>
+
+      <section data-admin-panel="library" class="hidden">
+        <p class="eyebrow">Collection</p><h1>Ludothèque</h1>
+        <div class="admin-card"><h2>Ajouter un jeu</h2><div class="admin-inline"><input id="game-search-input" placeholder="Rechercher sur IGDB…"><button id="game-search-button" class="button button-primary">Rechercher</button></div><div id="game-search-results" class="game-search-results"></div></div>
+        <div id="admin-library" class="admin-list"></div>
+      </section>
+
+      <section data-admin-panel="polls" class="hidden">
+        <p class="eyebrow">Votes longue durée</p><h1>Sondages</h1>
+        <form id="poll-form" class="admin-card"><h2>Nouveau sondage</h2><label>Titre<input id="poll-title" required></label><label>Description<textarea id="poll-description" rows="3"></textarea></label><label>Options <small>Une par ligne</small><textarea id="poll-options" rows="6" required></textarea></label><div class="admin-two-cols"><label>Résultats<select id="poll-visibility"><option value="always">Toujours visibles</option><option value="after_vote">Après avoir voté</option><option value="after_close">Après la fermeture</option></select></label><label>Fin du sondage<input id="poll-end" type="datetime-local"></label></div><label class="check-row"><input id="poll-multiple" type="checkbox"> Autoriser plusieurs réponses</label><button class="button button-primary" type="submit">Créer le sondage</button></form>
+        <div id="admin-polls" class="admin-list"></div>
+      </section>
+
+      <section data-admin-panel="reputation" class="hidden">
+        <p class="eyebrow">Miroir de Streamer.bot</p><h1>Réputation</h1>
+        <div class="admin-card"><h2>Source des scores</h2><p>Les scores restent pilotés depuis Streamer.bot. Cette page sert à vérifier que les valeurs ont bien été synchronisées vers le site ; aucune modification manuelle n’est proposée ici afin d’éviter les divergences.</p></div>
+        <div id="admin-reputation" class="admin-list"></div>
+      </section>
+
+      <section data-admin-panel="collaborators" class="hidden">
+        <p class="eyebrow">Chaînes régulièrement présentes</p><h1>Collaborateurs</h1>
+        <form id="collaborator-form" class="admin-card">
+          <h2>Ajouter un collaborateur</h2>
+          <div class="admin-two-cols"><label>Login Twitch<input id="collaborator-login" required placeholder="ex. yokouzz"></label><label>Ordre d’affichage<input id="collaborator-order" type="number" value="0"></label></div>
+          <label>Courte description<textarea id="collaborator-description" rows="3" maxlength="300" placeholder="Ex. : Présent régulièrement lors des soirées multijoueur."></textarea></label>
+          <button class="button button-primary" type="submit">Ajouter</button>
+        </form>
+        <div id="admin-collaborators" class="admin-list"></div>
+      </section>
+    </div>
+  </div>
+</main>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
