@@ -188,3 +188,96 @@ body{background:#0a0909}
     opacity:.11;
   }
 }
+
+
+/* ===== V4.1.2 : DA florale latérale continue ===== */
+html,body{background:#000!important}
+body{position:relative}
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  top:0;
+  bottom:0;
+  z-index:0;
+  width:clamp(210px,20vw,420px);
+  height:100vh;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:100% 100%;
+  opacity:.96;
+}
+body::before{
+  left:0;
+  background-image:url("assets/fleurs-cote-gauche-v412.png");
+}
+body::after{
+  right:0;
+  background-image:url("assets/fleurs-cote-droit-v412.png");
+}
+main{position:relative;z-index:1}
+
+/* Sections centrales : noir pur, sans barres ni anciens patchs floraux en carrés. */
+.section{
+  background:transparent!important;
+  border-top:0!important;
+}
+.section::before{
+  content:none!important;
+  display:none!important;
+}
+
+/* Accueil : composition florale complète mais plus sombre pour la lecture. */
+.hero{
+  position:relative;
+  z-index:2;
+  background:#000;
+}
+.hero-background{
+  background-image:url("assets/fleurs-accueil-v412.webp")!important;
+  background-position:center!important;
+  background-size:cover!important;
+  filter:saturate(.78) brightness(.72) contrast(1.06)!important;
+}
+.hero-overlay{
+  background:
+    radial-gradient(ellipse at center,rgba(0,0,0,.48) 0%,rgba(0,0,0,.38) 38%,rgba(0,0,0,.26) 66%,rgba(0,0,0,.42) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.34))!important;
+}
+
+/* Fin : fond floral complet raccord avec l'accueil, sans séparateur. */
+.footer{
+  position:relative;
+  z-index:2;
+  border-top:0!important;
+  background:#000;
+}
+.footer-decor{
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.40),rgba(0,0,0,.58)),
+    url("assets/fleurs-fin-v412.webp") center/cover no-repeat!important;
+  filter:saturate(.76) brightness(.72) contrast(1.06)!important;
+}
+
+/* Le noir central reste volontairement vide et propre. */
+.section-shell{position:relative;z-index:2}
+
+@media(max-width:1100px){
+  body::before,body::after{
+    width:clamp(170px,22vw,300px);
+    opacity:.82;
+  }
+}
+@media(max-width:760px){
+  body::before,body::after{
+    width:150px;
+    opacity:.52;
+  }
+}
+@media(max-width:520px){
+  body::before,body::after{
+    width:105px;
+    opacity:.35;
+  }
+}
