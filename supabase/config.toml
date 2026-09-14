@@ -1,0 +1,11 @@
+[functions.live-status]
+verify_jwt = false
+
+[functions.game-search]
+verify_jwt = true
+
+[functions.collaborators-status]
+verify_jwt = false
+
+[functions.reputation-sync]
+verify_jwt = false

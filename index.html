@@ -23,19 +23,29 @@
     <a href="#planning">Planning</a>
     <a href="#ludotheque">Ludothèque</a>
     <a href="#clips">Clips</a>
-    <a href="#suggestions">Suggestions</a>
+    <a href="#cabinet/propositions">Cabinet des idées</a>
     <a href="#reputation">Réputation</a>
     <div class="nav-dropdown">
-      <button class="nav-dropdown-button" type="button">Infos <span>⌄</span></button>
-      <div class="nav-dropdown-menu">
-        <a href="#reglement">Règlement</a>
-        <a href="#partenaires">Partenaires</a>
-        <a href="#reseaux">Réseaux</a>
-        <a href="#commandes">Commandes</a>
-        <a href="#config">Config</a>
-        <a href="#faq">FAQ</a>
-        <a href="#collaborateurs">Collaborateurs</a>
+      <button class="nav-dropdown-button" type="button" aria-expanded="false">Infos <span>⌄</span></button>
+      <div class="nav-dropdown-menu nav-mega-menu">
+        <div class="nav-mega-group">
+          <span class="nav-mega-title">La chaîne</span>
+          <a href="#reglement"><strong>Règlement</strong><small>Les règles de la communauté</small></a>
+          <a href="#commandes"><strong>Commandes</strong><small>Les commandes disponibles sur Twitch</small></a>
+          <a href="#config"><strong>Config</strong><small>PC, stream et matériel</small></a>
+          <a href="#faq"><strong>FAQ</strong><small>Les réponses aux questions fréquentes</small></a>
+        </div>
+        <div class="nav-mega-group">
+          <span class="nav-mega-title">L’écosystème</span>
+          <a href="#partenaires"><strong>Partenaires</strong><small>Les partenaires de la chaîne</small></a>
+          <a href="#collaborateurs"><strong>Collaborateurs</strong><small>Les chaînes régulièrement présentes</small></a>
+          <a href="#reseaux"><strong>Réseaux</strong><small>Retrouver HALARYK ailleurs</small></a>
+        </div>
       </div>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Twitch ↗</a>
+      <a href="#reseaux">Discord & réseaux</a>
     </div>
   </nav>
   <div class="auth-slot">
@@ -84,28 +94,43 @@
       <div><strong id="library-total">—</strong><span>Jeux</span></div>
       <div><strong id="library-completed">—</strong><span>Terminés</span></div>
       <div><strong id="library-playing">—</strong><span>En cours</span></div>
-      <div><strong id="library-wishlist">—</strong><span>Liste de souhaits</span></div>
+      <div><strong id="library-wishlist">—</strong><span>À venir</span></div>
     </div>
-    <div class="segmented-control library-filters">
-      <button class="active" data-library-filter="playing">En cours</button><button data-library-filter="backlog">À faire</button><button data-library-filter="completed">Terminés</button><button data-library-filter="wishlist">Liste de souhaits</button><button data-library-filter="all">Tous</button>
+    <div class="library-toolbar">
+      <div class="segmented-control library-filters" aria-label="Filtrer la ludothèque">
+        <button class="active" data-library-filter="playing">En cours</button>
+        <button data-library-filter="completed">Terminés</button>
+        <button data-library-filter="wishlist">À venir</button>
+        <button data-library-filter="all">Tous</button>
+      </div>
+      <label class="library-search-wrap"><span class="sr-only">Rechercher dans la ludothèque</span><input id="library-search" type="search" placeholder="Rechercher un jeu, un studio ou une note…" autocomplete="off"><span aria-hidden="true">⌕</span></label>
     </div>
-    <div id="library-detail" class="library-detail hidden" aria-live="polite">
+    <p class="library-click-hint">Clique sur un jeu pour ouvrir sa fiche complète.</p>
+    <div class="library-scroll" id="library-scroll">
+      <div id="library-grid" class="library-grid"><div class="empty-state"><strong>Ludothèque en cours d’activation</strong><p>Les jeux apparaîtront ici dès que la base V4 sera connectée.</p></div></div>
+    </div>
+    <button id="library-mobile-more" class="button button-ghost library-mobile-more hidden" type="button">Voir toute la ludothèque</button>
+  </div>
+
+  <div id="library-detail" class="library-modal hidden" role="dialog" aria-modal="true" aria-labelledby="library-detail-title">
+    <div class="library-modal-backdrop" data-library-close></div>
+    <article class="library-modal-card">
       <button id="library-detail-close" class="library-detail-close" type="button" aria-label="Fermer la fiche du jeu">×</button>
       <div class="library-detail-visual"><img id="library-detail-cover" alt=""></div>
       <div class="library-detail-content">
         <p class="eyebrow">Fiche du jeu</p>
-        <h3 id="library-detail-title">Jeu</h3>
+        <div class="library-detail-title-row"><h3 id="library-detail-title">Jeu</h3><strong id="library-detail-rating" class="library-rating-large">— / 10</strong></div>
+        <p id="library-detail-developer" class="library-detail-developer"></p>
         <p id="library-detail-release" class="library-detail-release"></p>
         <div class="library-detail-facts">
           <div><span>Statut</span><strong id="library-detail-status">—</strong></div>
           <div><span>Temps de jeu</span><strong id="library-detail-playtime">—</strong></div>
-          <div><span>Streamé sur la chaîne</span><strong id="library-detail-streamed">—</strong></div>
+          <div><span>Streamé</span><strong id="library-detail-streamed">—</strong></div>
         </div>
-        <div class="library-detail-note"><span>Note personnelle</span><p id="library-detail-note"></p></div>
+        <div class="library-detail-section"><span>Résumé</span><p id="library-detail-summary"></p></div>
+        <div class="library-detail-section library-detail-note"><span>Commentaire de HALARYK</span><p id="library-detail-note"></p></div>
       </div>
-    </div>
-    <p class="library-click-hint">Clique sur une jaquette pour ouvrir la fiche complète du jeu.</p>
-    <div id="library-grid" class="library-grid"><div class="empty-state"><strong>Ludothèque en cours d’activation</strong><p>Les jeux apparaîtront ici dès que la base V4 sera connectée.</p></div></div>
+    </article>
   </div>
 </section>
 
@@ -120,9 +145,9 @@
 
 <section id="suggestions" class="section decor-left">
   <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">IV</span><div><p class="eyebrow">Le cabinet des idées</p><h2>Suggestions</h2></div></div>
+    <div class="section-heading"><span class="section-number">IV</span><div><p class="eyebrow">Propositions & votes communautaires</p><h2>Le Cabinet des idées</h2></div></div>
     <div class="suggestion-topbar">
-      <div class="suggestion-tabs"><button class="active" data-suggestion-tab="ideas">Suggestions</button><button data-suggestion-tab="polls">Sondages</button></div>
+      <div class="suggestion-tabs"><button class="active" data-suggestion-tab="ideas">Propositions</button><button data-suggestion-tab="polls">Sondages</button></div>
       <button id="suggestion-login-cta" class="button button-ghost" type="button">Se connecter avec Twitch</button>
     </div>
 
@@ -154,7 +179,7 @@
       <div id="suggestions-feed" class="suggestions-feed"></div>
     </div>
 
-    <div id="polls-panel" class="hidden"><p class="polls-intro">Des votes longue durée, accessibles entre les streams avec un vote par compte Twitch.</p><div id="polls-feed" class="polls-feed"></div></div>
+    <div id="polls-panel" class="hidden"><div class="cabinet-panel-intro"><p class="eyebrow">Les décisions de la communauté</p><h3>Sondages</h3><p class="polls-intro">Des votes longue durée, accessibles entre les streams avec un vote par compte Twitch. Chaque sondage possède désormais son propre lien partageable.</p></div><div id="polls-feed" class="polls-feed"></div></div>
   </div>
 </section>
 

@@ -2,7 +2,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 import { CONFIG, BACKEND_CONFIGURED } from "./config.js";
 
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
-let supabase=null,session=null,currentCategory="games",currentSort="popular",currentStatus="all",libraryFilter="playing",currentSuggestionFeed=[],libraryGames=[];
+let supabase=null,session=null,currentCategory="games",currentSort="popular",currentStatus="all",libraryFilter="playing",librarySearch="",libraryMobileExpanded=false,currentSuggestionFeed=[],libraryGames=[];
 
 const categoryCopy={
   games:["Jeux de semaine","Proposez un jeu à faire en stream.","Cette catégorie concerne les streams du lundi et du mercredi."],
@@ -13,11 +13,12 @@ const categoryCopy={
   other:["Autre","Une idée qui ne rentre nulle part ailleurs ?","Utilisez cette catégorie pour les propositions plus difficiles à classer."]
 };
 const statusLabels={new:"Nouvelle",considering:"En réflexion",planned:"Prévue",completed:"Terminée",rejected:"Refusée",archived:"Archivée"};
-const libraryLabels={playing:"En cours",backlog:"À faire",completed:"Terminé",wishlist:"Liste de souhaits",paused:"En pause",abandoned:"Abandonné"};
+const libraryLabels={playing:"En cours",backlog:"À faire",completed:"Terminé",wishlist:"À venir",paused:"En pause",abandoned:"Abandonné"};
 const repIcons={"Traître":"☠️","Inconnu":"👤","Habitué":"🏠","Conseiller":"🗣️","Confident":"⚜️","Favori":"👑"};
 
 function esc(v=""){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
 function fmtDate(v){try{return new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"short",year:"numeric"}).format(new Date(v))}catch{return""}}
+function hdCover(url=""){return String(url||"").replace("/t_cover_big/","/t_cover_big_2x/")}
 function norm(v=""){return v.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim()}
 function similarity(a,b){const A=new Set(norm(a).split(" ").filter(x=>x.length>2)),B=new Set(norm(b).split(" ").filter(x=>x.length>2));if(!A.size||!B.size)return 0;const i=[...A].filter(x=>B.has(x)).length;return i/new Set([...A,...B]).size}
 function repClass(rank=""){return "rep-"+norm(rank).replaceAll(" ","-")}
@@ -35,17 +36,27 @@ function toast(message){const e=document.createElement("div");e.textContent=mess
 
 function initNavigation(){
   const menu=$(".menu-toggle"),nav=$(".nav"),drop=$(".nav-dropdown"),dropBtn=$(".nav-dropdown-button");
-  menu?.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});
-  dropBtn?.addEventListener("click",e=>{e.stopPropagation();drop.classList.toggle("open")});
-  document.addEventListener("click",()=>drop?.classList.remove("open"));
-  $$(".nav a").forEach(a=>a.addEventListener("click",()=>nav?.classList.remove("open")));
+  const closeNav=()=>{nav?.classList.remove("open");document.body.classList.remove("menu-open");menu?.setAttribute("aria-expanded","false")};
+  menu?.addEventListener("click",()=>{const open=nav.classList.toggle("open");document.body.classList.toggle("menu-open",open);menu.setAttribute("aria-expanded",String(open))});
+  dropBtn?.addEventListener("click",e=>{e.stopPropagation();const open=drop.classList.toggle("open");dropBtn.setAttribute("aria-expanded",String(open))});
+  document.addEventListener("click",e=>{if(drop&&!drop.contains(e.target)){drop.classList.remove("open");dropBtn?.setAttribute("aria-expanded","false")}});
+  $$(".nav a").forEach(a=>a.addEventListener("click",()=>{closeNav();drop?.classList.remove("open")}));
+  window.addEventListener("resize",()=>{if(innerWidth>880)closeNav()});
   const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}}),{threshold:.1});
   $$(".reveal").forEach(e=>ro.observe(e));
 }
-function initClips(){
+function renderClips(slugs=[]){
   const grid=$("#clips-grid");if(!grid)return;const parent=location.hostname||"halaryk.github.io";
-  grid.innerHTML=CONFIG.TWITCH_CLIPS.map((clip,i)=>`<article class="clip-card"><iframe src="https://clips.twitch.tv/embed?clip=${encodeURIComponent(clip)}&parent=${encodeURIComponent(parent)}" title="Clip Twitch HALARYK ${i+1}" loading="lazy" allowfullscreen></iframe></article>`).join("");
+  const clips=slugs.filter(Boolean).slice(0,4);
+  grid.innerHTML=clips.length?clips.map((clip,i)=>`<article class="clip-card"><iframe src="https://clips.twitch.tv/embed?clip=${encodeURIComponent(clip)}&parent=${encodeURIComponent(parent)}" title="Clip Twitch HALARYK ${i+1}" loading="lazy" allowfullscreen></iframe></article>`).join(""):`<div class="empty-state"><strong>Aucun clip sélectionné</strong><p>Les clips seront ajoutés depuis l’administration.</p></div>`;
+}
+function initClips(){
+  renderClips(CONFIG.TWITCH_CLIPS||[]);
   if(CONFIG.CLIPPER_NAMES?.length){const names=CONFIG.CLIPPER_NAMES.map(n=>`<strong>${esc(n)}</strong>`);let list=names[0];if(names.length===2)list=`${names[0]} et ${names[1]}`;else if(names.length>2)list=`${names.slice(0,-1).join(", ")} et ${names.at(-1)}`;$("#clip-thanks-text").innerHTML=`Un grand merci à ${list} pour leurs clips et leur œil toujours bien placé.`}
+}
+async function loadClips(){
+  if(!supabase)return;
+  try{const{data,error}=await supabase.from("site_clips").select("position,clip_slug").order("position",{ascending:true});if(error)throw error;if(data?.length)renderClips(data.map(x=>x.clip_slug));}catch{renderClips(CONFIG.TWITCH_CLIPS||[])}
 }
 async function signIn(){if(!supabase)return toast("Connexion Twitch pas encore configurée.");const redirectTo=location.origin+location.pathname;const{error}=await supabase.auth.signInWithOAuth({provider:"twitch",options:{redirectTo}});if(error)toast(error.message)}
 async function signOut(){if(supabase)await supabase.auth.signOut()}
@@ -68,39 +79,49 @@ async function loadLibrary(){
   $("#library-wishlist").textContent=libraryGames.filter(g=>g.status==="wishlist").length;
   renderLibraryGrid();
 }
+function libraryFilteredGames(){
+  const q=norm(librarySearch);
+  return libraryGames.filter(g=>(libraryFilter==="all"||g.status===libraryFilter)&&(!q||norm(`${g.name||""} ${g.developer||""} ${g.rating??""}`).includes(q)));
+}
 function renderLibraryGrid(){
-  const list=libraryFilter==="all"?libraryGames:libraryGames.filter(g=>g.status===libraryFilter),grid=$("#library-grid");
-  if(!list.length){grid.innerHTML=`<div class="empty-state"><strong>Aucun jeu dans cette catégorie</strong><p>La ludothèque sera enrichie depuis l’administration HALARYK.</p></div>`;return}
-  grid.innerHTML=list.map(g=>`<article class="game-card" data-public-game="${g.id}" tabindex="0" role="button" aria-label="Ouvrir la fiche de ${esc(g.name)}"><img class="game-cover" src="${esc(g.cover_url||"")}" alt="Jaquette de ${esc(g.name)}" loading="lazy"><div class="game-content"><h3>${esc(g.name)}</h3><div class="game-meta"><span class="tag">${esc(libraryLabels[g.status]||"Statut inconnu")}</span>${g.streamed?`<span class="tag tag-streamed">🎥 Streamé</span>`:""}</div></div></article>`).join("");
-  $$('[data-public-game]').forEach(card=>{
-    card.onclick=()=>openLibraryDetail(card.dataset.publicGame);
-    card.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLibraryDetail(card.dataset.publicGame)}};
-  });
+  let list=libraryFilteredGames(),grid=$("#library-grid"),more=$("#library-mobile-more");
+  const mobile=matchMedia("(max-width:760px)").matches;
+  const total=list.length;
+  if(mobile&&!libraryMobileExpanded)list=list.slice(0,4);
+  more?.classList.toggle("hidden",!mobile||total<=4||libraryMobileExpanded);
+  if(!list.length){grid.innerHTML=`<div class="empty-state"><strong>Aucun jeu dans cette sélection</strong><p>Essaie une autre catégorie ou une autre recherche.</p></div>`;return}
+  grid.innerHTML=list.map(g=>{
+    const rating=g.rating!=null?`<span class="game-rating">★ ${Number(g.rating).toLocaleString("fr-FR",{maximumFractionDigits:1})}/10</span>`:"";
+    const summary=g.summary?`<p class="game-summary">${esc(g.summary)}</p>`:`<p class="game-summary game-summary-muted">Résumé à venir.</p>`;
+    return `<article class="game-card" data-public-game="${g.id}" tabindex="0" role="button" aria-label="Ouvrir la fiche de ${esc(g.name)}"><div class="game-cover-wrap"><img class="game-cover" src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}" loading="lazy">${rating}</div><div class="game-content"><h3>${esc(g.name)}</h3><p class="game-developer">${esc(g.developer||"Studio non renseigné")}</p>${g.release_date?`<p class="game-release">${new Intl.DateTimeFormat("fr-FR",{year:"numeric"}).format(new Date(g.release_date))}</p>`:""}${summary}<div class="game-meta"><span class="tag">${esc(libraryLabels[g.status]||"Statut inconnu")}</span>${g.streamed?`<span class="tag tag-streamed">🎥 Streamé</span>`:""}</div></div></article>`
+  }).join("");
+  $$('[data-public-game]').forEach(card=>{card.onclick=()=>openLibraryDetail(card.dataset.publicGame);card.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLibraryDetail(card.dataset.publicGame)}}});
 }
 function openLibraryDetail(id){
   const g=libraryGames.find(x=>x.id===id);if(!g)return;
-  const panel=$("#library-detail");
-  const cover=$("#library-detail-cover");
-  if(g.cover_url){cover.src=g.cover_url;cover.alt=`Jaquette de ${g.name}`;cover.classList.remove("hidden")}else{cover.removeAttribute("src");cover.classList.add("hidden")}
+  const panel=$("#library-detail"),cover=$("#library-detail-cover");
+  if(g.cover_url){cover.src=hdCover(g.cover_url);cover.alt=`Jaquette de ${g.name}`;cover.classList.remove("hidden")}else{cover.removeAttribute("src");cover.classList.add("hidden")}
   $("#library-detail-title").textContent=g.name;
-  $("#library-detail-release").textContent=g.release_date?new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"long",year:"numeric"}).format(new Date(g.release_date)):"Date de sortie inconnue";
+  $("#library-detail-rating").textContent=g.rating!=null?`${Number(g.rating).toLocaleString("fr-FR",{maximumFractionDigits:1})} / 10` : "Non noté";
+  $("#library-detail-developer").textContent=g.developer||"Studio de développement non renseigné";
+  $("#library-detail-release").textContent=g.release_date?`Sortie : ${new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"long",year:"numeric"}).format(new Date(g.release_date))}`:"Date de sortie inconnue";
   $("#library-detail-status").textContent=libraryLabels[g.status]||"Statut inconnu";
   $("#library-detail-playtime").textContent=g.playtime_hours!=null?`${new Intl.NumberFormat("fr-FR",{maximumFractionDigits:1}).format(Number(g.playtime_hours))} h`:"Non renseigné";
   $("#library-detail-streamed").textContent=g.streamed?"Oui":"Non";
-  $("#library-detail-note").textContent=g.personal_note||"Aucune note personnelle pour ce jeu pour le moment.";
-  panel.classList.remove("hidden");
-  panel.scrollIntoView({behavior:"smooth",block:"center"});
+  $("#library-detail-summary").textContent=g.summary||"Aucun résumé disponible pour ce jeu pour le moment.";
+  $("#library-detail-note").textContent=g.personal_note||"Aucun commentaire personnel pour ce jeu pour le moment.";
+  panel.classList.remove("hidden");document.body.classList.add("modal-open");$(".library-modal-card")?.focus?.();
 }
-function closeLibraryDetail(){$("#library-detail").classList.add("hidden")}
+function closeLibraryDetail(){$("#library-detail")?.classList.add("hidden");document.body.classList.remove("modal-open")}
 function renderSuggestion(s,pinned=false){
   const rep=s.rep_rank?`<span class="rep-badge ${repClass(s.rep_rank)}">${repIcons[s.rep_rank]||"✦"} ${esc(s.rep_rank)}</span>`:"";
-  return `<article class="suggestion-card ${pinned?"pinned":""}">${pinned?`<span class="pinned-label">📌 Suggestion à la une</span>`:""}<div class="suggestion-head"><div class="suggestion-author">${s.author_avatar?`<img src="${esc(s.author_avatar)}" alt="">`:""}<span>${esc(s.author_name||"Utilisateur Twitch")} · ${fmtDate(s.created_at)}</span>${rep}</div><span class="status status-${esc(s.status)}">${esc(statusLabels[s.status]||s.status)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p>${s.official_reply?`<div class="official-reply"><strong>Réponse de Halaryk</strong><p>${esc(s.official_reply)}</p></div>`:""}<div class="suggestion-footer"><button class="vote-button ${s.has_voted?"voted":""}" data-vote="${s.id}" type="button">👍 <strong>${s.vote_count||0}</strong></button><span class="tag">${esc(categoryCopy[s.category]?.[0]||s.category)}</span></div></article>`
+  return `<article class="suggestion-card ${pinned?"pinned":""}" id="suggestion-${s.id}" data-suggestion-card="${s.id}">${pinned?`<span class="pinned-label">📌 Suggestion à la une</span>`:""}<div class="suggestion-head"><div class="suggestion-author">${s.author_avatar?`<img src="${esc(s.author_avatar)}" alt="">`:""}<span>${esc(s.author_name||"Utilisateur Twitch")} · ${fmtDate(s.created_at)}</span>${rep}</div><span class="status status-${esc(s.status)}">${esc(statusLabels[s.status]||s.status)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p>${s.official_reply?`<div class="official-reply"><strong>Réponse de Halaryk</strong><p>${esc(s.official_reply)}</p></div>`:""}<div class="suggestion-footer"><button class="vote-button ${s.has_voted?"voted":""}" data-vote="${s.id}" type="button">👍 <strong>${s.vote_count||0}</strong></button><span class="tag">${esc(categoryCopy[s.category]?.[0]||s.category)}</span><button class="share-link-button" data-share-suggestion="${s.id}" type="button" aria-label="Copier le lien de cette proposition">Lien ↗</button></div></article>`
 }
 async function loadSuggestions(){
   if(!supabase)return;const{data,error}=await supabase.rpc("get_suggestion_feed",{p_category:currentCategory,p_sort:currentSort==="recent"?"recent":"popular"});
   if(error){$("#suggestions-feed").innerHTML=`<div class="empty-state"><strong>Impossible de charger les suggestions</strong><p>${esc(error.message)}</p></div>`;return}
   currentSuggestionFeed=data||[];renderSimilar();let list=currentSuggestionFeed;if(currentSort==="mine")list=session?.user?list.filter(s=>s.author_id===session.user.id):[];if(currentStatus!=="all")list=list.filter(s=>s.status===currentStatus);
-  $("#pinned-suggestion").innerHTML=list.filter(s=>s.pinned).map(s=>renderSuggestion(s,true)).join("");const normal=list.filter(s=>!s.pinned);$("#suggestions-feed").innerHTML=normal.length?normal.map(s=>renderSuggestion(s)).join(""):`<div class="empty-state"><strong>Aucune suggestion ici pour le moment</strong><p>La première pourrait être la tienne.</p></div>`;$$('[data-vote]').forEach(b=>b.onclick=()=>toggleVote(b.dataset.vote))
+  $("#pinned-suggestion").innerHTML=list.filter(s=>s.pinned).map(s=>renderSuggestion(s,true)).join("");const normal=list.filter(s=>!s.pinned);$("#suggestions-feed").innerHTML=normal.length?normal.map(s=>renderSuggestion(s)).join(""):`<div class="empty-state"><strong>Aucune suggestion ici pour le moment</strong><p>La première pourrait être la tienne.</p></div>`;$$('[data-vote]').forEach(b=>b.onclick=()=>toggleVote(b.dataset.vote));$$('[data-share-suggestion]').forEach(b=>b.onclick=()=>copyCabinetLink('proposition',b.dataset.shareSuggestion));applyPendingCabinetHighlight();
 }
 async function toggleVote(id){if(!session?.user)return signIn();const{error}=await supabase.rpc("toggle_suggestion_vote",{p_suggestion_id:id});if(error)toast(error.message);else await loadSuggestions()}
 async function submitSuggestion(e){e.preventDefault();if(!session?.user)return signIn();const title=$("#suggestion-title").value.trim(),body=$("#suggestion-body").value.trim();if(!title||!body)return;const{error}=await supabase.from("suggestions").insert({author_id:session.user.id,category:currentCategory,title,body});if(error)return toast(error.message);$("#suggestion-form").reset();toast("Suggestion envoyée.");await loadSuggestions()}
@@ -112,10 +133,32 @@ function renderSimilar(){
 async function loadPolls(){
   if(!supabase)return;const{data,error}=await supabase.rpc("get_polls_feed"),feed=$("#polls-feed");if(error){feed.innerHTML=`<div class="empty-state">${esc(error.message)}</div>`;return}
   const polls=data||[];if(!polls.length){feed.innerHTML=`<div class="empty-state"><strong>Aucun sondage actif</strong><p>Les prochains votes longue durée apparaîtront ici.</p></div>`;return}
-  feed.innerHTML=polls.map(p=>{const type=p.allow_multiple?"checkbox":"radio",opts=p.options||[];return `<article class="poll-card" data-poll-card="${p.id}"><h3>${esc(p.title)}</h3>${p.description?`<p>${esc(p.description)}</p>`:""}<div class="poll-options">${opts.map(o=>{const pct=p.total_votes&&o.vote_count!=null?Math.round(o.vote_count/p.total_votes*100):0;return `<div class="poll-option">${p.results_visible?`<span class="poll-result-bar" style="width:${pct}%"></span>`:""}<label><input type="${type}" name="poll-${p.id}" value="${o.id}" ${o.selected?"checked":""}><span>${esc(o.label)}</span>${p.results_visible?`<span class="poll-result">${o.vote_count||0} · ${pct}%</span>`:""}</label></div>`}).join("")}</div><div class="poll-actions"><span>${p.ends_at?`Fin : ${fmtDate(p.ends_at)}`:"Sans date de fin"}</span><button class="button button-primary" data-poll="${p.id}" type="button">Voter</button></div></article>`}).join("");$$('[data-poll]').forEach(b=>b.onclick=()=>castPoll(b.dataset.poll))
+  feed.innerHTML=polls.map(p=>{const type=p.allow_multiple?"checkbox":"radio",opts=p.options||[];return `<article class="poll-card" id="poll-${p.id}" data-poll-card="${p.id}"><div class="poll-title-row"><h3>${esc(p.title)}</h3><button class="share-link-button" data-share-poll="${p.id}" type="button">Copier le lien ↗</button></div>${p.description?`<p>${esc(p.description)}</p>`:""}<div class="poll-options">${opts.map(o=>{const pct=p.total_votes&&o.vote_count!=null?Math.round(o.vote_count/p.total_votes*100):0;return `<div class="poll-option">${p.results_visible?`<span class="poll-result-bar" style="width:${pct}%"></span>`:""}<label><input type="${type}" name="poll-${p.id}" value="${o.id}" ${o.selected?"checked":""}><span>${esc(o.label)}</span>${p.results_visible?`<span class="poll-result">${o.vote_count||0} · ${pct}%</span>`:""}</label></div>`}).join("")}</div><div class="poll-actions"><span>${p.ends_at?`Fin : ${fmtDate(p.ends_at)}`:"Sans date de fin"}</span><button class="button button-primary" data-poll="${p.id}" type="button">Voter</button></div></article>`}).join("");
+  $$('[data-poll]').forEach(b=>b.onclick=()=>castPoll(b.dataset.poll));$$('[data-share-poll]').forEach(b=>b.onclick=()=>copyCabinetLink('sondage',b.dataset.sharePoll));applyPendingCabinetHighlight();
 }
 async function castPoll(id){if(!session?.user)return signIn();const card=$(`[data-poll-card="${id}"]`),ids=$$("input:checked",card).map(i=>i.value);if(!ids.length)return toast("Choisis au moins une option.");const{error}=await supabase.rpc("cast_poll_vote",{p_poll_id:id,p_option_ids:ids});if(error)toast(error.message);else{toast("Vote enregistré.");await loadPolls()}}
 
+let pendingCabinetTarget=null;
+function cabinetHash(type,id=""){return `#cabinet/${type}${id?`/${id}`:""}`}
+async function copyText(text){try{await navigator.clipboard.writeText(text);toast("Lien copié.")}catch{const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();toast("Lien copié.")}}
+function copyCabinetLink(type,id){copyText(`${location.origin}${location.pathname}${cabinetHash(type,id)}`)}
+function setCabinetTab(tab,{updateHash=true}={}){
+  $$(".suggestion-tabs button").forEach(x=>x.classList.toggle("active",x.dataset.suggestionTab===tab));
+  const ideas=tab==="ideas";$("#ideas-panel").classList.toggle("hidden",!ideas);$("#polls-panel").classList.toggle("hidden",ideas);
+  if(updateHash)history.replaceState(null,"",cabinetHash(ideas?"propositions":"sondages"));
+}
+function applyPendingCabinetHighlight(){
+  if(!pendingCabinetTarget)return;const el=$(pendingCabinetTarget.selector);if(!el)return;
+  el.classList.add("deep-link-highlight");setTimeout(()=>el.classList.remove("deep-link-highlight"),4200);setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"center"}),80);pendingCabinetTarget=null;
+}
+async function applyCabinetRoute(){
+  const h=decodeURIComponent(location.hash||"");if(h==="#suggestions"){history.replaceState(null,"",cabinetHash("propositions"));setCabinetTab("ideas",{updateHash:false});return}
+  if(!h.startsWith("#cabinet/"))return;
+  const [,section,id]=h.split("/");$("#suggestions")?.scrollIntoView({behavior:"smooth",block:"start"});
+  if(section==="sondages"||section==="sondage"){setCabinetTab("polls",{updateHash:false});if(id){pendingCabinetTarget={selector:`#poll-${CSS.escape(id)}`};await loadPolls();applyPendingCabinetHighlight()}return}
+  setCabinetTab("ideas",{updateHash:false});
+  if(section==="proposition"&&id&&supabase){const{data}=await supabase.from("suggestions").select("category").eq("id",id).maybeSingle();if(data?.category&&categoryCopy[data.category]){currentCategory=data.category;$$('.category-card').forEach(x=>x.classList.toggle('active',x.dataset.category===currentCategory));const c=categoryCopy[currentCategory];$("#category-label").textContent=c[0];$("#category-title").textContent=c[1];$("#category-description").textContent=c[2]}pendingCabinetTarget={selector:`#suggestion-${CSS.escape(id)}`};await loadSuggestions();applyPendingCabinetHighlight()}
+}
 function renderLeaderboard(rows,traitors=false){
   if(!rows?.length)return `<div class="leaderboard-empty">${traitors?"Aucun traître enregistré pour le moment.":"Le classement apparaîtra après les premières synchronisations."}</div>`;
   return rows.map((r,i)=>`<div class="leaderboard-row"><span class="leaderboard-position">${String(i+1).padStart(2,"0")}</span><div class="leaderboard-user">${r.avatar_url?`<img src="${esc(r.avatar_url)}" alt="">`:""}<div><strong>${esc(r.display_name||r.twitch_login)}</strong><small>${repIcons[r.rank]||""} ${esc(r.rank||"")}</small></div></div><span class="leaderboard-score">${r.score>0?"+":""}${r.score}</span></div>`).join("")
@@ -144,18 +187,22 @@ async function loadCollaborators(){
 
 function initInteractions(){
   $("#login-button").onclick=signIn;$("#suggestion-login-cta").onclick=signIn;$("#reputation-login")?.addEventListener("click",signIn);$("#logout-button").onclick=signOut;$("#user-button").onclick=()=>$("#user-menu").classList.toggle("hidden");
-  $("#library-detail-close")?.addEventListener("click",closeLibraryDetail);
-  $$(".library-filters button").forEach(b=>b.onclick=async()=>{$$(".library-filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");libraryFilter=b.dataset.libraryFilter;closeLibraryDetail();await loadLibrary()});
+  $("#library-detail-close")?.addEventListener("click",closeLibraryDetail);$$('[data-library-close]').forEach(x=>x.addEventListener('click',closeLibraryDetail));
+  $$(".library-filters button").forEach(b=>b.onclick=()=>{$$(".library-filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");libraryFilter=b.dataset.libraryFilter;libraryMobileExpanded=false;renderLibraryGrid()});
+  $("#library-search")?.addEventListener("input",e=>{librarySearch=e.target.value;libraryMobileExpanded=false;renderLibraryGrid()});
+  $("#library-mobile-more")?.addEventListener("click",()=>{libraryMobileExpanded=true;renderLibraryGrid()});
   $$(".category-card").forEach(b=>b.onclick=async()=>{$$(".category-card").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentCategory=b.dataset.category;const c=categoryCopy[currentCategory];$("#category-label").textContent=c[0];$("#category-title").textContent=c[1];$("#category-description").textContent=c[2];await loadSuggestions()});
-  $$(".suggestion-tabs button").forEach(b=>b.onclick=()=>{$$(".suggestion-tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");const ideas=b.dataset.suggestionTab==="ideas";$("#ideas-panel").classList.toggle("hidden",!ideas);$("#polls-panel").classList.toggle("hidden",ideas)});
+  $$(".suggestion-tabs button").forEach(b=>b.onclick=()=>setCabinetTab(b.dataset.suggestionTab));
   $$('[data-sort]').forEach(b=>b.onclick=async()=>{$$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
-  $("#status-filter").onchange=async e=>{currentStatus=e.target.value;await loadSuggestions()};$("#suggestion-title").oninput=renderSimilar;$("#suggestion-form").onsubmit=submitSuggestion
+  $("#status-filter").onchange=async e=>{currentStatus=e.target.value;await loadSuggestions()};$("#suggestion-title").oninput=renderSimilar;$("#suggestion-form").onsubmit=submitSuggestion;
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#library-detail")?.classList.contains("hidden"))closeLibraryDetail()});
+  window.addEventListener("hashchange",()=>applyCabinetRoute());window.addEventListener("resize",()=>{if(matchMedia("(min-width:761px)").matches)libraryMobileExpanded=false;renderLibraryGrid()});
 }
 async function initBackend(){
   if(!BACKEND_CONFIGURED){$("#live-label").textContent="Twitch";$("#live-detail").textContent="Service V4 à connecter";$("#suggestion-login-cta").textContent="Connexion bientôt disponible";$("#suggestion-auth-hint").textContent="La base V4 doit être connectée pour activer les suggestions.";$("#submit-suggestion").disabled=true;return}
   supabase=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
   const{data}=await supabase.auth.getSession();session=data.session;await syncAuth();
   supabase.auth.onAuthStateChange(async(_e,s)=>{session=s;await syncAuth();await Promise.all([loadSuggestions(),loadPolls(),loadReputation()])});
-  await Promise.all([loadLive(),loadLibrary(),loadSuggestions(),loadPolls(),loadReputation(),loadCollaborators()])
+  await Promise.all([loadLive(),loadLibrary(),loadSuggestions(),loadPolls(),loadReputation(),loadCollaborators(),loadClips()]);await applyCabinetRoute()
 }
 initNavigation();initClips();initInteractions();initBackend();

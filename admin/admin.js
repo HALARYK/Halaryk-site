@@ -4,6 +4,7 @@ import { CONFIG, BACKEND_CONFIGURED } from "../config.js";
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const esc = (v = "") => String(v).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[c]));
+const hdCover = (url = "") => String(url || "").replace("/t_cover_big/", "/t_cover_big_2x/");
 
 let supabase = null;
 let session = null;
@@ -16,9 +17,9 @@ let libraryRenderLimit = 60;
 const repRank = s => s < 0 ? "☠️ Traître" : s < 20 ? "👤 Inconnu" : s < 50 ? "🏠 Habitué" : s < 80 ? "🗣️ Conseiller" : s < 100 ? "⚜️ Confident" : "👑 Favori";
 const libraryStatusLabels = {
   playing: "En cours",
-  backlog: "À faire",
+  backlog: "À faire (ancien)",
   completed: "Terminé",
-  wishlist: "Liste de souhaits",
+  wishlist: "À venir",
   paused: "En pause",
   abandoned: "Abandonné"
 };
@@ -133,7 +134,7 @@ async function boot() {
 }
 
 async function refreshAll() {
-  await Promise.all([loadStats(), loadSuggestions(), loadLibrary(), loadPolls(), loadReputation(), loadCollaborators()]);
+  await Promise.all([loadStats(), loadSuggestions(), loadLibrary(), loadPolls(), loadReputation(), loadCollaborators(), loadClipsAdmin()]);
 }
 
 async function loadStats() {
@@ -266,9 +267,9 @@ async function searchGames(sourceSuggestionId = null) {
   igdbResults = (data?.games || []).map(g => ({ ...g, sourceSuggestionId }));
   $("#game-search-results").innerHTML = igdbResults.length ? igdbResults.map((g, i) => `
     <article class="game-search-card">
-      ${g.cover_url ? `<img src="${esc(g.cover_url)}" alt="Jaquette de ${esc(g.name)}">` : ""}
+      ${g.cover_url ? `<img src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}">` : ""}
       <strong>${esc(g.name)}</strong>
-      <small>${g.release_year || "Date inconnue"}</small>
+      <small>${g.developer ? `${esc(g.developer)} · ` : ""}${g.release_year || "Date inconnue"}</small>
       <button data-add-game="${i}">Ajouter</button>
     </article>`).join("") : '<div class="admin-searching">Aucun résultat.</div>';
   $$('[data-add-game]').forEach(b => b.onclick = () => openGameModal(Number(b.dataset.addGame)));
@@ -283,10 +284,13 @@ function openGameModal(i) {
   $("#game-add-status").value = "wishlist";
   $("#game-add-streamed").checked = false;
   $("#game-add-playtime").value = "";
+  $("#game-add-rating").value = "";
+  $("#game-add-developer").value = g.developer || "";
+  $("#game-add-summary").value = g.summary || "";
   $("#game-add-note").value = "";
   const cover = $("#game-add-cover");
   if (g.cover_url) {
-    cover.src = g.cover_url;
+    cover.src = hdCover(g.cover_url);
     cover.alt = `Jaquette de ${g.name}`;
     cover.classList.remove("hidden");
   } else {
@@ -310,8 +314,13 @@ async function confirmAddGame() {
   const streamed = $("#game-add-streamed").checked;
   const hoursRaw = $("#game-add-playtime").value.trim();
   const playtime_hours = hoursRaw === "" ? null : Number(hoursRaw.replace(",", "."));
+  const ratingRaw = $("#game-add-rating").value.trim();
+  const rating = ratingRaw === "" ? null : Number(ratingRaw.replace(",", "."));
+  const developer = $("#game-add-developer").value.trim() || null;
+  const summary = $("#game-add-summary").value.trim() || null;
   const personal_note = $("#game-add-note").value.trim() || null;
   if (playtime_hours !== null && (!Number.isFinite(playtime_hours) || playtime_hours < 0)) return toast("Le temps de jeu doit être un nombre positif.");
+  if (rating !== null && (!Number.isFinite(rating) || rating < 0 || rating > 10)) return toast("La note doit être comprise entre 0 et 10.");
 
   $("#game-add-confirm").disabled = true;
   const { error } = await supabase.from("library_games").insert({
@@ -325,6 +334,9 @@ async function confirmAddGame() {
     status,
     streamed,
     playtime_hours,
+    rating,
+    developer,
+    summary,
     personal_note,
     source_suggestion_id: g.sourceSuggestionId || null
   });
@@ -348,7 +360,10 @@ async function loadLibrary() {
 function renderLibrary() {
   const q = ($("#library-search-input")?.value || "").trim().toLocaleLowerCase("fr");
   const status = $("#library-status-filter")?.value || "all";
-  const filtered = libraryGames.filter(g => (!q || g.name.toLocaleLowerCase("fr").includes(q)) && (status === "all" || g.status === status));
+  const filtered = libraryGames.filter(g => {
+    const hay = `${g.name || ""} ${g.developer || ""} ${g.rating ?? ""}`.toLocaleLowerCase("fr");
+    return (!q || hay.includes(q)) && (status === "all" || g.status === status);
+  });
   const visible = filtered.slice(0, libraryRenderLimit);
   const count = $("#library-result-count");
   if (count) count.textContent = `${filtered.length} jeu${filtered.length > 1 ? "x" : ""} trouvé${filtered.length > 1 ? "s" : ""} sur ${libraryGames.length}`;
@@ -356,7 +371,7 @@ function renderLibrary() {
   $("#admin-library").innerHTML = visible.length ? visible.map(g => `
     <article class="admin-item library-game-item" data-game="${g.id}">
       <div class="library-admin-head">
-        ${g.cover_url ? `<img src="${esc(g.cover_url)}" alt="" class="library-admin-cover">` : ""}
+        ${g.cover_url ? `<img src="${esc(hdCover(g.cover_url))}" alt="" class="library-admin-cover">` : ""}
         <div class="library-admin-title">
           <h2>${esc(g.name)}</h2>
           <small>${esc(libraryStatusLabels[g.status] || "Statut inconnu")}${g.release_date ? ` · Sortie : ${new Intl.DateTimeFormat("fr-FR", { year: "numeric" }).format(new Date(g.release_date))}` : ""}</small>
@@ -368,11 +383,15 @@ function renderLibrary() {
           <select class="game-status">${Object.entries(libraryStatusLabels).map(([st, label]) => `<option value="${st}" ${g.status === st ? "selected" : ""}>${label}</option>`).join("")}</select>
         </label>
         <label>Temps de jeu (heures)<input class="game-playtime" type="number" min="0" step="0.1" value="${g.playtime_hours ?? ""}" placeholder="Ex. : 1714"></label>
-        <label class="check-row"><input class="game-streamed" type="checkbox" ${g.streamed ? "checked" : ""}> Streamé sur la chaîne</label>
+        <label>Note / 10<input class="game-rating-edit" type="number" min="0" max="10" step="0.5" value="${g.rating ?? ""}" placeholder="Ex. : 8.5"></label>
       </div>
-      <label>Note personnelle<textarea class="game-note" rows="3" placeholder="Ton avis, un souvenir, un commentaire…">${esc(g.personal_note || "")}</textarea></label>
+      <label class="check-row"><input class="game-streamed" type="checkbox" ${g.streamed ? "checked" : ""}> Streamé sur la chaîne</label>
+      <label>Studio de développement<input class="game-developer-edit" value="${esc(g.developer || "")}" placeholder="Ex. : LEVEL-5"></label>
+      <label>Résumé du jeu<textarea class="game-summary-edit" rows="4" placeholder="Résumé court destiné au site…">${esc(g.summary || "")}</textarea></label>
+      <label>Commentaire personnel<textarea class="game-note" rows="3" placeholder="Ton avis, un souvenir, un commentaire…">${esc(g.personal_note || "")}</textarea></label>
       <div class="admin-actions">
         <button data-save-game="${g.id}">Enregistrer</button>
+        ${g.igdb_id ? `<button data-refresh-game="${g.id}">Actualiser via IGDB</button>` : ""}
         <button class="danger-action" data-delete-game="${g.id}">Supprimer</button>
       </div>
     </article>`).join("") : '<div class="admin-card library-empty"><p>Aucun jeu ne correspond à cette recherche.</p></div>';
@@ -386,6 +405,7 @@ function renderLibrary() {
   }
 
   $$('[data-save-game]').forEach(b => b.onclick = () => saveGame(b.dataset.saveGame));
+  $$('[data-refresh-game]').forEach(b => b.onclick = () => refreshGameFromIGDB(b.dataset.refreshGame));
   $$('[data-delete-game]').forEach(b => b.onclick = () => deleteGame(b.dataset.deleteGame));
 }
 
@@ -394,16 +414,31 @@ async function saveGame(id) {
   const status = $(".game-status", item).value;
   const streamed = $(".game-streamed", item).checked;
   const personal_note = $(".game-note", item).value.trim() || null;
+  const developer = $(".game-developer-edit", item).value.trim() || null;
+  const summary = $(".game-summary-edit", item).value.trim() || null;
   const hoursRaw = $(".game-playtime", item).value.trim();
+  const ratingRaw = $(".game-rating-edit", item).value.trim();
   const playtime_hours = hoursRaw === "" ? null : Number(hoursRaw.replace(",", "."));
+  const rating = ratingRaw === "" ? null : Number(ratingRaw.replace(",", "."));
   if (playtime_hours !== null && (!Number.isFinite(playtime_hours) || playtime_hours < 0)) return toast("Le temps de jeu doit être un nombre positif.");
-  const { error } = await supabase.from("library_games").update({ status, streamed, personal_note, playtime_hours }).eq("id", id);
+  if (rating !== null && (!Number.isFinite(rating) || rating < 0 || rating > 10)) return toast("La note doit être comprise entre 0 et 10.");
+  const { error } = await supabase.from("library_games").update({ status, streamed, personal_note, playtime_hours, rating, developer, summary }).eq("id", id);
   if (error) toast(error.message);
   else {
     toast("Jeu mis à jour.");
     await loadLibrary();
     await loadStats();
   }
+}
+
+async function refreshGameFromIGDB(id) {
+  const game=libraryGames.find(g=>g.id===id);if(!game?.igdb_id)return toast("Ce jeu n’a pas d’identifiant IGDB.");
+  toast("Actualisation IGDB en cours…");
+  const{data,error}=await supabase.functions.invoke("game-search",{body:{id:game.igdb_id,query:game.name}});if(error)return toast(error.message);
+  const fresh=data?.games?.[0];if(!fresh)return toast("Jeu introuvable sur IGDB.");
+  const patch={developer:fresh.developer||game.developer||null,summary:fresh.summary||game.summary||null,cover_url:fresh.cover_url||game.cover_url||null,release_date:fresh.release_date||game.release_date||null,genres:fresh.genres||game.genres||[],platforms:fresh.platforms||game.platforms||[]};
+  const{error:updateError}=await supabase.from("library_games").update(patch).eq("id",id);if(updateError)return toast(updateError.message);
+  toast("Fiche IGDB actualisée.");await loadLibrary();
 }
 
 async function deleteGame(id) {
@@ -575,6 +610,24 @@ async function deletePoll(id) {
   }
 }
 
+function parseClipSlug(value="") {
+  const v=value.trim();if(!v)return "";
+  try{const u=new URL(v);if(u.hostname.includes("clips.twitch.tv"))return u.pathname.split("/").filter(Boolean)[0]||"";const parts=u.pathname.split("/").filter(Boolean);const i=parts.indexOf("clip");return i>=0?parts[i+1]||"":parts.at(-1)||"";}catch{return v.replace(/^\/+|\/+$/g,"").split(/[?#]/)[0]}
+}
+function renderClipAdmin(rows=[]) {
+  const map=new Map((rows||[]).map(x=>[Number(x.position),x]));
+  $("#admin-clips").innerHTML=[1,2,3,4].map(i=>{const c=map.get(i);return `<label class="clip-admin-slot">Clip ${i}<input data-clip-position="${i}" value="${esc(c?.clip_url||c?.clip_slug||"")}" placeholder="https://clips.twitch.tv/…"><small>${c?.clip_slug?`Slug actuel : ${esc(c.clip_slug)}`:"Emplacement vide"}</small></label>`}).join("");
+}
+async function loadClipsAdmin(){
+  if(!$("#admin-clips"))return;const{data,error}=await supabase.from("site_clips").select("*").order("position",{ascending:true});if(error){renderClipAdmin([]);return}renderClipAdmin(data||[])
+}
+async function saveClipsAdmin(){
+  const inputs=$$('[data-clip-position]');
+  const rows=inputs.map(input=>({position:Number(input.dataset.clipPosition),clip_url:input.value.trim()||null,clip_slug:parseClipSlug(input.value)}));
+  for(const r of rows){if(r.clip_url&&!r.clip_slug)return toast(`Lien invalide pour le clip ${r.position}.`);if(r.clip_slug){const{error}=await supabase.from("site_clips").upsert(r,{onConflict:"position"});if(error)return toast(error.message)}else{const{error}=await supabase.from("site_clips").delete().eq("position",r.position);if(error)return toast(error.message)}}
+  toast("Sélection de clips mise à jour.");await loadClipsAdmin();
+}
+
 async function loadReputation() {
   const { data, error } = await supabase.from("reputation_scores").select("*").order("score", { ascending: false });
   if (error) {
@@ -690,6 +743,7 @@ document.addEventListener("keydown", e => {
   else if (!$("#game-add-modal").classList.contains("hidden")) closeGameModal();
 });
 $("#poll-form").addEventListener("submit", createPoll);
+$("#save-clips")?.addEventListener("click", saveClipsAdmin);
 $("#collaborator-form").addEventListener("submit", createCollaborator);
 
 boot();

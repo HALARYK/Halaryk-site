@@ -245,3 +245,13 @@
   background-image:url("../assets/fleurs-colonne-droite-v412c.png")!important;
 }
 .admin-header,.admin-shell{position:relative;z-index:1}
+
+/* ===== V4.2 : ludothèque enrichie + gestion des clips ===== */
+.clips-admin-grid{display:grid;gap:12px;margin:18px 0}
+.clip-admin-slot{display:grid!important;grid-template-columns:75px minmax(0,1fr);align-items:center;gap:5px 12px;margin:0!important;padding:12px;border:1px solid rgba(183,147,100,.12);background:rgba(5,4,4,.42)}
+.clip-admin-slot input{grid-column:2;margin:0!important}
+.clip-admin-slot small{grid-column:2;color:var(--muted)!important;font-size:9px;text-transform:none;letter-spacing:.02em}
+.library-game-item>label{display:flex;flex-direction:column;gap:6px;margin-top:13px}
+.library-game-item .check-row{display:flex;flex-direction:row;align-items:center}
+.library-game-item .check-row input{width:auto!important}
+@media(max-width:620px){.clip-admin-slot{grid-template-columns:1fr}.clip-admin-slot input,.clip-admin-slot small{grid-column:1}}
