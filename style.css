@@ -542,3 +542,92 @@ main > section{
   .game-content{min-height:175px}.game-summary{-webkit-line-clamp:3}
   .library-detail-facts{grid-template-columns:1fr}
 }
+
+
+/* ========================================================================== */
+/* HALARYK V4.2.1 — correctifs mobile, navigation et densité                 */
+/* ========================================================================== */
+.mobile-nav-heading{display:none}
+.game-card-line{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.game-card-line .game-developer{min-width:0;flex:1}
+.game-score-inline{display:none;flex:0 0 auto;color:#e7c88f;font:600 13px/1 var(--serif);white-space:nowrap}
+.game-rating{z-index:2}
+.game-rating.is-unrated{color:#9c8e80;border-color:rgba(183,147,100,.18);background:rgba(5,4,4,.76)}
+.field-help{display:block;margin-top:6px;color:#81756b;font-size:10px;line-height:1.45}
+
+@media(max-width:880px){
+  .topbar{z-index:1001;height:64px;padding:0 12px;background:rgba(4,3,3,.97);border-bottom-color:rgba(183,147,100,.15)}
+  .brand-mark{width:34px;height:34px}.brand-name{display:inline;font-size:10px;letter-spacing:.14em}
+  .menu-toggle{z-index:1002;width:42px;height:42px}
+  .auth-slot{z-index:1002}
+  .nav{
+    z-index:1000;inset:0;margin:0;padding:84px 16px 26px;
+    display:grid;grid-template-columns:1fr 1fr;align-content:start;align-items:start;gap:8px 10px;
+    overflow-y:auto;overscroll-behavior:contain;background:#050404;
+    border:0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s;
+  }
+  .nav.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  .mobile-nav-heading{display:flex;grid-column:1/-1;align-items:flex-end;justify-content:space-between;padding:0 2px 12px;margin-bottom:2px;border-bottom:1px solid rgba(183,147,100,.14)}
+  .mobile-nav-heading span{color:var(--gold-light);font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase}
+  .mobile-nav-heading small{color:#776b61;font:500 9px var(--sans);letter-spacing:.08em;text-transform:uppercase}
+  .nav>a{min-height:52px;padding:13px 12px;border:1px solid rgba(183,147,100,.12);background:rgba(12,9,9,.72);font:600 18px/1.05 var(--serif);text-transform:none;letter-spacing:0}
+  .nav>a:hover{background:rgba(118,25,25,.11);border-color:rgba(183,147,100,.3)}
+  .nav-dropdown{grid-column:1/-1;width:100%;margin-top:8px}
+  .nav-dropdown-button{pointer-events:none;min-height:auto!important;padding:13px 2px 8px!important;border:0!important;color:var(--gold-light)!important;font:600 10px/1 var(--sans)!important;letter-spacing:.16em!important;text-transform:uppercase!important}
+  .nav-dropdown-button span{display:none}
+  .nav-mega-menu,.nav-dropdown.open .nav-mega-menu{display:grid!important;position:static;width:100%;margin:0;padding:0;grid-template-columns:1fr;gap:8px;border:0;box-shadow:none;background:transparent}
+  .nav-mega-group{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0}
+  .nav-mega-title{grid-column:1/-1;margin:7px 2px 1px;color:#88796b}
+  .nav-mega-menu a{padding:11px 10px;border:1px solid rgba(183,147,100,.10);background:rgba(9,7,7,.64)}
+  .nav-mega-menu a strong{font-size:15px}.nav-mega-menu a small{display:none}
+  .mobile-nav-footer{grid-column:1/-1;display:flex;margin-top:10px;padding-top:15px;border-top:1px solid rgba(183,147,100,.12)}
+  .section{padding:62px 16px;min-height:auto}
+  .section-heading{gap:11px;margin-bottom:21px}.section-number{width:40px;height:40px;font-size:17px}.section-heading h2{font-size:clamp(40px,12vw,58px);line-height:.92}.eyebrow{font-size:8px}
+  .section-note{margin-top:15px;padding:11px 13px;font-size:11px}
+  .hero{padding-top:64px}.hero-content{padding:50px 16px 38px}.hero h1{font-size:clamp(50px,15.5vw,70px)}.hero-description{font-size:16px}.live-card{margin-top:22px;padding:12px 14px}.hero-actions{margin-top:20px}.hero-schedule{margin-top:17px}
+
+  /* Les longues séries de cartes deviennent des rubans horizontaux sur mobile. */
+  .schedule-grid,.rules-grid,.commands-grid,.config-grid,.social-grid,.clips-grid,.collaborators-grid,.reputation-effects,.rank-ladder,.reputation-leaderboards{
+    display:flex!important;overflow-x:auto;overflow-y:hidden;gap:10px;padding:0 1px 10px;scroll-snap-type:x proximity;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:rgba(183,147,100,.28) transparent;
+  }
+  .schedule-grid::-webkit-scrollbar,.rules-grid::-webkit-scrollbar,.commands-grid::-webkit-scrollbar,.config-grid::-webkit-scrollbar,.social-grid::-webkit-scrollbar,.clips-grid::-webkit-scrollbar,.collaborators-grid::-webkit-scrollbar,.reputation-effects::-webkit-scrollbar,.rank-ladder::-webkit-scrollbar,.reputation-leaderboards::-webkit-scrollbar{height:4px}
+  .schedule-grid>*{flex:0 0 min(78vw,330px);min-height:190px;scroll-snap-align:start}
+  .rules-grid>*,.commands-grid>*,.config-grid>*,.social-grid>*{flex:0 0 min(80vw,340px);scroll-snap-align:start}
+  .clips-grid>*{flex:0 0 min(88vw,460px);scroll-snap-align:start}
+  .collaborators-grid>*{flex:0 0 min(82vw,350px);min-height:240px;scroll-snap-align:start}
+  .reputation-effects>*{flex:0 0 min(78vw,330px);padding:16px;scroll-snap-align:start}
+  .rank-ladder>*{flex:0 0 142px;min-height:132px;padding:14px 10px;scroll-snap-align:start}.rank-card p{font-size:9px}.rank-card strong{font-size:17px}
+  .reputation-leaderboards>.leaderboard-panel{flex:0 0 min(88vw,430px);padding:17px;scroll-snap-align:start}.leaderboard-heading h3{font-size:23px}
+  .leaderboard-list .leaderboard-row:nth-child(n+6){display:none}
+  .reputation-intro-grid{gap:10px}.reputation-explainer,.my-reputation-card{padding:18px}.reputation-explainer h3,.my-reputation-card h3{font-size:25px}.reputation-command{margin-top:14px;padding:10px}
+  .my-reputation-score strong{font-size:44px}
+
+  .library-summary{gap:8px;margin-bottom:15px}.library-summary div{padding:13px 8px}.library-summary strong{font-size:27px}.library-summary span{font-size:8px}
+  .library-toolbar{gap:10px;margin-top:13px}.library-search-wrap input{min-height:39px}
+  .library-scroll{margin-top:14px}
+  body::before,body::after{width:54px!important;opacity:.18!important}
+}
+
+@media(max-width:560px){
+  .nav{padding-left:12px;padding-right:12px;gap:7px}.nav>a{font-size:16px;min-height:48px;padding:11px 9px}.nav-mega-group{gap:7px}.nav-mega-menu a{padding:10px 8px}.nav-mega-menu a strong{font-size:14px}
+  .section{padding:54px 12px}.section-heading{margin-bottom:18px}.section-heading h2{font-size:clamp(38px,11.8vw,52px)}
+  .hero-content{padding-left:13px;padding-right:13px}.hero h1{font-size:clamp(48px,15vw,64px)}
+
+  /* Ludothèque : cartes paysage compactes plutôt qu'affiches plein écran. */
+  .library-grid{display:grid!important;grid-template-columns:1fr;gap:9px}
+  .game-card{display:grid;grid-template-columns:104px minmax(0,1fr);height:154px;min-height:154px;overflow:hidden}
+  .game-cover-wrap{height:154px;flex-basis:auto;aspect-ratio:auto}.game-cover{width:104px;height:154px;object-fit:cover}
+  .game-rating{display:none}.game-score-inline{display:inline;color:#e7c88f;font-size:12px}
+  .game-content{min-height:0;padding:11px 11px 10px}.game-content h3{font-size:18px;line-height:1}.game-developer{margin-top:5px;font-size:8px}.game-release{font-size:8px}.game-summary{margin-top:7px;-webkit-line-clamp:2;font-size:11px;line-height:1.3}.game-meta{padding-top:7px}.tag{padding:3px 5px;font-size:7px}
+  .library-mobile-more:not(.hidden){display:flex;margin-top:13px}
+
+  .schedule-grid>*{flex-basis:84vw;min-height:175px;padding:21px}.schedule-day{font-size:24px}
+  .rules-grid>*,.commands-grid>*,.config-grid>*,.social-grid>*{flex-basis:84vw}
+  .clips-grid>*{flex-basis:92vw}
+  .collaborators-grid>*{flex-basis:86vw}
+  .reputation-effects>*{flex-basis:84vw}.reputation-leaderboards>.leaderboard-panel{flex-basis:92vw}
+  .reputation-intro-grid{grid-template-columns:1fr}.reputation-explainer,.my-reputation-card{padding:16px}.reputation-explainer>p:last-of-type,.my-reputation-card p{font-size:11px}
+  .library-modal-card{padding:13px}.library-modal .library-detail-visual{height:min(38vh,330px)}.library-modal .library-detail-content h3{font-size:clamp(34px,11.5vw,48px)}.library-detail-section p{font-size:15px}
+  .clip-thanks{font-size:14px}
+}

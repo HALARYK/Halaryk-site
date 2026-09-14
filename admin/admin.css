@@ -255,3 +255,6 @@
 .library-game-item .check-row{display:flex;flex-direction:row;align-items:center}
 .library-game-item .check-row input{width:auto!important}
 @media(max-width:620px){.clip-admin-slot{grid-template-columns:1fr}.clip-admin-slot input,.clip-admin-slot small{grid-column:1}}
+
+/* V4.2.1 */
+.field-help{display:block;margin-top:6px;color:#81756b;font-size:10px;line-height:1.45}

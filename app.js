@@ -13,12 +13,14 @@ const categoryCopy={
   other:["Autre","Une idée qui ne rentre nulle part ailleurs ?","Utilisez cette catégorie pour les propositions plus difficiles à classer."]
 };
 const statusLabels={new:"Nouvelle",considering:"En réflexion",planned:"Prévue",completed:"Terminée",rejected:"Refusée",archived:"Archivée"};
-const libraryLabels={playing:"En cours",backlog:"À faire",completed:"Terminé",wishlist:"À venir",paused:"En pause",abandoned:"Abandonné"};
+const libraryLabels={playing:"En cours",completed:"Terminé",wishlist:"À venir"};
+const normalizeLibraryStatus=status=>status==="playing"?"playing":status==="completed"?"completed":"wishlist";
 const repIcons={"Traître":"☠️","Inconnu":"👤","Habitué":"🏠","Conseiller":"🗣️","Confident":"⚜️","Favori":"👑"};
 
 function esc(v=""){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
 function fmtDate(v){try{return new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"short",year:"numeric"}).format(new Date(v))}catch{return""}}
 function hdCover(url=""){return String(url||"").replace("/t_cover_big/","/t_cover_big_2x/")}
+function publicSummary(value="",max=420){const text=String(value||"").replace(/\s+/g," ").trim();if(!text||text.length<=max)return text;const cut=text.slice(0,max+1);const sentence=Math.max(cut.lastIndexOf(". "),cut.lastIndexOf("! "),cut.lastIndexOf("? "));if(sentence>max*.55)return cut.slice(0,sentence+1).trim();const space=cut.lastIndexOf(" ");return `${cut.slice(0,space>0?space:max).trim()}…`;}
 function norm(v=""){return v.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim()}
 function similarity(a,b){const A=new Set(norm(a).split(" ").filter(x=>x.length>2)),B=new Set(norm(b).split(" ").filter(x=>x.length>2));if(!A.size||!B.size)return 0;const i=[...A].filter(x=>B.has(x)).length;return i/new Set([...A,...B]).size}
 function repClass(rank=""){return "rep-"+norm(rank).replaceAll(" ","-")}
@@ -35,12 +37,14 @@ function profile(user){
 function toast(message){const e=document.createElement("div");e.textContent=message;Object.assign(e.style,{position:"fixed",right:"20px",bottom:"20px",zIndex:999,padding:"12px 16px",background:"#0b0909",border:"1px solid rgba(183,147,100,.35)",color:"#eadfce",boxShadow:"0 18px 45px rgba(0,0,0,.42)",fontSize:"12px"});document.body.appendChild(e);setTimeout(()=>e.remove(),3200)}
 
 function initNavigation(){
-  const menu=$(".menu-toggle"),nav=$(".nav"),drop=$(".nav-dropdown"),dropBtn=$(".nav-dropdown-button");
-  const closeNav=()=>{nav?.classList.remove("open");document.body.classList.remove("menu-open");menu?.setAttribute("aria-expanded","false")};
-  menu?.addEventListener("click",()=>{const open=nav.classList.toggle("open");document.body.classList.toggle("menu-open",open);menu.setAttribute("aria-expanded",String(open))});
-  dropBtn?.addEventListener("click",e=>{e.stopPropagation();const open=drop.classList.toggle("open");dropBtn.setAttribute("aria-expanded",String(open))});
-  document.addEventListener("click",e=>{if(drop&&!drop.contains(e.target)){drop.classList.remove("open");dropBtn?.setAttribute("aria-expanded","false")}});
-  $$(".nav a").forEach(a=>a.addEventListener("click",()=>{closeNav();drop?.classList.remove("open")}));
+  const menu=$(".menu-toggle"),nav=$(".nav"),drop=$(".nav-dropdown"),dropBtn=$(".nav-dropdown-button"),menuText=$(".menu-toggle .sr-only");
+  const isMobile=()=>innerWidth<=880;
+  const closeNav=()=>{nav?.classList.remove("open");document.body.classList.remove("menu-open");menu?.setAttribute("aria-expanded","false");if(menuText)menuText.textContent="Ouvrir le menu";if(!isMobile()){drop?.classList.remove("open");dropBtn?.setAttribute("aria-expanded","false")}};
+  menu?.addEventListener("click",()=>{const open=nav.classList.toggle("open");document.body.classList.toggle("menu-open",open);menu.setAttribute("aria-expanded",String(open));if(menuText)menuText.textContent=open?"Fermer le menu":"Ouvrir le menu";if(open&&isMobile()){drop?.classList.add("open");dropBtn?.setAttribute("aria-expanded","true")}});
+  dropBtn?.addEventListener("click",e=>{if(isMobile())return;e.stopPropagation();const open=drop.classList.toggle("open");dropBtn.setAttribute("aria-expanded",String(open))});
+  document.addEventListener("click",e=>{if(!isMobile()&&drop&&!drop.contains(e.target)){drop.classList.remove("open");dropBtn?.setAttribute("aria-expanded","false")}});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
+  $$(".nav a").forEach(a=>a.addEventListener("click",()=>closeNav()));
   window.addEventListener("resize",()=>{if(innerWidth>880)closeNav()});
   const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}}),{threshold:.1});
   $$(".reveal").forEach(e=>ro.observe(e));
@@ -76,12 +80,12 @@ async function loadLibrary(){
   $("#library-total").textContent=libraryGames.length;
   $("#library-completed").textContent=libraryGames.filter(g=>g.status==="completed").length;
   $("#library-playing").textContent=libraryGames.filter(g=>g.status==="playing").length;
-  $("#library-wishlist").textContent=libraryGames.filter(g=>g.status==="wishlist").length;
+  $("#library-wishlist").textContent=libraryGames.filter(g=>normalizeLibraryStatus(g.status)==="wishlist").length;
   renderLibraryGrid();
 }
 function libraryFilteredGames(){
   const q=norm(librarySearch);
-  return libraryGames.filter(g=>(libraryFilter==="all"||g.status===libraryFilter)&&(!q||norm(`${g.name||""} ${g.developer||""} ${g.rating??""}`).includes(q)));
+  return libraryGames.filter(g=>(libraryFilter==="all"||normalizeLibraryStatus(g.status)===libraryFilter)&&(!q||norm(`${g.name||""} ${g.developer||""} ${g.rating??""}`).includes(q)));
 }
 function renderLibraryGrid(){
   let list=libraryFilteredGames(),grid=$("#library-grid"),more=$("#library-mobile-more");
@@ -91,9 +95,12 @@ function renderLibraryGrid(){
   more?.classList.toggle("hidden",!mobile||total<=4||libraryMobileExpanded);
   if(!list.length){grid.innerHTML=`<div class="empty-state"><strong>Aucun jeu dans cette sélection</strong><p>Essaie une autre catégorie ou une autre recherche.</p></div>`;return}
   grid.innerHTML=list.map(g=>{
-    const rating=g.rating!=null?`<span class="game-rating">★ ${Number(g.rating).toLocaleString("fr-FR",{maximumFractionDigits:1})}/10</span>`:"";
-    const summary=g.summary?`<p class="game-summary">${esc(g.summary)}</p>`:`<p class="game-summary game-summary-muted">Résumé à venir.</p>`;
-    return `<article class="game-card" data-public-game="${g.id}" tabindex="0" role="button" aria-label="Ouvrir la fiche de ${esc(g.name)}"><div class="game-cover-wrap"><img class="game-cover" src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}" loading="lazy">${rating}</div><div class="game-content"><h3>${esc(g.name)}</h3><p class="game-developer">${esc(g.developer||"Studio non renseigné")}</p>${g.release_date?`<p class="game-release">${new Intl.DateTimeFormat("fr-FR",{year:"numeric"}).format(new Date(g.release_date))}</p>`:""}${summary}<div class="game-meta"><span class="tag">${esc(libraryLabels[g.status]||"Statut inconnu")}</span>${g.streamed?`<span class="tag tag-streamed">🎥 Streamé</span>`:""}</div></div></article>`
+    const ratingText=g.rating!=null?`${Number(g.rating).toLocaleString("fr-FR",{maximumFractionDigits:1})}/10`:"Non noté";
+    const rating=`<span class="game-rating ${g.rating==null?"is-unrated":""}">★ ${ratingText}</span>`;
+    const short=publicSummary(g.summary,190);
+    const summary=short?`<p class="game-summary">${esc(short)}</p>`:`<p class="game-summary game-summary-muted">Résumé à venir.</p>`;
+    const normalizedStatus=normalizeLibraryStatus(g.status);
+    return `<article class="game-card" data-public-game="${g.id}" tabindex="0" role="button" aria-label="Ouvrir la fiche de ${esc(g.name)}"><div class="game-cover-wrap"><img class="game-cover" src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}" loading="lazy">${rating}</div><div class="game-content"><h3>${esc(g.name)}</h3><div class="game-card-line"><p class="game-developer">${esc(g.developer||"Studio non renseigné")}</p><strong class="game-score-inline">${esc(ratingText)}</strong></div>${g.release_date?`<p class="game-release">${new Intl.DateTimeFormat("fr-FR",{year:"numeric"}).format(new Date(g.release_date))}</p>`:""}${summary}<div class="game-meta"><span class="tag">${esc(libraryLabels[normalizedStatus])}</span>${g.streamed?`<span class="tag tag-streamed">🎥 Streamé</span>`:""}</div></div></article>`
   }).join("");
   $$('[data-public-game]').forEach(card=>{card.onclick=()=>openLibraryDetail(card.dataset.publicGame);card.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLibraryDetail(card.dataset.publicGame)}}});
 }
@@ -105,10 +112,10 @@ function openLibraryDetail(id){
   $("#library-detail-rating").textContent=g.rating!=null?`${Number(g.rating).toLocaleString("fr-FR",{maximumFractionDigits:1})} / 10` : "Non noté";
   $("#library-detail-developer").textContent=g.developer||"Studio de développement non renseigné";
   $("#library-detail-release").textContent=g.release_date?`Sortie : ${new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"long",year:"numeric"}).format(new Date(g.release_date))}`:"Date de sortie inconnue";
-  $("#library-detail-status").textContent=libraryLabels[g.status]||"Statut inconnu";
+  $("#library-detail-status").textContent=libraryLabels[normalizeLibraryStatus(g.status)];
   $("#library-detail-playtime").textContent=g.playtime_hours!=null?`${new Intl.NumberFormat("fr-FR",{maximumFractionDigits:1}).format(Number(g.playtime_hours))} h`:"Non renseigné";
   $("#library-detail-streamed").textContent=g.streamed?"Oui":"Non";
-  $("#library-detail-summary").textContent=g.summary||"Aucun résumé disponible pour ce jeu pour le moment.";
+  $("#library-detail-summary").textContent=publicSummary(g.summary,520)||"Aucun résumé public n’a encore été rédigé pour ce jeu.";
   $("#library-detail-note").textContent=g.personal_note||"Aucun commentaire personnel pour ce jeu pour le moment.";
   panel.classList.remove("hidden");document.body.classList.add("modal-open");$(".library-modal-card")?.focus?.();
 }

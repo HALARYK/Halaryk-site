@@ -17,12 +17,10 @@ let libraryRenderLimit = 60;
 const repRank = s => s < 0 ? "☠️ Traître" : s < 20 ? "👤 Inconnu" : s < 50 ? "🏠 Habitué" : s < 80 ? "🗣️ Conseiller" : s < 100 ? "⚜️ Confident" : "👑 Favori";
 const libraryStatusLabels = {
   playing: "En cours",
-  backlog: "À faire (ancien)",
   completed: "Terminé",
-  wishlist: "À venir",
-  paused: "En pause",
-  abandoned: "Abandonné"
+  wishlist: "À venir"
 };
+const normalizeLibraryStatus = status => status === "playing" ? "playing" : status === "completed" ? "completed" : "wishlist";
 const suggestionStatusLabels = {
   new: "Nouvelle",
   considering: "En réflexion",
@@ -286,7 +284,7 @@ function openGameModal(i) {
   $("#game-add-playtime").value = "";
   $("#game-add-rating").value = "";
   $("#game-add-developer").value = g.developer || "";
-  $("#game-add-summary").value = g.summary || "";
+  $("#game-add-summary").value = "";
   $("#game-add-note").value = "";
   const cover = $("#game-add-cover");
   if (g.cover_url) {
@@ -317,7 +315,7 @@ async function confirmAddGame() {
   const ratingRaw = $("#game-add-rating").value.trim();
   const rating = ratingRaw === "" ? null : Number(ratingRaw.replace(",", "."));
   const developer = $("#game-add-developer").value.trim() || null;
-  const summary = $("#game-add-summary").value.trim() || null;
+  const summary = $("#game-add-summary").value.trim().slice(0,520) || null;
   const personal_note = $("#game-add-note").value.trim() || null;
   if (playtime_hours !== null && (!Number.isFinite(playtime_hours) || playtime_hours < 0)) return toast("Le temps de jeu doit être un nombre positif.");
   if (rating !== null && (!Number.isFinite(rating) || rating < 0 || rating > 10)) return toast("La note doit être comprise entre 0 et 10.");
@@ -362,7 +360,7 @@ function renderLibrary() {
   const status = $("#library-status-filter")?.value || "all";
   const filtered = libraryGames.filter(g => {
     const hay = `${g.name || ""} ${g.developer || ""} ${g.rating ?? ""}`.toLocaleLowerCase("fr");
-    return (!q || hay.includes(q)) && (status === "all" || g.status === status);
+    return (!q || hay.includes(q)) && (status === "all" || normalizeLibraryStatus(g.status) === status);
   });
   const visible = filtered.slice(0, libraryRenderLimit);
   const count = $("#library-result-count");
@@ -374,20 +372,20 @@ function renderLibrary() {
         ${g.cover_url ? `<img src="${esc(hdCover(g.cover_url))}" alt="" class="library-admin-cover">` : ""}
         <div class="library-admin-title">
           <h2>${esc(g.name)}</h2>
-          <small>${esc(libraryStatusLabels[g.status] || "Statut inconnu")}${g.release_date ? ` · Sortie : ${new Intl.DateTimeFormat("fr-FR", { year: "numeric" }).format(new Date(g.release_date))}` : ""}</small>
+          <small>${esc(libraryStatusLabels[normalizeLibraryStatus(g.status)])}${g.release_date ? ` · Sortie : ${new Intl.DateTimeFormat("fr-FR", { year: "numeric" }).format(new Date(g.release_date))}` : ""}</small>
         </div>
         <small>${g.streamed ? "🎥 Streamé" : ""}</small>
       </div>
       <div class="admin-three-cols">
         <label>Statut
-          <select class="game-status">${Object.entries(libraryStatusLabels).map(([st, label]) => `<option value="${st}" ${g.status === st ? "selected" : ""}>${label}</option>`).join("")}</select>
+          <select class="game-status">${Object.entries(libraryStatusLabels).map(([st, label]) => `<option value="${st}" ${normalizeLibraryStatus(g.status) === st ? "selected" : ""}>${label}</option>`).join("")}</select>
         </label>
         <label>Temps de jeu (heures)<input class="game-playtime" type="number" min="0" step="0.1" value="${g.playtime_hours ?? ""}" placeholder="Ex. : 1714"></label>
         <label>Note / 10<input class="game-rating-edit" type="number" min="0" max="10" step="0.5" value="${g.rating ?? ""}" placeholder="Ex. : 8.5"></label>
       </div>
       <label class="check-row"><input class="game-streamed" type="checkbox" ${g.streamed ? "checked" : ""}> Streamé sur la chaîne</label>
       <label>Studio de développement<input class="game-developer-edit" value="${esc(g.developer || "")}" placeholder="Ex. : LEVEL-5"></label>
-      <label>Résumé du jeu<textarea class="game-summary-edit" rows="4" placeholder="Résumé court destiné au site…">${esc(g.summary || "")}</textarea></label>
+      <label>Résumé public <small>2 à 4 lignes, idéalement en français</small><textarea class="game-summary-edit" rows="4" maxlength="520" placeholder="Résumé court type fiche Steam…">${esc(g.summary || "")}</textarea></label>
       <label>Commentaire personnel<textarea class="game-note" rows="3" placeholder="Ton avis, un souvenir, un commentaire…">${esc(g.personal_note || "")}</textarea></label>
       <div class="admin-actions">
         <button data-save-game="${g.id}">Enregistrer</button>
@@ -415,7 +413,7 @@ async function saveGame(id) {
   const streamed = $(".game-streamed", item).checked;
   const personal_note = $(".game-note", item).value.trim() || null;
   const developer = $(".game-developer-edit", item).value.trim() || null;
-  const summary = $(".game-summary-edit", item).value.trim() || null;
+  const summary = $(".game-summary-edit", item).value.trim().slice(0,520) || null;
   const hoursRaw = $(".game-playtime", item).value.trim();
   const ratingRaw = $(".game-rating-edit", item).value.trim();
   const playtime_hours = hoursRaw === "" ? null : Number(hoursRaw.replace(",", "."));
@@ -436,9 +434,9 @@ async function refreshGameFromIGDB(id) {
   toast("Actualisation IGDB en cours…");
   const{data,error}=await supabase.functions.invoke("game-search",{body:{id:game.igdb_id,query:game.name}});if(error)return toast(error.message);
   const fresh=data?.games?.[0];if(!fresh)return toast("Jeu introuvable sur IGDB.");
-  const patch={developer:fresh.developer||game.developer||null,summary:fresh.summary||game.summary||null,cover_url:fresh.cover_url||game.cover_url||null,release_date:fresh.release_date||game.release_date||null,genres:fresh.genres||game.genres||[],platforms:fresh.platforms||game.platforms||[]};
+  const patch={developer:fresh.developer||game.developer||null,cover_url:fresh.cover_url||game.cover_url||null,release_date:fresh.release_date||game.release_date||null,genres:fresh.genres||game.genres||[],platforms:fresh.platforms||game.platforms||[]};
   const{error:updateError}=await supabase.from("library_games").update(patch).eq("id",id);if(updateError)return toast(updateError.message);
-  toast("Fiche IGDB actualisée.");await loadLibrary();
+  toast("IGDB actualisé : jaquette, studio et date mis à jour. Ton résumé public a été conservé.");await loadLibrary();
 }
 
 async function deleteGame(id) {

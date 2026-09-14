@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>HALARYK — Administration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="admin.css">
 </head>
 <body class="admin-body">
-<header class="admin-header"><a href="../" class="brand"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V4.2</span><button id="admin-login" class="button button-primary">Connexion Twitch</button><button id="admin-logout" class="button button-ghost hidden">Déconnexion</button></div></header>
+<header class="admin-header"><a href="../" class="brand"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V4.2.1</span><button id="admin-login" class="button button-primary">Connexion Twitch</button><button id="admin-logout" class="button button-ghost hidden">Déconnexion</button></div></header>
 <main class="admin-shell">
   <section id="admin-gate" class="admin-gate"><p class="eyebrow">Accès privé</p><h1>Administration HALARYK</h1><p id="admin-gate-message">Connexion Twitch nécessaire.</p></section>
   <div id="admin-app" class="hidden">
@@ -116,7 +116,7 @@
     </div>
     <label class="check-row game-modal-streamed"><input id="game-add-streamed" type="checkbox"> Déjà streamé sur la chaîne</label>
     <label>Studio de développement<input id="game-add-developer" placeholder="Ex. : LEVEL-5"></label>
-    <label>Résumé du jeu<textarea id="game-add-summary" rows="5" placeholder="Résumé court destiné aux visiteurs…"></textarea></label>
+    <label>Résumé public <small>2 à 4 lignes, idéalement en français</small><textarea id="game-add-summary" rows="4" maxlength="520" placeholder="Résumé court type fiche Steam, rédigé pour les visiteurs…"></textarea><small class="field-help">IGDB ne remplit plus ce texte automatiquement : la jaquette, la date et le studio restent actualisables sans écraser ton résumé.</small></label>
     <label>Commentaire personnel<textarea id="game-add-note" rows="4" placeholder="Ton avis, un souvenir, un commentaire…"></textarea></label>
     <div class="admin-actions modal-actions">
       <button id="game-add-confirm" class="button button-primary" type="button">Ajouter le jeu</button>
