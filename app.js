@@ -68,10 +68,13 @@ async function syncAuth(){
   const login=$("#login-button"),chip=$("#user-button"),menu=$("#user-menu"),admin=$("#admin-link"),cta=$("#suggestion-login-cta"),hint=$("#suggestion-auth-hint");
   if(!session?.user){login.classList.remove("hidden");chip.classList.add("hidden");menu.classList.add("hidden");cta.classList.remove("hidden");hint.textContent="Connexion Twitch nécessaire pour proposer une idée.";return}
   const p=profile(session.user);login.classList.add("hidden");chip.classList.remove("hidden");$("#user-name").textContent=p.displayName;$("#user-avatar").src=p.avatar||"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23130f0f'/%3E%3C/svg%3E";cta.classList.add("hidden");hint.textContent=`Connecté en tant que ${p.displayName}.`;
-  await supabase.from("profiles").upsert({id:session.user.id,twitch_user_id:p.twitchUserId,twitch_login:p.twitchLogin||null,display_name:p.displayName,avatar_url:p.avatar||null});
+  // V4.2.2 : le profil public est resynchronisé côté serveur depuis l’identité Twitch vérifiée.
+  // Le navigateur ne peut plus choisir lui-même son ID/login/avatar Twitch.
+  const{error:profileSyncError}=await supabase.rpc("sync_my_twitch_profile");
+  if(profileSyncError)console.warn("Synchronisation du profil Twitch impossible",profileSyncError.message);
   const{data:isAdmin}=await supabase.rpc("current_is_admin");admin.classList.toggle("hidden",!isAdmin)
 }
-async function loadLive(){try{const{data,error}=await supabase.functions.invoke("live-status",{body:{login:CONFIG.TWITCH_CHANNEL_LOGIN}});if(error)throw error;const card=$("#live-card");if(data?.is_live){card.classList.add("is-live");$("#live-label").textContent="EN DIRECT";$("#live-detail").textContent=`${data.game_name||"Twitch"} — ${data.title||"Live en cours"}`}else{$("#live-label").textContent="Hors ligne";$("#live-detail").textContent="Retrouve les prochains lives sur Twitch."}}catch{$("#live-label").textContent="Twitch";$("#live-detail").textContent="Voir la chaîne"}}
+async function loadLive(){try{const{data,error}=await supabase.functions.invoke("live-status");if(error)throw error;const card=$("#live-card");if(data?.is_live){card.classList.add("is-live");$("#live-label").textContent="EN DIRECT";$("#live-detail").textContent=`${data.game_name||"Twitch"} — ${data.title||"Live en cours"}`}else{$("#live-label").textContent="Hors ligne";$("#live-detail").textContent="Retrouve les prochains lives sur Twitch."}}catch{$("#live-label").textContent="Twitch";$("#live-detail").textContent="Voir la chaîne"}}
 async function loadLibrary(){
   if(!supabase)return;
   const{data,error}=await supabase.from("library_games").select("*").order("updated_at",{ascending:false});
