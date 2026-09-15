@@ -1,4 +1,4 @@
-# HALARYK — Site V4.2
+# HALARYK — Site V4.2.1
 
 > Mise à jour responsive, Cabinet des idées, ludothèque enrichie et gestion des clips. Voir `SETUP_V4_2.md`.
 
