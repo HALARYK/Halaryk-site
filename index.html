@@ -1,327 +1,154 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#080707">
-  <meta name="description" content="Site officiel de HALARYK, streamer Twitch français : planning, clips, ludothèque, suggestions, réputation, collaborateurs et communauté.">
-  <meta property="og:title" content="HALARYK — Streamer Twitch FR">
-  <meta property="og:description" content="Stratégie, horreur, gestion, multijoueur et découvertes.">
-  <title>HALARYK — Streamer Twitch FR</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>HALARYK — Administration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="admin.css">
 </head>
-<body>
-<header class="topbar">
-  <a class="brand" href="#accueil"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
-  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
-  <nav id="main-nav" class="nav">
-    <div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div>
-    <a href="#planning">Planning</a>
-    <a href="#ludotheque">Ludothèque</a>
-    <a href="#clips">Clips</a>
-    <a href="#cabinet/propositions">Cabinet des idées</a>
-    <a href="#reputation">Réputation</a>
-    <div class="nav-dropdown">
-      <button class="nav-dropdown-button" type="button" aria-expanded="false">Infos <span>⌄</span></button>
-      <div class="nav-dropdown-menu nav-mega-menu">
-        <div class="nav-mega-group">
-          <span class="nav-mega-title">La chaîne</span>
-          <a href="#reglement"><strong>Règlement</strong><small>Les règles de la communauté</small></a>
-          <a href="#commandes"><strong>Commandes</strong><small>Les commandes disponibles sur Twitch</small></a>
-          <a href="#config"><strong>Config</strong><small>PC, stream et matériel</small></a>
-          <a href="#faq"><strong>FAQ</strong><small>Les réponses aux questions fréquentes</small></a>
+<body class="admin-body">
+<header class="admin-header"><a href="../" class="brand"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V4.2.1</span><button id="admin-login" class="button button-primary">Connexion Twitch</button><button id="admin-logout" class="button button-ghost hidden">Déconnexion</button></div></header>
+<main class="admin-shell">
+  <section id="admin-gate" class="admin-gate"><p class="eyebrow">Accès privé</p><h1>Administration HALARYK</h1><p id="admin-gate-message">Connexion Twitch nécessaire.</p></section>
+  <div id="admin-app" class="hidden">
+    <aside class="admin-sidebar">
+      <button class="active" data-admin-tab="dashboard">Tableau de bord</button>
+      <button data-admin-tab="suggestions">Suggestions</button>
+      <button data-admin-tab="library">Ludothèque</button>
+      <button data-admin-tab="polls">Sondages</button>
+      <button data-admin-tab="clips">Clips Twitch</button>
+      <button data-admin-tab="reputation">Réputation</button>
+      <button data-admin-tab="collaborators">Collaborateurs</button>
+    </aside>
+    <div class="admin-content">
+      <section data-admin-panel="dashboard">
+        <p class="eyebrow">Vue d’ensemble</p><h1>Tableau de bord</h1>
+        <div class="admin-stats">
+          <article><strong id="stat-new-suggestions">—</strong><span>Nouvelles suggestions</span></article>
+          <article><strong id="stat-considering">—</strong><span>En réflexion</span></article>
+          <article><strong id="stat-library">—</strong><span>Jeux en ludothèque</span></article>
+          <article><strong id="stat-polls">—</strong><span>Sondages actifs</span></article>
+          <article><strong id="stat-reputation">—</strong><span>Profils réputation</span></article>
+          <article><strong id="stat-collaborators">—</strong><span>Collaborateurs actifs</span></article>
         </div>
-        <div class="nav-mega-group">
-          <span class="nav-mega-title">L’écosystème</span>
-          <a href="#partenaires"><strong>Partenaires</strong><small>Les partenaires de la chaîne</small></a>
-          <a href="#collaborateurs"><strong>Collaborateurs</strong><small>Les chaînes régulièrement présentes</small></a>
-          <a href="#reseaux"><strong>Réseaux</strong><small>Retrouver HALARYK ailleurs</small></a>
+      </section>
+
+      <section data-admin-panel="suggestions" class="hidden"><p class="eyebrow">Modération communautaire</p><h1>Suggestions</h1><div id="admin-suggestions" class="admin-list"></div></section>
+
+      <section data-admin-panel="library" class="hidden">
+        <p class="eyebrow">Collection</p><h1>Ludothèque</h1>
+        <div class="admin-card">
+          <h2>Ajouter un jeu</h2>
+          <div class="admin-inline game-search-controls">
+            <select id="game-search-mode" aria-label="Type de recherche">
+              <option value="title">Nom du jeu</option>
+              <option value="developer">Studio de développement</option>
+            </select>
+            <input id="game-search-input" placeholder="Ex. Professor Layton…" autocomplete="off">
+            <button id="game-search-button" class="button button-primary">Rechercher</button>
+          </div>
+          <div id="game-search-meta" class="game-search-meta" aria-live="polite"></div>
+          <div id="game-search-results" class="game-search-results"></div>
+          <div id="game-search-more" class="admin-search-more"></div>
         </div>
-      </div>
-    </div>
-    <div class="mobile-nav-footer">
-      <a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Twitch ↗</a>
-      <a href="#reseaux">Discord & réseaux</a>
-    </div>
-  </nav>
-  <div class="auth-slot">
-    <button id="login-button" class="auth-button" type="button">Connexion Twitch</button>
-    <button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button>
-    <div id="user-menu" class="user-menu hidden">
-      <a id="admin-link" class="hidden" href="admin/">Administration</a>
-      <button id="logout-button" type="button">Déconnexion</button>
-    </div>
-  </div>
-</header>
-
-<main>
-<section id="accueil" class="hero">
-  <div class="hero-background" aria-hidden="true"></div><div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-content reveal">
-    <p class="hero-kicker">STREAMER TWITCH FRANÇAIS</p>
-    <h1>HALARYK</h1>
-    <p class="hero-genres">STRATÉGIE · HORREUR · GESTION · MULTIJOUEUR · DÉCOUVERTES</p>
-    <p class="hero-description">Je streame principalement de la stratégie, de la gestion, de l’horreur et du multijoueur, dans une ambiance posée et sans prise de tête.</p>
-    <div id="live-card" class="live-card"><span id="live-dot" class="live-dot"></span><div><strong id="live-label">Statut Twitch</strong><span id="live-detail">Chargement du statut…</span></div></div>
-    <div class="hero-actions">
-      <a class="button button-primary" href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Regarder sur Twitch ↗</a>
-      <a class="button button-ghost" href="#planning">Explorer le site</a>
-    </div>
-    <p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
-  </div>
-</section>
-
-<section id="planning" class="section decor-right">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">I</span><div><p class="eyebrow">Prochaines transmissions</p><h2>Planning</h2></div></div>
-    <div class="schedule-grid">
-      <article class="schedule-card"><span class="schedule-day">Lundi</span><strong>Stream de semaine</strong><p>Après-midi ou soirée selon mes horaires professionnels.</p><span class="schedule-time">Horaire variable</span></article>
-      <article class="schedule-card"><span class="schedule-day">Mercredi</span><strong>Stream de semaine</strong><p>Après-midi ou soirée selon mes horaires professionnels.</p><span class="schedule-time">Horaire variable</span></article>
-      <article class="schedule-card featured"><span class="schedule-day">Dimanche</span><strong>Soirée multijoueur</strong><p>Session régulière avec d’autres streamers.</p><span class="schedule-time">20h30</span></article>
-    </div>
-    <p class="section-note">✦ Les horaires précis du lundi et du mercredi sont annoncés sur Discord et Instagram.</p>
-  </div>
-</section>
-
-<section id="ludotheque" class="section decor-left">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">II</span><div><p class="eyebrow">Collection & historique</p><h2>Ludothèque</h2></div></div>
-    <div class="library-summary">
-      <div><strong id="library-total">—</strong><span>Jeux</span></div>
-      <div><strong id="library-completed">—</strong><span>Terminés</span></div>
-      <div><strong id="library-playing">—</strong><span>En cours</span></div>
-      <div><strong id="library-wishlist">—</strong><span>À venir</span></div>
-    </div>
-    <div class="library-toolbar">
-      <div class="segmented-control library-filters" aria-label="Filtrer la ludothèque">
-        <button class="active" data-library-filter="playing">En cours</button>
-        <button data-library-filter="completed">Terminés</button>
-        <button data-library-filter="wishlist">À venir</button>
-        <button data-library-filter="all">Tous</button>
-      </div>
-      <label class="library-search-wrap"><span class="sr-only">Rechercher dans la ludothèque</span><input id="library-search" type="search" placeholder="Rechercher un jeu, un studio ou une note…" autocomplete="off"><span aria-hidden="true">⌕</span></label>
-    </div>
-    <p class="library-click-hint">Clique sur un jeu pour ouvrir sa fiche complète.</p>
-    <div class="library-scroll" id="library-scroll">
-      <div id="library-grid" class="library-grid"><div class="empty-state"><strong>Ludothèque en cours d’activation</strong><p>Les jeux apparaîtront ici dès que la base V4 sera connectée.</p></div></div>
-    </div>
-    <button id="library-mobile-more" class="button button-ghost library-mobile-more hidden" type="button">Voir toute la ludothèque</button>
-  </div>
-
-  <div id="library-detail" class="library-modal hidden" role="dialog" aria-modal="true" aria-labelledby="library-detail-title">
-    <div class="library-modal-backdrop" data-library-close></div>
-    <article class="library-modal-card">
-      <button id="library-detail-close" class="library-detail-close" type="button" aria-label="Fermer la fiche du jeu">×</button>
-      <div class="library-detail-visual"><img id="library-detail-cover" alt=""></div>
-      <div class="library-detail-content">
-        <p class="eyebrow">Fiche du jeu</p>
-        <div class="library-detail-title-row"><h3 id="library-detail-title">Jeu</h3><strong id="library-detail-rating" class="library-rating-large">— / 10</strong></div>
-        <p id="library-detail-developer" class="library-detail-developer"></p>
-        <p id="library-detail-release" class="library-detail-release"></p>
-        <div class="library-detail-facts">
-          <div><span>Statut</span><strong id="library-detail-status">—</strong></div>
-          <div><span>Temps de jeu</span><strong id="library-detail-playtime">—</strong></div>
-          <div><span>Streamé</span><strong id="library-detail-streamed">—</strong></div>
+        <div class="admin-card library-manager">
+          <div class="library-manager-head">
+            <div><h2>Jeux déjà ajoutés</h2><p id="library-result-count" class="library-result-count">—</p></div>
+            <div class="library-manager-filters">
+              <input id="library-search-input" type="search" placeholder="Rechercher dans ma ludothèque…" autocomplete="off">
+              <select id="library-status-filter" aria-label="Filtrer par statut">
+                <option value="all">Tous les statuts</option>
+                <option value="playing">En cours</option>
+                <option value="completed">Terminé</option>
+                <option value="wishlist">À venir</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="library-detail-section"><span>Résumé</span><p id="library-detail-summary"></p></div>
-        <div class="library-detail-section library-detail-note"><span>Commentaire de HALARYK</span><p id="library-detail-note"></p></div>
-      </div>
-    </article>
-  </div>
-</section>
+        <div id="admin-library" class="admin-list"></div>
+      </section>
 
-<section id="clips" class="section decor-right">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">III</span><div><p class="eyebrow">Archives sélectionnées</p><h2>Clips</h2></div></div>
-    <div class="clips-heading-row"><p>Quelques moments choisis de la chaîne, lisibles directement ici.</p><a class="button button-primary" href="https://www.twitch.tv/halaryk/clips?filter=clips&range=all" target="_blank" rel="noopener noreferrer">Tous les clips Twitch ↗</a></div>
-    <div id="clips-grid" class="clips-grid"></div>
-    <div class="clip-thanks"><span>✦</span><p id="clip-thanks-text">Merci aux clippeurs de la chaîne qui immortalisent les meilleurs — et parfois les pires — moments.</p><span>✦</span></div>
-  </div>
-</section>
+      <section data-admin-panel="polls" class="hidden">
+        <p class="eyebrow">Votes longue durée</p><h1>Sondages</h1>
+        <form id="poll-form" class="admin-card"><h2>Nouveau sondage</h2><label>Titre<input id="poll-title" required></label><label>Description<textarea id="poll-description" rows="3"></textarea></label><label>Options <small>Une par ligne</small><textarea id="poll-options" rows="6" required></textarea></label><div class="admin-two-cols"><label>Résultats<select id="poll-visibility"><option value="always">Toujours visibles</option><option value="after_vote">Après avoir voté</option><option value="after_close">Après la fermeture</option></select></label><label>Fin du sondage<input id="poll-end" type="datetime-local"></label></div><label class="check-row"><input id="poll-multiple" type="checkbox"> Autoriser plusieurs réponses</label><button class="button button-primary" type="submit">Créer le sondage</button></form>
+        <div class="admin-section-title"><h2>Sondages existants</h2><p>Consulte les résultats, corrige les textes, les dates ou la visibilité, puis enregistre les modifications.</p></div><div id="admin-polls" class="admin-list"></div>
+      </section>
 
-<section id="suggestions" class="section decor-left">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">IV</span><div><p class="eyebrow">Propositions & votes communautaires</p><h2>Le Cabinet des idées</h2></div></div>
-    <div class="suggestion-topbar">
-      <div class="suggestion-tabs"><button class="active" data-suggestion-tab="ideas">Propositions</button><button data-suggestion-tab="polls">Sondages</button></div>
-      <button id="suggestion-login-cta" class="button button-ghost" type="button">Se connecter avec Twitch</button>
-    </div>
+      <section data-admin-panel="clips" class="hidden">
+        <p class="eyebrow">Sélection publique</p><h1>Clips Twitch</h1>
+        <div class="admin-card"><h2>Les 4 clips du site</h2><p>Colle une URL Twitch complète ou directement le slug du clip. Les quatre emplacements sont affichés dans cet ordre sur le site public.</p><div id="admin-clips" class="clips-admin-grid"></div><div class="admin-actions"><button id="save-clips" class="button button-primary" type="button">Enregistrer les clips</button></div></div>
+      </section>
 
-    <div id="ideas-panel">
-      <div class="category-carousel">
-        <button class="category-card active" data-category="games"><span>🎮</span><strong>Jeux de semaine</strong></button>
-        <button class="category-card" data-category="concepts"><span>🎭</span><strong>Concepts & défis</strong></button>
-        <button class="category-card" data-category="twitch"><span>💬</span><strong>Twitch & interactions</strong></button>
-        <button class="category-card" data-category="community"><span>🌐</span><strong>Site & Discord</strong></button>
-        <button class="category-card" data-category="events"><span>🎉</span><strong>Événements spéciaux</strong></button>
-        <button class="category-card" data-category="other"><span>💡</span><strong>Autre</strong></button>
-      </div>
+      <section data-admin-panel="reputation" class="hidden">
+        <p class="eyebrow">Miroir de Streamer.bot</p><h1>Réputation</h1>
+        <div class="admin-card"><h2>Source des scores</h2><p>Les scores restent pilotés depuis Streamer.bot. Cette page sert à vérifier que les valeurs ont bien été synchronisées vers le site ; aucune modification manuelle n’est proposée ici afin d’éviter les divergences.</p></div>
+        <div id="admin-reputation" class="admin-list"></div>
+      </section>
 
-      <div class="category-intro"><p class="eyebrow" id="category-label">Jeux de semaine</p><h3 id="category-title">Proposez un jeu à faire en stream.</h3><p id="category-description">Cette catégorie concerne les streams du lundi et du mercredi.</p></div>
-      <div class="sunday-info"><strong>À propos du dimanche</strong><p>Les soirées multijoueur du dimanche sont organisées avec plusieurs streamers. Le choix des jeux est donc décidé collectivement et n’entre pas dans cette boîte à idées.</p></div>
-
-      <form id="suggestion-form" class="suggestion-form">
-        <label><span>Titre de la suggestion</span><input id="suggestion-title" maxlength="120" placeholder="Ex. : Faire une série sur Frostpunk 2" required></label>
-        <div id="similar-suggestions" class="similar-suggestions hidden"></div>
-        <label><span>Développe ton idée</span><textarea id="suggestion-body" maxlength="1200" rows="4" placeholder="Quelques lignes suffisent pour expliquer l’idée." required></textarea></label>
-        <div class="form-actions"><span id="suggestion-auth-hint">Connexion Twitch nécessaire pour proposer une idée.</span><button id="submit-suggestion" class="button button-primary" type="submit">Envoyer la suggestion</button></div>
-      </form>
-
-      <div id="pinned-suggestion"></div>
-      <div class="suggestion-feed-controls">
-        <div class="segmented-control"><button class="active" data-sort="popular">Populaires</button><button data-sort="recent">Récentes</button><button data-sort="mine">Mes suggestions</button></div>
-        <select id="status-filter"><option value="all">Tous les statuts</option><option value="new">Nouvelles</option><option value="considering">En réflexion</option><option value="planned">Prévues</option><option value="completed">Terminées</option><option value="rejected">Refusées</option><option value="archived">Archivées</option></select>
-      </div>
-      <div id="suggestions-feed" class="suggestions-feed"></div>
-    </div>
-
-    <div id="polls-panel" class="hidden"><div class="cabinet-panel-intro"><p class="eyebrow">Les décisions de la communauté</p><h3>Sondages</h3><p class="polls-intro">Des votes longue durée, accessibles entre les streams avec un vote par compte Twitch. Chaque sondage possède désormais son propre lien partageable.</p></div><div id="polls-feed" class="polls-feed"></div></div>
-  </div>
-</section>
-
-
-<section id="reputation" class="section decor-right">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">V</span><div><p class="eyebrow">Le registre de la communauté</p><h2>Réputation</h2></div></div>
-
-    <div class="reputation-intro-grid">
-      <article class="reputation-explainer">
-        <p class="eyebrow">Comment ça marche ?</p>
-        <h3>La confiance se gagne — et peut se perdre.</h3>
-        <p>Chaque viewer commence à <strong>0 point</strong>, au rang d’<strong>Inconnu</strong>. Selon le comportement, les actions et les interventions pendant les lives, HALARYK et ses modérateurs peuvent ajouter ou retirer des points.</p>
-        <div class="reputation-command"><code>!rep</code><span>Consulter son score et son rang directement dans le chat Twitch.</span></div>
-      </article>
-
-      <article id="my-reputation-card" class="my-reputation-card">
-        <p class="eyebrow">Votre dossier</p>
-        <div id="my-reputation-content">
-          <h3>Identifiez-vous avec Twitch</h3>
-          <p>Connectez votre compte pour retrouver ici votre score, votre rang et votre progression.</p>
-          <button id="reputation-login" class="button button-primary" type="button">Connexion Twitch</button>
-        </div>
-      </article>
-    </div>
-
-    <div class="reputation-effects">
-      <article><span>✦</span><h3>Ce que ça apporte</h3><p>Un rang visible sur le site et dans les suggestions, une place dans le classement et surtout un marqueur communautaire qui évolue au fil des lives.</p></article>
-      <article><span>⚖</span><h3>Ce que ça ne change pas</h3><p>La réputation ne donne aucun pouvoir de modération et ne pèse pas davantage dans les votes : <strong>1 compte Twitch = 1 vote</strong>.</p></article>
-      <article><span>☠</span><h3>Réputation négative</h3><p>Passer sous zéro donne le rang de Traître et une place dans le Registre des Traîtres. C’est un élément communautaire et humoristique, pas une sanction automatique.</p></article>
-    </div>
-
-    <div class="rank-ladder" aria-label="Rangs de réputation">
-      <article class="rank-card rank-traitor"><span class="rank-icon">☠️</span><strong>Traître</strong><small>&lt; 0</small><p>Le mauvais côté du registre.</p></article>
-      <article class="rank-card"><span class="rank-icon">👤</span><strong>Inconnu</strong><small>0–19</small><p>Le point de départ.</p></article>
-      <article class="rank-card"><span class="rank-icon">🏠</span><strong>Habitué</strong><small>20–49</small><p>Une présence désormais reconnue.</p></article>
-      <article class="rank-card"><span class="rank-icon">🗣️</span><strong>Conseiller</strong><small>50–79</small><p>Un rang bien installé dans la communauté.</p></article>
-      <article class="rank-card"><span class="rank-icon">⚜️</span><strong>Confident</strong><small>80–99</small><p>Parmi les réputations les plus élevées.</p></article>
-      <article class="rank-card rank-favorite"><span class="rank-icon">👑</span><strong>Favori</strong><small>100+</small><p>Le rang maximal.</p></article>
-    </div>
-
-    <div class="reputation-leaderboards">
-      <article class="leaderboard-panel">
-        <div class="leaderboard-heading"><div><p class="eyebrow">Top 10</p><h3>Favoris de HALARYK</h3></div><span>👑</span></div>
-        <div id="reputation-top" class="leaderboard-list"><div class="leaderboard-empty">Classement en cours d’activation.</div></div>
-      </article>
-      <article class="leaderboard-panel traitor-panel">
-        <div class="leaderboard-heading"><div><p class="eyebrow">Les profondeurs</p><h3>Registre des Traîtres</h3></div><span>☠️</span></div>
-        <div id="reputation-traitors" class="leaderboard-list"><div class="leaderboard-empty">Aucun traître enregistré pour le moment.</div></div>
-      </article>
+      <section data-admin-panel="collaborators" class="hidden">
+        <p class="eyebrow">Chaînes régulièrement présentes</p><h1>Collaborateurs</h1>
+        <form id="collaborator-form" class="admin-card">
+          <h2>Ajouter un collaborateur</h2>
+          <div class="admin-two-cols"><label>Identifiant Twitch<input id="collaborator-login" required placeholder="ex. yokouzz"></label><label>Ordre d’affichage<input id="collaborator-order" type="number" value="0"></label></div>
+          <label>Courte description<textarea id="collaborator-description" rows="3" maxlength="300" placeholder="Ex. : Présent régulièrement lors des soirées multijoueur."></textarea></label>
+          <button class="button button-primary" type="submit">Ajouter</button>
+        </form>
+        <div id="admin-collaborators" class="admin-list"></div>
+      </section>
     </div>
   </div>
-</section>
-
-<section id="reglement" class="section decor-left">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">VI</span><div><p class="eyebrow">Décret de bonne conduite</p><h2>Règlement</h2></div></div>
-    <div class="rules-grid">
-      <article><span>01</span><h3>Respect avant tout</h3><p>Pas d’insultes gratuites, de harcèlement ou d’attaques personnelles. On peut débattre et se chambrer sans franchir la ligne.</p></article>
-      <article><span>02</span><h3>Pas de spoil</h3><p>Sur les jeux narratifs ou les découvertes, évite les solutions, révélations et indications non demandées. Le backseat n’est bienvenu que lorsqu’il est demandé.</p></article>
-      <article><span>03</span><h3>Le chat reste lisible</h3><p>Pas de spam, de copier-coller massif ou de promotion sauvage. Liens et autopromotion se font avec accord.</p></article>
-      <article><span>04</span><h3>Les modos tranchent</h3><p>En cas de doute, la modération décide et adapte si nécessaire selon le contexte.</p></article>
-      <article><span>05</span><h3>Sujets sensibles</h3><p>Évite notamment politique, religion et sujets assimilés s’ils ne sont pas lancés par Halaryk.</p></article>
-      <article class="danger-card"><span>06</span><h3>Vie privée & consentement</h3><p>Aucune information personnelle dans le chat ou en chuchotement sans consentement explicite. Le non-respect peut entraîner un bannissement.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="partenaires" class="section decor-right">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">VII</span><div><p class="eyebrow">Soutiens & collaborations</p><h2>Partenaires</h2></div></div>
-    <a class="partner-card" href="https://kinguin.net/?r=e342gjynbxd5r" target="_blank" rel="noopener noreferrer sponsored"><p class="eyebrow">Partenaire de la chaîne</p><h3>Kinguin</h3><p>Jeux, cartes-cadeaux et produits numériques. En passant par ce lien partenaire, tu soutiens directement la chaîne.</p><strong>Visiter Kinguin ↗</strong></a>
-    <p class="fine-print">Lien partenaire : une commission peut être reversée à la chaîne selon les achats effectués via ce lien.</p>
-  </div>
-</section>
-
-<section id="reseaux" class="section decor-left">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">VIII</span><div><p class="eyebrow">Les autres portes d’entrée</p><h2>Réseaux</h2></div></div>
-    <div class="social-grid">
-      <a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer"><small>Direct</small><strong>Twitch</strong><span>Lives, rediffusions et clips</span><i>↗</i></a>
-      <a href="https://discord.gg/yCQjxRh6MV" target="_blank" rel="noopener noreferrer"><small>Communauté</small><strong>Discord</strong><span>Annonces, discussions et soirées</span><i>↗</i></a>
-      <a href="https://www.instagram.com/halaryk_/" target="_blank" rel="noopener noreferrer"><small>Actualités</small><strong>Instagram</strong><span>Planning et nouvelles de la chaîne</span><i>↗</i></a>
-    </div>
-  </div>
-</section>
-
-<section id="commandes" class="section decor-right">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">IX</span><div><p class="eyebrow">Interactions du chat</p><h2>Commandes</h2></div></div>
-    <div class="commands-grid">
-      <article><code>!biscuits</code><h3>Pluie de biscuits</h3><p>Déclenche une pluie de cookies directement sur le stream.</p></article>
-      <article><code>!coin</code><h3>Invasion de canards</h3><p>Fait pleuvoir des canards en plastique sur le stream.</p></article>
-      <article><code>!bisous</code><h3>La bise du bot</h3><p>Le bot te répond personnellement et te fait la bise.</p></article>
-      <article><code>!rep</code><h3>Réputation</h3><p>Affiche ton score de réputation et ton rang actuel sur la chaîne.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="config" class="section decor-left">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">X</span><div><p class="eyebrow">Matériel de diffusion</p><h2>Configuration</h2></div></div>
-    <div class="config-grid">
-      <article><p class="eyebrow">Machine</p><dl><div><dt>Processeur</dt><dd>Intel Core i5-12400F</dd></div><div><dt>Carte mère</dt><dd>Gigabyte B760 DS3H AX DDR4</dd></div><div><dt>Carte graphique</dt><dd>MSI GeForce RTX 3050 LP 6G OC</dd></div><div><dt>Mémoire</dt><dd>32 Go DDR4 2666 MHz</dd></div><div><dt>Stockage</dt><dd>Kingston NV3 1 To NVMe</dd></div><div><dt>Alimentation</dt><dd>be quiet! System Power 11 650W</dd></div></dl></article>
-      <article><p class="eyebrow">Périphériques</p><dl><div><dt>Écrans</dt><dd>2× ViewSonic VA2215-H 22"</dd></div><div><dt>Clavier</dt><dd>Corsair K55 Core RGB</dd></div><div><dt>Webcam</dt><dd>Logitech C270 HD</dd></div><div><dt>Micro</dt><dd>Trust GXT 252+ Emita Plus</dd></div><div><dt>Casque</dt><dd>SteelSeries Arctis Nova 7 Wireless</dd></div><div><dt>Diffusion</dt><dd>OBS Studio + Streamer.bot</dd></div></dl></article>
-    </div>
-  </div>
-</section>
-
-<section id="faq" class="section decor-right">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">XI</span><div><p class="eyebrow">Questions fréquentes</p><h2>FAQ</h2></div></div>
-    <div class="faq-list">
-      <details><summary>Quels types de jeux sont streamés sur la chaîne ?</summary><p>Un peu de tout : stratégie, horreur, gestion, multijoueur et découvertes. La principale limite, ce sont les jeux très orientés compétition ou frustration permanente comme League of Legends, Counter-Strike ou Valorant.</p></details>
-      <details><summary>Peut-on rejoindre les parties multijoueur ?</summary><p>Oui, théoriquement les parties sont ouvertes à tous. En pratique, il faut que l’on vous connaisse un minimum ou qu’il y ait un très bon feeling.</p></details>
-      <details><summary>Pourquoi le planning change-t-il selon les semaines ?</summary><p>Mon activité professionnelle m’impose des horaires variables. Le lundi et le mercredi peuvent donc avoir lieu l’après-midi ou le soir. Le dimanche reste fixe à 20h30.</p></details>
-      <details><summary>Peut-on proposer ou imposer un jeu ?</summary><p>Oui. Vous pouvez proposer un jeu dans le chat. Une récompense de points de chaîne permet aussi d’imposer un jeu, sous réserve des conditions précisées sur Twitch.</p></details>
-      <details><summary>Comment fonctionne la réputation ?</summary><p>À votre arrivée, votre réputation est de 0 et vous avez le rang d’Inconnu. Seuls le streamer et les modérateurs peuvent attribuer ou retirer des points. <code>!rep</code> affiche votre score et votre rang.</p></details>
-      <details><summary>Où sont annoncés les changements de planning ?</summary><p>Principalement sur le Discord de la chaîne et sur Instagram, y compris pour les lives exceptionnels.</p></details>
-      <details><summary>Le backseat est-il autorisé ?</summary><p>Oui, mais uniquement lorsqu’il est demandé par le streamer.</p></details>
-      <details><summary>Quelle est l’ambiance générale de la chaîne ?</summary><p>Le chill absolu. Pas de drama ni d’histoires inutiles : l’idée est que chacun puisse venir se détendre, discuter et profiter du live.</p></details>
-    </div>
-  </div>
-</section>
-
-
-<section id="collaborateurs" class="section decor-left">
-  <div class="section-shell reveal">
-    <div class="section-heading"><span class="section-number">XII</span><div><p class="eyebrow">Les habitués des lives</p><h2>Collaborateurs</h2></div></div>
-    <div class="collaborators-intro">
-      <p>Les streamers que vous croiserez régulièrement sur la chaîne, notamment lors des sessions multijoueur.</p>
-      <span>Le choix des jeux du dimanche reste une décision collective entre les participants.</span>
-    </div>
-    <div id="collaborators-grid" class="collaborators-grid">
-      <div class="empty-state"><strong>Collaborateurs en cours d’activation</strong><p>Les chaînes apparaîtront ici dès qu’elles auront été ajoutées depuis l’administration.</p></div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#accueil">Retour en haut ↑</a></div></footer>
 </main>
-<script type="module" src="app.js"></script>
+
+<div id="game-add-modal" class="admin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="game-add-title">
+  <div class="admin-modal-backdrop" data-close-game-modal></div>
+  <div class="admin-modal-card">
+    <button class="admin-modal-close" type="button" data-close-game-modal aria-label="Fermer">×</button>
+    <div class="game-modal-head">
+      <img id="game-add-cover" class="game-modal-cover hidden" alt="">
+      <div>
+        <p class="eyebrow">Ajouter à la ludothèque</p>
+        <h2 id="game-add-title">Jeu</h2>
+        <p id="game-add-year" class="game-modal-year"></p>
+      </div>
+    </div>
+    <div class="admin-two-cols">
+      <label>Statut
+        <select id="game-add-status">
+          <option value="playing">En cours</option>
+          <option value="completed">Terminé</option>
+          <option value="wishlist" selected>À venir</option>
+        </select>
+      </label>
+      <label>Temps de jeu (heures)<input id="game-add-playtime" type="number" min="0" step="0.1" placeholder="Ex. : 1714"></label>
+      <label>Note / 10<input id="game-add-rating" type="number" min="0" max="10" step="0.5" placeholder="Ex. : 8.5"></label>
+    </div>
+    <label class="check-row game-modal-streamed"><input id="game-add-streamed" type="checkbox"> Déjà streamé sur la chaîne</label>
+    <label>Studio de développement<input id="game-add-developer" placeholder="Ex. : LEVEL-5"></label>
+    <label>Résumé public <small>2 à 4 lignes, idéalement en français</small><textarea id="game-add-summary" rows="4" maxlength="520" placeholder="Résumé court type fiche Steam, rédigé pour les visiteurs…"></textarea><small class="field-help">IGDB ne remplit plus ce texte automatiquement : la jaquette, la date et le studio restent actualisables sans écraser ton résumé.</small></label>
+    <label>Commentaire personnel<textarea id="game-add-note" rows="4" placeholder="Ton avis, un souvenir, un commentaire…"></textarea></label>
+    <div class="admin-actions modal-actions">
+      <button id="game-add-confirm" class="button button-primary" type="button">Ajouter le jeu</button>
+      <button class="button button-ghost" type="button" data-close-game-modal>Annuler</button>
+    </div>
+  </div>
+</div>
+
+<div id="confirm-modal" class="admin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+  <div class="admin-modal-backdrop" data-close-confirm></div>
+  <div class="admin-modal-card confirm-modal-card">
+    <button class="admin-modal-close" type="button" data-close-confirm aria-label="Fermer">×</button>
+    <p class="eyebrow">Confirmation</p>
+    <h2 id="confirm-title">Confirmer l’action</h2>
+    <p id="confirm-message" class="confirm-message"></p>
+    <div class="admin-actions modal-actions">
+      <button id="confirm-accept" class="button button-primary" type="button">Confirmer</button>
+      <button class="button button-ghost" type="button" data-close-confirm>Annuler</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="admin.js"></script>
 </body>
 </html>
