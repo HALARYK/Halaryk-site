@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="admin.css">
 </head>
 <body class="admin-body">
-<header class="admin-header"><a href="../" class="brand"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V4.2.2.1</span><button id="admin-login" class="button button-primary">Connexion Twitch</button><button id="admin-logout" class="button button-ghost hidden">Déconnexion</button></div></header>
+<header class="admin-header"><a href="../" class="brand"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V4.2.4</span><button id="admin-login" class="button button-primary">Connexion Twitch</button><button id="admin-logout" class="button button-ghost hidden">Déconnexion</button></div></header>
 <main class="admin-shell">
   <section id="admin-gate" class="admin-gate"><p class="eyebrow">Accès privé</p><h1>Administration HALARYK</h1><p id="admin-gate-message">Connexion Twitch nécessaire.</p></section>
   <div id="admin-app" class="hidden">
@@ -40,7 +40,20 @@
 
       <section data-admin-panel="library" class="hidden">
         <p class="eyebrow">Collection</p><h1>Ludothèque</h1>
-        <div class="admin-card"><h2>Ajouter un jeu</h2><div class="admin-inline"><input id="game-search-input" placeholder="Rechercher sur IGDB…"><button id="game-search-button" class="button button-primary">Rechercher</button></div><div id="game-search-results" class="game-search-results"></div></div>
+        <div class="admin-card">
+          <h2>Ajouter un jeu</h2>
+          <div class="admin-inline game-search-controls">
+            <select id="game-search-mode" aria-label="Type de recherche">
+              <option value="title">Nom du jeu</option>
+              <option value="developer">Studio de développement</option>
+            </select>
+            <input id="game-search-input" placeholder="Ex. Professor Layton…" autocomplete="off">
+            <button id="game-search-button" class="button button-primary">Rechercher</button>
+          </div>
+          <div id="game-search-meta" class="game-search-meta" aria-live="polite"></div>
+          <div id="game-search-results" class="game-search-results"></div>
+          <div id="game-search-more" class="admin-search-more"></div>
+        </div>
         <div class="admin-card library-manager">
           <div class="library-manager-head">
             <div><h2>Jeux déjà ajoutés</h2><p id="library-result-count" class="library-result-count">—</p></div>
@@ -51,8 +64,6 @@
                 <option value="playing">En cours</option>
                 <option value="completed">Terminé</option>
                 <option value="wishlist">À venir</option>
-                <option value="paused">En pause</option>
-                <option value="abandoned">Abandonné</option>
               </select>
             </div>
           </div>
@@ -91,7 +102,7 @@
   </div>
 </main>
 
-<div id="game-add-modal" class="admin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="game-add-title">
+<div id="game-add-modal" class="admin-modal hidden" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="game-add-title">
   <div class="admin-modal-backdrop" data-close-game-modal></div>
   <div class="admin-modal-card">
     <button class="admin-modal-close" type="button" data-close-game-modal aria-label="Fermer">×</button>
@@ -125,7 +136,7 @@
   </div>
 </div>
 
-<div id="confirm-modal" class="admin-modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+<div id="confirm-modal" class="admin-modal hidden" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="confirm-title">
   <div class="admin-modal-backdrop" data-close-confirm></div>
   <div class="admin-modal-card confirm-modal-card">
     <button class="admin-modal-close" type="button" data-close-confirm aria-label="Fermer">×</button>

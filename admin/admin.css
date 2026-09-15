@@ -258,3 +258,20 @@
 
 /* V4.2.1 */
 .field-help{display:block;margin-top:6px;color:#81756b;font-size:10px;line-height:1.45}
+
+/* V4.2.3 — recherche IGDB étendue */
+.game-search-controls{align-items:stretch;flex-wrap:wrap}
+.game-search-controls select{width:auto;min-width:210px;margin:0;padding:10px;border:1px solid rgba(183,147,100,.18);background:#080707;color:var(--text)}
+.game-search-meta{min-height:18px;margin-top:12px;color:var(--muted);font-size:11px;line-height:1.5}
+.admin-search-more{display:flex;justify-content:center;align-items:center;min-height:38px;margin-top:14px}
+.admin-search-more button{min-width:240px}
+@media(max-width:700px){.game-search-controls{display:grid;grid-template-columns:1fr}.game-search-controls select,.game-search-controls input,.game-search-controls button{width:100%}}
+
+
+/* ===== V4.2.4 : sécurité d'état des modales =====
+   Les modales sont fermées par défaut même si style.css est en cache ou si le navigateur restaure la page via BFCache. */
+.admin-modal:not(.is-open),
+.admin-modal.hidden{display:none!important;pointer-events:none!important}
+.admin-modal.is-open{display:grid!important;pointer-events:auto!important}
+.admin-modal.is-open .admin-modal-backdrop{z-index:0}
+.admin-modal.is-open .admin-modal-card{z-index:1;pointer-events:auto}

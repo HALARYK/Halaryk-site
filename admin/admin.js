@@ -13,6 +13,10 @@ let libraryGames = [];
 let pendingGameIndex = null;
 let confirmResolver = null;
 let libraryRenderLimit = 60;
+let gameSearchOffset = 0;
+let gameSearchHasMore = false;
+let gameSearchSourceSuggestionId = null;
+const GAME_SEARCH_PAGE_SIZE = 24;
 
 const repRank = s => s < 0 ? "☠️ Traître" : s < 20 ? "👤 Inconnu" : s < 50 ? "🏠 Habitué" : s < 80 ? "🗣️ Conseiller" : s < 100 ? "⚜️ Confident" : "👑 Favori";
 const libraryStatusLabels = {
@@ -68,18 +72,45 @@ function formatDate(value) {
   }
 }
 
+function resetAdminModals() {
+  ["#confirm-modal", "#game-add-modal"].forEach(selector => {
+    const modal = $(selector);
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.classList.add("hidden");
+    modal.setAttribute("aria-hidden", "true");
+  });
+  document.body.classList.remove("modal-open");
+  if (confirmResolver) {
+    const resolver = confirmResolver;
+    confirmResolver = null;
+    resolver(false);
+  }
+}
+
 function askConfirm({ title = "Confirmer l’action", message = "Voulez-vous continuer ?", confirmLabel = "Confirmer", danger = false } = {}) {
   $("#confirm-title").textContent = title;
   $("#confirm-message").textContent = message;
   $("#confirm-accept").textContent = confirmLabel;
   $("#confirm-accept").classList.toggle("button-danger", danger);
-  $("#confirm-modal").classList.remove("hidden");
+  const modal = $("#confirm-modal");
+  if (confirmResolver) {
+    const previous = confirmResolver;
+    confirmResolver = null;
+    previous(false);
+  }
+  modal.classList.remove("hidden");
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
   return new Promise(resolve => { confirmResolver = resolve; });
 }
 
 function closeConfirm(result = false) {
-  $("#confirm-modal").classList.add("hidden");
+  const modal = $("#confirm-modal");
+  modal?.classList.remove("is-open");
+  modal?.classList.add("hidden");
+  modal?.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
   const resolver = confirmResolver;
   confirmResolver = null;
@@ -201,6 +232,7 @@ async function loadSuggestions() {
   $$('[data-link-game]').forEach(b => b.onclick = () => {
     const item = $(`[data-suggestion="${b.dataset.linkGame}"]`);
     $("#game-search-input").value = $("h2", item).textContent;
+    if ($("#game-search-mode")) $("#game-search-mode").value = "title";
     document.querySelector('[data-admin-tab="library"]').click();
     searchGames(b.dataset.linkGame);
   });
@@ -253,16 +285,63 @@ async function deleteSuggestion(id) {
   }
 }
 
-async function searchGames(sourceSuggestionId = null) {
+async function searchGames(sourceSuggestionId = null, append = false) {
   const q = $("#game-search-input").value.trim();
+  const mode = $("#game-search-mode")?.value === "developer" ? "developer" : "title";
   if (q.length < 2) return;
-  $("#game-search-results").innerHTML = '<div class="admin-searching">Recherche en cours…</div>';
-  const { data, error } = await supabase.functions.invoke("game-search", { body: { query: q } });
+
+  if (!append) {
+    gameSearchOffset = 0;
+    gameSearchHasMore = false;
+    gameSearchSourceSuggestionId = sourceSuggestionId;
+    igdbResults = [];
+    $("#game-search-results").innerHTML = '<div class="admin-searching">Recherche en cours…</div>';
+    $("#game-search-meta").textContent = "";
+    $("#game-search-more").innerHTML = "";
+  } else {
+    sourceSuggestionId = gameSearchSourceSuggestionId;
+    $("#game-search-more").innerHTML = '<span class="admin-searching">Chargement…</span>';
+  }
+
+  const { data, error } = await supabase.functions.invoke("game-search", {
+    body: {
+      query: q,
+      mode,
+      limit: GAME_SEARCH_PAGE_SIZE,
+      offset: append ? gameSearchOffset : 0
+    }
+  });
+
   if (error) {
     $("#game-search-results").textContent = error.message;
+    $("#game-search-more").innerHTML = "";
     return;
   }
-  igdbResults = (data?.games || []).map(g => ({ ...g, sourceSuggestionId }));
+
+  if (data?.error) {
+    $("#game-search-results").textContent = data.error;
+    $("#game-search-more").innerHTML = "";
+    return;
+  }
+
+  const incoming = (data?.games || []).map(g => ({ ...g, sourceSuggestionId }));
+  if (append) {
+    const existing = new Set(igdbResults.map(g => String(g.id)));
+    igdbResults.push(...incoming.filter(g => !existing.has(String(g.id))));
+  } else {
+    igdbResults = incoming;
+  }
+
+  gameSearchOffset = Number(data?.next_offset ?? igdbResults.length);
+  gameSearchHasMore = Boolean(data?.has_more);
+
+  const studioMatches = Array.isArray(data?.matched_developers) ? data.matched_developers.filter(Boolean) : [];
+  const metaParts = [`${igdbResults.length} résultat${igdbResults.length > 1 ? "s" : ""} affiché${igdbResults.length > 1 ? "s" : ""}`];
+  if (mode === "developer" && studioMatches.length) {
+    metaParts.push(`studios trouvés : ${studioMatches.slice(0, 6).join(", ")}${studioMatches.length > 6 ? "…" : ""}`);
+  }
+  $("#game-search-meta").textContent = metaParts.join(" · ");
+
   $("#game-search-results").innerHTML = igdbResults.length ? igdbResults.map((g, i) => `
     <article class="game-search-card">
       ${g.cover_url ? `<img src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}">` : ""}
@@ -270,9 +349,15 @@ async function searchGames(sourceSuggestionId = null) {
       <small>${g.developer ? `${esc(g.developer)} · ` : ""}${g.release_year || "Date inconnue"}</small>
       <button data-add-game="${i}">Ajouter</button>
     </article>`).join("") : '<div class="admin-searching">Aucun résultat.</div>';
-  $$('[data-add-game]').forEach(b => b.onclick = () => openGameModal(Number(b.dataset.addGame)));
-}
 
+  $$('[data-add-game]').forEach(b => b.onclick = () => openGameModal(Number(b.dataset.addGame)));
+
+  $("#game-search-more").innerHTML = gameSearchHasMore
+    ? `<button id="game-search-more-button" class="button button-ghost" type="button">Afficher ${GAME_SEARCH_PAGE_SIZE} résultats de plus</button>`
+    : (igdbResults.length ? '<span class="admin-searching">Fin des résultats.</span>' : "");
+
+  $("#game-search-more-button")?.addEventListener("click", () => searchGames(gameSearchSourceSuggestionId, true));
+}
 function openGameModal(i) {
   const g = igdbResults[i];
   if (!g) return;
@@ -295,7 +380,10 @@ function openGameModal(i) {
     cover.removeAttribute("src");
     cover.classList.add("hidden");
   }
-  $("#game-add-modal").classList.remove("hidden");
+  const modal = $("#game-add-modal");
+  modal.classList.remove("hidden");
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
 }
 
@@ -719,6 +807,10 @@ async function deleteCollaborator(id) {
   }
 }
 
+// V4.2.4 — fail-safe : un retour BFCache / un ancien CSS ne doit jamais laisser une modale fantôme ouverte.
+resetAdminModals();
+window.addEventListener("pageshow", () => resetAdminModals());
+
 $$('[data-admin-tab]').forEach(btn => btn.onclick = () => {
   $$('[data-admin-tab]').forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
@@ -729,6 +821,15 @@ $("#admin-login").onclick = signIn;
 $("#admin-logout").onclick = async () => { await supabase.auth.signOut(); location.reload(); };
 $("#game-search-button").onclick = () => searchGames();
 $("#game-search-input").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); searchGames(); } });
+$("#game-search-mode")?.addEventListener("change", e => {
+  const studio = e.currentTarget.value === "developer";
+  $("#game-search-input").placeholder = studio ? "Ex. Bloober Team, Ubisoft…" : "Ex. Professor Layton…";
+  $("#game-search-meta").textContent = "";
+  $("#game-search-results").innerHTML = "";
+  $("#game-search-more").innerHTML = "";
+  igdbResults = [];
+  gameSearchOffset = 0;
+});
 $("#library-search-input").addEventListener("input", () => { libraryRenderLimit = 60; renderLibrary(); });
 $("#library-status-filter").addEventListener("change", () => { libraryRenderLimit = 60; renderLibrary(); });
 $("#game-add-confirm").onclick = confirmAddGame;
