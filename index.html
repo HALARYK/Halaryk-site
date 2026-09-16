@@ -18,42 +18,22 @@
 <header class="topbar" id="top">
   <a class="brand" href=""><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
-  <nav id="main-nav" class="nav">
-    <div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div>
-    <a class="active" href="">Accueil</a><a class="" href="evenements/">Événements</a><a class="" href="contenu/">Contenu</a><a class="" href="communaute/">Communauté</a><a class="" href="infos/">Infos</a>
-    <div class="mobile-nav-footer"><a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Twitch ↗</a><a href="infos/#reseaux">Discord & réseaux</a></div>
-  </nav>
-  <div class="auth-slot">
-    <button id="login-button" class="auth-button" type="button">Connexion Twitch</button>
-    <button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button>
-    <div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div>
-  </div>
+  <nav id="main-nav" class="nav"><a class="active" href="">Accueil</a><a href="evenements/">Événements</a><a href="contenu/">Contenu</a><a href="communaute/">Communauté</a><a href="infos/">Infos</a></nav>
+  <div class="auth-slot"><button id="login-button" class="auth-button" type="button">Connexion Twitch</button><button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button><div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div></div>
 </header>
 <main>
 <section id="accueil" class="hero home-hero">
   <div class="hero-background" aria-hidden="true"></div><div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content reveal">
-    <p class="hero-kicker">STREAMER TWITCH FRANÇAIS</p>
-    <h1>HALARYK</h1>
-    <p class="hero-genres">STRATÉGIE · HORREUR · GESTION · MULTIJOUEUR · DÉCOUVERTES</p>
-    <p class="hero-description">Je streame principalement de la stratégie, de la gestion, de l’horreur et du multijoueur, dans une ambiance posée et sans prise de tête.</p>
+    <p class="hero-kicker">STREAMER TWITCH FRANÇAIS</p><h1>HALARYK</h1><p class="hero-genres">STRATÉGIE · HORREUR · GESTION · MULTIJOUEUR · DÉCOUVERTES</p><p class="hero-description">Je streame principalement de la stratégie, de la gestion, de l’horreur et du multijoueur, dans une ambiance posée et sans prise de tête.</p>
     <div id="live-card" class="live-card"><span id="live-dot" class="live-dot"></span><div><strong id="live-label">Statut Twitch</strong><span id="live-detail">Chargement du statut…</span></div></div>
-    <div class="hero-actions"><a class="button button-primary" href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Regarder sur Twitch ↗</a><a class="button button-ghost" href="evenements/">Explorer le site</a></div>
-    <p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
+    <div class="hero-actions"><a class="button button-primary" href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Regarder sur Twitch ↗</a><a class="button button-ghost" href="evenements/">Explorer le site</a></div><p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
   </div>
 </section>
-<section class="section home-event-section" aria-labelledby="home-event-heading">
-  <div class="section-shell reveal">
-    <div class="home-event-heading">
-      <p class="eyebrow">LE GRAND RENDEZ-VOUS DU MOMENT</p>
-      <h2 id="home-event-heading">Événement à la une</h2>
-      <p>Une histoire importante de la chaîne, suivie et conservée ici au fil des sessions.</p>
-    </div>
-    <div id="home-feature-event" class="home-feature-event"><div class="empty-state"><strong>Chargement de l’événement…</strong></div></div>
-  </div>
-</section>
+<section class="section home-event-section" aria-labelledby="home-event-heading"><div class="section-shell reveal"><div class="home-event-heading"><p class="eyebrow">LE GRAND RENDEZ-VOUS DU MOMENT</p><h2 id="home-event-heading">Événement à la une</h2><p>Un projet majeur de la chaîne, présenté ici sans jargon pour comprendre immédiatement de quoi il s’agit.</p></div><div id="home-feature-event" class="home-feature-event"><div class="empty-state"><strong>Chargement de l’événement…</strong></div></div></div></section>
 <footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
 </main>
+<script type="module" src="shell-v52.js"></script>
 <script type="module" src="app.js"></script>
 <script type="module" src="events.js"></script>
 <script type="module" src="event-routes.js"></script>
