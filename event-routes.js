@@ -1,14 +1,25 @@
 const CLEAN_EVENT_PATH = 'chroniques-europe/';
+const LEGACY_EVENT_PATHS = ['ppo-europe/', 'grande-campagne-eu4/'];
+
+function rewriteEventHref(href = '') {
+  for (const legacy of LEGACY_EVENT_PATHS) {
+    if (href === legacy || href.startsWith(`${legacy}#`) || href.startsWith(`${legacy}?`)) {
+      return CLEAN_EVENT_PATH + href.slice(legacy.length);
+    }
+
+    const nestedLegacy = `evenements/${legacy}`;
+    if (href.includes(nestedLegacy)) {
+      return href.replace(nestedLegacy, `evenements/${CLEAN_EVENT_PATH}`);
+    }
+  }
+  return href;
+}
 
 function cleanEventLinks(root = document) {
   root.querySelectorAll?.('a[href]').forEach(link => {
     const href = link.getAttribute('href') || '';
-    if (href === 'ppo-europe/' || href.startsWith('ppo-europe/#') || href.startsWith('ppo-europe/?')) {
-      link.setAttribute('href', href.replace(/^ppo-europe\//, CLEAN_EVENT_PATH));
-    }
-    if (href.includes('evenements/ppo-europe/')) {
-      link.setAttribute('href', href.replace('evenements/ppo-europe/', `evenements/${CLEAN_EVENT_PATH}`));
-    }
+    const cleanHref = rewriteEventHref(href);
+    if (cleanHref !== href) link.setAttribute('href', cleanHref);
   });
 }
 
