@@ -3,103 +3,27 @@ import { CONFIG, BACKEND_CONFIGURED } from "./config.js";
 
 const $=(s,c=document)=>c.querySelector(s);
 const esc=(v="")=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-const fmtNumber=(v,d=0)=>Number.isFinite(Number(v))?new Intl.NumberFormat('fr-FR',{maximumFractionDigits:d,minimumFractionDigits:d}).format(Number(v)):'—';
+const fmtNumber=(v,d=0)=>v===null||v===undefined||v===''?'—':Number.isFinite(Number(v))?new Intl.NumberFormat('fr-FR',{maximumFractionDigits:d,minimumFractionDigits:d}).format(Number(v)):'—';
+const fmtPct=(before,after)=>{const a=Number(before),b=Number(after);if(!Number.isFinite(a)||!Number.isFinite(b)||a===0)return'—';const p=((b-a)/a)*100;return `${p>=0?'+':''}${fmtNumber(p,1)} %`};
 const year=v=>v?String(v).slice(0,4):'—';
 const fmtDate=v=>{if(!v)return'—';try{return new Intl.DateTimeFormat('fr-FR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(`${v}T12:00:00`))}catch{return v}};
-const fmtDateTime=v=>{if(!v)return'—';try{return new Intl.DateTimeFormat('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(v))}catch{return v}};
-let supabase=null;
-
+const fmtDateShort=v=>{if(!v)return'';try{return new Intl.DateTimeFormat('fr-FR',{day:'numeric',month:'short',year:'numeric'}).format(new Date(`${v}T12:00:00`))}catch{return v}};
+let supabase=null,activeIndex=0,activeEvents=[];let activeParticipants=new Map();
 function eventUrl(e){return e.slug==='ppo-europe'?'ppo-europe/':`fiche/?slug=${encodeURIComponent(e.slug)}`}
-function eventCard(e,fromHome=false){
-  const current=year(e.world_current_date),start=year(e.world_start_date),cutoff=year(e.public_chronicle_cutoff_date);
-  const href=fromHome?`evenements/${eventUrl(e)}`:eventUrl(e);
-  return `<article class="event-card ${e.featured?'featured':''}">
-    <div class="event-card-top"><span class="eyebrow">${e.status==='active'?'ÉVÉNEMENT EN COURS':'ÉVÉNEMENT ARCHIVÉ'}</span><span>${esc(e.game_name||e.event_type||'')}</span></div>
-    <h3>${esc(e.title)}</h3>${e.subtitle?`<p class="event-card-subtitle">${esc(e.subtitle)}</p>`:''}
-    <p>${esc(e.summary||'')}</p>
-    <div class="event-card-facts"><span><strong>${start}</strong> début</span><span><strong>${current}</strong> situation</span><span><strong>${cutoff}</strong> public</span></div>
-    <a class="button ${e.status==='active'?'button-primary':'button-ghost'}" href="${href}">${e.status==='active'?'Découvrir':'Revoir'} l’événement →</a>
-  </article>`;
-}
-
-async function loadHomeFeature(){
-  const box=$('#home-feature-event');if(!box||!supabase)return;
-  const{data,error}=await supabase.from('site_events').select('*').eq('featured',true).eq('status','active').order('created_at',{ascending:false}).limit(1).maybeSingle();
-  if(error||!data)return;
-  $('#featured-event-title') && ($('#featured-event-title').textContent=data.title);
-  const copy=$('.featured-event-copy > p:not(.eyebrow):not(.featured-event-game)',box); if(copy)copy.textContent=data.summary||'';
-}
-
-async function loadEventsIndex(){
-  const active=$('#events-active-grid'),archives=$('#events-archive-grid');if(!active||!archives||!supabase)return;
-  const{data,error}=await supabase.from('site_events').select('*').in('status',['active','archived']).order('featured',{ascending:false}).order('created_at',{ascending:false});
-  if(error)return;
-  const events=data||[],current=events.filter(e=>e.status==='active'),old=events.filter(e=>e.status==='archived');
-  active.innerHTML=current.length?current.map(e=>eventCard(e)).join(''):`<div class="empty-state"><strong>Aucun événement actif</strong></div>`;
-  archives.innerHTML=old.length?old.map(e=>eventCard(e)).join(''):`<div class="empty-state"><strong>Aucune archive pour le moment</strong><p>Les événements terminés resteront consultables ici.</p></div>`;
-}
-
-function statDelta(a,b,key){const x=Number(a?.[key]),y=Number(b?.[key]);if(!Number.isFinite(x)||!Number.isFinite(y))return'';const d=y-x;return `${d>=0?'+':''}${fmtNumber(d,key==='estimated_monthly_income'?1:0)}`}
-function nationCard(p,start,end){
-  const a=start?.stats||{},b=end?.stats||{},tech=b.technologies||{};
-  return `<article class="event-nation-card">
-    <div class="event-nation-head"><div><span class="event-tag">${esc(p.participant_key)}</span><h3>${esc(p.title)}</h3><p>${esc(p.player_name||'')}</p></div><span class="event-nation-period">1444 → 1481</span></div>
-    <div class="event-nation-stats">
-      <div><span>Provinces</span><strong>${fmtNumber(b.province_count)}</strong><small>${statDelta(a,b,'province_count')}</small></div>
-      <div><span>Développement</span><strong>${fmtNumber(b.development)}</strong><small>${statDelta(a,b,'development')}</small></div>
-      <div><span>Revenu / mois</span><strong>${fmtNumber(b.estimated_monthly_income,1)}</strong><small>${statDelta(a,b,'estimated_monthly_income')}</small></div>
-      <div><span>Régiments</span><strong>${fmtNumber(b.regiment_count)}</strong><small>${statDelta(a,b,'regiment_count')}</small></div>
-      <div><span>Navires</span><strong>${fmtNumber(b.ship_count)}</strong><small>${statDelta(a,b,'ship_count')}</small></div>
-      <div><span>Technologies</span><strong>${tech.administrative??'—'} / ${tech.diplomatic??'—'} / ${tech.military??'—'}</strong><small>Adm · Dip · Mil</small></div>
-    </div>
-    <details class="event-nation-details"><summary>Comparer les relevés</summary><div class="snapshot-compare"><div><b>1444</b><span>${fmtNumber(a.province_count)} prov.</span><span>${fmtNumber(a.development)} dev.</span><span>${fmtNumber(a.regiment_count)} rég.</span></div><div><b>1481</b><span>${fmtNumber(b.province_count)} prov.</span><span>${fmtNumber(b.development)} dev.</span><span>${fmtNumber(b.regiment_count)} rég.</span></div></div></details>
-  </article>`;
-}
-
-function entryCard(e){return `<article class="event-entry-card ${e.featured?'featured':''}"><div class="event-entry-meta"><span>${esc((e.entry_type||'événement').toUpperCase())}</span>${e.world_date_label?`<span>${esc(e.world_date_label)}</span>`:''}</div><h3>${esc(e.title)}</h3><p>${esc(e.summary||'')}</p>${e.body?`<details><summary>Lire la suite</summary><p>${esc(e.body)}</p></details>`:''}</article>`}
-
-async function loadEventDetail(){
-  const slug=document.body.dataset.eventSlug||new URLSearchParams(location.search).get('slug');if(!slug||!supabase)return;
-  const{data:event,error}=await supabase.from('site_events').select('*').eq('slug',slug).maybeSingle();if(error||!event)return;
-  const [pr,ch,sn,en,me]=await Promise.all([
-    supabase.from('site_event_participants').select('*').eq('event_id',event.id).order('sort_order'),
-    supabase.from('site_event_chapters').select('*').eq('event_id',event.id).order('sort_order'),
-    supabase.from('site_event_snapshots').select('*').eq('event_id',event.id).order('snapshot_date'),
-    supabase.from('site_event_entries').select('*').eq('event_id',event.id).order('sort_order').order('created_at'),
-    supabase.from('site_event_media').select('*').eq('event_id',event.id).order('sort_order')
-  ]);
-  const participants=pr.data||[],chapters=ch.data||[],snapshots=sn.data||[],entries=en.data||[],media=me.data||[];
-  const snapshotIds=snapshots.map(s=>s.id);let stats=[];
-  if(snapshotIds.length){const r=await supabase.from('site_event_snapshot_stats').select('*').in('snapshot_id',snapshotIds);stats=r.data||[]}
-  const statsMap=new Map(stats.map(s=>[`${s.snapshot_id}:${s.participant_id}`,s]));
-  const start=snapshots[0],end=snapshots.at(-1);
-
-  $('#event-eyebrow') && ($('#event-eyebrow').textContent=(event.eyebrow||'ÉVÉNEMENT').toUpperCase());
-  $('#event-game-name') && ($('#event-game-name').textContent=event.game_name||'');
-  $('#event-title') && ($('#event-title').textContent=event.title);
-  $('#event-summary') && ($('#event-summary').textContent=event.summary||'');
-  $('#event-world-start') && ($('#event-world-start').textContent=year(event.world_start_date));
-  $('#event-world-current') && ($('#event-world-current').textContent=year(event.world_current_date));
-  $('#event-public-snapshot') && ($('#event-public-snapshot').textContent=year(event.public_snapshot_date));
-  $('#event-chronicle-cutoff') && ($('#event-chronicle-cutoff').textContent=year(event.public_chronicle_cutoff_date));
-  $('#event-next-session') && event.next_session_at && ($('#event-next-session').textContent=fmtDateTime(event.next_session_at));
-
-  const nations=$('#event-nations-grid');if(nations)nations.innerHTML=participants.length?participants.map(p=>nationCard(p,statsMap.get(`${start?.id}:${p.id}`),statsMap.get(`${end?.id}:${p.id}`))).join(''):`<div class="empty-state"><strong>Aucune nation publiée</strong></div>`;
-
-  const timeline=$('#event-timeline');if(timeline){timeline.innerHTML=chapters.length?chapters.map(c=>{
-    const related=entries.filter(e=>e.chapter_id===c.id);
-    const range=c.world_start_date?`${year(c.world_start_date)}${c.world_end_date?` → ${year(c.world_end_date)}`:''}`:(c.real_start_date?`${fmtDate(c.real_start_date)}${c.real_end_date&&c.real_end_date!==c.real_start_date?` → ${fmtDate(c.real_end_date)}`:''}`:'');
-    return `<article class="event-chapter ${esc(c.kind)} ${esc(c.status)}"><div class="event-chapter-marker"></div><div class="event-chapter-heading"><span>${esc(range)}</span><h3>${esc(c.title)}</h3><p>${esc(c.subtitle||'')}</p></div><div class="event-chapter-entries">${related.length?related.map(entryCard).join(''):`<p class="event-chapter-empty">Les éléments détaillés de cette période sont en cours de validation.</p>`}</div></article>`
-  }).join(''):`<div class="empty-state"><strong>Chronologie à venir</strong></div>`}
-
-  const wars=entries.filter(e=>e.entry_type==='guerre');const warBox=$('#event-wars');if(warBox&&wars.length)warBox.innerHTML=wars.map(entryCard).join('');
-  const diplo=entries.filter(e=>['diplomatie','congrès','traité','déclaration','correspondance'].includes(e.entry_type));const dipBox=$('#event-diplomacy');if(dipBox&&diplo.length)dipBox.innerHTML=diplo.map(entryCard).join('');
-  const mediaBox=$('#event-media');if(mediaBox&&media.length)mediaBox.innerHTML=media.map(m=>{const title=esc(m.title||'Média de campagne'),caption=m.caption?`<span>${esc(m.caption)}</span>`:'';if(m.media_type==='image')return `<figure class="event-media-card"><img src="${esc(m.url)}" alt="${title}" loading="lazy"><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;return `<a class="event-media-card event-media-link" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer"><div class="event-media-link-mark">${m.media_type==='clip'?'▶':'↗'}</div><figcaption><strong>${title}</strong>${caption}<small>Ouvrir ${m.media_type==='clip'?'le clip':'le lien'} ↗</small></figcaption></a>`}).join('');
-}
-
-async function boot(){
-  if(!BACKEND_CONFIGURED)return;
-  supabase=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
-  await Promise.all([loadHomeFeature(),loadEventsIndex(),loadEventDetail()]);
-}
-boot();
+function eventHref(e,fromHome=false){return fromHome?`evenements/${eventUrl(e)}`:eventUrl(e)}
+function publicEventTitle(e){return e.title||'Événement HALARYK'}
+function eventPlayers(e){return activeParticipants.get(e.id)||[]}
+function heroStyle(e){return e.hero_image_url?` style="--event-image:url('${esc(e.hero_image_url)}')"`:''}
+function eventSpotlight(e,fromHome=false){const players=eventPlayers(e),href=eventHref(e,fromHome),current=year(e.world_current_date),start=year(e.world_start_date),cutoff=year(e.public_chronicle_cutoff_date),sessions=Number(e.metadata?.current_session||0);return `<article class="event-spotlight"${heroStyle(e)}><div class="event-spotlight-shade"></div><div class="event-spotlight-copy"><p class="eyebrow">${e.status==='active'?'ÉVÉNEMENT À LA UNE':'ARCHIVE'}</p><p class="event-spotlight-game">${esc(e.game_name||e.subtitle||'')}</p><h2>${esc(publicEventTitle(e))}</h2>${e.subtitle?`<p class="event-spotlight-subtitle">${esc(e.subtitle)}</p>`:''}<p class="event-spotlight-summary">${esc(e.summary||'')}</p>${players.length?`<div class="event-player-line"><span>${players.length} joueurs</span>${players.map(p=>`<b>${esc(p.player_name||p.title)}</b>`).join('')}</div>`:''}<div class="event-context-facts"><span><strong>${start} → ${current}</strong><small>période jouée</small></span><span><strong>${sessions||'—'}</strong><small>sessions terminées</small></span><span><strong>${players.length||'—'}</strong><small>nations jouées</small></span><span><strong>${cutoff}</strong><small>chroniques publiques</small></span></div><a class="button button-primary event-main-cta" href="${href}">Entrer dans les chroniques →</a></div></article>`}
+async function loadParticipantMap(events){const ids=(events||[]).map(e=>e.id);if(!ids.length)return;const{data}=await supabase.from('site_event_participants').select('event_id,player_name,title,sort_order').in('event_id',ids).eq('public',true).order('sort_order');activeParticipants=new Map();for(const row of data||[]){if(!activeParticipants.has(row.event_id))activeParticipants.set(row.event_id,[]);activeParticipants.get(row.event_id).push(row)}}
+async function loadHomeFeature(){const box=$('#home-feature-event');if(!box||!supabase)return;const{data,error}=await supabase.from('site_events').select('*').eq('featured',true).eq('status','active').order('created_at',{ascending:false}).limit(1).maybeSingle();if(error||!data)return;await loadParticipantMap([data]);box.innerHTML=eventSpotlight(data,true)}
+function renderActiveCarousel(){const stage=$('#events-active-grid');if(!stage)return;if(!activeEvents.length){stage.innerHTML='<div class="empty-state"><strong>Aucun événement actif</strong></div>';return}activeIndex=Math.max(0,Math.min(activeIndex,activeEvents.length-1));stage.innerHTML=eventSpotlight(activeEvents[activeIndex]);const counter=$('#events-carousel-counter');if(counter)counter.textContent=activeEvents.length>1?`${activeIndex+1} / ${activeEvents.length}`:'';const prev=$('#events-prev'),next=$('#events-next');[prev,next].forEach(b=>b?.classList.toggle('hidden',activeEvents.length<2))}
+async function loadEventsIndex(){const active=$('#events-active-grid'),archiveSection=$('#events-archive-section'),archives=$('#events-archive-grid');if(!active||!archives||!supabase)return;const{data,error}=await supabase.from('site_events').select('*').in('status',['active','archived']).order('featured',{ascending:false}).order('created_at',{ascending:false});if(error)return;const events=data||[];activeEvents=events.filter(e=>e.status==='active');const old=events.filter(e=>e.status==='archived');await loadParticipantMap(events);renderActiveCarousel();$('#events-prev')?.addEventListener('click',()=>{activeIndex=(activeIndex-1+activeEvents.length)%activeEvents.length;renderActiveCarousel()});$('#events-next')?.addEventListener('click',()=>{activeIndex=(activeIndex+1)%activeEvents.length;renderActiveCarousel()});if(old.length){archiveSection?.classList.remove('hidden');archives.innerHTML=old.map(e=>`<article class="event-archive-card"><p class="eyebrow">ARCHIVE</p><h3>${esc(publicEventTitle(e))}</h3><p>${esc(e.summary||'')}</p><a class="button button-ghost" href="${eventUrl(e)}">Revoir l’histoire →</a></article>`).join('')}else archiveSection?.classList.add('hidden')}
+function statDelta(a,b,key,digits=0){const x=Number(a?.[key]),y=Number(b?.[key]);if(!Number.isFinite(x)||!Number.isFinite(y))return'';const d=y-x;return `${d>=0?'+':''}${fmtNumber(d,digits)}`}
+function statCell(label,value,delta='',extra=''){return `<div><span>${label}</span><strong>${value}</strong>${delta?`<small>${delta}</small>`:''}${extra?`<em>${extra}</em>`:''}</div>`}
+function nationCard(p,start,end,startLabel='1444',endLabel='1481'){const a=start?.stats||{},b=end?.stats||{},tech=b.technologies||{},annualA=Number(a.annual_gross_income),annualB=Number(b.annual_gross_income);return `<article class="event-nation-card"><div class="event-nation-head"><div><span class="event-tag">${esc(p.participant_key)}</span><h3>${esc(p.title)}</h3><p>${esc(p.player_name||'')}</p></div><div class="event-nation-period"><b>FIN SESSION I · ${endLabel}</b><span>${startLabel} → ${endLabel}</span></div></div><div class="event-nation-stats event-nation-stats-rich">${statCell('Provinces',fmtNumber(b.province_count),statDelta(a,b,'province_count'))}${statCell('Développement',fmtNumber(b.development),statDelta(a,b,'development'))}${statCell('Revenu brut annuel',`${fmtNumber(annualB,1)} ¤`,fmtPct(annualA,annualB),'évolution depuis 1444')}${statCell('Limite terrestre',fmtNumber(b.land_force_limit),'','calcul exact à intégrer')}${statCell('Limite maritime',fmtNumber(b.naval_force_limit),'','calcul exact à intégrer')}${statCell('Manpower maximal',fmtNumber(Number(b.max_manpower)*1000),statDelta({max_manpower:Number(a.max_manpower)*1000},{max_manpower:Number(b.max_manpower)*1000},'max_manpower'))}${statCell('Technologies',`${tech.administrative??'—'} / ${tech.diplomatic??'—'} / ${tech.military??'—'}`,'','Adm · Dip · Mil')}${statCell('Pertes de guerre',fmtNumber(b.war_losses),statDelta(a,b,'war_losses'),'cumul enregistré')}${statCell('Guerres disputées',fmtNumber(b.wars_participated),statDelta(a,b,'wars_participated'),'cumul depuis 1444')}</div></article>`}
+const diplomaticTypes=new Set(['diplomatie','congrès','traité','déclaration','correspondance']);
+function entryCard(e,participantsById=new Map()){const owner=e.participant_id?participantsById.get(e.participant_id):null,date=e.world_date_label||(e.world_date?fmtDateShort(e.world_date):'');return `<article class="event-entry-card ${e.importance==='turning_point'?'turning-point':''}"><div class="event-entry-meta"><span>${esc((e.entry_type||'événement').replace('_',' ').toUpperCase())}</span>${owner?`<span>${esc(owner.title)}</span>`:''}${date?`<span>${esc(date)}</span>`:''}</div><h3>${esc(e.title)}</h3><p>${esc(e.summary||'')}</p>${e.body?`<details><summary>Lire le document</summary><p>${esc(e.body)}</p></details>`:''}</article>`}
+function chapterRange(c){if(c.world_start_date)return `${year(c.world_start_date)}${c.world_end_date?` → ${year(c.world_end_date)}`:''}`;if(c.metadata?.display_label)return c.metadata.display_label;if(c.real_start_date)return `${fmtDate(c.real_start_date)}${c.real_end_date&&c.real_end_date!==c.real_start_date?` → ${fmtDate(c.real_end_date)}`:''}`;if(c.real_end_date)return `Avant le ${fmtDate(c.real_end_date)}`;return''}
+async function loadEventDetail(){const slug=document.body.dataset.eventSlug||new URLSearchParams(location.search).get('slug');if(!slug||!supabase)return;const{data:event,error}=await supabase.from('site_events').select('*').eq('slug',slug).maybeSingle();if(error||!event)return;const[pr,ch,sn,en,me]=await Promise.all([supabase.from('site_event_participants').select('*').eq('event_id',event.id).order('sort_order'),supabase.from('site_event_chapters').select('*').eq('event_id',event.id).order('sort_order'),supabase.from('site_event_snapshots').select('*').eq('event_id',event.id).order('snapshot_date'),supabase.from('site_event_entries').select('*').eq('event_id',event.id).order('world_date',{ascending:true,nullsFirst:false}).order('sort_order'),supabase.from('site_event_media').select('*').eq('event_id',event.id).order('sort_order')]);const participants=pr.data||[],chapters=ch.data||[],snapshots=sn.data||[],entries=en.data||[],media=me.data||[],participantsById=new Map(participants.map(p=>[p.id,p])),snapshotIds=snapshots.map(s=>s.id);let stats=[];if(snapshotIds.length){const r=await supabase.from('site_event_snapshot_stats').select('*').in('snapshot_id',snapshotIds);stats=r.data||[]}const statsMap=new Map(stats.map(s=>[`${s.snapshot_id}:${s.participant_id}`,s])),start=snapshots[0],end=snapshots.at(-1);$('#event-eyebrow')&&($('#event-eyebrow').textContent=(event.eyebrow||'CAMPAGNE MULTIJOUEUR RP').toUpperCase());$('#event-game-name')&&($('#event-game-name').textContent=event.game_name||'');$('#event-title')&&($('#event-title').textContent=publicEventTitle(event));$('#event-subtitle')&&($('#event-subtitle').textContent=event.subtitle||'');$('#event-summary')&&($('#event-summary').textContent=event.summary||'');$('#event-world-start')&&($('#event-world-start').textContent=year(event.world_start_date));$('#event-world-current')&&($('#event-world-current').textContent=year(event.world_current_date));$('#event-public-snapshot')&&($('#event-public-snapshot').textContent=year(event.public_snapshot_date));$('#event-chronicle-cutoff')&&($('#event-chronicle-cutoff').textContent=year(event.public_chronicle_cutoff_date));if(event.hero_image_url)document.querySelector('.event-hero')?.style.setProperty('--event-image',`url("${event.hero_image_url}")`);const nations=$('#event-nations-grid');if(nations)nations.innerHTML=participants.length?participants.map(p=>nationCard(p,statsMap.get(`${start?.id}:${p.id}`),statsMap.get(`${end?.id}:${p.id}`),year(start?.snapshot_date),year(end?.snapshot_date))).join(''):'<div class="empty-state"><strong>Aucune nation publiée</strong></div>';const timeline=$('#event-timeline');if(timeline)timeline.innerHTML=chapters.length?chapters.map(c=>{const related=entries.filter(e=>e.chapter_id===c.id&&!diplomaticTypes.has(e.entry_type)).sort((a,b)=>String(a.world_date||'9999').localeCompare(String(b.world_date||'9999'))||Number(a.sort_order||0)-Number(b.sort_order||0));return `<article class="event-chapter ${esc(c.kind)} ${esc(c.status)}"><div class="event-chapter-marker"></div><div class="event-chapter-heading"><span>${esc(chapterRange(c))}</span><h3>${esc(c.title)}</h3><p>${esc(c.subtitle||'')}</p></div><div class="event-chapter-entries">${related.length?related.map(e=>entryCard(e,participantsById)).join(''):'<p class="event-chapter-empty">Aucun fait public supplémentaire pour cette période.</p>'}</div></article>`}).join(''):'<div class="empty-state"><strong>Chronologie à venir</strong></div>';const diplo=entries.filter(e=>diplomaticTypes.has(e.entry_type)),dipBox=$('#event-diplomacy');if(dipBox)dipBox.innerHTML=diplo.length?diplo.map(e=>entryCard(e,participantsById)).join(''):'<div class="empty-state"><strong>Déclarations en préparation</strong><p>Les principales prises de position publiques des nations apparaîtront ici.</p></div>';const mediaBox=$('#event-media');if(mediaBox)mediaBox.innerHTML=media.length?media.map(m=>{const title=esc(m.title||'Média de campagne'),caption=m.caption?`<span>${esc(m.caption)}</span>`:'';if(m.media_type==='image')return `<figure class="event-media-card"><img src="${esc(m.url)}" alt="${title}" loading="lazy"><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;if(m.media_type==='audio')return `<figure class="event-media-card event-media-audio"><figcaption><strong>${title}</strong>${caption}</figcaption><audio controls preload="metadata" src="${esc(m.url)}"></audio></figure>`;if(m.media_type==='video')return `<figure class="event-media-card event-media-video"><video controls preload="metadata" src="${esc(m.url)}"></video><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;return `<a class="event-media-card event-media-link" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer"><div class="event-media-link-mark">↗</div><figcaption><strong>${title}</strong>${caption}<small>Ouvrir le lien ↗</small></figcaption></a>`}).join(''):'<div class="empty-state"><strong>Galerie à venir</strong><p>Images, cartes, fichiers audio et vidéos pourront être ajoutés depuis l’administration.</p></div>'}
+async function boot(){if(!BACKEND_CONFIGURED)return;supabase=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});await Promise.all([loadHomeFeature(),loadEventsIndex(),loadEventDetail()])}boot();

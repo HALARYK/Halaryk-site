@@ -4,97 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net https:; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#080707">
-  <meta name="description" content="Planning, ludothèque et clips de la chaîne HALARYK.">
-  <title>Contenu — HALARYK</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="referrer" content="strict-origin-when-cross-origin"><meta name="theme-color" content="#080707"><meta name="description" content="Planning, ludothèque et clips de la chaîne HALARYK."><title>Contenu — HALARYK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../v5.1.css">
 </head>
-<body data-page="content">
-<header class="topbar" id="top">
-  <a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
-  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
-  <nav id="main-nav" class="nav">
-    <div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div>
-    <a class="" href="../">Accueil</a><a class="" href="../evenements/">Événements</a><a class="active" href="../contenu/">Contenu</a><a class="" href="../communaute/">Communauté</a><a class="" href="../infos/">Infos</a>
-    <div class="mobile-nav-footer"><a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Twitch ↗</a><a href="../infos/#reseaux">Discord & réseaux</a></div>
-  </nav>
-  <div class="auth-slot">
-    <button id="login-button" class="auth-button" type="button">Connexion Twitch</button>
-    <button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button>
-    <div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="../admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div>
-  </div>
-</header>
-<main>
-<section class="page-intro decor-right"><div class="section-shell reveal"><p class="eyebrow">LA CHAÎNE</p><h1>Contenu</h1><p>Planning, jeux et moments choisis de la chaîne, réunis sans alourdir la page d’accueil.</p></div></section>
-<section class="section decor-right" id="planning">
-<div class="section-shell reveal">
-<div class="section-heading"><span class="section-number">I</span><div><p class="eyebrow">Prochaines transmissions</p><h2>Planning</h2></div></div>
-<div class="schedule-grid">
-<article class="schedule-card"><span class="schedule-day">Lundi</span><strong>Stream de semaine</strong><p>Après-midi ou soirée selon mes horaires professionnels.</p><span class="schedule-time">Horaire variable</span></article>
-<article class="schedule-card"><span class="schedule-day">Mercredi</span><strong>Stream de semaine</strong><p>Après-midi ou soirée selon mes horaires professionnels.</p><span class="schedule-time">Horaire variable</span></article>
-<article class="schedule-card featured"><span class="schedule-day">Dimanche</span><strong>Soirée multijoueur</strong><p>Session régulière avec d’autres streamers.</p><span class="schedule-time">20h30</span></article>
-</div>
-<p class="section-note">✦ Les horaires précis du lundi et du mercredi sont annoncés sur Discord et Instagram.</p>
-</div>
-</section>
-<section class="section decor-left" id="ludotheque">
-<div class="section-shell reveal">
-<div class="section-heading"><span class="section-number">II</span><div><p class="eyebrow">Collection &amp; historique</p><h2>Ludothèque</h2></div></div>
-<div class="library-summary">
-<div><strong id="library-total">—</strong><span>Jeux</span></div>
-<div><strong id="library-completed">—</strong><span>Terminés</span></div>
-<div><strong id="library-playing">—</strong><span>En cours</span></div>
-<div><strong id="library-wishlist">—</strong><span>À venir</span></div>
-</div>
-<div class="library-toolbar">
-<div aria-label="Filtrer la ludothèque" class="segmented-control library-filters">
-<button class="active" data-library-filter="playing">En cours</button>
-<button data-library-filter="completed">Terminés</button>
-<button data-library-filter="wishlist">À venir</button>
-<button data-library-filter="all">Tous</button>
-</div>
-<label class="library-search-wrap"><span class="sr-only">Rechercher dans la ludothèque</span><input autocomplete="off" id="library-search" placeholder="Rechercher un jeu, un studio ou une note…" type="search"/><span aria-hidden="true">⌕</span></label>
-</div>
-<p class="library-click-hint">Clique sur un jeu pour ouvrir sa fiche complète.</p>
-<div class="library-scroll" id="library-scroll">
-<div class="library-grid" id="library-grid"><div class="empty-state"><strong>Ludothèque en cours d’activation</strong><p>Les jeux apparaîtront ici dès que la base V4 sera connectée.</p></div></div>
-</div>
-<button class="button button-ghost library-mobile-more hidden" id="library-mobile-more" type="button">Voir toute la ludothèque</button>
-</div>
-<div aria-labelledby="library-detail-title" aria-modal="true" class="library-modal hidden" id="library-detail" role="dialog">
-<div class="library-modal-backdrop" data-library-close=""></div>
-<article class="library-modal-card">
-<button aria-label="Fermer la fiche du jeu" class="library-detail-close" id="library-detail-close" type="button">×</button>
-<div class="library-detail-visual"><img alt="" id="library-detail-cover"/></div>
-<div class="library-detail-content">
-<p class="eyebrow">Fiche du jeu</p>
-<div class="library-detail-title-row"><h3 id="library-detail-title">Jeu</h3><strong class="library-rating-large" id="library-detail-rating">— / 10</strong></div>
-<p class="library-detail-developer" id="library-detail-developer"></p>
-<p class="library-detail-release" id="library-detail-release"></p>
-<div class="library-detail-facts">
-<div><span>Statut</span><strong id="library-detail-status">—</strong></div>
-<div><span>Temps de jeu</span><strong id="library-detail-playtime">—</strong></div>
-<div><span>Streamé</span><strong id="library-detail-streamed">—</strong></div>
-</div>
-<div class="library-detail-section"><span>Résumé</span><p id="library-detail-summary"></p></div>
-<div class="library-detail-section library-detail-note"><span>Commentaire de HALARYK</span><p id="library-detail-note"></p></div>
-</div>
-</article>
-</div>
-</section>
-<section class="section decor-right" id="clips">
-<div class="section-shell reveal">
-<div class="section-heading"><span class="section-number">III</span><div><p class="eyebrow">Archives sélectionnées</p><h2>Clips</h2></div></div>
-<div class="clips-heading-row"><p>Quelques moments choisis de la chaîne, lisibles directement ici.</p><a class="button button-primary" href="https://www.twitch.tv/halaryk/clips?filter=clips&amp;range=all" rel="noopener noreferrer" target="_blank">Tous les clips Twitch ↗</a></div>
-<div class="clips-grid" id="clips-grid"></div>
-<div class="clip-thanks"><span>✦</span><p id="clip-thanks-text">Merci aux clippeurs de la chaîne qui immortalisent les meilleurs — et parfois les pires — moments.</p><span>✦</span></div>
-</div>
-</section>
-<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
-</main>
-<script type="module" src="../app.js"></script>
-</body></html>
+<body data-page="content"><header class="topbar" id="top"><a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button><nav id="main-nav" class="nav"><div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div><a href="../">Accueil</a><a href="../evenements/">Événements</a><a class="active" href="../contenu/">Contenu</a><a href="../communaute/">Communauté</a><a href="../infos/">Infos</a><div class="mobile-nav-footer"><a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Twitch ↗</a><a href="../infos/#reseaux">Discord & réseaux</a></div></nav><div class="auth-slot"><button id="login-button" class="auth-button" type="button">Connexion Twitch</button><button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button><div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="../admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div></div></header>
+<main><section class="page-intro decor-right"><div class="section-shell reveal"><p class="eyebrow">LA CHAÎNE</p><h1>Contenu</h1><p>Planning, jeux et moments choisis de la chaîne, réunis sans alourdir la page d’accueil.</p></div></section>
+<section class="section decor-right" id="planning"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">I</span><div><p class="eyebrow">Prochaines transmissions</p><h2>Planning</h2></div></div><div class="schedule-grid"><article class="schedule-card"><span class="schedule-day">Lundi</span><strong>Stream de semaine</strong><p>Après-midi ou soirée selon mes horaires professionnels.</p><span class="schedule-time">Horaire variable</span></article><article class="schedule-card"><span class="schedule-day">Mercredi</span><strong>Stream de semaine</strong><p>Après-midi ou soirée selon mes horaires professionnels.</p><span class="schedule-time">Horaire variable</span></article><article class="schedule-card featured"><span class="schedule-day">Dimanche</span><strong>Soirée multijoueur</strong><p>Session régulière avec d’autres streamers.</p><span class="schedule-time">20h30</span></article></div><p class="section-note">✦ Les horaires précis du lundi et du mercredi sont annoncés sur Discord et Instagram.</p></div></section>
+<section class="section decor-left" id="ludotheque"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">II</span><div><p class="eyebrow">Collection &amp; historique</p><h2>Ludothèque</h2></div></div><div class="library-summary"><div><strong id="library-total">—</strong><span>Jeux</span></div><div><strong id="library-completed">—</strong><span>Terminés</span></div><div><strong id="library-playing">—</strong><span>En cours</span></div><div><strong id="library-wishlist">—</strong><span>À venir</span></div></div><div class="library-toolbar"><div aria-label="Filtrer la ludothèque" class="segmented-control library-filters"><button class="active" data-library-filter="playing">En cours</button><button data-library-filter="completed">Terminés</button><button data-library-filter="wishlist">À venir</button><button data-library-filter="all">Tous</button></div><label class="library-search-wrap"><span class="sr-only">Rechercher dans la ludothèque</span><input autocomplete="off" id="library-search" placeholder="Rechercher un jeu, un studio ou une note…" type="search"/><span aria-hidden="true">⌕</span></label></div><p class="library-click-hint">Clique sur un jeu pour ouvrir sa fiche complète.</p><div class="library-scroll" id="library-scroll"><div class="library-grid" id="library-grid"><div class="empty-state"><strong>Ludothèque en cours d’activation</strong><p>Les jeux apparaîtront ici dès que la base V4 sera connectée.</p></div></div></div><button class="button button-ghost library-mobile-more hidden" id="library-mobile-more" type="button">Voir toute la ludothèque</button></div><div aria-labelledby="library-detail-title" aria-modal="true" class="library-modal hidden" id="library-detail" role="dialog"><div class="library-modal-backdrop" data-library-close=""></div><article class="library-modal-card"><button aria-label="Fermer la fiche du jeu" class="library-detail-close" id="library-detail-close" type="button">×</button><div class="library-detail-visual"><img alt="" id="library-detail-cover"/></div><div class="library-detail-content"><p class="eyebrow">Fiche du jeu</p><div class="library-detail-title-row"><h3 id="library-detail-title">Jeu</h3><strong class="library-rating-large" id="library-detail-rating">— / 10</strong></div><p class="library-detail-developer" id="library-detail-developer"></p><p class="library-detail-release" id="library-detail-release"></p><div class="library-detail-facts"><div><span>Statut</span><strong id="library-detail-status">—</strong></div><div><span>Temps de jeu</span><strong id="library-detail-playtime">—</strong></div><div><span>Streamé</span><strong id="library-detail-streamed">—</strong></div></div><div class="library-detail-section"><span>Résumé</span><p id="library-detail-summary"></p></div><div class="library-detail-section library-detail-note"><span>Commentaire de HALARYK</span><p id="library-detail-note"></p></div></div></article></div></section>
+<section class="section decor-right" id="clips"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">III</span><div><p class="eyebrow">Archives sélectionnées</p><h2>Clips</h2></div></div><div class="clips-heading-row"><p>Quelques moments choisis de la chaîne, lisibles directement ici.</p><a class="button button-primary" href="https://www.twitch.tv/halaryk/clips?filter=clips&amp;range=all" rel="noopener noreferrer" target="_blank">Tous les clips Twitch ↗</a></div><div class="clips-grid" id="clips-grid"></div><div class="clip-thanks"><span>✦</span><p id="clip-thanks-text">Merci aux clippeurs de la chaîne qui immortalisent les meilleurs — et parfois les pires — moments.</p><span>✦</span></div></div></section>
+<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer></main><script type="module" src="../app.js"></script></body></html>

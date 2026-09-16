@@ -1,0 +1,6 @@
+/* ===== HALARYK V5.1 — administration événements clarifiée ===== */
+.event-admin-legend{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 18px}.event-admin-legend span{padding:8px 10px;border:1px solid rgba(183,147,100,.13);background:rgba(7,6,6,.5);color:#8e8175;font-size:9px}.event-admin-legend b{color:#d6c9bb;font-weight:600}
+.event-public-state{align-self:flex-start;padding:5px 8px;border:1px solid rgba(183,147,100,.16);font-size:8px;text-transform:uppercase;letter-spacing:.08em}.event-public-state.is-public{color:#a9ba96;border-color:rgba(119,151,99,.3)}.event-public-state.is-draft{color:#b99c80}
+.event-cover-upload{margin-top:15px;padding:15px;border:1px dashed rgba(183,147,100,.18);background:rgba(7,6,6,.32)}.event-cover-upload small,.admin-help{display:block;margin-top:7px;color:#80746a;font-size:9px;line-height:1.45}.event-cover-upload input[type=file],#event-media-file{padding:10px;background:#060505}
+.event-declaration-admin{border-left:2px solid rgba(118,25,25,.5)}.event-legacy-next-session{display:none!important}.v51-diplomacy-hidden{display:none!important}
+@media(max-width:650px){.event-admin-legend{display:grid}.event-cover-upload{padding:12px}}
