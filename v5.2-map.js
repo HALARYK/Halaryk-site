@@ -3,11 +3,23 @@ const PAGE = document.body?.dataset?.page || "";
 const IS_RELEVANT_PAGE = PAGE === "home" || PAGE === "events" || PAGE === "event";
 
 const MAP_PARTS = [
-  "assets/eu4/europe-1444-political-v52.b64.001",
+  "assets/eu4/europe-1444-political-v52.b64.001a1",
+  "assets/eu4/europe-1444-political-v52.b64.001a2",
+  "assets/eu4/europe-1444-political-v52.b64.001a3",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_1",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_2",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_3_1",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_3_2",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_3_3",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_3_4",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_3_5",
+  "assets/eu4/europe-1444-political-v52.b64.001a4_4",
+  "assets/eu4/europe-1444-political-v52.b64.001b",
   "assets/eu4/europe-1444-political-v52.b64.002",
   "assets/eu4/europe-1444-political-v52.b64.003",
   "assets/eu4/europe-1444-political-v52.b64.004"
 ];
+const EXPECTED_BASE64_LENGTH = 60652;
 
 function installMapStyles() {
   if (document.querySelector("style[data-v52-eu4-map]")) return;
@@ -75,7 +87,9 @@ async function loadMap() {
   }));
 
   const base64 = chunks.join("");
-  if (!base64.startsWith("UklGR")) throw new Error("EU4 map payload is invalid");
+  if (base64.length !== EXPECTED_BASE64_LENGTH || !base64.startsWith("UklGR")) {
+    throw new Error("EU4 map payload is invalid");
+  }
 
   document.documentElement.style.setProperty(
     "--v52-eu4-map",
