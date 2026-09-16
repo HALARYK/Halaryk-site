@@ -19,8 +19,3 @@ export const CONFIG = {
 export const BACKEND_CONFIGURED =
   !CONFIG.SUPABASE_URL.includes("VOTRE-PROJET") &&
   !CONFIG.SUPABASE_PUBLISHABLE_KEY.includes("VOTRE_CLE");
-
-globalThis.HALARYK_CONFIG = CONFIG;
-if (typeof document !== "undefined") {
-  import("./v5.2.js").catch(error => console.error("V5.2 enhancement load failed", error));
-}
