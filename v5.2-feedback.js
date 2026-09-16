@@ -8,17 +8,16 @@ const ROOT=new URL("./",import.meta.url);
 const asset=p=>new URL(p,ROOT).href;
 
 function loadCss(){
-  if(document.querySelector('link[data-v52-feedback]'))return;
+  if(document.querySelector('link[data-v52-feedback]')||document.querySelector('link[href$="v5.2-feedback.css"]'))return;
   const link=document.createElement('link');
   link.rel='stylesheet';link.href=new URL('v5.2-feedback.css',ROOT).href;link.dataset.v52Feedback='1';document.head.appendChild(link);
 }
 
 function improveOverview(){
   const story=$('.v52-overview-story');
-  if(!story||story.dataset.feedbackReady)return;
-  story.dataset.feedbackReady='1';
+  if(!story)return;
   const aside=$('aside',story);
-  if(aside) aside.innerHTML='<strong>PUBLICATION DIFFÉRÉE</strong><span>Les données récentes restent volontairement cachées pour préserver la diplomatie, la découverte et le principe no-ledger.</span>';
+  if(aside) aside.innerHTML='<strong>PUBLICATION DIFFÉRÉE</strong><span>Les données d’une session ne deviennent publiques qu’après la suivante, afin de préserver la diplomatie, la découverte et le principe no-ledger.</span>';
 }
 
 let nationPage=0;
@@ -28,27 +27,25 @@ function renderNationCarousel(){
   if(!grid)return;
   const cards=$$('.v52-nation-card',grid);
   if(cards.length<5)return;
-  if(grid.dataset.carouselReady){
-    const pageSize=nationPageSize();
-    const maxPage=Math.max(0,Math.ceil(cards.length/pageSize)-1);
-    nationPage=Math.min(nationPage,maxPage);
-    cards.forEach((card,i)=>card.classList.toggle('v52-nation-hidden',i<nationPage*pageSize||i>=Math.min(cards.length,(nationPage+1)*pageSize)));
-    const prev=$('.v52-nation-prev',grid),next=$('.v52-nation-next',grid),count=$('.v52-nation-count',grid);
-    if(prev)prev.disabled=nationPage===0;
-    if(next)next.disabled=nationPage===maxPage;
-    if(count)count.textContent=`${nationPage+1} / ${maxPage+1}`;
-    return;
+  const pageSize=nationPageSize();
+  const maxPage=Math.max(0,Math.ceil(cards.length/pageSize)-1);
+  nationPage=Math.min(nationPage,maxPage);
+  if(!grid.dataset.carouselReady){
+    grid.dataset.carouselReady='1';
+    grid.classList.add('v52-nations-carousel');
+    const prev=document.createElement('button');prev.type='button';prev.className='v52-nation-arrow v52-nation-prev';prev.setAttribute('aria-label','Nations précédentes');prev.textContent='‹';
+    const next=document.createElement('button');next.type='button';next.className='v52-nation-arrow v52-nation-next';next.setAttribute('aria-label','Nations suivantes');next.textContent='›';
+    const count=document.createElement('span');count.className='v52-nation-count';
+    const hint=document.createElement('span');hint.className='v52-nation-hint';hint.textContent='7 nations · navigation par groupes';
+    grid.prepend(prev);grid.append(next,count,hint);
+    prev.addEventListener('click',()=>{nationPage=Math.max(0,nationPage-1);renderNationCarousel()});
+    next.addEventListener('click',()=>{nationPage=Math.min(maxPage,nationPage+1);renderNationCarousel()});
   }
-  grid.dataset.carouselReady='1';
-  grid.classList.add('v52-nations-carousel');
-  const prev=document.createElement('button');prev.type='button';prev.className='v52-nation-arrow v52-nation-prev';prev.setAttribute('aria-label','Nations précédentes');prev.textContent='‹';
-  const next=document.createElement('button');next.type='button';next.className='v52-nation-arrow v52-nation-next';next.setAttribute('aria-label','Nations suivantes');next.textContent='›';
-  const count=document.createElement('span');count.className='v52-nation-count';
-  const hint=document.createElement('span');hint.className='v52-nation-hint';hint.textContent='7 nations · navigation par groupes';
-  grid.prepend(prev);grid.append(next,count,hint);
-  prev.addEventListener('click',()=>{nationPage=Math.max(0,nationPage-1);renderNationCarousel()});
-  next.addEventListener('click',()=>{nationPage+=1;renderNationCarousel()});
-  renderNationCarousel();
+  cards.forEach((card,i)=>card.classList.toggle('v52-nation-hidden',i<nationPage*pageSize||i>=Math.min(cards.length,(nationPage+1)*pageSize)));
+  const prev=$('.v52-nation-prev',grid),next=$('.v52-nation-next',grid),count=$('.v52-nation-count',grid);
+  if(prev)prev.disabled=nationPage===0;
+  if(next)next.disabled=nationPage===maxPage;
+  if(count)count.textContent=`${nationPage+1} / ${maxPage+1}`;
 }
 
 const crestByTag={CAS:'assets/nations/nation-castille.svg',ENG:'assets/nations/nation-angleterre.svg',LAN:'assets/nations/nation-florence.svg',BRA:'assets/nations/nation-brandebourg.svg',HAB:'assets/nations/nation-autriche.svg',TUR:'assets/nations/nation-ottomans.svg',MOS:'assets/nations/nation-moscovie.svg'};
@@ -57,6 +54,11 @@ const typeLabel={guerre:'Guerre',dynastie:'Dynastie',union_personnelle:'Union pe
 const typeIcon={guerre:'⚔',dynastie:'♛',union_personnelle:'◆','désastre':'!',religion:'✝',politique:'✦',autre:'•'};
 const diplomacyTypes=new Set(['diplomatie','congrès','traité','déclaration','correspondance']);
 let timelineReady=false;
+
+const manualCastile=[
+  {id:'cas-infantes-v52',entry_type:'politique',title:'Crise des Infants d’Aragon',world_year:null,world_date_label:'Session I · date précise à consolider',summary:'Événement intérieur majeur de la première session castillane. Il est conservé comme repère important de la chronologie ; la date exacte sera consolidée à partir de la sauvegarde de session.',sort_order:151,data:{participants:['CAS']}},
+  {id:'cas-coup-v52',entry_type:'politique',title:'Coup d’État / crise de cour en Castille',world_year:null,world_date_label:'Session I · événement à confirmer',summary:'Crise politique importante signalée pendant la première session. Elle est affichée comme élément à confirmer afin de ne pas inventer une date ou un intitulé mécanique absent des données actuellement publiées.',sort_order:152,data:{participants:['CAS']}}
+];
 
 function entryTags(entry,participantsById){
   const tags=new Set();
@@ -73,6 +75,7 @@ function entryNode(entry){
   return `<button type="button" class="v52-country-node" data-entry-id="${esc(entry.id)}"><span class="v52-country-year">${esc(label)}</span><span class="v52-country-dot">${typeIcon[kind]||'•'}</span><span class="v52-country-kind">${esc(typeLabel[kind]||'Événement')}</span><strong>${esc(entry.title)}</strong></button>`;
 }
 function detailMarkup(entry,countryName){
+  if(!entry)return '';
   const kind=kindOf(entry);
   return `<div class="v52-country-detail-meta"><span>${typeIcon[kind]||'•'} ${esc(typeLabel[kind]||'Événement')}</span><span>${esc(entry.world_date_label||entry.world_year||'Date non précisée')}</span><span>${esc(countryName)}</span></div><h3>${esc(entry.title)}</h3><p>${esc(entry.summary||entry.body||'Fait historique enregistré dans la campagne.')}</p>`;
 }
@@ -91,14 +94,15 @@ async function buildCountryTimeline(){
   const ps=(participants||[]).filter(p=>tagOrder.includes(p.participant_key)).sort((a,b)=>tagOrder.indexOf(a.participant_key)-tagOrder.indexOf(b.participant_key));
   const pById=new Map(ps.map(p=>[p.id,p]));
   const es=(entries||[]).filter(e=>!diplomacyTypes.has(e.entry_type));
-  const entryMap=new Map(es.map(e=>[String(e.id),e]));
+  const allEntries=[...es,...manualCastile];
+  const entryMap=new Map(allEntries.map(e=>[String(e.id),e]));
   let activeTag=ps.find(p=>p.participant_key==='CAS')?.participant_key||ps[0]?.participant_key;
 
   const render=()=>{
     const p=ps.find(x=>x.participant_key===activeTag)||ps[0];
-    const filtered=es.filter(e=>entryTags(e,pById).includes(activeTag));
+    const filtered=allEntries.filter(e=>entryTags(e,pById).includes(activeTag)).sort((a,b)=>(Number(a.world_year||9998)-Number(b.world_year||9998))||(Number(a.sort_order||0)-Number(b.sort_order||0)));
     host.className='v52-country-timeline';
-    host.innerHTML=`<div class="v52-country-tabs">${ps.map(x=>`<button type="button" class="${x.participant_key===activeTag?'active':''}" data-country="${x.participant_key}"><img src="${asset(crestByTag[x.participant_key])}" alt=""><span>${esc(x.title)}</span></button>`).join('')}</div><div class="v52-country-range"><strong>${esc(p?.title||'Nation')} · 1444 → 1481</strong><span>La chronologie publique s’arrête à la fin de la Session I. La session suivante sera ajoutée après sa mise en archive.</span></div>${filtered.length?`<div class="v52-country-timeline-shell"><div class="v52-country-track">${filtered.map(entryNode).join('')}</div></div><article class="v52-country-detail" id="v52-country-detail"></article>`:'<div class="empty-state"><strong>Aucun fait public enregistré pour cette nation avant 1481.</strong></div>'}`;
+    host.innerHTML=`<div class="v52-country-tabs">${ps.map(x=>`<button type="button" class="${x.participant_key===activeTag?'active':''}" data-country="${x.participant_key}"><img src="${asset(crestByTag[x.participant_key])}" alt=""><span>${esc(x.title)}</span></button>`).join('')}</div><div class="v52-country-range"><strong>${esc(p?.title||'Nation')} · 1444 → 1481</strong><span>La chronologie publique s’arrête à la fin de la Session I. La Session II sera publiée après la session suivante.</span></div>${filtered.length?`<div class="v52-country-timeline-shell"><div class="v52-country-track">${filtered.map(entryNode).join('')}</div></div><article class="v52-country-detail" id="v52-country-detail"></article>`:'<div class="empty-state"><strong>Aucun fait public enregistré pour cette nation avant 1481.</strong></div>'}`;
     $$('.v52-country-tabs button',host).forEach(button=>button.addEventListener('click',()=>{activeTag=button.dataset.country;render()}));
     const nodes=$$('.v52-country-node',host);const detail=$('#v52-country-detail',host);
     const select=node=>{if(!node||!detail)return;nodes.forEach(n=>n.classList.toggle('active',n===node));detail.innerHTML=detailMarkup(entryMap.get(node.dataset.entryId),p?.title||activeTag)};
@@ -109,9 +113,10 @@ async function buildCountryTimeline(){
 }
 
 function observeDynamic(){
-  const observer=new MutationObserver(()=>{improveOverview();renderNationCarousel();buildCountryTimeline()});
+  const apply=()=>{improveOverview();renderNationCarousel();buildCountryTimeline()};
+  const observer=new MutationObserver(()=>requestAnimationFrame(apply));
   observer.observe(document.body,{childList:true,subtree:true});
-  improveOverview();renderNationCarousel();buildCountryTimeline();
+  apply();
   addEventListener('resize',()=>renderNationCarousel(),{passive:true});
 }
 
