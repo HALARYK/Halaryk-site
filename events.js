@@ -10,7 +10,7 @@ const ROOT=new URL('./',import.meta.url);
 const asset=p=>new URL(p,ROOT).href;
 let supabase=null,activeEvents=[],activeIndex=0,participantMap=new Map();
 
-const crestByTag={CAS:'assets/nations/nation-castille.webp',ENG:'assets/nations/nation-angleterre.webp',LAN:'assets/nations/nation-florence.webp',BRA:'assets/nations/nation-brandebourg.webp',HAB:'assets/nations/nation-autriche.webp',TUR:'assets/nations/nation-ottomans.webp',MOS:'assets/nations/nation-moscovie.webp'};
+const crestByTag={CAS:'assets/nations/nation-castille.svg',ENG:'assets/nations/nation-angleterre.svg',LAN:'assets/nations/nation-florence.svg',BRA:'assets/nations/nation-brandebourg.svg',HAB:'assets/nations/nation-autriche.svg',TUR:'assets/nations/nation-ottomans.svg',MOS:'assets/nations/nation-moscovie.svg'};
 const categoryLabel={guerre:'Guerre',dynastie:'Dynastie',union_personnelle:'Union personnelle','désastre':'Désastre',religion:'Religion',politique:'Politique',autre:'Événement'};
 const categoryIcon={guerre:'⚔',dynastie:'♛',union_personnelle:'◆','désastre':'!',religion:'✝',politique:'✦',autre:'•'};
 const diplomaticTypes=new Set(['diplomatie','congrès','traité','déclaration','correspondance']);
