@@ -1,206 +1,31 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
-<meta content="strict-origin-when-cross-origin" name="referrer"/>
-<title>HALARYK — Administration</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="../style.css" rel="stylesheet"/><link href="admin.css" rel="stylesheet"/>
-</head>
-<body class="admin-body">
-<header class="admin-header"><a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V5.0</span><button class="button button-primary" id="admin-login">Connexion Twitch</button><button class="button button-ghost hidden" id="admin-logout">Déconnexion</button></div></header>
-<main class="admin-shell">
-<section class="admin-gate" id="admin-gate"><p class="eyebrow">Accès privé</p><h1>Administration HALARYK</h1><p id="admin-gate-message">Connexion Twitch nécessaire.</p></section>
-<div class="hidden" id="admin-app">
-<aside class="admin-sidebar">
-<button class="active" data-admin-tab="dashboard">Tableau de bord</button><button data-admin-tab="events">Événements</button>
-<button data-admin-tab="suggestions">Suggestions</button>
-<button data-admin-tab="library">Ludothèque</button>
-<button data-admin-tab="polls">Sondages</button>
-<button data-admin-tab="clips">Clips Twitch</button>
-<button data-admin-tab="reputation">Réputation</button>
-<button data-admin-tab="collaborators">Collaborateurs</button>
-</aside>
-<div class="admin-content">
-<section data-admin-panel="dashboard">
-<p class="eyebrow">Vue d’ensemble</p><h1>Tableau de bord</h1>
-<div class="admin-stats">
-<article><strong id="stat-new-suggestions">—</strong><span>Nouvelles suggestions</span></article>
-<article><strong id="stat-considering">—</strong><span>En réflexion</span></article>
-<article><strong id="stat-library">—</strong><span>Jeux en ludothèque</span></article>
-<article><strong id="stat-polls">—</strong><span>Sondages actifs</span></article>
-<article><strong id="stat-reputation">—</strong><span>Profils réputation</span></article>
-<article><strong id="stat-collaborators">—</strong><span>Collaborateurs actifs</span></article>
-</div>
-</section><section class="hidden" data-admin-panel="events">
-<p class="eyebrow">Grands rendez-vous</p><h1>Événements</h1>
-<div class="admin-card event-admin-selector">
-<div class="event-admin-selector-head"><div><h2>Événement à modifier</h2><p>La même structure pourra servir à la PPO Europe, puis à un serveur Minecraft ou un autre grand projet.</p></div><select aria-label="Événement" id="event-admin-select"></select></div>
-</div>
-<form class="admin-card" id="event-general-form">
-<div class="admin-section-title"><h2>Informations générales</h2><p>Ces champs alimentent la mise en avant sur l’accueil et la page Événements.</p></div>
-<div class="admin-two-cols"><label>Titre<input id="event-title-input" required=""/></label><label>Sous-titre<input id="event-subtitle-input" placeholder="Ex. Europa Universalis IV"/></label></div>
-<label>Résumé public<textarea id="event-summary-input" rows="4"></textarea></label>
-<div class="admin-two-cols"><label>Statut<select id="event-status-input"><option value="draft">Brouillon</option><option value="active">Actif</option><option value="archived">Archivé</option></select></label><label class="check-row event-featured-check"><input id="event-featured-input" type="checkbox"/> Événement à la une</label></div>
-<div class="admin-three-cols"><label>Année/date actuelle<input id="event-world-current-input" type="date"/></label><label>Dernier relevé public<input id="event-public-snapshot-input" type="date"/></label><label>Chronologie publique jusqu’au<input id="event-cutoff-input" type="date"/></label></div>
-<label>Prochaine session<input id="event-next-session-input" type="datetime-local"/></label>
-<div class="admin-actions"><button class="button button-primary" type="submit">Enregistrer l’événement</button></div>
-</form>
-<div class="admin-card">
-<div class="admin-section-title"><h2>Participants</h2><p>Les joueurs et nations sont éditoriaux ; les statistiques historiques restent issues des sauvegardes.</p></div>
-<div class="admin-list compact-admin-list" id="event-participants-admin"></div>
-</div>
-<div class="admin-card">
-<div class="admin-section-title"><h2>Sessions &amp; intersessions</h2><p>Ces chapitres structurent la chronologie sans inventer de date EU4 pour le RP extérieur aux sessions.</p></div>
-<div class="admin-list compact-admin-list" id="event-chapters-admin"></div>
-<form class="admin-subform" id="event-chapter-form">
-<div class="admin-three-cols"><label>Titre<input id="event-chapter-title" placeholder="Ex. Session IV" required=""/></label><label>Type<select id="event-chapter-kind"><option value="session">Session</option><option value="intersession">Intersession</option><option value="phase">Phase</option></select></label><label>Statut<select id="event-chapter-status"><option value="complete">Terminée</option><option value="current">En cours</option><option value="upcoming">À venir</option></select></label></div>
-<label>Sous-titre<input id="event-chapter-subtitle" placeholder="Ex. 18 septembre 2026 · soir"/></label>
-<div class="admin-two-cols"><label>Début réel<input id="event-chapter-real-start" type="date"/></label><label>Fin réelle<input id="event-chapter-real-end" type="date"/></label></div>
-<div class="admin-two-cols"><label>Début EU4<input id="event-chapter-world-start" type="date"/></label><label>Fin EU4<input id="event-chapter-world-end" type="date"/></label></div>
-<button class="button button-ghost" type="submit">Ajouter le chapitre</button>
-</form>
-</div>
-<div class="admin-card">
-<div class="admin-section-title"><h2>Chronologie &amp; RP</h2><p>Les éléments issus des saves ou de nos échanges peuvent rester en relecture avant publication.</p></div>
-<div class="admin-list" id="event-entries-admin"></div>
-<form class="admin-subform event-entry-create-form" id="event-entry-form">
-<h3>Ajouter un événement</h3>
-<div class="admin-three-cols"><label>Type<select id="event-entry-type"><option value="diplomatie">Diplomatie</option><option value="guerre">Guerre</option><option value="congrès">Congrès</option><option value="traité">Traité</option><option value="déclaration">Déclaration</option><option value="religion">Religion</option><option value="désastre">Désastre</option><option value="autre">Autre</option></select></label><label>Chapitre<select id="event-entry-chapter"></select></label><label>Repère public<input id="event-entry-date-label" placeholder="Ex. Session I ou 1497"/></label></div>
-<label>Titre<input id="event-entry-title" required=""/></label><label>Résumé<textarea id="event-entry-summary" rows="3"></textarea></label>
-<div class="admin-two-cols"><label>Importance<select id="event-entry-importance"><option value="minor">Mineur</option><option selected="" value="normal">Normal</option><option value="major">Majeur</option><option value="turning_point">Tournant historique</option></select></label><label class="check-row"><input id="event-entry-public" type="checkbox"/> Publier immédiatement</label></div>
-<button class="button button-primary" type="submit">Ajouter à la chronologie</button>
-</form>
-</div>
-<div class="admin-card">
-<div class="admin-section-title"><h2>Relevés issus des sauvegardes</h2><p>Lecture seule : après une session, la nouvelle save est analysée hors du site puis le relevé nettoyé est importé.</p></div>
-<div class="snapshot-admin-grid" id="event-snapshots-admin"></div>
-<div class="event-import-note"><strong>Workflow après Session III</strong><span>Tu conserves la save exacte de fin de session → tu me l’envoies → extraction/contrôle → import du relevé public → validation ici.</span></div>
-</div>
-<div class="admin-card">
-<div class="admin-section-title"><h2>Médias de l’événement</h2><p>Captures, cartes, clips ou images de constructions pour les futurs événements communautaires.</p></div>
-<div class="admin-list compact-admin-list" id="event-media-admin"></div>
-<form class="admin-subform" id="event-media-form">
-<div class="admin-three-cols"><label>Type<select id="event-media-type"><option value="image">Image</option><option value="clip">Clip / vidéo</option><option value="link">Lien</option></select></label><label>Titre<input id="event-media-title"/></label><label>URL<input id="event-media-url" placeholder="https://…" required=""/></label></div>
-<label>Légende<textarea id="event-media-caption" rows="2"></textarea></label>
-<div class="admin-two-cols"><label class="check-row"><input checked="" id="event-media-public" type="checkbox"/> Public</label><label class="check-row"><input id="event-media-featured" type="checkbox"/> Mis en avant</label></div>
-<button class="button button-ghost" type="submit">Ajouter le média</button>
-</form>
-</div><form class="admin-card event-create-card" id="event-create-form">
-<div class="admin-section-title"><h2>Créer un futur événement</h2><p>Prévu pour les futurs projets importants, par exemple un serveur Minecraft communautaire.</p></div>
-<div class="admin-three-cols"><label>Titre<input id="event-create-title" required=""/></label><label>Slug<input id="event-create-slug" placeholder="artentia-2027" required=""/></label><label>Type<input id="event-create-type" value="community"/></label></div>
-<button class="button button-ghost" type="submit">Créer en brouillon</button>
-</form>
-</section>
+<meta content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://images.igdb.com https://static-cdn.jtvnw.net https://elnyjjasqfizkimoljvz.supabase.co; media-src 'self' blob: https://elnyjjasqfizkimoljvz.supabase.co; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/><title>HALARYK — Administration</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="../style.css" rel="stylesheet"/><link href="admin.css" rel="stylesheet"/><link href="events-v51.css" rel="stylesheet"/>
+</head><body class="admin-body">
+<header class="admin-header"><a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a><div><span class="admin-badge">Administration V5.1</span><button class="button button-primary" id="admin-login">Connexion Twitch</button><button class="button button-ghost hidden" id="admin-logout">Déconnexion</button></div></header>
+<main class="admin-shell"><section class="admin-gate" id="admin-gate"><p class="eyebrow">Accès privé</p><h1>Administration HALARYK</h1><p id="admin-gate-message">Connexion Twitch nécessaire.</p></section><div class="hidden" id="admin-app"><aside class="admin-sidebar"><button class="active" data-admin-tab="dashboard">Tableau de bord</button><button data-admin-tab="events">Événements</button><button data-admin-tab="suggestions">Suggestions</button><button data-admin-tab="library">Ludothèque</button><button data-admin-tab="polls">Sondages</button><button data-admin-tab="clips">Clips Twitch</button><button data-admin-tab="reputation">Réputation</button><button data-admin-tab="collaborators">Collaborateurs</button></aside><div class="admin-content">
+<section data-admin-panel="dashboard"><p class="eyebrow">Vue d’ensemble</p><h1>Tableau de bord</h1><div class="admin-stats"><article><strong id="stat-new-suggestions">—</strong><span>Nouvelles suggestions</span></article><article><strong id="stat-considering">—</strong><span>En réflexion</span></article><article><strong id="stat-library">—</strong><span>Jeux en ludothèque</span></article><article><strong id="stat-polls">—</strong><span>Sondages actifs</span></article><article><strong id="stat-reputation">—</strong><span>Profils réputation</span></article><article><strong id="stat-collaborators">—</strong><span>Collaborateurs actifs</span></article></div></section>
+<section class="hidden" data-admin-panel="events"><p class="eyebrow">Grands rendez-vous</p><h1>Événements</h1><div class="admin-card event-admin-selector"><div class="event-admin-selector-head"><div><h2>Événement à modifier</h2><p>Choisis le grand projet sur lequel tu veux travailler.</p></div><select aria-label="Événement" id="event-admin-select"></select></div></div>
+<form class="admin-card" id="event-general-form"><div class="admin-section-title"><h2>Présentation publique</h2><p>Ce sont les informations visibles sur l’accueil et la page Événements.</p></div><div class="admin-two-cols"><label>Nom public<input id="event-title-input" required></label><label>Sous-titre<input id="event-subtitle-input" placeholder="Ex. PPO Europe · Europa Universalis IV"></label></div><label>Résumé public<textarea id="event-summary-input" rows="4"></textarea></label><div class="admin-two-cols"><label>Statut<select id="event-status-input"><option value="draft">Brouillon — invisible</option><option value="active">En cours — visible</option><option value="archived">Terminé — archivé</option></select></label><label class="check-row event-featured-check"><input id="event-featured-input" type="checkbox"> Mettre à la une</label></div><div class="admin-three-cols"><label>Situation actuelle dans le jeu<input id="event-world-current-input" type="date"></label><label>Dernier relevé statistique public<input id="event-public-snapshot-input" type="date"></label><label>Chronologie publique jusqu’au<input id="event-cutoff-input" type="date"></label></div><label class="event-legacy-next-session hidden">Prochaine session<input id="event-next-session-input" type="datetime-local"></label><div class="event-cover-upload"><label>Carte / image de couverture<input id="event-hero-file" type="file" accept="image/*"></label><small>Pour la PPO, utilise idéalement une capture de la carte Europe en 1444. Elle servira à l’accueil, à la page Événements et au rappel de campagne.</small></div><div class="admin-actions"><button class="button button-primary" type="submit">Enregistrer la présentation</button></div></form>
+<div class="admin-card"><div class="admin-section-title"><h2>Joueurs & nations</h2><p>Tu peux corriger les noms affichés. Les statistiques viennent des sauvegardes.</p></div><div class="admin-list compact-admin-list" id="event-participants-admin"></div></div>
+<div class="admin-card"><div class="admin-section-title"><h2>Périodes de la chronologie</h2><p>Une période = avant une session, une session de jeu ou l’intervalle diplomatique entre deux sessions. Elles servent uniquement à ranger la frise dans le bon ordre.</p></div><div class="admin-list compact-admin-list" id="event-chapters-admin"></div><form class="admin-subform" id="event-chapter-form"><h3>Ajouter une période</h3><div class="admin-three-cols"><label>Nom<input id="event-chapter-title" placeholder="Ex. Session IV" required></label><label>Nature<select id="event-chapter-kind"><option value="session">Session de jeu</option><option value="intersession">Entre deux sessions</option><option value="phase">Autre période</option></select></label><label>État<select id="event-chapter-status"><option value="complete">Terminée</option><option value="current">En cours</option><option value="upcoming">À venir</option></select></label></div><label>Description courte<input id="event-chapter-subtitle" placeholder="Ex. 18 septembre 2026 · soir"></label><div class="admin-two-cols"><label>Date réelle de début<input id="event-chapter-real-start" type="date"></label><label>Date réelle de fin<input id="event-chapter-real-end" type="date"></label></div><div class="admin-two-cols"><label>Date EU4 de début<input id="event-chapter-world-start" type="date"></label><label>Date EU4 de fin<input id="event-chapter-world-end" type="date"></label></div><button class="button button-ghost" type="submit">Ajouter la période</button></form></div>
+<div class="admin-card"><div class="admin-section-title"><h2>Chronologie historique</h2><p>Les guerres, désastres, unions personnelles et changements dynastiques détectés avec certitude dans les saves sont publiés automatiquement. Ici, tu ajoutes surtout les faits RP ou le contexte que le jeu ne peut pas raconter.</p></div><div class="event-admin-legend"><span><b>Publié</b> visible sur le site</span><span><b>Brouillon</b> conservé uniquement dans l’admin</span><span><b>Période</b> endroit de la frise où l’événement sera rangé</span></div><div class="admin-list" id="event-entries-admin"></div><form class="admin-subform event-entry-create-form" id="event-entry-form"><h3>Ajouter un moment à la frise</h3><div class="admin-three-cols"><label>Nature<select id="event-entry-type"><option value="politique">Politique</option><option value="guerre">Guerre</option><option value="dynastie">Dynastie</option><option value="union_personnelle">Union personnelle</option><option value="désastre">Désastre</option><option value="religion">Religion</option><option value="autre">Autre</option></select></label><label>Période<select id="event-entry-chapter"></select></label><label>Date / repère dans la partie<input id="event-entry-date-label" placeholder="Ex. 23 février 1465"></label></div><label>Titre<input id="event-entry-title" required></label><label>Résumé public<textarea id="event-entry-summary" rows="3"></textarea></label><div class="admin-two-cols"><label>Importance<select id="event-entry-importance"><option value="minor">Secondaire</option><option selected value="normal">Standard</option><option value="major">Majeur</option><option value="turning_point">Tournant de la campagne</option></select></label><label class="check-row"><input id="event-entry-public" type="checkbox"> Publier sur le site maintenant</label></div><button class="button button-primary" type="submit">Ajouter à la chronologie</button></form></div>
+<div class="admin-card"><div class="admin-section-title"><h2>Déclarations diplomatiques</h2><p>Pour les messages importants postés par les nations sur Discord : choisis le pays, la période et publie le texte proprement.</p></div><div class="admin-list" id="event-declarations-admin"></div><form class="admin-subform" id="event-declaration-form"><h3>Ajouter une déclaration</h3><div class="admin-three-cols"><label>Pays<select id="event-declaration-country" required></select></label><label>Période<select id="event-declaration-chapter" required></select></label><label>Type<select id="event-declaration-type"><option value="déclaration">Déclaration publique</option><option value="traité">Traité</option><option value="congrès">Congrès</option><option value="correspondance">Correspondance</option><option value="diplomatie">Autre diplomatie</option></select></label></div><label>Titre<input id="event-declaration-title" required placeholder="Ex. Déclaration de la Couronne de Castille"></label><label>Texte / résumé<textarea id="event-declaration-body" rows="6" required></textarea></label><label class="check-row"><input id="event-declaration-public" type="checkbox" checked> Publier sur le site</label><button class="button button-primary" type="submit">Publier la déclaration</button></form></div>
+<div class="admin-card"><div class="admin-section-title"><h2>Relevés des sauvegardes</h2><p>Lecture seule. Après chaque session, la save de fin est analysée hors du site puis seules les données autorisées sont importées.</p></div><div class="snapshot-admin-grid" id="event-snapshots-admin"></div><div class="event-import-note"><strong>Après la Session III</strong><span>Conserve la save exacte de fin de session et envoie-la moi : j’extrais les nouvelles données et la chronologie mécanique sans publier les informations trop récentes.</span></div></div>
+<div class="admin-card"><div class="admin-section-title"><h2>Médias de l’événement</h2><p>Tu peux envoyer directement une image, un fichier audio ou une courte vidéo depuis ton PC. Les liens externes restent possibles.</p></div><div class="admin-list compact-admin-list" id="event-media-admin"></div><form class="admin-subform" id="event-media-form"><div class="admin-two-cols"><label>Fichier local<input id="event-media-file" type="file" accept="image/*,audio/*,video/*"></label><label>Ou URL externe<input id="event-media-url" placeholder="https://…"></label></div><div class="admin-two-cols"><label>Titre<input id="event-media-title"></label><label>Type<select id="event-media-type"><option value="auto">Détecter automatiquement</option><option value="image">Image</option><option value="audio">Audio</option><option value="video">Vidéo</option><option value="link">Lien</option></select></label></div><label>Légende<textarea id="event-media-caption" rows="2"></textarea></label><label class="check-row"><input checked id="event-media-public" type="checkbox"> Afficher sur le site</label><button class="button button-ghost" type="submit">Ajouter le média</button><small class="admin-help">Limite actuelle : 50 Mo par fichier. Pour des VOD complètes, on utilisera une solution vidéo séparée.</small></form></div>
+<form class="admin-card event-create-card" id="event-create-form"><div class="admin-section-title"><h2>Créer un futur événement</h2><p>Ex. serveur Minecraft communautaire, grande série multijoueur ou autre projet important.</p></div><div class="admin-three-cols"><label>Titre<input id="event-create-title" required></label><label>Slug<input id="event-create-slug" placeholder="artentia-2027" required></label><label>Type<input id="event-create-type" value="community"></label></div><button class="button button-ghost" type="submit">Créer en brouillon</button></form></section>
 <section class="hidden" data-admin-panel="suggestions"><p class="eyebrow">Modération communautaire</p><h1>Suggestions</h1><div class="admin-list" id="admin-suggestions"></div></section>
-<section class="hidden" data-admin-panel="library">
-<p class="eyebrow">Collection</p><h1>Ludothèque</h1>
-<div class="admin-card">
-<h2>Ajouter un jeu</h2>
-<div class="admin-inline game-search-controls">
-<select aria-label="Type de recherche" id="game-search-mode">
-<option value="title">Nom du jeu</option>
-<option value="developer">Studio de développement</option>
-</select>
-<input autocomplete="off" id="game-search-input" placeholder="Ex. Professor Layton…"/>
-<button class="button button-primary" id="game-search-button">Rechercher</button>
-</div>
-<div aria-live="polite" class="game-search-meta" id="game-search-meta"></div>
-<div class="game-search-results" id="game-search-results"></div>
-<div class="admin-search-more" id="game-search-more"></div>
-</div>
-<div class="admin-card library-manager">
-<div class="library-manager-head">
-<div><h2>Jeux déjà ajoutés</h2><p class="library-result-count" id="library-result-count">—</p></div>
-<div class="library-manager-filters">
-<input autocomplete="off" id="library-search-input" placeholder="Rechercher dans ma ludothèque…" type="search"/>
-<select aria-label="Filtrer par statut" id="library-status-filter">
-<option value="all">Tous les statuts</option>
-<option value="playing">En cours</option>
-<option value="completed">Terminé</option>
-<option value="wishlist">À venir</option>
-</select>
-</div>
-</div>
-</div>
-<div class="admin-list" id="admin-library"></div>
-</section>
-<section class="hidden" data-admin-panel="polls">
-<p class="eyebrow">Votes longue durée</p><h1>Sondages</h1>
-<form class="admin-card" id="poll-form"><h2>Nouveau sondage</h2><label>Titre<input id="poll-title" required=""/></label><label>Description<textarea id="poll-description" rows="3"></textarea></label><label>Options <small>Une par ligne</small><textarea id="poll-options" required="" rows="6"></textarea></label><div class="admin-two-cols"><label>Résultats<select id="poll-visibility"><option value="always">Toujours visibles</option><option value="after_vote">Après avoir voté</option><option value="after_close">Après la fermeture</option></select></label><label>Fin du sondage<input id="poll-end" type="datetime-local"/></label></div><label class="check-row"><input id="poll-multiple" type="checkbox"/> Autoriser plusieurs réponses</label><button class="button button-primary" type="submit">Créer le sondage</button></form>
-<div class="admin-section-title"><h2>Sondages existants</h2><p>Consulte les résultats, corrige les textes, les dates ou la visibilité, puis enregistre les modifications.</p></div><div class="admin-list" id="admin-polls"></div>
-</section>
-<section class="hidden" data-admin-panel="clips">
-<p class="eyebrow">Sélection publique</p><h1>Clips Twitch</h1>
-<div class="admin-card"><h2>Les 4 clips du site</h2><p>Colle une URL Twitch complète ou directement le slug du clip. Les quatre emplacements sont affichés dans cet ordre sur le site public.</p><div class="clips-admin-grid" id="admin-clips"></div><div class="admin-actions"><button class="button button-primary" id="save-clips" type="button">Enregistrer les clips</button></div></div>
-</section>
-<section class="hidden" data-admin-panel="reputation">
-<p class="eyebrow">Miroir de Streamer.bot</p><h1>Réputation</h1>
-<div class="admin-card"><h2>Source des scores</h2><p>Les scores restent pilotés depuis Streamer.bot. Cette page sert à vérifier que les valeurs ont bien été synchronisées vers le site ; aucune modification manuelle n’est proposée ici afin d’éviter les divergences.</p></div>
-<div class="admin-list" id="admin-reputation"></div>
-</section>
-<section class="hidden" data-admin-panel="collaborators">
-<p class="eyebrow">Chaînes régulièrement présentes</p><h1>Collaborateurs</h1>
-<form class="admin-card" id="collaborator-form">
-<h2>Ajouter un collaborateur</h2>
-<div class="admin-two-cols"><label>Identifiant Twitch<input id="collaborator-login" placeholder="ex. yokouzz" required=""/></label><label>Ordre d’affichage<input id="collaborator-order" type="number" value="0"/></label></div>
-<label>Courte description<textarea id="collaborator-description" maxlength="300" placeholder="Ex. : Présent régulièrement lors des soirées multijoueur." rows="3"></textarea></label>
-<button class="button button-primary" type="submit">Ajouter</button>
-</form>
-<div class="admin-list" id="admin-collaborators"></div>
-</section>
-</div>
-</div>
-</main>
-<div aria-hidden="true" aria-labelledby="game-add-title" aria-modal="true" class="admin-modal hidden" id="game-add-modal" role="dialog">
-<div class="admin-modal-backdrop" data-close-game-modal=""></div>
-<div class="admin-modal-card">
-<button aria-label="Fermer" class="admin-modal-close" data-close-game-modal="" type="button">×</button>
-<div class="game-modal-head">
-<img alt="" class="game-modal-cover hidden" id="game-add-cover"/>
-<div>
-<p class="eyebrow">Ajouter à la ludothèque</p>
-<h2 id="game-add-title">Jeu</h2>
-<p class="game-modal-year" id="game-add-year"></p>
-</div>
-</div>
-<div class="admin-two-cols">
-<label>Statut
-        <select id="game-add-status">
-<option value="playing">En cours</option>
-<option value="completed">Terminé</option>
-<option selected="" value="wishlist">À venir</option>
-</select>
-</label>
-<label>Temps de jeu (heures)<input id="game-add-playtime" min="0" placeholder="Ex. : 1714" step="0.1" type="number"/></label>
-<label>Note / 10<input id="game-add-rating" max="10" min="0" placeholder="Ex. : 8.5" step="0.5" type="number"/></label>
-</div>
-<label class="check-row game-modal-streamed"><input id="game-add-streamed" type="checkbox"/> Déjà streamé sur la chaîne</label>
-<label>Studio de développement<input id="game-add-developer" placeholder="Ex. : LEVEL-5"/></label>
-<label>Résumé public <small>2 à 4 lignes, idéalement en français</small><textarea id="game-add-summary" maxlength="520" placeholder="Résumé court type fiche Steam, rédigé pour les visiteurs…" rows="4"></textarea><small class="field-help">IGDB ne remplit plus ce texte automatiquement : la jaquette, la date et le studio restent actualisables sans écraser ton résumé.</small></label>
-<label>Commentaire personnel<textarea id="game-add-note" placeholder="Ton avis, un souvenir, un commentaire…" rows="4"></textarea></label>
-<div class="admin-actions modal-actions">
-<button class="button button-primary" id="game-add-confirm" type="button">Ajouter le jeu</button>
-<button class="button button-ghost" data-close-game-modal="" type="button">Annuler</button>
-</div>
-</div>
-</div>
-<div aria-hidden="true" aria-labelledby="confirm-title" aria-modal="true" class="admin-modal hidden" id="confirm-modal" role="dialog">
-<div class="admin-modal-backdrop" data-close-confirm=""></div>
-<div class="admin-modal-card confirm-modal-card">
-<button aria-label="Fermer" class="admin-modal-close" data-close-confirm="" type="button">×</button>
-<p class="eyebrow">Confirmation</p>
-<h2 id="confirm-title">Confirmer l’action</h2>
-<p class="confirm-message" id="confirm-message"></p>
-<div class="admin-actions modal-actions">
-<button class="button button-primary" id="confirm-accept" type="button">Confirmer</button>
-<button class="button button-ghost" data-close-confirm="" type="button">Annuler</button>
-</div>
-</div>
-</div>
-<script src="admin.js" type="module"></script>
-</body>
-</html>
+<section class="hidden" data-admin-panel="library"><p class="eyebrow">Collection</p><h1>Ludothèque</h1><div class="admin-card"><h2>Ajouter un jeu</h2><div class="admin-inline game-search-controls"><select aria-label="Type de recherche" id="game-search-mode"><option value="title">Nom du jeu</option><option value="developer">Studio de développement</option></select><input autocomplete="off" id="game-search-input" placeholder="Ex. Professor Layton…"/><button class="button button-primary" id="game-search-button">Rechercher</button></div><div aria-live="polite" class="game-search-meta" id="game-search-meta"></div><div class="game-search-results" id="game-search-results"></div><div class="admin-search-more" id="game-search-more"></div></div><div class="admin-card library-manager"><div class="library-manager-head"><div><h2>Jeux déjà ajoutés</h2><p class="library-result-count" id="library-result-count">—</p></div><div class="library-manager-filters"><input autocomplete="off" id="library-search-input" placeholder="Rechercher dans ma ludothèque…" type="search"/><select aria-label="Filtrer par statut" id="library-status-filter"><option value="all">Tous les statuts</option><option value="playing">En cours</option><option value="completed">Terminé</option><option value="wishlist">À venir</option></select></div></div></div><div class="admin-list" id="admin-library"></div></section>
+<section class="hidden" data-admin-panel="polls"><p class="eyebrow">Votes longue durée</p><h1>Sondages</h1><form class="admin-card" id="poll-form"><h2>Nouveau sondage</h2><label>Titre<input id="poll-title" required=""/></label><label>Description<textarea id="poll-description" rows="3"></textarea></label><label>Options <small>Une par ligne</small><textarea id="poll-options" required="" rows="6"></textarea></label><div class="admin-two-cols"><label>Résultats<select id="poll-visibility"><option value="always">Toujours visibles</option><option value="after_vote">Après avoir voté</option><option value="after_close">Après la fermeture</option></select></label><label>Fin du sondage<input id="poll-end" type="datetime-local"/></label></div><label class="check-row"><input id="poll-multiple" type="checkbox"/> Autoriser plusieurs réponses</label><button class="button button-primary" type="submit">Créer le sondage</button></form><div class="admin-section-title"><h2>Sondages existants</h2><p>Consulte les résultats, corrige les textes, les dates ou la visibilité, puis enregistre les modifications.</p></div><div class="admin-list" id="admin-polls"></div></section>
+<section class="hidden" data-admin-panel="clips"><p class="eyebrow">Sélection publique</p><h1>Clips Twitch</h1><div class="admin-card"><h2>Les 4 clips du site</h2><p>Colle une URL Twitch complète ou directement le slug du clip. Les quatre emplacements sont affichés dans cet ordre sur le site public.</p><div class="clips-admin-grid" id="admin-clips"></div><div class="admin-actions"><button class="button button-primary" id="save-clips" type="button">Enregistrer les clips</button></div></div></section>
+<section class="hidden" data-admin-panel="reputation"><p class="eyebrow">Miroir de Streamer.bot</p><h1>Réputation</h1><div class="admin-card"><h2>Source des scores</h2><p>Les scores restent pilotés depuis Streamer.bot. Cette page sert à vérifier que les valeurs ont bien été synchronisées vers le site ; aucune modification manuelle n’est proposée ici afin d’éviter les divergences.</p></div><div class="admin-list" id="admin-reputation"></div></section>
+<section class="hidden" data-admin-panel="collaborators"><p class="eyebrow">Chaînes régulièrement présentes</p><h1>Collaborateurs</h1><form class="admin-card" id="collaborator-form"><h2>Ajouter un collaborateur</h2><div class="admin-two-cols"><label>Identifiant Twitch<input id="collaborator-login" placeholder="ex. yokouzz" required=""/></label><label>Ordre d’affichage<input id="collaborator-order" type="number" value="0"/></label></div><label>Courte description<textarea id="collaborator-description" maxlength="300" placeholder="Ex. : Présent régulièrement lors des soirées multijoueur." rows="3"></textarea></label><button class="button button-primary" type="submit">Ajouter</button></form><div class="admin-list" id="admin-collaborators"></div></section>
+</div></div></main>
+<div aria-hidden="true" aria-labelledby="game-add-title" aria-modal="true" class="admin-modal hidden" id="game-add-modal" role="dialog"><div class="admin-modal-backdrop" data-close-game-modal=""></div><div class="admin-modal-card"><button aria-label="Fermer" class="admin-modal-close" data-close-game-modal="" type="button">×</button><div class="game-modal-head"><img alt="" class="game-modal-cover hidden" id="game-add-cover"/><div><p class="eyebrow">Ajouter à la ludothèque</p><h2 id="game-add-title">Jeu</h2><p class="game-modal-year" id="game-add-year"></p></div></div><div class="admin-two-cols"><label>Statut<select id="game-add-status"><option value="playing">En cours</option><option value="completed">Terminé</option><option selected="" value="wishlist">À venir</option></select></label><label>Temps de jeu (heures)<input id="game-add-playtime" min="0" placeholder="Ex. : 1714" step="0.1" type="number"/></label><label>Note / 10<input id="game-add-rating" max="10" min="0" placeholder="Ex. : 8.5" step="0.5" type="number"/></label></div><label class="check-row game-modal-streamed"><input id="game-add-streamed" type="checkbox"/> Déjà streamé sur la chaîne</label><label>Studio de développement<input id="game-add-developer" placeholder="Ex. : LEVEL-5"/></label><label>Résumé public <small>2 à 4 lignes, idéalement en français</small><textarea id="game-add-summary" maxlength="520" placeholder="Résumé court type fiche Steam, rédigé pour les visiteurs…" rows="4"></textarea><small class="field-help">IGDB ne remplit plus ce texte automatiquement : la jaquette, la date et le studio restent actualisables sans écraser ton résumé.</small></label><label>Commentaire personnel<textarea id="game-add-note" placeholder="Ton avis, un souvenir, un commentaire…" rows="4"></textarea></label><div class="admin-actions modal-actions"><button class="button button-primary" id="game-add-confirm" type="button">Ajouter le jeu</button><button class="button button-ghost" data-close-game-modal="" type="button">Annuler</button></div></div></div>
+<div aria-hidden="true" aria-labelledby="confirm-title" aria-modal="true" class="admin-modal hidden" id="confirm-modal" role="dialog"><div class="admin-modal-backdrop" data-close-confirm=""></div><div class="admin-modal-card confirm-modal-card"><button aria-label="Fermer" class="admin-modal-close" data-close-confirm="" type="button">×</button><p class="eyebrow">Confirmation</p><h2 id="confirm-title">Confirmer l’action</h2><p class="confirm-message" id="confirm-message"></p><div class="admin-actions modal-actions"><button class="button button-primary" id="confirm-accept" type="button">Confirmer</button><button class="button button-ghost" data-close-confirm="" type="button">Annuler</button></div></div></div>
+<script src="admin.js" type="module"></script><script src="events-v51.js" type="module"></script>
+</body></html>
