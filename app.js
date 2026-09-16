@@ -5,3 +5,4 @@ await import("./event-routes.js");
 await import("./v5.2-map.js");
 await import("./app-core.js");
 await import("./v5.2-feedback.js");
+await import("./v5.2-user-fixes.js");
