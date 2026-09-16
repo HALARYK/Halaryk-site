@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net https:; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080707">
+  <meta name="description" content="Événements en cours et archives des grands projets HALARYK.">
+  <title>Événements — HALARYK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-page="events">
+<header class="topbar" id="top">
+  <a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
+  <nav id="main-nav" class="nav">
+    <div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div>
+    <a class="" href="../">Accueil</a><a class="active" href="../evenements/">Événements</a><a class="" href="../contenu/">Contenu</a><a class="" href="../communaute/">Communauté</a><a class="" href="../infos/">Infos</a>
+    <div class="mobile-nav-footer"><a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Twitch ↗</a><a href="../infos/#reseaux">Discord & réseaux</a></div>
+  </nav>
+  <div class="auth-slot">
+    <button id="login-button" class="auth-button" type="button">Connexion Twitch</button>
+    <button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button>
+    <div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="../admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div>
+  </div>
+</header>
+<main>
+<section class="page-intro events-page-intro decor-right"><div class="section-shell reveal"><p class="eyebrow">LES GRANDS RENDEZ-VOUS</p><h1>Événements</h1><p>Les projets qui marquent une période de la chaîne et de la communauté. L’événement actif est mis en avant ; une fois terminé, sa page complète rejoint les archives.</p></div></section>
+<section class="section decor-left"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">I</span><div><p class="eyebrow">En cours</p><h2>À la une</h2></div></div><div id="events-active-grid" class="events-grid"><div class="empty-state"><strong>Chargement de l’événement…</strong></div></div></div></section>
+<section class="section decor-right"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">II</span><div><p class="eyebrow">Mémoire du site</p><h2>Archives des événements</h2></div></div><p class="section-lead">Une campagne terminée, un serveur communautaire ou une série spéciale reste consultable ici avec son histoire, ses médias et ses temps forts.</p><div id="events-archive-grid" class="events-grid archives-grid"><div class="empty-state"><strong>Aucune archive pour le moment</strong><p>La PPO Europe rejoindra cet espace lorsqu’elle sera terminée.</p></div></div></div></section>
+<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
+</main>
+<script type="module" src="../app.js"></script>
+<script type="module" src="../events.js"></script>
+</body></html>

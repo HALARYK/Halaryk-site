@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net https:; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080707">
+  <meta name="description" content="Chroniques de la campagne multijoueur RP Europa Universalis IV PPO Europe.">
+  <title>PPO Europe — Événement HALARYK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-page="event" data-event-slug="ppo-europe">
+<header class="topbar" id="top">
+  <a class="brand" href="../../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
+  <nav id="main-nav" class="nav">
+    <div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div>
+    <a class="" href="../../">Accueil</a><a class="active" href="../../evenements/">Événements</a><a class="" href="../../contenu/">Contenu</a><a class="" href="../../communaute/">Communauté</a><a class="" href="../../infos/">Infos</a>
+    <div class="mobile-nav-footer"><a href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Twitch ↗</a><a href="../../infos/#reseaux">Discord & réseaux</a></div>
+  </nav>
+  <div class="auth-slot">
+    <button id="login-button" class="auth-button" type="button">Connexion Twitch</button>
+    <button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button>
+    <div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="../../admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div>
+  </div>
+</header>
+<main>
+<section class="event-hero" id="event-overview">
+  <div class="event-hero-floral" aria-hidden="true"></div>
+  <div class="section-shell event-hero-inner reveal">
+    <p class="eyebrow" id="event-eyebrow">CAMPAGNE MULTIJOUEUR RP</p>
+    <p class="event-game-name" id="event-game-name">EUROPA UNIVERSALIS IV</p>
+    <h1 id="event-title">PPO — Europe</h1>
+    <p class="event-summary" id="event-summary">Sept joueurs façonnent une Europe alternative au fil des sessions, des guerres et d’une diplomatie jouée en RP.</p>
+    <div class="event-hero-facts">
+      <div><span>Début de campagne</span><strong id="event-world-start">1444</strong></div>
+      <div><span>Situation actuelle</span><strong id="event-world-current">1507</strong></div>
+      <div><span>Dernier relevé public</span><strong id="event-public-snapshot">1481</strong></div>
+      <div><span>Chronologie publique</span><strong id="event-chronicle-cutoff">1497</strong></div>
+    </div>
+    <p class="event-confidentiality">Les données contemporaines restent volontairement scellées afin de préserver le jeu diplomatique et la règle sans registre.</p>
+  </div>
+</section>
+<nav class="event-subnav" aria-label="Navigation de la campagne"><div class="event-subnav-inner"><a href="#event-overview">Aperçu</a><a href="#nations">Nations</a><a href="#chronologie">Chronologie</a><a href="#guerres">Guerres</a><a href="#diplomatie">Diplomatie</a><a href="#medias">Médias</a></div></nav>
+<section class="section event-overview-section decor-left"><div class="section-shell reveal"><div class="event-editorial-grid"><article class="event-editorial"><p class="eyebrow">PRINCIPE</p><h2>Une histoire publiée avec retard</h2><p>La campagne est jouée en RP et sans registre. Le site distingue donc l’état réel de la partie, les relevés statistiques suffisamment anciens pour être publiés, et les événements historiques déjà déclassifiés.</p></article><aside class="event-next-session"><p class="eyebrow">PROCHAINE SESSION</p><strong id="event-next-session">Vendredi 18 septembre 2026 · soir</strong><span>Session III</span></aside></div></div></section>
+<section id="nations" class="section decor-right"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">I</span><div><p class="eyebrow">Sept puissances</p><h2>Nations</h2></div></div><p class="section-lead">Les chiffres affichés comparent l’état initial du 11 novembre 1444 et la fin exacte de la Session I, le 16 janvier 1481.</p><div id="event-nations-grid" class="event-nations-grid"><div class="empty-state"><strong>Chargement des nations…</strong></div></div></div></section>
+<section id="chronologie" class="section decor-left"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">II</span><div><p class="eyebrow">Sessions & intersessions</p><h2>Chronologie</h2></div></div><p class="section-lead">Les événements mécaniques suivent les dates EU4. Le RP extérieur aux sessions est rattaché à l’intersession correspondante plutôt qu’à une date fictive.</p><div id="event-timeline" class="event-timeline"><div class="empty-state"><strong>Chargement de la chronologie…</strong></div></div></div></section>
+<section id="guerres" class="section decor-right"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">III</span><div><p class="eyebrow">Conflits majeurs</p><h2>Guerres</h2></div></div><div id="event-wars" class="event-entry-grid"><div class="empty-state"><strong>Sélection en cours</strong><p>Les guerres détectées dans les sauvegardes sont relues avant publication.</p></div></div></div></section>
+<section id="diplomatie" class="section decor-left"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">IV</span><div><p class="eyebrow">RP public</p><h2>Diplomatie</h2></div></div><div id="event-diplomacy" class="event-entry-grid"><div class="empty-state"><strong>Documents en préparation</strong><p>Déclarations, congrès, traités et correspondances publiques apparaîtront ici après validation.</p></div></div></div></section>
+<section id="medias" class="section decor-right"><div class="section-shell reveal"><div class="section-heading"><span class="section-number">V</span><div><p class="eyebrow">Images & souvenirs</p><h2>Médias</h2></div></div><div id="event-media" class="event-media-grid"><div class="empty-state"><strong>Galerie à venir</strong><p>Captures de sessions, cartes et clips liés à la campagne pourront être ajoutés depuis l’administration.</p></div></div></div></section>
+<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
+</main>
+<script type="module" src="../../app.js"></script>
+<script type="module" src="../../events.js"></script>
+</body></html>

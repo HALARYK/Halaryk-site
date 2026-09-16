@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net https:; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="#080707" name="theme-color"/>
+<meta content="Règlement, commandes, configuration, FAQ, partenaires et réseaux de HALARYK." name="description"/>
+<title>Infos — HALARYK</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body data-page="infos">
+<header class="topbar" id="top">
+<a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
+<button aria-controls="main-nav" aria-expanded="false" class="menu-toggle"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
+<nav class="nav" id="main-nav">
+<div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div>
+<a class="" href="../">Accueil</a><a class="" href="../evenements/">Événements</a><a class="" href="../contenu/">Contenu</a><a class="" href="../communaute/">Communauté</a><a class="active" href="../infos/">Infos</a>
+<div class="mobile-nav-footer"><a href="https://www.twitch.tv/halaryk" rel="noopener noreferrer" target="_blank">Twitch ↗</a><a href="../infos/#reseaux">Discord &amp; réseaux</a></div>
+</nav>
+<div class="auth-slot">
+<button class="auth-button" id="login-button" type="button">Connexion Twitch</button>
+<button class="user-chip hidden" id="user-button" type="button"><img alt="" id="user-avatar"/><span id="user-name"></span></button>
+<div class="user-menu hidden" id="user-menu"><a class="hidden" href="../admin/" id="admin-link">Administration</a><button id="logout-button" type="button">Déconnexion</button></div>
+</div>
+</header>
+<main>
+<section class="page-intro decor-right"><div class="section-shell reveal"><p class="eyebrow">À PROPOS DE LA CHAÎNE</p><h1>Infos</h1><p>Tout ce qui concerne le fonctionnement de la chaîne, sa configuration et ses liens utiles.</p></div></section>
+<section class="section decor-left" id="reglement">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">I</span><div><p class="eyebrow">Décret de bonne conduite</p><h2>Règlement</h2></div></div>
+<div class="rules-grid">
+<article><span>01</span><h3>Respect avant tout</h3><p>Pas d’insultes gratuites, de harcèlement ou d’attaques personnelles. On peut débattre et se chambrer sans franchir la ligne.</p></article>
+<article><span>02</span><h3>Pas de spoil</h3><p>Sur les jeux narratifs ou les découvertes, évite les solutions, révélations et indications non demandées. Le backseat n’est bienvenu que lorsqu’il est demandé.</p></article>
+<article><span>03</span><h3>Le chat reste lisible</h3><p>Pas de spam, de copier-coller massif ou de promotion sauvage. Liens et autopromotion se font avec accord.</p></article>
+<article><span>04</span><h3>Les modos tranchent</h3><p>En cas de doute, la modération décide et adapte si nécessaire selon le contexte.</p></article>
+<article><span>05</span><h3>Sujets sensibles</h3><p>Évite notamment politique, religion et sujets assimilés s’ils ne sont pas lancés par Halaryk.</p></article>
+<article class="danger-card"><span>06</span><h3>Vie privée &amp; consentement</h3><p>Aucune information personnelle dans le chat ou en chuchotement sans consentement explicite. Le non-respect peut entraîner un bannissement.</p></article>
+</div>
+</div>
+</section>
+<section class="section decor-right" id="commandes">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">II</span><div><p class="eyebrow">Interactions du chat</p><h2>Commandes</h2></div></div>
+<div class="commands-grid">
+<article><code>!biscuits</code><h3>Pluie de biscuits</h3><p>Déclenche une pluie de cookies directement sur le stream.</p></article>
+<article><code>!coin</code><h3>Invasion de canards</h3><p>Fait pleuvoir des canards en plastique sur le stream.</p></article>
+<article><code>!bisous</code><h3>La bise du bot</h3><p>Le bot te répond personnellement et te fait la bise.</p></article>
+<article><code>!rep</code><h3>Réputation</h3><p>Affiche ton score de réputation et ton rang actuel sur la chaîne.</p></article>
+</div>
+</div>
+</section>
+<section class="section decor-left" id="config">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">III</span><div><p class="eyebrow">Matériel de diffusion</p><h2>Configuration</h2></div></div>
+<div class="config-grid">
+<article><p class="eyebrow">Machine</p><dl><div><dt>Processeur</dt><dd>Intel Core i5-12400F</dd></div><div><dt>Carte mère</dt><dd>Gigabyte B760 DS3H AX DDR4</dd></div><div><dt>Carte graphique</dt><dd>MSI GeForce RTX 3050 LP 6G OC</dd></div><div><dt>Mémoire</dt><dd>32 Go DDR4 2666 MHz</dd></div><div><dt>Stockage</dt><dd>Kingston NV3 1 To NVMe</dd></div><div><dt>Alimentation</dt><dd>be quiet! System Power 11 650W</dd></div></dl></article>
+<article><p class="eyebrow">Périphériques</p><dl><div><dt>Écrans</dt><dd>2× ViewSonic VA2215-H 22"</dd></div><div><dt>Clavier</dt><dd>Corsair K55 Core RGB</dd></div><div><dt>Webcam</dt><dd>Logitech C270 HD</dd></div><div><dt>Micro</dt><dd>Trust GXT 252+ Emita Plus</dd></div><div><dt>Casque</dt><dd>SteelSeries Arctis Nova 7 Wireless</dd></div><div><dt>Diffusion</dt><dd>OBS Studio + Streamer.bot</dd></div></dl></article>
+</div>
+</div>
+</section>
+<section class="section decor-right" id="faq">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">IV</span><div><p class="eyebrow">Questions fréquentes</p><h2>FAQ</h2></div></div>
+<div class="faq-list">
+<details><summary>Quels types de jeux sont streamés sur la chaîne ?</summary><p>Un peu de tout : stratégie, horreur, gestion, multijoueur et découvertes. La principale limite, ce sont les jeux très orientés compétition ou frustration permanente comme League of Legends, Counter-Strike ou Valorant.</p></details>
+<details><summary>Peut-on rejoindre les parties multijoueur ?</summary><p>Oui, théoriquement les parties sont ouvertes à tous. En pratique, il faut que l’on vous connaisse un minimum ou qu’il y ait un très bon feeling.</p></details>
+<details><summary>Pourquoi le planning change-t-il selon les semaines ?</summary><p>Mon activité professionnelle m’impose des horaires variables. Le lundi et le mercredi peuvent donc avoir lieu l’après-midi ou le soir. Le dimanche reste fixe à 20h30.</p></details>
+<details><summary>Peut-on proposer ou imposer un jeu ?</summary><p>Oui. Vous pouvez proposer un jeu dans le chat. Une récompense de points de chaîne permet aussi d’imposer un jeu, sous réserve des conditions précisées sur Twitch.</p></details>
+<details><summary>Comment fonctionne la réputation ?</summary><p>À votre arrivée, votre réputation est de 0 et vous avez le rang d’Inconnu. Seuls le streamer et les modérateurs peuvent attribuer ou retirer des points. <code>!rep</code> affiche votre score et votre rang.</p></details>
+<details><summary>Où sont annoncés les changements de planning ?</summary><p>Principalement sur le Discord de la chaîne et sur Instagram, y compris pour les lives exceptionnels.</p></details>
+<details><summary>Le backseat est-il autorisé ?</summary><p>Oui, mais uniquement lorsqu’il est demandé par le streamer.</p></details>
+<details><summary>Quelle est l’ambiance générale de la chaîne ?</summary><p>Le chill absolu. Pas de drama ni d’histoires inutiles : l’idée est que chacun puisse venir se détendre, discuter et profiter du live.</p></details>
+</div>
+</div>
+</section>
+<section class="section decor-right" id="partenaires">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">V</span><div><p class="eyebrow">Soutiens &amp; collaborations</p><h2>Partenaires</h2></div></div>
+<a class="partner-card" href="https://kinguin.net/?r=e342gjynbxd5r" rel="noopener noreferrer sponsored" target="_blank"><p class="eyebrow">Partenaire de la chaîne</p><h3>Kinguin</h3><p>Jeux, cartes-cadeaux et produits numériques. En passant par ce lien partenaire, tu soutiens directement la chaîne.</p><strong>Visiter Kinguin ↗</strong></a>
+<p class="fine-print">Lien partenaire : une commission peut être reversée à la chaîne selon les achats effectués via ce lien.</p>
+</div>
+</section>
+<section class="section decor-left" id="reseaux">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">VI</span><div><p class="eyebrow">Les autres portes d’entrée</p><h2>Réseaux</h2></div></div>
+<div class="social-grid">
+<a href="https://www.twitch.tv/halaryk" rel="noopener noreferrer" target="_blank"><small>Direct</small><strong>Twitch</strong><span>Lives, rediffusions et clips</span><i>↗</i></a>
+<a href="https://discord.gg/yCQjxRh6MV" rel="noopener noreferrer" target="_blank"><small>Communauté</small><strong>Discord</strong><span>Annonces, discussions et soirées</span><i>↗</i></a>
+<a href="https://www.instagram.com/halaryk_/" rel="noopener noreferrer" target="_blank"><small>Actualités</small><strong>Instagram</strong><span>Planning et nouvelles de la chaîne</span><i>↗</i></a>
+</div>
+</div>
+</section>
+<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
+</main>
+<script src="../app.js" type="module"></script>
+</body></html>

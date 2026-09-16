@@ -36,6 +36,14 @@ function profile(user){
 }
 function toast(message){const e=document.createElement("div");e.textContent=message;Object.assign(e.style,{position:"fixed",right:"20px",bottom:"20px",zIndex:999,padding:"12px 16px",background:"#0b0909",border:"1px solid rgba(183,147,100,.35)",color:"#eadfce",boxShadow:"0 18px 45px rgba(0,0,0,.42)",fontSize:"12px"});document.body.appendChild(e);setTimeout(()=>e.remove(),3200)}
 
+
+function redirectLegacyHash(){
+  if(document.body.dataset.page!=="home"||!location.hash)return;
+  const h=location.hash;
+  const key=h.split("/")[0];
+  const routes={"#planning":"contenu/","#ludotheque":"contenu/","#clips":"contenu/","#suggestions":"communaute/","#cabinet":"communaute/","#reputation":"communaute/","#collaborateurs":"communaute/","#reglement":"infos/","#commandes":"infos/","#config":"infos/","#faq":"infos/","#partenaires":"infos/","#reseaux":"infos/"};
+  if(routes[key])location.replace(`${routes[key]}${h}`);
+}
 function initNavigation(){
   const menu=$(".menu-toggle"),nav=$(".nav"),drop=$(".nav-dropdown"),dropBtn=$(".nav-dropdown-button"),menuText=$(".menu-toggle .sr-only");
   const isMobile=()=>innerWidth<=880;
@@ -56,7 +64,8 @@ function renderClips(slugs=[]){
 }
 function initClips(){
   renderClips(CONFIG.TWITCH_CLIPS||[]);
-  if(CONFIG.CLIPPER_NAMES?.length){const names=CONFIG.CLIPPER_NAMES.map(n=>`<strong>${esc(n)}</strong>`);let list=names[0];if(names.length===2)list=`${names[0]} et ${names[1]}`;else if(names.length>2)list=`${names.slice(0,-1).join(", ")} et ${names.at(-1)}`;$("#clip-thanks-text").innerHTML=`Un grand merci à ${list} pour leurs clips et leur œil toujours bien placé.`}
+  const thanks=$("#clip-thanks-text");
+  if(thanks&&CONFIG.CLIPPER_NAMES?.length){const names=CONFIG.CLIPPER_NAMES.map(n=>`<strong>${esc(n)}</strong>`);let list=names[0];if(names.length===2)list=`${names[0]} et ${names[1]}`;else if(names.length>2)list=`${names.slice(0,-1).join(", ")} et ${names.at(-1)}`;thanks.innerHTML=`Un grand merci à ${list} pour leurs clips et leur œil toujours bien placé.`}
 }
 async function loadClips(){
   if(!supabase)return;
@@ -66,15 +75,13 @@ async function signIn(){if(!supabase)return toast("Connexion Twitch pas encore c
 async function signOut(){if(supabase)await supabase.auth.signOut()}
 async function syncAuth(){
   const login=$("#login-button"),chip=$("#user-button"),menu=$("#user-menu"),admin=$("#admin-link"),cta=$("#suggestion-login-cta"),hint=$("#suggestion-auth-hint");
-  if(!session?.user){login.classList.remove("hidden");chip.classList.add("hidden");menu.classList.add("hidden");cta.classList.remove("hidden");hint.textContent="Connexion Twitch nécessaire pour proposer une idée.";return}
-  const p=profile(session.user);login.classList.add("hidden");chip.classList.remove("hidden");$("#user-name").textContent=p.displayName;$("#user-avatar").src=p.avatar||"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23130f0f'/%3E%3C/svg%3E";cta.classList.add("hidden");hint.textContent=`Connecté en tant que ${p.displayName}.`;
-  // V4.2.2 : le profil public est resynchronisé côté serveur depuis l’identité Twitch vérifiée.
-  // Le navigateur ne peut plus choisir lui-même son ID/login/avatar Twitch.
+  if(!session?.user){login?.classList.remove("hidden");chip?.classList.add("hidden");menu?.classList.add("hidden");cta?.classList.remove("hidden");if(hint)hint.textContent="Connexion Twitch nécessaire pour proposer une idée.";return}
+  const p=profile(session.user);login?.classList.add("hidden");chip?.classList.remove("hidden");if($("#user-name"))$("#user-name").textContent=p.displayName;if($("#user-avatar"))$("#user-avatar").src=p.avatar||"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23130f0f'/%3E%3C/svg%3E";cta?.classList.add("hidden");if(hint)hint.textContent=`Connecté en tant que ${p.displayName}.`;
   const{error:profileSyncError}=await supabase.rpc("sync_my_twitch_profile");
   if(profileSyncError)console.warn("Synchronisation du profil Twitch impossible",profileSyncError.message);
-  const{data:isAdmin}=await supabase.rpc("current_is_admin");admin.classList.toggle("hidden",!isAdmin)
+  const{data:isAdmin}=await supabase.rpc("current_is_admin");admin?.classList.toggle("hidden",!isAdmin)
 }
-async function loadLive(){try{const{data,error}=await supabase.functions.invoke("live-status");if(error)throw error;const card=$("#live-card");if(data?.is_live){card.classList.add("is-live");$("#live-label").textContent="EN DIRECT";$("#live-detail").textContent=`${data.game_name||"Twitch"} — ${data.title||"Live en cours"}`}else{$("#live-label").textContent="Hors ligne";$("#live-detail").textContent="Retrouve les prochains lives sur Twitch."}}catch{$("#live-label").textContent="Twitch";$("#live-detail").textContent="Voir la chaîne"}}
+async function loadLive(){if(!$("#live-card"))return;try{const{data,error}=await supabase.functions.invoke("live-status");if(error)throw error;const card=$("#live-card");if(data?.is_live){card.classList.add("is-live");$("#live-label").textContent="EN DIRECT";$("#live-detail").textContent=`${data.game_name||"Twitch"} — ${data.title||"Live en cours"}`}else{$("#live-label").textContent="Hors ligne";$("#live-detail").textContent="Retrouve les prochains lives sur Twitch."}}catch{$("#live-label").textContent="Twitch";$("#live-detail").textContent="Voir la chaîne"}}
 async function loadLibrary(){
   if(!supabase)return;
   const{data,error}=await supabase.from("library_games").select("*").order("updated_at",{ascending:false});
@@ -196,23 +203,23 @@ async function loadCollaborators(){
 }
 
 function initInteractions(){
-  $("#login-button").onclick=signIn;$("#suggestion-login-cta").onclick=signIn;$("#reputation-login")?.addEventListener("click",signIn);$("#logout-button").onclick=signOut;$("#user-button").onclick=()=>$("#user-menu").classList.toggle("hidden");
+  $("#login-button")?.addEventListener("click",signIn);$("#suggestion-login-cta")?.addEventListener("click",signIn);$("#reputation-login")?.addEventListener("click",signIn);$("#logout-button")?.addEventListener("click",signOut);$("#user-button")?.addEventListener("click",()=>$("#user-menu")?.classList.toggle("hidden"));
   $("#library-detail-close")?.addEventListener("click",closeLibraryDetail);$$('[data-library-close]').forEach(x=>x.addEventListener('click',closeLibraryDetail));
   $$(".library-filters button").forEach(b=>b.onclick=()=>{$$(".library-filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");libraryFilter=b.dataset.libraryFilter;libraryMobileExpanded=false;renderLibraryGrid()});
   $("#library-search")?.addEventListener("input",e=>{librarySearch=e.target.value;libraryMobileExpanded=false;renderLibraryGrid()});
   $("#library-mobile-more")?.addEventListener("click",()=>{libraryMobileExpanded=true;renderLibraryGrid()});
-  $$(".category-card").forEach(b=>b.onclick=async()=>{$$(".category-card").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentCategory=b.dataset.category;const c=categoryCopy[currentCategory];$("#category-label").textContent=c[0];$("#category-title").textContent=c[1];$("#category-description").textContent=c[2];await loadSuggestions()});
+  $$(".category-card").forEach(b=>b.onclick=async()=>{$$(".category-card").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentCategory=b.dataset.category;const c=categoryCopy[currentCategory];if($("#category-label"))$("#category-label").textContent=c[0];if($("#category-title"))$("#category-title").textContent=c[1];if($("#category-description"))$("#category-description").textContent=c[2];await loadSuggestions()});
   $$(".suggestion-tabs button").forEach(b=>b.onclick=()=>setCabinetTab(b.dataset.suggestionTab));
   $$('[data-sort]').forEach(b=>b.onclick=async()=>{$$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
-  $("#status-filter").onchange=async e=>{currentStatus=e.target.value;await loadSuggestions()};$("#suggestion-title").oninput=renderSimilar;$("#suggestion-form").onsubmit=submitSuggestion;
+  $("#status-filter")?.addEventListener("change",async e=>{currentStatus=e.target.value;await loadSuggestions()});$("#suggestion-title")?.addEventListener("input",renderSimilar);if($("#suggestion-form"))$("#suggestion-form").onsubmit=submitSuggestion;
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#library-detail")?.classList.contains("hidden"))closeLibraryDetail()});
-  window.addEventListener("hashchange",()=>applyCabinetRoute());window.addEventListener("resize",()=>{if(matchMedia("(min-width:761px)").matches)libraryMobileExpanded=false;renderLibraryGrid()});
+  window.addEventListener("hashchange",()=>applyCabinetRoute());window.addEventListener("resize",()=>{if(!$("#library-grid"))return;if(matchMedia("(min-width:761px)").matches)libraryMobileExpanded=false;renderLibraryGrid()});
 }
 async function initBackend(){
-  if(!BACKEND_CONFIGURED){$("#live-label").textContent="Twitch";$("#live-detail").textContent="Service V4 à connecter";$("#suggestion-login-cta").textContent="Connexion bientôt disponible";$("#suggestion-auth-hint").textContent="La base V4 doit être connectée pour activer les suggestions.";$("#submit-suggestion").disabled=true;return}
+  if(!BACKEND_CONFIGURED){if($("#live-label"))$("#live-label").textContent="Twitch";if($("#live-detail"))$("#live-detail").textContent="Service V4 à connecter";if($("#suggestion-login-cta"))$("#suggestion-login-cta").textContent="Connexion bientôt disponible";if($("#suggestion-auth-hint"))$("#suggestion-auth-hint").textContent="La base V4 doit être connectée pour activer les suggestions.";if($("#submit-suggestion"))$("#submit-suggestion").disabled=true;return}
   supabase=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
   const{data}=await supabase.auth.getSession();session=data.session;await syncAuth();
-  supabase.auth.onAuthStateChange(async(_e,s)=>{session=s;await syncAuth();await Promise.all([loadSuggestions(),loadPolls(),loadReputation()])});
-  await Promise.all([loadLive(),loadLibrary(),loadSuggestions(),loadPolls(),loadReputation(),loadCollaborators(),loadClips()]);await applyCabinetRoute()
+  supabase.auth.onAuthStateChange(async(_e,s)=>{session=s;await syncAuth();const tasks=[];if($("#suggestions-feed"))tasks.push(loadSuggestions());if($("#polls-feed"))tasks.push(loadPolls());if($("#reputation"))tasks.push(loadReputation());await Promise.all(tasks)});
+  const tasks=[];if($("#live-card"))tasks.push(loadLive());if($("#library-grid"))tasks.push(loadLibrary());if($("#suggestions-feed"))tasks.push(loadSuggestions());if($("#polls-feed"))tasks.push(loadPolls());if($("#reputation"))tasks.push(loadReputation());if($("#collaborators-grid"))tasks.push(loadCollaborators());if($("#clips-grid"))tasks.push(loadClips());await Promise.all(tasks);if($("#suggestions"))await applyCabinetRoute()
 }
-initNavigation();initClips();initInteractions();initBackend();
+redirectLegacyHash();initNavigation();initClips();initInteractions();initBackend();

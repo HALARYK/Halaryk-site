@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net https:; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<meta content="#080707" name="theme-color"/>
+<meta content="Cabinet des idées, réputation et collaborateurs de la communauté HALARYK." name="description"/>
+<title>Communauté — HALARYK</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/>
+</head>
+<body data-page="community">
+<header class="topbar" id="top">
+<a class="brand" href="../"><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
+<button aria-controls="main-nav" aria-expanded="false" class="menu-toggle"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
+<nav class="nav" id="main-nav">
+<div class="mobile-nav-heading"><span>Navigation</span><small>Explorer HALARYK</small></div>
+<a class="" href="../">Accueil</a><a class="" href="../evenements/">Événements</a><a class="" href="../contenu/">Contenu</a><a class="active" href="../communaute/">Communauté</a><a class="" href="../infos/">Infos</a>
+<div class="mobile-nav-footer"><a href="https://www.twitch.tv/halaryk" rel="noopener noreferrer" target="_blank">Twitch ↗</a><a href="../infos/#reseaux">Discord &amp; réseaux</a></div>
+</nav>
+<div class="auth-slot">
+<button class="auth-button" id="login-button" type="button">Connexion Twitch</button>
+<button class="user-chip hidden" id="user-button" type="button"><img alt="" id="user-avatar"/><span id="user-name"></span></button>
+<div class="user-menu hidden" id="user-menu"><a class="hidden" href="../admin/" id="admin-link">Administration</a><button id="logout-button" type="button">Déconnexion</button></div>
+</div>
+</header>
+<main>
+<section class="page-intro decor-right"><div class="section-shell reveal"><p class="eyebrow">ESPACE COMMUNAUTAIRE</p><h1>Communauté</h1><p>Propositions, votes, réputation et visages réguliers de la communauté.</p></div></section>
+<section class="section decor-left" id="suggestions">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">I</span><div><p class="eyebrow">Propositions &amp; votes communautaires</p><h2>Le Cabinet des idées</h2></div></div>
+<div class="suggestion-topbar">
+<div class="suggestion-tabs"><button class="active" data-suggestion-tab="ideas">Propositions</button><button data-suggestion-tab="polls">Sondages</button></div>
+<button class="button button-ghost" id="suggestion-login-cta" type="button">Se connecter avec Twitch</button>
+</div>
+<div id="ideas-panel">
+<div class="category-carousel">
+<button class="category-card active" data-category="games"><span>🎮</span><strong>Jeux de semaine</strong></button>
+<button class="category-card" data-category="concepts"><span>🎭</span><strong>Concepts &amp; défis</strong></button>
+<button class="category-card" data-category="twitch"><span>💬</span><strong>Twitch &amp; interactions</strong></button>
+<button class="category-card" data-category="community"><span>🌐</span><strong>Site &amp; Discord</strong></button>
+<button class="category-card" data-category="events"><span>🎉</span><strong>Événements spéciaux</strong></button>
+<button class="category-card" data-category="other"><span>💡</span><strong>Autre</strong></button>
+</div>
+<div class="category-intro"><p class="eyebrow" id="category-label">Jeux de semaine</p><h3 id="category-title">Proposez un jeu à faire en stream.</h3><p id="category-description">Cette catégorie concerne les streams du lundi et du mercredi.</p></div>
+<div class="sunday-info"><strong>À propos du dimanche</strong><p>Les soirées multijoueur du dimanche sont organisées avec plusieurs streamers. Le choix des jeux est donc décidé collectivement et n’entre pas dans cette boîte à idées.</p></div>
+<form class="suggestion-form" id="suggestion-form">
+<label><span>Titre de la suggestion</span><input id="suggestion-title" maxlength="120" placeholder="Ex. : Faire une série sur Frostpunk 2" required=""/></label>
+<div class="similar-suggestions hidden" id="similar-suggestions"></div>
+<label><span>Développe ton idée</span><textarea id="suggestion-body" maxlength="1200" placeholder="Quelques lignes suffisent pour expliquer l’idée." required="" rows="4"></textarea></label>
+<div class="form-actions"><span id="suggestion-auth-hint">Connexion Twitch nécessaire pour proposer une idée.</span><button class="button button-primary" id="submit-suggestion" type="submit">Envoyer la suggestion</button></div>
+</form>
+<div id="pinned-suggestion"></div>
+<div class="suggestion-feed-controls">
+<div class="segmented-control"><button class="active" data-sort="popular">Populaires</button><button data-sort="recent">Récentes</button><button data-sort="mine">Mes suggestions</button></div>
+<select id="status-filter"><option value="all">Tous les statuts</option><option value="new">Nouvelles</option><option value="considering">En réflexion</option><option value="planned">Prévues</option><option value="completed">Terminées</option><option value="rejected">Refusées</option><option value="archived">Archivées</option></select>
+</div>
+<div class="suggestions-feed" id="suggestions-feed"></div>
+</div>
+<div class="hidden" id="polls-panel"><div class="cabinet-panel-intro"><p class="eyebrow">Les décisions de la communauté</p><h3>Sondages</h3><p class="polls-intro">Des votes longue durée, accessibles entre les streams avec un vote par compte Twitch. Chaque sondage possède désormais son propre lien partageable.</p></div><div class="polls-feed" id="polls-feed"></div></div>
+</div>
+</section>
+<section class="section decor-right" id="reputation">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">II</span><div><p class="eyebrow">Le registre de la communauté</p><h2>Réputation</h2></div></div>
+<div class="reputation-intro-grid">
+<article class="reputation-explainer">
+<p class="eyebrow">Comment ça marche ?</p>
+<h3>La confiance se gagne — et peut se perdre.</h3>
+<p>Chaque viewer commence à <strong>0 point</strong>, au rang d’<strong>Inconnu</strong>. Selon le comportement, les actions et les interventions pendant les lives, HALARYK et ses modérateurs peuvent ajouter ou retirer des points.</p>
+<div class="reputation-command"><code>!rep</code><span>Consulter son score et son rang directement dans le chat Twitch.</span></div>
+</article>
+<article class="my-reputation-card" id="my-reputation-card">
+<p class="eyebrow">Votre dossier</p>
+<div id="my-reputation-content">
+<h3>Identifiez-vous avec Twitch</h3>
+<p>Connectez votre compte pour retrouver ici votre score, votre rang et votre progression.</p>
+<button class="button button-primary" id="reputation-login" type="button">Connexion Twitch</button>
+</div>
+</article>
+</div>
+<div class="reputation-effects">
+<article><span>✦</span><h3>Ce que ça apporte</h3><p>Un rang visible sur le site et dans les suggestions, une place dans le classement et surtout un marqueur communautaire qui évolue au fil des lives.</p></article>
+<article><span>⚖</span><h3>Ce que ça ne change pas</h3><p>La réputation ne donne aucun pouvoir de modération et ne pèse pas davantage dans les votes : <strong>1 compte Twitch = 1 vote</strong>.</p></article>
+<article><span>☠</span><h3>Réputation négative</h3><p>Passer sous zéro donne le rang de Traître et une place dans le Registre des Traîtres. C’est un élément communautaire et humoristique, pas une sanction automatique.</p></article>
+</div>
+<div aria-label="Rangs de réputation" class="rank-ladder">
+<article class="rank-card rank-traitor"><span class="rank-icon">☠️</span><strong>Traître</strong><small>&lt; 0</small><p>Le mauvais côté du registre.</p></article>
+<article class="rank-card"><span class="rank-icon">👤</span><strong>Inconnu</strong><small>0–19</small><p>Le point de départ.</p></article>
+<article class="rank-card"><span class="rank-icon">🏠</span><strong>Habitué</strong><small>20–49</small><p>Une présence désormais reconnue.</p></article>
+<article class="rank-card"><span class="rank-icon">🗣️</span><strong>Conseiller</strong><small>50–79</small><p>Un rang bien installé dans la communauté.</p></article>
+<article class="rank-card"><span class="rank-icon">⚜️</span><strong>Confident</strong><small>80–99</small><p>Parmi les réputations les plus élevées.</p></article>
+<article class="rank-card rank-favorite"><span class="rank-icon">👑</span><strong>Favori</strong><small>100+</small><p>Le rang maximal.</p></article>
+</div>
+<div class="reputation-leaderboards">
+<article class="leaderboard-panel">
+<div class="leaderboard-heading"><div><p class="eyebrow">Top 10</p><h3>Favoris de HALARYK</h3></div><span>👑</span></div>
+<div class="leaderboard-list" id="reputation-top"><div class="leaderboard-empty">Classement en cours d’activation.</div></div>
+</article>
+<article class="leaderboard-panel traitor-panel">
+<div class="leaderboard-heading"><div><p class="eyebrow">Les profondeurs</p><h3>Registre des Traîtres</h3></div><span>☠️</span></div>
+<div class="leaderboard-list" id="reputation-traitors"><div class="leaderboard-empty">Aucun traître enregistré pour le moment.</div></div>
+</article>
+</div>
+</div>
+</section>
+<section class="section decor-left" id="collaborateurs">
+<div class="section-shell reveal">
+<div class="section-heading"><span class="section-number">III</span><div><p class="eyebrow">Les habitués des lives</p><h2>Collaborateurs</h2></div></div>
+<div class="collaborators-intro">
+<p>Les streamers que vous croiserez régulièrement sur la chaîne, notamment lors des sessions multijoueur.</p>
+<span>Le choix des jeux du dimanche reste une décision collective entre les participants.</span>
+</div>
+<div class="collaborators-grid" id="collaborators-grid">
+<div class="empty-state"><strong>Collaborateurs en cours d’activation</strong><p>Les chaînes apparaîtront ici dès qu’elles auront été ajoutées depuis l’administration.</p></div>
+</div>
+</div>
+</section>
+<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
+</main>
+<script src="../app.js" type="module"></script>
+</body></html>
