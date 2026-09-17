@@ -44,9 +44,41 @@ function ensureModal(){
   return modal;
 }
 function openDocument(entry,country){
+  if(!entry)return;
   const modal=ensureModal(),content=$('.v52-document-content',modal);
   content.innerHTML=`<div class="v52-document-meta"><span>${esc(country?.title||'Diplomatie')}</span><span>${esc(typeLabel(entry.entry_type))}</span><span>${esc(dateLabel(entry))}</span></div><h3>${esc(entry.title||'Document diplomatique')}</h3>${entry.summary?`<p class="v52-document-summary">${esc(entry.summary)}</p>`:''}${entry.body?`<div class="v52-document-body">${esc(entry.body)}</div>`:'<div class="v52-document-body">Aucun texte complet n’a encore été publié pour ce document.</div>'}`;
   modal.hidden=false;document.body.style.overflow='hidden';
+}
+
+function patchVerifiedCastile(timeline,active){
+  if(active!=='CAS')return;
+  const infantes=$('[data-entry-id="cas-infantes-v52"]',timeline);
+  const coup=$('[data-entry-id="cas-coup-v52"]',timeline);
+  const detail=$('.v52-country-detail',timeline);
+  const patch=(node,{year,kind,title,summary})=>{
+    if(!node)return;
+    const yel=$('.v52-country-year',node),kel=$('.v52-country-kind',node),tel=$('strong',node);
+    if(yel)yel.textContent=year;if(kel)kel.textContent=kind;if(tel)tel.textContent=title;
+    node.dataset.verifiedYear=year;
+    if(!node.dataset.verifiedBound){
+      node.dataset.verifiedBound='1';
+      node.addEventListener('click',()=>setTimeout(()=>{
+        if(!detail)return;
+        detail.innerHTML=`<div class="v52-country-detail-meta"><span>✦ ${esc(kind)}</span><span>${esc(year)}</span><span>Castille</span></div><h3>${esc(title)}</h3><p>${esc(summary)}</p>`;
+      },0));
+    }
+  };
+  patch(infantes,{year:'1446',kind:'Désastre',title:'Fin de la crise des Infants d’Aragon',summary:'La sauvegarde de fin de Session I enregistre explicitement ended_infantes_disaster_flag au 11 février 1446 : la crise des Infants d’Aragon est donc terminée à cette date.'});
+  patch(coup,{year:'1466',kind:'Crise politique',title:'Tentative de coup d’État au palais — résolution',summary:'La sauvegarde conserve le modificateur recent_coup_modifier jusqu’au 11 décembre 1486. Le script du jeu applique ce modificateur pendant 20 ans après la résolution du désastre : la tentative de coup d’État s’est donc achevée autour du 11 décembre 1466. Aucun changement de souverain n’est enregistré à cette date, ce qui rend un échec du coup plus probable.'});
+  const track=$('.v52-country-track',timeline);
+  if(track){
+    const nodes=$$('.v52-country-node',track);
+    nodes.sort((a,b)=>{
+      const ay=Number(a.dataset.verifiedYear||($('.v52-country-year',a)?.textContent.match(/\d{4}/)?.[0])||9999);
+      const by=Number(b.dataset.verifiedYear||($('.v52-country-year',b)?.textContent.match(/\d{4}/)?.[0])||9999);
+      return ay-by;
+    }).forEach(n=>track.appendChild(n));
+  }
 }
 
 async function bootDiplomacyTimeline(){
@@ -68,6 +100,7 @@ async function bootDiplomacyTimeline(){
     const timeline=$('.v52-country-timeline',host);if(!timeline)return;
     $('.v52-diplomacy-strip',timeline)?.remove();
     const active=$('.v52-country-tabs button.active',timeline)?.dataset.country;if(!active)return;
+    patchVerifiedCastile(timeline,active);
     const country=countryByTag.get(active);
     const selected=docs.filter(e=>tagsFor(e,byId).includes(active));
     if(!selected.length)return;
