@@ -1,65 +1,8 @@
-/* V5.2 readability + diplomacy timeline documents */
+/* V5.2 readability + curated chronology + diplomacy documents */
 
-/* Readability: avoid micro typography on desktop */
-.v52-campaign-summary{font-size:16px!important;line-height:1.5!important}
-.v52-campaign-pillars b{font-size:15px!important}
-.v52-campaign-pillars small{font-size:9px!important;line-height:1.35!important}
-.v52-campaign-players>p{font-size:9px!important}
-.v52-player b{font-size:13px!important}
-.v52-player span{font-size:9px!important;line-height:1.25!important}
-.v52-campaign-metrics strong{font-size:19px!important}
-.v52-campaign-metrics span{font-size:8px!important;line-height:1.3!important}
-
-.v52-overview-stats span{font-size:9px!important}
-.v52-overview-stats strong{font-size:25px!important}
-.v52-overview-stats small{font-size:10px!important;line-height:1.35!important}
-
-.v52-nations-carousel .v52-nation-head p{font-size:12px!important}
-.v52-nations-carousel .v52-nation-period strong{font-size:15px!important}
-.v52-nations-carousel .v52-nation-period span{font-size:9px!important}
-.v52-nations-carousel .v52-nation-stat{padding:12px 14px!important}
-.v52-nations-carousel .v52-nation-stat span{font-size:10px!important;letter-spacing:.07em!important}
-.v52-nations-carousel .v52-nation-stat b{font-size:19px!important;line-height:1.05!important}
-.v52-nations-carousel .v52-nation-stat small{font-size:10px!important;line-height:1.25!important}
-.v52-nation-count{font-size:11px!important}
-
-#chronologie .section-lead{font-size:16px!important}
-.v52-country-tabs b{font-size:16px!important}
-.v52-country-tabs small{font-size:9px!important}
-.v52-country-range strong{font-size:30px!important}
-.v52-country-range span{font-size:14px!important}
-.v52-country-year{font-size:18px!important}
-.v52-country-kind{font-size:10px!important}
-.v52-country-node strong{font-size:19px!important;line-height:1.25!important}
-.v52-country-detail-meta{font-size:10px!important}
-.v52-country-detail h3{font-size:36px!important}
-.v52-country-detail p{font-size:16px!important}
-
-/* Diplomatic documents embedded in the country timeline */
-.v52-diplomacy-strip{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:13px 16px;border:1px solid rgba(183,147,100,.18);background:linear-gradient(90deg,rgba(38,27,19,.48),rgba(7,6,6,.76));overflow:hidden}
-.v52-diplomacy-strip-label{display:flex;align-items:center;gap:9px;color:#d2b78f;font:600 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
-.v52-diplomacy-strip-label::before{content:"✉";width:30px;height:30px;display:grid;place-items:center;border:1px solid rgba(183,147,100,.35);border-radius:50%;font-size:13px}
-.v52-diplomacy-bubbles{display:flex;gap:9px;overflow-x:auto;padding:2px 2px 5px;scrollbar-width:thin;scrollbar-color:rgba(183,147,100,.28) transparent}
-.v52-diplomacy-bubble{flex:0 0 auto;max-width:270px;display:grid;grid-template-columns:32px minmax(0,1fr);gap:9px;align-items:center;padding:8px 11px 8px 8px;border:1px solid rgba(183,147,100,.22);border-radius:999px;background:rgba(8,7,7,.88);color:#c8b9aa;cursor:pointer;text-align:left;transition:.16s}
-.v52-diplomacy-bubble:hover{border-color:rgba(210,183,143,.68);background:rgba(90,25,22,.28);color:#fff}
-.v52-diplomacy-bubble-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:rgba(183,147,100,.11);color:#d2b78f;font-size:13px}
-.v52-diplomacy-bubble span,.v52-diplomacy-bubble strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.v52-diplomacy-bubble span{font-size:9px;color:#9b8a79;text-transform:uppercase;letter-spacing:.08em}
-.v52-diplomacy-bubble strong{margin-top:2px;font:600 14px/1.1 var(--serif);color:#e6d8c9}
-
-.v52-document-modal{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;padding:28px;background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
-.v52-document-modal[hidden]{display:none!important}
-.v52-document-sheet{position:relative;width:min(850px,94vw);max-height:86vh;overflow:auto;padding:38px 42px;border:1px solid rgba(183,147,100,.42);background:linear-gradient(145deg,#130d0b,#070606 62%);box-shadow:0 34px 100px rgba(0,0,0,.72)}
-.v52-document-close{position:absolute;right:14px;top:14px;width:36px;height:36px;border:1px solid rgba(183,147,100,.25);background:#090707;color:#d9caba;font-size:22px;cursor:pointer}
-.v52-document-meta{display:flex;gap:12px;flex-wrap:wrap;color:#b9986c;font-size:10px;text-transform:uppercase;letter-spacing:.11em}
-.v52-document-sheet h3{margin:13px 0 0;color:#f0e4d7;font:600 38px/1 var(--serif)}
-.v52-document-sheet .v52-document-summary{margin:13px 0 0;color:#b7a99c;font:500 17px/1.55 var(--serif)}
-.v52-document-body{margin-top:22px;padding-top:22px;border-top:1px solid rgba(183,147,100,.17);white-space:pre-wrap;color:#d4c7ba;font:500 17px/1.7 var(--serif)}
-
-@media(max-width:700px){
-  .v52-campaign-pillars small,.v52-player span,.v52-campaign-metrics span{font-size:9px!important}
-  .v52-nations-carousel .v52-nation-stat b{font-size:18px!important}
-  .v52-country-node strong{font-size:18px!important}
-  .v52-diplomacy-strip{grid-template-columns:1fr}.v52-diplomacy-strip-label{margin-bottom:2px}
-  .v52-document-sheet{padding:30px 22px}.v52-document-sheet h3{font-size:31px}.v52-document-body,.v52-document-sheet .v52-document-summary{font-size:16px}
-}
+.v52-campaign-summary{font-size:17px!important;line-height:1.55!important}.v52-campaign-pillars b{font-size:16px!important}.v52-campaign-pillars small{font-size:10px!important;line-height:1.4!important}.v52-campaign-players>p{font-size:10px!important}.v52-player b{font-size:14px!important}.v52-player span{font-size:10px!important;line-height:1.3!important}.v52-campaign-metrics strong{font-size:21px!important}.v52-campaign-metrics span{font-size:9px!important;line-height:1.35!important}.v52-overview-stats span{font-size:10px!important}.v52-overview-stats strong{font-size:27px!important}.v52-overview-stats small{font-size:11px!important;line-height:1.4!important}
+.v52-nations-carousel .v52-nation-head p{font-size:13px!important}.v52-nations-carousel .v52-nation-period strong{font-size:17px!important}.v52-nations-carousel .v52-nation-period span{font-size:10px!important}.v52-nations-carousel .v52-nation-stat{padding:14px 15px!important}.v52-nations-carousel .v52-nation-stat span{font-size:11px!important;letter-spacing:.06em!important}.v52-nations-carousel .v52-nation-stat b{font-size:23px!important;line-height:1.05!important}.v52-nations-carousel .v52-nation-stat small{font-size:11px!important;line-height:1.25!important}.v52-nation-count{font-size:12px!important}
+#chronologie .section-lead{font-size:17px!important;line-height:1.6!important;max-width:1100px!important}.v52-curated-timeline{display:grid;gap:20px}.v52-country-tabs b{font-size:16px!important}.v52-country-tabs small{font-size:10px!important}.v52-country-range strong{font-size:30px!important}.v52-country-range span{font-size:14px!important}.v52-curated-shell{overflow-x:auto;padding:8px 0 20px;scrollbar-width:thin;scrollbar-color:rgba(183,147,100,.34) transparent}.v52-curated-track{position:relative;display:flex;align-items:flex-start;min-width:max-content;padding:2px 18px 8px}.v52-curated-track::before{content:"";position:absolute;left:18px;right:18px;top:56px;height:1px;background:linear-gradient(90deg,rgba(183,147,100,.18),rgba(183,147,100,.68),rgba(183,147,100,.18))}.v52-curated-node{position:relative;width:225px;flex:0 0 225px;padding:0 18px 14px 0;border:0;background:transparent;color:#b4a79b;text-align:left;cursor:pointer}.v52-curated-date{display:block;height:34px;color:#dacbbb;font:600 17px/1 var(--serif)}.v52-curated-dot{position:relative;z-index:2;width:32px;height:32px;display:block;margin:6px 0 10px;border:1px solid rgba(183,147,100,.45);border-radius:50%;background:#080707}.v52-curated-node strong{display:block;max-width:202px;color:#d9ccbf;font:600 19px/1.22 var(--serif)}.v52-curated-node:hover strong{color:#fff}.v52-curated-node:hover .v52-curated-dot{border-color:#d2b78f;background:rgba(111,24,24,.58);box-shadow:0 0 0 6px rgba(118,25,25,.10)}.v52-curated-node[data-type="guerre"] .v52-curated-dot,.v52-curated-node[data-type="bataille"] .v52-curated-dot{background:rgba(110,20,20,.42)}.v52-curated-node[data-type="dynastie"] .v52-curated-dot{background:rgba(126,91,26,.28)}.v52-curated-node[data-type="désastre"] .v52-curated-dot,.v52-curated-node[data-type="crise"] .v52-curated-dot{background:rgba(88,35,36,.48)}
+.v52-diplomacy-strip{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:13px 16px;border:1px solid rgba(183,147,100,.18);background:linear-gradient(90deg,rgba(38,27,19,.48),rgba(7,6,6,.76));overflow:hidden}.v52-diplomacy-strip-label{display:flex;align-items:center;gap:9px;color:#d2b78f;font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}.v52-diplomacy-strip-label::before{content:"✉";width:31px;height:31px;display:grid;place-items:center;border:1px solid rgba(183,147,100,.35);border-radius:50%;font-size:14px}.v52-diplomacy-bubbles{display:flex;gap:9px;overflow-x:auto;padding:2px 2px 5px}.v52-diplomacy-bubble{flex:0 0 auto;max-width:300px;display:grid;grid-template-columns:34px minmax(0,1fr);gap:9px;align-items:center;padding:9px 13px 9px 9px;border:1px solid rgba(183,147,100,.22);border-radius:999px;background:rgba(8,7,7,.88);color:#c8b9aa;cursor:pointer;text-align:left}.v52-diplomacy-bubble:hover{border-color:rgba(210,183,143,.68);background:rgba(90,25,22,.28);color:#fff}.v52-diplomacy-bubble-icon{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:rgba(183,147,100,.11);color:#d2b78f;font-size:14px}.v52-diplomacy-bubble span,.v52-diplomacy-bubble strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.v52-diplomacy-bubble span{font-size:10px;color:#9b8a79;text-transform:uppercase;letter-spacing:.07em}.v52-diplomacy-bubble strong{margin-top:2px;font:600 15px/1.1 var(--serif);color:#e6d8c9}
+.v52-detail-modal{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;padding:28px;background:rgba(0,0,0,.80);backdrop-filter:blur(6px)}.v52-detail-modal[hidden]{display:none!important}.v52-detail-sheet{position:relative;width:min(980px,94vw);max-height:88vh;overflow:auto;padding:40px 44px;border:1px solid rgba(183,147,100,.42);background:linear-gradient(145deg,#130d0b,#070606 62%);box-shadow:0 34px 100px rgba(0,0,0,.72)}.v52-detail-close{position:absolute;right:14px;top:14px;width:38px;height:38px;border:1px solid rgba(183,147,100,.25);background:#090707;color:#d9caba;font-size:23px;cursor:pointer}.v52-detail-meta{display:flex;gap:12px;flex-wrap:wrap;color:#b9986c;font-size:11px;text-transform:uppercase;letter-spacing:.1em}.v52-detail-sheet h3{margin:14px 0 0;color:#f0e4d7;font:600 40px/1.02 var(--serif)}.v52-detail-summary{margin:15px 0 0;color:#c1b3a5;font:500 18px/1.6 var(--serif)}.v52-fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:26px;background:rgba(183,147,100,.14);border:1px solid rgba(183,147,100,.16)}.v52-fact-grid>div{padding:15px 17px;background:#090707}.v52-fact-grid span{display:block;color:#8e7b68;font:600 10px/1.25 var(--sans);letter-spacing:.1em;text-transform:uppercase}.v52-fact-grid strong{display:block;margin-top:5px;color:#ded0c2;font:500 16px/1.48 var(--serif)}.v52-document-body{margin-top:24px;padding-top:24px;border-top:1px solid rgba(183,147,100,.17);white-space:pre-wrap;color:#d4c7ba;font:500 18px/1.72 var(--serif)}
+@media(max-width:700px){.v52-nations-carousel .v52-nation-stat b{font-size:21px!important}.v52-curated-track{display:grid;min-width:0;padding-left:32px}.v52-curated-track::before{left:14px;right:auto;top:8px;bottom:8px;width:1px;height:auto}.v52-curated-node{width:100%;display:grid;grid-template-columns:74px 34px 1fr;grid-template-rows:auto;padding:10px 0}.v52-curated-date{height:auto;padding-top:5px}.v52-curated-dot{margin:0}.v52-curated-node strong{max-width:none;padding-left:8px}.v52-diplomacy-strip{grid-template-columns:1fr}.v52-fact-grid{grid-template-columns:1fr}.v52-detail-sheet{padding:32px 22px}.v52-detail-sheet h3{font-size:32px}.v52-detail-summary,.v52-document-body{font-size:16px}}
