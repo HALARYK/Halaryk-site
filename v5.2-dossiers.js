@@ -89,7 +89,7 @@ function genericLayout(facts){
 }
 
 function enhanceDossier(box){
-  if(!box||box.dataset.v52DossierEnhanced==="1")return;
+  if(!box)return;
   const grid=$(".v52-fact-grid",box);if(!grid)return;
   const meta=$$(".v52-detail-meta span",box).map(x=>x.textContent.trim());
   const country=meta[0]||"";
@@ -98,6 +98,8 @@ function enhanceDossier(box){
   const title=$("h3",box)?.textContent?.trim()||"Événement";
   const summary=$(".v52-detail-summary",box)?.textContent?.trim()||"";
   const facts=$$(":scope > div",grid).map(cell=>[$("span",cell)?.textContent?.trim()||"",$("strong",cell)?.textContent?.trim()||""]).filter(([k,v])=>k&&v);
+  const signature=[country,type,date,title,...facts.flat()].join("|");
+  if(box.dataset.v52DossierSignature===signature)return;
   const map=new Map(facts.map(([k,v])=>[norm(k),v]));
   const t=norm(type);
   let body;
@@ -116,10 +118,17 @@ function enhanceDossier(box){
       </div>
     </header>
     <div class="v52-dossier-body">${body}</div>`;
-  box.dataset.v52DossierEnhanced="1";
+  box.dataset.v52DossierSignature=signature;
 }
 
 function scan(){enhanceDossier($("#v52-detail-modal .v52-detail-content"))}
+
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".v52-curated-node"))return;
+  setTimeout(scan,0);
+  setTimeout(scan,60);
+},false);
+
 const observer=new MutationObserver(()=>requestAnimationFrame(scan));
 observer.observe(document.documentElement,{childList:true,subtree:true});
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",scan,{once:true});else scan();
