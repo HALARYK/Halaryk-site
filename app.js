@@ -6,6 +6,7 @@ const bootModules=[
   "./event-routes.js",
   "./app-core.js",
   "./v5.2-extras.js",
+  "./v5.2-diplomacy.js",
   "./v5.2-visual-fixes.js"
 ];
 
