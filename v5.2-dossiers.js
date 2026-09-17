@@ -1,6 +1,8 @@
 const $=(s,c=document)=>c.querySelector(s);
 const $$=(s,c=document)=>[...c.querySelectorAll(s)];
 const esc=(v="")=>String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const ROOT=new URL("./",import.meta.url);
+if(!document.querySelector('link[href$="v5.2-dossiers.css"]')){const l=document.createElement("link");l.rel="stylesheet";l.href=new URL("v5.2-dossiers.css",ROOT).href;document.head.appendChild(l)}
 
 const iconByType={
   guerre:"⚔",bataille:"⚔",dynastie:"♛",désastre:"!",crise:"!",politique:"✦",
@@ -25,6 +27,10 @@ function parseLosses(raw=""){
     const i=item.indexOf(":");
     return i>0?[item.slice(0,i).trim(),item.slice(i+1).trim()]:["Pertes",item];
   });
+}
+
+function sourceBlock(items){
+  return `<details class="v52-dossier-source"><summary>Données de sauvegarde</summary><div>${items.map(([k,v])=>factCard(k,v)).join("")}</div></details>`;
 }
 
 function warLayout(facts,map){
@@ -80,10 +86,6 @@ function genericLayout(facts){
   const key=main.filter(([k])=>keyLabels.test(k));
   const rest=main.filter(([k])=>!keyLabels.test(k));
   return `${key.length?`<div class="v52-dossier-callouts">${key.map(([k,v])=>factCard(k,v,"is-highlight")).join("")}</div>`:""}${rest.length?`${sectionTitle("Informations")}<div class="v52-dossier-facts">${rest.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${technical.length?sourceBlock(technical):""}`;
-}
-
-function sourceBlock(items){
-  return `<details class="v52-dossier-source"><summary>Données de sauvegarde</summary><div>${items.map(([k,v])=>factCard(k,v)).join("")}</div></details>`;
 }
 
 function enhanceDossier(box){
