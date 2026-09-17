@@ -5,7 +5,8 @@ const bootModules=[
   "./shell-v52.js",
   "./event-routes.js",
   "./v5.2-map.js",
-  "./app-core.js"
+  "./app-core.js",
+  "./v5.2-extras.js"
 ];
 
 const results=await Promise.allSettled(bootModules.map(path=>import(path)));
