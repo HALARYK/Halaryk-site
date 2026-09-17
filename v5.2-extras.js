@@ -1,6 +1,7 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4/+esm";
 import { CONFIG, BACKEND_CONFIGURED } from "./config.js";
 import { CURATED_EVENTS } from "./v5.2-curated-data.js";
+import { renderRichText } from "./v5.2-richtext.js";
 
 const $=(s,c=document)=>c.querySelector(s);
 const $$=(s,c=document)=>[...c.querySelectorAll(s)];
@@ -65,7 +66,7 @@ function openEvent(ev,country){
 }
 function openDocument(entry,country){
   const modal=ensureModal(),box=$(".v52-detail-content",modal);
-  box.innerHTML=`<div class="v52-detail-meta"><span>${esc(country.title)}</span><span>${esc(typeLabel(entry.entry_type))}</span><span>${esc(entry.world_date_label||entry.world_year||"Document RP")}</span></div><h3>${esc(entry.title||"Document diplomatique")}</h3>${entry.summary?`<p class="v52-detail-summary">${esc(entry.summary)}</p>`:""}<div class="v52-document-body">${esc(entry.body||"Aucun texte complet n’a encore été publié pour ce document.")}</div>`;
+  box.innerHTML=`<div class="v52-detail-meta"><span>${esc(country.title)}</span><span>${esc(typeLabel(entry.entry_type))}</span><span>${esc(entry.world_date_label||entry.world_year||"Document RP")}</span></div><h3>${esc(entry.title||"Document diplomatique")}</h3>${entry.summary?`<p class="v52-detail-summary">${esc(entry.summary)}</p>`:""}<div class="v52-document-body v52-rich-document">${renderRichText(entry.body||"Aucun texte complet n’a encore été publié pour ce document.")}</div>`;
   modal.hidden=false;document.body.style.overflow="hidden";
 }
 function curatedNode(ev,i){
