@@ -32,7 +32,7 @@ function applyMap(){
     card.style.setProperty("background-color","#070606","important");
     card.style.setProperty("background-image",bg,"important");
     card.style.setProperty("background-size","cover,cover,auto 130%","important");
-    card.style.setProperty("background-position","center,center,82% 50%","important");
+    card.style.setProperty("background-position","center,center,96% 50%","important");
     card.style.setProperty("background-repeat","no-repeat","important");
     card.dataset.v52MapApplied="1";
   });
