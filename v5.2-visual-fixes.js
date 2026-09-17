@@ -7,7 +7,7 @@ const FLAG_URLS={
   "Empire ottoman":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ottoman_flag_c.1490-1701.png",
   Moscovie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Blason_Moscovie.svg"
 };
-const MAP_URL=new URL("assets/eu4/9cd54619-9278-4953-825c-336a809cf04b.png",import.meta.url).href;
+const MAP_URL=new URL("assets/eu4/europe-1444-event-map.png",import.meta.url).href;
 function cleanText(v=""){return String(v).replace(/\s+/g," ").trim().toLowerCase()}
 function nationFromNode(img){
   const alt=cleanText(img.alt);

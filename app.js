@@ -4,7 +4,6 @@ globalThis.HALARYK_CONFIG = CONFIG;
 const bootModules=[
   "./shell-v52.js",
   "./event-routes.js",
-  "./v5.2-map.js",
   "./app-core.js",
   "./v5.2-extras.js",
   "./v5.2-visual-fixes.js"
