@@ -7,7 +7,7 @@ const FLAG_URLS={
   "Empire ottoman":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ottoman_flag_c.1490-1701.png",
   Moscovie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Blason_Moscovie.svg"
 };
-const MAP_URL=new URL("assets/eu4/europe-1444-event-map.webp",import.meta.url).href;
+const MAP_URL=new URL("assets/eu4/9cd54619-9278-4953-825c-336a809cf04b.png",import.meta.url).href;
 function cleanText(v=""){return String(v).replace(/\s+/g," ").trim().toLowerCase()}
 function nationFromNode(img){
   const alt=cleanText(img.alt);
@@ -27,12 +27,12 @@ function patchFlags(){
 function applyMap(){
   document.documentElement.style.setProperty("--v52-eu4-map",`url("${MAP_URL}")`);
   document.documentElement.classList.add("v52-eu4-map-ready");
-  const bg=`linear-gradient(90deg,rgba(5,4,4,.99) 0%,rgba(5,4,4,.94) 22%,rgba(5,4,4,.70) 39%,rgba(5,4,4,.30) 58%,rgba(5,4,4,.04) 100%),linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.05) 58%,rgba(0,0,0,.52) 100%),url("${MAP_URL}")`;
+  const bg=`linear-gradient(90deg,rgba(5,4,4,.99) 0%,rgba(5,4,4,.97) 18%,rgba(5,4,4,.88) 34%,rgba(5,4,4,.60) 50%,rgba(5,4,4,.27) 68%,rgba(5,4,4,.08) 100%),linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.04) 58%,rgba(0,0,0,.50) 100%),url("${MAP_URL}")`;
   document.querySelectorAll(".v52-campaign-card.v52-map-card").forEach(card=>{
     card.style.setProperty("background-color","#070606","important");
     card.style.setProperty("background-image",bg,"important");
-    card.style.setProperty("background-size","cover,cover,cover","important");
-    card.style.setProperty("background-position","center,center,76% 50%","important");
+    card.style.setProperty("background-size","cover,cover,auto 130%","important");
+    card.style.setProperty("background-position","center,center,82% 50%","important");
     card.style.setProperty("background-repeat","no-repeat","important");
     card.dataset.v52MapApplied="1";
   });
