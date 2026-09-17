@@ -1,0 +1,78 @@
+/* V5.2 final pass — deterministic public layout */
+
+/* Header social links */
+.topbar{gap:12px}
+.v52-header-socials{display:flex!important;align-items:center;gap:6px;margin-left:2px;margin-right:auto;flex:none}
+.v52-header-socials .v52-social-icon{width:29px;height:29px;display:grid;place-items:center;border:1px solid rgba(183,147,100,.22);background:rgba(8,7,7,.72);color:#ad9e90}
+.v52-header-socials .v52-social-icon:hover{color:#f1e5d8;border-color:rgba(183,147,100,.55);background:rgba(92,20,20,.26)}
+.v52-header-socials .v52-social-icon svg{width:14px;height:14px}
+.topbar .nav{margin-left:auto}
+
+/* Home: campaign section no longer overlaps hero */
+.v52-home-hero{margin-bottom:0!important}
+.v52-home-event-section,.home-event-section.v52-home-event-section{margin-top:0!important;padding-top:28px!important;background:linear-gradient(180deg,#000 0%,rgba(0,0,0,.98) 18%,rgba(0,0,0,.94) 100%)!important;position:relative!important;z-index:3!important}
+.v52-home-hero::after{height:95px!important}
+
+/* EU4 map: use the map itself as the card background, not negative z-index pseudo layers */
+.v52-campaign-card.v52-map-card{background-color:#070606!important;background-image:linear-gradient(90deg,#070606 0%,#070606 24%,rgba(7,6,6,.96) 36%,rgba(7,6,6,.78) 51%,rgba(7,6,6,.44) 68%,rgba(7,6,6,.20) 100%),linear-gradient(180deg,rgba(7,6,6,.06),rgba(7,6,6,.08) 60%,rgba(7,6,6,.90) 100%),var(--v52-eu4-map)!important;background-size:cover,cover,cover!important;background-position:center,center,72% 48%!important;background-repeat:no-repeat!important}
+.v52-campaign-card.v52-map-card::before,.v52-campaign-card.v52-map-card::after{display:none!important}
+.v52-campaign-card-copy,.v52-campaign-card-bottom{position:relative!important;z-index:2!important}
+.v52-campaign-card-bottom{background:linear-gradient(90deg,rgba(7,6,6,.93),rgba(7,6,6,.76) 58%,rgba(7,6,6,.44));padding-left:8px!important;padding-right:8px!important}
+
+/* Campaign hero: floral + actual map */
+.v52-event-hero-clean{background-image:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.58) 48%,rgba(0,0,0,.24)),url("assets/fleurs-accueil-v412.webp"),var(--v52-eu4-map)!important;background-size:100% 100%,58% auto,64% auto!important;background-position:center,left center,115% 48%!important;background-repeat:no-repeat!important}
+
+/* Overview */
+.v52-overview{gap:17px!important}
+.v52-overview-title{grid-template-columns:auto minmax(0,1fr)!important;column-gap:18px!important}
+.v52-overview-title>p:last-child{font-size:17px!important;line-height:1.62!important;max-width:1050px!important;color:#b4a89d!important;margin-top:8px!important}
+.v52-overview-stats{margin-top:2px}
+.v52-overview-story-final{display:grid!important;grid-template-columns:minmax(0,1fr) 300px!important;min-height:220px!important;align-items:stretch!important;background:linear-gradient(100deg,rgba(17,11,10,.90),rgba(6,5,5,.90))!important}
+.v52-overview-story-final .v52-overview-copy{padding:30px 36px!important;display:flex;flex-direction:column;justify-content:center}
+.v52-overview-story-final h3{font-size:32px!important;line-height:1.05!important;margin:0 0 12px!important}
+.v52-overview-story-final p{font-size:16px!important;line-height:1.66!important;color:#b9ada1!important;max-width:980px!important;margin:0 0 10px!important}
+.v52-overview-story-final .v52-publication-note{padding:28px 26px!important;border-left:1px solid rgba(183,147,100,.17)!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;text-align:left!important;gap:12px!important}
+.v52-publication-note strong{font:600 10px/1.2 var(--sans)!important;letter-spacing:.16em!important;color:#d2b78f!important}
+.v52-publication-note span{font:500 13px/1.58 var(--serif)!important;color:#9d9084!important;text-transform:none!important;letter-spacing:0!important}
+
+/* Nations: exactly four cards on desktop */
+.v52-nations-carousel{position:relative!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:15px!important;padding:0 58px 38px!important}
+.v52-nations-carousel .v52-nation-card{min-width:0!important;max-width:none!important;min-height:500px!important}
+.v52-nations-carousel .v52-nation-hidden{display:none!important}
+.v52-nations-carousel .v52-nation-head{grid-template-columns:64px minmax(0,1fr)!important;padding:16px!important}
+.v52-nations-carousel .v52-nation-head img{width:58px!important;height:62px!important;object-fit:contain!important}
+.v52-nations-carousel .v52-nation-head h3{font-size:25px!important}
+.v52-nation-arrow{position:absolute!important;z-index:8;top:46%;width:46px;height:58px;display:grid;place-items:center;border:1px solid rgba(183,147,100,.38);background:rgba(7,6,6,.94);color:#eadfce;font:400 34px/1 var(--serif);cursor:pointer}
+.v52-nation-arrow:hover:not(:disabled){border-color:#d2b78f;background:rgba(93,21,21,.38)}
+.v52-nation-arrow:disabled{opacity:.24;cursor:default}.v52-nation-prev{left:0}.v52-nation-next{right:0}
+.v52-nation-count{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);color:#8f8175;font-size:9px;letter-spacing:.12em}
+
+/* Chronology by country */
+#chronologie .section-shell{width:min(1510px,96vw)!important}
+#chronologie .section-lead{font-size:15px!important;line-height:1.55!important;max-width:980px!important;color:#9c8f83!important}
+.v52-country-timeline{display:grid;gap:20px!important}
+.v52-country-tabs{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;border:1px solid rgba(183,147,100,.20);background:rgba(7,6,6,.82);overflow:hidden}
+.v52-country-tabs button{display:flex!important;align-items:center!important;gap:9px!important;min-width:0;padding:11px 10px!important;border:0;border-right:1px solid rgba(183,147,100,.10)!important;background:transparent;color:#8e8175;cursor:pointer;text-align:left}
+.v52-country-tabs button:last-child{border-right:0!important}.v52-country-tabs button:hover,.v52-country-tabs button.active{background:rgba(102,22,22,.23)!important;color:#fff}.v52-country-tabs button.active{box-shadow:inset 0 -2px #b79364}
+.v52-country-tabs img{width:35px!important;height:38px!important;object-fit:contain}.v52-country-tabs span,.v52-country-tabs b,.v52-country-tabs small{display:block;min-width:0}.v52-country-tabs b{font:600 14px/1.05 var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.v52-country-tabs small{margin-top:3px;color:#75695f;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v52-country-range{display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:30px;padding:1px 2px}.v52-country-range strong{color:#eadfce;font:600 27px/1 var(--serif)}.v52-country-range span{max-width:680px;text-align:right;color:#94877b;font:500 13px/1.45 var(--serif)}
+.v52-country-timeline-shell{overflow-x:auto;padding:10px 0 22px;scrollbar-width:thin;scrollbar-color:rgba(183,147,100,.34) transparent}
+.v52-country-track{position:relative;display:flex;align-items:flex-start;min-width:max-content;padding:0 20px 8px}
+.v52-country-track::before{content:"";position:absolute;left:20px;right:20px;top:62px;height:1px;background:linear-gradient(90deg,rgba(183,147,100,.18),rgba(183,147,100,.65),rgba(183,147,100,.18))}
+.v52-country-node{position:relative;width:245px;flex:0 0 245px;padding:0 18px 16px 0;border:0;background:transparent;color:#aa9d91;text-align:left;cursor:pointer}
+.v52-country-year{display:block;height:40px;color:#d5c5b5;font:600 16px/1 var(--serif)}
+.v52-country-dot{position:relative;z-index:2;width:38px;height:38px;display:grid;place-items:center;margin:3px 0 11px;border:1px solid rgba(183,147,100,.34);border-radius:50%;background:#080707;color:#d2b78f;font-size:15px}
+.v52-country-kind{display:block;color:#826f61;font-size:8px;letter-spacing:.12em;text-transform:uppercase}.v52-country-node strong{display:block;margin-top:5px;color:#d3c6b8;font:600 17px/1.2 var(--serif);max-width:218px}.v52-country-node:hover strong,.v52-country-node.active strong{color:#fff}.v52-country-node.active .v52-country-dot{background:rgba(111,24,24,.67);border-color:#d2b78f;box-shadow:0 0 0 6px rgba(118,25,25,.11)}
+.v52-country-detail{padding:26px 30px!important;border:1px solid rgba(183,147,100,.24)!important;background:linear-gradient(105deg,rgba(93,19,19,.14),rgba(7,6,6,.90) 44%)!important;min-height:150px}.v52-country-detail-meta{display:flex;gap:16px;flex-wrap:wrap;color:#ad8e67;font-size:8px;text-transform:uppercase;letter-spacing:.12em}.v52-country-detail h3{margin:10px 0 0;color:#efe2d4;font:600 34px/1 var(--serif)}.v52-country-detail p{max-width:1040px;margin:11px 0 0;color:#b4a79a;font:500 15px/1.62 var(--serif)}
+
+@media(max-width:1100px){
+  .v52-overview-story-final{grid-template-columns:1fr!important}.v52-overview-story-final .v52-publication-note{border-left:0!important;border-top:1px solid rgba(183,147,100,.17)!important}
+  .v52-nations-carousel{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .v52-country-tabs{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+}
+@media(max-width:700px){
+  .v52-header-socials{display:none!important}.v52-home-event-section{padding-top:18px!important}.v52-campaign-card.v52-map-card{background-position:center,center,66% center!important}
+  .v52-overview-title{display:block!important}.v52-overview-title .eyebrow{margin-bottom:7px}.v52-overview-story-final .v52-overview-copy{padding:22px!important}.v52-overview-story-final p{font-size:14px!important}
+  .v52-nations-carousel{grid-template-columns:1fr!important;padding:0 48px 38px!important}.v52-nations-carousel .v52-nation-card{min-height:0!important}
+  .v52-country-tabs{display:flex!important;overflow-x:auto}.v52-country-tabs button{min-width:150px}.v52-country-range{display:block!important}.v52-country-range span{display:block;margin-top:8px;text-align:left}.v52-country-track{display:grid;min-width:0;padding-left:30px}.v52-country-track::before{left:13px;right:auto;top:8px;bottom:8px;width:1px;height:auto}.v52-country-node{width:100%;display:grid;grid-template-columns:64px 38px 1fr;grid-template-rows:auto auto;padding:10px 0}.v52-country-year{grid-row:1/3;height:auto;padding-top:5px}.v52-country-dot{grid-row:1/3;margin:0}.v52-country-kind{grid-column:3}.v52-country-node strong{grid-column:3;max-width:none}.v52-country-detail h3{font-size:28px}
+}
