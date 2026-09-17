@@ -42,24 +42,52 @@ function patchFlags(){
 }
 function applyMap(){
   if(!mapDataUrl)return;
-  const bg=`linear-gradient(90deg,rgba(5,4,4,.98) 0%,rgba(5,4,4,.93) 25%,rgba(5,4,4,.72) 43%,rgba(5,4,4,.38) 62%,rgba(5,4,4,.12) 100%),linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.10) 55%,rgba(0,0,0,.72) 100%),url("${mapDataUrl}")`;
+  const bg=`linear-gradient(90deg,rgba(5,4,4,.98) 0%,rgba(5,4,4,.92) 23%,rgba(5,4,4,.68) 40%,rgba(5,4,4,.30) 60%,rgba(5,4,4,.05) 100%),linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.08) 58%,rgba(0,0,0,.66) 100%),url("${mapDataUrl}")`;
   document.querySelectorAll('.v52-campaign-card.v52-map-card').forEach(card=>{
+    card.style.setProperty('background-color','#070606','important');
     card.style.setProperty('background-image',bg,'important');
     card.style.setProperty('background-size','cover,cover,cover','important');
-    card.style.setProperty('background-position','center,center,72% 48%','important');
+    card.style.setProperty('background-position','center,center,70% 50%','important');
     card.style.setProperty('background-repeat','no-repeat','important');
+    card.dataset.v52MapApplied='1';
   });
 }
+
+async function fetchPart(path){
+  const url=new URL(path,ROOT);
+  let lastError;
+  for(let attempt=0;attempt<3;attempt++){
+    try{
+      const response=await fetch(url,{cache:'no-store',credentials:'same-origin'});
+      if(!response.ok)throw new Error(`${response.status} ${path}`);
+      const text=(await response.text()).trim();
+      if(!text)throw new Error(`empty ${path}`);
+      return text;
+    }catch(error){
+      lastError=error;
+      await new Promise(resolve=>setTimeout(resolve,120*(attempt+1)));
+    }
+  }
+  throw lastError||new Error(`failed ${path}`);
+}
+
 async function loadMap(){
   try{
-    const responses=await Promise.all(MAP_PARTS.map(p=>fetch(new URL(p,ROOT),{cache:'no-store'})));
-    if(responses.some(r=>!r.ok))throw new Error('EU4 map fragment missing');
-    const b64=(await Promise.all(responses.map(r=>r.text()))).map(x=>x.trim()).join('');
-    if(!b64.startsWith('UklGR')||b64.length<50000)throw new Error('Invalid EU4 map data');
+    const chunks=[];
+    /* RawGitHack can intermittently refuse a burst of many extensionless
+       fragment requests. Loading sequentially keeps the preview reliable. */
+    for(const path of MAP_PARTS) chunks.push(await fetchPart(path));
+    const b64=chunks.join('').replace(/\s+/g,'');
+    if(!b64.startsWith('UklGR'))throw new Error(`Invalid EU4 map header: ${b64.slice(0,8)}`);
+    if(b64.length<50000)throw new Error(`EU4 map payload too short: ${b64.length}`);
     mapDataUrl=`data:image/webp;base64,${b64}`;
     document.documentElement.style.setProperty('--v52-eu4-map',`url("${mapDataUrl}")`);
+    document.documentElement.classList.add('v52-eu4-map-ready');
     applyMap();
-  }catch(err){console.error('V5.2 visual map fix failed',err)}
+  }catch(err){
+    console.error('V5.2 visual map fix failed',err);
+    document.documentElement.classList.add('v52-eu4-map-failed');
+  }
 }
 function patchAll(){patchFlags();applyMap()}
 
