@@ -7,6 +7,7 @@ const bootModules=[
   "./app-core.js",
   "./v5.2-extras.js",
   "./v5.2-diplomacy.js",
+  "./v5.2-dossiers.js",
   "./v5.2-visual-fixes.js"
 ];
 
