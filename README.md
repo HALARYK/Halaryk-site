@@ -1,40 +1,37 @@
-# HALARYK — Site V5.0
+# HALARYK — Site V5.2
 
-V5 transforme le site historique « one page » en architecture multi-pages tout en conservant la DA florale sombre et les modules Supabase/Twitch existants.
+Site officiel de la chaîne HALARYK, organisé en plusieurs pages autour du contenu Twitch, de la communauté et des événements suivis sur la durée.
 
-## Architecture publique
+## Structure
 
-- `/` — Accueil : identité HALARYK, statut Twitch et événement à la une.
-- `/evenements/` — événement actif + archives globales des grands projets.
-- `/evenements/ppo-europe/` — page dédiée à la campagne EU4 PPO Europe.
-- `/contenu/` — planning, ludothèque et clips.
-- `/communaute/` — Cabinet des idées, réputation et collaborateurs.
-- `/infos/` — règlement, commandes, configuration, FAQ, partenaires et réseaux.
-- `/admin/` — administration privée.
+- `/` — accueil, statut Twitch et mise en avant du projet actif ;
+- `/evenements/` — présentation des grands événements ;
+- `/evenements/chroniques-europe/` — campagne EU4 « Chroniques de l’Europe » ;
+- `/contenu/` — planning, ludothèque et clips ;
+- `/communaute/` — Cabinet des idées, réputation et collaborateurs ;
+- `/infos/` — règlement, commandes, configuration, FAQ, partenaires et réseaux ;
+- `/admin/` — interface d’administration.
 
-Les anciens liens `#planning`, `#cabinet/...`, `#reputation`, etc. arrivant sur l’accueil sont redirigés vers leur nouvelle page thématique.
+## Données
 
-## Événements
+Le site utilise Supabase pour les contenus dynamiques : événements, participants, chronologie, diplomatie, médias, statistiques historiques et données de communauté.
 
-La migration `supabase/MIGRATION_V5_EVENTS.sql` ajoute un modèle générique d’événement :
+Les sauvegardes `.eu4` brutes ne sont pas servies publiquement et ne doivent pas être ajoutées au dépôt. Seules les données sélectionnées pour publication sont exploitées côté site.
 
-- événement actif / archivé ;
-- participants ;
-- sessions et intersessions ;
-- relevés statistiques historiques ;
-- chronologie / RP ;
-- médias.
+## Chroniques de l’Europe
 
-La PPO Europe est initialisée avec :
+La campagne EU4 dispose d’un espace dédié avec :
 
-- état initial : 11 novembre 1444 ;
-- fin Session I : 16 janvier 1481 ;
-- fin Session II / situation actuelle connue : 15 janvier 1507 ;
-- chronologie publique limitée à 1497 ;
-- Session III prévue vendredi 18 septembre 2026 au soir.
+- présentation générale ;
+- nations et statistiques publiques ;
+- chronologie par pays ;
+- dossiers détaillés d’événements ;
+- diplomatie RP ;
+- médias ;
+- règles de la campagne.
 
-Les sauvegardes `.eu4` brutes ne sont jamais servies par le site et ne doivent pas être ajoutées au dépôt GitHub.
+Les informations récentes peuvent être volontairement publiées avec retard afin de préserver la partie multijoueur et la règle de non-divulgation des données contemporaines.
 
-## Sécurité
+## Administration
 
-Les tables V5 ont RLS activé. Les visiteurs ne lisent que les éléments explicitement publics/validés. Les éléments RP préchargés pour relecture restent privés jusqu’à validation depuis l’administration.
+L’administration permet de gérer le contenu public du site, les événements, les éléments RP, les médias et les liens sociaux sans modifier directement les pages publiques.
