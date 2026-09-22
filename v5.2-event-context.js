@@ -202,5 +202,11 @@ export const EVENT_CONTEXT={
     "history": "Matvala II d’York n’est pas un souverain historique réel. C’est un personnage généré par la campagne, intégré à la maison d’York après la victoire de cette dynastie dans la Guerre des Deux-Roses alternative de la partie.",
     "campaign": "Il succède à Thomas I d’York et assure la continuité du régime yorkiste. Avec ADM 4, DIP 5 et MIL 5, les traits « visionnaire architectural » et « zélote », il incarne un règne à la fois bâtisseur et religieux. C’est également lui qui lance en 1502 la grande guerre de Girid contre l’Empire ottoman.",
     "game": "Né le 17 janvier 1464, héritier depuis 1464 avec une prétention de 100, Matvala II devient souverain le 4 novembre 1486. Anne d’York devient alors héritière."
+  },
+  "LAN|1496-11-01": {
+    "status": "Statut de jeu — basculement de puissance",
+    "history": "Le rang de « Grande Puissance » est une mécanique d’Europa Universalis IV, pas un titre historique officiel. Il représente les huit États les plus puissants selon le développement et les pénalités technologiques.",
+    "campaign": "Florence entre dans le top 8 le 1er novembre 1496. Le relevé de 1481 plaçait encore la Pologne au 8e rang ; celui de 1507 place Florence 8e à sa place. La sauvegarde ne contient pas une ligne « Pologne déchue » datée au même jour, mais Florence est la seule nouvelle entrée de Grande Puissance enregistrée entre les deux relevés : le remplacement identifiable est donc celui de la Pologne.",
+    "game": "En 1507, Florence possède un score de Grande Puissance de 247,419. Son passage d’une petite république italienne à une puissance du top 8 matérialise l’ampleur de son expansion et de son développement pendant les deux premières sessions."
   }
 };
