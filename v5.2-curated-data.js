@@ -1,4 +1,4 @@
-export const CURATED_EVENTS = {
+export const CURATED_EVENTS={
   "CAS": [
     {
       "date": "1445-09-04",
@@ -783,15 +783,19 @@ export const CURATED_EVENTS = {
       "date": "1481-02-03",
       "type": "religion",
       "title": "Adoption de De Heretico Comburendo",
-      "summary": "L’Angleterre adopte la mesure religieuse « De Heretico Comburendo ».",
+      "summary": "L’Angleterre adopte dans la campagne une politique de répression de l’hérésie inspirée du texte anglais historique De heretico comburendo.",
       "facts": [
         [
           "Nature",
-          "Décision religieuse / politique"
+          "Décision religieuse et politique"
         ],
         [
-          "Contexte",
-          "Renforcement de l’orthodoxie catholique dans la campagne"
+          "Décision de la sauvegarde",
+          "de_heretico_comburendo_act"
+        ],
+        [
+          "Importance RP",
+          "Durcissement assumé de la politique catholique anglaise avant les grands bouleversements religieux du XVIe siècle."
         ]
       ]
     },
@@ -799,7 +803,7 @@ export const CURATED_EVENTS = {
       "date": "1485-02-24",
       "type": "guerre",
       "title": "Début de la conquête anglaise d’Aberdeen",
-      "summary": "L’Angleterre attaque l’Écosse pour Aberdeen.",
+      "summary": "Thomas I d’York ouvre une guerre de conquête contre l’Écosse pour s’emparer d’Aberdeen.",
       "facts": [
         [
           "Conflit",
@@ -812,6 +816,14 @@ export const CURATED_EVENTS = {
         [
           "Objectif",
           "Aberdeen"
+        ],
+        [
+          "Camp attaquant",
+          "Angleterre · Flandre"
+        ],
+        [
+          "Camp défenseur",
+          "Écosse"
         ]
       ]
     },
@@ -819,15 +831,27 @@ export const CURATED_EVENTS = {
       "date": "1486-04-16",
       "type": "guerre",
       "title": "Fin de la conquête anglaise d’Aberdeen",
-      "summary": "La guerre d’Aberdeen prend fin après deux batailles enregistrées.",
+      "summary": "La campagne s’achève par une victoire anglaise : Aberdeen passe sous contrôle de l’Angleterre.",
       "facts": [
         [
           "Conflit",
           "Conquête anglaise d’Aberdeen"
         ],
         [
-          "Issue",
-          "Victoire du camp anglais"
+          "Batailles enregistrées",
+          "2"
+        ],
+        [
+          "Pertes du camp anglais",
+          "3 030 pertes humaines"
+        ],
+        [
+          "Pertes écossaises",
+          "4 000 pertes humaines"
+        ],
+        [
+          "Traité / résultat",
+          "Aberdeen passe sous contrôle anglais."
         ]
       ]
     },
@@ -835,19 +859,43 @@ export const CURATED_EVENTS = {
       "date": "1486-11-04",
       "type": "dynastie",
       "title": "Matvala II d’York devient souverain",
-      "summary": "La succession yorkiste se poursuit avec l’accession de Matvala II et la désignation d’Anne d’York comme héritière.",
+      "summary": "Matvala II succède à Thomas I et prolonge la dynastie d’York installée après la Guerre des Deux-Roses.",
       "facts": [
         [
-          "Dynastie",
-          "Maison d’York"
+          "Prédécesseur",
+          "Thomas I d’York"
         ],
         [
-          "Nouvel héritier",
-          "Anne d’York"
+          "Nouveau souverain",
+          "Matvala II d’York"
         ],
         [
-          "Importance RP",
-          "Continuité de la monarchie yorkiste issue de la Guerre des Deux-Roses"
+          "Compétences",
+          "ADM 4 · DIP 5 · MIL 5"
+        ],
+        [
+          "Naissance",
+          "17 janvier 1464"
+        ],
+        [
+          "Prétention",
+          "100"
+        ],
+        [
+          "Traits",
+          "Visionnaire architectural · zélote"
+        ],
+        [
+          "Nouvelle héritière",
+          "Anne d’York · ADM 3 · DIP 4 · MIL 2 · prétention 79,646"
+        ],
+        [
+          "Consort",
+          "Anne Stanley · ADM 4 · DIP 2 · MIL 5"
+        ],
+        [
+          "Suite du règne",
+          "Matvala II est encore souverain lorsqu’il déclenche la guerre de Girid en 1502."
         ]
       ]
     },
@@ -855,7 +903,7 @@ export const CURATED_EVENTS = {
       "date": "1489-01-23",
       "type": "guerre",
       "title": "Début de la conquête anglaise d’Akureyri",
-      "summary": "L’Angleterre lance une guerre nordique majeure impliquant le Brandebourg face à la Norvège, au Danemark et à la Suède.",
+      "summary": "L’Angleterre ouvre une vaste guerre nordique pour Akureyri, avec la Flandre et le Brandebourg face à une coalition menée par la Norvège et le Danemark.",
       "facts": [
         [
           "Conflit",
@@ -868,6 +916,14 @@ export const CURATED_EVENTS = {
         [
           "Objectif",
           "Akureyri"
+        ],
+        [
+          "Camp attaquant",
+          "Angleterre · Flandre · Brandebourg"
+        ],
+        [
+          "Camp défenseur",
+          "Norvège · Danemark · Suède · Frise orientale · Frise · Utrecht"
         ]
       ]
     },
@@ -875,7 +931,7 @@ export const CURATED_EVENTS = {
       "date": "1489-02-12",
       "type": "bataille",
       "title": "Bataille de La Haye",
-      "summary": "Victoire anglaise très nette contre Utrecht.",
+      "summary": "William Dampier remporte pour l’Angleterre une victoire très nette sur l’armée d’Utrecht.",
       "facts": [
         [
           "Guerre",
@@ -907,7 +963,7 @@ export const CURATED_EVENTS = {
       "date": "1493-07-17",
       "type": "bataille",
       "title": "Bataille de Tiohärad",
-      "summary": "Victoire anglaise sur l’armée suédoise.",
+      "summary": "L’armée de John Burgoyne bat les Suédois de Sigvard Lewenhaupt au cours de la longue guerre d’Akureyri.",
       "facts": [
         [
           "Guerre",
@@ -939,7 +995,7 @@ export const CURATED_EVENTS = {
       "date": "1495-02-09",
       "type": "guerre",
       "title": "Fin de la conquête anglaise d’Akureyri",
-      "summary": "La campagne nordique s’achève après trente-et-une batailles enregistrées.",
+      "summary": "Après plus de six années et trente-et-une batailles, l’Angleterre sort victorieuse de la guerre mais Akureyri reste norvégienne ; la sauvegarde enregistre le même jour l’humiliation d’un rival.",
       "facts": [
         [
           "Conflit",
@@ -950,8 +1006,20 @@ export const CURATED_EVENTS = {
           "31"
         ],
         [
-          "Événement associé",
-          "Humiliation d’un rival enregistrée par la sauvegarde"
+          "Pertes du camp anglais",
+          "88 957 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "68 120 pertes humaines"
+        ],
+        [
+          "Issue",
+          "Victoire du camp anglais"
+        ],
+        [
+          "Traité / résultat",
+          "Akureyri reste norvégienne ; le détail exact de la paix n’est pas conservé, mais l’Angleterre enregistre l’humiliation d’un rival à cette date."
         ]
       ]
     },
@@ -959,7 +1027,7 @@ export const CURATED_EVENTS = {
       "date": "1502-05-31",
       "type": "guerre",
       "title": "Début de la conquête anglaise de Girid",
-      "summary": "L’Angleterre déclenche une guerre de grande ampleur contre l’Empire ottoman et ses alliés.",
+      "summary": "Matvala II déclenche une guerre de conquête contre l’Empire ottoman pour Girid, entraînant une coalition européenne et méditerranéenne de très grande ampleur.",
       "facts": [
         [
           "Conflit",
@@ -972,6 +1040,14 @@ export const CURATED_EVENTS = {
         [
           "Objectif",
           "Girid"
+        ],
+        [
+          "Camp attaquant",
+          "Angleterre · Flandre · Brandebourg · Castille · Florence · puis Aragon, Navarre, Maroc et Parme"
+        ],
+        [
+          "Camp défenseur",
+          "Empire ottoman · Serbie · Ardalan · Alger · Tafilalt · Souss · Mzab · Crimée · Circassie · Biapas · puis Égypte"
         ]
       ]
     },
@@ -979,7 +1055,7 @@ export const CURATED_EVENTS = {
       "date": "1503-06-23",
       "type": "bataille",
       "title": "Bataille de Pest",
-      "summary": "Bataille gigantesque remportée par les Ottomans face à l’armée anglaise.",
+      "summary": "Une des plus grandes batailles de la session : l’armée anglaise de John Burgoyne est battue par les Ottomans d’Ilyas Kavalali.",
       "facts": [
         [
           "Guerre",
@@ -1011,19 +1087,31 @@ export const CURATED_EVENTS = {
       "date": "1507-01-15",
       "type": "guerre",
       "title": "Fin de la conquête anglaise de Girid",
-      "summary": "Le conflit s’achève sans transfert de Girid à l’Angleterre.",
+      "summary": "La sauvegarde enregistre la guerre comme remportée par l’Angleterre, mais l’objectif territorial n’est pas annexé : Girid reste ottomane.",
       "facts": [
         [
           "Conflit",
           "Conquête anglaise de Girid"
         ],
         [
-          "Résultat territorial",
-          "Girid reste ottomane"
+          "Batailles enregistrées",
+          "19"
         ],
         [
-          "Lecture",
-          "L’objectif territorial anglais n’est pas atteint."
+          "Pertes du camp anglais",
+          "318 805 pertes humaines"
+        ],
+        [
+          "Pertes du camp ottoman",
+          "262 498 pertes humaines"
+        ],
+        [
+          "Issue",
+          "Victoire du camp attaquant selon le marqueur de victoire anglais"
+        ],
+        [
+          "Traité / résultat",
+          "Girid reste ottomane ; le détail exact des concessions de paix n’est pas conservé dans la sauvegarde."
         ]
       ]
     }
