@@ -1511,5 +1511,183 @@ export const WAR_EVENT_DATA={
     "battles": 19,
     "winner": "Camp attaquant anglais",
     "peace": "L’Angleterre possède le marqueur de victoire de guerre au 15 janvier 1507. Girid reste néanmoins ottomane : le détail exact des concessions de paix n’est pas conservé."
+  },
+  "LAN|1483-12-04": {
+    "mode": "start",
+    "war": "Humiliation florentine de Naples",
+    "start": "1483-12-04",
+    "end": "1484-11-18",
+    "casusBelli": "Humiliation d’un rival",
+    "warGoal": "Humilier Naples / démontrer la supériorité",
+    "attackers": [
+      "Florence",
+      "Saluzzo"
+    ],
+    "defenders": [
+      "Naples"
+    ],
+    "lossesAttackers": 2548,
+    "lossesDefenders": 8000,
+    "losses": {
+      "Florence": 2228,
+      "Saluzzo": 320,
+      "Naples": 8000
+    },
+    "battles": 1,
+    "winner": "Camp florentin",
+    "peace": "Florence obtient l’humiliation de Naples ; le drapeau humiliated_rival est enregistré le 18 novembre 1484."
+  },
+  "LAN|1485-11-29": {
+    "mode": "end",
+    "war": "Reconquête française du Dijonnais",
+    "start": "1483-07-20",
+    "end": "1485-11-29",
+    "casusBelli": "Reconquête d’un core",
+    "warGoal": "Dijonnais",
+    "attackers": [
+      "France",
+      "Bourgogne",
+      "Lorraine",
+      "Venise",
+      "Florence"
+    ],
+    "defenders": [
+      "Écosse",
+      "Alsace",
+      "Savoie"
+    ],
+    "lossesAttackers": 18108,
+    "lossesDefenders": 32384,
+    "losses": {
+      "France": 7445,
+      "Bourgogne": 1230,
+      "Lorraine": 3333,
+      "Venise": 5850,
+      "Florence": 250,
+      "Écosse": 17160,
+      "Alsace": 6050,
+      "Savoie": 9174
+    },
+    "battles": 8,
+    "winner": "Camp français",
+    "peace": "Le Dijonnais est récupéré par la France et se trouve encore sous contrôle français dans la sauvegarde de 1507."
+  },
+  "LAN|1489-03-16": {
+    "mode": "start",
+    "war": "Conquête florentine de Trient",
+    "start": "1489-03-16",
+    "end": "1491-07-14",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Trient",
+    "attackers": [
+      "Florence",
+      "Saluzzo"
+    ],
+    "defenders": [
+      "Trient",
+      "Venise",
+      "États pontificaux"
+    ],
+    "lossesAttackers": 16455,
+    "lossesDefenders": 25508,
+    "losses": {
+      "Florence": 15345,
+      "Saluzzo": 1110,
+      "Trient": 6175,
+      "Venise": 11370,
+      "États pontificaux": 7963
+    },
+    "battles": 4,
+    "winner": "Camp florentin",
+    "peace": "Trient passe sous contrôle florentin. La province est toujours détenue par Florence dans la sauvegarde de 1507."
+  },
+  "LAN|1491-07-14": {
+    "mode": "end",
+    "war": "Conquête florentine de Trient",
+    "start": "1489-03-16",
+    "end": "1491-07-14",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Trient",
+    "attackers": [
+      "Florence",
+      "Saluzzo"
+    ],
+    "defenders": [
+      "Trient",
+      "Venise",
+      "États pontificaux"
+    ],
+    "lossesAttackers": 16455,
+    "lossesDefenders": 25508,
+    "losses": {
+      "Florence": 15345,
+      "Saluzzo": 1110,
+      "Trient": 6175,
+      "Venise": 11370,
+      "États pontificaux": 7963
+    },
+    "battles": 4,
+    "winner": "Camp florentin",
+    "peace": "Trient passe sous contrôle florentin. La province est toujours détenue par Florence dans la sauvegarde de 1507."
+  },
+  "LAN|1502-05-31": {
+    "mode": "join",
+    "war": "Conquête anglaise de Girid",
+    "start": "1502-05-31",
+    "end": "1507-01-15",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Girid",
+    "attackers": [
+      "Angleterre",
+      "Flandre",
+      "Brandebourg",
+      "Castille",
+      "Aragon",
+      "Navarre",
+      "Maroc",
+      "Florence",
+      "Parme"
+    ],
+    "defenders": [
+      "Empire ottoman",
+      "Serbie",
+      "Ardalan",
+      "Alger",
+      "Tafilalt",
+      "Souss",
+      "Mzab",
+      "Crimée",
+      "Circassie",
+      "Biapas",
+      "Égypte"
+    ],
+    "lossesAttackers": 318805,
+    "lossesDefenders": 262498,
+    "losses": {
+      "Angleterre": 138147,
+      "Flandre": 4333,
+      "Brandebourg": 12262,
+      "Castille": 79013,
+      "Aragon": 40982,
+      "Navarre": 1500,
+      "Maroc": 4137,
+      "Florence": 34034,
+      "Parme": 4397,
+      "Empire ottoman": 244265,
+      "Serbie": 719,
+      "Ardalan": 290,
+      "Alger": 3173,
+      "Tafilalt": 2020,
+      "Souss": 7000,
+      "Mzab": 0,
+      "Crimée": 319,
+      "Circassie": 418,
+      "Biapas": 271,
+      "Égypte": 4023
+    },
+    "battles": 19,
+    "winner": "Camp attaquant anglais",
+    "peace": "L’Angleterre possède le marqueur de victoire de guerre au 15 janvier 1507. Girid reste néanmoins ottomane : le détail exact des concessions de paix n’est pas conservé.",
+    "joinDate": "1502-05-31"
   }
 };
