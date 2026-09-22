@@ -385,20 +385,32 @@ export const CURATED_EVENTS={
     {
       "date": "1502-05-31",
       "type": "guerre",
-      "title": "Entrée de la Castille dans la conquête anglaise de Girid",
-      "summary": "La Castille rejoint dès son déclenchement une vaste coalition menée par l’Angleterre contre l’Empire ottoman.",
+      "title": "La Castille rejoint la croisade contre l’Empire ottoman",
+      "summary": "La Castille soutient la croisade menée par l’Angleterre afin d’affaiblir l’Empire ottoman ; Girid n’est que l’objectif mécanique utilisé par EU4.",
       "facts": [
         [
-          "Conflit",
+          "Nature RP",
+          "Croisade menée par l’Angleterre"
+        ],
+        [
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Conflit mécanique EU4",
           "Conquête anglaise de Girid"
         ],
         [
-          "Camp",
-          "Angleterre · Castille et alliés"
+          "Casus belli mécanique",
+          "Conquête de Girid — choisi comme prétexte de guerre"
         ],
         [
-          "Adversaire",
-          "Empire ottoman et alliés"
+          "Coalition principale jouée",
+          "Angleterre · Castille · Florence · Brandebourg"
+        ],
+        [
+          "Camp adverse joué",
+          "Empire ottoman"
         ]
       ]
     },
@@ -469,20 +481,40 @@ export const CURATED_EVENTS={
     {
       "date": "1507-01-15",
       "type": "guerre",
-      "title": "Fin de la conquête anglaise de Girid",
-      "summary": "La grande guerre anglo-ottomane s’achève ; Girid reste ottomane dans la sauvegarde de fin de session.",
+      "title": "Fin de la croisade contre l’Empire ottoman",
+      "summary": "La croisade s’achève avec une victoire enregistrée pour le camp anglais. Girid reste ottomane : la prise de l’île n’était pas l’objectif RP, qui était d’affaiblir l’Empire ottoman.",
       "facts": [
         [
-          "Conflit",
-          "Conquête anglaise de Girid"
+          "Nature RP",
+          "Croisade menée par l’Angleterre"
+        ],
+        [
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "19"
+        ],
+        [
+          "Pertes du camp mené par l’Angleterre",
+          "318 805 pertes humaines"
+        ],
+        [
+          "Pertes du camp ottoman",
+          "262 498 pertes humaines"
+        ],
+        [
+          "Issue",
+          "Victoire enregistrée pour le camp anglais"
         ],
         [
           "Résultat territorial",
           "Girid reste ottomane"
         ],
         [
-          "Lecture",
-          "L’objectif de conquête n’est pas atteint par la coalition."
+          "Lecture RP",
+          "La conquête de Girid était un casus belli mécanique, pas le véritable objectif de la guerre."
         ]
       ]
     }
@@ -1026,28 +1058,32 @@ export const CURATED_EVENTS={
     {
       "date": "1502-05-31",
       "type": "guerre",
-      "title": "Début de la conquête anglaise de Girid",
-      "summary": "Matvala II déclenche une guerre de conquête contre l’Empire ottoman pour Girid, entraînant une coalition européenne et méditerranéenne de très grande ampleur.",
+      "title": "Début de la croisade contre l’Empire ottoman",
+      "summary": "L’Angleterre prend la tête d’une croisade dont l’objectif RP est d’affaiblir l’Empire ottoman. La conquête de Girid sert uniquement de casus belli mécanique pour déclencher le conflit.",
       "facts": [
         [
-          "Conflit",
+          "Nature RP",
+          "Croisade menée par l’Angleterre"
+        ],
+        [
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Conflit mécanique EU4",
           "Conquête anglaise de Girid"
         ],
         [
-          "Casus belli",
-          "Conquête territoriale"
+          "Casus belli mécanique",
+          "Conquête de Girid — choisi comme prétexte de guerre"
         ],
         [
-          "Objectif",
-          "Girid"
+          "Coalition principale jouée",
+          "Angleterre · Castille · Florence · Brandebourg"
         ],
         [
-          "Camp attaquant",
-          "Angleterre · Flandre · Brandebourg · Castille · Florence · puis Aragon, Navarre, Maroc et Parme"
-        ],
-        [
-          "Camp défenseur",
-          "Empire ottoman · Serbie · Ardalan · Alger · Tafilalt · Souss · Mzab · Crimée · Circassie · Biapas · puis Égypte"
+          "Camp adverse joué",
+          "Empire ottoman"
         ]
       ]
     },
@@ -1086,19 +1122,23 @@ export const CURATED_EVENTS={
     {
       "date": "1507-01-15",
       "type": "guerre",
-      "title": "Fin de la conquête anglaise de Girid",
-      "summary": "La sauvegarde enregistre la guerre comme remportée par l’Angleterre, mais l’objectif territorial n’est pas annexé : Girid reste ottomane.",
+      "title": "Fin de la croisade contre l’Empire ottoman",
+      "summary": "La croisade s’achève avec une victoire enregistrée pour le camp anglais. Girid reste ottomane : la prise de l’île n’était pas l’objectif RP, qui était d’affaiblir l’Empire ottoman.",
       "facts": [
         [
-          "Conflit",
-          "Conquête anglaise de Girid"
+          "Nature RP",
+          "Croisade menée par l’Angleterre"
+        ],
+        [
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
         ],
         [
           "Batailles enregistrées",
           "19"
         ],
         [
-          "Pertes du camp anglais",
+          "Pertes du camp mené par l’Angleterre",
           "318 805 pertes humaines"
         ],
         [
@@ -1107,11 +1147,15 @@ export const CURATED_EVENTS={
         ],
         [
           "Issue",
-          "Victoire du camp attaquant selon le marqueur de victoire anglais"
+          "Victoire enregistrée pour le camp anglais"
         ],
         [
-          "Traité / résultat",
-          "Girid reste ottomane ; le détail exact des concessions de paix n’est pas conservé dans la sauvegarde."
+          "Résultat territorial",
+          "Girid reste ottomane"
+        ],
+        [
+          "Lecture RP",
+          "La conquête de Girid était un casus belli mécanique, pas le véritable objectif de la guerre."
         ]
       ]
     }
@@ -1529,32 +1573,32 @@ export const CURATED_EVENTS={
     {
       "date": "1502-05-31",
       "type": "guerre",
-      "title": "Florence entre dans la conquête anglaise de Girid",
-      "summary": "Florence rejoint dès le déclenchement la coalition menée par l’Angleterre contre l’Empire ottoman.",
+      "title": "Florence rejoint la croisade contre l’Empire ottoman",
+      "summary": "Florence rejoint la croisade menée par l’Angleterre avec la Castille et le Brandebourg. L’objectif RP est l’affaiblissement de l’Empire ottoman.",
       "facts": [
         [
-          "Conflit",
+          "Nature RP",
+          "Croisade menée par l’Angleterre"
+        ],
+        [
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Conflit mécanique EU4",
           "Conquête anglaise de Girid"
         ],
         [
-          "Casus belli",
-          "Conquête territoriale"
+          "Casus belli mécanique",
+          "Conquête de Girid — choisi comme prétexte de guerre"
         ],
         [
-          "Objectif",
-          "Girid"
+          "Coalition principale jouée",
+          "Angleterre · Castille · Florence · Brandebourg"
         ],
         [
-          "Camp attaquant",
-          "Angleterre · Flandre · Brandebourg · Castille · Florence · puis Aragon, Navarre, Maroc et Parme"
-        ],
-        [
-          "Camp défenseur",
-          "Empire ottoman et ses alliés"
-        ],
-        [
-          "Rôle florentin",
-          "Allié du camp attaquant dès le 31 mai 1502"
+          "Camp adverse joué",
+          "Empire ottoman"
         ]
       ]
     },
@@ -2074,20 +2118,32 @@ export const CURATED_EVENTS={
     {
       "date": "1502-05-31",
       "type": "guerre",
-      "title": "Entrée du Brandebourg dans la conquête anglaise de Girid",
-      "summary": "Le Brandebourg rejoint dès le début la coalition menée par l’Angleterre contre l’Empire ottoman.",
+      "title": "Le Brandebourg rejoint la croisade contre l’Empire ottoman",
+      "summary": "Le Brandebourg rejoint la coalition menée par l’Angleterre, aux côtés de la Castille et de Florence, dans le but d’affaiblir l’Empire ottoman.",
       "facts": [
         [
-          "Conflit",
+          "Nature RP",
+          "Croisade menée par l’Angleterre"
+        ],
+        [
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Conflit mécanique EU4",
           "Conquête anglaise de Girid"
         ],
         [
-          "Camp",
-          "Angleterre et alliés"
+          "Casus belli mécanique",
+          "Conquête de Girid — choisi comme prétexte de guerre"
         ],
         [
-          "Adversaire",
-          "Empire ottoman et alliés"
+          "Coalition principale jouée",
+          "Angleterre · Castille · Florence · Brandebourg"
+        ],
+        [
+          "Camp adverse joué",
+          "Empire ottoman"
         ]
       ]
     },
@@ -2948,20 +3004,32 @@ export const CURATED_EVENTS={
     {
       "date": "1502-05-31",
       "type": "guerre",
-      "title": "Début de la conquête anglaise de Girid",
-      "summary": "L’Empire ottoman fait face à une vaste coalition menée par l’Angleterre.",
+      "title": "L’Empire ottoman fait face à la croisade",
+      "summary": "L’Empire ottoman affronte une croisade menée par l’Angleterre et soutenue par la Castille, Florence et le Brandebourg. Girid sert de prétexte mécanique ; l’objectif RP adverse est d’affaiblir la puissance ottomane.",
       "facts": [
         [
-          "Conflit",
-          "Conquête anglaise de Girid"
-        ],
-        [
-          "Rôle",
-          "Camp défenseur"
+          "Nature RP",
+          "Croisade menée par l’Angleterre"
         ],
         [
           "Objectif adverse",
-          "Girid"
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Conflit mécanique EU4",
+          "Conquête anglaise de Girid"
+        ],
+        [
+          "Casus belli mécanique",
+          "Conquête de Girid — choisi comme prétexte de guerre"
+        ],
+        [
+          "Principaux joueurs adverses",
+          "Angleterre · Castille · Florence · Brandebourg"
+        ],
+        [
+          "Rôle",
+          "Puissance principale du camp défenseur"
         ]
       ]
     },
