@@ -1294,7 +1294,7 @@ export const CURATED_EVENTS={
       "date": "1483-12-04",
       "type": "guerre",
       "title": "Début de l’humiliation florentine de Naples",
-      "summary": "Florence ouvre une guerre visant à humilier Naples.",
+      "summary": "Florence déclare une guerre d’humiliation à Naples. Saluzzo rejoint ensuite le camp florentin.",
       "facts": [
         [
           "Conflit",
@@ -1302,11 +1302,19 @@ export const CURATED_EVENTS={
         ],
         [
           "Casus belli",
-          "Humiliation"
+          "Humiliation d’un rival"
         ],
         [
           "Objectif",
-          "Supériorité / humiliation du rival"
+          "Humilier Naples / démontrer la supériorité"
+        ],
+        [
+          "Camp attaquant",
+          "Florence · Saluzzo"
+        ],
+        [
+          "Camp défenseur",
+          "Naples"
         ]
       ]
     },
@@ -1314,7 +1322,7 @@ export const CURATED_EVENTS={
       "date": "1484-10-02",
       "type": "bataille",
       "title": "Bataille de Salentin",
-      "summary": "Victoire décisive de Florence sur Naples.",
+      "summary": "Giancarlo Pazzi remporte pour Florence l’unique bataille enregistrée de la guerre d’humiliation contre Naples.",
       "facts": [
         [
           "Guerre",
@@ -1346,19 +1354,51 @@ export const CURATED_EVENTS={
       "date": "1485-11-29",
       "type": "guerre",
       "title": "Fin de la reconquête française du Dijonnais",
-      "summary": "Florence termine sa participation à la guerre française de reconquête du Dijonnais.",
+      "summary": "Florence termine sa participation à la reconquête menée par la France pour récupérer le Dijonnais.",
       "facts": [
         [
           "Conflit",
           "Reconquête française du Dijonnais"
         ],
         [
-          "Camp florentin",
+          "Casus belli",
+          "Reconquête d’un core"
+        ],
+        [
+          "Objectif",
+          "Dijonnais"
+        ],
+        [
+          "Camp attaquant",
           "France · Bourgogne · Lorraine · Venise · Florence"
         ],
         [
-          "Adversaires",
+          "Camp défenseur",
           "Écosse · Alsace · Savoie"
+        ],
+        [
+          "Batailles enregistrées",
+          "8"
+        ],
+        [
+          "Pertes du camp attaquant",
+          "18 108 pertes humaines"
+        ],
+        [
+          "Pertes du camp défenseur",
+          "32 384 pertes humaines"
+        ],
+        [
+          "Contribution florentine",
+          "250 pertes humaines enregistrées"
+        ],
+        [
+          "Issue",
+          "Victoire du camp français"
+        ],
+        [
+          "Traité / résultat",
+          "Le Dijonnais est français dans la sauvegarde de 1507."
         ]
       ]
     },
@@ -1366,7 +1406,7 @@ export const CURATED_EVENTS={
       "date": "1489-03-16",
       "type": "guerre",
       "title": "Début de la conquête florentine de Trient",
-      "summary": "Florence attaque Trient et ses alliés vénitiens et pontificaux.",
+      "summary": "Florence attaque Trient pour s’emparer de la province, face à Trient, Venise et aux États pontificaux.",
       "facts": [
         [
           "Conflit",
@@ -1379,6 +1419,14 @@ export const CURATED_EVENTS={
         [
           "Objectif",
           "Trient"
+        ],
+        [
+          "Camp attaquant",
+          "Florence · Saluzzo"
+        ],
+        [
+          "Camp défenseur",
+          "Trient · Venise · États pontificaux"
         ]
       ]
     },
@@ -1386,7 +1434,7 @@ export const CURATED_EVENTS={
       "date": "1491-04-02",
       "type": "bataille",
       "title": "Bataille de Trient",
-      "summary": "Victoire florentine écrasante contre l’armée vénitienne.",
+      "summary": "Pietro Nasini écrase l’armée vénitienne devant Trient, dans une bataille décisive de la guerre.",
       "facts": [
         [
           "Guerre",
@@ -1418,7 +1466,7 @@ export const CURATED_EVENTS={
       "date": "1491-07-14",
       "type": "guerre",
       "title": "Fin de la conquête florentine de Trient",
-      "summary": "La guerre de Trient s’achève après quatre batailles enregistrées.",
+      "summary": "Après quatre affrontements enregistrés, Florence gagne la guerre et s’empare de Trient.",
       "facts": [
         [
           "Conflit",
@@ -1429,8 +1477,20 @@ export const CURATED_EVENTS={
           "4"
         ],
         [
+          "Pertes du camp florentin",
+          "16 455 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "25 508 pertes humaines"
+        ],
+        [
           "Issue",
           "Victoire du camp florentin"
+        ],
+        [
+          "Traité / résultat",
+          "Trient passe sous contrôle de Florence et est encore florentine en 1507."
         ]
       ]
     },
@@ -1438,15 +1498,31 @@ export const CURATED_EVENTS={
       "date": "1496-11-01",
       "type": "puissance",
       "title": "Florence devient une Grande Puissance",
-      "summary": "Florence entre dans le groupe des huit puissances dominantes d’Europa Universalis IV.",
+      "summary": "La république florentine entre dans le top 8 mondial d’EU4. Entre les relevés de 1481 et 1507, elle prend la place occupée auparavant par la Pologne.",
       "facts": [
         [
           "Statut",
           "Grande Puissance"
         ],
         [
-          "Importance",
-          "La cité-État devenue puissance italienne change d’échelle diplomatique"
+          "Date d’entrée",
+          "1er novembre 1496"
+        ],
+        [
+          "Rang en 1507",
+          "8e Grande Puissance"
+        ],
+        [
+          "Score de Grande Puissance en 1507",
+          "247,419"
+        ],
+        [
+          "Puissance sortie du top 8",
+          "Pologne — 8e au relevé de 1481"
+        ],
+        [
+          "Lecture",
+          "Florence est la seule nouvelle puissance dont l’entrée est datée dans la sauvegarde entre 1481 et 1507."
         ]
       ]
     },
@@ -1454,19 +1530,31 @@ export const CURATED_EVENTS={
       "date": "1502-05-31",
       "type": "guerre",
       "title": "Florence entre dans la conquête anglaise de Girid",
-      "summary": "Florence rejoint la coalition chrétienne engagée contre l’Empire ottoman.",
+      "summary": "Florence rejoint dès le déclenchement la coalition menée par l’Angleterre contre l’Empire ottoman.",
       "facts": [
         [
           "Conflit",
           "Conquête anglaise de Girid"
         ],
         [
-          "Camp",
-          "Angleterre et alliés"
+          "Casus belli",
+          "Conquête territoriale"
         ],
         [
-          "Adversaire",
-          "Empire ottoman et alliés"
+          "Objectif",
+          "Girid"
+        ],
+        [
+          "Camp attaquant",
+          "Angleterre · Flandre · Brandebourg · Castille · Florence · puis Aragon, Navarre, Maroc et Parme"
+        ],
+        [
+          "Camp défenseur",
+          "Empire ottoman et ses alliés"
+        ],
+        [
+          "Rôle florentin",
+          "Allié du camp attaquant dès le 31 mai 1502"
         ]
       ]
     },
@@ -1474,7 +1562,7 @@ export const CURATED_EVENTS={
       "date": "1505-05-25",
       "type": "bataille",
       "title": "Bataille de Kocaeli",
-      "summary": "Victoire florentine contre une armée ottomane en Anatolie.",
+      "summary": "Pietro Nasini remporte en Anatolie une victoire florentine coûteuse contre l’armée ottomane d’Ömer Serdar.",
       "facts": [
         [
           "Guerre",
@@ -1506,7 +1594,7 @@ export const CURATED_EVENTS={
       "date": "1506-07-05",
       "type": "bataille",
       "title": "Bataille de Constantinople",
-      "summary": "Florence subit une lourde défaite devant Constantinople.",
+      "summary": "Devant Constantinople, l’armée de Pietro Nasini est battue par les forces ottomanes d’Otchikan Guaye malgré de lourdes pertes infligées.",
       "facts": [
         [
           "Guerre",
