@@ -98,11 +98,23 @@ async function loadEventsIndex(){
 }
 
 function nationStat(label,value,change=""){return `<div class="v52-nation-stat"><span>${label}</span><b>${value}</b>${change?`<small>${change}</small>`:""}</div>`}
-function nationCard(p,start,end,startYear,endYear){
+function snapshotBadge(snapshot){
+  const n=Number(snapshot?.session_number);
+  if(n===0)return "DÉBUT DE CAMPAGNE";
+  if(Number.isFinite(n)&&n>0)return `FIN SESSION ${["","I","II","III","IV","V"][n]||n}`;
+  return snapshot?.label||"RELEVÉ";
+}
+function techDelta(a,b){
+  const aa=a?.technologies||{},bb=b?.technologies||{};
+  const d=k=>{const x=Number(aa[k]),y=Number(bb[k]);if(!Number.isFinite(x)||!Number.isFinite(y))return "—";const v=y-x;return `${v>=0?"+":""}${v}`};
+  return `${d("administrative")} / ${d("diplomatic")} / ${d("military")}`;
+}
+function nationCard(p,start,end,startSnapshot,endSnapshot){
   const a=start?.stats||{},b=end?.stats||{},tech=b.technologies||{};const annualA=Number(a.annual_gross_income),annualB=Number(b.annual_gross_income),img=crest(p);
+  const startYear=year(startSnapshot?.snapshot_date),endYear=year(endSnapshot?.snapshot_date);
   return `<article class="v52-nation-card" data-nation="${esc(p.participant_key||"")}">
     <div class="v52-nation-head">${img?`<img src="${img}" alt="Emblème de ${esc(p.title)}">`:""}<div><h3>${esc(p.title)}</h3><p>${esc(p.player_name||"")}</p></div></div>
-    <div class="v52-nation-period"><strong>${startYear} → ${endYear}</strong><span>FIN SESSION I</span></div>
+    <div class="v52-nation-period"><strong>${startYear} → ${endYear}</strong><span>${esc(snapshotBadge(endSnapshot))}</span></div>
     <div class="v52-nation-stats">
       ${nationStat("Provinces",fmt(b.province_count),delta(a,b,"province_count"))}
       ${nationStat("Développement",fmt(b.development),delta(a,b,"development"))}
@@ -110,11 +122,38 @@ function nationCard(p,start,end,startYear,endYear){
       ${nationStat("Manpower max",fmt(Number(b.max_manpower)*1000),delta({v:Number(a.max_manpower)*1000},{v:Number(b.max_manpower)*1000},"v"))}
       ${nationStat("Armée",`${fmt(b.regiment_count)} rég.`,delta(a,b,"regiment_count"))}
       ${nationStat("Flotte",`${fmt(b.ship_count)} nav.`,delta(a,b,"ship_count"))}
-      ${nationStat("Technologies",`${tech.administrative??"—"} / ${tech.diplomatic??"—"} / ${tech.military??"—"}`,"Adm · Dip · Mil")}
-      ${nationStat("Pertes cumulées",fmt(b.war_losses))}
-      ${nationStat("Guerres",fmt(b.wars_participated))}
+      ${nationStat("Technologies",`${tech.administrative??"—"} / ${tech.diplomatic??"—"} / ${tech.military??"—"}`,techDelta(a,b))}
+      ${nationStat("Pertes cumulées",fmt(b.war_losses),delta(a,b,"war_losses"))}
+      ${nationStat("Guerres",fmt(b.wars_participated),delta(a,b,"wars_participated"))}
     </div>
   </article>`;
+}
+
+function renderNationComparison(host,participants,snapshots,statsMap,startIndex,endIndex){
+  const start=snapshots[startIndex],end=snapshots[endIndex];if(!start||!end)return;
+  host.innerHTML=participants.map(p=>nationCard(p,statsMap.get(`${start.id}:${p.id}`),statsMap.get(`${end.id}:${p.id}`),start,end)).join("");
+  initNationCarousel(host);
+}
+function initNationComparison(host,participants,snapshots,statsMap){
+  if(!host||snapshots.length<2)return;
+  let startIndex=0,endIndex=snapshots.length-1;
+  let picker=host.previousElementSibling;
+  if(!picker?.classList?.contains("v52-snapshot-compare")){
+    picker=document.createElement("div");
+    picker.className="v52-snapshot-compare";
+    host.before(picker);
+  }
+  const draw=()=>{
+    const buttons=(role,selected)=>snapshots.map((s,i)=>`<button type="button" data-snapshot-role="${role}" data-snapshot-index="${i}" class="${i===selected?"active":""}" ${role==="start"&&i>=endIndex?"disabled":role==="end"&&i<=startIndex?"disabled":""}><strong>${year(s.snapshot_date)}</strong><small>${esc(snapshotBadge(s))}</small></button>`).join("");
+    picker.innerHTML=`<div class="v52-snapshot-compare-copy"><p class="eyebrow">ÉVOLUTION</p><h3>Comparer deux relevés</h3><p>Choisis un point de départ puis un point d’arrivée. Les écarts affichés dans chaque fiche sont recalculés entre ces deux dates.</p></div><div class="v52-snapshot-pickers"><div><span>DE</span><div>${buttons("start",startIndex)}</div></div><i>→</i><div><span>À</span><div>${buttons("end",endIndex)}</div></div></div>`;
+    picker.querySelectorAll("[data-snapshot-role]").forEach(btn=>btn.addEventListener("click",()=>{
+      const i=Number(btn.dataset.snapshotIndex);
+      if(btn.dataset.snapshotRole==="start"){startIndex=i;if(startIndex>=endIndex)endIndex=Math.min(snapshots.length-1,startIndex+1)}
+      else{endIndex=i;if(endIndex<=startIndex)startIndex=Math.max(0,endIndex-1)}
+      draw();renderNationComparison(host,participants,snapshots,statsMap,startIndex,endIndex);
+    }));
+  };
+  draw();renderNationComparison(host,participants,snapshots,statsMap,startIndex,endIndex);
 }
 
 function initNationCarousel(host){
@@ -137,10 +176,10 @@ function overviewMarkup(event,participants,chapters){
       <div><span>Campagne</span><strong>1444 → ${year(event.world_current_date)}</strong><small>Période jouée</small></div>
       <div><span>Sessions</span><strong>${sessions}</strong><small>Sessions terminées</small></div>
       <div><span>Nations</span><strong>${participants.length||7}</strong><small>Puissances jouées</small></div>
-      <div><span>Public</span><strong>${publicEndYear}</strong><small>Fin de la Session I</small></div>
+      <div><span>Statistiques</span><strong>${year(event.public_snapshot_date)}</strong><small>Dernier relevé public</small></div>
     </div>
     <article class="v52-overview-story v52-overview-story-final">
-      <div class="v52-overview-copy"><h3>Une grande stratégie, des histoires humaines</h3><p>La partie se déroule sur plusieurs sessions et se prolonge entre elles par un véritable RP diplomatique : alliances, rivalités, traités, congrès et négociations. Le but n’est pas d’afficher un simple ledger, mais de raconter l’évolution de cette Europe alternative.</p><p>Le dernier relevé public correspond à la fin de la Session I, en <strong>1481</strong>. À chaque nouvelle session jouée, la session précédente peut être publiée : cela évite de dévoiler des informations contemporaines aux autres joueurs.</p></div>
+      <div class="v52-overview-copy"><h3>Une grande stratégie, des histoires humaines</h3><p>La partie se déroule sur plusieurs sessions et se prolonge entre elles par un véritable RP diplomatique : alliances, rivalités, traités, congrès et négociations. Le but n’est pas d’afficher un simple ledger, mais de raconter l’évolution de cette Europe alternative.</p><p>Les relevés statistiques publics couvrent désormais <strong>1444</strong>, <strong>1481</strong> et <strong>${year(event.public_snapshot_date)}</strong>. L’onglet Nations permet de comparer librement deux de ces dates. La chronologie narrative reste publiée séparément afin de ne rendre visibles que les événements retenus.</p></div>
       <aside class="v52-publication-note"><strong>PUBLICATION DIFFÉRÉE</strong><span>Les données récentes restent cachées pour préserver la diplomatie, la découverte et la règle « no ledger ».</span></aside>
     </article>
   </div>`;
@@ -177,7 +216,7 @@ async function loadEventDetail(){
   const hero=$(".event-hero");if(hero){hero.classList.add("v52-event-hero-clean");const inner=$(".event-hero-inner",hero);if(inner)inner.innerHTML=`<p class="eyebrow v52-event-hero-kicker">CAMPAGNE MULTIJOUEUR RP</p><p class="v52-event-game">EUROPA UNIVERSALIS IV</p><h1>${esc(campaignTitle(event))}</h1><p class="v52-event-hero-lead">Une campagne où chaque décision compte, mais où le temps lui-même garde ses secrets.</p>`}
   const overview=$("#apercu .section-shell");if(overview)overview.innerHTML=overviewMarkup(event,participants,chapters);
   const snapshotIds=snapshots.map(s=>s.id);let stats=[];if(snapshotIds.length){const r=await db.from("site_event_snapshot_stats").select("*").in("snapshot_id",snapshotIds);stats=r.data||[]}
-  const statsMap=new Map(stats.map(s=>[`${s.snapshot_id}:${s.participant_id}`,s])),start=snapshots[0],end=snapshots.at(-1),nations=$("#event-nations-grid");if(nations){nations.innerHTML=participants.map(p=>nationCard(p,statsMap.get(`${start?.id}:${p.id}`),statsMap.get(`${end?.id}:${p.id}`),year(start?.snapshot_date),year(end?.snapshot_date))).join("");initNationCarousel(nations)}
+  const statsMap=new Map(stats.map(s=>[`${s.snapshot_id}:${s.participant_id}`,s])),nations=$("#event-nations-grid");if(nations)initNationComparison(nations,participants,snapshots,statsMap)
   const timeline=$("#event-timeline");if(timeline)renderCountryTimeline(timeline,participants,entries);
   const diplomacy=$("#event-diplomacy"),diplomaticEntries=entries.filter(e=>diplomaticTypes.has(e.entry_type));if(diplomacy){diplomacy.className="v52-diplomacy-grid";diplomacy.innerHTML=diplomaticEntries.length?diplomaticEntries.map(e=>diplomacyCard(e,participantsById)).join(""):'<div class="empty-state"><strong>Aucune prise de parole publique pour le moment</strong><p>Les déclarations, traités et congrès apparaîtront ici une fois publiés.</p></div>'}
   const mediaBox=$("#event-media");if(mediaBox){mediaBox.innerHTML=media.length?media.map(m=>{const title=esc(m.title||"Média de campagne"),caption=m.caption?`<span>${esc(m.caption)}</span>`:"";if(m.media_type==="image")return `<figure class="event-media-card"><img src="${esc(m.url)}" alt="${title}"><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;if(m.media_type==="audio")return `<figure class="event-media-card event-media-audio"><figcaption><strong>${title}</strong>${caption}</figcaption><audio controls preload="metadata" src="${esc(m.url)}"></audio></figure>`;if(m.media_type==="video")return `<figure class="event-media-card event-media-video"><video controls preload="metadata" src="${esc(m.url)}"></video><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;return `<a class="event-media-card event-media-link" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer"><figcaption><strong>${title}</strong>${caption}<small>Ouvrir le lien ↗</small></figcaption></a>`}).join(""):'<div class="empty-state"><strong>Galerie à venir</strong><p>Images, cartes, fichiers audio et vidéos de la campagne apparaîtront ici.</p></div>'}
