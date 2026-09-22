@@ -1212,7 +1212,9 @@ export const WAR_EVENT_DATA={
     "winner": "Camp mené par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
-    "joinDate": "1502-05-31"
+    "joinDate": "1502-05-31",
+    "attackerLabel": "Coalition menée par l’Angleterre",
+    "defenderLabel": "Camp ottoman"
   },
   "CAS|1507-01-15": {
     "mode": "end",
@@ -1274,7 +1276,9 @@ export const WAR_EVENT_DATA={
     "battles": 19,
     "winner": "Camp mené par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
-    "showFullSummary": true
+    "showFullSummary": true,
+    "attackerLabel": "Coalition menée par l’Angleterre",
+    "defenderLabel": "Camp ottoman"
   },
   "ENG|1485-02-24": {
     "mode": "start",
@@ -1460,7 +1464,9 @@ export const WAR_EVENT_DATA={
     "battles": 19,
     "winner": "Camp mené par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
-    "showFullSummary": true
+    "showFullSummary": true,
+    "attackerLabel": "Coalition menée par l’Angleterre",
+    "defenderLabel": "Camp ottoman"
   },
   "ENG|1507-01-15": {
     "mode": "end",
@@ -1522,7 +1528,9 @@ export const WAR_EVENT_DATA={
     "battles": 19,
     "winner": "Camp mené par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
-    "showFullSummary": true
+    "showFullSummary": true,
+    "attackerLabel": "Coalition menée par l’Angleterre",
+    "defenderLabel": "Camp ottoman"
   },
   "LAN|1483-12-04": {
     "mode": "start",
@@ -1703,7 +1711,9 @@ export const WAR_EVENT_DATA={
     "winner": "Camp mené par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
-    "joinDate": "1502-05-31"
+    "joinDate": "1502-05-31",
+    "attackerLabel": "Coalition menée par l’Angleterre",
+    "defenderLabel": "Camp ottoman"
   },
   "BRA|1502-05-31": {
     "mode": "join",
@@ -1766,7 +1776,9 @@ export const WAR_EVENT_DATA={
     "winner": "Camp mené par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
-    "joinDate": "1502-05-31"
+    "joinDate": "1502-05-31",
+    "attackerLabel": "Coalition menée par l’Angleterre",
+    "defenderLabel": "Camp ottoman"
   },
   "TUR|1502-05-31": {
     "mode": "defend",
@@ -1829,6 +1841,240 @@ export const WAR_EVENT_DATA={
     "winner": "Camp mené par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
-    "joinDate": "1502-05-31"
+    "joinDate": "1502-05-31",
+    "attackerLabel": "Coalition menée par l’Angleterre",
+    "defenderLabel": "Camp ottoman"
+  },
+  "HAB|1502-04-20": {
+    "mode": "start",
+    "war": "Croisade autrichienne contre l’Empire ottoman",
+    "mechanicalWar": "Conquête autrichienne de Zeta",
+    "start": "1502-04-20",
+    "end": "1505-04-11",
+    "rpNature": "Guerre menée dans un esprit de croisade",
+    "casusBelli": "Conquête de Zeta — objectif mécanique EU4",
+    "warGoal": "Affaiblir l’Empire ottoman",
+    "attackerLabel": "Coalition autrichienne",
+    "defenderLabel": "Camp ottoman",
+    "attackers": [
+      "Autriche",
+      "Hongrie",
+      "Bourgogne",
+      "Bohême",
+      "Herzégovine",
+      "Palatinat"
+    ],
+    "defenders": [
+      "Empire ottoman",
+      "Serbie",
+      "Ardalan",
+      "Alger",
+      "Tafilalt",
+      "Souss",
+      "Mzab",
+      "Crimée",
+      "Circassie",
+      "Biapas",
+      "Égypte"
+    ],
+    "lossesAttackers": 236750,
+    "lossesDefenders": 245557,
+    "losses": {
+      "Autriche": 134221,
+      "Hongrie": 38714,
+      "Bourgogne": 4868,
+      "Bohême": 39878,
+      "Herzégovine": 9597,
+      "Palatinat": 9472,
+      "Empire ottoman": 241692,
+      "Serbie": 556,
+      "Ardalan": 340,
+      "Alger": 66,
+      "Tafilalt": 0,
+      "Souss": 0,
+      "Mzab": 0,
+      "Crimée": 770,
+      "Circassie": 100,
+      "Biapas": 1010,
+      "Égypte": 1023
+    },
+    "battles": 8,
+    "winner": "Camp ottoman",
+    "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
+    "showFullSummary": true
+  },
+  "HAB|1505-04-11": {
+    "mode": "end",
+    "war": "Croisade autrichienne contre l’Empire ottoman",
+    "mechanicalWar": "Conquête autrichienne de Zeta",
+    "start": "1502-04-20",
+    "end": "1505-04-11",
+    "rpNature": "Guerre menée dans un esprit de croisade",
+    "casusBelli": "Conquête de Zeta — objectif mécanique EU4",
+    "warGoal": "Affaiblir l’Empire ottoman",
+    "attackerLabel": "Coalition autrichienne",
+    "defenderLabel": "Camp ottoman",
+    "attackers": [
+      "Autriche",
+      "Hongrie",
+      "Bourgogne",
+      "Bohême",
+      "Herzégovine",
+      "Palatinat"
+    ],
+    "defenders": [
+      "Empire ottoman",
+      "Serbie",
+      "Ardalan",
+      "Alger",
+      "Tafilalt",
+      "Souss",
+      "Mzab",
+      "Crimée",
+      "Circassie",
+      "Biapas",
+      "Égypte"
+    ],
+    "lossesAttackers": 236750,
+    "lossesDefenders": 245557,
+    "losses": {
+      "Autriche": 134221,
+      "Hongrie": 38714,
+      "Bourgogne": 4868,
+      "Bohême": 39878,
+      "Herzégovine": 9597,
+      "Palatinat": 9472,
+      "Empire ottoman": 241692,
+      "Serbie": 556,
+      "Ardalan": 340,
+      "Alger": 66,
+      "Tafilalt": 0,
+      "Souss": 0,
+      "Mzab": 0,
+      "Crimée": 770,
+      "Circassie": 100,
+      "Biapas": 1010,
+      "Égypte": 1023
+    },
+    "battles": 8,
+    "winner": "Camp ottoman",
+    "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
+    "showFullSummary": true
+  },
+  "TUR|1502-04-20": {
+    "mode": "defend",
+    "war": "Croisade autrichienne contre l’Empire ottoman",
+    "mechanicalWar": "Conquête autrichienne de Zeta",
+    "start": "1502-04-20",
+    "end": "1505-04-11",
+    "rpNature": "Guerre menée dans un esprit de croisade",
+    "casusBelli": "Conquête de Zeta — objectif mécanique EU4",
+    "warGoal": "Affaiblir l’Empire ottoman",
+    "attackerLabel": "Coalition autrichienne",
+    "defenderLabel": "Camp ottoman",
+    "attackers": [
+      "Autriche",
+      "Hongrie",
+      "Bourgogne",
+      "Bohême",
+      "Herzégovine",
+      "Palatinat"
+    ],
+    "defenders": [
+      "Empire ottoman",
+      "Serbie",
+      "Ardalan",
+      "Alger",
+      "Tafilalt",
+      "Souss",
+      "Mzab",
+      "Crimée",
+      "Circassie",
+      "Biapas",
+      "Égypte"
+    ],
+    "lossesAttackers": 236750,
+    "lossesDefenders": 245557,
+    "losses": {
+      "Autriche": 134221,
+      "Hongrie": 38714,
+      "Bourgogne": 4868,
+      "Bohême": 39878,
+      "Herzégovine": 9597,
+      "Palatinat": 9472,
+      "Empire ottoman": 241692,
+      "Serbie": 556,
+      "Ardalan": 340,
+      "Alger": 66,
+      "Tafilalt": 0,
+      "Souss": 0,
+      "Mzab": 0,
+      "Crimée": 770,
+      "Circassie": 100,
+      "Biapas": 1010,
+      "Égypte": 1023
+    },
+    "battles": 8,
+    "winner": "Camp ottoman",
+    "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
+    "showFullSummary": true
+  },
+  "TUR|1505-04-11": {
+    "mode": "end",
+    "war": "Croisade autrichienne contre l’Empire ottoman",
+    "mechanicalWar": "Conquête autrichienne de Zeta",
+    "start": "1502-04-20",
+    "end": "1505-04-11",
+    "rpNature": "Guerre menée dans un esprit de croisade",
+    "casusBelli": "Conquête de Zeta — objectif mécanique EU4",
+    "warGoal": "Affaiblir l’Empire ottoman",
+    "attackerLabel": "Coalition autrichienne",
+    "defenderLabel": "Camp ottoman",
+    "attackers": [
+      "Autriche",
+      "Hongrie",
+      "Bourgogne",
+      "Bohême",
+      "Herzégovine",
+      "Palatinat"
+    ],
+    "defenders": [
+      "Empire ottoman",
+      "Serbie",
+      "Ardalan",
+      "Alger",
+      "Tafilalt",
+      "Souss",
+      "Mzab",
+      "Crimée",
+      "Circassie",
+      "Biapas",
+      "Égypte"
+    ],
+    "lossesAttackers": 236750,
+    "lossesDefenders": 245557,
+    "losses": {
+      "Autriche": 134221,
+      "Hongrie": 38714,
+      "Bourgogne": 4868,
+      "Bohême": 39878,
+      "Herzégovine": 9597,
+      "Palatinat": 9472,
+      "Empire ottoman": 241692,
+      "Serbie": 556,
+      "Ardalan": 340,
+      "Alger": 66,
+      "Tafilalt": 0,
+      "Souss": 0,
+      "Mzab": 0,
+      "Crimée": 770,
+      "Circassie": 100,
+      "Biapas": 1010,
+      "Égypte": 1023
+    },
+    "battles": 8,
+    "winner": "Camp ottoman",
+    "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
+    "showFullSummary": true
   }
 };
