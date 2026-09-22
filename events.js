@@ -165,7 +165,7 @@ function initNationCarousel(host){
   let page=0;
   const pageSize=()=>innerWidth<650?1:innerWidth<1050?2:4;
   const render=()=>{const size=pageSize(),max=Math.max(0,Math.ceil(cards.length/size)-1);page=Math.min(page,max);cards.forEach((card,i)=>card.classList.toggle("v52-nation-hidden",i<page*size||i>=(page+1)*size));prev.disabled=page===0;next.disabled=page===max;status.textContent=`${page+1} / ${max+1}`};
-  prev.addEventListener("click",()=>{page=Math.max(0,page-1);render()});next.addEventListener("click",()=>{page+=1;render()});addEventListener("resize",render,{passive:true});render();
+  prev.addEventListener("click",()=>{page=Math.max(0,page-1);render()});next.addEventListener("click",()=>{page+=1;render()});if(host._v52ResizeHandler)removeEventListener("resize",host._v52ResizeHandler);host._v52ResizeHandler=render;addEventListener("resize",host._v52ResizeHandler,{passive:true});render();
 }
 
 function overviewMarkup(event,participants,chapters){
