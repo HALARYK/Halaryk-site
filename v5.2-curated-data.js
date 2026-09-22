@@ -375,10 +375,6 @@ export const CURATED_EVENTS={
         [
           "Résultat territorial",
           "Mazagan reste sous contrôle marocain en 1507"
-        ],
-        [
-          "Lecture",
-          "L’objectif territorial castillan n’est pas conservé à long terme."
         ]
       ]
     },
@@ -511,10 +507,6 @@ export const CURATED_EVENTS={
         [
           "Résultat territorial",
           "Girid reste ottomane"
-        ],
-        [
-          "Lecture RP",
-          "La conquête de Girid était un casus belli mécanique, pas le véritable objectif de la guerre."
         ]
       ]
     }
@@ -1152,10 +1144,6 @@ export const CURATED_EVENTS={
         [
           "Résultat territorial",
           "Girid reste ottomane"
-        ],
-        [
-          "Lecture RP",
-          "La conquête de Girid était un casus belli mécanique, pas le véritable objectif de la guerre."
         ]
       ]
     }
@@ -1563,10 +1551,6 @@ export const CURATED_EVENTS={
         [
           "Puissance sortie du top 8",
           "Pologne — 8e au relevé de 1481"
-        ],
-        [
-          "Lecture",
-          "Florence est la seule nouvelle puissance dont l’entrée est datée dans la sauvegarde entre 1481 et 1507."
         ]
       ]
     },
@@ -2547,20 +2531,32 @@ export const CURATED_EVENTS={
     {
       "date": "1502-04-20",
       "type": "guerre",
-      "title": "Début de la conquête autrichienne de Zeta",
-      "summary": "L’Autriche attaque l’Empire ottoman pour Zeta.",
+      "title": "Début de la croisade autrichienne contre l’Empire ottoman",
+      "summary": "L’Autriche lance une offensive contre l’Empire ottoman dans un esprit de croisade. La conquête de Zeta sert d’objectif mécanique, tandis que l’objectif RP est d’affaiblir la puissance ottomane.",
       "facts": [
         [
-          "Conflit",
+          "Nature",
+          "Guerre menée dans un esprit de croisade"
+        ],
+        [
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Conflit mécanique EU4",
           "Conquête autrichienne de Zeta"
         ],
         [
-          "Casus belli",
-          "Conquête territoriale"
+          "Objectif mécanique",
+          "Zeta"
         ],
         [
-          "Objectif",
-          "Zeta"
+          "Coalition autrichienne",
+          "Autriche · Hongrie · Bourgogne · Bohême · Herzégovine · Palatinat"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Serbie · Ardalan · Alger · Tafilalt · Souss · Mzab · Crimée · Circassie · Biapas · Égypte"
         ]
       ]
     },
@@ -2572,7 +2568,7 @@ export const CURATED_EVENTS={
       "facts": [
         [
           "Guerre",
-          "Conquête autrichienne de Zeta"
+          "Croisade autrichienne contre l’Empire ottoman"
         ],
         [
           "Lieu",
@@ -2604,7 +2600,7 @@ export const CURATED_EVENTS={
       "facts": [
         [
           "Guerre",
-          "Conquête autrichienne de Zeta"
+          "Croisade autrichienne contre l’Empire ottoman"
         ],
         [
           "Lieu",
@@ -2631,16 +2627,32 @@ export const CURATED_EVENTS={
     {
       "date": "1505-04-11",
       "type": "guerre",
-      "title": "Fin de la conquête autrichienne de Zeta",
-      "summary": "La guerre se termine sans conquête autrichienne de Zeta.",
+      "title": "Fin de la croisade autrichienne contre l’Empire ottoman",
+      "summary": "La guerre s’achève le 11 avril 1505. L’Empire ottoman remporte le conflit mécaniquement et conserve Zeta.",
       "facts": [
         [
-          "Conflit",
-          "Conquête autrichienne de Zeta"
+          "Nature",
+          "Guerre menée dans un esprit de croisade"
         ],
         [
-          "Issue",
-          "Victoire du camp défenseur"
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "8"
+        ],
+        [
+          "Pertes de la coalition autrichienne",
+          "236 750 pertes humaines"
+        ],
+        [
+          "Pertes du camp ottoman",
+          "245 557 pertes humaines"
+        ],
+        [
+          "Issue mécanique",
+          "Victoire du camp ottoman"
         ],
         [
           "Résultat territorial",
@@ -2984,20 +2996,32 @@ export const CURATED_EVENTS={
     {
       "date": "1502-04-20",
       "type": "guerre",
-      "title": "Début de la guerre de Zeta",
-      "summary": "L’Empire ottoman défend Zeta contre une offensive menée par l’Autriche.",
+      "title": "L’Empire ottoman fait face à la croisade autrichienne",
+      "summary": "L’Empire ottoman affronte une coalition menée par l’Autriche. Zeta constitue l’objectif mécanique d’EU4 ; l’objectif RP autrichien est d’affaiblir l’Empire ottoman.",
       "facts": [
         [
-          "Conflit",
-          "Conquête autrichienne de Zeta"
-        ],
-        [
-          "Rôle",
-          "Camp défenseur"
+          "Nature",
+          "Guerre menée dans un esprit de croisade"
         ],
         [
           "Objectif adverse",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Conflit mécanique EU4",
+          "Conquête autrichienne de Zeta"
+        ],
+        [
+          "Objectif mécanique",
           "Zeta"
+        ],
+        [
+          "Coalition adverse",
+          "Autriche · Hongrie · Bourgogne · Bohême · Herzégovine · Palatinat"
+        ],
+        [
+          "Rôle",
+          "Puissance principale du camp défenseur"
         ]
       ]
     },
@@ -3068,15 +3092,31 @@ export const CURATED_EVENTS={
     {
       "date": "1505-04-11",
       "type": "guerre",
-      "title": "Fin de la guerre de Zeta",
-      "summary": "L’offensive autrichienne échoue et Zeta reste sous contrôle ottoman.",
+      "title": "Fin de la croisade autrichienne",
+      "summary": "L’Empire ottoman remporte la guerre contre la coalition autrichienne et conserve Zeta.",
       "facts": [
         [
-          "Conflit",
-          "Conquête autrichienne de Zeta"
+          "Nature",
+          "Guerre menée dans un esprit de croisade"
         ],
         [
-          "Issue",
+          "Objectif RP",
+          "Affaiblir l’Empire ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "8"
+        ],
+        [
+          "Pertes de la coalition autrichienne",
+          "236 750 pertes humaines"
+        ],
+        [
+          "Pertes du camp ottoman",
+          "245 557 pertes humaines"
+        ],
+        [
+          "Issue mécanique",
           "Victoire du camp ottoman"
         ],
         [
