@@ -231,7 +231,7 @@ function renderEventMedia(mediaBox,media){
     return `<a class="event-media-card event-media-link" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer"><figcaption><strong>${title}</strong>${caption}<small>Ouvrir le lien ↗</small></figcaption></a>`;
   }).join("");
   const byId=new Map(media.map(m=>[String(m.id||""),m]));
-  $("[data-media-image]",mediaBox).forEach(card=>{
+  mediaBox.querySelectorAll("[data-media-image]").forEach(card=>{
     const open=()=>{const m=byId.get(card.dataset.mediaImage);if(m)openMediaImage(panel,m)};
     card.addEventListener("click",open);
     card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open()}});
