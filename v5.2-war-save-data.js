@@ -2076,5 +2076,147 @@ export const WAR_EVENT_DATA={
     "winner": "Camp ottoman",
     "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
     "showFullSummary": true
+  },
+  "CAS|1514-03-25": {
+    "mode": "start",
+    "war": "Conquête castillane d’Oujda",
+    "mechanicalWar": "Conquête castillane de Oujda",
+    "start": "1514-03-25",
+    "end": "1517-11-14",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Oujda",
+    "attackers": [
+      "Castille",
+      "Aragon",
+      "Navarre",
+      "Maroc"
+    ],
+    "defenders": [
+      "Portugal",
+      "Caraíbas (colonie portugaise)"
+    ],
+    "lossesAttackers": 35771,
+    "lossesDefenders": 24412,
+    "losses": {
+      "Castille": 17937,
+      "Aragon": 16827,
+      "Navarre": 450,
+      "Maroc": 557,
+      "Portugal": 21880,
+      "Caraíbas (colonie portugaise)": 2532
+    },
+    "battles": 10,
+    "winner": "Camp castillan",
+    "peace": "La paix transfère 14 provinces à la Castille : Oporto, Tilimsan, Fez, Jamaïque, Zui, Île de la Tortue, Baní, Porto Rico, Oujda, Meknès, Maguana, Anfa, Yaquimo et Marien.",
+    "attackerLabel": "Camp castillan",
+    "defenderLabel": "Camp portugais"
+  },
+  "CAS|1517-11-14": {
+    "mode": "end",
+    "war": "Conquête castillane d’Oujda",
+    "mechanicalWar": "Conquête castillane de Oujda",
+    "start": "1514-03-25",
+    "end": "1517-11-14",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Oujda",
+    "attackers": [
+      "Castille",
+      "Aragon",
+      "Navarre",
+      "Maroc"
+    ],
+    "defenders": [
+      "Portugal",
+      "Caraíbas (colonie portugaise)"
+    ],
+    "lossesAttackers": 35771,
+    "lossesDefenders": 24412,
+    "losses": {
+      "Castille": 17937,
+      "Aragon": 16827,
+      "Navarre": 450,
+      "Maroc": 557,
+      "Portugal": 21880,
+      "Caraíbas (colonie portugaise)": 2532
+    },
+    "battles": 10,
+    "winner": "Camp castillan",
+    "peace": "La paix transfère 14 provinces à la Castille : Oporto, Tilimsan, Fez, Jamaïque, Zui, Île de la Tortue, Baní, Porto Rico, Oujda, Meknès, Maguana, Anfa, Yaquimo et Marien.",
+    "attackerLabel": "Camp castillan",
+    "defenderLabel": "Camp portugais"
+  },
+  "CAS|1521-12-28": {
+    "mode": "start",
+    "war": "Conquête castillane de Sergipe",
+    "start": "1521-12-28",
+    "end": "1523-07-15",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Sergipe",
+    "attackers": [
+      "Castille",
+      "Aragon",
+      "Navarre",
+      "Maroc",
+      "Caraïbes Espagnoles"
+    ],
+    "defenders": [
+      "Potiguara",
+      "Tupiniquim",
+      "Tupinambá"
+    ],
+    "lossesAttackers": 13358,
+    "lossesDefenders": 8005,
+    "losses": {
+      "Castille": 8964,
+      "Aragon": 4394,
+      "Navarre": 0,
+      "Maroc": 0,
+      "Caraïbes Espagnoles": 0,
+      "Potiguara": 8001,
+      "Tupiniquim": 4,
+      "Tupinambá": 0
+    },
+    "battles": 2,
+    "winner": "Camp castillan",
+    "peace": "Sergipe, Ilhéus et Parnaíba passent sous contrôle castillan le 15 juillet 1523.",
+    "attackerLabel": "Camp castillan",
+    "defenderLabel": "Camp sud-américain"
+  },
+  "CAS|1523-07-15": {
+    "mode": "end",
+    "war": "Conquête castillane de Sergipe",
+    "start": "1521-12-28",
+    "end": "1523-07-15",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Sergipe",
+    "attackers": [
+      "Castille",
+      "Aragon",
+      "Navarre",
+      "Maroc",
+      "Caraïbes Espagnoles"
+    ],
+    "defenders": [
+      "Potiguara",
+      "Tupiniquim",
+      "Tupinambá"
+    ],
+    "lossesAttackers": 13358,
+    "lossesDefenders": 8005,
+    "losses": {
+      "Castille": 8964,
+      "Aragon": 4394,
+      "Navarre": 0,
+      "Maroc": 0,
+      "Caraïbes Espagnoles": 0,
+      "Potiguara": 8001,
+      "Tupiniquim": 4,
+      "Tupinambá": 0
+    },
+    "battles": 2,
+    "winner": "Camp castillan",
+    "peace": "Sergipe, Ilhéus et Parnaíba passent sous contrôle castillan le 15 juillet 1523.",
+    "attackerLabel": "Camp castillan",
+    "defenderLabel": "Camp sud-américain"
   }
 };
