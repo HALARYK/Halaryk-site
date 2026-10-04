@@ -268,5 +268,71 @@ export const EVENT_CONTEXT={
     "history": "Dans l’histoire réelle, Philippe II installe durablement sa cour à Madrid en 1561. La campagne anticipe donc de vingt-neuf ans le basculement politique de Tolède vers Madrid.",
     "campaign": "Le transfert intervient cinq ans après la formation de l’Espagne. Madrid devient le centre politique d’une monarchie désormais pensée comme espagnole et impériale.",
     "game": "La sauvegarde enregistre le changement de capitale au 17 janvier 1532."
+  },
+  "ENG|1508-01-18": {
+    "status": "Grande revanche continentale",
+    "history": "Après la fin effective de la guerre de Cent Ans en 1453, l’Angleterre ne conserve plus en France que Calais. Une offensive anglaise pour reprendre le Maine en 1508 constitue donc une véritable reprise uchronique des ambitions continentales.",
+    "campaign": "Matvala ouvre une guerre directe contre la France avec la Flandre. Le Maine sert d’objectif de guerre, mais le conflit s’étend rapidement à la Bretagne, au bassin parisien, au littoral atlantique et aux Pays-Bas.",
+    "game": "La sauvegarde conserve dix batailles entre 1508 et 1511 avant la paix de mars 1512."
+  },
+  "ENG|1511-10-18": {
+    "status": "Bataille propre à la campagne",
+    "history": "Il n’existe pas de bataille anglo-française de Clèves en 1511 correspondant à cet affrontement. Elle appartient entièrement à l’histoire alternative de la partie et découle de la reconquête anglaise du Maine.",
+    "campaign": "John Burgoyne engage à Clèves une armée française plus nombreuse commandée par Pascal de La Ferrandie. L’Angleterre subit 6 819 pertes et doit céder le terrain, mais ce revers ne l’empêche pas de remporter la guerre quelques mois plus tard.",
+    "game": "Le résultat de la bataille enregistré dans la sauvegarde donne la victoire au camp français."
+  },
+  "ENG|1512-03-07": {
+    "status": "Renversement de l’issue de la guerre de Cent Ans",
+    "history": "Historiquement, les Anglais sont chassés de presque tout le royaume de France en 1453 et ne conservent que Calais. La campagne inverse ce mouvement : près de soixante ans plus tard, l’Angleterre rétablit une présence territoriale majeure dans l’ouest français.",
+    "campaign": "La victoire rapporte dix provinces, dont le Maine, l’Anjou, la Bretagne occidentale et plusieurs positions du littoral atlantique. C’est le retour spectaculaire de l’Angleterre comme puissance territoriale en France.",
+    "game": "La guerre compte dix batailles et environ 43 477 pertes dans le camp anglais contre 36 279 dans le camp adverse."
+  },
+  "ENG|1516-05-07": {
+    "status": "Uchronie coloniale très précoce",
+    "history": "Sainte-Hélène est découverte par les Portugais en 1502 mais n’est colonisée par les Anglais qu’en 1659. Une possession anglaise dès 1516 avance donc de plus d’un siècle la présence britannique durable sur l’île.",
+    "campaign": "Pour l’Angleterre, Sainte-Hélène devient un relais idéal sur les longues routes atlantiques. Cette implantation annonce une stratégie maritime qui ne se contente plus de l’Europe ou de l’Atlantique Nord.",
+    "game": "La province passe sous contrôle anglais le 7 mai 1516."
+  },
+  "ENG|1520-07-19": {
+    "status": "Uchronie maritime majeure",
+    "history": "Le premier établissement colonial permanent du Cap est fondé par les Néerlandais en 1652 ; la première occupation britannique n’intervient qu’en 1795. La campagne place donc l’Angleterre au Cap plusieurs siècles avant la chronologie réelle.",
+    "campaign": "Cette position verrouille un passage essentiel entre Atlantique et océan Indien. L’Angleterre dispose désormais d’un relais capable de soutenir une expansion vers l’Afrique orientale et l’Asie.",
+    "game": "Le Cap passe sous contrôle anglais le 19 juillet 1520."
+  },
+  "ENG|1524-10-12": {
+    "status": "Réforme anglaise anticipée",
+    "history": "Dans l’histoire réelle, la rupture institutionnelle avec Rome se déroule surtout entre 1533 et 1536. L’Acte de Suprématie de 1534 fait d’Henri VIII le chef suprême de l’Église d’Angleterre. La campagne anticipe donc ce basculement d’environ une décennie.",
+    "campaign": "L’adoption de l’anglicanisme transforme l’identité politique de l’Angleterre et crée une fracture confessionnelle durable. Elle prépare directement les troubles religieux qui éclatent quatre ans plus tard.",
+    "game": "La religion officielle du pays devient anglicane le 12 octobre 1524."
+  },
+  "ENG|1525-11-29": {
+    "status": "Colonisation nord-américaine très anticipée",
+    "history": "La Nouvelle-Amsterdam néerlandaise est fondée au XVIIe siècle et ne devient New York qu’après la prise anglaise de la Nouvelle-Néerlande en 1664. Une possession anglaise dès 1525 constitue donc une avance d’environ cent quarante ans.",
+    "campaign": "L’Angleterre obtient un point d’appui majeur sur la côte nord-américaine avant même de devenir la Grande-Bretagne. Cette acquisition donne une profondeur nouvelle à son empire atlantique.",
+    "game": "La province nommée New York dans EU4 passe sous contrôle anglais le 29 novembre 1525."
+  },
+  "ENG|1526-02-27": {
+    "status": "Union britannique avec près de deux siècles d’avance",
+    "history": "Dans l’histoire réelle, l’Angleterre et l’Écosse partagent un monarque à partir de 1603 mais restent deux royaumes distincts. Les Acts of Union de 1707 les réunissent finalement dans le royaume de Grande-Bretagne.",
+    "campaign": "Dans la partie, cette union politique est réalisée dès 1526. La transformation donne à Matvala un État britannique unifié au moment même où son expansion coloniale et religieuse change d’échelle.",
+    "game": "La sauvegarde enregistre la formation de la Grande-Bretagne et l’acte d’union anglo-écossais le même jour."
+  },
+  "ENG|1528-07-01": {
+    "status": "Crise religieuse cohérente mais anticipée",
+    "history": "La Réforme anglaise historique bouleverse le royaume surtout dans les années 1530, après la rupture avec Rome. Les tensions confessionnelles de la campagne apparaissent donc plus tôt, mais prolongent une dynamique historique crédible.",
+    "campaign": "Quatre ans après la conversion à l’anglicanisme, l’unité religieuse britannique se dégrade suffisamment pour déclencher un désastre national. Au 1er janvier 1537, cette crise n’est toujours pas résolue.",
+    "game": "La sauvegarde date le début des troubles religieux du 1er juillet 1528 et indique encore le désastre comme actif en 1537."
+  },
+  "ENG|1534-10-16": {
+    "status": "Empire nord-américain très en avance",
+    "history": "La Floride du XVIe siècle appartient d’abord à la sphère d’exploration et de colonisation espagnole. La colonie britannique de Géorgie n’est fondée qu’en 1732–1733 et la Grande-Bretagne n’obtient la Floride qu’en 1763. La percée de 1534 est donc profondément uchronique.",
+    "campaign": "La Grande-Bretagne prend simultanément Timucua, Apalachee, Savannah, Yustaga, Beaufort et Combahee. Ces acquisitions forment un bloc continu dans le sud-est nord-américain et donnent à Matvala une présence coloniale très difficile à contourner.",
+    "game": "Six provinces passent sous contrôle britannique le 16 octobre 1534."
+  },
+  "ENG|1535-10-20": {
+    "status": "Réforme parlementaire abstraite",
+    "history": "L’« Act of Representation » d’EU4 ne correspond pas à une loi britannique précise adoptée en 1535. Il s’agit d’une abstraction de l’évolution de la représentation des comtés et bourgs au Parlement anglais.",
+    "campaign": "La Grande-Bretagne, déjà unifiée et anglicane, poursuit ici sa construction institutionnelle. Le débat ouvre une séquence de réforme parlementaire qui aboutit moins d’un mois plus tard.",
+    "game": "Le débat est lancé le 20 octobre 1535 ; la sauvegarde enregistre l’adoption de l’acte le 15 novembre 1535."
   }
 };
