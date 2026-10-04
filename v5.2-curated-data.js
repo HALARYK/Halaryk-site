@@ -509,6 +509,258 @@ export const CURATED_EVENTS={
           "Girid reste ottomane"
         ]
       ]
+    },
+    {
+      "date": "1508-07-02",
+      "type": "colonisation",
+      "title": "Ouidah passe sous contrôle castillan",
+      "summary": "La Castille prend possession d’Ouidah, établissant un nouveau point d’appui sur la côte du golfe de Guinée.",
+      "facts": [
+        [
+          "Province",
+          "Ouidah"
+        ],
+        [
+          "Nouveau propriétaire",
+          "Castille"
+        ],
+        [
+          "Date du changement",
+          "2 juillet 1508"
+        ],
+        [
+          "Donnée de la sauvegarde",
+          "owner = CAS"
+        ]
+      ]
+    },
+    {
+      "date": "1514-03-25",
+      "type": "guerre",
+      "title": "Début de la conquête castillane d’Oujda",
+      "summary": "La Castille ouvre une guerre de conquête contre le Portugal et son camp pour Oujda.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête castillane d’Oujda"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif mécanique",
+          "Oujda"
+        ],
+        [
+          "Camp attaquant",
+          "Castille · Aragon · Navarre · Maroc"
+        ],
+        [
+          "Camp défenseur",
+          "Portugal · Caraíbas"
+        ]
+      ]
+    },
+    {
+      "date": "1514-07-12",
+      "type": "politique",
+      "title": "La Castille atteint le jalon « Global Empire »",
+      "summary": "La sauvegarde enregistre global_empire=yes : la Castille franchit un nouveau seuil dans son expansion impériale.",
+      "facts": [
+        [
+          "Jalon",
+          "Global Empire"
+        ],
+        [
+          "Nature",
+          "Marqueur d’expansion impériale"
+        ],
+        [
+          "Trace de save",
+          "global_empire = yes"
+        ]
+      ]
+    },
+    {
+      "date": "1517-11-14",
+      "type": "guerre",
+      "title": "Fin victorieuse de la conquête castillane d’Oujda",
+      "summary": "Après plus de trois ans de guerre, le camp castillan l’emporte sur le Portugal et son allié colonial.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête castillane d’Oujda"
+        ],
+        [
+          "Issue",
+          "Victoire du camp castillan"
+        ],
+        [
+          "Batailles enregistrées",
+          "10"
+        ],
+        [
+          "Pertes du camp castillan",
+          "35 771 pertes humaines"
+        ],
+        [
+          "Pertes du camp portugais",
+          "24 412 pertes humaines"
+        ]
+      ]
+    },
+    {
+      "date": "1521-12-28",
+      "type": "guerre",
+      "title": "Début de la conquête castillane de Sergipe",
+      "summary": "La Castille et ses alliés ouvrent une nouvelle guerre en Amérique du Sud pour Sergipe.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête castillane de Sergipe"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif mécanique",
+          "Sergipe"
+        ],
+        [
+          "Camp attaquant",
+          "Castille · Aragon · Navarre · Maroc · Caraïbes Espagnoles"
+        ],
+        [
+          "Camp défenseur",
+          "Potiguara · Tupiniquim · Tupinambá"
+        ]
+      ]
+    },
+    {
+      "date": "1522-04-01",
+      "type": "politique",
+      "title": "Annexion de la Navarre",
+      "summary": "La province de Navarre passe à la Castille ; le royaume navarrais cesse également de participer comme État autonome à la guerre de Sergipe à cette date.",
+      "facts": [
+        [
+          "Territoire",
+          "Navarre"
+        ],
+        [
+          "Nouveau propriétaire",
+          "Castille"
+        ],
+        [
+          "Donnée provinciale",
+          "owner = CAS · controller = CAS · add_core = CAS"
+        ],
+        [
+          "Contexte de guerre",
+          "Navarre quitte la guerre de Sergipe le même jour"
+        ]
+      ]
+    },
+    {
+      "date": "1523-07-15",
+      "type": "guerre",
+      "title": "Fin victorieuse de la conquête castillane de Sergipe",
+      "summary": "La guerre se termine par une victoire du camp castillan ; Sergipe, Ilhéus et Parnaíba passent sous contrôle castillan.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête castillane de Sergipe"
+        ],
+        [
+          "Issue",
+          "Victoire du camp castillan"
+        ],
+        [
+          "Territoires acquis",
+          "Sergipe · Ilhéus · Parnaíba"
+        ],
+        [
+          "Batailles enregistrées",
+          "2"
+        ],
+        [
+          "Pertes du camp castillan",
+          "13 358 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "8 005 pertes humaines"
+        ]
+      ]
+    },
+    {
+      "date": "1527-04-09",
+      "type": "politique",
+      "title": "Formation de l’Espagne",
+      "summary": "La Castille forme l’Espagne par décision diplomatique ; la sauvegarde enregistre le passage du tag CAS au tag SPA.",
+      "facts": [
+        [
+          "Décision",
+          "spanish_nation_diplomatically"
+        ],
+        [
+          "Ancien pays",
+          "Castille (CAS)"
+        ],
+        [
+          "Nouveau pays",
+          "Espagne (SPA)"
+        ],
+        [
+          "Trace de save",
+          "changed_tag_from = CAS"
+        ]
+      ]
+    },
+    {
+      "date": "1528-08-28",
+      "type": "religion",
+      "title": "Institution de la Societas Jesu",
+      "summary": "L’Espagne adopte la décision instituant la Societas Jesu.",
+      "facts": [
+        [
+          "Décision",
+          "Institute the Societas Jesu"
+        ],
+        [
+          "Trace de save",
+          "decision = institute_the_societas_jesu"
+        ],
+        [
+          "Pays",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1532-01-17",
+      "type": "capitale",
+      "title": "Madrid devient la capitale de l’Espagne",
+      "summary": "Le centre politique de l’Espagne est transféré de Tolède à Madrid.",
+      "facts": [
+        [
+          "Nouvelle capitale",
+          "Madrid"
+        ],
+        [
+          "Ancienne capitale",
+          "Tolède"
+        ],
+        [
+          "Province capitale",
+          "217 — Madrid"
+        ],
+        [
+          "Trace de save",
+          "capital = 217"
+        ]
+      ]
     }
   ],
   "ENG": [
