@@ -514,23 +514,19 @@ export const CURATED_EVENTS={
       "date": "1508-07-02",
       "type": "colonisation",
       "title": "Ouidah passe sous contrôle castillan",
-      "summary": "La Castille prend possession d’Ouidah, établissant un nouveau point d’appui sur la côte du golfe de Guinée.",
+      "summary": "La Castille étend sa présence sur le golfe de Guinée en prenant Ouidah, nouveau relais de son expansion africaine.",
       "facts": [
         [
-          "Province",
-          "Ouidah"
+          "Région",
+          "Golfe de Guinée"
         ],
         [
-          "Nouveau propriétaire",
-          "Castille"
+          "Situation",
+          "Ouidah passe sous souveraineté castillane"
         ],
         [
-          "Date du changement",
-          "2 juillet 1508"
-        ],
-        [
-          "Donnée de la sauvegarde",
-          "owner = CAS"
+          "Portée",
+          "Nouveau point d’appui castillan en Afrique occidentale"
         ]
       ]
     },
@@ -538,7 +534,7 @@ export const CURATED_EVENTS={
       "date": "1514-03-25",
       "type": "guerre",
       "title": "Début de la conquête castillane d’Oujda",
-      "summary": "La Castille ouvre une guerre de conquête contre le Portugal et son camp pour Oujda.",
+      "summary": "La Castille ouvre une guerre contre le Portugal et son camp pour imposer sa domination autour d’Oujda.",
       "facts": [
         [
           "Conflit",
@@ -549,7 +545,7 @@ export const CURATED_EVENTS={
           "Conquête territoriale"
         ],
         [
-          "Objectif mécanique",
+          "Objectif",
           "Oujda"
         ],
         [
@@ -565,20 +561,20 @@ export const CURATED_EVENTS={
     {
       "date": "1514-07-12",
       "type": "politique",
-      "title": "La Castille atteint le jalon « Global Empire »",
-      "summary": "La sauvegarde enregistre global_empire=yes : la Castille franchit un nouveau seuil dans son expansion impériale.",
+      "title": "La Castille affirme son statut d’empire mondial",
+      "summary": "L’expansion castillane atteint un seuil symbolique : le royaume est désormais engagé sur plusieurs théâtres, de l’Europe à l’Afrique et à l’Atlantique.",
       "facts": [
         [
-          "Jalon",
-          "Global Empire"
-        ],
-        [
           "Nature",
-          "Marqueur d’expansion impériale"
+          "Jalon impérial de la campagne"
         ],
         [
-          "Trace de save",
-          "global_empire = yes"
+          "Portée",
+          "Projection politique et coloniale sur plusieurs continents"
+        ],
+        [
+          "Situation",
+          "La Castille ne se limite plus à une puissance péninsulaire"
         ]
       ]
     },
@@ -614,7 +610,7 @@ export const CURATED_EVENTS={
       "date": "1521-12-28",
       "type": "guerre",
       "title": "Début de la conquête castillane de Sergipe",
-      "summary": "La Castille et ses alliés ouvrent une nouvelle guerre en Amérique du Sud pour Sergipe.",
+      "summary": "La Castille et ses alliés ouvrent une nouvelle guerre d’expansion sur le littoral du Brésil.",
       "facts": [
         [
           "Conflit",
@@ -625,7 +621,7 @@ export const CURATED_EVENTS={
           "Conquête territoriale"
         ],
         [
-          "Objectif mécanique",
+          "Objectif",
           "Sergipe"
         ],
         [
@@ -640,25 +636,21 @@ export const CURATED_EVENTS={
     },
     {
       "date": "1522-04-01",
-      "type": "politique",
+      "type": "diplomatie",
       "title": "Annexion de la Navarre",
-      "summary": "La province de Navarre passe à la Castille ; le royaume navarrais cesse également de participer comme État autonome à la guerre de Sergipe à cette date.",
+      "summary": "La Navarre cesse d’exister comme acteur indépendant de la campagne et son territoire est intégré à la Castille.",
       "facts": [
         [
           "Territoire",
           "Navarre"
         ],
         [
-          "Nouveau propriétaire",
-          "Castille"
+          "Nouvelle situation",
+          "Intégration à la Castille"
         ],
         [
-          "Donnée provinciale",
-          "owner = CAS · controller = CAS · add_core = CAS"
-        ],
-        [
-          "Contexte de guerre",
-          "Navarre quitte la guerre de Sergipe le même jour"
+          "Conséquence",
+          "La frontière pyrénéenne occidentale passe sous contrôle direct castillan"
         ]
       ]
     },
@@ -666,7 +658,7 @@ export const CURATED_EVENTS={
       "date": "1523-07-15",
       "type": "guerre",
       "title": "Fin victorieuse de la conquête castillane de Sergipe",
-      "summary": "La guerre se termine par une victoire du camp castillan ; Sergipe, Ilhéus et Parnaíba passent sous contrôle castillan.",
+      "summary": "La guerre se termine par une victoire du camp castillan et renforce l’implantation castillane sur le littoral brésilien.",
       "facts": [
         [
           "Conflit",
@@ -698,23 +690,23 @@ export const CURATED_EVENTS={
       "date": "1527-04-09",
       "type": "politique",
       "title": "Formation de l’Espagne",
-      "summary": "La Castille forme l’Espagne par décision diplomatique ; la sauvegarde enregistre le passage du tag CAS au tag SPA.",
+      "summary": "La Castille franchit une étape politique majeure et adopte désormais l’identité espagnole.",
       "facts": [
         [
-          "Décision",
-          "spanish_nation_diplomatically"
+          "État précédent",
+          "Castille"
         ],
         [
-          "Ancien pays",
-          "Castille (CAS)"
+          "Nouvel État",
+          "Espagne"
         ],
         [
-          "Nouveau pays",
-          "Espagne (SPA)"
+          "Nature",
+          "Transformation politique de la monarchie"
         ],
         [
-          "Trace de save",
-          "changed_tag_from = CAS"
+          "Conséquence",
+          "La chronologie castillane devient désormais celle de l’Espagne"
         ]
       ]
     },
@@ -722,19 +714,19 @@ export const CURATED_EVENTS={
       "date": "1528-08-28",
       "type": "religion",
       "title": "Institution de la Societas Jesu",
-      "summary": "L’Espagne adopte la décision instituant la Societas Jesu.",
+      "summary": "L’Espagne adopte précocement la Compagnie de Jésus et renforce son identité de grande monarchie catholique.",
       "facts": [
         [
-          "Décision",
-          "Institute the Societas Jesu"
+          "Institution",
+          "Societas Jesu · Compagnie de Jésus"
         ],
         [
-          "Trace de save",
-          "decision = institute_the_societas_jesu"
+          "Orientation",
+          "Renforcement du catholicisme"
         ],
         [
-          "Pays",
-          "Espagne"
+          "Portée dans la campagne",
+          "Affirmation du rôle religieux de l’Espagne"
         ]
       ]
     },
@@ -742,7 +734,7 @@ export const CURATED_EVENTS={
       "date": "1532-01-17",
       "type": "capitale",
       "title": "Madrid devient la capitale de l’Espagne",
-      "summary": "Le centre politique de l’Espagne est transféré de Tolède à Madrid.",
+      "summary": "Le centre politique de la monarchie espagnole est transféré de Tolède à Madrid.",
       "facts": [
         [
           "Nouvelle capitale",
@@ -753,12 +745,8 @@ export const CURATED_EVENTS={
           "Tolède"
         ],
         [
-          "Province capitale",
-          "217 — Madrid"
-        ],
-        [
-          "Trace de save",
-          "capital = 217"
+          "Portée",
+          "Madrid devient le cœur politique de l’Espagne"
         ]
       ]
     }
