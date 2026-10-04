@@ -2218,5 +2218,71 @@ export const WAR_EVENT_DATA={
     "peace": "Sergipe, Ilhéus et Parnaíba passent sous contrôle castillan le 15 juillet 1523.",
     "attackerLabel": "Camp castillan",
     "defenderLabel": "Camp sud-américain"
+  },
+  "ENG|1508-01-18": {
+    "mode": "start",
+    "war": "Conquête anglaise du Maine",
+    "start": "1508-01-18",
+    "end": "1512-03-07",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Maine",
+    "attackers": [
+      "Angleterre",
+      "Flandre"
+    ],
+    "defenders": [
+      "France",
+      "Naples",
+      "Clèves",
+      "Lorraine",
+      "Dithmarse"
+    ],
+    "lossesAttackers": 43477,
+    "lossesDefenders": 36279,
+    "losses": {
+      "Angleterre": 42085,
+      "Flandre": 1392,
+      "France": 25311,
+      "Naples": 80,
+      "Clèves": 9880,
+      "Lorraine": 1000,
+      "Dithmarse": 8
+    },
+    "battles": 10,
+    "winner": "Camp anglais",
+    "peace": "Armor, Finistère, Vannetais, Nantais, Maine, Anjou, Arguin, Saintonge, Rennais et Bas-Poitou passent sous contrôle anglais."
+  },
+  "ENG|1512-03-07": {
+    "mode": "end",
+    "war": "Conquête anglaise du Maine",
+    "start": "1508-01-18",
+    "end": "1512-03-07",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Maine",
+    "attackers": [
+      "Angleterre",
+      "Flandre"
+    ],
+    "defenders": [
+      "France",
+      "Naples",
+      "Clèves",
+      "Lorraine",
+      "Dithmarse"
+    ],
+    "lossesAttackers": 43477,
+    "lossesDefenders": 36279,
+    "losses": {
+      "Angleterre": 42085,
+      "Flandre": 1392,
+      "France": 25311,
+      "Naples": 80,
+      "Clèves": 9880,
+      "Lorraine": 1000,
+      "Dithmarse": 8
+    },
+    "battles": 10,
+    "winner": "Camp anglais",
+    "peace": "Armor, Finistère, Vannetais, Nantais, Maine, Anjou, Arguin, Saintonge, Rennais et Bas-Poitou passent sous contrôle anglais."
   }
 };
