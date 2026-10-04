@@ -256,7 +256,7 @@ async function loadEventDetail(){
   const timeline=$("#event-timeline");if(timeline)renderCountryTimeline(timeline,participants,entries);
   const diplomacy=$("#event-diplomacy"),diplomaticEntries=entries.filter(e=>diplomaticTypes.has(e.entry_type));if(diplomacy){diplomacy.className="v52-diplomacy-grid";diplomacy.innerHTML=diplomaticEntries.length?diplomaticEntries.map(e=>diplomacyCard(e,participantsById)).join(""):'<div class="empty-state"><strong>Aucune prise de parole publique pour le moment</strong><p>Les déclarations, traités et congrès apparaîtront ici une fois publiés.</p></div>'}
   const mediaBox=$("#event-media");if(mediaBox)renderEventMedia(mediaBox,media);
-
+}
 
 async function boot(){if(!BACKEND_CONFIGURED)return;db=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,detectSessionInUrl:false,autoRefreshToken:false}});await Promise.allSettled([loadHomeFeature(),loadEventsIndex(),loadEventDetail()])}
 boot();
