@@ -202,6 +202,42 @@ function renderCountryTimeline(host,participants,entries){
 
 function diplomacyCard(e,participantsById){const p=e.participant_id?participantsById.get(e.participant_id):null,img=crest(p);return `<article class="v52-diplomacy-card"><div class="v52-diplomacy-head">${img?`<img src="${img}" alt="${esc(p.title)}">`:""}<div><b>${esc(p?.title||"Diplomatie")}</b><span>${esc((e.entry_type||"déclaration").replace("_"," "))}${e.world_date_label?` · ${esc(e.world_date_label)}`:""}</span></div></div><h3>${esc(e.title)}</h3><p>${esc(e.summary||"")}</p>${e.body?`<details><summary>Lire le texte complet</summary><p>${esc(e.body)}</p></details>`:""}</article>`}
 
+
+function ensureMediaDetail(mediaBox){
+  let panel=mediaBox.parentElement?.querySelector(".event-media-detail");
+  if(panel)return panel;
+  panel=document.createElement("article");
+  panel.className="event-media-detail";
+  panel.hidden=true;
+  mediaBox.before(panel);
+  return panel;
+}
+function openMediaImage(panel,media){
+  const title=esc(media.title||"Archive de campagne"),caption=esc(media.caption||"Aucune légende détaillée n’a encore été ajoutée à ce média.");
+  panel.innerHTML=`<button type="button" class="event-media-detail-close" aria-label="Fermer le détail">×</button><div class="event-media-detail-visual"><img src="${esc(media.url)}" alt="${title}"></div><div class="event-media-detail-copy"><p class="eyebrow">ARCHIVE DE CAMPAGNE</p><h3>${title}</h3><div class="event-media-detail-caption"><span>Légende / contexte</span><p>${caption}</p></div></div>`;
+  panel.hidden=false;
+  $(".event-media-detail-close",panel)?.addEventListener("click",()=>{panel.hidden=true});
+  panel.scrollIntoView({behavior:"smooth",block:"center"});
+}
+function renderEventMedia(mediaBox,media){
+  const panel=ensureMediaDetail(mediaBox);
+  panel.hidden=true;panel.innerHTML="";
+  if(!media.length){mediaBox.innerHTML='<div class="empty-state"><strong>Galerie à venir</strong><p>Images, cartes, fichiers audio et vidéos de la campagne apparaîtront ici.</p></div>';return}
+  mediaBox.innerHTML=media.map(m=>{
+    const title=esc(m.title||"Média de campagne"),caption=m.caption?`<span>${esc(m.caption)}</span>`:"",id=esc(String(m.id||""));
+    if(m.media_type==="image")return `<figure class="event-media-card event-media-image" data-media-image="${id}" tabindex="0" role="button" aria-label="Ouvrir le détail de ${title}"><img src="${esc(m.url)}" alt="${title}"><figcaption><strong>${title}</strong>${caption}<small class="event-media-open-hint">Ouvrir le dossier</small></figcaption></figure>`;
+    if(m.media_type==="audio")return `<figure class="event-media-card event-media-audio"><figcaption><strong>${title}</strong>${caption}</figcaption><div class="event-media-audio-player"><audio controls preload="metadata" src="${esc(m.url)}"></audio></div></figure>`;
+    if(m.media_type==="video")return `<figure class="event-media-card event-media-video"><video controls preload="metadata" src="${esc(m.url)}"></video><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;
+    return `<a class="event-media-card event-media-link" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer"><figcaption><strong>${title}</strong>${caption}<small>Ouvrir le lien ↗</small></figcaption></a>`;
+  }).join("");
+  const byId=new Map(media.map(m=>[String(m.id||""),m]));
+  $("[data-media-image]",mediaBox).forEach(card=>{
+    const open=()=>{const m=byId.get(card.dataset.mediaImage);if(m)openMediaImage(panel,m)};
+    card.addEventListener("click",open);
+    card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open()}});
+  });
+}
+
 async function loadEventDetail(){
   const slug=document.body.dataset.eventSlug||new URLSearchParams(location.search).get("slug");if(!slug)return;
   const {data:event,error}=await db.from("site_events").select("*").eq("slug",slug).maybeSingle();if(error||!event)return;
@@ -219,8 +255,8 @@ async function loadEventDetail(){
   const statsMap=new Map(stats.map(s=>[`${s.snapshot_id}:${s.participant_id}`,s])),nations=$("#event-nations-grid");if(nations)initNationComparison(nations,participants,snapshots,statsMap)
   const timeline=$("#event-timeline");if(timeline)renderCountryTimeline(timeline,participants,entries);
   const diplomacy=$("#event-diplomacy"),diplomaticEntries=entries.filter(e=>diplomaticTypes.has(e.entry_type));if(diplomacy){diplomacy.className="v52-diplomacy-grid";diplomacy.innerHTML=diplomaticEntries.length?diplomaticEntries.map(e=>diplomacyCard(e,participantsById)).join(""):'<div class="empty-state"><strong>Aucune prise de parole publique pour le moment</strong><p>Les déclarations, traités et congrès apparaîtront ici une fois publiés.</p></div>'}
-  const mediaBox=$("#event-media");if(mediaBox){mediaBox.innerHTML=media.length?media.map(m=>{const title=esc(m.title||"Média de campagne"),caption=m.caption?`<span>${esc(m.caption)}</span>`:"";if(m.media_type==="image")return `<figure class="event-media-card"><img src="${esc(m.url)}" alt="${title}"><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;if(m.media_type==="audio")return `<figure class="event-media-card event-media-audio"><figcaption><strong>${title}</strong>${caption}</figcaption><audio controls preload="metadata" src="${esc(m.url)}"></audio></figure>`;if(m.media_type==="video")return `<figure class="event-media-card event-media-video"><video controls preload="metadata" src="${esc(m.url)}"></video><figcaption><strong>${title}</strong>${caption}</figcaption></figure>`;return `<a class="event-media-card event-media-link" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer"><figcaption><strong>${title}</strong>${caption}<small>Ouvrir le lien ↗</small></figcaption></a>`}).join(""):'<div class="empty-state"><strong>Galerie à venir</strong><p>Images, cartes, fichiers audio et vidéos de la campagne apparaîtront ici.</p></div>'}
-}
+  const mediaBox=$("#event-media");if(mediaBox)renderEventMedia(mediaBox,media);
+
 
 async function boot(){if(!BACKEND_CONFIGURED)return;db=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,detectSessionInUrl:false,autoRefreshToken:false}});await Promise.allSettled([loadHomeFeature(),loadEventsIndex(),loadEventDetail()])}
 boot();
