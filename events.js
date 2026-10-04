@@ -217,7 +217,7 @@ function openMediaImage(panel,media){
   panel.innerHTML=`<button type="button" class="event-media-detail-close" aria-label="Fermer le détail">×</button><div class="event-media-detail-visual"><img src="${esc(media.url)}" alt="${title}"></div><div class="event-media-detail-copy"><p class="eyebrow">ARCHIVE DE CAMPAGNE</p><h3>${title}</h3><div class="event-media-detail-caption"><span>Légende / contexte</span><p>${caption}</p></div></div>`;
   panel.hidden=false;
   $(".event-media-detail-close",panel)?.addEventListener("click",()=>{panel.hidden=true});
-  panel.scrollIntoView({behavior:"smooth",block:"center"});
+  panel.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderEventMedia(mediaBox,media){
   const panel=ensureMediaDetail(mediaBox);
