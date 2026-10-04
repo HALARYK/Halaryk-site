@@ -208,5 +208,65 @@ export const EVENT_CONTEXT={
     "history": "Le rang de « Grande Puissance » est une mécanique d’Europa Universalis IV, pas un titre historique officiel. Il représente les huit États les plus puissants selon le développement et les pénalités technologiques.",
     "campaign": "Florence entre dans le top 8 le 1er novembre 1496. Le relevé de 1481 plaçait encore la Pologne au 8e rang ; celui de 1507 place Florence 8e à sa place. La sauvegarde ne contient pas une ligne « Pologne déchue » datée au même jour, mais Florence est la seule nouvelle entrée de Grande Puissance enregistrée entre les deux relevés : le remplacement identifiable est donc celui de la Pologne.",
     "game": "En 1507, Florence possède un score de Grande Puissance de 247,419. Son passage d’une petite république italienne à une puissance du top 8 matérialise l’ampleur de son expansion et de son développement pendant les deux premières sessions."
+  },
+  "CAS|1508-07-02": {
+    "status": "Uchronie coloniale",
+    "history": "Pas de lien historique direct. Ouidah n’est pas une possession castillane en 1508 dans l’histoire réelle ; son rôle de grand port atlantique s’affirme surtout plus tard.",
+    "campaign": "Dans la partie, la prise d’Ouidah donne à la Castille un point d’appui précoce sur le golfe de Guinée et montre que son expansion africaine accompagne déjà ses ambitions atlantiques.",
+    "game": "La sauvegarde de 1537 date le passage d’Ouidah à la Castille au 2 juillet 1508."
+  },
+  "CAS|1514-03-25": {
+    "status": "Pas de lien historique direct",
+    "history": "La guerre castillano-portugaise pour Oujda n’a pas d’équivalent direct dans l’histoire réelle. Le contexte reste toutefois crédible : au début du XVIe siècle, les monarchies ibériques cherchent toutes deux à consolider des positions en Afrique du Nord et sur les routes atlantiques.",
+    "campaign": "La Castille attaque le Portugal avec l’appui d’Aragon, de Navarre et du Maroc. Oujda sert d’objectif territorial à un conflit beaucoup plus large qui se déroule aussi en Ibérie, au Maghreb et dans l’Atlantique.",
+    "game": "La sauvegarde conserve la date de déclenchement, les deux camps et l’ensemble des batailles de cette guerre."
+  },
+  "CAS|1514-07-12": {
+    "status": "Jalon de jeu à portée historique",
+    "history": "Il n’existe pas d’événement historique appelé « Global Empire » en 1514. En revanche, la Castille réelle est alors engagée dans une expansion rapide depuis les voyages atlantiques de la fin du XVe siècle et l’implantation dans les Caraïbes.",
+    "campaign": "Dans la partie, ce jalon résume le changement d’échelle de la Castille : le royaume possède désormais des intérêts en Europe, en Afrique et outre-Atlantique, et son projet politique devient explicitement impérial.",
+    "game": "Le jeu enregistre ce jalon le 12 juillet 1514 ; il est présenté ici comme un marqueur de la montée en puissance castillane, et non comme un événement historique autonome."
+  },
+  "CAS|1517-11-14": {
+    "status": "Pas de lien historique direct",
+    "history": "La victoire castillane sur le Portugal à Oujda appartient à l’uchronie de la campagne. Elle prolonge cependant un contexte historique réel de concurrence entre puissances ibériques pour les positions nord-africaines et les routes atlantiques.",
+    "campaign": "La Castille sort renforcée d’un conflit de plus de trois ans. Le Portugal est battu et la Castille accroît fortement son poids en Ibérie, au Maghreb et dans l’espace colonial.",
+    "game": "La sauvegarde conserve dix batailles et les pertes détaillées des participants."
+  },
+  "CAS|1521-12-28": {
+    "status": "Pas de lien historique direct",
+    "history": "Cette conquête castillane de Sergipe n’a pas d’équivalent direct dans l’histoire réelle. Le littoral du Brésil appartient alors à la sphère portugaise issue du partage ibérique de l’Atlantique, et Sergipe ne devient pas une possession castillane.",
+    "campaign": "La Castille conteste directement l’espace colonial portugais en Amérique du Sud. La guerre montre que la rivalité ibérique de la campagne ne se limite plus à l’Europe et au Maghreb.",
+    "game": "La sauvegarde conserve le début du conflit au 28 décembre 1521 ainsi que les participants et deux batailles majeures."
+  },
+  "CAS|1522-04-01": {
+    "status": "Écho historique fort",
+    "history": "La Navarre est conquise par les troupes de Ferdinand le Catholique en 1512 puis incorporée à la Couronne de Castille en 1515, tout en conservant dans l’histoire réelle son statut de royaume, ses fueros et ses institutions propres.",
+    "campaign": "Dans la partie, l’intégration définitive intervient le 1er avril 1522. La Navarre disparaît alors comme acteur indépendant, ce qui consolide la frontière pyrénéenne occidentale quelques années avant la formation de l’Espagne.",
+    "game": "Le changement territorial et la sortie de la Navarre de la guerre de Sergipe sont enregistrés le même jour dans la sauvegarde."
+  },
+  "CAS|1523-07-15": {
+    "status": "Pas de lien historique direct",
+    "history": "La victoire castillane à Sergipe est propre à la campagne. Historiquement, l’expansion européenne sur ce littoral est portugaise et s’inscrit dans la construction progressive du Brésil colonial.",
+    "campaign": "La Castille obtient Sergipe, Ilhéus et Parnaíba. Cette paix installe durablement la puissance castillane sur le littoral brésilien et réduit encore l’espace disponible pour le Portugal.",
+    "game": "La sauvegarde conserve deux batailles pour cette guerre ainsi que les pertes des différents participants."
+  },
+  "CAS|1527-04-09": {
+    "status": "Simplification historique d’EU4",
+    "history": "L’Espagne n’est pas créée par un acte unique en 1527. Le mariage d’Isabelle de Castille et Ferdinand d’Aragon en 1469 puis leur union dynastique à partir de 1479 rapprochent les deux couronnes, mais Castille et Aragon conservent longtemps leurs propres institutions.",
+    "campaign": "Dans la partie, le 9 avril 1527 marque au contraire une rupture nette : la Castille devient l’Espagne. Cette transformation donne une identité politique commune à un ensemble déjà fortement consolidé en Ibérie et outre-mer.",
+    "game": "EU4 condense ici un processus historique progressif en une décision nationale unique."
+  },
+  "CAS|1528-08-28": {
+    "status": "Uchronie religieuse",
+    "history": "La Compagnie de Jésus est officiellement approuvée par le pape Paul III en 1540. La campagne fait donc apparaître la Societas Jesu douze ans plus tôt que dans l’histoire réelle.",
+    "campaign": "L’Espagne adopte très tôt cette institution et renforce son identité catholique. Dans le RP de la campagne, cela lui donne une place naturelle parmi les puissances susceptibles de défendre et diffuser le catholicisme.",
+    "game": "La décision est prise par l’Espagne le 28 août 1528."
+  },
+  "CAS|1532-01-17": {
+    "status": "Uchronie chronologique",
+    "history": "Dans l’histoire réelle, Philippe II installe durablement sa cour à Madrid en 1561. La campagne anticipe donc de vingt-neuf ans le basculement politique de Tolède vers Madrid.",
+    "campaign": "Le transfert intervient cinq ans après la formation de l’Espagne. Madrid devient le centre politique d’une monarchie désormais pensée comme espagnole et impériale.",
+    "game": "La sauvegarde enregistre le changement de capitale au 17 janvier 1532."
   }
 };
