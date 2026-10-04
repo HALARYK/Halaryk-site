@@ -1386,6 +1386,266 @@ export const CURATED_EVENTS={
           "Girid reste ottomane"
         ]
       ]
+    },
+    {
+      "date": "1508-01-18",
+      "type": "guerre",
+      "title": "Début de la conquête anglaise du Maine",
+      "summary": "L’Angleterre relance une grande offensive continentale contre la France afin de reprendre pied dans l’ouest du royaume.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête anglaise du Maine"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Maine"
+        ],
+        [
+          "Camp attaquant",
+          "Angleterre · Flandre"
+        ],
+        [
+          "Camp défenseur",
+          "France · Naples · Clèves · Lorraine · Dithmarse"
+        ]
+      ]
+    },
+    {
+      "date": "1511-10-18",
+      "type": "bataille",
+      "title": "Bataille de Clèves",
+      "summary": "John Burgoyne affronte l’armée française de Pascal de La Ferrandie à Clèves ; malgré de lourdes pertes françaises, l’Angleterre est battue.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête anglaise du Maine"
+        ],
+        [
+          "Lieu",
+          "Clèves"
+        ],
+        [
+          "Attaquant",
+          "Angleterre — John Burgoyne — 13 000 infanterie · 4 000 cavalerie · 3 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "France — Pascal de La Ferrandie — 19 310 infanterie · 4 541 cavalerie · 2 441 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Angleterre : 6 819 · France : 5 160"
+        ],
+        [
+          "Vainqueur",
+          "France"
+        ]
+      ]
+    },
+    {
+      "date": "1512-03-07",
+      "type": "guerre",
+      "title": "Victoire anglaise dans la guerre du Maine",
+      "summary": "Après quatre années de guerre, l’Angleterre impose sa victoire à la France et récupère dix provinces, rétablissant une forte présence anglaise sur le continent.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête anglaise du Maine"
+        ],
+        [
+          "Issue",
+          "Victoire du camp anglais"
+        ],
+        [
+          "Batailles enregistrées",
+          "10"
+        ],
+        [
+          "Pertes du camp anglais",
+          "43 477 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "36 279 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Armor · Finistère · Vannetais · Nantais · Maine · Anjou · Arguin · Saintonge · Rennais · Bas-Poitou"
+        ]
+      ]
+    },
+    {
+      "date": "1516-05-07",
+      "type": "colonisation",
+      "title": "Sainte-Hélène devient anglaise",
+      "summary": "L’Angleterre s’implante à Sainte-Hélène, point d’appui isolé mais stratégique sur les routes de l’Atlantique Sud.",
+      "facts": [
+        [
+          "Territoire",
+          "Sainte-Hélène"
+        ],
+        [
+          "Région",
+          "Atlantique Sud"
+        ],
+        [
+          "Portée",
+          "Relais maritime sur la route vers l’Afrique australe et l’océan Indien"
+        ]
+      ]
+    },
+    {
+      "date": "1520-07-19",
+      "type": "colonisation",
+      "title": "Le Cap passe sous contrôle anglais",
+      "summary": "L’Angleterre prend pied à l’extrémité australe de l’Afrique et sécurise une position majeure sur la route maritime vers l’océan Indien.",
+      "facts": [
+        [
+          "Territoire",
+          "Le Cap"
+        ],
+        [
+          "Région",
+          "Afrique australe"
+        ],
+        [
+          "Portée",
+          "Position stratégique sur la route maritime Europe–océan Indien"
+        ]
+      ]
+    },
+    {
+      "date": "1524-10-12",
+      "type": "religion",
+      "title": "L’Angleterre adopte l’anglicanisme",
+      "summary": "La monarchie anglaise rompt avec le catholicisme et fait de l’anglicanisme la religion officielle du royaume.",
+      "facts": [
+        [
+          "Religion précédente",
+          "Catholicisme"
+        ],
+        [
+          "Nouvelle religion",
+          "Anglicanisme"
+        ],
+        [
+          "Conséquence",
+          "Rupture confessionnelle majeure pour l’Angleterre et son ordre politique"
+        ]
+      ]
+    },
+    {
+      "date": "1525-11-29",
+      "type": "colonisation",
+      "title": "New York passe sous contrôle anglais",
+      "summary": "L’expansion anglaise atteint la côte nord-américaine : New York devient une possession anglaise près d’un siècle et demi avant son basculement historique.",
+      "facts": [
+        [
+          "Territoire",
+          "New York"
+        ],
+        [
+          "Région",
+          "Amérique du Nord"
+        ],
+        [
+          "Portée",
+          "Ancrage anglais majeur sur la côte nord-américaine"
+        ]
+      ]
+    },
+    {
+      "date": "1526-02-27",
+      "type": "politique",
+      "title": "Formation de la Grande-Bretagne",
+      "summary": "L’Angleterre devient la Grande-Bretagne et transforme l’union des îles Britanniques en un nouvel État.",
+      "facts": [
+        [
+          "État précédent",
+          "Angleterre"
+        ],
+        [
+          "Nouvel État",
+          "Grande-Bretagne"
+        ],
+        [
+          "Nature",
+          "Union politique anglo-écossaise"
+        ],
+        [
+          "Conséquence",
+          "La puissance anglaise entre dans une nouvelle phase politique et impériale"
+        ]
+      ]
+    },
+    {
+      "date": "1528-07-01",
+      "type": "désastre",
+      "title": "Début des troubles religieux britanniques",
+      "summary": "Quatre ans après l’adoption de l’anglicanisme, la Grande-Bretagne entre dans une période de fortes tensions confessionnelles.",
+      "facts": [
+        [
+          "Crise",
+          "Troubles religieux"
+        ],
+        [
+          "Origine de la séquence",
+          "Conversion à l’anglicanisme en 1524"
+        ],
+        [
+          "Situation au 1er janvier 1537",
+          "Le désastre est toujours actif"
+        ]
+      ]
+    },
+    {
+      "date": "1534-10-16",
+      "type": "colonisation",
+      "title": "Percée britannique en Floride et en Géorgie",
+      "summary": "La Grande-Bretagne étend brutalement son implantation dans le sud-est de l’Amérique du Nord en prenant six territoires le même jour.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "Timucua · Apalachee · Savannah · Yustaga · Beaufort · Combahee"
+        ],
+        [
+          "Région",
+          "Floride et Géorgie"
+        ],
+        [
+          "Portée",
+          "Constitution d’un vaste bloc britannique sur la façade sud-est de l’Amérique du Nord"
+        ]
+      ]
+    },
+    {
+      "date": "1535-10-20",
+      "type": "politique",
+      "title": "Débat sur l’Act of Representation",
+      "summary": "Le Parlement britannique ouvre un débat sur une réforme de la représentation politique, qui est ensuite adoptée quelques semaines plus tard.",
+      "facts": [
+        [
+          "Débat ouvert",
+          "20 octobre 1535"
+        ],
+        [
+          "Adoption dans la campagne",
+          "15 novembre 1535"
+        ],
+        [
+          "Nature",
+          "Réforme parlementaire"
+        ],
+        [
+          "Portée",
+          "Renforcement de la représentation au sein du système politique britannique"
+        ]
+      ]
     }
   ],
   "LAN": [
