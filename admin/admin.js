@@ -24,10 +24,10 @@ const GAME_SEARCH_PAGE_SIZE = 24;
 const repRank = s => s < 0 ? "☠️ Traître" : s < 20 ? "👤 Inconnu" : s < 50 ? "🏠 Habitué" : s < 80 ? "🗣️ Conseiller" : s < 100 ? "⚜️ Confident" : "👑 Favori";
 const libraryStatusLabels = {
   playing: "En cours",
-  completed: "Terminé",
-  wishlist: "À venir"
+  completed: "Terminé"
 };
-const normalizeLibraryStatus = status => status === "playing" ? "playing" : status === "completed" ? "completed" : "wishlist";
+const normalizeLibraryStatus = status => status === "playing" ? "playing" : status === "completed" ? "completed" : null;
+const legacyLibraryLabel = status => status === "wishlist" ? "Ancien : à venir" : status === "paused" ? "Ancien : en pause" : status === "abandoned" ? "Ancien : abandonné" : "Ancien statut";
 const suggestionStatusLabels = {
   new: "Nouvelle",
   considering: "En réflexion",
@@ -172,7 +172,7 @@ async function refreshAll() {
 async function loadStats() {
   const [{ data: s }, { data: g }, { data: p }, { data: r }, { data: c }] = await Promise.all([
     supabase.from("suggestions").select("status"),
-    supabase.from("library_games").select("id"),
+    supabase.from("library_games").select("id").in("status", ["playing", "completed"]),
     supabase.from("polls").select("id").eq("is_active", true),
     supabase.from("reputation_scores").select("id"),
     supabase.from("collaborators").select("id").eq("active", true)
@@ -367,7 +367,7 @@ function openGameModal(i) {
   pendingGameIndex = i;
   $("#game-add-title").textContent = g.name;
   $("#game-add-year").textContent = g.release_year ? `Sortie : ${g.release_year}` : "Date de sortie inconnue";
-  $("#game-add-status").value = "wishlist";
+  $("#game-add-status").value = "playing";
   $("#game-add-streamed").checked = false;
   $("#game-add-playtime").value = "";
   $("#game-add-rating").value = "";
@@ -451,7 +451,9 @@ function renderLibrary() {
   const status = $("#library-status-filter")?.value || "all";
   const filtered = libraryGames.filter(g => {
     const hay = `${g.name || ""} ${g.developer || ""} ${g.rating ?? ""}`.toLocaleLowerCase("fr");
-    return (!q || hay.includes(q)) && (status === "all" || normalizeLibraryStatus(g.status) === status);
+    const normalized = normalizeLibraryStatus(g.status);
+    const statusMatch = status === "all" || (status === "legacy" ? !normalized : normalized === status);
+    return (!q || hay.includes(q)) && statusMatch;
   });
   const visible = filtered.slice(0, libraryRenderLimit);
   const count = $("#library-result-count");
@@ -463,18 +465,18 @@ function renderLibrary() {
         ${g.cover_url ? `<img src="${esc(hdCover(g.cover_url))}" alt="" class="library-admin-cover">` : ""}
         <div class="library-admin-title">
           <h2>${esc(g.name)}</h2>
-          <small>${esc(libraryStatusLabels[normalizeLibraryStatus(g.status)])}${g.release_date ? ` · Sortie : ${new Intl.DateTimeFormat("fr-FR", { year: "numeric" }).format(new Date(g.release_date))}` : ""}</small>
+          <small>${esc(libraryStatusLabels[normalizeLibraryStatus(g.status)] || legacyLibraryLabel(g.status))}${g.release_date ? ` · Sortie : ${new Intl.DateTimeFormat("fr-FR", { year: "numeric" }).format(new Date(g.release_date))}` : ""}</small>
         </div>
-        <small>${g.streamed ? "🎥 Streamé" : ""}</small>
+        <small>${g.streamed ? "En stream" : "Hors stream"}</small>
       </div>
       <div class="admin-three-cols">
         <label>Statut
-          <select class="game-status">${Object.entries(libraryStatusLabels).map(([st, label]) => `<option value="${st}" ${normalizeLibraryStatus(g.status) === st ? "selected" : ""}>${label}</option>`).join("")}</select>
+          <select class="game-status">${normalizeLibraryStatus(g.status) ? "" : `<option value="${esc(g.status)}" selected disabled>${esc(legacyLibraryLabel(g.status))} — masqué du site</option>`}${Object.entries(libraryStatusLabels).map(([st, label]) => `<option value="${st}" ${normalizeLibraryStatus(g.status) === st ? "selected" : ""}>${label}</option>`).join("")}</select>
         </label>
         <label>Temps de jeu (heures)<input class="game-playtime" type="number" min="0" step="0.1" value="${g.playtime_hours ?? ""}" placeholder="Ex. : 1714"></label>
         <label>Note / 10<input class="game-rating-edit" type="number" min="0" max="10" step="0.5" value="${g.rating ?? ""}" placeholder="Ex. : 8.5"></label>
       </div>
-      <label class="check-row"><input class="game-streamed" type="checkbox" ${g.streamed ? "checked" : ""}> Streamé sur la chaîne</label>
+      <label class="check-row"><input class="game-streamed" type="checkbox" ${g.streamed ? "checked" : ""}> Fait en stream</label>
       <label>Studio de développement<input class="game-developer-edit" value="${esc(g.developer || "")}" placeholder="Ex. : LEVEL-5"></label>
       <label>Résumé public <small>2 à 4 lignes, idéalement en français</small><textarea class="game-summary-edit" rows="4" maxlength="520" placeholder="Résumé court type fiche Steam…">${esc(g.summary || "")}</textarea></label>
       <label>Commentaire personnel<textarea class="game-note" rows="3" placeholder="Ton avis, un souvenir, un commentaire…">${esc(g.personal_note || "")}</textarea></label>
