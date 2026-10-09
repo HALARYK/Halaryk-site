@@ -5567,6 +5567,374 @@ export const CURATED_EVENTS={
           "20 septembre 1506"
         ]
       ]
+    },
+    {
+      "date": "1508-01-08",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Kazan",
+      "summary": "La Moscovie remporte la guerre contre Kazan et consolide son avancée sur la moyenne Volga.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête moscovite de Kazan"
+        ],
+        [
+          "Issue",
+          "Victoire du camp moscovite"
+        ],
+        [
+          "Batailles enregistrées",
+          "1"
+        ],
+        [
+          "Pertes de la Moscovie",
+          "26 754 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Kazan · Cheboksary"
+        ]
+      ]
+    },
+    {
+      "date": "1510-07-30",
+      "type": "guerre",
+      "title": "Victoire dans la reconquête de Chimgi-Tura",
+      "summary": "La Moscovie remporte une campagne rapide dans la steppe et poursuit son expansion vers la Sibérie occidentale.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête moscovite de Chimgi-Tura"
+        ],
+        [
+          "Issue",
+          "Victoire du camp moscovite"
+        ],
+        [
+          "Pertes de la Moscovie",
+          "13 936 pertes humaines"
+        ],
+        [
+          "Portée",
+          "Nouvelle progression vers l’est et la Sibérie occidentale"
+        ]
+      ]
+    },
+    {
+      "date": "1515-07-07",
+      "type": "guerre",
+      "title": "Victoire dans la reconquête de Baganaly",
+      "summary": "Après plus de quatre ans de guerre en Asie centrale, la Moscovie et ses alliés l’emportent sur la Transoxiane, Ormuz et le Fars.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête moscovite de Baganaly"
+        ],
+        [
+          "Issue",
+          "Victoire du camp moscovite"
+        ],
+        [
+          "Batailles enregistrées",
+          "16"
+        ],
+        [
+          "Pertes de la Moscovie",
+          "103 975 pertes humaines"
+        ],
+        [
+          "Camp adverse principal",
+          "Transoxiane · Ormuz · Fars"
+        ]
+      ]
+    },
+    {
+      "date": "1515-12-21",
+      "type": "guerre",
+      "title": "Victoire dans la reconquête de Shekty",
+      "summary": "La Moscovie remporte une nouvelle guerre dans les steppes contre les Nogaïs et étend encore son influence vers l’Asie centrale.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête moscovite de Shekty"
+        ],
+        [
+          "Issue",
+          "Victoire du camp moscovite"
+        ],
+        [
+          "Batailles enregistrées",
+          "1"
+        ],
+        [
+          "Pertes de la Moscovie",
+          "3 528 pertes humaines"
+        ],
+        [
+          "Adversaire principal",
+          "Nogaïs"
+        ]
+      ]
+    },
+    {
+      "date": "1518-01-29",
+      "type": "politique",
+      "title": "Formation de la Russie",
+      "summary": "La Moscovie se transforme en Russie et affirme une nouvelle identité politique à l’échelle de l’Europe orientale.",
+      "facts": [
+        [
+          "État précédent",
+          "Moscovie"
+        ],
+        [
+          "Nouvel État",
+          "Russie"
+        ],
+        [
+          "Rang politique",
+          "Empire"
+        ],
+        [
+          "Portée",
+          "La chronologie moscovite devient désormais celle de la Russie"
+        ]
+      ]
+    },
+    {
+      "date": "1518-04-28",
+      "type": "capitale",
+      "title": "Saint-Pétersbourg devient la capitale de la Russie",
+      "summary": "Quelques mois après la formation de la Russie, la capitale est transférée de Moscou vers Saint-Pétersbourg.",
+      "facts": [
+        [
+          "Ancienne capitale",
+          "Moscou"
+        ],
+        [
+          "Nouvelle capitale",
+          "Saint-Pétersbourg"
+        ],
+        [
+          "Portée",
+          "Déplacement du centre politique russe vers la Baltique"
+        ]
+      ]
+    },
+    {
+      "date": "1518-08-15",
+      "type": "guerre",
+      "title": "Début de la conquête russe de Birkaland",
+      "summary": "La Russie ouvre une grande guerre contre la Suède et les puissances scandinaves avec l’appui du Brandebourg et de l’Angleterre.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Birkaland"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Birkaland"
+        ],
+        [
+          "Alliés majeurs",
+          "Brandebourg · Angleterre"
+        ],
+        [
+          "Camp adverse",
+          "Suède · Danemark · Norvège · Frise orientale · Lunebourg · Brabant"
+        ]
+      ]
+    },
+    {
+      "date": "1521-02-10",
+      "type": "bataille",
+      "title": "Bataille d’Elfsborg",
+      "summary": "Semen Mensjikov remporte pour la Russie une importante victoire sur l’armée suédoise à Elfsborg.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête russe de Birkaland"
+        ],
+        [
+          "Lieu",
+          "Elfsborg"
+        ],
+        [
+          "Attaquant",
+          "Russie — Semen Mensjikov — 39 000 infanterie · 10 000 cavalerie · 10 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Suède — Fritjof Bernstorff — 19 562 infanterie · 11 253 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Russie : 7 365 · Suède : 14 362"
+        ],
+        [
+          "Vainqueur",
+          "Russie"
+        ]
+      ]
+    },
+    {
+      "date": "1521-05-04",
+      "type": "guerre",
+      "title": "Victoire dans la guerre de Birkaland",
+      "summary": "La coalition menée par la Russie bat les puissances scandinaves et la Russie s’empare d’un vaste ensemble de provinces finlandaises.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Birkaland"
+        ],
+        [
+          "Issue",
+          "Victoire du camp russe et allié"
+        ],
+        [
+          "Batailles enregistrées",
+          "7"
+        ],
+        [
+          "Pertes de la Russie",
+          "57 658 pertes humaines"
+        ],
+        [
+          "Résultat territorial",
+          "11 provinces finlandaises passent à la Russie"
+        ]
+      ]
+    },
+    {
+      "date": "1527-08-17",
+      "type": "colonisation",
+      "title": "Mise en place d’une colonie pénitentiaire russe",
+      "summary": "La Russie met en place une politique de colonie pénitentiaire afin d’accompagner son expansion vers les espaces orientaux.",
+      "facts": [
+        [
+          "Mesure",
+          "Colonie pénitentiaire"
+        ],
+        [
+          "Orientation",
+          "Colonisation et peuplement des marges orientales"
+        ],
+        [
+          "Portée",
+          "Utilisation de l’exil comme outil d’expansion territoriale"
+        ]
+      ]
+    },
+    {
+      "date": "1528-10-01",
+      "type": "territoire",
+      "title": "Percée russe vers Astrakhan et la basse Volga",
+      "summary": "Huit provinces passent simultanément sous contrôle russe, renforçant fortement la domination de la Russie sur la basse Volga et les routes vers le Caucase.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "8 provinces"
+        ],
+        [
+          "Parmi les principales acquisitions",
+          "Astrakhan · Samara · Terek · Stavropol"
+        ],
+        [
+          "Région",
+          "Basse Volga et nord du Caucase"
+        ],
+        [
+          "Portée",
+          "Consolidation de la route russe vers la Caspienne"
+        ]
+      ]
+    },
+    {
+      "date": "1531-10-27",
+      "type": "guerre",
+      "title": "Début de la conquête russe d’Orda",
+      "summary": "La Russie lance une nouvelle campagne de grande ampleur en Asie centrale contre la Transoxiane et Ormuz.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe d’Orda"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Orda"
+        ],
+        [
+          "Camp russe",
+          "Russie · Finlande · Kiev · Sibir · Kazakh · Chagataï"
+        ],
+        [
+          "Camp adverse",
+          "Transoxiane · Ormuz"
+        ]
+      ]
+    },
+    {
+      "date": "1534-04-12",
+      "type": "guerre",
+      "title": "Victoire dans la conquête russe d’Orda",
+      "summary": "La Russie remporte la guerre d’Orda et acquiert douze provinces en Asie centrale.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe d’Orda"
+        ],
+        [
+          "Issue",
+          "Victoire du camp russe"
+        ],
+        [
+          "Batailles enregistrées",
+          "2"
+        ],
+        [
+          "Pertes de la Russie",
+          "46 757 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "12 provinces d’Asie centrale"
+        ]
+      ]
+    },
+    {
+      "date": "1535-10-22",
+      "type": "dynastie",
+      "title": "Pyotr Ier von Hohenzollern monte sur le trône de Russie",
+      "summary": "Pyotr Ier devient souverain de Russie et confirme l’enracinement de la dynastie von Hohenzollern dans la monarchie russe de la campagne.",
+      "facts": [
+        [
+          "Nouveau souverain",
+          "Pyotr Ier"
+        ],
+        [
+          "Dynastie",
+          "von Hohenzollern"
+        ],
+        [
+          "Compétences",
+          "ADM 3 · DIP 3 · MIL 4"
+        ],
+        [
+          "Religion",
+          "Orthodoxe"
+        ],
+        [
+          "Trait",
+          "Zélote"
+        ]
+      ]
     }
   ]
 };
