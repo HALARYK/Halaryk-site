@@ -124,7 +124,7 @@ async function bootCurated(){
     if(m)overrideMap.set(`${m[1]}|${m[2]}`,e);
   }
   let applying=false;
-  const apply=()=>{if(applying||host.querySelector(".v52-curated-track"))return;applying=true;renderChronology(host,ps,docs,byId,chapterById);applying=false};
+  const apply=()=>{if(applying||host.querySelector(".v52-curated-track"))return;applying=true;renderChronology(host,ps,docs,byId,chapterById,overrideMap);applying=false};
   new MutationObserver(()=>requestAnimationFrame(apply)).observe(host,{childList:true,subtree:true});
   setTimeout(apply,0);setTimeout(apply,900);
 }
