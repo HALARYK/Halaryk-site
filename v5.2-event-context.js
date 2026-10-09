@@ -406,5 +406,83 @@ export const EVENT_CONTEXT={
     "history": "La défaite florentine est propre à la campagne. Dans l’histoire réelle, Mantoue demeure un duché des Gonzague et conserve son autonomie dans le système italien du XVIe siècle.",
     "campaign": "Le résultat est particulièrement marquant : Florence gagne les deux batailles enregistrées et inflige bien davantage de pertes qu’elle n’en subit, mais échoue tout de même à obtenir Mantoue. Après des décennies d’expansion, cette guerre rappelle les limites de la puissance florentine.",
     "game": "Florence subit 4 301 pertes contre 14 718 chez ses adversaires, mais le résultat final de la guerre est une victoire du camp défenseur et aucun territoire n’est acquis."
+  },
+  "BRA|1508-09-09": {
+    "status": "Conquête uchronique d’une république paysanne",
+    "history": "Dithmarse est historiquement une république paysanne autonome du nord de l’Allemagne, célèbre pour avoir résisté aux forces danoises et holsteinoises à Hemmingstedt en 1500. Elle ne perd son indépendance qu’en 1559, lorsqu’elle est conquise par le Danemark et les ducs de Holstein.",
+    "campaign": "Dans la partie, c’est le Brandebourg qui met fin à cette autonomie dès 1508. L’acquisition ouvre plus largement le nord-ouest allemand à l’influence brandebourgeoise.",
+    "game": "La sauvegarde date le passage de Dithmarse au Brandebourg du 9 septembre 1508."
+  },
+  "BRA|1509-01-21": {
+    "status": "Réforme protestante extrêmement anticipée",
+    "history": "La Réforme luthérienne est traditionnellement datée de 1517 avec les Quatre-vingt-quinze Thèses de Martin Luther. Le Brandebourg historique n’adopte officiellement la Réforme que sous Joachim II en 1539.",
+    "campaign": "Le Brandebourg devient donc protestant près de trente ans avant sa trajectoire historique et même huit ans avant le début conventionnel de la Réforme. Cette rupture religieuse structure toute la politique intérieure du pays pour les décennies suivantes.",
+    "game": "La religion officielle du Brandebourg devient protestante le 21 janvier 1509."
+  },
+  "BRA|1511-06-30": {
+    "status": "Décision de jeu sans équivalent brandebourgeois direct",
+    "history": "Les « Acts of Uniformity » sont surtout associés à l’histoire religieuse anglaise du XVIe siècle. Il n’existe pas d’Act of Uniformity brandebourgeois adopté en 1511.",
+    "campaign": "Dans votre chronologie, la mesure sert à consolider le choix protestant extrêmement précoce du Brandebourg : après la rupture confessionnelle de 1509, l’État cherche désormais à homogénéiser ses pratiques religieuses.",
+    "game": "EU4 utilise ici une décision générique d’uniformisation religieuse plutôt qu’une loi historique propre au Brandebourg."
+  },
+  "BRA|1514-04-13": {
+    "status": "Modernisation financière très anticipée",
+    "history": "Il n’existe pas de banque nationale brandebourgeoise en 1514. Les institutions bancaires d’État associées à la Prusse apparaissent bien plus tard, notamment avec la Königliche Giro- und Lehnbanco fondée au XVIIIe siècle.",
+    "campaign": "Le Brandebourg se dote néanmoins très tôt d’un outil financier central. Dans le RP, cette réforme illustre un État qui accompagne son expansion militaire par une administration économique plus structurée.",
+    "game": "La « Banque nationale » est une réforme de gameplay ; elle est traitée comme un jalon de modernisation financière et non comme la reproduction d’une institution historique précise."
+  },
+  "BRA|1518-08-15": {
+    "status": "Alliance nordique propre à la campagne",
+    "history": "La guerre de Birkaland n’a pas d’équivalent historique direct. Au début du XVIe siècle, la Scandinavie est toutefois traversée par les tensions de l’Union de Kalmar et par la montée du conflit entre la Suède et le Danemark.",
+    "campaign": "Le Brandebourg se range aux côtés de la Russie et de l’Angleterre contre la Suède, le Danemark et la Norvège. Cette intervention projette pour la première fois sa puissance militaire très loin au-delà de l’espace allemand.",
+    "game": "Le Brandebourg entre dans la guerre dès son déclenchement le 15 août 1518 et y enregistre 14 055 pertes."
+  },
+  "BRA|1520-11-12": {
+    "status": "Expansion uchronique en Basse-Saxe",
+    "history": "Celle est historiquement l’une des résidences majeures des ducs de Brunswick-Lunebourg et ne passe pas sous domination brandebourgeoise au XVIe siècle.",
+    "campaign": "Pendant la guerre de Birkaland, Lunebourg conclut une paix séparée. Le Brandebourg transforme cette sortie de guerre en gain territorial et récupère Celle, renforçant son implantation dans l’Allemagne du Nord.",
+    "game": "Lunebourg quitte la guerre de Birkaland le 12 novembre 1520 et Celle passe au Brandebourg le même jour."
+  },
+  "BRA|1521-05-04": {
+    "status": "Victoire dans une guerre scandinave uchronique",
+    "history": "La Russie, l’Angleterre et le Brandebourg ne forment pas historiquement une coalition de ce type contre les royaumes scandinaves en 1518–1521. Le conflit s’inscrit entièrement dans la géopolitique alternative de la partie.",
+    "campaign": "La victoire confirme l’ouverture du Brandebourg vers la Baltique et la Scandinavie. Même si la Russie tire l’essentiel des gains finlandais, le Brandebourg avait déjà obtenu Celle en forçant Lunebourg à sortir séparément du conflit.",
+    "game": "La guerre compte sept batailles. Le camp attaquant enregistre 96 280 pertes contre 32 131 chez les défenseurs ; le Brandebourg en supporte 14 055."
+  },
+  "BRA|1522-01-03": {
+    "status": "Offensive de consolidation en Allemagne du Nord",
+    "history": "Lunebourg et Wismar appartiennent historiquement à des ensembles politiques distincts du Brandebourg. Leur conquête par les Hohenzollern au début des années 1520 ne correspond pas à la chronologie réelle.",
+    "campaign": "Après Celle, le Brandebourg poursuit méthodiquement son expansion vers l’ouest et la Baltique. Il déclenche cette fois sa propre guerre, soutenu par l’Autriche et plusieurs de ses alliés, contre Lübeck et les puissances scandinaves.",
+    "game": "L’objectif de guerre est Lunebourg. Sept batailles sont conservées dans la sauvegarde avant la victoire de juillet 1523."
+  },
+  "BRA|1523-07-04": {
+    "status": "Nouvelle avancée vers la Baltique",
+    "history": "Ni Lunebourg ni Wismar ne sont annexées au Brandebourg en 1523 dans l’histoire réelle. Wismar reste notamment liée au Mecklembourg et à l’espace hanséatique.",
+    "campaign": "La paix ajoute Lunebourg et Wismar au domaine brandebourgeois. Avec Dithmarse et Celle, le pays construit désormais une véritable assise dans toute l’Allemagne du Nord.",
+    "game": "Le camp attaquant subit 40 073 pertes contre 29 538 chez les défenseurs. La contribution propre du Brandebourg s’élève à 4 181 pertes."
+  },
+  "BRA|1524-02-25": {
+    "status": "Sécularisation protestante anticipée",
+    "history": "La dissolution des monastères est surtout associée à l’Angleterre d’Henri VIII à partir de 1536. Dans l’espace prussien, la grande rupture comparable est la sécularisation de l’État teutonique en 1525. Le Brandebourg historique, lui, n’adopte officiellement la Réforme qu’en 1539.",
+    "campaign": "Le Brandebourg protestant de la partie franchit une nouvelle étape : les structures monastiques sont supprimées et l’État affirme davantage son contrôle sur l’organisation religieuse et les biens ecclésiastiques.",
+    "game": "Il s’agit d’une décision religieuse générique d’EU4 adaptée ici au contexte très précoce de la Réforme brandebourgeoise."
+  },
+  "BRA|1532-09-09": {
+    "status": "Formation de la Prusse profondément réécrite",
+    "history": "Le duché de Prusse historique naît en 1525 lorsque Albert de Brandebourg-Ansbach, grand maître de l’Ordre teutonique, sécularise les territoires de l’Ordre et devient duc de Prusse sous suzeraineté polonaise. Le Brandebourg et la Prusse ne passent sous un même souverain qu’en 1618.",
+    "campaign": "Dans la partie, le Brandebourg ne se contente pas d’obtenir la Prusse : il se transforme lui-même en Prusse dès 1532. La nouvelle puissance conserve sa dignité électorale et adopte une identité culturelle prussienne, créant avec plusieurs générations d’avance un État beaucoup plus intégré.",
+    "game": "Le changement d’État intervient le 9 septembre 1532 ; la culture principale devient prussienne et le statut d’électeur est maintenu."
+  },
+  "BRA|1534-03-12": {
+    "status": "Écho tardif de la Guerre des Paysans allemands",
+    "history": "La grande Guerre des Paysans allemands historique éclate surtout en 1524–1525 dans le sud et le centre du Saint-Empire. Elle ne conduit pas à une guerre austro-prussienne visant à imposer une monarchie à la Frise en 1534.",
+    "campaign": "L’Autriche ouvre une guerre contre la Frise dans le cadre de la Grande Guerre des Paysans d’EU4. La Prusse rejoint l’intervention le 9 avril et participe ainsi à une opération destinée à remodeler politiquement un État républicain du nord de l’Empire.",
+    "game": "Le conflit commence le 12 mars 1534 ; la Prusse rejoint officiellement le camp attaquant le 9 avril."
+  },
+  "BRA|1536-05-13": {
+    "status": "Victoire impériale et changement forcé de régime",
+    "history": "La Frise possède une longue tradition de libertés locales et de gouvernement non monarchique, mais son passage forcé à une monarchie en 1536 par une coalition austro-prussienne appartient entièrement à la campagne.",
+    "campaign": "La coalition remporte la guerre et impose la monarchie à la Frise. Quelques jours auparavant, le 5 mai, Verden est déjà passé à la Prusse : le conflit se termine donc aussi par un renforcement territorial prussien dans le nord-ouest allemand.",
+    "game": "La guerre compte six batailles. Le camp attaquant subit 47 001 pertes contre 24 679 chez les défenseurs ; la Prusse enregistre 8 584 pertes."
   }
 };
