@@ -646,5 +646,89 @@ export const EVENT_CONTEXT={
     "history": "Après la chute de Grenade en 1492, les musulmans d’Espagne subissent des conversions forcées croissantes : en Castille à partir de 1502 et en Aragon dans les années 1520. Des musulmans ibériques puis des Morisques trouvent refuge dans les terres musulmanes d’Afrique du Nord et de l’Empire ottoman ; les grandes expulsions d’Espagne interviennent toutefois surtout en 1609–1614.",
     "campaign": "L’Empire ottoman choisit explicitement d’accueillir ces populations. Dans le RP, cette décision renforce son rôle de puissance musulmane capable d’offrir un refuge aux communautés chassées ou contraintes dans la péninsule Ibérique.",
     "game": "La sauvegarde date l’acceptation des Morisques du 13 novembre 1536."
+  },
+  "MOS|1508-01-08": {
+    "status": "Conquête de Kazan très anticipée",
+    "history": "La rivalité entre Moscou et le khanat de Kazan est bien réelle au XVIe siècle, mais Kazan n’est annexée par la Russie qu’en 1552 sous Ivan IV. La campagne avance donc ce basculement de plus de quarante ans.",
+    "campaign": "La Moscovie sort victorieuse de sa guerre contre Kazan et consolide sa position sur la Volga. Kazan et Cheboksary passent dans son orbite, donnant à Doug une base beaucoup plus solide pour pousser vers l’est.",
+    "game": "La sauvegarde enregistre une seule bataille dans cette guerre et 26 754 pertes pour la Moscovie."
+  },
+  "MOS|1510-07-30": {
+    "status": "Expansion sibérienne avec plusieurs générations d’avance",
+    "history": "La conquête russe de la Sibérie occidentale commence historiquement surtout à la fin du XVIe siècle avec l’expédition de Iermak contre le khanat de Sibir. Une victoire moscovite autour de Chimgi-Tura dès 1510 est donc très précoce.",
+    "campaign": "La Moscovie poursuit son glissement vers l’est et impose une nouvelle victoire dans la steppe. Cette campagne rapproche déjà l’État russe des espaces sibériens bien avant sa formation officielle en 1518.",
+    "game": "La reconquête s’achève le 30 juillet 1510 ; la Moscovie a enregistré 13 936 pertes."
+  },
+  "MOS|1515-07-07": {
+    "status": "Projection moscovite en Asie centrale totalement uchronique",
+    "history": "La Russie historique n’étend réellement son pouvoir profond en Asie centrale qu’aux XVIIIe et surtout XIXe siècles. Une guerre moscovite contre la Transoxiane, Ormuz et le Fars en 1511–1515 n’a donc pas d’équivalent historique direct.",
+    "campaign": "Doug mène une campagne extrêmement longue et coûteuse pour Baganaly. La Moscovie et ses alliés doivent combattre sur un immense théâtre oriental avant d’obtenir la victoire.",
+    "game": "Seize batailles sont enregistrées et la seule Moscovie subit 103 975 pertes, ce qui en fait l’une de ses campagnes les plus meurtrières de la période."
+  },
+  "MOS|1515-12-21": {
+    "status": "Nouvelle avancée précoce dans les steppes",
+    "history": "Les régions contrôlées par les Nogaïs et les khanats de la steppe ne passent sous domination russe que progressivement aux siècles suivants. La campagne accélère fortement ce processus.",
+    "campaign": "Quelques mois après Baganaly, la Moscovie repart en guerre contre les Nogaïs et remporte rapidement la reconquête de Shekty. Cette victoire confirme que l’expansion orientale est devenue l’un des axes centraux de sa politique.",
+    "game": "Une seule bataille est enregistrée ; la Moscovie perd 3 528 hommes contre 9 000 dans le camp adverse."
+  },
+  "MOS|1518-01-29": {
+    "status": "Naissance de la Russie avant le tsarat historique",
+    "history": "Le nom de Russie s’impose progressivement à partir de la Moscovie, mais le grand tournant institutionnel historique intervient en 1547 lorsque Ivan IV est couronné « tsar de toutes les Russies ». La campagne fait donc émerger un État russe impérial près de trente ans plus tôt.",
+    "campaign": "La formation de la Russie couronne plusieurs décennies d’expansion moscovite. Doug change d’échelle politique : l’ancien grand-duché devient un État impérial qui revendique une place dominante dans le monde orthodoxe et l’Europe orientale.",
+    "game": "La transformation est enregistrée le 29 janvier 1518, avec passage de la Moscovie à la Russie et élévation du rang gouvernemental."
+  },
+  "MOS|1518-04-28": {
+    "status": "Saint-Pétersbourg près de deux siècles trop tôt",
+    "history": "Saint-Pétersbourg n’existe pas encore en 1518. Pierre le Grand fonde la ville en 1703 sur les terres prises à la Suède et la cour y est installée comme capitale en 1712.",
+    "campaign": "Dans votre partie, la Russie déplace sa capitale vers la Baltique quelques mois seulement après sa formation. Ce choix symbolise une orientation occidentale et maritime extrêmement précoce.",
+    "game": "Le transfert de capitale vers Saint-Pétersbourg est enregistré le 28 avril 1518."
+  },
+  "MOS|1518-08-15": {
+    "status": "Grande guerre russo-suédoise très anticipée",
+    "history": "La Moscovie et la Suède s’affrontent réellement à plusieurs reprises autour de la Finlande et de la Baltique, notamment en 1495–1497 puis au milieu du XVIe siècle. En revanche, la conquête massive de la Finlande par la Russie n’intervient historiquement qu’en 1808–1809.",
+    "campaign": "Doug lance une guerre majeure contre la Suède avec le Brandebourg et l’Angleterre. Le conflit transforme la Russie nouvellement formée en puissance baltique offensive.",
+    "game": "La guerre commence le 15 août 1518 et compte sept batailles avant la paix de 1521."
+  },
+  "MOS|1521-02-10": {
+    "status": "Bataille propre à la campagne",
+    "history": "Älvsborg est une forteresse stratégique suédoise sur la côte occidentale, mais il n’existe pas de bataille russo-suédoise d’Elfsborg en 1521 correspondant à celle de la partie.",
+    "campaign": "Semen Mensjikov engage une importante armée suédoise et remporte une victoire nette. La Russie perd 7 365 hommes mais inflige 14 362 pertes à la Suède.",
+    "game": "La bataille fait partie de la conquête russe de Birkaland et contribue à la victoire finale de la coalition russe."
+  },
+  "MOS|1521-05-04": {
+    "status": "Conquête de la Finlande près de trois siècles en avance",
+    "history": "La Finlande reste une partie du royaume de Suède jusqu’à la guerre de Finlande de 1808–1809, à l’issue de laquelle elle devient grand-duché autonome de l’Empire russe. La campagne avance donc ce basculement de presque trois siècles.",
+    "campaign": "La paix consacre la Russie comme puissance baltique : onze provinces finlandaises passent sous son contrôle. Les alliés anglais et brandebourgeois obtiennent eux aussi des gains distincts pendant le conflit.",
+    "game": "La guerre compte sept batailles ; la Russie enregistre 57 658 pertes sur 96 280 pour l’ensemble de son camp."
+  },
+  "MOS|1527-08-17": {
+    "status": "Système pénitentiaire colonial très précoce",
+    "history": "L’exil vers la Sibérie devient un instrument durable de colonisation et de contrôle social russe surtout à partir des XVIIe et XVIIIe siècles ; le système de katorga se développe encore plus tard. Une colonie pénitentiaire dès 1527 est donc largement anticipée.",
+    "campaign": "La Russie transforme l’exil en outil de peuplement de ses marges orientales. Ce choix correspond bien à la logique d’un État qui s’étend déjà très loin dans les steppes et vers la Sibérie.",
+    "game": "La sauvegarde enregistre la mise en place de la colonie pénitentiaire le 17 août 1527."
+  },
+  "MOS|1528-10-01": {
+    "status": "Conquête de la basse Volga avant Ivan le Terrible",
+    "history": "Le khanat d’Astrakhan n’est annexé historiquement par la Russie qu’en 1556, quatre ans après Kazan. L’extension russe vers le Terek et le nord du Caucase s’effectue également plus progressivement.",
+    "campaign": "La partie accélère fortement cette progression : huit provinces passent d’un coup à la Russie, dont Astrakhan, Samara, Terek et Stavropol. Doug sécurise ainsi l’accès à la Caspienne et au Caucase.",
+    "game": "Le transfert territorial massif est enregistré au 1er octobre 1528."
+  },
+  "MOS|1531-10-27": {
+    "status": "Conquête russe de l’Asie centrale plusieurs siècles en avance",
+    "history": "La Russie ne soumet réellement les grands khanats et territoires d’Asie centrale qu’au XIXe siècle. Une campagne russe contre la Transoxiane au début des années 1530 est donc une divergence historique majeure.",
+    "campaign": "La Russie ouvre une nouvelle offensive avec la Finlande, Kiev, Sibir, le Kazakh et le Chagataï. L’objectif est Orda, face à la Transoxiane et Ormuz.",
+    "game": "La guerre débute le 27 octobre 1531 et se termine en avril 1534 après deux batailles enregistrées."
+  },
+  "MOS|1534-04-12": {
+    "status": "Empire russe déjà profondément asiatique",
+    "history": "Au XVIe siècle historique, la Russie commence seulement à dépasser durablement la Volga. Une acquisition de douze provinces en Asie centrale en 1534 correspond plutôt à une expansion que l’Empire russe réel n’accomplira que plusieurs siècles plus tard.",
+    "campaign": "La victoire d’Orda donne à Doug douze nouvelles provinces et confirme que la Russie de votre partie n’est plus seulement une puissance européenne ou sibérienne : elle est déjà implantée au cœur de l’Asie centrale.",
+    "game": "La Russie subit 46 757 pertes ; son camp totalise 56 062 pertes contre 20 252 pour la Transoxiane et Ormuz."
+  },
+  "MOS|1535-10-22": {
+    "status": "Dynastie russe entièrement uchronique",
+    "history": "Le souverain de la sauvegarde n’est pas Pierre le Grand : le véritable Pierre Ier naît en 1672 et appartient à la dynastie Romanov. Une maison von Hohenzollern sur le trône russe au XVIe siècle n’a aucun équivalent historique.",
+    "campaign": "Pyotr Ier poursuit la trajectoire dynastique atypique de la Russie de Doug. Son accession confirme que la monarchie russe s’est éloignée de la succession historique des Rurikides et des futurs Romanov.",
+    "game": "La sauvegarde donne Pyotr Ier von Hohenzollern à 3 ADM, 3 DIP et 4 MIL, de religion orthodoxe, avec le trait zélote."
   }
 };
