@@ -484,5 +484,95 @@ export const EVENT_CONTEXT={
     "history": "La Frise possède une longue tradition de libertés locales et de gouvernement non monarchique, mais son passage forcé à une monarchie en 1536 par une coalition austro-prussienne appartient entièrement à la campagne.",
     "campaign": "La coalition remporte la guerre et impose la monarchie à la Frise. Quelques jours auparavant, le 5 mai, Verden est déjà passé à la Prusse : le conflit se termine donc aussi par un renforcement territorial prussien dans le nord-ouest allemand.",
     "game": "La guerre compte six batailles. Le camp attaquant subit 47 001 pertes contre 24 679 chez les défenseurs ; la Prusse enregistre 8 584 pertes."
+  },
+  "HAB|1515-03-10": {
+    "status": "Rupture uchronique avec la Pologne",
+    "history": "L’année 1515 est historiquement marquée par le congrès de Vienne entre les Habsbourg et les Jagellons, qui organise des alliances matrimoniales plutôt qu’une guerre pour Lublin. La campagne inverse donc totalement la dynamique diplomatique réelle.",
+    "campaign": "Alan choisit la confrontation : l’Autriche, appuyée par ses alliés d’Europe centrale et occidentale, attaque la Pologne pour Lublin. Le conflit sert à pousser plus loin l’influence habsbourgeoise vers l’est.",
+    "game": "La guerre commence le 10 mars 1515 et se termine le 27 août 1516 après quatre batailles enregistrées."
+  },
+  "HAB|1515-04-03": {
+    "status": "Bataille propre à la campagne",
+    "history": "Il n’existe pas de bataille austro-polonaise de Varsovie en 1515 correspondant à cet affrontement. Dans l’histoire réelle, Habsbourg et Jagellons sont alors engagés dans un rapprochement dynastique au congrès de Vienne.",
+    "campaign": "Friedrich von Hatzfeldt engage l’armée polonaise près de Varsovie avec 17 000 hommes. L’Autriche subit 3 794 pertes contre 4 230 côté polonais et remporte la bataille.",
+    "game": "Il s’agit de la première bataille enregistrée de la conquête autrichienne de Lublin."
+  },
+  "HAB|1516-08-27": {
+    "status": "Expansion habsbourgeoise vers la Pologne",
+    "history": "L’Autriche n’annexe historiquement ni Sandomir, ni Lublin, ni Kielce au XVIe siècle. Ces acquisitions appartiennent entièrement à la géopolitique alternative de la partie.",
+    "campaign": "La paix donne à l’Autriche trois provinces polonaises et consolide sa progression vers l’est. Kiev profite également du règlement général de la journée pour récupérer plusieurs territoires, mais les gains directs d’Alan sont Sandomir, Lublin et Kielce.",
+    "game": "La guerre compte quatre batailles ; l’Autriche enregistre 19 390 pertes sur 27 282 pour l’ensemble de son camp."
+  },
+  "HAB|1522-01-03": {
+    "status": "Alliance austro-brandebourgeoise uchronique",
+    "history": "Il n’existe pas de guerre historique de Lunebourg en 1522 associant les Habsbourg et le Brandebourg contre Lübeck et les royaumes scandinaves. L’épisode reflète plutôt la fragmentation politique réelle de l’Allemagne du Nord et la concurrence autour de la Baltique.",
+    "campaign": "L’Autriche répond immédiatement à l’offensive brandebourgeoise et fournit l’essentiel de l’effort humain de la coalition : ses pertes finales dépassent largement celles du Brandebourg lui-même.",
+    "game": "L’Autriche entre dans le conflit le jour même de sa déclaration, le 3 janvier 1522."
+  },
+  "HAB|1523-07-04": {
+    "status": "Victoire commune dans le nord de l’Empire",
+    "history": "Lunebourg et Wismar ne deviennent pas historiquement des conquêtes brandebourgeoises au début du XVIe siècle. La victoire appartient donc à l’uchronie de votre Saint-Empire.",
+    "campaign": "La guerre se termine en faveur du Brandebourg et de l’Autriche. Même si les gains territoriaux reviennent à Tchoupi, l’Autriche a payé le prix militaire principal avec 29 050 pertes.",
+    "game": "Sept batailles sont enregistrées ; Lunebourg et Wismar passent au Brandebourg à la paix."
+  },
+  "HAB|1525-06-07": {
+    "status": "Nouvel épisode des rivalités Habsbourg–Valois",
+    "history": "Le conflit s’inscrit dans un contexte très proche des guerres d’Italie réelles. En février 1525, Charles Quint remporte la bataille de Pavie et capture François Ier ; la rivalité entre Habsbourg et Valois domine alors la politique européenne.",
+    "campaign": "Dans la partie, l’Autriche relance presque immédiatement la guerre contre la France, avec pour objectif la reconquête du Rémois au profit de Champagne et l’affaiblissement du bloc français.",
+    "game": "La guerre débute le 7 juin 1525 et réunit dix États dans les deux camps."
+  },
+  "HAB|1525-09-06": {
+    "status": "Bataille uchronique dans une rivalité historique",
+    "history": "Il n’existe pas de bataille de Champagne de cette nature en septembre 1525. Elle prend toutefois place dans une période où la France vient réellement de subir une lourde défaite face aux Habsbourg à Pavie.",
+    "campaign": "Bernard de Bauffremont mène une armée autrichienne massive contre Clèves. Les Autrichiens perdent 4 565 hommes, mais infligent 14 000 pertes et remportent une victoire nette.",
+    "game": "La bataille appartient à la reconquête autrichienne de Rémois, qui comptera douze affrontements enregistrés."
+  },
+  "HAB|1526-05-18": {
+    "status": "Souverain de campagne",
+    "history": "Il n’existe pas d’archiduc d’Autriche historique nommé Friedrich V en 1526. À cette époque, Ferdinand Ier de Habsbourg gouverne les terres autrichiennes et profite de la crise ouverte par la mort de Louis II à Mohács pour revendiquer les couronnes de Bohême et de Hongrie.",
+    "campaign": "Friedrich V succède à Barbara I et poursuit une trajectoire habsbourgeoise beaucoup plus expansionniste. Son règne couvre ensuite l’intégration de la couronne hongroise et les interventions de la Grande Guerre des Paysans.",
+    "game": "La sauvegarde le donne à 3 ADM, 2 DIP et 1 MIL, avec les traits de législateur et de dirigeant strict."
+  },
+  "HAB|1527-05-22": {
+    "status": "Victoire habsbourgeoise dans un contexte de guerres d’Italie",
+    "history": "En 1527, les Habsbourg et la France sont réellement engagés dans la guerre de la Ligue de Cognac ; la même année, les troupes impériales mettent Rome à sac. La paix de votre campagne et les transferts du Rémois, du Rethélois et du Nivernais sont toutefois uchroniques.",
+    "campaign": "Alan remporte sa guerre contre la France. Champagne récupère Rémois et Rethélois tandis que l’Autriche reçoit directement le Nivernais, étendant brièvement son influence jusqu’au cœur du royaume de France.",
+    "game": "Douze batailles sont enregistrées. Le camp autrichien subit 59 973 pertes contre 79 762 pour le camp français."
+  },
+  "HAB|1528-09-01": {
+    "status": "Écho majeur de la succession hongroise après Mohács",
+    "history": "La mort de Louis II de Hongrie à Mohács en 1526 ouvre une crise de succession. Ferdinand de Habsbourg est élu roi de Bohême et revendique la Hongrie, mais son pouvoir y reste longtemps contesté par Jean Zápolya et par l’intervention ottomane.",
+    "campaign": "La partie accélère radicalement cette construction dynastique : en septembre 1528, vingt-neuf provinces hongroises, croates et transylvaines passent directement sous domination autrichienne. L’Autriche devient alors une véritable monarchie danubienne.",
+    "game": "La sauvegarde associe cette date à l’événement de la Couronne hongroise et au transfert simultané de 29 provinces."
+  },
+  "HAB|1532-09-01": {
+    "status": "Guerre des Paysans retardée",
+    "history": "La Guerre des Paysans allemands historique atteint son apogée en 1524–1525 et est largement écrasée dès 1525. Dans la campagne, la crise autrichienne survient donc environ sept ans plus tard.",
+    "campaign": "Le désastre place l’Autriche au centre d’une lutte contre les gouvernements paysans et républicains de l’Empire. Cette séquence sert ensuite de justification aux guerres de changement de régime contre la Frise et Dortmund.",
+    "game": "La sauvegarde enregistre l’entrée de l’Autriche dans la Guerre des Paysans le 1er septembre 1532."
+  },
+  "HAB|1534-03-12": {
+    "status": "Intervention impériale issue de la Grande Guerre des Paysans",
+    "history": "La véritable Guerre des Paysans allemands ne produit pas de guerre autrichienne contre la Frise en 1534. La Frise possède néanmoins une forte tradition de libertés locales, ce qui rend l’affrontement avec une monarchie habsbourgeoise cohérent dans le RP.",
+    "campaign": "L’Autriche prend l’initiative et tente de supprimer le régime paysan de la Frise. La Prusse rejoint la coalition le 9 avril 1534, transformant le conflit en intervention commune de deux grandes puissances impériales.",
+    "game": "Le casus belli utilisé vise explicitement à changer le gouvernement de la Frise."
+  },
+  "HAB|1534-05-16": {
+    "status": "Offensive contre une cité libre impériale",
+    "history": "Dortmund est historiquement une ville libre d’Empire et conserve ses institutions urbaines pendant des siècles. Une transformation imposée en monarchie par les Habsbourg en 1536 est donc une divergence majeure.",
+    "campaign": "Deux mois après l’ouverture de la guerre de Frise, Alan lance une seconde intervention de même nature contre Dortmund. La Prusse participe dès le départ aux côtés de l’Autriche.",
+    "game": "Le conflit oppose l’Autriche et ses alliés à Dortmund, la Franconie et Munich, avec pour objectif mécanique un changement de gouvernement."
+  },
+  "HAB|1536-03-17": {
+    "status": "Fin de l’autonomie républicaine de Dortmund",
+    "history": "La ville libre de Dortmund ne devient pas historiquement une monarchie au XVIe siècle. Son statut de cité impériale perdure jusqu’aux réorganisations du Saint-Empire au début du XIXe siècle.",
+    "campaign": "La victoire de l’Autriche impose le résultat politique recherché : Dortmund abandonne sa république et passe à la monarchie. L’intervention illustre la volonté d’Alan de remodeler l’ordre intérieur du Saint-Empire.",
+    "game": "La sauvegarde enregistre sept batailles, 20 153 pertes autrichiennes et le passage de Dortmund à la monarchie le 17 mars 1536."
+  },
+  "HAB|1536-05-13": {
+    "status": "Fin de la république paysanne frisonne",
+    "history": "La Frise historique connaît plusieurs formes de domination et d’autonomie au tournant des XVe et XVIe siècles ; elle n’est pas transformée en monarchie en 1536 par une intervention des Habsbourg et de la Prusse.",
+    "campaign": "Deux mois après Dortmund, la seconde guerre de changement de régime se termine elle aussi par une victoire. La Frise devient une monarchie, tandis que la Prusse avait obtenu Verden quelques jours auparavant.",
+    "game": "Six batailles sont enregistrées. L’Autriche subit 26 998 pertes sur les 47 001 pertes de son camp."
   }
 };
