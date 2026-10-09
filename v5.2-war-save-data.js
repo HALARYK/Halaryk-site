@@ -2794,5 +2794,392 @@ export const WAR_EVENT_DATA={
     "battles": 6,
     "winner": "Camp autrichien et prussien",
     "peace": "La Frise est forcée de devenir une monarchie. Verden passe à la Prusse le 5 mai 1536, quelques jours avant la fin officielle du conflit."
+  },
+  "HAB|1515-03-10": {
+    "mode": "start",
+    "war": "Conquête autrichienne de Lublin",
+    "start": "1515-03-10",
+    "end": "1516-08-27",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Lublin",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Hongrie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Pologne",
+      "Lituanie",
+      "Magdebourg"
+    ],
+    "lossesAttackers": 27282,
+    "lossesDefenders": 15046,
+    "losses": {
+      "Autriche": 19390,
+      "Moldavie": 400,
+      "Hongrie": 3107,
+      "Bourgogne": 2938,
+      "Champagne": 361,
+      "Herzégovine": 1086,
+      "Pologne": 5449,
+      "Lituanie": 144,
+      "Magdebourg": 9453
+    },
+    "battles": 4,
+    "winner": "Camp autrichien",
+    "peace": "Sandomir, Lublin et Kielce passent sous contrôle autrichien."
+  },
+  "HAB|1516-08-27": {
+    "mode": "end",
+    "war": "Conquête autrichienne de Lublin",
+    "start": "1515-03-10",
+    "end": "1516-08-27",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Lublin",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Hongrie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Pologne",
+      "Lituanie",
+      "Magdebourg"
+    ],
+    "lossesAttackers": 27282,
+    "lossesDefenders": 15046,
+    "losses": {
+      "Autriche": 19390,
+      "Moldavie": 400,
+      "Hongrie": 3107,
+      "Bourgogne": 2938,
+      "Champagne": 361,
+      "Herzégovine": 1086,
+      "Pologne": 5449,
+      "Lituanie": 144,
+      "Magdebourg": 9453
+    },
+    "battles": 4,
+    "winner": "Camp autrichien",
+    "peace": "Sandomir, Lublin et Kielce passent sous contrôle autrichien."
+  },
+  "HAB|1522-01-03": {
+    "mode": "join",
+    "war": "Conquête brandebourgeoise de Lunebourg",
+    "start": "1522-01-03",
+    "end": "1523-07-04",
+    "joinDate": "1522-01-03",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Lunebourg",
+    "attackers": [
+      "Brandebourg",
+      "Autriche",
+      "Moldavie",
+      "Hongrie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Lübeck",
+      "Danemark",
+      "Suède",
+      "Norvège",
+      "Bremen",
+      "Hambourg"
+    ],
+    "lossesAttackers": 40073,
+    "lossesDefenders": 29538,
+    "losses": {
+      "Brandebourg": 4181,
+      "Autriche": 29050,
+      "Moldavie": 979,
+      "Hongrie": 5574,
+      "Bourgogne": 289,
+      "Champagne": 0,
+      "Herzégovine": 0,
+      "Lübeck": 8638,
+      "Danemark": 120,
+      "Suède": 0,
+      "Norvège": 4312,
+      "Bremen": 12311,
+      "Hambourg": 4157
+    },
+    "battles": 7,
+    "winner": "Camp austro-brandebourgeois",
+    "peace": "Lunebourg et Wismar passent sous contrôle brandebourgeois."
+  },
+  "HAB|1523-07-04": {
+    "mode": "end",
+    "war": "Conquête brandebourgeoise de Lunebourg",
+    "start": "1522-01-03",
+    "end": "1523-07-04",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Lunebourg",
+    "attackers": [
+      "Brandebourg",
+      "Autriche",
+      "Moldavie",
+      "Hongrie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Lübeck",
+      "Danemark",
+      "Suède",
+      "Norvège",
+      "Bremen",
+      "Hambourg"
+    ],
+    "lossesAttackers": 40073,
+    "lossesDefenders": 29538,
+    "losses": {
+      "Brandebourg": 4181,
+      "Autriche": 29050,
+      "Moldavie": 979,
+      "Hongrie": 5574,
+      "Bourgogne": 289,
+      "Champagne": 0,
+      "Herzégovine": 0,
+      "Lübeck": 8638,
+      "Danemark": 120,
+      "Suède": 0,
+      "Norvège": 4312,
+      "Bremen": 12311,
+      "Hambourg": 4157
+    },
+    "battles": 7,
+    "winner": "Camp austro-brandebourgeois",
+    "peace": "Lunebourg et Wismar passent sous contrôle brandebourgeois."
+  },
+  "HAB|1525-06-07": {
+    "mode": "start",
+    "war": "Reconquête autrichienne de Rémois",
+    "start": "1525-06-07",
+    "end": "1527-05-22",
+    "casusBelli": "Reconquête",
+    "warGoal": "Rémois",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Hongrie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "France",
+      "Naples",
+      "Clèves",
+      "Lorraine"
+    ],
+    "lossesAttackers": 59973,
+    "lossesDefenders": 79762,
+    "losses": {
+      "Autriche": 38957,
+      "Moldavie": 4205,
+      "Hongrie": 8669,
+      "Bourgogne": 4002,
+      "Champagne": 3062,
+      "Herzégovine": 1078,
+      "France": 49703,
+      "Naples": 2575,
+      "Clèves": 10298,
+      "Lorraine": 17186
+    },
+    "battles": 12,
+    "winner": "Camp autrichien",
+    "peace": "Rémois et Rethélois passent à Champagne ; le Nivernais passe directement à l’Autriche."
+  },
+  "HAB|1527-05-22": {
+    "mode": "end",
+    "war": "Reconquête autrichienne de Rémois",
+    "start": "1525-06-07",
+    "end": "1527-05-22",
+    "casusBelli": "Reconquête",
+    "warGoal": "Rémois",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Hongrie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "France",
+      "Naples",
+      "Clèves",
+      "Lorraine"
+    ],
+    "lossesAttackers": 59973,
+    "lossesDefenders": 79762,
+    "losses": {
+      "Autriche": 38957,
+      "Moldavie": 4205,
+      "Hongrie": 8669,
+      "Bourgogne": 4002,
+      "Champagne": 3062,
+      "Herzégovine": 1078,
+      "France": 49703,
+      "Naples": 2575,
+      "Clèves": 10298,
+      "Lorraine": 17186
+    },
+    "battles": 12,
+    "winner": "Camp autrichien",
+    "peace": "Rémois et Rethélois passent à Champagne ; le Nivernais passe directement à l’Autriche."
+  },
+  "HAB|1534-03-12": {
+    "mode": "start",
+    "war": "Guerre autrichienne pour changer de régime en Frise",
+    "start": "1534-03-12",
+    "end": "1536-05-13",
+    "casusBelli": "Grande Guerre des Paysans — changement de régime",
+    "warGoal": "Changer le gouvernement de la Frise",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine",
+      "Prusse"
+    ],
+    "defenders": [
+      "Frise",
+      "Bremen"
+    ],
+    "lossesAttackers": 47001,
+    "lossesDefenders": 24679,
+    "losses": {
+      "Autriche": 26998,
+      "Moldavie": 3928,
+      "Bourgogne": 3750,
+      "Champagne": 3524,
+      "Herzégovine": 217,
+      "Prusse": 8584,
+      "Frise": 8938,
+      "Bremen": 15741
+    },
+    "battles": 6,
+    "winner": "Camp autrichien et prussien",
+    "peace": "La Frise est forcée de devenir une monarchie."
+  },
+  "HAB|1536-05-13": {
+    "mode": "end",
+    "war": "Guerre autrichienne pour changer de régime en Frise",
+    "start": "1534-03-12",
+    "end": "1536-05-13",
+    "casusBelli": "Grande Guerre des Paysans — changement de régime",
+    "warGoal": "Changer le gouvernement de la Frise",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine",
+      "Prusse"
+    ],
+    "defenders": [
+      "Frise",
+      "Bremen"
+    ],
+    "lossesAttackers": 47001,
+    "lossesDefenders": 24679,
+    "losses": {
+      "Autriche": 26998,
+      "Moldavie": 3928,
+      "Bourgogne": 3750,
+      "Champagne": 3524,
+      "Herzégovine": 217,
+      "Prusse": 8584,
+      "Frise": 8938,
+      "Bremen": 15741
+    },
+    "battles": 6,
+    "winner": "Camp autrichien et prussien",
+    "peace": "La Frise est forcée de devenir une monarchie."
+  },
+  "HAB|1534-05-16": {
+    "mode": "start",
+    "war": "Guerre autrichienne pour changer de régime en Dortmund",
+    "start": "1534-05-16",
+    "end": "1536-03-17",
+    "casusBelli": "Grande Guerre des Paysans — changement de régime",
+    "warGoal": "Changer le gouvernement de Dortmund",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine",
+      "Prusse"
+    ],
+    "defenders": [
+      "Dortmund",
+      "Franconie",
+      "Munich"
+    ],
+    "lossesAttackers": 29326,
+    "lossesDefenders": 22631,
+    "losses": {
+      "Autriche": 20153,
+      "Moldavie": 102,
+      "Bourgogne": 807,
+      "Champagne": 1060,
+      "Herzégovine": 2438,
+      "Prusse": 4766,
+      "Dortmund": 7460,
+      "Franconie": 178,
+      "Munich": 14993
+    },
+    "battles": 7,
+    "winner": "Camp autrichien et prussien",
+    "peace": "Dortmund est forcée d’abandonner son régime républicain et devient une monarchie."
+  },
+  "HAB|1536-03-17": {
+    "mode": "end",
+    "war": "Guerre autrichienne pour changer de régime en Dortmund",
+    "start": "1534-05-16",
+    "end": "1536-03-17",
+    "casusBelli": "Grande Guerre des Paysans — changement de régime",
+    "warGoal": "Changer le gouvernement de Dortmund",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine",
+      "Prusse"
+    ],
+    "defenders": [
+      "Dortmund",
+      "Franconie",
+      "Munich"
+    ],
+    "lossesAttackers": 29326,
+    "lossesDefenders": 22631,
+    "losses": {
+      "Autriche": 20153,
+      "Moldavie": 102,
+      "Bourgogne": 807,
+      "Champagne": 1060,
+      "Herzégovine": 2438,
+      "Prusse": 4766,
+      "Dortmund": 7460,
+      "Franconie": 178,
+      "Munich": 14993
+    },
+    "battles": 7,
+    "winner": "Camp autrichien et prussien",
+    "peace": "Dortmund est forcée d’abandonner son régime républicain et devient une monarchie."
   }
 };
