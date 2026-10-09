@@ -16,7 +16,7 @@ let participantMap=new Map();
 let activeEvents=[];
 let activeIndex=0;
 
-const crestByTag={CAS:"assets/nations/nation-castille.svg",ENG:"assets/nations/nation-angleterre.svg",LAN:"assets/nations/nation-florence.svg",BRA:"assets/nations/nation-brandebourg.svg",HAB:"assets/nations/nation-autriche.svg",TUR:"assets/nations/nation-ottomans.svg",MOS:"assets/nations/nation-moscovie.svg"};
+const crestByTag={CAS:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",ENG:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",LAN:"assets/nations/nation-florence.svg",BRA:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",HAB:"assets/nations/nation-autriche.svg",TUR:"assets/nations/nation-ottomans.svg",MOS:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg"};
 const tagOrder=["CAS","ENG","LAN","BRA","HAB","TUR","MOS"];
 const kindLabel={guerre:"Guerre",dynastie:"Dynastie",union_personnelle:"Union personnelle","désastre":"Désastre",religion:"Religion",politique:"Politique",autre:"Événement"};
 const kindIcon={guerre:"⚔",dynastie:"♛",union_personnelle:"◆","désastre":"!",religion:"✝",politique:"✦",autre:"•"};
