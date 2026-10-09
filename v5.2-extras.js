@@ -60,6 +60,7 @@ function ensureModal(){
 }
 function openEvent(ev,country){
   const modal=ensureModal(),box=$(".v52-detail-content",modal);
+  box._v52Event=ev;
   const facts=(ev.facts||[]).filter(x=>Array.isArray(x)&&x.length>=2&&x[0]&&x[1]);
   box.innerHTML=`<div class="v52-detail-meta"><span>${esc(country.title)}</span><span>${esc(typeLabel(ev.type))}</span><span>${esc(frDate(ev.date))}</span></div><h3>${esc(ev.title)}</h3>${ev.summary?`<p class="v52-detail-summary">${esc(ev.summary)}</p>`:""}${facts.length?`<div class="v52-fact-grid">${facts.map(([k,v])=>`<div><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div>`:""}`;
   modal.hidden=false;document.body.style.overflow="hidden";
@@ -74,20 +75,30 @@ function curatedNode(ev,i){
 }
 function entryDocDate(e){return e.world_date_label||e.world_year||typeLabel(e.entry_type)}
 
-function renderChronology(host,participants,docs,byId,chapterById){
+function renderChronology(host,participants,docs,byId,chapterById,overrideMap){
   const byTag=new Map(participants.map(p=>[p.participant_key,p]));
   let active=host.dataset.activeCountry||"CAS";
   if(!byTag.has(active))active=participants[0]?.participant_key||"CAS";
   host.dataset.activeCountry=active;
   const country=byTag.get(active)||{participant_key:active,title:active,player_name:""};
-  const events=[...(CURATED_EVENTS[active]||[])].sort((a,b)=>parseDate(a.date)-parseDate(b.date));
+  const events=[...(CURATED_EVENTS[active]||[])].map(base=>{
+    const ov=overrideMap?.get(`${active}|${base.date}`),data=ov?.data||{};
+    return {...base,
+      type:ov?.entry_type||base.type,
+      title:ov?.title||base.title,
+      summary:ov?.summary??base.summary,
+      facts:Array.isArray(data.facts)?data.facts:(base.facts||[]),
+      context:data.context||null,
+      war:data.war||null
+    };
+  }).sort((a,b)=>parseDate(a.date)-parseDate(b.date));
   const countryDocs=docs.filter(e=>entryTags(e,byId).includes(active)&&isPre1482(e,chapterById));
 
   host.className="v52-curated-timeline";
   const endYear=events.reduce((m,e)=>Math.max(m,Number(String(e.date||"").slice(0,4))||0),1481);
   host.innerHTML=`<div class="v52-country-tabs">${participants.filter(p=>TAGS.includes(p.participant_key)).sort((a,b)=>TAGS.indexOf(a.participant_key)-TAGS.indexOf(b.participant_key)).map(p=>`<button type="button" class="${p.participant_key===active?"active":""}" data-country="${p.participant_key}"><img src="${asset(CRESTS[p.participant_key])}" alt=""><span><b>${esc(p.title)}</b><small>${esc(p.player_name||"")}</small></span></button>`).join("")}</div><div class="v52-country-range"><strong>${esc(country.title)} · 1444 → ${endYear}</strong><span>${events.length} faits retenus · clique sur un événement pour ouvrir son dossier détaillé.</span></div>${countryDocs.length?`<div class="v52-diplomacy-strip"><div class="v52-diplomacy-strip-label">Documents RP</div><div class="v52-diplomacy-bubbles">${countryDocs.map(e=>`<button type="button" class="v52-diplomacy-bubble" data-doc-id="${esc(e.id)}"><span class="v52-diplomacy-bubble-icon">✉</span><span><span>${esc(entryDocDate(e))}</span><strong>${esc(e.title||typeLabel(e.entry_type))}</strong></span></button>`).join("")}</div></div>`:""}<div class="v52-curated-shell"><div class="v52-curated-track">${events.map(curatedNode).join("")}</div></div>`;
 
-  $$(".v52-country-tabs button",host).forEach(b=>b.addEventListener("click",()=>{host.dataset.activeCountry=b.dataset.country;renderChronology(host,participants,docs,byId,chapterById)}));
+  $$(".v52-country-tabs button",host).forEach(b=>b.addEventListener("click",()=>{host.dataset.activeCountry=b.dataset.country;renderChronology(host,participants,docs,byId,chapterById,overrideMap)}));
   $$(".v52-curated-node",host).forEach(b=>b.addEventListener("click",()=>openEvent(events[Number(b.dataset.eventIndex)],country)));
   const docMap=new Map(countryDocs.map(e=>[String(e.id),e]));
   $$(".v52-diplomacy-bubble",host).forEach(b=>b.addEventListener("click",()=>openDocument(docMap.get(b.dataset.docId),country)));
@@ -104,7 +115,14 @@ async function bootCurated(){
     db.from("site_event_chapters").select("id,world_start_date,world_end_date,status").eq("event_id",event.id).eq("public",true)
   ]);
   const ps=participants||[],byId=new Map(ps.map(p=>[p.id,p])),chapterById=new Map((chapters||[]).map(c=>[c.id,c]));
-  const docs=(entries||[]).filter(e=>DIPLO_TYPES.has(e.entry_type));
+  const rows=entries||[];
+  const docs=rows.filter(e=>DIPLO_TYPES.has(e.entry_type));
+  const overrideMap=new Map();
+  for(const e of rows){
+    if(e.source_type!=="curated_override")continue;
+    const m=String(e.external_key||"").match(/^curated:([^:]+):(\d{4}-\d{2}-\d{2})$/);
+    if(m)overrideMap.set(`${m[1]}|${m[2]}`,e);
+  }
   let applying=false;
   const apply=()=>{if(applying||host.querySelector(".v52-curated-track"))return;applying=true;renderChronology(host,ps,docs,byId,chapterById);applying=false};
   new MutationObserver(()=>requestAnimationFrame(apply)).observe(host,{childList:true,subtree:true});
