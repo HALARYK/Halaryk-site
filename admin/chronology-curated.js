@@ -25,10 +25,14 @@ function countryName(tag){return participantFor(tag)?.title||tag}
 async function load(){
   const host=$("#event-curated-chronology-admin"),sel=$("#event-admin-select");if(!host||!db||!sel?.value)return;
   currentEventId=sel.value;
-  const [{data:pr},{data:rows}]=await Promise.all([
+  const [{data:event},{data:pr},{data:rows}]=await Promise.all([
+    db.from("site_events").select("slug").eq("id",currentEventId).maybeSingle(),
     db.from("site_event_participants").select("id,participant_key,title,player_name,sort_order").eq("event_id",currentEventId).order("sort_order"),
     db.from("site_event_entries").select("id,external_key,entry_type,title,summary,world_date,data,participant_id").eq("event_id",currentEventId).eq("source_type","curated_override")
   ]);
+  const legacy=$("#event-legacy-chronology-card");
+  if(event?.slug!=="ppo-europe"){if(legacy)legacy.classList.remove("hidden");host.innerHTML="<p>Cet éditeur détaillé est réservé aux Chroniques de l’Europe.</p>";return}
+  if(legacy)legacy.classList.add("hidden");
   participants=pr||[];overrides=new Map();
   for(const row of rows||[]){const m=String(row.external_key||"").match(/^curated:([^:]+):(\d{4}-\d{2}-\d{2})$/);if(m)overrides.set(key(m[1],m[2]),row)}
   if(!TAGS.includes(activeTag))activeTag="CAS";render();
@@ -63,7 +67,8 @@ async function save(i){
   const base=currentEvent(i),el=$(`[data-curated-index="${i}"]`);if(!base||!el)return;
   const p=participantFor(activeTag);if(!p)return toast("Participant introuvable.");
   const existing=overrides.get(key(activeTag,base.date));
-  const context={status:EVENT_CONTEXT[key(activeTag,base.date)]?.status||"Contexte édité",history:$(".curated-history",el).value.trim()||"Pas de lien historique.",campaign:$(".curated-campaign",el).value.trim(),game:$(".curated-game",el).value.trim()};
+  const history=$(".curated-history",el).value.trim()||"Pas de lien historique.";
+  const context={status:/^pas de lien historique/i.test(history)?"Pas de lien historique":(EVENT_CONTEXT[key(activeTag,base.date)]?.status||"Contexte édité"),history,campaign:$(".curated-campaign",el).value.trim(),game:$(".curated-game",el).value.trim()};
   const payload={event_id:currentEventId,participant_id:p.id,external_key:extKey(activeTag,base.date),entry_type:$(".curated-type",el).value.trim()||base.type,title:$(".curated-title",el).value.trim()||base.title,summary:$(".curated-summary",el).value.trim()||null,world_date:base.date,world_year:Number(base.date.slice(0,4)),world_date_label:base.date,source_type:"curated_override",importance:"major",review_status:"approved",public:true,featured:false,sort_order:0,data:{curated_override:true,participant_key:activeTag,facts:textToFacts($(".curated-facts",el).value),context}};
   const q=existing?db.from("site_event_entries").update(payload).eq("id",existing.id):db.from("site_event_entries").insert(payload);
   const {error}=await q;if(error)return toast(error.message);toast("Fiche chronologique enregistrée.");await load();
