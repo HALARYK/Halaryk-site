@@ -2284,5 +2284,249 @@ export const WAR_EVENT_DATA={
     "battles": 10,
     "winner": "Camp anglais",
     "peace": "Armor, Finistère, Vannetais, Nantais, Maine, Anjou, Arguin, Saintonge, Rennais et Bas-Poitou passent sous contrôle anglais."
+  },
+  "LAN|1512-07-31": {
+    "mode": "start",
+    "war": "Conquête florentine de Brescia",
+    "start": "1512-07-31",
+    "end": "1514-10-16",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Brescia",
+    "attackers": [
+      "Florence",
+      "Parme"
+    ],
+    "defenders": [
+      "Milan",
+      "Mantoue",
+      "États pontificaux",
+      "Bregenz",
+      "Saluzzo"
+    ],
+    "lossesAttackers": 36552,
+    "lossesDefenders": 48957,
+    "losses": {
+      "Florence": 30272,
+      "Parme": 6280,
+      "Milan": 17484,
+      "Mantoue": 8213,
+      "États pontificaux": 17924,
+      "Bregenz": 2202,
+      "Saluzzo": 3134
+    },
+    "battles": 9,
+    "winner": "Camp florentin",
+    "peace": "Brescia, Bergame et Côme passent sous contrôle florentin."
+  },
+  "LAN|1514-10-16": {
+    "mode": "end",
+    "war": "Conquête florentine de Brescia",
+    "start": "1512-07-31",
+    "end": "1514-10-16",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Brescia",
+    "attackers": [
+      "Florence",
+      "Parme"
+    ],
+    "defenders": [
+      "Milan",
+      "Mantoue",
+      "États pontificaux",
+      "Bregenz",
+      "Saluzzo"
+    ],
+    "lossesAttackers": 36552,
+    "lossesDefenders": 48957,
+    "losses": {
+      "Florence": 30272,
+      "Parme": 6280,
+      "Milan": 17484,
+      "Mantoue": 8213,
+      "États pontificaux": 17924,
+      "Bregenz": 2202,
+      "Saluzzo": 3134
+    },
+    "battles": 9,
+    "winner": "Camp florentin",
+    "peace": "Brescia, Bergame et Côme passent sous contrôle florentin."
+  },
+  "LAN|1527-08-06": {
+    "mode": "start",
+    "war": "Conquête florentine de Milan",
+    "start": "1527-08-06",
+    "end": "1528-10-23",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Milan",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "Milan",
+      "Mantoue",
+      "États pontificaux",
+      "Saluzzo"
+    ],
+    "lossesAttackers": 16636,
+    "lossesDefenders": 27440,
+    "losses": {
+      "Florence": 16636,
+      "Milan": 14310,
+      "Mantoue": 9130,
+      "États pontificaux": 0,
+      "Saluzzo": 4000
+    },
+    "battles": 4,
+    "winner": "Florence",
+    "peace": "Milan et Novare passent sous contrôle florentin."
+  },
+  "LAN|1528-10-23": {
+    "mode": "end",
+    "war": "Conquête florentine de Milan",
+    "start": "1527-08-06",
+    "end": "1528-10-23",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Milan",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "Milan",
+      "Mantoue",
+      "États pontificaux",
+      "Saluzzo"
+    ],
+    "lossesAttackers": 16636,
+    "lossesDefenders": 27440,
+    "losses": {
+      "Florence": 16636,
+      "Milan": 14310,
+      "Mantoue": 9130,
+      "États pontificaux": 0,
+      "Saluzzo": 4000
+    },
+    "battles": 4,
+    "winner": "Florence",
+    "peace": "Milan et Novare passent sous contrôle florentin."
+  },
+  "LAN|1531-07-12": {
+    "mode": "start",
+    "war": "Reconquête suisse de Zurich",
+    "start": "1531-07-12",
+    "end": "1533-06-08",
+    "casusBelli": "Reconquête",
+    "warGoal": "Zurich",
+    "attackers": [
+      "Suisse",
+      "Florence"
+    ],
+    "defenders": [
+      "Trois Ligues",
+      "Augsbourg",
+      "Bade",
+      "Savoie"
+    ],
+    "lossesAttackers": 31888,
+    "lossesDefenders": 48428,
+    "losses": {
+      "Suisse": 10650,
+      "Florence": 21238,
+      "Trois Ligues": 12598,
+      "Augsbourg": 15441,
+      "Bade": 7725,
+      "Savoie": 12664
+    },
+    "battles": 10,
+    "winner": "Camp suisse et florentin",
+    "peace": "Zurich retourne sous contrôle suisse."
+  },
+  "LAN|1533-06-08": {
+    "mode": "end",
+    "war": "Reconquête suisse de Zurich",
+    "start": "1531-07-12",
+    "end": "1533-06-08",
+    "casusBelli": "Reconquête",
+    "warGoal": "Zurich",
+    "attackers": [
+      "Suisse",
+      "Florence"
+    ],
+    "defenders": [
+      "Trois Ligues",
+      "Augsbourg",
+      "Bade",
+      "Savoie"
+    ],
+    "lossesAttackers": 31888,
+    "lossesDefenders": 48428,
+    "losses": {
+      "Suisse": 10650,
+      "Florence": 21238,
+      "Trois Ligues": 12598,
+      "Augsbourg": 15441,
+      "Bade": 7725,
+      "Savoie": 12664
+    },
+    "battles": 10,
+    "winner": "Camp suisse et florentin",
+    "peace": "Zurich retourne sous contrôle suisse."
+  },
+  "LAN|1534-04-28": {
+    "mode": "start",
+    "war": "Conquête florentine de Mantoue",
+    "start": "1534-04-28",
+    "end": "1534-08-13",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Mantoue",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Milan",
+      "Constance",
+      "Saluzzo"
+    ],
+    "lossesAttackers": 4301,
+    "lossesDefenders": 14718,
+    "losses": {
+      "Florence": 4301,
+      "Mantoue": 9000,
+      "Milan": 5718,
+      "Constance": 0,
+      "Saluzzo": 0
+    },
+    "battles": 2,
+    "winner": "Camp défenseur",
+    "peace": "Florence n’obtient aucun territoire ; Mantoue reste hors de son contrôle."
+  },
+  "LAN|1534-08-13": {
+    "mode": "end",
+    "war": "Conquête florentine de Mantoue",
+    "start": "1534-04-28",
+    "end": "1534-08-13",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Mantoue",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Milan",
+      "Constance",
+      "Saluzzo"
+    ],
+    "lossesAttackers": 4301,
+    "lossesDefenders": 14718,
+    "losses": {
+      "Florence": 4301,
+      "Mantoue": 9000,
+      "Milan": 5718,
+      "Constance": 0,
+      "Saluzzo": 0
+    },
+    "battles": 2,
+    "winner": "Camp défenseur",
+    "peace": "Florence n’obtient aucun territoire ; Mantoue reste hors de son contrôle."
   }
 };
