@@ -4736,6 +4736,334 @@ export const CURATED_EVENTS={
           "Zeta reste ottomane"
         ]
       ]
+    },
+    {
+      "date": "1512-07-07",
+      "type": "guerre",
+      "title": "Début de la reconquête ottomane de Zanjân",
+      "summary": "L’Empire ottoman ouvre une grande campagne orientale contre Qara Qoyunlu et ses alliés afin de reprendre Zanjân.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête ottomane de Zanjân"
+        ],
+        [
+          "Casus belli",
+          "Reconquête"
+        ],
+        [
+          "Objectif",
+          "Zanjân"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Égypte · Yémen · Hadramaout"
+        ],
+        [
+          "Camp adverse",
+          "Qara Qoyunlu · Mushasha · Tabarestan"
+        ]
+      ]
+    },
+    {
+      "date": "1512-10-11",
+      "type": "religion",
+      "title": "Consolidation religieuse et institutionnelle du sultanat",
+      "summary": "Quelques jours après l’avènement de Süleyman Kanuni, le sultanat adopte une série de décisions renforçant son autorité religieuse sunnite et ses institutions savantes.",
+      "facts": [
+        [
+          "Décisions majeures",
+          "Affirmation du califat · centre islamique d’érudition · condamnation des pratiques sectaires · renforcement de l’unité religieuse"
+        ],
+        [
+          "Souverain",
+          "Süleyman Kanuni Ier"
+        ],
+        [
+          "Portée",
+          "Renforcement simultané de l’autorité politique, religieuse et savante du sultanat"
+        ]
+      ]
+    },
+    {
+      "date": "1514-02-13",
+      "type": "bataille",
+      "title": "Bataille de Nadjaf",
+      "summary": "L’armée ottomane d’Abdurrahman Sari affronte Qara Qoyunlu à Nadjaf et subit un revers extrêmement coûteux.",
+      "facts": [
+        [
+          "Guerre",
+          "Reconquête ottomane de Zanjân"
+        ],
+        [
+          "Lieu",
+          "Nadjaf"
+        ],
+        [
+          "Attaquant",
+          "Empire ottoman — Abdurrahman Sari — 18 000 infanterie · 6 000 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Qara Qoyunlu — Qara Yûsuf III — 23 489 infanterie · 5 943 cavalerie · 4 372 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Empire ottoman : 13 653 · Qara Qoyunlu : 12 489"
+        ],
+        [
+          "Vainqueur",
+          "Qara Qoyunlu"
+        ]
+      ]
+    },
+    {
+      "date": "1515-06-25",
+      "type": "guerre",
+      "title": "Victoire dans la reconquête de Zanjân",
+      "summary": "Après trois années de campagne, l’Empire ottoman remporte la guerre et annexe dix provinces du Caucase et de l’Anatolie orientale.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête ottomane de Zanjân"
+        ],
+        [
+          "Issue",
+          "Victoire du camp ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "5"
+        ],
+        [
+          "Pertes de l’Empire ottoman",
+          "95 596 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Erivan · Gence · Tiflis · Karabagh · Kars · Nakhitchevan · Mush · Van · Bitlis · Bayazit"
+        ]
+      ]
+    },
+    {
+      "date": "1519-12-07",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane du Qatar",
+      "summary": "L’Empire ottoman attaque Ormuz et ses alliés afin de prendre le contrôle du Qatar et de pousser son influence dans le golfe Persique.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane du Qatar"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Qatar"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Égypte · Qom"
+        ],
+        [
+          "Camp adverse",
+          "Ormuz · Delhi"
+        ]
+      ]
+    },
+    {
+      "date": "1521-07-18",
+      "type": "bataille",
+      "title": "Bataille d’Ar-Raqqah",
+      "summary": "Davud Hadim inflige une défaite écrasante à l’armée d’Ormuz au cours de la conquête du Qatar.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête ottomane du Qatar"
+        ],
+        [
+          "Lieu",
+          "Ar-Raqqah"
+        ],
+        [
+          "Attaquant",
+          "Empire ottoman — Davud Hadim — 18 000 infanterie · 6 000 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Ormuz — Rashid Al-Karachi — 6 685 infanterie · 6 685 cavalerie · 3 833 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Empire ottoman : 2 169 · Ormuz : 17 203"
+        ],
+        [
+          "Vainqueur",
+          "Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1522-06-02",
+      "type": "guerre",
+      "title": "Victoire dans la conquête du Qatar",
+      "summary": "La campagne du golfe Persique s’achève sur une victoire ottomane ; le Qatar passe à l’Égypte, vassale de l’Empire ottoman.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane du Qatar"
+        ],
+        [
+          "Issue",
+          "Victoire du camp ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "3"
+        ],
+        [
+          "Pertes de l’Empire ottoman",
+          "46 516 pertes humaines"
+        ],
+        [
+          "Résultat territorial",
+          "Le Qatar passe à l’Égypte, vassale de l’Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1530-07-06",
+      "type": "guerre",
+      "title": "Début de la reconquête ottomane d’Ardalan",
+      "summary": "L’Empire ottoman lance une nouvelle offensive vers l’Iran occidental contre Qara Qoyunlu et ses alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête ottomane d’Ardalan"
+        ],
+        [
+          "Casus belli",
+          "Reconquête"
+        ],
+        [
+          "Objectif",
+          "Ardalan"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman"
+        ],
+        [
+          "Camp adverse",
+          "Qara Qoyunlu · Mushasha · Tabarestan"
+        ]
+      ]
+    },
+    {
+      "date": "1531-06-27",
+      "type": "bataille",
+      "title": "Bataille de Karabagh",
+      "summary": "Seyfeddin Kemal remporte une bataille sanglante contre Qara Qoyunlu au Karabagh.",
+      "facts": [
+        [
+          "Guerre",
+          "Reconquête ottomane d’Ardalan"
+        ],
+        [
+          "Lieu",
+          "Karabagh"
+        ],
+        [
+          "Attaquant",
+          "Empire ottoman — Seyfeddin Kemal — 18 000 infanterie · 6 000 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Qara Qoyunlu — Jahân Shâh Khwaja — 11 530 infanterie · 6 709 cavalerie · 3 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Empire ottoman : 10 771 · Qara Qoyunlu : 11 866"
+        ],
+        [
+          "Vainqueur",
+          "Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1534-03-01",
+      "type": "territoire",
+      "title": "Expansion directe de l’Empire ottoman au Maroc",
+      "summary": "L’Empire ottoman prend directement possession de cinq territoires du sud marocain, étendant sa présence jusqu’à la façade atlantique.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "Safi · Ifni · Taroudant · Agadir · Ouarzazate"
+        ],
+        [
+          "Région",
+          "Sud et façade atlantique du Maroc"
+        ],
+        [
+          "Portée",
+          "Extension directe de l’autorité ottomane dans l’extrême Maghreb"
+        ]
+      ]
+    },
+    {
+      "date": "1536-06-30",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane de Bojnourd",
+      "summary": "L’Empire ottoman ouvre une nouvelle guerre vers le Khorasan ; le conflit est toujours en cours au 1er janvier 1537.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Bojnourd"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Bojnourd"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Égypte · Sistan · Qom"
+        ],
+        [
+          "Camp adverse",
+          "Transoxiane · Ormuz"
+        ],
+        [
+          "Situation au 1er janvier 1537",
+          "Guerre toujours active"
+        ]
+      ]
+    },
+    {
+      "date": "1536-11-13",
+      "type": "société",
+      "title": "L’Empire ottoman accueille les Morisques",
+      "summary": "Le sultanat accepte des réfugiés morisques issus du monde ibérique, inscrivant l’Empire dans les déplacements de population provoqués par les conversions et persécutions religieuses.",
+      "facts": [
+        [
+          "Population accueillie",
+          "Morisques"
+        ],
+        [
+          "Origine",
+          "Péninsule Ibérique"
+        ],
+        [
+          "Portée",
+          "Accueil de populations musulmanes déplacées vers les territoires ottomans"
+        ]
+      ]
     }
   ],
   "MOS": [
