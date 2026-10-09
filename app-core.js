@@ -2,7 +2,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 import { CONFIG, BACKEND_CONFIGURED } from "./config.js";
 
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
-let supabase=null,session=null,currentCategory="games",currentSort="popular",currentStatus="all",libraryFilter="playing",librarySearch="",libraryMobileExpanded=false,currentSuggestionFeed=[],libraryGames=[];
+let supabase=null,session=null,currentCategory="games",currentFeedCategory="all",currentSort="popular",currentStatus="all",libraryFilter="playing",librarySearch="",libraryMobileExpanded=false,currentSuggestionFeed=[],libraryGames=[];
 
 const categoryCopy={
   games:["Jeux de semaine","Proposez un jeu à faire en stream.","Cette catégorie concerne les streams du lundi et du mercredi."],
@@ -13,8 +13,8 @@ const categoryCopy={
   other:["Autre","Une idée qui ne rentre nulle part ailleurs ?","Utilisez cette catégorie pour les propositions plus difficiles à classer."]
 };
 const statusLabels={new:"Nouvelle",considering:"En réflexion",planned:"Prévue",completed:"Terminée",rejected:"Refusée",archived:"Archivée"};
-const libraryLabels={playing:"En cours",completed:"Terminé",wishlist:"À venir"};
-const normalizeLibraryStatus=status=>status==="playing"?"playing":status==="completed"?"completed":"wishlist";
+const libraryLabels={playing:"En cours",completed:"Terminé"};
+const normalizeLibraryStatus=status=>status==="playing"?"playing":status==="completed"?"completed":null;
 const repIcons={"Traître":"☠️","Inconnu":"👤","Habitué":"🏠","Conseiller":"🗣️","Confident":"⚜️","Favori":"👑"};
 
 function esc(v=""){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
@@ -84,18 +84,17 @@ async function syncAuth(){
 async function loadLive(){if(!$("#live-card"))return;try{const{data,error}=await supabase.functions.invoke("live-status");if(error)throw error;const card=$("#live-card");if(data?.is_live){card.classList.add("is-live");$("#live-label").textContent="EN DIRECT";$("#live-detail").textContent=`${data.game_name||"Twitch"} — ${data.title||"Live en cours"}`}else{$("#live-label").textContent="Hors ligne";$("#live-detail").textContent="Retrouve les prochains lives sur Twitch."}}catch{$("#live-label").textContent="Twitch";$("#live-detail").textContent="Voir la chaîne"}}
 async function loadLibrary(){
   if(!supabase)return;
-  const{data,error}=await supabase.from("library_games").select("*").order("updated_at",{ascending:false});
+  const{data,error}=await supabase.from("library_games").select("*").in("status",["playing","completed"]).order("updated_at",{ascending:false});
   if(error)return;
   libraryGames=data||[];
   $("#library-total").textContent=libraryGames.length;
   $("#library-completed").textContent=libraryGames.filter(g=>g.status==="completed").length;
   $("#library-playing").textContent=libraryGames.filter(g=>g.status==="playing").length;
-  $("#library-wishlist").textContent=libraryGames.filter(g=>normalizeLibraryStatus(g.status)==="wishlist").length;
   renderLibraryGrid();
 }
 function libraryFilteredGames(){
   const q=norm(librarySearch);
-  return libraryGames.filter(g=>(libraryFilter==="all"||normalizeLibraryStatus(g.status)===libraryFilter)&&(!q||norm(`${g.name||""} ${g.developer||""} ${g.rating??""}`).includes(q)));
+  return libraryGames.filter(g=>(libraryFilter==="all"||g.status===libraryFilter)&&(!q||norm(`${g.name||""} ${g.developer||""} ${g.rating??""}`).includes(q)));
 }
 function renderLibraryGrid(){
   let list=libraryFilteredGames(),grid=$("#library-grid"),more=$("#library-mobile-more");
@@ -110,7 +109,7 @@ function renderLibraryGrid(){
     const short=publicSummary(g.summary,190);
     const summary=short?`<p class="game-summary">${esc(short)}</p>`:`<p class="game-summary game-summary-muted">Résumé à venir.</p>`;
     const normalizedStatus=normalizeLibraryStatus(g.status);
-    return `<article class="game-card" data-public-game="${g.id}" tabindex="0" role="button" aria-label="Ouvrir la fiche de ${esc(g.name)}"><div class="game-cover-wrap"><img class="game-cover" src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}" loading="lazy">${rating}</div><div class="game-content"><h3>${esc(g.name)}</h3><div class="game-card-line"><p class="game-developer">${esc(g.developer||"Studio non renseigné")}</p><strong class="game-score-inline">${esc(ratingText)}</strong></div>${g.release_date?`<p class="game-release">${new Intl.DateTimeFormat("fr-FR",{year:"numeric"}).format(new Date(g.release_date))}</p>`:""}${summary}<div class="game-meta"><span class="tag">${esc(libraryLabels[normalizedStatus])}</span>${g.streamed?`<span class="tag tag-streamed">🎥 Streamé</span>`:""}</div></div></article>`
+    return `<article class="game-card" data-public-game="${g.id}" tabindex="0" role="button" aria-label="Ouvrir la fiche de ${esc(g.name)}"><div class="game-cover-wrap"><img class="game-cover" src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}" loading="lazy">${rating}</div><div class="game-content"><h3>${esc(g.name)}</h3><div class="game-card-line"><p class="game-developer">${esc(g.developer||"Studio non renseigné")}</p><strong class="game-score-inline">${esc(ratingText)}</strong></div>${g.release_date?`<p class="game-release">${new Intl.DateTimeFormat("fr-FR",{year:"numeric"}).format(new Date(g.release_date))}</p>`:""}${summary}<div class="game-meta"><span class="tag">${esc(libraryLabels[normalizedStatus])}</span><span class="tag ${g.streamed?"tag-streamed":"tag-offstream"}">${g.streamed?"En stream":"Hors stream"}</span></div></div></article>`
   }).join("");
   $$('[data-public-game]').forEach(card=>{card.onclick=()=>openLibraryDetail(card.dataset.publicGame);card.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openLibraryDetail(card.dataset.publicGame)}}});
 }
@@ -122,9 +121,9 @@ function openLibraryDetail(id){
   $("#library-detail-rating").textContent=g.rating!=null?`${Number(g.rating).toLocaleString("fr-FR",{maximumFractionDigits:1})} / 10` : "Non noté";
   $("#library-detail-developer").textContent=g.developer||"Studio de développement non renseigné";
   $("#library-detail-release").textContent=g.release_date?`Sortie : ${new Intl.DateTimeFormat("fr-FR",{day:"2-digit",month:"long",year:"numeric"}).format(new Date(g.release_date))}`:"Date de sortie inconnue";
-  $("#library-detail-status").textContent=libraryLabels[normalizeLibraryStatus(g.status)];
+  $("#library-detail-status").textContent=libraryLabels[g.status]||"—";
   $("#library-detail-playtime").textContent=g.playtime_hours!=null?`${new Intl.NumberFormat("fr-FR",{maximumFractionDigits:1}).format(Number(g.playtime_hours))} h`:"Non renseigné";
-  $("#library-detail-streamed").textContent=g.streamed?"Oui":"Non";
+  $("#library-detail-streamed").textContent=g.streamed?"En stream":"Hors stream";
   $("#library-detail-summary").textContent=publicSummary(g.summary,520)||"Aucun résumé public n’a encore été rédigé pour ce jeu.";
   $("#library-detail-note").textContent=g.personal_note||"Aucun commentaire personnel pour ce jeu pour le moment.";
   panel.classList.remove("hidden");document.body.classList.add("modal-open");$(".library-modal-card")?.focus?.();
@@ -135,13 +134,16 @@ function renderSuggestion(s,pinned=false){
   return `<article class="suggestion-card ${pinned?"pinned":""}" id="suggestion-${s.id}" data-suggestion-card="${s.id}">${pinned?`<span class="pinned-label">📌 Suggestion à la une</span>`:""}<div class="suggestion-head"><div class="suggestion-author">${s.author_avatar?`<img src="${esc(s.author_avatar)}" alt="">`:""}<span>${esc(s.author_name||"Utilisateur Twitch")} · ${fmtDate(s.created_at)}</span>${rep}</div><span class="status status-${esc(s.status)}">${esc(statusLabels[s.status]||s.status)}</span></div><h3>${esc(s.title)}</h3><p>${esc(s.body)}</p>${s.official_reply?`<div class="official-reply"><strong>Réponse de Halaryk</strong><p>${esc(s.official_reply)}</p></div>`:""}<div class="suggestion-footer"><button class="vote-button ${s.has_voted?"voted":""}" data-vote="${s.id}" type="button">👍 <strong>${s.vote_count||0}</strong></button><span class="tag">${esc(categoryCopy[s.category]?.[0]||s.category)}</span><button class="share-link-button" data-share-suggestion="${s.id}" type="button" aria-label="Copier le lien de cette proposition">Lien ↗</button></div></article>`
 }
 async function loadSuggestions(){
-  if(!supabase)return;const{data,error}=await supabase.rpc("get_suggestion_feed",{p_category:currentCategory,p_sort:currentSort==="recent"?"recent":"popular"});
+  if(!supabase)return;const{data,error}=await supabase.rpc("get_suggestion_feed",{p_category:null,p_sort:currentSort==="recent"?"recent":"popular"});
   if(error){$("#suggestions-feed").innerHTML=`<div class="empty-state"><strong>Impossible de charger les suggestions</strong><p>${esc(error.message)}</p></div>`;return}
-  currentSuggestionFeed=data||[];renderSimilar();let list=currentSuggestionFeed;if(currentSort==="mine")list=session?.user?list.filter(s=>s.author_id===session.user.id):[];if(currentStatus!=="all")list=list.filter(s=>s.status===currentStatus);
-  $("#pinned-suggestion").innerHTML=list.filter(s=>s.pinned).map(s=>renderSuggestion(s,true)).join("");const normal=list.filter(s=>!s.pinned);$("#suggestions-feed").innerHTML=normal.length?normal.map(s=>renderSuggestion(s)).join(""):`<div class="empty-state"><strong>Aucune suggestion ici pour le moment</strong><p>La première pourrait être la tienne.</p></div>`;$$('[data-vote]').forEach(b=>b.onclick=()=>toggleVote(b.dataset.vote));$$('[data-share-suggestion]').forEach(b=>b.onclick=()=>copyCabinetLink('proposition',b.dataset.shareSuggestion));applyPendingCabinetHighlight();
+  currentSuggestionFeed=data||[];renderSimilar();let list=currentSuggestionFeed;
+  if(currentFeedCategory!=="all")list=list.filter(s=>s.category===currentFeedCategory);
+  if(currentSort==="mine")list=session?.user?list.filter(s=>s.author_id===session.user.id):[];
+  if(currentStatus!=="all")list=list.filter(s=>s.status===currentStatus);
+  $("#pinned-suggestion").innerHTML=list.filter(s=>s.pinned).map(s=>renderSuggestion(s,true)).join("");const normal=list.filter(s=>!s.pinned);$("#suggestions-feed").innerHTML=normal.length?normal.map(s=>renderSuggestion(s)).join(""):`<div class="empty-state"><strong>Aucune suggestion ici pour le moment</strong><p>La première pourrait être la tienne.</p></div>`;$('[data-vote]').forEach(b=>b.onclick=()=>toggleVote(b.dataset.vote));$('[data-share-suggestion]').forEach(b=>b.onclick=()=>copyCabinetLink('proposition',b.dataset.shareSuggestion));applyPendingCabinetHighlight();
 }
 async function toggleVote(id){if(!session?.user)return signIn();const{error}=await supabase.rpc("toggle_suggestion_vote",{p_suggestion_id:id});if(error)toast(error.message);else await loadSuggestions()}
-async function submitSuggestion(e){e.preventDefault();if(!session?.user)return signIn();const title=$("#suggestion-title").value.trim(),body=$("#suggestion-body").value.trim();if(!title||!body)return;const{error}=await supabase.from("suggestions").insert({author_id:session.user.id,category:currentCategory,title,body});if(error)return toast(error.message);$("#suggestion-form").reset();toast("Suggestion envoyée.");await loadSuggestions()}
+async function submitSuggestion(e){e.preventDefault();if(!session?.user)return signIn();const title=$("#suggestion-title").value.trim(),body=$("#suggestion-body").value.trim(),category=$("#suggestion-category")?.value||"other";if(!title||!body)return;const{error}=await supabase.from("suggestions").insert({author_id:session.user.id,category,title,body});if(error)return toast(error.message);$("#suggestion-form").reset();currentCategory="games";toast("Suggestion envoyée.");await loadSuggestions()}
 function renderSimilar(){
   const box=$("#similar-suggestions"),title=$("#suggestion-title")?.value.trim()||"";if(title.length<4||!currentSuggestionFeed.length){box.classList.add("hidden");box.innerHTML="";return}
   const sims=currentSuggestionFeed.map(s=>({...s,score:similarity(title,s.title)})).filter(s=>s.score>=.34).sort((a,b)=>b.score-a.score).slice(0,3);if(!sims.length){box.classList.add("hidden");box.innerHTML="";return}
@@ -174,7 +176,7 @@ async function applyCabinetRoute(){
   const [,section,id]=h.split("/");$("#suggestions")?.scrollIntoView({behavior:"smooth",block:"start"});
   if(section==="sondages"||section==="sondage"){setCabinetTab("polls",{updateHash:false});if(id){pendingCabinetTarget={selector:`#poll-${CSS.escape(id)}`};await loadPolls();applyPendingCabinetHighlight()}return}
   setCabinetTab("ideas",{updateHash:false});
-  if(section==="proposition"&&id&&supabase){const{data}=await supabase.from("suggestions").select("category").eq("id",id).maybeSingle();if(data?.category&&categoryCopy[data.category]){currentCategory=data.category;$$('.category-card').forEach(x=>x.classList.toggle('active',x.dataset.category===currentCategory));const c=categoryCopy[currentCategory];$("#category-label").textContent=c[0];$("#category-title").textContent=c[1];$("#category-description").textContent=c[2]}pendingCabinetTarget={selector:`#suggestion-${CSS.escape(id)}`};await loadSuggestions();applyPendingCabinetHighlight()}
+  if(section==="proposition"&&id&&supabase){pendingCabinetTarget={selector:`#suggestion-${CSS.escape(id)}`};currentFeedCategory="all";if($("#category-filter"))$("#category-filter").value="all";await loadSuggestions();applyPendingCabinetHighlight()}
 }
 function renderLeaderboard(rows,traitors=false){
   if(!rows?.length)return `<div class="leaderboard-empty">${traitors?"Aucun traître enregistré pour le moment.":"Le classement apparaîtra après les premières synchronisations."}</div>`;
@@ -208,9 +210,10 @@ function initInteractions(){
   $$(".library-filters button").forEach(b=>b.onclick=()=>{$$(".library-filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");libraryFilter=b.dataset.libraryFilter;libraryMobileExpanded=false;renderLibraryGrid()});
   $("#library-search")?.addEventListener("input",e=>{librarySearch=e.target.value;libraryMobileExpanded=false;renderLibraryGrid()});
   $("#library-mobile-more")?.addEventListener("click",()=>{libraryMobileExpanded=true;renderLibraryGrid()});
-  $$(".category-card").forEach(b=>b.onclick=async()=>{$$(".category-card").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentCategory=b.dataset.category;const c=categoryCopy[currentCategory];if($("#category-label"))$("#category-label").textContent=c[0];if($("#category-title"))$("#category-title").textContent=c[1];if($("#category-description"))$("#category-description").textContent=c[2];await loadSuggestions()});
-  $$(".suggestion-tabs button").forEach(b=>b.onclick=()=>setCabinetTab(b.dataset.suggestionTab));
-  $$('[data-sort]').forEach(b=>b.onclick=async()=>{$$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
+  $("#suggestion-category")?.addEventListener("change",e=>{currentCategory=e.target.value;renderSimilar()});
+  $(".suggestion-tabs button").forEach(b=>b.onclick=()=>setCabinetTab(b.dataset.suggestionTab));
+  $('[data-sort]').forEach(b=>b.onclick=async()=>{$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
+  $("#category-filter")?.addEventListener("change",async e=>{currentFeedCategory=e.target.value;await loadSuggestions()});
   $("#status-filter")?.addEventListener("change",async e=>{currentStatus=e.target.value;await loadSuggestions()});$("#suggestion-title")?.addEventListener("input",renderSimilar);if($("#suggestion-form"))$("#suggestion-form").onsubmit=submitSuggestion;
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#library-detail")?.classList.contains("hidden"))closeLibraryDetail()});
   window.addEventListener("hashchange",()=>applyCabinetRoute());window.addEventListener("resize",()=>{if(!$("#library-grid"))return;if(matchMedia("(min-width:761px)").matches)libraryMobileExpanded=false;renderLibraryGrid()});
