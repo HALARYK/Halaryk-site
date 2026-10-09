@@ -3362,5 +3362,149 @@ export const WAR_EVENT_DATA={
     "battles": 0,
     "winner": "Guerre toujours en cours au 1er janvier 1537",
     "peace": "Aucune paix : le conflit est toujours actif dans la sauvegarde du 1er janvier 1537."
+  },
+  "MOS|1508-01-08": {
+    "mode": "end",
+    "war": "Conquête moscovite de Kazan",
+    "start": "1506-05-18",
+    "end": "1508-01-08",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Kazan",
+    "attackers": [
+      "Moscovie",
+      "Tchernigov",
+      "Astrakhan",
+      "Autres alliés moscovites"
+    ],
+    "defenders": [
+      "Kazan",
+      "Bachkirie",
+      "Chagataï"
+    ],
+    "lossesAttackers": 27563,
+    "lossesDefenders": 7562,
+    "losses": {
+      "Moscovie": 26754,
+      "Tchernigov": 48,
+      "Astrakhan": 616,
+      "Autres alliés moscovites": 145,
+      "Kazan": 436,
+      "Bachkirie": 7000,
+      "Chagataï": 126
+    },
+    "battles": 1,
+    "winner": "Camp moscovite",
+    "peace": "Kazan et Cheboksary passent sous contrôle moscovite."
+  },
+  "MOS|1510-07-30": {
+    "mode": "end",
+    "war": "Reconquête moscovite de Chimgi-Tura",
+    "start": "1509-08-27",
+    "end": "1510-07-30",
+    "casusBelli": "Reconquête",
+    "warGoal": "Chimgi-Tura",
+    "attackers": [
+      "Moscovie",
+      "Kiev",
+      "Tchernigov",
+      "Astrakhan",
+      "Sibir",
+      "Chagataï",
+      "Autres alliés moscovites"
+    ],
+    "defenders": [
+      "Camp adverse de la steppe"
+    ],
+    "lossesAttackers": 17453,
+    "lossesDefenders": 250,
+    "losses": {
+      "Moscovie": 13936,
+      "Kiev": 0,
+      "Tchernigov": 200,
+      "Astrakhan": 944,
+      "Sibir": 820,
+      "Chagataï": 1013,
+      "Autres alliés moscovites": 540,
+      "Camp adverse de la steppe": 250
+    },
+    "battles": 0,
+    "winner": "Camp moscovite",
+    "peace": "La reconquête se termine victorieusement et renforce la progression moscovite vers la Sibérie occidentale."
+  },
+  "MOS|1515-07-07": {
+    "mode": "end",
+    "war": "Reconquête moscovite de Baganaly",
+    "start": "1511-03-04",
+    "end": "1515-07-07",
+    "casusBelli": "Reconquête",
+    "warGoal": "Baganaly",
+    "attackers": [
+      "Moscovie",
+      "Kiev",
+      "Tchernigov",
+      "Astrakhan",
+      "Sibir",
+      "Kazakh",
+      "Chagataï",
+      "Autres alliés moscovites"
+    ],
+    "defenders": [
+      "Transoxiane",
+      "Ormuz",
+      "Fars"
+    ],
+    "lossesAttackers": 153679,
+    "lossesDefenders": 74185,
+    "losses": {
+      "Moscovie": 103975,
+      "Kiev": 3285,
+      "Tchernigov": 2270,
+      "Astrakhan": 12063,
+      "Sibir": 7819,
+      "Kazakh": 2888,
+      "Chagataï": 21319,
+      "Autres alliés moscovites": 60,
+      "Transoxiane": 42828,
+      "Ormuz": 25141,
+      "Fars": 6216
+    },
+    "battles": 16,
+    "winner": "Camp moscovite",
+    "peace": "La reconquête de Baganaly s’achève par une victoire de la Moscovie et de ses alliés."
+  },
+  "MOS|1515-12-21": {
+    "mode": "end",
+    "war": "Reconquête moscovite de Shekty",
+    "start": "1515-09-03",
+    "end": "1515-12-21",
+    "casusBelli": "Reconquête",
+    "warGoal": "Shekty",
+    "attackers": [
+      "Moscovie",
+      "Kiev",
+      "Tchernigov",
+      "Astrakhan",
+      "Sibir",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "Nogaïs"
+    ],
+    "lossesAttackers": 3979,
+    "lossesDefenders": 9000,
+    "losses": {
+      "Moscovie": 3528,
+      "Kiev": 0,
+      "Tchernigov": 50,
+      "Astrakhan": 384,
+      "Sibir": 17,
+      "Kazakh": 0,
+      "Chagataï": 0,
+      "Nogaïs": 9000
+    },
+    "battles": 1,
+    "winner": "Camp moscovite",
+    "peace": "La reconquête se termine par une victoire rapide de la Moscovie dans la steppe."
   }
 };
