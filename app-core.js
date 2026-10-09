@@ -140,7 +140,7 @@ async function loadSuggestions(){
   if(currentFeedCategory!=="all")list=list.filter(s=>s.category===currentFeedCategory);
   if(currentSort==="mine")list=session?.user?list.filter(s=>s.author_id===session.user.id):[];
   if(currentStatus!=="all")list=list.filter(s=>s.status===currentStatus);
-  $("#pinned-suggestion").innerHTML=list.filter(s=>s.pinned).map(s=>renderSuggestion(s,true)).join("");const normal=list.filter(s=>!s.pinned);$("#suggestions-feed").innerHTML=normal.length?normal.map(s=>renderSuggestion(s)).join(""):`<div class="empty-state"><strong>Aucune suggestion ici pour le moment</strong><p>La première pourrait être la tienne.</p></div>`;$('[data-vote]').forEach(b=>b.onclick=()=>toggleVote(b.dataset.vote));$('[data-share-suggestion]').forEach(b=>b.onclick=()=>copyCabinetLink('proposition',b.dataset.shareSuggestion));applyPendingCabinetHighlight();
+  $("#pinned-suggestion").innerHTML=list.filter(s=>s.pinned).map(s=>renderSuggestion(s,true)).join("");const normal=list.filter(s=>!s.pinned);$("#suggestions-feed").innerHTML=normal.length?normal.map(s=>renderSuggestion(s)).join(""):`<div class="empty-state"><strong>Aucune suggestion ici pour le moment</strong><p>La première pourrait être la tienne.</p></div>`;$$('[data-vote]').forEach(b=>b.onclick=()=>toggleVote(b.dataset.vote));$$('[data-share-suggestion]').forEach(b=>b.onclick=()=>copyCabinetLink('proposition',b.dataset.shareSuggestion));applyPendingCabinetHighlight();
 }
 async function toggleVote(id){if(!session?.user)return signIn();const{error}=await supabase.rpc("toggle_suggestion_vote",{p_suggestion_id:id});if(error)toast(error.message);else await loadSuggestions()}
 async function submitSuggestion(e){e.preventDefault();if(!session?.user)return signIn();const title=$("#suggestion-title").value.trim(),body=$("#suggestion-body").value.trim(),category=$("#suggestion-category")?.value||"other";if(!title||!body)return;const{error}=await supabase.from("suggestions").insert({author_id:session.user.id,category,title,body});if(error)return toast(error.message);$("#suggestion-form").reset();currentCategory="games";toast("Suggestion envoyée.");await loadSuggestions()}
@@ -162,7 +162,7 @@ function cabinetHash(type,id=""){return `#cabinet/${type}${id?`/${id}`:""}`}
 async function copyText(text){try{await navigator.clipboard.writeText(text);toast("Lien copié.")}catch{const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();toast("Lien copié.")}}
 function copyCabinetLink(type,id){copyText(`${location.origin}${location.pathname}${cabinetHash(type,id)}`)}
 function setCabinetTab(tab,{updateHash=true}={}){
-  $$(".suggestion-tabs button").forEach(x=>x.classList.toggle("active",x.dataset.suggestionTab===tab));
+  $$$(".suggestion-tabs button").forEach(x=>x.classList.toggle("active",x.dataset.suggestionTab===tab));
   const ideas=tab==="ideas";$("#ideas-panel").classList.toggle("hidden",!ideas);$("#polls-panel").classList.toggle("hidden",ideas);
   if(updateHash)history.replaceState(null,"",cabinetHash(ideas?"propositions":"sondages"));
 }
@@ -211,8 +211,8 @@ function initInteractions(){
   $("#library-search")?.addEventListener("input",e=>{librarySearch=e.target.value;libraryMobileExpanded=false;renderLibraryGrid()});
   $("#library-mobile-more")?.addEventListener("click",()=>{libraryMobileExpanded=true;renderLibraryGrid()});
   $("#suggestion-category")?.addEventListener("change",e=>{currentCategory=e.target.value;renderSimilar()});
-  $(".suggestion-tabs button").forEach(b=>b.onclick=()=>setCabinetTab(b.dataset.suggestionTab));
-  $('[data-sort]').forEach(b=>b.onclick=async()=>{$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
+  $$(".suggestion-tabs button").forEach(b=>b.onclick=()=>setCabinetTab(b.dataset.suggestionTab));
+  $$('[data-sort]').forEach(b=>b.onclick=async()=>{$$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
   $("#category-filter")?.addEventListener("change",async e=>{currentFeedCategory=e.target.value;await loadSuggestions()});
   $("#status-filter")?.addEventListener("change",async e=>{currentStatus=e.target.value;await loadSuggestions()});$("#suggestion-title")?.addEventListener("input",renderSimilar);if($("#suggestion-form"))$("#suggestion-form").onsubmit=submitSuggestion;
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#library-detail")?.classList.contains("hidden"))closeLibraryDetail()});
