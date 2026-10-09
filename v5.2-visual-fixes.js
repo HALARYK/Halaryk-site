@@ -4,7 +4,7 @@ const FLAG_URLS={
   Florence:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Florence.svg",
   Prusse:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",
   Autriche:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Austria.svg",
-  "Empire ottoman":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ottoman_flag_c.1490-1701.png",
+  "Empire ottoman":new URL("assets/nations/nation-ottomans.svg",import.meta.url).href,
   Russie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg",
   Castille:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",
   Angleterre:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",
