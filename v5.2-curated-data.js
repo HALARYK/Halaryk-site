@@ -2149,6 +2149,362 @@ export const CURATED_EVENTS={
           "Empire ottoman"
         ]
       ]
+    },
+    {
+      "date": "1507-01-29",
+      "type": "dynastie",
+      "title": "Paolina de’ Medici prend le pouvoir à Florence",
+      "summary": "Paolina de’ Medici succède à Rodolfo de’ Medici et prend la tête de Florence.",
+      "facts": [
+        [
+          "Prédécesseur",
+          "Rodolfo de’ Medici"
+        ],
+        [
+          "Nouvelle dirigeante",
+          "Paolina de’ Medici"
+        ],
+        [
+          "Compétences",
+          "ADM 5 · DIP 4 · MIL 2"
+        ],
+        [
+          "Naissance",
+          "18 juin 1467"
+        ],
+        [
+          "Trait",
+          "Détournement de fonds"
+        ]
+      ]
+    },
+    {
+      "date": "1512-07-31",
+      "type": "guerre",
+      "title": "Début de la conquête florentine de Brescia",
+      "summary": "Florence ouvre une nouvelle guerre d’expansion en Italie du Nord afin de s’emparer de Brescia.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Brescia"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Brescia"
+        ],
+        [
+          "Camp attaquant",
+          "Florence · Parme"
+        ],
+        [
+          "Camp défenseur",
+          "Milan · Mantoue · États pontificaux · Bregenz · Saluzzo"
+        ]
+      ]
+    },
+    {
+      "date": "1513-03-22",
+      "type": "bataille",
+      "title": "Bataille de Ferrare",
+      "summary": "Alessandro Vasari remporte une victoire écrasante sur l’armée pontificale à Ferrare, qui est entièrement détruite au cours de la bataille.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête florentine de Brescia"
+        ],
+        [
+          "Lieu",
+          "Ferrare"
+        ],
+        [
+          "Attaquant",
+          "Florence — Alessandro Vasari — 39 000 infanterie · 6 000 cavalerie · 7 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "États pontificaux — Ippolito Flangini — 12 737 infanterie · 11 786 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 4 847 · États pontificaux : 29 523"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1514-10-16",
+      "type": "guerre",
+      "title": "Victoire florentine dans la guerre de Brescia",
+      "summary": "Florence remporte la guerre après neuf batailles et annexe Brescia, Bergame et Côme.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Brescia"
+        ],
+        [
+          "Issue",
+          "Victoire du camp florentin"
+        ],
+        [
+          "Batailles enregistrées",
+          "9"
+        ],
+        [
+          "Pertes du camp florentin",
+          "36 552 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "48 957 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Brescia · Bergame · Côme"
+        ]
+      ]
+    },
+    {
+      "date": "1524-05-07",
+      "type": "politique",
+      "title": "Florence abandonne la république et devient une monarchie",
+      "summary": "Le régime florentin bascule officiellement de la république vers une monarchie, renforçant la personnalisation du pouvoir médicéen.",
+      "facts": [
+        [
+          "Ancien régime",
+          "République"
+        ],
+        [
+          "Nouveau régime",
+          "Monarchie"
+        ],
+        [
+          "Dynastie dominante",
+          "de’ Medici"
+        ],
+        [
+          "Portée",
+          "Rupture institutionnelle majeure dans l’histoire de Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1527-08-06",
+      "type": "guerre",
+      "title": "Début de la conquête florentine de Milan",
+      "summary": "Florence attaque le duché de Milan et ouvre une nouvelle campagne pour étendre sa domination sur la Lombardie.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Milan"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Milan"
+        ],
+        [
+          "Camp attaquant",
+          "Florence"
+        ],
+        [
+          "Camp défenseur",
+          "Milan · Mantoue · États pontificaux · Saluzzo"
+        ]
+      ]
+    },
+    {
+      "date": "1527-09-08",
+      "type": "bataille",
+      "title": "Bataille de Côme",
+      "summary": "Leopoldo Ludovisi anéantit l’armée milanaise à Côme et donne à Florence une victoire décisive au début de la guerre.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête florentine de Milan"
+        ],
+        [
+          "Lieu",
+          "Côme"
+        ],
+        [
+          "Attaquant",
+          "Florence — Leopoldo Ludovisi — 22 735 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Milan — Paolo Lamberti — 8 310 infanterie · 6 000 cavalerie · 1 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 2 086 · Milan : 15 310"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1528-10-23",
+      "type": "guerre",
+      "title": "Victoire florentine dans la guerre de Milan",
+      "summary": "Florence remporte la guerre et annexe Milan et Novare, franchissant un nouveau seuil dans son expansion en Italie du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Milan"
+        ],
+        [
+          "Issue",
+          "Victoire florentine"
+        ],
+        [
+          "Batailles enregistrées",
+          "4"
+        ],
+        [
+          "Pertes de Florence",
+          "16 636 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "27 440 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Milan · Novare"
+        ]
+      ]
+    },
+    {
+      "date": "1531-07-12",
+      "type": "guerre",
+      "title": "Florence rejoint la reconquête suisse de Zurich",
+      "summary": "Florence entre aux côtés de la Suisse dans une guerre visant à reprendre Zurich face à une coalition de princes alpins et impériaux.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête suisse de Zurich"
+        ],
+        [
+          "Casus belli",
+          "Reconquête"
+        ],
+        [
+          "Objectif",
+          "Zurich"
+        ],
+        [
+          "Camp attaquant",
+          "Suisse · Florence"
+        ],
+        [
+          "Camp défenseur",
+          "Trois Ligues · Augsbourg · Bade · Savoie"
+        ]
+      ]
+    },
+    {
+      "date": "1533-06-08",
+      "type": "guerre",
+      "title": "Victoire dans la reconquête suisse de Zurich",
+      "summary": "Après près de deux ans de guerre, le camp suisse et florentin l’emporte et Zurich retourne sous contrôle suisse.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête suisse de Zurich"
+        ],
+        [
+          "Issue",
+          "Victoire du camp suisse et florentin"
+        ],
+        [
+          "Batailles enregistrées",
+          "10"
+        ],
+        [
+          "Pertes du camp suisse et florentin",
+          "31 888 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "48 428 pertes humaines"
+        ],
+        [
+          "Résultat principal",
+          "Zurich retourne sous contrôle suisse"
+        ]
+      ]
+    },
+    {
+      "date": "1534-04-28",
+      "type": "guerre",
+      "title": "Début de la conquête florentine de Mantoue",
+      "summary": "Florence tente de poursuivre son expansion en Italie du Nord en attaquant Mantoue.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Mantoue"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Mantoue"
+        ],
+        [
+          "Camp attaquant",
+          "Florence"
+        ],
+        [
+          "Camp défenseur",
+          "Mantoue · Milan · Constance · Saluzzo"
+        ]
+      ]
+    },
+    {
+      "date": "1534-08-13",
+      "type": "guerre",
+      "title": "Échec de la conquête florentine de Mantoue",
+      "summary": "Malgré deux victoires sur le champ de bataille, Florence perd la guerre et ne parvient pas à s’emparer de Mantoue.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Mantoue"
+        ],
+        [
+          "Issue",
+          "Victoire du camp défenseur"
+        ],
+        [
+          "Batailles enregistrées",
+          "2"
+        ],
+        [
+          "Pertes de Florence",
+          "4 301 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "14 718 pertes humaines"
+        ],
+        [
+          "Résultat",
+          "Aucun gain territorial florentin"
+        ]
+      ]
     }
   ],
   "BRA": [
