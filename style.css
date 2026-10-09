@@ -688,3 +688,22 @@ main > section{
 #polls-panel .poll-result{white-space:nowrap}
 #polls-panel .poll-actions{gap:14px;flex-wrap:wrap}
 @media(max-width:600px){#polls-panel .poll-card{padding:17px}#polls-panel .poll-title-row{display:flex;flex-direction:column;align-items:stretch;gap:10px}#polls-panel .poll-title-row .share-link-button{align-self:flex-start;margin:0}#polls-panel .poll-actions .button{width:100%}}
+
+
+/* Cabinet des idées : une colonne cohérente pour formulaire, épinglés et filtres. */
+#ideas-panel{max-width:900px;margin-inline:auto;min-width:0}
+#ideas-panel .suggestion-form-direct,#ideas-panel .suggestion-note-compact{max-width:none;width:100%}
+#ideas-panel #pinned-suggestion,#ideas-panel #suggestions-feed{width:100%;min-width:0}
+#ideas-panel #pinned-suggestion:empty{display:none}
+#ideas-panel .suggestion-card{width:100%;min-width:0;box-sizing:border-box}
+#ideas-panel .suggestion-feed-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:22px 0 16px}
+#ideas-panel .suggestion-feed-controls .segmented-control{display:flex;flex-wrap:wrap;gap:6px}
+#ideas-panel .suggestion-feed-controls #category-filter{width:min(260px,100%);min-width:0;margin-left:auto}
+@media(max-width:760px){
+  #ideas-panel .suggestion-feed-controls{align-items:stretch;flex-direction:column}
+  #ideas-panel .suggestion-feed-controls #category-filter{width:100%;margin-left:0}
+  #ideas-panel .suggestion-feed-controls .segmented-control{width:100%}
+  #ideas-panel .suggestion-feed-controls .segmented-control button{flex:1}
+  #ideas-panel .suggestion-card{padding:18px}
+  #ideas-panel .suggestion-footer{flex-wrap:wrap}
+}
