@@ -672,3 +672,19 @@ main > section{
   .page-intro{padding-left:12px;padding-right:12px}.featured-event-copy{padding:26px 18px}.featured-event-actions{display:grid}.featured-event-actions .button{width:100%}.featured-event-facts{grid-template-columns:1fr 1fr}.event-hero{padding-left:12px;padding-right:12px}.event-hero-facts{grid-template-columns:1fr 1fr}.event-hero-facts div{padding:14px}.event-hero-facts strong{font-size:25px}.event-confidentiality{font-size:9px}.event-nation-card{padding:16px}.event-nation-head h3{font-size:28px}.event-nation-stats div{min-height:78px;padding:10px}.event-nation-stats strong{font-size:20px}.event-chapter{margin-left:28px;padding:16px}.event-chapter-marker{left:-25px}.event-timeline::before{left:7px}.event-entry-card{padding:16px}
 }
 .event-media-link{display:flex;min-height:240px;flex-direction:column;justify-content:space-between;text-decoration:none}.event-media-link-mark{display:grid;place-items:center;flex:1;min-height:150px;background:linear-gradient(145deg,rgba(118,25,25,.14),rgba(7,6,6,.86));color:var(--gold-light);font:500 48px/1 var(--serif)}.event-media-link figcaption small{display:block;margin-top:8px;color:var(--gold-light);font-size:8px;text-transform:uppercase;letter-spacing:.1em}
+
+
+/* Cabinet des idées — préserver la présentation distincte des sondages. */
+#polls-panel .cabinet-panel-intro{max-width:800px;margin-bottom:24px}
+#polls-panel .polls-feed{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+#polls-panel .poll-card{min-width:0;padding:26px;border:1px solid rgba(183,147,100,.23);background:linear-gradient(145deg,rgba(105,24,24,.055),#0e0b0b);box-shadow:var(--shadow)}
+#polls-panel .poll-title-row h3{font:600 clamp(24px,3vw,32px)/1.1 var(--serif);overflow-wrap:anywhere}
+#polls-panel .poll-card>p{line-height:1.6}
+#polls-panel .poll-option{transition:border-color .18s ease,background .18s ease}
+#polls-panel .poll-option:hover,#polls-panel .poll-option:focus-within{border-color:rgba(183,147,100,.48);background:#151010}
+#polls-panel .poll-option:has(input:checked){border-color:rgba(183,147,100,.75);background:#1b1111}
+#polls-panel .poll-option label{min-height:46px;color:var(--text);font-size:13px;line-height:1.45}
+#polls-panel .poll-option input{flex:none;accent-color:#bd8e69}
+#polls-panel .poll-result{white-space:nowrap}
+#polls-panel .poll-actions{gap:14px;flex-wrap:wrap}
+@media(max-width:600px){#polls-panel .poll-card{padding:17px}#polls-panel .poll-title-row{display:flex;flex-direction:column;align-items:stretch;gap:10px}#polls-panel .poll-title-row .share-link-button{align-self:flex-start;margin:0}#polls-panel .poll-actions .button{width:100%}}
