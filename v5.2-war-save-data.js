@@ -3506,5 +3506,177 @@ export const WAR_EVENT_DATA={
     "battles": 1,
     "winner": "Camp moscovite",
     "peace": "La reconquête se termine par une victoire rapide de la Moscovie dans la steppe."
+  },
+  "MOS|1518-08-15": {
+    "mode": "start",
+    "war": "Conquête russe de Birkaland",
+    "start": "1518-08-15",
+    "end": "1521-05-04",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Birkaland",
+    "attackers": [
+      "Russie",
+      "Kiev",
+      "Tchernigov",
+      "Astrakhan",
+      "Sibir",
+      "Kazakh",
+      "Chagataï",
+      "Brandebourg",
+      "Angleterre",
+      "Flandre"
+    ],
+    "defenders": [
+      "Suède",
+      "Danemark",
+      "Norvège",
+      "Frise orientale",
+      "Lunebourg",
+      "Brabant"
+    ],
+    "lossesAttackers": 96280,
+    "lossesDefenders": 32131,
+    "losses": {
+      "Russie": 57658,
+      "Kiev": 3846,
+      "Tchernigov": 1710,
+      "Astrakhan": 1791,
+      "Sibir": 1213,
+      "Kazakh": 5117,
+      "Chagataï": 3949,
+      "Brandebourg": 14055,
+      "Angleterre": 6094,
+      "Flandre": 847,
+      "Suède": 7292,
+      "Danemark": 11832,
+      "Norvège": 8070,
+      "Frise orientale": 3819,
+      "Lunebourg": 964,
+      "Brabant": 154
+    },
+    "battles": 7,
+    "winner": "Camp russe et allié",
+    "peace": "Onze provinces finlandaises passent à la Russie ; les alliés anglais et brandebourgeois obtiennent également des gains séparés."
+  },
+  "MOS|1521-05-04": {
+    "mode": "end",
+    "war": "Conquête russe de Birkaland",
+    "start": "1518-08-15",
+    "end": "1521-05-04",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Birkaland",
+    "attackers": [
+      "Russie",
+      "Kiev",
+      "Tchernigov",
+      "Astrakhan",
+      "Sibir",
+      "Kazakh",
+      "Chagataï",
+      "Brandebourg",
+      "Angleterre",
+      "Flandre"
+    ],
+    "defenders": [
+      "Suède",
+      "Danemark",
+      "Norvège",
+      "Frise orientale",
+      "Lunebourg",
+      "Brabant"
+    ],
+    "lossesAttackers": 96280,
+    "lossesDefenders": 32131,
+    "losses": {
+      "Russie": 57658,
+      "Kiev": 3846,
+      "Tchernigov": 1710,
+      "Astrakhan": 1791,
+      "Sibir": 1213,
+      "Kazakh": 5117,
+      "Chagataï": 3949,
+      "Brandebourg": 14055,
+      "Angleterre": 6094,
+      "Flandre": 847,
+      "Suède": 7292,
+      "Danemark": 11832,
+      "Norvège": 8070,
+      "Frise orientale": 3819,
+      "Lunebourg": 964,
+      "Brabant": 154
+    },
+    "battles": 7,
+    "winner": "Camp russe et allié",
+    "peace": "Onze provinces finlandaises passent à la Russie ; les alliés anglais et brandebourgeois obtiennent également des gains séparés."
+  },
+  "MOS|1531-10-27": {
+    "mode": "start",
+    "war": "Conquête russe d’Orda",
+    "start": "1531-10-27",
+    "end": "1534-04-12",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Orda",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kiev",
+      "Sibir",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "Transoxiane",
+      "Ormuz"
+    ],
+    "lossesAttackers": 56062,
+    "lossesDefenders": 20252,
+    "losses": {
+      "Russie": 46757,
+      "Finlande": 718,
+      "Kiev": 1887,
+      "Sibir": 1536,
+      "Kazakh": 2380,
+      "Chagataï": 2784,
+      "Transoxiane": 15668,
+      "Ormuz": 4584
+    },
+    "battles": 2,
+    "winner": "Camp russe",
+    "peace": "Douze provinces d’Asie centrale passent à la Russie."
+  },
+  "MOS|1534-04-12": {
+    "mode": "end",
+    "war": "Conquête russe d’Orda",
+    "start": "1531-10-27",
+    "end": "1534-04-12",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Orda",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kiev",
+      "Sibir",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "Transoxiane",
+      "Ormuz"
+    ],
+    "lossesAttackers": 56062,
+    "lossesDefenders": 20252,
+    "losses": {
+      "Russie": 46757,
+      "Finlande": 718,
+      "Kiev": 1887,
+      "Sibir": 1536,
+      "Kazakh": 2380,
+      "Chagataï": 2784,
+      "Transoxiane": 15668,
+      "Ormuz": 4584
+    },
+    "battles": 2,
+    "winner": "Camp russe",
+    "peace": "Douze provinces d’Asie centrale passent à la Russie."
   }
 };
