@@ -334,5 +334,77 @@ export const EVENT_CONTEXT={
     "history": "L’« Act of Representation » d’EU4 ne correspond pas à une loi britannique précise adoptée en 1535. Il s’agit d’une abstraction de l’évolution de la représentation des comtés et bourgs au Parlement anglais.",
     "campaign": "La Grande-Bretagne, déjà unifiée et anglicane, poursuit ici sa construction institutionnelle. Le débat ouvre une séquence de réforme parlementaire qui aboutit moins d’un mois plus tard.",
     "game": "Le débat est lancé le 20 octobre 1535 ; la sauvegarde enregistre l’adoption de l’acte le 15 novembre 1535."
+  },
+  "LAN|1507-01-29": {
+    "status": "Dirigeante de campagne",
+    "history": "Il n’existe pas de dirigeante historique de Florence nommée Paolina de’ Medici en 1507. À cette date, Florence est encore une république dirigée par le gonfalonier Piero Soderini, tandis que les Médicis sont en exil depuis 1494 et ne reviennent qu’en 1512.",
+    "campaign": "La partie suit une trajectoire très différente : la maison de’ Medici contrôle déjà Florence et Paolina succède à Rodolfo. Son accession maintient donc la continuité médicéenne bien avant le retour historique de la famille.",
+    "game": "La sauvegarde lui attribue 5 en administration, 4 en diplomatie et 2 en militaire."
+  },
+  "LAN|1512-07-31": {
+    "status": "Expansion florentine dans les guerres d’Italie",
+    "history": "Brescia est l’une des grandes villes disputées pendant les guerres d’Italie du début du XVIe siècle, mais Florence ne la conquiert pas historiquement. La ville se trouve surtout au cœur de la rivalité entre Venise, la France et les puissances impériales.",
+    "campaign": "Florence profite de l’instabilité du nord de l’Italie pour ouvrir une guerre contre Milan et ses alliés. Avec Parme, elle cherche à imposer sa puissance au-delà de la Toscane et à construire un véritable ensemble territorial en Lombardie.",
+    "game": "La guerre débute le 31 juillet 1512 et compte neuf batailles enregistrées avant la paix de 1514."
+  },
+  "LAN|1513-03-22": {
+    "status": "Bataille propre à la campagne",
+    "history": "Il n’existe pas de bataille de Ferrare en 1513 opposant Florence aux États pontificaux sous cette forme. Le contexte reste néanmoins celui des guerres d’Italie, où papes, duchés et républiques changent fréquemment d’alliance.",
+    "campaign": "Alessandro Vasari mène 52 000 Florentins contre l’armée pontificale d’Ippolito Flangini. Les 29 523 soldats pontificaux sont perdus, ce qui transforme Ferrare en l’une des victoires les plus écrasantes de Florence dans la période.",
+    "game": "La sauvegarde enregistre 4 847 pertes florentines contre 29 523 pertes pontificales, soit la destruction complète de l’armée adverse engagée."
+  },
+  "LAN|1514-10-16": {
+    "status": "Victoire uchronique en Lombardie",
+    "history": "Florence n’annexe historiquement ni Brescia, ni Bergame, ni Côme au XVIe siècle. Ces territoires appartiennent aux grands espaces disputés entre Venise, Milan, la France et les Habsbourg pendant les guerres d’Italie.",
+    "campaign": "La victoire transforme Florence en puissance du nord de l’Italie. Brescia, Bergame et Côme lui donnent une continuité territoriale nouvelle et renforcent son poids face à Milan, Venise et l’Autriche.",
+    "game": "Neuf batailles sont conservées dans la sauvegarde ; le camp florentin enregistre 36 552 pertes contre 48 957 pour ses adversaires."
+  },
+  "LAN|1524-05-07": {
+    "status": "Monarchie médicéenne anticipée",
+    "history": "Historiquement, Florence reste formellement une république pendant encore plusieurs années. Après la chute de la dernière république florentine en 1530, Alessandro de’ Medici devient duc héréditaire de Florence en 1532. La campagne avance donc cette transformation de huit ans.",
+    "campaign": "Florence abandonne dès 1524 son cadre républicain. Le pouvoir médicéen cesse d’être seulement une domination familiale exercée à travers les institutions de la cité et prend une forme ouvertement monarchique.",
+    "game": "La sauvegarde enregistre directement le passage du gouvernement républicain à la monarchie le 7 mai 1524."
+  },
+  "LAN|1527-08-06": {
+    "status": "Conquête florentine au cœur des guerres d’Italie",
+    "history": "En 1527, le duché de Milan est réellement au centre des guerres d’Italie et de la guerre de la Ligue de Cognac. Francesco II Sforza tente alors de préserver son duché entre les ambitions françaises, impériales et pontificales. Florence ne conquiert toutefois pas Milan historiquement.",
+    "campaign": "La monarchie florentine lance sa propre offensive lombarde contre Milan, Mantoue, les États pontificaux et Saluzzo. L’objectif est désormais clair : dépasser le statut de puissance régionale toscane et dominer le nord de l’Italie.",
+    "game": "La guerre commence le 6 août 1527 et se termine victorieusement en octobre 1528."
+  },
+  "LAN|1527-09-08": {
+    "status": "Bataille propre à la campagne",
+    "history": "La bataille de Côme de 1527 n’a pas d’équivalent direct dans les guerres d’Italie historiques. Elle s’inscrit toutefois dans une région réellement disputée autour du duché de Milan.",
+    "campaign": "Leopoldo Ludovisi affronte Paolo Lamberti à Côme. Florence ne perd que 2 086 hommes tandis que les 15 310 soldats milanais engagés sont détruits, ouvrant largement la route de la Lombardie aux armées florentines.",
+    "game": "La sauvegarde donne la victoire à Florence et conserve l’anéantissement complet de l’armée milanaise engagée."
+  },
+  "LAN|1528-10-23": {
+    "status": "Florence remplace Milan comme puissance lombarde",
+    "history": "Historiquement, le duché de Milan reste sous les Sforza jusqu’en 1535 avant de passer sous domination des Habsbourg. Florence n’annexe ni Milan ni Novare pendant cette période.",
+    "campaign": "La paix de 1528 constitue donc un basculement majeur de votre Europe alternative : Florence absorbe Milan et Novare et devient l’une des puissances territoriales dominantes de la péninsule.",
+    "game": "Quatre batailles sont enregistrées. Florence subit 16 636 pertes contre 27 440 pour le camp milanais."
+  },
+  "LAN|1531-07-12": {
+    "status": "Écho très libre de la crise suisse de 1531",
+    "history": "L’année 1531 est réellement marquée par la seconde guerre de Kappel, qui oppose Zurich et les cantons protestants aux cantons catholiques suisses ; Ulrich Zwingli meurt à Kappel en octobre. La coalition et l’objectif de la campagne sont cependant totalement différents.",
+    "campaign": "Florence se range aux côtés de la Suisse pour reprendre Zurich face aux Trois Ligues, à Augsbourg, au Bade et à la Savoie. Le conflit élargit l’influence florentine au monde alpin et impérial.",
+    "game": "Florence et la Suisse entrent dans la guerre le même jour, le 12 juillet 1531."
+  },
+  "LAN|1533-06-08": {
+    "status": "Victoire florentino-suisse",
+    "history": "La Suisse historique de 1531 sort divisée de la seconde guerre de Kappel ; il n’existe pas de reconquête de Zurich menée avec Florence contre cette coalition. La campagne transforme donc profondément la crise confessionnelle et politique suisse.",
+    "campaign": "Après dix batailles, le camp suisse et florentin obtient la victoire. Zurich revient à la Suisse et Florence ressort du conflit comme un acteur militaire majeur au-delà de l’Italie.",
+    "game": "Le camp attaquant enregistre 31 888 pertes, dont 21 238 florentines, contre 48 428 dans le camp adverse."
+  },
+  "LAN|1534-04-28": {
+    "status": "Offensive contre le duché de Mantoue",
+    "history": "Mantoue est gouvernée par les Gonzague et Federico II Gonzaga est élevé au rang de duc par Charles Quint en 1530. Florence ne mène pas historiquement de conquête de Mantoue en 1534.",
+    "campaign": "Après ses succès sur Brescia et Milan, Florence tente de poursuivre la même dynamique contre Mantoue. Cette fois, elle affronte aussi Milan, Constance et Saluzzo.",
+    "game": "La guerre ne dure que quelques mois et ne compte que deux batailles enregistrées."
+  },
+  "LAN|1534-08-13": {
+    "status": "Premier coup d’arrêt majeur",
+    "history": "La défaite florentine est propre à la campagne. Dans l’histoire réelle, Mantoue demeure un duché des Gonzague et conserve son autonomie dans le système italien du XVIe siècle.",
+    "campaign": "Le résultat est particulièrement marquant : Florence gagne les deux batailles enregistrées et inflige bien davantage de pertes qu’elle n’en subit, mais échoue tout de même à obtenir Mantoue. Après des décennies d’expansion, cette guerre rappelle les limites de la puissance florentine.",
+    "game": "Florence subit 4 301 pertes contre 14 718 chez ses adversaires, mais le résultat final de la guerre est une victoire du camp défenseur et aucun territoire n’est acquis."
   }
 };
