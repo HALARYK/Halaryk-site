@@ -8,7 +8,7 @@ const ROOT=new URL("./",import.meta.url);
 if(!document.querySelector('link[href$="v5.2-dossiers.css"]')){const l=document.createElement("link");l.rel="stylesheet";l.href=new URL("v5.2-dossiers.css",ROOT).href;document.head.appendChild(l)}
 
 const iconByType={guerre:"⚔",bataille:"⚔",dynastie:"♛",désastre:"!",crise:"!",politique:"✦",exploration:"✧",événement:"◆",religion:"✝",empire:"♜",puissance:"★",capitale:"◆",population:"◈",révolte:"⚑",culture:"◉",diplomatie:"✉"};
-const tagByCountry={"castille":"CAS","angleterre":"ENG","florence":"LAN","brandebourg":"BRA","autriche":"HAB","empire ottoman":"TUR","moscovie":"MOS"};
+const tagByCountry={"espagne":"CAS","castille":"CAS","grande-bretagne":"ENG","angleterre":"ENG","florence":"LAN","prusse":"BRA","brandebourg":"BRA","autriche":"HAB","empire ottoman":"TUR","russie":"MOS","moscovie":"MOS"};
 function norm(v=""){return String(v).trim().toLowerCase()}
 function isoFromFr(v=""){const m=String(v).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);return m?`${m[3]}-${m[2].padStart(2,"0")}-${m[1].padStart(2,"0")}`:""}
 function longDate(iso=""){const m=String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)return iso||"—";return new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(Date.UTC(+m[1],+m[2]-1,+m[3])))}
