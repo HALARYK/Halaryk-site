@@ -4,3 +4,23 @@
 .event-cover-upload{margin-top:15px;padding:15px;border:1px dashed rgba(183,147,100,.18);background:rgba(7,6,6,.32)}.event-cover-upload small,.admin-help{display:block;margin-top:7px;color:#80746a;font-size:9px;line-height:1.45}.event-cover-upload input[type=file],#event-media-file{padding:10px;background:#060505}
 .event-declaration-admin{border-left:2px solid rgba(118,25,25,.5)}.event-legacy-next-session{display:none!important}.v51-diplomacy-hidden{display:none!important}
 @media(max-width:650px){.event-admin-legend{display:grid}.event-cover-upload{padding:12px}}
+
+
+/* Chronologie publiée — éditeur des dossiers réellement visibles */
+.curated-chronology-admin-card{overflow:hidden}
+.curated-country-tabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:0 0 16px}
+.curated-country-tabs button{min-width:0;padding:11px 10px;border:1px solid rgba(183,147,100,.18);background:#0b0908;color:#b9aa9c;text-align:left;cursor:pointer}
+.curated-country-tabs button strong,.curated-country-tabs button small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.curated-country-tabs button strong{color:#e0d2c3;font:600 16px/1 var(--serif)}
+.curated-country-tabs button small{margin-top:5px;color:#75695f;font-size:9px;text-transform:uppercase;letter-spacing:.08em}
+.curated-country-tabs button.active{border-color:#b79a6d;background:rgba(92,23,20,.28)}
+.curated-admin-summary{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin:0 0 14px;padding:11px 13px;border:1px solid rgba(183,147,100,.12);background:rgba(255,255,255,.018)}
+.curated-admin-summary strong{font:600 19px/1 var(--serif);color:#eadccd}.curated-admin-summary span{color:#897b70;font-size:11px}
+.curated-admin-list{display:grid;gap:12px}
+.curated-event-card{border-left:2px solid rgba(183,147,100,.18)}
+.curated-event-card.is-overridden{border-left-color:#b79a6d}
+.curated-context-title{margin-top:18px;padding-top:15px;border-top:1px solid rgba(183,147,100,.12)}
+.curated-event-card label>small{display:block;margin:4px 0 7px;color:#7f7166;font-size:10px;font-weight:400}
+.curated-event-card textarea.curated-facts{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;line-height:1.5}
+@media(max-width:1100px){.curated-country-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:700px){.curated-country-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.curated-admin-summary{display:block}.curated-admin-summary span{display:block;margin-top:6px}}
