@@ -3181,5 +3181,186 @@ export const WAR_EVENT_DATA={
     "battles": 7,
     "winner": "Camp autrichien et prussien",
     "peace": "Dortmund est forcée d’abandonner son régime républicain et devient une monarchie."
+  },
+  "TUR|1512-07-07": {
+    "mode": "start",
+    "war": "Reconquête ottomane de Zanjân",
+    "start": "1512-07-07",
+    "end": "1515-06-25",
+    "casusBelli": "Reconquête",
+    "warGoal": "Zanjân",
+    "attackers": [
+      "Empire ottoman",
+      "Égypte",
+      "Yémen",
+      "Hadramaout"
+    ],
+    "defenders": [
+      "Qara Qoyunlu",
+      "Mushasha",
+      "Tabarestan"
+    ],
+    "lossesAttackers": 100415,
+    "lossesDefenders": 41615,
+    "losses": {
+      "Empire ottoman": 95596,
+      "Égypte": 2566,
+      "Yémen": 2253,
+      "Hadramaout": 0,
+      "Qara Qoyunlu": 22839,
+      "Mushasha": 9110,
+      "Tabarestan": 9666
+    },
+    "battles": 5,
+    "winner": "Camp ottoman",
+    "peace": "Erivan, Gence, Tiflis, Karabagh, Kars, Nakhitchevan, Mush, Van, Bitlis et Bayazit passent sous contrôle ottoman."
+  },
+  "TUR|1515-06-25": {
+    "mode": "end",
+    "war": "Reconquête ottomane de Zanjân",
+    "start": "1512-07-07",
+    "end": "1515-06-25",
+    "casusBelli": "Reconquête",
+    "warGoal": "Zanjân",
+    "attackers": [
+      "Empire ottoman",
+      "Égypte",
+      "Yémen",
+      "Hadramaout"
+    ],
+    "defenders": [
+      "Qara Qoyunlu",
+      "Mushasha",
+      "Tabarestan"
+    ],
+    "lossesAttackers": 100415,
+    "lossesDefenders": 41615,
+    "losses": {
+      "Empire ottoman": 95596,
+      "Égypte": 2566,
+      "Yémen": 2253,
+      "Hadramaout": 0,
+      "Qara Qoyunlu": 22839,
+      "Mushasha": 9110,
+      "Tabarestan": 9666
+    },
+    "battles": 5,
+    "winner": "Camp ottoman",
+    "peace": "Erivan, Gence, Tiflis, Karabagh, Kars, Nakhitchevan, Mush, Van, Bitlis et Bayazit passent sous contrôle ottoman."
+  },
+  "TUR|1519-12-07": {
+    "mode": "start",
+    "war": "Conquête ottomane du Qatar",
+    "start": "1519-12-07",
+    "end": "1522-06-02",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Qatar",
+    "attackers": [
+      "Empire ottoman",
+      "Égypte",
+      "Qom"
+    ],
+    "defenders": [
+      "Ormuz",
+      "Delhi"
+    ],
+    "lossesAttackers": 47639,
+    "lossesDefenders": 52303,
+    "losses": {
+      "Empire ottoman": 46516,
+      "Égypte": 1,
+      "Qom": 1122,
+      "Ormuz": 18593,
+      "Delhi": 33710
+    },
+    "battles": 3,
+    "winner": "Camp ottoman",
+    "peace": "Le Qatar passe à l’Égypte, vassale de l’Empire ottoman."
+  },
+  "TUR|1522-06-02": {
+    "mode": "end",
+    "war": "Conquête ottomane du Qatar",
+    "start": "1519-12-07",
+    "end": "1522-06-02",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Qatar",
+    "attackers": [
+      "Empire ottoman",
+      "Égypte",
+      "Qom"
+    ],
+    "defenders": [
+      "Ormuz",
+      "Delhi"
+    ],
+    "lossesAttackers": 47639,
+    "lossesDefenders": 52303,
+    "losses": {
+      "Empire ottoman": 46516,
+      "Égypte": 1,
+      "Qom": 1122,
+      "Ormuz": 18593,
+      "Delhi": 33710
+    },
+    "battles": 3,
+    "winner": "Camp ottoman",
+    "peace": "Le Qatar passe à l’Égypte, vassale de l’Empire ottoman."
+  },
+  "TUR|1530-07-06": {
+    "mode": "start",
+    "war": "Reconquête ottomane d’Ardalan",
+    "start": "1530-07-06",
+    "end": "1532-09-14",
+    "casusBelli": "Reconquête",
+    "warGoal": "Ardalan",
+    "attackers": [
+      "Empire ottoman"
+    ],
+    "defenders": [
+      "Qara Qoyunlu",
+      "Mushasha",
+      "Tabarestan"
+    ],
+    "lossesAttackers": 89115,
+    "lossesDefenders": 20945,
+    "losses": {
+      "Empire ottoman": 89115,
+      "Qara Qoyunlu": 20945,
+      "Mushasha": 0,
+      "Tabarestan": 0
+    },
+    "battles": 2,
+    "winner": "Camp ottoman",
+    "peace": "La guerre s’achève le 14 septembre 1532 ; le dossier de chronologie retient ici uniquement son déclenchement."
+  },
+  "TUR|1536-06-30": {
+    "mode": "start",
+    "war": "Conquête ottomane de Bojnourd",
+    "start": "1536-06-30",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Bojnourd",
+    "attackers": [
+      "Empire ottoman",
+      "Égypte",
+      "Sistan",
+      "Qom"
+    ],
+    "defenders": [
+      "Transoxiane",
+      "Ormuz"
+    ],
+    "lossesAttackers": 9456,
+    "lossesDefenders": 719,
+    "losses": {
+      "Empire ottoman": 9396,
+      "Égypte": 0,
+      "Sistan": 60,
+      "Qom": 0,
+      "Transoxiane": 111,
+      "Ormuz": 608
+    },
+    "battles": 0,
+    "winner": "Guerre toujours en cours au 1er janvier 1537",
+    "peace": "Aucune paix : le conflit est toujours actif dans la sauvegarde du 1er janvier 1537."
   }
 };
