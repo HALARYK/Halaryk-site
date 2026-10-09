@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80"><rect x="1" y="1" width="118" height="78" rx="2" fill="#a8182f" stroke="#b79364" stroke-width="2"/><circle cx="52" cy="40" r="22" fill="#f4efe6"/><circle cx="60" cy="40" r="18" fill="#a8182f"/><path d="M79 29l3.2 7 7.6.7-5.7 5 1.7 7.4-6.5-3.9-6.5 3.9 1.7-7.4-5.7-5 7.6-.7z" fill="#f4efe6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="Drapeau ottoman style Europa Universalis IV">
+  <rect x="1" y="1" width="118" height="78" rx="2" fill="#9f1730" stroke="#b79364" stroke-width="2"/>
+  <circle cx="53" cy="40" r="24" fill="#d9b24c"/>
+  <circle cx="64" cy="40" r="20" fill="#9f1730"/>
+</svg>
