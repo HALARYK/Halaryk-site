@@ -3038,6 +3038,334 @@ export const CURATED_EVENTS={
           "France et alliés"
         ]
       ]
+    },
+    {
+      "date": "1508-09-09",
+      "type": "territoire",
+      "title": "Dithmarse passe sous contrôle brandebourgeois",
+      "summary": "Le Brandebourg absorbe Dithmarse et étend son influence vers la mer du Nord.",
+      "facts": [
+        [
+          "Territoire",
+          "Dithmarse"
+        ],
+        [
+          "Ancienne situation",
+          "République paysanne indépendante de Dithmarse"
+        ],
+        [
+          "Nouvelle situation",
+          "Intégration au Brandebourg"
+        ],
+        [
+          "Portée",
+          "Progression brandebourgeoise dans l’espace nord-allemand"
+        ]
+      ]
+    },
+    {
+      "date": "1509-01-21",
+      "type": "religion",
+      "title": "Le Brandebourg se convertit au protestantisme",
+      "summary": "Le Brandebourg rompt avec le catholicisme et adopte le protestantisme comme religion officielle, plusieurs années avant le début historique de la Réforme luthérienne.",
+      "facts": [
+        [
+          "Religion précédente",
+          "Catholicisme"
+        ],
+        [
+          "Nouvelle religion",
+          "Protestantisme"
+        ],
+        [
+          "Portée",
+          "Rupture confessionnelle majeure et très précoce"
+        ]
+      ]
+    },
+    {
+      "date": "1511-06-30",
+      "type": "religion",
+      "title": "Adoption de l’Act of Uniformity",
+      "summary": "Le gouvernement brandebourgeois renforce l’uniformité religieuse du pays après sa conversion au protestantisme.",
+      "facts": [
+        [
+          "Mesure",
+          "Act of Uniformity"
+        ],
+        [
+          "Orientation",
+          "Uniformisation confessionnelle"
+        ],
+        [
+          "Contexte",
+          "Consolidation du nouvel ordre protestant"
+        ]
+      ]
+    },
+    {
+      "date": "1514-04-13",
+      "type": "économie",
+      "title": "Création d’une Banque nationale",
+      "summary": "Le Brandebourg met en place une institution financière centrale destinée à stabiliser et structurer davantage les finances de l’État.",
+      "facts": [
+        [
+          "Réforme",
+          "Banque nationale"
+        ],
+        [
+          "Domaine",
+          "Finances publiques"
+        ],
+        [
+          "Portée",
+          "Renforcement de l’appareil économique de l’État"
+        ]
+      ]
+    },
+    {
+      "date": "1518-08-15",
+      "type": "guerre",
+      "title": "Entrée dans la conquête russe de Birkaland",
+      "summary": "Le Brandebourg rejoint la Russie et l’Angleterre dans une grande guerre contre la Suède, le Danemark et leurs alliés scandinaves.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Birkaland"
+        ],
+        [
+          "Chef du camp attaquant",
+          "Russie"
+        ],
+        [
+          "Alliés majeurs",
+          "Brandebourg · Angleterre"
+        ],
+        [
+          "Camp adverse",
+          "Suède · Danemark · Norvège · Frise orientale · Lunebourg · Brabant"
+        ]
+      ]
+    },
+    {
+      "date": "1520-11-12",
+      "type": "territoire",
+      "title": "Celle passe au Brandebourg",
+      "summary": "Au cours de la guerre de Birkaland, Lunebourg quitte le conflit et cède Celle au Brandebourg.",
+      "facts": [
+        [
+          "Territoire",
+          "Celle"
+        ],
+        [
+          "Ancien propriétaire",
+          "Lunebourg"
+        ],
+        [
+          "Nouveau propriétaire",
+          "Brandebourg"
+        ],
+        [
+          "Contexte",
+          "Paix séparée pendant la guerre de Birkaland"
+        ]
+      ]
+    },
+    {
+      "date": "1521-05-04",
+      "type": "guerre",
+      "title": "Victoire dans la guerre de Birkaland",
+      "summary": "Le camp russo-anglo-brandebourgeois remporte la guerre de Birkaland et affaiblit durablement les puissances scandinaves.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Birkaland"
+        ],
+        [
+          "Issue",
+          "Victoire du camp russe et de ses alliés"
+        ],
+        [
+          "Batailles enregistrées",
+          "7"
+        ],
+        [
+          "Pertes du Brandebourg",
+          "14 055 pertes humaines"
+        ],
+        [
+          "Résultat brandebourgeois",
+          "Celle avait été acquise lors de la paix séparée avec Lunebourg"
+        ]
+      ]
+    },
+    {
+      "date": "1522-01-03",
+      "type": "guerre",
+      "title": "Début de la conquête brandebourgeoise de Lunebourg",
+      "summary": "Le Brandebourg lance sa propre guerre de conquête contre la Ligue hanséatique et ses alliés afin de prendre Lunebourg.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête brandebourgeoise de Lunebourg"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Lunebourg"
+        ],
+        [
+          "Camp attaquant",
+          "Brandebourg · Autriche et alliés"
+        ],
+        [
+          "Camp défenseur",
+          "Lübeck · Danemark · Suède · Norvège · Bremen · Hambourg"
+        ]
+      ]
+    },
+    {
+      "date": "1523-07-04",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Lunebourg",
+      "summary": "Le Brandebourg remporte la guerre et annexe Lunebourg et Wismar, renforçant sa position en Allemagne du Nord et sur la Baltique.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête brandebourgeoise de Lunebourg"
+        ],
+        [
+          "Issue",
+          "Victoire du camp brandebourgeois"
+        ],
+        [
+          "Batailles enregistrées",
+          "7"
+        ],
+        [
+          "Pertes du Brandebourg",
+          "4 181 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Lunebourg · Wismar"
+        ]
+      ]
+    },
+    {
+      "date": "1524-02-25",
+      "type": "religion",
+      "title": "Dissolution des monastères",
+      "summary": "Le Brandebourg poursuit sa politique de rupture avec l’ancien ordre catholique en dissolvant les établissements monastiques.",
+      "facts": [
+        [
+          "Mesure",
+          "Dissolution des monastères"
+        ],
+        [
+          "Orientation",
+          "Sécularisation religieuse"
+        ],
+        [
+          "Contexte",
+          "Consolidation de l’État protestant brandebourgeois"
+        ]
+      ]
+    },
+    {
+      "date": "1532-09-09",
+      "type": "politique",
+      "title": "Formation de la Prusse",
+      "summary": "Le Brandebourg se transforme en Prusse et adopte une nouvelle identité politique et culturelle, tout en conservant son poids dans le Saint-Empire.",
+      "facts": [
+        [
+          "État précédent",
+          "Brandebourg"
+        ],
+        [
+          "Nouvel État",
+          "Prusse"
+        ],
+        [
+          "Culture principale",
+          "Prussienne"
+        ],
+        [
+          "Statut impérial",
+          "La dignité électorale est conservée"
+        ],
+        [
+          "Portée",
+          "Naissance d’une puissance prussienne plusieurs générations avant son essor historique"
+        ]
+      ]
+    },
+    {
+      "date": "1534-03-12",
+      "type": "guerre",
+      "title": "Début de la guerre de Frise",
+      "summary": "L’Autriche ouvre une intervention contre la Frise dans le contexte de la Grande Guerre des Paysans ; la Prusse rejoint le camp impérial le 9 avril.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre autrichienne pour changer de régime en Frise"
+        ],
+        [
+          "Objectif",
+          "Imposer un changement de régime en Frise"
+        ],
+        [
+          "Début du conflit",
+          "12 mars 1534"
+        ],
+        [
+          "Entrée de la Prusse",
+          "9 avril 1534"
+        ],
+        [
+          "Camp prussien",
+          "Autriche · Prusse · Moldavie · Bourgogne · Champagne · Herzégovine"
+        ],
+        [
+          "Camp adverse",
+          "Frise · Bremen"
+        ]
+      ]
+    },
+    {
+      "date": "1536-05-13",
+      "type": "guerre",
+      "title": "Victoire en Frise et consolidation prussienne au nord",
+      "summary": "La coalition impériale remporte la guerre de Frise. La Frise est forcée de devenir une monarchie et la Prusse sort du conflit renforcée après l’acquisition de Verden.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre autrichienne pour changer de régime en Frise"
+        ],
+        [
+          "Issue",
+          "Victoire du camp autrichien et prussien"
+        ],
+        [
+          "Batailles enregistrées",
+          "6"
+        ],
+        [
+          "Pertes de la Prusse",
+          "8 584 pertes humaines"
+        ],
+        [
+          "Changement imposé à la Frise",
+          "Passage à la monarchie"
+        ],
+        [
+          "Gain prussien pendant la guerre",
+          "Verden, acquis le 5 mai 1536"
+        ]
+      ]
     }
   ],
   "HAB": [
