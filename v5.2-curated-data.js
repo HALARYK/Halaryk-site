@@ -3843,6 +3843,434 @@ export const CURATED_EVENTS={
           "Zeta reste ottomane"
         ]
       ]
+    },
+    {
+      "date": "1515-03-10",
+      "type": "guerre",
+      "title": "Début de la conquête autrichienne de Lublin",
+      "summary": "L’Autriche attaque la Pologne et ouvre une guerre d’expansion en Europe centrale pour Lublin.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête autrichienne de Lublin"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Lublin"
+        ],
+        [
+          "Camp attaquant",
+          "Autriche · Moldavie · Hongrie · Bourgogne · Champagne · Herzégovine"
+        ],
+        [
+          "Camp défenseur",
+          "Pologne · Lituanie · Magdebourg"
+        ]
+      ]
+    },
+    {
+      "date": "1515-04-03",
+      "type": "bataille",
+      "title": "Bataille de Varsovie",
+      "summary": "Friedrich von Hatzfeldt remporte pour l’Autriche la première grande bataille de la guerre de Lublin face à l’armée polonaise.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête autrichienne de Lublin"
+        ],
+        [
+          "Lieu",
+          "Varsovie"
+        ],
+        [
+          "Attaquant",
+          "Autriche — Friedrich von Hatzfeldt — 8 000 infanterie · 6 000 cavalerie · 3 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Pologne — 8 000 infanterie · 6 000 cavalerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Autriche : 3 794 · Pologne : 4 230"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1516-08-27",
+      "type": "guerre",
+      "title": "Victoire autrichienne dans la guerre de Lublin",
+      "summary": "L’Autriche remporte la guerre contre la Pologne et annexe Sandomir, Lublin et Kielce.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête autrichienne de Lublin"
+        ],
+        [
+          "Issue",
+          "Victoire du camp autrichien"
+        ],
+        [
+          "Batailles enregistrées",
+          "4"
+        ],
+        [
+          "Pertes de l’Autriche",
+          "19 390 pertes humaines"
+        ],
+        [
+          "Pertes des deux camps",
+          "27 282 contre 15 046"
+        ],
+        [
+          "Territoires acquis",
+          "Sandomir · Lublin · Kielce"
+        ]
+      ]
+    },
+    {
+      "date": "1522-01-03",
+      "type": "guerre",
+      "title": "L’Autriche soutient la conquête brandebourgeoise de Lunebourg",
+      "summary": "L’Autriche rejoint immédiatement le Brandebourg dans sa guerre contre Lübeck et les puissances scandinaves.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête brandebourgeoise de Lunebourg"
+        ],
+        [
+          "Rôle autrichien",
+          "Allié du Brandebourg dès le déclenchement"
+        ],
+        [
+          "Camp attaquant",
+          "Brandebourg · Autriche · Moldavie · Hongrie · Bourgogne · Champagne · Herzégovine"
+        ],
+        [
+          "Camp défenseur",
+          "Lübeck · Danemark · Suède · Norvège · Bremen · Hambourg"
+        ]
+      ]
+    },
+    {
+      "date": "1523-07-04",
+      "type": "guerre",
+      "title": "Victoire austro-brandebourgeoise dans la guerre de Lunebourg",
+      "summary": "Le camp du Brandebourg et de l’Autriche remporte la guerre ; Lunebourg et Wismar passent au Brandebourg.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête brandebourgeoise de Lunebourg"
+        ],
+        [
+          "Issue",
+          "Victoire du camp austro-brandebourgeois"
+        ],
+        [
+          "Batailles enregistrées",
+          "7"
+        ],
+        [
+          "Pertes de l’Autriche",
+          "29 050 pertes humaines"
+        ],
+        [
+          "Résultat territorial",
+          "Lunebourg et Wismar passent au Brandebourg"
+        ]
+      ]
+    },
+    {
+      "date": "1525-06-07",
+      "type": "guerre",
+      "title": "Début de la reconquête autrichienne de Rémois",
+      "summary": "L’Autriche ouvre une nouvelle guerre contre la France et ses alliés pour reprendre le Rémois au profit de son camp.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête autrichienne de Rémois"
+        ],
+        [
+          "Casus belli",
+          "Reconquête"
+        ],
+        [
+          "Objectif",
+          "Rémois"
+        ],
+        [
+          "Camp attaquant",
+          "Autriche · Moldavie · Hongrie · Bourgogne · Champagne · Herzégovine"
+        ],
+        [
+          "Camp défenseur",
+          "France · Naples · Clèves · Lorraine"
+        ]
+      ]
+    },
+    {
+      "date": "1525-09-06",
+      "type": "bataille",
+      "title": "Bataille de Champagne",
+      "summary": "Bernard de Bauffremont remporte une victoire très nette sur les forces de Clèves au cours de la guerre contre la France.",
+      "facts": [
+        [
+          "Guerre",
+          "Reconquête autrichienne de Rémois"
+        ],
+        [
+          "Lieu",
+          "Champagne"
+        ],
+        [
+          "Attaquant",
+          "Autriche — Bernard de Bauffremont — 45 000 infanterie · 41 000 cavalerie · 20 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Clèves — Gregor Contze — 15 000 infanterie · 6 000 cavalerie · 3 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Autriche : 4 565 · Clèves : 14 000"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1526-05-18",
+      "type": "dynastie",
+      "title": "Friedrich V de Habsbourg devient archiduc d’Autriche",
+      "summary": "Friedrich V succède à Barbara I et prend la tête de la monarchie autrichienne.",
+      "facts": [
+        [
+          "Prédécesseure",
+          "Barbara I von Habsburg"
+        ],
+        [
+          "Nouveau souverain",
+          "Friedrich V von Habsburg"
+        ],
+        [
+          "Compétences",
+          "ADM 3 · DIP 2 · MIL 1"
+        ],
+        [
+          "Dynastie",
+          "von Habsburg"
+        ],
+        [
+          "Traits",
+          "Législateur · strict"
+        ]
+      ]
+    },
+    {
+      "date": "1527-05-22",
+      "type": "guerre",
+      "title": "Victoire autrichienne contre la France",
+      "summary": "La guerre de Rémois s’achève par une victoire autrichienne : le Rémois et le Rethélois reviennent à Champagne, tandis que le Nivernais passe directement à l’Autriche.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête autrichienne de Rémois"
+        ],
+        [
+          "Issue",
+          "Victoire du camp autrichien"
+        ],
+        [
+          "Batailles enregistrées",
+          "12"
+        ],
+        [
+          "Pertes de l’Autriche",
+          "38 957 pertes humaines"
+        ],
+        [
+          "Pertes des deux camps",
+          "59 973 contre 79 762"
+        ],
+        [
+          "Règlement",
+          "Rémois et Rethélois à Champagne · Nivernais à l’Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1528-09-01",
+      "type": "dynastie",
+      "title": "La Couronne hongroise passe sous domination autrichienne",
+      "summary": "L’Autriche absorbe en une seule séquence une grande partie du royaume de Hongrie et de ses territoires associés.",
+      "facts": [
+        [
+          "Événement",
+          "Couronne hongroise"
+        ],
+        [
+          "Territoires intégrés",
+          "29 provinces"
+        ],
+        [
+          "Parmi les principales acquisitions",
+          "Pest · Pressburg · Belgrade · Agram · Rijeka · Temesch · Bihar · Zips"
+        ],
+        [
+          "Portée",
+          "Transformation de l’Autriche en vaste monarchie danubienne"
+        ]
+      ]
+    },
+    {
+      "date": "1532-09-01",
+      "type": "désastre",
+      "title": "La Guerre des Paysans frappe l’Autriche",
+      "summary": "L’Autriche entre dans la séquence de la Grande Guerre des Paysans, qui débouchera ensuite sur plusieurs interventions impériales.",
+      "facts": [
+        [
+          "Crise",
+          "Guerre des Paysans"
+        ],
+        [
+          "Début en Autriche",
+          "1er septembre 1532"
+        ],
+        [
+          "Conséquence politique",
+          "Prépare les interventions contre des républiques paysannes du Saint-Empire"
+        ]
+      ]
+    },
+    {
+      "date": "1534-03-12",
+      "type": "guerre",
+      "title": "Intervention autrichienne en Frise",
+      "summary": "L’Autriche attaque la Frise dans le cadre de la Grande Guerre des Paysans afin de lui imposer un changement de régime.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre autrichienne pour changer de régime en Frise"
+        ],
+        [
+          "Casus belli",
+          "Grande Guerre des Paysans — changement de régime"
+        ],
+        [
+          "Objectif",
+          "Changer le gouvernement de la Frise"
+        ],
+        [
+          "Camp attaquant",
+          "Autriche · Moldavie · Bourgogne · Champagne · Herzégovine · Prusse"
+        ],
+        [
+          "Camp défenseur",
+          "Frise · Bremen"
+        ]
+      ]
+    },
+    {
+      "date": "1534-05-16",
+      "type": "guerre",
+      "title": "Intervention autrichienne à Dortmund",
+      "summary": "L’Autriche ouvre une seconde guerre de changement de régime, cette fois contre la cité de Dortmund et ses alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre autrichienne pour changer de régime en Dortmund"
+        ],
+        [
+          "Casus belli",
+          "Grande Guerre des Paysans — changement de régime"
+        ],
+        [
+          "Objectif",
+          "Changer le gouvernement de Dortmund"
+        ],
+        [
+          "Camp attaquant",
+          "Autriche · Moldavie · Bourgogne · Champagne · Herzégovine · Prusse"
+        ],
+        [
+          "Camp défenseur",
+          "Dortmund · Franconie · Munich"
+        ]
+      ]
+    },
+    {
+      "date": "1536-03-17",
+      "type": "guerre",
+      "title": "Victoire autrichienne dans la guerre de Dortmund",
+      "summary": "Après près de deux ans de guerre, l’Autriche et ses alliés l’emportent et forcent Dortmund à abandonner son régime républicain pour une monarchie.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre autrichienne pour changer de régime en Dortmund"
+        ],
+        [
+          "Issue",
+          "Victoire du camp autrichien"
+        ],
+        [
+          "Batailles enregistrées",
+          "7"
+        ],
+        [
+          "Pertes de l’Autriche",
+          "20 153 pertes humaines"
+        ],
+        [
+          "Pertes des deux camps",
+          "29 326 contre 22 631"
+        ],
+        [
+          "Changement imposé",
+          "Dortmund devient une monarchie"
+        ]
+      ]
+    },
+    {
+      "date": "1536-05-13",
+      "type": "guerre",
+      "title": "Victoire autrichienne dans la guerre de Frise",
+      "summary": "La coalition autrichienne remporte la guerre et contraint la Frise à abandonner sa république paysanne pour une monarchie.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre autrichienne pour changer de régime en Frise"
+        ],
+        [
+          "Issue",
+          "Victoire du camp autrichien et prussien"
+        ],
+        [
+          "Batailles enregistrées",
+          "6"
+        ],
+        [
+          "Pertes de l’Autriche",
+          "26 998 pertes humaines"
+        ],
+        [
+          "Pertes des deux camps",
+          "47 001 contre 24 679"
+        ],
+        [
+          "Changement imposé",
+          "La Frise devient une monarchie"
+        ]
+      ]
     }
   ],
   "TUR": [
