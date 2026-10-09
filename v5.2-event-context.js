@@ -18,8 +18,8 @@ export const EVENT_CONTEXT={
     "game": "Les compétences, traits et dates affichés sont ceux de la partie, pas ceux de la biographie historique d’Isabelle."
   },
   "CAS|1466-12-11": {
-    "status": "Événement de campagne",
-    "history": "Les coups de force nobiliaires et crises de cour sont fréquents dans la Castille du XVe siècle, mais la sauvegarde ne permet pas d’identifier ici un épisode historique précis.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Un modificateur de coup d’État récent permet de reconstruire une résolution autour du 11 décembre 1466. Aucun changement de souverain n’apparaît à cette date : le scénario le plus prudent est donc celui d’une tentative contenue ou d’une crise résolue sans renversement dynastique.",
     "game": "La date est reconstruite à partir de l’expiration d’un modificateur de vingt ans ; elle est moins certaine qu’une date inscrite directement dans l’historique."
   },
@@ -36,8 +36,8 @@ export const EVENT_CONTEXT={
     "game": "Le drapeau de sauvegarde marque la clôture du cycle grenadin dans la campagne."
   },
   "CAS|1473-06-09": {
-    "status": "Dynastie de campagne",
-    "history": "Cette Isabel II ne correspond pas directement à une souveraine historique de Castille. Elle appartient à la continuité dynastique créée par la partie autour de la maison de Trastámara.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Sa désignation prolonge la stabilité de la succession après Isabel I. L’apparition de Carlos de la Cerda comme consort ajoute en outre une nouvelle connexion dynastique exploitable dans le RP.",
     "game": "Compétences, prétention et consort sont des données de la sauvegarde."
   },
@@ -60,8 +60,8 @@ export const EVENT_CONTEXT={
     "game": "Le désastre EU4 condense en quelques années un conflit historique beaucoup plus long."
   },
   "ENG|1463-03-22": {
-    "status": "Souverain de campagne",
-    "history": "Il n’existe pas de roi d’Angleterre historique nommé Thomas Ier d’York. Le personnage est une création de la campagne, mais il représente un scénario crédible d’accession yorkiste dans le contexte de la guerre des Deux-Roses.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Son accession est importante parce qu’elle matérialise le changement de régime : la couronne passe de Lancastre à York. Ce n’est donc pas seulement un nouveau souverain, mais une réorientation dynastique complète du RP anglais.",
     "game": "Les compétences et traits du souverain viennent de la sauvegarde."
   },
@@ -114,8 +114,8 @@ export const EVENT_CONTEXT={
     "game": "Le libellé interne « epic_to_monarch » ne suffit pas à identifier un événement historique précis ; il est traité ici comme un jalon de règne, pas comme une affirmation documentaire."
   },
   "HAB|1451-11-01": {
-    "status": "Statut de jeu",
-    "history": "Le rang de « Grande Puissance » est une mécanique d’Europa Universalis IV, pas un titre diplomatique officiel du XVe siècle.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "L’entrée de l’Autriche dans le groupe des huit puissances dominantes matérialise son changement d’échelle après ses succès en Europe centrale. La sauvegarde ne permet cependant pas de savoir quelle puissance précise a été évincée au même instant.",
     "game": "Entre 1444 et 1481, Aragon, les Timourides et les Mamelouks sortent du groupe tandis que l’Autriche, la Moscovie et la Pologne y entrent ; le remplacement exact au 1er novembre 1451 n’est pas conservé."
   },
@@ -138,8 +138,8 @@ export const EVENT_CONTEXT={
     "game": "Le drapeau « early success » indique que l’objectif impérial a été rempli dans la campagne."
   },
   "HAB|1480-02-01": {
-    "status": "Événement culturel de campagne",
-    "history": "Le « melting pot » autrichien est une abstraction de gameplay : il ne correspond pas à une réforme datée unique dans l’histoire des Habsbourg.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Il représente une intégration culturelle accrue au sein d’un ensemble autrichien devenu plus vaste et plus composite, ce qui est particulièrement cohérent avec l’expansion impériale de la partie.",
     "game": "La sauvegarde date l’événement au 1er février 1480."
   },
@@ -162,8 +162,8 @@ export const EVENT_CONTEXT={
     "game": "Le choix de campagne est particulièrement intéressant pour le RP religieux et les relations avec les puissances orthodoxes."
   },
   "TUR|1462-07-30": {
-    "status": "Héritier de campagne",
-    "history": "Valoche Osmanoğlu est un personnage créé par la partie et ne correspond pas à un prince ottoman historique. Il s’inscrit cependant dans la maison Osmanoğlu et dans une succession dominée par la figure de Mehmed II.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Sa désignation sécurise la continuité dynastique et fait entrer directement le joueur dans le récit de succession ottomane : il devient un futur souverain potentiel avec ses propres qualités et orientations.",
     "game": "Compétences, prétention et trait sont issus de la sauvegarde."
   },
@@ -174,14 +174,14 @@ export const EVENT_CONTEXT={
     "game": "L’événement est donc historiquement inspiré, mais avancé de près de deux décennies."
   },
   "MOS|1445-04-24": {
-    "status": "Événement intérieur de campagne",
-    "history": "La sauvegarde atteste une révolte paysanne écrasée, mais ne permet pas de l’identifier avec certitude à une insurrection historique précise de 1445.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Le fait est intéressant comme marqueur de fragilité intérieure au moment où la Moscovie commence son expansion : la consolidation du territoire ne se fait pas sans tensions sociales.",
     "game": "Le dossier évite volontairement d’inventer une cause ou un chef de révolte absents de la sauvegarde."
   },
   "MOS|1445-11-01": {
-    "status": "Statut de jeu",
-    "history": "Comme pour l’Autriche, « Grande Puissance » est un classement mécanique d’EU4 et non une dignité historique formelle.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "L’entrée de la Moscovie dans le top 8 dès 1445 montre une montée en puissance extrêmement rapide. Elle place le joueur russe dans une catégorie diplomatique supérieure dès le début de la campagne.",
     "game": "La puissance remplacée exactement à cette date n’est pas conservée ; il ne faut donc pas en désigner une arbitrairement."
   },
@@ -198,14 +198,14 @@ export const EVENT_CONTEXT={
     "game": "La sauvegarde enregistre directement la décision de_heretico_comburendo_act le 3 février 1481."
   },
   "ENG|1486-11-04": {
-    "status": "Souverain de campagne",
-    "history": "Matvala II d’York n’est pas un souverain historique réel. C’est un personnage généré par la campagne, intégré à la maison d’York après la victoire de cette dynastie dans la Guerre des Deux-Roses alternative de la partie.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Il succède à Thomas I d’York et assure la continuité du régime yorkiste. Avec ADM 4, DIP 5 et MIL 5, les traits « visionnaire architectural » et « zélote », il incarne un règne à la fois bâtisseur et religieux. C’est également lui qui lance en 1502 la grande guerre de Girid contre l’Empire ottoman.",
     "game": "Né le 17 janvier 1464, héritier depuis 1464 avec une prétention de 100, Matvala II devient souverain le 4 novembre 1486. Anne d’York devient alors héritière."
   },
   "LAN|1496-11-01": {
-    "status": "Statut de jeu — basculement de puissance",
-    "history": "Le rang de « Grande Puissance » est une mécanique d’Europa Universalis IV, pas un titre historique officiel. Il représente les huit États les plus puissants selon le développement et les pénalités technologiques.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Florence entre dans le top 8 le 1er novembre 1496. Le relevé de 1481 plaçait encore la Pologne au 8e rang ; celui de 1507 place Florence 8e à sa place. La sauvegarde ne contient pas une ligne « Pologne déchue » datée au même jour, mais Florence est la seule nouvelle entrée de Grande Puissance enregistrée entre les deux relevés : le remplacement identifiable est donc celui de la Pologne.",
     "game": "En 1507, Florence possède un score de Grande Puissance de 247,419. Son passage d’une petite république italienne à une puissance du top 8 matérialise l’ampleur de son expansion et de son développement pendant les deux premières sessions."
   },
@@ -336,8 +336,8 @@ export const EVENT_CONTEXT={
     "game": "Le débat est lancé le 20 octobre 1535 ; la sauvegarde enregistre l’adoption de l’acte le 15 novembre 1535."
   },
   "LAN|1507-01-29": {
-    "status": "Dirigeante de campagne",
-    "history": "Il n’existe pas de dirigeante historique de Florence nommée Paolina de’ Medici en 1507. À cette date, Florence est encore une république dirigée par le gonfalonier Piero Soderini, tandis que les Médicis sont en exil depuis 1494 et ne reviennent qu’en 1512.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "La partie suit une trajectoire très différente : la maison de’ Medici contrôle déjà Florence et Paolina succède à Rodolfo. Son accession maintient donc la continuité médicéenne bien avant le retour historique de la famille.",
     "game": "La sauvegarde lui attribue 5 en administration, 4 en diplomatie et 2 en militaire."
   },
@@ -420,8 +420,8 @@ export const EVENT_CONTEXT={
     "game": "La religion officielle du Brandebourg devient protestante le 21 janvier 1509."
   },
   "BRA|1511-06-30": {
-    "status": "Décision de jeu sans équivalent brandebourgeois direct",
-    "history": "Les « Acts of Uniformity » sont surtout associés à l’histoire religieuse anglaise du XVIe siècle. Il n’existe pas d’Act of Uniformity brandebourgeois adopté en 1511.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Dans votre chronologie, la mesure sert à consolider le choix protestant extrêmement précoce du Brandebourg : après la rupture confessionnelle de 1509, l’État cherche désormais à homogénéiser ses pratiques religieuses.",
     "game": "EU4 utilise ici une décision générique d’uniformisation religieuse plutôt qu’une loi historique propre au Brandebourg."
   },
@@ -528,8 +528,8 @@ export const EVENT_CONTEXT={
     "game": "La bataille appartient à la reconquête autrichienne de Rémois, qui comptera douze affrontements enregistrés."
   },
   "HAB|1526-05-18": {
-    "status": "Souverain de campagne",
-    "history": "Il n’existe pas d’archiduc d’Autriche historique nommé Friedrich V en 1526. À cette époque, Ferdinand Ier de Habsbourg gouverne les terres autrichiennes et profite de la crise ouverte par la mort de Louis II à Mohács pour revendiquer les couronnes de Bohême et de Hongrie.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Friedrich V succède à Barbara I et poursuit une trajectoire habsbourgeoise beaucoup plus expansionniste. Son règne couvre ensuite l’intégration de la couronne hongroise et les interventions de la Grande Guerre des Paysans.",
     "game": "La sauvegarde le donne à 3 ADM, 2 DIP et 1 MIL, avec les traits de législateur et de dirigeant strict."
   },
@@ -726,8 +726,8 @@ export const EVENT_CONTEXT={
     "game": "La Russie subit 46 757 pertes ; son camp totalise 56 062 pertes contre 20 252 pour la Transoxiane et Ormuz."
   },
   "MOS|1535-10-22": {
-    "status": "Dynastie russe entièrement uchronique",
-    "history": "Le souverain de la sauvegarde n’est pas Pierre le Grand : le véritable Pierre Ier naît en 1672 et appartient à la dynastie Romanov. Une maison von Hohenzollern sur le trône russe au XVIe siècle n’a aucun équivalent historique.",
+    "status": "Pas de lien historique",
+    "history": "Pas de lien historique.",
     "campaign": "Pyotr Ier poursuit la trajectoire dynastique atypique de la Russie de Doug. Son accession confirme que la monarchie russe s’est éloignée de la succession historique des Rurikides et des futurs Romanov.",
     "game": "La sauvegarde donne Pyotr Ier von Hohenzollern à 3 ADM, 3 DIP et 4 MIL, de religion orthodoxe, avec le trait zélote."
   }
