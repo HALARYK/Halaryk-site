@@ -574,5 +574,77 @@ export const EVENT_CONTEXT={
     "history": "La Frise historique connaît plusieurs formes de domination et d’autonomie au tournant des XVe et XVIe siècles ; elle n’est pas transformée en monarchie en 1536 par une intervention des Habsbourg et de la Prusse.",
     "campaign": "Deux mois après Dortmund, la seconde guerre de changement de régime se termine elle aussi par une victoire. La Frise devient une monarchie, tandis que la Prusse avait obtenu Verden quelques jours auparavant.",
     "game": "Six batailles sont enregistrées. L’Autriche subit 26 998 pertes sur les 47 001 pertes de son camp."
+  },
+  "TUR|1512-07-07": {
+    "status": "Guerre orientale profondément uchronique",
+    "history": "Qara Qoyunlu a disparu comme grande puissance avant 1512, vaincu par les Aq Qoyunlu dans les années 1460. Dans l’histoire réelle, le grand adversaire oriental des Ottomans à cette date est désormais l’Iran safavide de Shah Ismaïl, avec lequel le conflit débouche sur la bataille de Tchaldiran en 1514.",
+    "campaign": "Dans la partie, Qara Qoyunlu demeure au contraire un adversaire majeur. L’Empire ottoman ouvre une reconquête pour Zanjân avec l’Égypte, le Yémen et l’Hadramaout contre Qara Qoyunlu, Mushasha et le Tabarestan.",
+    "game": "La guerre commence le 7 juillet 1512 et compte cinq batailles avant sa conclusion en juin 1515."
+  },
+  "TUR|1512-10-11": {
+    "status": "Consolidation ottomane très anticipée",
+    "history": "Historiquement, Selim Ier règne encore en 1512 et Süleyman ne devient sultan qu’en 1520. Le prestige religieux ottoman s’accroît fortement après les conquêtes de Syrie et d’Égypte de 1516–1517 ; la campagne fait donc intervenir cette consolidation plusieurs années plus tôt.",
+    "campaign": "Süleyman Kanuni, monté sur le trône quelques jours auparavant dans votre partie, renforce à la fois l’autorité religieuse du sultanat, son rôle de centre savant et l’unité confessionnelle sunnite.",
+    "game": "Plusieurs décisions religieuses et institutionnelles sont enregistrées le même jour et sont regroupées ici en un seul jalon de chronologie."
+  },
+  "TUR|1514-02-13": {
+    "status": "Écho uchronique de la confrontation ottomano-iranienne",
+    "history": "Il n’existe pas de bataille ottomane de Nadjaf contre Qara Qoyunlu en 1514. La grande confrontation réelle de cette année est Tchaldiran, en août 1514, où Selim Ier bat les Safavides de Shah Ismaïl.",
+    "campaign": "À Nadjaf, l’armée d’Abdurrahman Sari subit au contraire un revers face à Qara Qoyunlu. Les deux camps perdent plus de douze mille hommes, ce qui en fait l’un des affrontements les plus coûteux de la guerre de Zanjân.",
+    "game": "La sauvegarde donne la victoire à Qara Qoyunlu : 13 653 pertes ottomanes contre 12 489 adverses."
+  },
+  "TUR|1515-06-25": {
+    "status": "Expansion caucasienne beaucoup plus poussée que dans l’histoire réelle",
+    "history": "Après Tchaldiran, les Ottomans historiques renforcent leur position en Anatolie orientale et occupent brièvement Tabriz, mais ils ne constituent pas en 1515 un ensemble continu comprenant Erivan, Tiflis et le Karabagh. La rivalité avec les Safavides se poursuit pendant des décennies.",
+    "campaign": "La victoire de Valoche est beaucoup plus large : dix provinces du Caucase et de l’Anatolie orientale passent directement sous contrôle ottoman, dont Erivan, Tiflis, Karabagh, Kars, Van et Bitlis.",
+    "game": "Cinq batailles sont enregistrées. L’Empire ottoman subit 95 596 pertes au cours de la guerre avant la paix du 25 juin 1515."
+  },
+  "TUR|1519-12-07": {
+    "status": "Percée dans le Golfe avec plusieurs siècles d’avance",
+    "history": "Au début du XVIe siècle, Ormuz est au cœur du système commercial du golfe Persique et passe sous domination portugaise à partir de 1507. Le Qatar ne connaît une présence politique ottomane durable qu’à partir de 1871.",
+    "campaign": "L’Empire ottoman de Valoche cherche déjà à contrôler directement le Golfe en attaquant Ormuz pour le Qatar. L’Égypte rejoint le conflit et Qom intervient également dans le camp ottoman.",
+    "game": "La guerre débute le 7 décembre 1519 et oppose principalement l’Empire ottoman et ses alliés à Ormuz et Delhi."
+  },
+  "TUR|1521-07-18": {
+    "status": "Bataille propre à la campagne",
+    "history": "Ar-Raqqah passe dans l’orbite ottomane après la conquête de la Syrie mamelouke au début du XVIe siècle, mais il n’existe pas de bataille historique contre Ormuz à cet endroit en 1521.",
+    "campaign": "Davud Hadim y intercepte une armée d’Ormuz pendant la guerre du Qatar. Le combat tourne au désastre pour l’adversaire : l’essentiel de la force engagée d’Ormuz est détruit.",
+    "game": "L’Empire ottoman perd 2 169 hommes contre 17 203 pour Ormuz et remporte la bataille."
+  },
+  "TUR|1522-06-02": {
+    "status": "Conquête du Qatar très largement anticipée",
+    "history": "La péninsule du Qatar n’entre réellement dans la sphère politique ottomane qu’au XIXe siècle, lorsque les Ottomans avancent dans l’Arabie orientale en 1871. Une conquête en 1522 constitue donc une divergence majeure.",
+    "campaign": "La guerre du Golfe se termine en faveur du camp ottoman. Le Qatar n’est pas annexé directement par Constantinople : il est attribué à l’Égypte, qui est alors vassale de l’Empire ottoman dans la partie.",
+    "game": "Trois batailles sont conservées. L’Empire ottoman enregistre 46 516 pertes ; le Qatar passe à l’Égypte le jour de la paix."
+  },
+  "TUR|1530-07-06": {
+    "status": "Nouvel épisode de la rivalité orientale",
+    "history": "Les années 1530 correspondent réellement à une nouvelle phase des guerres ottomano-safavides. Süleyman mène ensuite une grande campagne orientale et les Ottomans prennent Bagdad en 1534. Ardalan, principauté kurde de l’ouest iranien, se trouve dans cet espace de rivalité entre les deux empires.",
+    "campaign": "La partie remplace les Safavides par un Qara Qoyunlu toujours puissant. Valoche attaque pour reprendre Ardalan et pousse une nouvelle fois l’expansion ottomane vers l’Iran occidental.",
+    "game": "La guerre commence le 6 juillet 1530 contre Qara Qoyunlu, Mushasha et le Tabarestan."
+  },
+  "TUR|1531-06-27": {
+    "status": "Bataille uchronique dans un théâtre historiquement disputé",
+    "history": "Le Karabagh appartient bien à la zone de confrontation entre puissances turco-iraniennes, mais il n’existe pas de bataille ottomano-Qara Qoyunlu de Karabagh en 1531 ; Qara Qoyunlu a disparu depuis longtemps dans la chronologie réelle.",
+    "campaign": "Seyfeddin Kemal remporte une victoire extrêmement sanglante. Les Ottomans perdent plus de dix mille hommes mais infligent des pertes encore supérieures à l’armée de Jahân Shâh Khwaja.",
+    "game": "La sauvegarde enregistre 10 771 pertes ottomanes contre 11 866 pour Qara Qoyunlu."
+  },
+  "TUR|1534-03-01": {
+    "status": "Conquête directe du Maroc totalement uchronique",
+    "history": "Le Maroc du XVIe siècle reste hors de la domination ottomane. Les Saadiens montent alors en puissance dans le sud marocain et prennent Agadir aux Portugais en 1541 ; les interventions ottomanes dans les affaires marocaines deviennent surtout importantes à partir des années 1550.",
+    "campaign": "Dans la partie, l’Empire ottoman franchit cette limite dès 1534 et prend directement Safi, Ifni, Taroudant, Agadir et Ouarzazate. Il atteint ainsi la façade atlantique marocaine sous administration ottomane directe.",
+    "game": "Les cinq provinces changent simultanément de propriétaire le 1er mars 1534."
+  },
+  "TUR|1536-06-30": {
+    "status": "Avancée vers le Khorasan au-delà de l’expansion ottomane réelle",
+    "history": "Pendant la guerre ottomano-safavide de 1532–1555, les Ottomans avancent en Irak et en Azerbaïdjan mais ne conquièrent pas le Khorasan ni Bojnourd, beaucoup plus à l’est.",
+    "campaign": "Valoche poursuit pourtant son expansion orientale jusque vers Bojnourd. L’Empire ottoman mène la guerre avec l’Égypte, le Sistan et Qom contre la Transoxiane et Ormuz.",
+    "game": "Au 1er janvier 1537, la guerre est toujours active. L’Empire ottoman a déjà enregistré 9 396 pertes depuis son déclenchement."
+  },
+  "TUR|1536-11-13": {
+    "status": "Écho historique aux migrations ibériques",
+    "history": "Après la chute de Grenade en 1492, les musulmans d’Espagne subissent des conversions forcées croissantes : en Castille à partir de 1502 et en Aragon dans les années 1520. Des musulmans ibériques puis des Morisques trouvent refuge dans les terres musulmanes d’Afrique du Nord et de l’Empire ottoman ; les grandes expulsions d’Espagne interviennent toutefois surtout en 1609–1614.",
+    "campaign": "L’Empire ottoman choisit explicitement d’accueillir ces populations. Dans le RP, cette décision renforce son rôle de puissance musulmane capable d’offrir un refuge aux communautés chassées ou contraintes dans la péninsule Ibérique.",
+    "game": "La sauvegarde date l’acceptation des Morisques du 13 novembre 1536."
   }
 };
