@@ -162,7 +162,7 @@ function cabinetHash(type,id=""){return `#cabinet/${type}${id?`/${id}`:""}`}
 async function copyText(text){try{await navigator.clipboard.writeText(text);toast("Lien copié.")}catch{const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();toast("Lien copié.")}}
 function copyCabinetLink(type,id){copyText(`${location.origin}${location.pathname}${cabinetHash(type,id)}`)}
 function setCabinetTab(tab,{updateHash=true}={}){
-  $$$(".suggestion-tabs button").forEach(x=>x.classList.toggle("active",x.dataset.suggestionTab===tab));
+  $$(".suggestion-tabs button").forEach(x=>x.classList.toggle("active",x.dataset.suggestionTab===tab));
   const ideas=tab==="ideas";$("#ideas-panel").classList.toggle("hidden",!ideas);$("#polls-panel").classList.toggle("hidden",ideas);
   if(updateHash)history.replaceState(null,"",cabinetHash(ideas?"propositions":"sondages"));
 }
