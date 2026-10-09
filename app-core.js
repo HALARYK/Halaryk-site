@@ -2,7 +2,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 import { CONFIG, BACKEND_CONFIGURED } from "./config.js";
 
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
-let supabase=null,session=null,currentCategory="games",currentFeedCategory="all",currentSort="popular",currentStatus="all",libraryFilter="playing",librarySearch="",libraryMobileExpanded=false,currentSuggestionFeed=[],libraryGames=[];
+let supabase=null,session=null,currentCategory="games",currentFeedCategory="all",currentSort="popular",libraryFilter="playing",librarySearch="",libraryMobileExpanded=false,currentSuggestionFeed=[],libraryGames=[];
 
 const categoryCopy={
   games:["Jeux de semaine","Proposez un jeu à faire en stream.","Cette catégorie concerne les streams du lundi et du mercredi."],
@@ -139,7 +139,6 @@ async function loadSuggestions(){
   currentSuggestionFeed=data||[];renderSimilar();let list=currentSuggestionFeed;
   if(currentFeedCategory!=="all")list=list.filter(s=>s.category===currentFeedCategory);
   if(currentSort==="mine")list=session?.user?list.filter(s=>s.author_id===session.user.id):[];
-  if(currentStatus!=="all")list=list.filter(s=>s.status===currentStatus);
   $("#pinned-suggestion").innerHTML=list.filter(s=>s.pinned).map(s=>renderSuggestion(s,true)).join("");const normal=list.filter(s=>!s.pinned);$("#suggestions-feed").innerHTML=normal.length?normal.map(s=>renderSuggestion(s)).join(""):`<div class="empty-state"><strong>Aucune suggestion ici pour le moment</strong><p>La première pourrait être la tienne.</p></div>`;$$('[data-vote]').forEach(b=>b.onclick=()=>toggleVote(b.dataset.vote));$$('[data-share-suggestion]').forEach(b=>b.onclick=()=>copyCabinetLink('proposition',b.dataset.shareSuggestion));applyPendingCabinetHighlight();
 }
 async function toggleVote(id){if(!session?.user)return signIn();const{error}=await supabase.rpc("toggle_suggestion_vote",{p_suggestion_id:id});if(error)toast(error.message);else await loadSuggestions()}
@@ -214,7 +213,7 @@ function initInteractions(){
   $$(".suggestion-tabs button").forEach(b=>b.onclick=()=>setCabinetTab(b.dataset.suggestionTab));
   $$('[data-sort]').forEach(b=>b.onclick=async()=>{$$('[data-sort]').forEach(x=>x.classList.remove("active"));b.classList.add("active");currentSort=b.dataset.sort;await loadSuggestions()});
   $("#category-filter")?.addEventListener("change",async e=>{currentFeedCategory=e.target.value;await loadSuggestions()});
-  $("#status-filter")?.addEventListener("change",async e=>{currentStatus=e.target.value;await loadSuggestions()});$("#suggestion-title")?.addEventListener("input",renderSimilar);if($("#suggestion-form"))$("#suggestion-form").onsubmit=submitSuggestion;
+$("#suggestion-title")?.addEventListener("input",renderSimilar);if($("#suggestion-form"))$("#suggestion-form").onsubmit=submitSuggestion;
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#library-detail")?.classList.contains("hidden"))closeLibraryDetail()});
   window.addEventListener("hashchange",()=>applyCabinetRoute());window.addEventListener("resize",()=>{if(!$("#library-grid"))return;if(matchMedia("(min-width:761px)").matches)libraryMobileExpanded=false;renderLibraryGrid()});
 }
