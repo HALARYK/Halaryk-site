@@ -44,7 +44,7 @@ function battleLayout(facts,map){
 }
 function contextLayout(ctx,facts){
   const tech=facts.filter(([k])=>isTechnical(k));const useful=facts.filter(([k])=>!isTechnical(k)&&!/conséquence|résultat observable/i.test(k));
-  return `<div class="v52-context-file"><div class="v52-context-status">${esc(ctx.status||"Repère de campagne")}</div><div class="v52-context-columns"><article><span>REPÈRE HISTORIQUE</span><p>${esc(ctx.history||"")}</p></article><article><span>DANS LA CAMPAGNE</span><p>${esc(ctx.campaign||"")}</p></article></div>${ctx.game?`<aside class="v52-context-game"><span>LECTURE JEU / SOURCE</span><p>${esc(ctx.game)}</p></aside>`:""}${useful.length?`${sectionTitle("Données utiles de la partie")}<div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
+  return `<div class="v52-context-file"><div class="v52-context-status">${esc(ctx.status||"Repère de campagne")}</div><div class="v52-context-columns"><article><span>REPÈRE HISTORIQUE</span><p>${esc(ctx.history||"")}</p></article><article><span>DANS LA CAMPAGNE</span><p>${esc(ctx.campaign||"")}</p></article></div>${useful.length?`${sectionTitle("Données utiles de la partie")}<div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
 }
 function genericLayout(facts){const tech=facts.filter(([k])=>isTechnical(k));const main=facts.filter(([k])=>!isTechnical(k));return `${main.length?`<div class="v52-dossier-facts">${main.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}`}
 function enhanceDossier(box){
