@@ -207,26 +207,34 @@ async function loadSuggestions() {
         <label class="check-row"><input class="suggestion-pinned" type="checkbox" ${s.pinned ? "checked" : ""}> Épinglée</label>
       </div>
       <p>${esc(s.body)}</p>
-      <div class="admin-two-cols">
+      <div class="admin-suggestion-management">
         <label>Statut
           <select class="suggestion-status">
             ${Object.entries(suggestionStatusLabels).map(([st, label]) => `<option value="${st}" ${s.status === st ? "selected" : ""}>${label}</option>`).join("")}
           </select>
         </label>
-        <label>Fusionner vers
-          <select class="suggestion-merge">
-            <option value="">— Choisir —</option>
-            ${all.filter(x => x.id !== s.id).map(x => `<option value="${x.id}">${esc(x.title)}</option>`).join("")}
-          </select>
-        </label>
+
       </div>
       <label>Réponse officielle<textarea class="suggestion-reply" rows="3">${esc(s.official_reply || "")}</textarea></label>
       <div class="admin-actions">
         <button data-save-suggestion="${s.id}">Enregistrer</button>
-        <button data-merge-suggestion="${s.id}">Fusionner</button>
         <button data-link-game="${s.id}">Ajouter un jeu lié</button>
-        <button class="danger-action" data-delete-suggestion="${s.id}">Supprimer</button>
       </div>
+      <details class="admin-suggestion-advanced">
+        <summary>Actions avancées · Fusion et suppression</summary>
+        <div class="admin-suggestion-advanced-body">
+          <label>Fusionner vers
+            <select class="suggestion-merge">
+              <option value="">— Choisir une suggestion —</option>
+              ${all.filter(x => x.id !== s.id).map(x => `<option value="${x.id}">${esc(x.title)}</option>`).join("")}
+            </select>
+          </label>
+          <div class="admin-actions">
+            <button data-merge-suggestion="${s.id}">Fusionner</button>
+            <button class="danger-action" data-delete-suggestion="${s.id}">Supprimer définitivement</button>
+          </div>
+        </div>
+      </details>
     </article>`).join("") : `<div class="admin-card"><p>Aucune suggestion pour le moment.</p></div>`;
 
   $$('[data-save-suggestion]').forEach(b => b.onclick = () => saveSuggestion(b.dataset.saveSuggestion));
@@ -452,12 +460,12 @@ function renderLibrary() {
   const filtered = libraryGames.filter(g => {
     const hay = `${g.name || ""} ${g.developer || ""} ${g.rating ?? ""}`.toLocaleLowerCase("fr");
     const normalized = normalizeLibraryStatus(g.status);
-    const statusMatch = status === "all" || (status === "legacy" ? !normalized : normalized === status);
+    const statusMatch = status === "legacy" ? !normalized : status === "all" ? Boolean(normalized) : normalized === status;
     return (!q || hay.includes(q)) && statusMatch;
   });
   const visible = filtered.slice(0, libraryRenderLimit);
   const count = $("#library-result-count");
-  if (count) count.textContent = `${filtered.length} jeu${filtered.length > 1 ? "x" : ""} trouvé${filtered.length > 1 ? "s" : ""} sur ${libraryGames.length}`;
+  if (count) { const activeCount = libraryGames.filter(g => normalizeLibraryStatus(g.status)).length; const archivedCount = libraryGames.length - activeCount; count.textContent = `${filtered.length} jeu${filtered.length > 1 ? "x" : ""} affiché${filtered.length > 1 ? "s" : ""} · ${activeCount} actif${activeCount > 1 ? "s" : ""} · ${archivedCount} ancien${archivedCount > 1 ? "s" : ""} masqué${archivedCount > 1 ? "s" : ""}`; }
 
   $("#admin-library").innerHTML = visible.length ? visible.map(g => `
     <article class="admin-item library-game-item" data-game="${g.id}">
@@ -503,6 +511,9 @@ function renderLibrary() {
 async function saveGame(id) {
   const item = $(`[data-game="${id}"]`);
   const status = $(".game-status", item).value;
+  const originalGame = libraryGames.find(g => String(g.id) === String(id));
+  if (!originalGame) return toast("Jeu introuvable : actualise la page.");
+  if (!normalizeLibraryStatus(status) && status !== originalGame.status) return toast("Choisis « En cours » ou « Terminé » pour reclasser ce jeu.");
   const streamed = $(".game-streamed", item).checked;
   const personal_note = $(".game-note", item).value.trim() || null;
   const developer = $(".game-developer-edit", item).value.trim() || null;
@@ -513,7 +524,7 @@ async function saveGame(id) {
   const rating = ratingRaw === "" ? null : Number(ratingRaw.replace(",", "."));
   if (playtime_hours !== null && (!Number.isFinite(playtime_hours) || playtime_hours < 0)) return toast("Le temps de jeu doit être un nombre positif.");
   if (rating !== null && (!Number.isFinite(rating) || rating < 0 || rating > 10)) return toast("La note doit être comprise entre 0 et 10.");
-  const { error } = await supabase.from("library_games").update({ status, streamed, personal_note, playtime_hours, rating, developer, summary }).eq("id", id);
+  const { error } = await supabase.from("library_games").update({ status: normalizeLibraryStatus(status) || originalGame.status, streamed, personal_note, playtime_hours, rating, developer, summary }).eq("id", id);
   if (error) toast(error.message);
   else {
     toast("Jeu mis à jour.");
