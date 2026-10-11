@@ -407,7 +407,10 @@ function openGameModal(i) {
 
 function closeGameModal() {
   pendingGameIndex = null;
-  $("#game-add-modal").classList.add("hidden");
+  const modal = $("#game-add-modal");
+  modal.classList.remove("is-open");
+  modal.classList.add("hidden");
+  modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
 }
 
