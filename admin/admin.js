@@ -353,13 +353,18 @@ async function searchGames(sourceSuggestionId = null, append = false) {
   }
   $("#game-search-meta").textContent = metaParts.join(" · ");
 
-  $("#game-search-results").innerHTML = igdbResults.length ? igdbResults.map((g, i) => `
+  $("#game-search-results").innerHTML = igdbResults.length ? igdbResults.map((g, i) => {
+    const existing = libraryGames.find(saved => g.id != null && String(saved.igdb_id) === String(g.id));
+    const archived = existing && !normalizeLibraryStatus(existing.status);
+    return `
     <article class="game-search-card">
       ${g.cover_url ? `<img src="${esc(hdCover(g.cover_url))}" alt="Jaquette de ${esc(g.name)}">` : ""}
       <strong>${esc(g.name)}</strong>
       <small>${g.developer ? `${esc(g.developer)} · ` : ""}${g.release_year || "Date inconnue"}</small>
-      <button data-add-game="${i}">Ajouter</button>
-    </article>`).join("") : '<div class="admin-searching">Aucun résultat.</div>';
+      ${existing ? `<small class="game-search-existing">${archived ? "Déjà enregistré · archivé" : "Déjà dans la ludothèque"}</small>` : ""}
+      <button data-add-game="${i}" ${existing && !archived ? 'disabled title="Ce jeu existe déjà dans la ludothèque"' : ""}>${archived ? "Réactiver" : existing ? "Déjà ajouté" : "Ajouter"}</button>
+    </article>`;
+  }).join("") : '<div class="admin-searching">Aucun résultat.</div>';
 
   $$('[data-add-game]').forEach(b => b.onclick = () => openGameModal(Number(b.dataset.addGame)));
 
@@ -372,6 +377,8 @@ async function searchGames(sourceSuggestionId = null, append = false) {
 function openGameModal(i) {
   const g = igdbResults[i];
   if (!g) return;
+  const existing = libraryGames.find(saved => g.id != null && String(saved.igdb_id) === String(g.id));
+  if (existing && normalizeLibraryStatus(existing.status)) return toast("Ce jeu est déjà dans la ludothèque.");
   pendingGameIndex = i;
   $("#game-add-title").textContent = g.name;
   $("#game-add-year").textContent = g.release_year ? `Sortie : ${g.release_year}` : "Date de sortie inconnue";
@@ -407,7 +414,27 @@ function closeGameModal() {
 async function confirmAddGame() {
   if (pendingGameIndex === null) return;
   const g = igdbResults[pendingGameIndex];
+  if (!g) return toast("Jeu introuvable. Relance la recherche.");
   const status = $("#game-add-status").value;
+  if (!normalizeLibraryStatus(status)) return toast("Sélectionne un statut valide.");
+  const existing = libraryGames.find(saved => g.id != null && String(saved.igdb_id) === String(g.id));
+  if (existing && normalizeLibraryStatus(existing.status)) return toast("Ce jeu est déjà dans la ludothèque.");
+  if (existing) {
+    const ok = await askConfirm({
+      title: "Réactiver un jeu archivé",
+      message: `« ${existing.name} » existe déjà dans les archives. Le réactiver en « ${libraryStatusLabels[status]} » conservera ses anciennes données (note, temps de jeu, résumé et commentaire). Les nouveaux champs saisis dans cette fenêtre ne remplaceront pas ces données.`,
+      confirmLabel: "Réactiver"
+    });
+    if (!ok) return;
+    $("#game-add-confirm").disabled = true;
+    const { error } = await supabase.from("library_games").update({ status }).eq("id", existing.id);
+    $("#game-add-confirm").disabled = false;
+    if (error) return toast("Réactivation impossible : " + error.message);
+    closeGameModal();
+    toast("Jeu réactivé, données conservées.");
+    await refreshAll();
+    return;
+  }
   const streamed = $("#game-add-streamed").checked;
   const hoursRaw = $("#game-add-playtime").value.trim();
   const playtime_hours = hoursRaw === "" ? null : Number(hoursRaw.replace(",", "."));
@@ -438,7 +465,7 @@ async function confirmAddGame() {
     source_suggestion_id: g.sourceSuggestionId || null
   });
   $("#game-add-confirm").disabled = false;
-  if (error) return toast(error.message);
+  if (error) return toast(error.code === "23505" ? "Ce jeu existe déjà. Actualise la ludothèque pour le reclasser." : "Ajout impossible : " + error.message);
   closeGameModal();
   toast("Jeu ajouté à la ludothèque.");
   await refreshAll();
