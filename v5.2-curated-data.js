@@ -749,6 +749,278 @@ export const CURATED_EVENTS={
           "Madrid devient le cœur politique de l’Espagne"
         ]
       ]
+    },
+    {
+      "date": "1538-01-04",
+      "type": "religion",
+      "title": "L’Espagne rejoint la Contre-Réforme",
+      "summary": "L’Espagne s’engage officiellement dans la réaction catholique face à la progression des réformes protestantes en Europe.",
+      "facts": [
+        [
+          "Orientation religieuse",
+          "Contre-Réforme catholique"
+        ],
+        [
+          "Religion de l’État",
+          "Catholicisme"
+        ],
+        [
+          "Portée",
+          "L’Espagne se positionne parmi les grandes puissances catholiques de la campagne"
+        ]
+      ]
+    },
+    {
+      "date": "1538-09-13",
+      "type": "religion",
+      "title": "Adoption de l’Act of Uniformity",
+      "summary": "La monarchie espagnole adopte une politique d’uniformité religieuse destinée à renforcer la cohésion confessionnelle du royaume.",
+      "facts": [
+        [
+          "Mesure",
+          "Act of Uniformity"
+        ],
+        [
+          "Objectif",
+          "Renforcer l’uniformité religieuse de la monarchie"
+        ],
+        [
+          "Contexte",
+          "Poursuite du durcissement catholique engagé au début de l’année 1538"
+        ]
+      ]
+    },
+    {
+      "date": "1539-01-29",
+      "type": "guerre",
+      "title": "Début de la conquête espagnole d’Auia",
+      "summary": "L’Espagne ouvre une nouvelle guerre d’expansion en Amérique du Nord contre les Hasinais et plusieurs nations autochtones.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole d’Auia"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Auia"
+        ],
+        [
+          "Camp espagnol",
+          "Espagne · Marrakech · Caraïbes Espagnoles · Brésil espagnol · Nouvelle-Grenade"
+        ],
+        [
+          "Camp adverse",
+          "Hasinais · Caddos · Chactas · Natchez"
+        ]
+      ]
+    },
+    {
+      "date": "1543-10-26",
+      "type": "guerre",
+      "title": "Victoire dans la conquête espagnole d’Auia",
+      "summary": "Après près de cinq ans de campagne, l’Espagne impose sa domination sur une vaste portion du littoral et de l’intérieur texan.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole d’Auia"
+        ],
+        [
+          "Issue",
+          "Victoire du camp espagnol"
+        ],
+        [
+          "Batailles enregistrées",
+          "2"
+        ],
+        [
+          "Territoires acquis",
+          "La Bahia · Los Tejas · Isla de Malhado · Rio Grande · Los Ais · Hasinai · Tanu · Nabaydacu"
+        ],
+        [
+          "Nombre de territoires acquis",
+          "8"
+        ]
+      ]
+    },
+    {
+      "date": "1550-06-05",
+      "type": "guerre",
+      "title": "L’Espagne intervient dans la guerre caddo contre l’invasion de Nouvelle-Espagne",
+      "summary": "L’Espagne entre dans la guerre aux côtés de sa colonie de Nouvelle-Espagne alors que les Caddos et les Anilcos tentent de repousser l’expansion coloniale.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre caddo contre l’invasion de Nouvelle-Espagne"
+        ],
+        [
+          "Rôle de l’Espagne",
+          "Renfort du camp défenseur"
+        ],
+        [
+          "Guerre déclenchée",
+          "5 novembre 1548"
+        ],
+        [
+          "Entrée de l’Espagne",
+          "5 juin 1550"
+        ],
+        [
+          "Fin du conflit",
+          "31 juillet 1550"
+        ]
+      ]
+    },
+    {
+      "date": "1550-07-08",
+      "type": "bataille",
+      "title": "Bataille de Tziccoac",
+      "summary": "Francisco Pizarro remporte une victoire défensive écrasante contre l’armée anilco pendant la guerre caddo.",
+      "facts": [
+        [
+          "Guerre",
+          "Guerre caddo contre l’invasion de Nouvelle-Espagne"
+        ],
+        [
+          "Lieu",
+          "Tziccoac"
+        ],
+        [
+          "Attaquant",
+          "Anilcos — Stilnaleeje Hopoethe — 11 412 infanterie · 1 804 cavalerie"
+        ],
+        [
+          "Défenseur",
+          "Espagne — Francisco Pizarro — 12 000 infanterie · 4 000 cavalerie · 4 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Anilcos : 13 216 · Espagne : 809"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1550-12-04",
+      "type": "guerre",
+      "title": "Début de la conquête espagnole de Coatzacualco",
+      "summary": "Quelques mois après l’intervention caddo, l’Espagne reprend l’offensive au Mexique et attaque les Chontals et les Quichés pour Coatzacualco.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole de Coatzacualco"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Coatzacualco"
+        ],
+        [
+          "Camp espagnol",
+          "Espagne · Marrakech · Caraïbes Espagnoles · Brésil espagnol · Nouvelle-Grenade · Nouvelle-Espagne"
+        ],
+        [
+          "Camp adverse",
+          "Chontals · Quichés"
+        ]
+      ]
+    },
+    {
+      "date": "1553-06-27",
+      "type": "bataille",
+      "title": "Bataille de Xicallanco",
+      "summary": "Francisco Pizarro détruit l’armée chontale à Xicallanco au cours de la conquête de Coatzacualco.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête espagnole de Coatzacualco"
+        ],
+        [
+          "Lieu",
+          "Xicallanco"
+        ],
+        [
+          "Attaquant",
+          "Espagne — Francisco Pizarro — 12 000 infanterie · 4 000 cavalerie · 4 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Chontals — Yumcaaz Bakan — 2 000 infanterie · 1 000 cavalerie · 1 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Espagne : 62 · Chontals : 4 000"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1555-04-10",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Coatzacualco",
+      "summary": "La guerre s’achève par une victoire espagnole et six territoires du Mexique passent sous l’autorité de l’Espagne.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole de Coatzacualco"
+        ],
+        [
+          "Issue",
+          "Victoire du camp espagnol"
+        ],
+        [
+          "Batailles enregistrées",
+          "1"
+        ],
+        [
+          "Territoires acquis",
+          "Tuxpan · Tochtepec · Coatzacualco · Xicallanco · Metztitlan · Xilotepec"
+        ],
+        [
+          "Nombre de territoires acquis",
+          "6"
+        ]
+      ]
+    },
+    {
+      "date": "1558-12-16",
+      "type": "guerre",
+      "title": "L’Espagne rejoint la Guerre de la Ligue protestante",
+      "summary": "L’Espagne prend le parti de l’Autriche et du camp catholique dans la grande guerre confessionnelle du Saint-Empire, encore active en juin 1559.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre de la Ligue protestante"
+        ],
+        [
+          "Camp de l’Espagne",
+          "Défenseurs menés par l’Autriche"
+        ],
+        [
+          "Adversaire principal",
+          "Saxe et Ligue protestante"
+        ],
+        [
+          "Entrée de l’Espagne",
+          "16 décembre 1558"
+        ],
+        [
+          "Situation au 12 juin 1559",
+          "Conflit toujours en cours"
+        ]
+      ]
     }
   ],
   "ENG": [
