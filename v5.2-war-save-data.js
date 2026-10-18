@@ -4200,5 +4200,142 @@ export const WAR_EVENT_DATA={
     "battles": 0,
     "winner": "Conflit toujours en cours au 12 juin 1559.",
     "peace": "Aucune paix : la guerre reste active à la date de la sauvegarde."
+  },
+  "HAB|1544-10-13": {
+    "mode": "start",
+    "war": "Conquête autrichienne de Venise",
+    "start": "1544-10-13",
+    "end": "1545-06-07",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Venise",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Venise",
+      "Ratisbonne"
+    ],
+    "lossesAttackers": 13076,
+    "lossesDefenders": 19000,
+    "losses": {
+      "Autriche": 8866,
+      "Moldavie": 250,
+      "Bourgogne": 280,
+      "Champagne": 2581,
+      "Herzégovine": 1099,
+      "Venise": 10000,
+      "Ratisbonne": 9000
+    },
+    "battles": 4,
+    "winner": "Camp autrichien",
+    "peace": "Venise passe sous contrôle direct de l’Autriche."
+  },
+  "HAB|1545-06-07": {
+    "mode": "end",
+    "war": "Conquête autrichienne de Venise",
+    "start": "1544-10-13",
+    "end": "1545-06-07",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Venise",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Venise",
+      "Ratisbonne"
+    ],
+    "lossesAttackers": 13076,
+    "lossesDefenders": 19000,
+    "losses": {
+      "Autriche": 8866,
+      "Moldavie": 250,
+      "Bourgogne": 280,
+      "Champagne": 2581,
+      "Herzégovine": 1099,
+      "Venise": 10000,
+      "Ratisbonne": 9000
+    },
+    "battles": 4,
+    "winner": "Camp autrichien",
+    "peace": "Venise passe sous contrôle direct de l’Autriche."
+  },
+  "HAB|1557-11-12": {
+    "mode": "join",
+    "war": "2ème Conquête florentine de Mantova",
+    "start": "1557-11-12",
+    "joinDate": "1557-11-12",
+    "statusDate": "1559-06-12",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Mantoue",
+    "attackers": [
+      "Florence",
+      "Urbino",
+      "Montferrat",
+      "Spolète",
+      "Pérouse",
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Milan",
+      "Ingolstadt",
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Conflit toujours en cours au 12 juin 1559.",
+    "peace": "Aucune paix : la deuxième conquête florentine de Mantoue est encore active."
+  },
+  "HAB|1558-12-16": {
+    "mode": "start",
+    "war": "Guerre de la Ligue protestante",
+    "start": "1558-12-16",
+    "casusBelli": "Guerre de Ligue religieuse",
+    "warGoal": "Suprématie religieuse dans le Saint-Empire",
+    "attackers": [
+      "Saxe",
+      "Lübeck",
+      "Nuremberg",
+      "Ansbach",
+      "Bavière",
+      "Danemark",
+      "Norvège",
+      "Clèves",
+      "Bade",
+      "Hesse"
+    ],
+    "defenders": [
+      "Autriche",
+      "Espagne",
+      "Pologne",
+      "Lituanie",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine",
+      "Autres princes catholiques"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Conflit toujours en cours au 12 juin 1559.",
+    "peace": "Aucune paix : la Guerre de la Ligue protestante est toujours active dans la sauvegarde."
   }
 };
