@@ -4731,5 +4731,153 @@ export const WAR_EVENT_DATA={
     "battles": 0,
     "winner": "Camp russe",
     "peace": "Dix territoires passent à la Russie, dont Azov, Ochakov, Taman et Vladikavkaz."
+  },
+  "BRA|1548-06-27": {
+    "mode": "start",
+    "war": "Conquête prussienne de Brême",
+    "start": "1548-06-27",
+    "end": "1550-08-01",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Stade",
+    "attackers": [
+      "Prusse"
+    ],
+    "defenders": [
+      "Brême",
+      "Frise orientale",
+      "Frise",
+      "Lübeck"
+    ],
+    "lossesAttackers": 20145,
+    "lossesDefenders": 49039,
+    "losses": {
+      "Prusse": 20145,
+      "Brême": 14401,
+      "Frise orientale": 11109,
+      "Frise": 10449,
+      "Lübeck": 13080
+    },
+    "battles": 6,
+    "winner": "Camp prussien",
+    "peace": "Stade passe sous contrôle prussien."
+  },
+  "BRA|1550-08-01": {
+    "mode": "end",
+    "war": "Conquête prussienne de Brême",
+    "start": "1548-06-27",
+    "end": "1550-08-01",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Stade",
+    "attackers": [
+      "Prusse"
+    ],
+    "defenders": [
+      "Brême",
+      "Frise orientale",
+      "Frise",
+      "Lübeck"
+    ],
+    "lossesAttackers": 20145,
+    "lossesDefenders": 49039,
+    "losses": {
+      "Prusse": 20145,
+      "Brême": 14401,
+      "Frise orientale": 11109,
+      "Frise": 10449,
+      "Lübeck": 13080
+    },
+    "battles": 6,
+    "winner": "Camp prussien",
+    "peace": "Stade passe sous contrôle prussien."
+  },
+  "BRA|1551-05-13": {
+    "mode": "start",
+    "war": "Conquête prussienne de Halle",
+    "start": "1551-05-13",
+    "end": "1555-11-23",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Halle",
+    "attackers": [
+      "Prusse"
+    ],
+    "defenders": [
+      "Magdebourg",
+      "Pologne",
+      "Lituanie",
+      "Palatinat",
+      "Thuringe"
+    ],
+    "lossesAttackers": 31402,
+    "lossesDefenders": 47029,
+    "losses": {
+      "Prusse": 31402,
+      "Magdebourg": 816,
+      "Pologne": 37100,
+      "Lituanie": 8921,
+      "Palatinat": 192,
+      "Thuringe": 0
+    },
+    "battles": 4,
+    "winner": "Camp prussien",
+    "peace": "Magdebourg et Halle passent sous contrôle prussien."
+  },
+  "BRA|1555-11-23": {
+    "mode": "end",
+    "war": "Conquête prussienne de Halle",
+    "start": "1551-05-13",
+    "end": "1555-11-23",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Halle",
+    "attackers": [
+      "Prusse"
+    ],
+    "defenders": [
+      "Magdebourg",
+      "Pologne",
+      "Lituanie",
+      "Palatinat",
+      "Thuringe"
+    ],
+    "lossesAttackers": 31402,
+    "lossesDefenders": 47029,
+    "losses": {
+      "Prusse": 31402,
+      "Magdebourg": 816,
+      "Pologne": 37100,
+      "Lituanie": 8921,
+      "Palatinat": 192,
+      "Thuringe": 0
+    },
+    "battles": 4,
+    "winner": "Camp prussien",
+    "peace": "Magdebourg et Halle passent sous contrôle prussien."
+  },
+  "BRA|1557-01-10": {
+    "mode": "join",
+    "war": "Guerre d’indépendance suédoise",
+    "start": "1557-01-10",
+    "joinDate": "1557-01-10",
+    "statusDate": "1559-06-12",
+    "casusBelli": "Guerre d’indépendance",
+    "warGoal": "Libérer la Suède de la domination danoise",
+    "attackers": [
+      "Suède",
+      "Prusse"
+    ],
+    "defenders": [
+      "Danemark",
+      "Norvège",
+      "Ansbach",
+      "Frise orientale",
+      "Lübeck"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {
+      "Prusse": 15655
+    },
+    "battles": 0,
+    "winner": "Conflit toujours en cours au 12 juin 1559.",
+    "peace": "Aucune paix : la Guerre d’indépendance suédoise est encore active dans la sauvegarde."
   }
 };
