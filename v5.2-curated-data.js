@@ -4326,6 +4326,418 @@ export const CURATED_EVENTS={
           "Verden, acquis le 5 mai 1536"
         ]
       ]
+    },
+    {
+      "date": "1538-10-11",
+      "type": "dynastie",
+      "title": "Friedrich IV monte sur le trône de Prusse",
+      "summary": "Friedrich IV von Hohenzollern succède à la tête de la Prusse ; Friedrich Wilhelm est simultanément désigné comme nouvel héritier.",
+      "facts": [
+        [
+          "Nouveau souverain",
+          "Friedrich IV von Hohenzollern"
+        ],
+        [
+          "Compétences",
+          "ADM 4 · DIP 6 · MIL 3"
+        ],
+        [
+          "Religion",
+          "Protestantisme"
+        ],
+        [
+          "Traits",
+          "Entrepreneur · juste"
+        ],
+        [
+          "Nouvel héritier",
+          "Friedrich Wilhelm von Hohenzollern"
+        ],
+        [
+          "Compétences de l’héritier",
+          "ADM 6 · DIP 3 · MIL 6 · prétention 100"
+        ]
+      ]
+    },
+    {
+      "date": "1539-11-11",
+      "type": "politique",
+      "title": "Adoption des Merchant Adventures",
+      "summary": "La Prusse encourage davantage les entreprises marchandes et cherche à renforcer son ouverture commerciale.",
+      "facts": [
+        [
+          "Mesure",
+          "Merchant Adventures"
+        ],
+        [
+          "Orientation",
+          "Commerce extérieur"
+        ],
+        [
+          "Portée",
+          "Renforcement du rôle des marchands dans l’économie prussienne"
+        ]
+      ]
+    },
+    {
+      "date": "1542-10-05",
+      "type": "politique",
+      "title": "Adoption du Nationalistic Enthusiasm",
+      "summary": "La monarchie prussienne renforce la mobilisation politique et militaire autour de l’État.",
+      "facts": [
+        [
+          "Mesure",
+          "Nationalistic Enthusiasm"
+        ],
+        [
+          "Orientation",
+          "Mobilisation nationale et militaire"
+        ],
+        [
+          "Portée",
+          "Renforcement de la cohésion du royaume"
+        ]
+      ]
+    },
+    {
+      "date": "1545-03-04",
+      "type": "économie",
+      "title": "Adoption de la Smithian Economics",
+      "summary": "La Prusse adopte une doctrine économique favorisant l’efficacité productive et commerciale.",
+      "facts": [
+        [
+          "Mesure",
+          "Smithian Economics"
+        ],
+        [
+          "Orientation",
+          "Économie et production"
+        ],
+        [
+          "Portée",
+          "Modernisation de la politique économique prussienne"
+        ]
+      ]
+    },
+    {
+      "date": "1547-12-04",
+      "type": "économie",
+      "title": "Adoption de la National Trade Policy",
+      "summary": "La Prusse formalise une politique commerciale nationale visant à accroître la puissance économique de l’État.",
+      "facts": [
+        [
+          "Mesure",
+          "National Trade Policy"
+        ],
+        [
+          "Orientation",
+          "Commerce et mercantilisme"
+        ],
+        [
+          "Portée",
+          "Consolidation de la stratégie commerciale prussienne"
+        ]
+      ]
+    },
+    {
+      "date": "1548-02-12",
+      "type": "religion",
+      "title": "Adoption du Popery Act",
+      "summary": "La Prusse protestante durcit sa législation confessionnelle à l’encontre de l’influence catholique.",
+      "facts": [
+        [
+          "Mesure",
+          "Popery Act"
+        ],
+        [
+          "Religion de l’État",
+          "Protestantisme"
+        ],
+        [
+          "Orientation",
+          "Renforcement de la politique confessionnelle protestante"
+        ]
+      ]
+    },
+    {
+      "date": "1548-06-27",
+      "type": "guerre",
+      "title": "Début de la conquête prussienne de Brême",
+      "summary": "La Prusse ouvre une guerre contre Brême et ses alliés afin de poursuivre son expansion en Allemagne du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Brême"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Stade"
+        ],
+        [
+          "Camp attaquant",
+          "Prusse"
+        ],
+        [
+          "Camp défenseur",
+          "Brême · Frise orientale · Frise · Lübeck"
+        ]
+      ]
+    },
+    {
+      "date": "1548-07-11",
+      "type": "bataille",
+      "title": "Bataille de Rostock",
+      "summary": "Paul Perlkowski remporte une victoire écrasante contre les forces de Lübeck à Rostock.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête prussienne de Brême"
+        ],
+        [
+          "Lieu",
+          "Rostock"
+        ],
+        [
+          "Attaquant",
+          "Prusse — Paul Perlkowski — 16 000 infanterie · 5 000 cavalerie · 10 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Lübeck — Otto Eggers — 6 000 infanterie · 2 000 cavalerie · 2 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Prusse : 800 · Lübeck : 10 000"
+        ],
+        [
+          "Vainqueur",
+          "Prusse"
+        ]
+      ]
+    },
+    {
+      "date": "1549-04-04",
+      "type": "bataille",
+      "title": "Bataille de Stettin",
+      "summary": "La Prusse remporte une nouvelle victoire majeure contre l’armée de Brême à Stettin.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête prussienne de Brême"
+        ],
+        [
+          "Lieu",
+          "Stettin"
+        ],
+        [
+          "Attaquant",
+          "Prusse — Paul Perlkowski — 13 105 infanterie · 4 896 cavalerie · 9 949 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Brême — Sibraht Sems — 6 382 infanterie · 1 703 cavalerie · 1 821 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Prusse : 1 257 · Brême : 9 906"
+        ],
+        [
+          "Vainqueur",
+          "Prusse"
+        ]
+      ]
+    },
+    {
+      "date": "1550-07-11",
+      "type": "bataille",
+      "title": "Bataille d’Oldenbourg",
+      "summary": "Paul Perlkowski détruit l’armée brêmoise à Oldenbourg quelques semaines avant la fin de la guerre.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête prussienne de Brême"
+        ],
+        [
+          "Lieu",
+          "Oldenbourg"
+        ],
+        [
+          "Attaquant",
+          "Prusse — Paul Perlkowski — 16 000 infanterie · 5 000 cavalerie · 10 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Brême — Isaak Alers — 9 000 infanterie · 1 000 cavalerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Prusse : 1 123 · Brême : 10 000"
+        ],
+        [
+          "Vainqueur",
+          "Prusse"
+        ]
+      ]
+    },
+    {
+      "date": "1550-08-01",
+      "type": "guerre",
+      "title": "Victoire dans la conquête prussienne de Brême",
+      "summary": "Après six batailles enregistrées, la Prusse impose la paix et Stade passe sous son contrôle.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Brême"
+        ],
+        [
+          "Issue",
+          "Victoire prussienne"
+        ],
+        [
+          "Batailles enregistrées",
+          "6"
+        ],
+        [
+          "Pertes de la Prusse",
+          "20 145 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "49 039 pertes humaines"
+        ],
+        [
+          "Territoire acquis",
+          "Stade"
+        ]
+      ]
+    },
+    {
+      "date": "1551-05-13",
+      "type": "guerre",
+      "title": "Début de la conquête prussienne de Halle",
+      "summary": "Friedrich IV ouvre une nouvelle guerre d’expansion contre Magdebourg et une large coalition d’Europe centrale.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Halle"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Halle"
+        ],
+        [
+          "Camp attaquant",
+          "Prusse"
+        ],
+        [
+          "Camp défenseur",
+          "Magdebourg · Pologne · Lituanie · Palatinat · Thuringe"
+        ]
+      ]
+    },
+    {
+      "date": "1551-10-31",
+      "type": "bataille",
+      "title": "Bataille de Dantzig",
+      "summary": "Paul Perlkowski bat une importante armée lituanienne à Dantzig au cours de la guerre de Halle.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête prussienne de Halle"
+        ],
+        [
+          "Lieu",
+          "Dantzig"
+        ],
+        [
+          "Attaquant",
+          "Prusse — Paul Perlkowski — 16 000 infanterie · 5 000 cavalerie · 10 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Lituanie — Zygimantas Kosakovskis — 11 310 infanterie · 10 000 cavalerie · 15 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Prusse : 3 553 · Lituanie : 13 166"
+        ],
+        [
+          "Vainqueur",
+          "Prusse"
+        ]
+      ]
+    },
+    {
+      "date": "1555-11-23",
+      "type": "guerre",
+      "title": "Victoire dans la conquête prussienne de Halle",
+      "summary": "Après quatre ans et demi de guerre, la Prusse l’emporte et annexe Magdebourg et Halle.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Halle"
+        ],
+        [
+          "Issue",
+          "Victoire prussienne"
+        ],
+        [
+          "Batailles enregistrées",
+          "4"
+        ],
+        [
+          "Pertes de la Prusse",
+          "31 402 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "47 029 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Magdebourg · Halle"
+        ]
+      ]
+    },
+    {
+      "date": "1557-01-10",
+      "type": "guerre",
+      "title": "La Prusse rejoint la Guerre d’indépendance suédoise",
+      "summary": "La Prusse soutient la Suède dans sa tentative de rompre la domination danoise ; le conflit est encore actif au 12 juin 1559.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre d’indépendance suédoise"
+        ],
+        [
+          "Camp soutenu",
+          "Suède · Prusse"
+        ],
+        [
+          "Camp adverse",
+          "Danemark · Norvège · Ansbach · Frise orientale · Lübeck"
+        ],
+        [
+          "Entrée de la Prusse",
+          "10 janvier 1557"
+        ],
+        [
+          "Pertes prussiennes au 12 juin 1559",
+          "15 655 pertes humaines"
+        ],
+        [
+          "Situation au 12 juin 1559",
+          "Guerre toujours en cours"
+        ]
+      ]
     }
   ],
   "HAB": [
