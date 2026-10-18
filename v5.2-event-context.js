@@ -780,5 +780,55 @@ export const EVENT_CONTEXT={
     "status": "Une guerre de religion impériale prolongée au-delà de 1555",
     "history": "Le parallèle historique le plus proche est la guerre de Smalkalde de 1546–1547, opposant Charles Quint à la ligue protestante de Smalkalde. La paix d’Augsbourg de 1555 établit ensuite un compromis religieux dans le Saint-Empire. Une grande guerre des Ligues en 1558 constitue donc une prolongation uchronique de ces tensions.",
     "campaign": "L’Espagne rejoint immédiatement le camp défensif mené par l’Autriche face à la Saxe et à la Ligue protestante. Ce choix confirme la cohérence de la politique espagnole depuis 1538 : défense du catholicisme et soutien direct au bloc impérial catholique."
+  },
+  "ENG|1538-02-12": {
+    "status": "Succession britannique entièrement uchronique",
+    "history": "Le véritable Henry VII Tudor règne sur l’Angleterre de 1485 à 1509 et meurt près de trente ans avant cette date. En 1538, le souverain historique est Henry VIII. L’Henry VII de la campagne est donc un personnage distinct, issu ici de la maison d’York.",
+    "campaign": "La Grande-Bretagne de Matvala désigne un héritier particulièrement solide : 5/5/5, anglican, avec une prétention maximale. Sa personnalité réformatrice s’accorde avec la trajectoire religieuse déjà prise par le royaume."
+  },
+  "ENG|1540-07-09": {
+    "status": "Roanoke colonisée près d’un demi-siècle trop tôt",
+    "history": "Les premières tentatives anglaises célèbres à Roanoke datent de 1585 et 1587 sous l’impulsion de Walter Raleigh. La « colonie perdue » de Roanoke appartient donc à une phase bien plus tardive de l’expansion anglaise.",
+    "campaign": "Dans votre partie, la Grande-Bretagne prend pied à Roanoke dès 1540 et y implante immédiatement culture anglaise et religion anglicane. La façade atlantique nord-américaine entre donc très tôt dans l’espace colonial britannique."
+  },
+  "ENG|1544-10-24": {
+    "status": "Percée britannique à Sumatra avec plus d’un siècle d’avance",
+    "history": "La présence anglaise durable à Sumatra est bien plus tardive : la Compagnie anglaise des Indes orientales n’est fondée qu’en 1600 et les Anglais établissent Bencoolen, près de l’actuelle Bengkulu, en 1685 pour le commerce du poivre.",
+    "campaign": "Matvala attaque directement Indrapura et Sunda pour Muko-Muko. Cette guerre transforme la Grande-Bretagne en puissance territoriale de l’archipel indonésien bien avant l’expansion britannique historique dans la région."
+  },
+  "ENG|1544-11-29": {
+    "status": "Bataille propre à la campagne",
+    "history": "Il n’existe pas de bataille britannique de Muko-Muko en 1544. La présence européenne dans la région est alors surtout dominée par les Portugais, installés dans l’océan Indien depuis le début du siècle.",
+    "campaign": "George William Rodney engage 19 000 hommes et détruit intégralement l’armée d’Indrapura : 733 pertes britanniques contre 7 565 adverses. La campagne de Sumatra commence donc par un succès militaire extrêmement net."
+  },
+  "ENG|1545-07-31": {
+    "status": "Écrasement britannique à Bengkulu",
+    "history": "Bengkulu deviendra réellement un point d’appui anglais à partir de la fin du XVIIe siècle, avec l’établissement de Bencoolen. Un affrontement britannique dans cette région en 1545 est donc très largement anticipé.",
+    "campaign": "Rodney rencontre une petite armée d’Indrapura à Bengkulu et la détruit presque sans pertes : 183 Britanniques contre 3 000 adversaires. La résistance locale est pratiquement brisée."
+  },
+  "ENG|1547-06-02": {
+    "status": "Empire asiatique britannique bâti avant la Compagnie des Indes",
+    "history": "L’Angleterre du milieu du XVIe siècle ne possède encore aucun empire territorial en Indonésie. La Compagnie anglaise des Indes orientales n’apparaît qu’en 1600, et la présence anglaise à Bengkulu seulement en 1685.",
+    "campaign": "La paix donne directement Muko-Muko et Indrapura à la Grande-Bretagne. Matvala obtient ainsi un véritable noyau territorial à Sumatra et non plus seulement des routes commerciales ou des escales."
+  },
+  "ENG|1547-07-08": {
+    "status": "Débat parlementaire inspiré du commerce impérial, sans équivalent exact",
+    "history": "Il n’existe pas de véritable « Spice Act » britannique de 1547. Les grandes politiques commerciales anglaises liées aux compagnies, aux monopoles et à la navigation se développent surtout à partir de la fin du XVIe siècle puis au XVIIe siècle, notamment avec la Compagnie des Indes orientales et les Navigation Acts.",
+    "campaign": "Le débat arrive juste après la conquête de Muko-Muko et d’Indrapura. Dans le RP, il traduit naturellement la nécessité pour le Parlement de définir une politique commerciale adaptée à la nouvelle présence britannique dans le commerce des épices."
+  },
+  "ENG|1550-04-15": {
+    "status": "Colonisation britannique des îles de la Sonde très anticipée",
+    "history": "Au XVIe siècle, les Portugais sont les principaux Européens implantés dans les îles orientales de l’Indonésie. Les Anglais n’y développent un réseau commercial conséquent qu’au siècle suivant.",
+    "campaign": "La Grande-Bretagne poursuit pourtant son expansion asiatique et prend directement Florès. L’île est anglicisée et intégrée au réseau colonial déjà constitué autour de Sumatra et des routes des épices."
+  },
+  "ENG|1557-11-22": {
+    "status": "Intervention anglaise en Italie inversée par rapport à 1557",
+    "history": "L’Angleterre historique de Mary I entre bien dans une guerre continentale en 1557, mais aux côtés de l’Espagne de Philippe II contre la France. Cette intervention conduit notamment à la perte de Calais en 1558. Elle ne participe pas à une guerre florentine contre les Habsbourg en Italie.",
+    "campaign": "Matvala choisit au contraire le camp florentin contre Mantoue et l’Autriche. Dix jours après le début du conflit, la Grande-Bretagne entre officiellement en guerre et apporte une puissance militaire et navale majeure à Narcisse."
+  },
+  "ENG|1559-05-11": {
+    "status": "Grande victoire britannique au moment où les guerres d’Italie s’achèvent historiquement",
+    "history": "L’année 1559 est historiquement celle de la paix du Cateau-Cambrésis, qui met fin aux longues guerres d’Italie entre Habsbourg et Valois. Il n’existe aucune bataille britannique de Trentino comparable à celle de la campagne.",
+    "campaign": "À Trentino, l’armée britannique commandée par Ippolito Bartolini engage près de 176 000 hommes face à l’armée autrichienne de Maximilian Ier. La Grande-Bretagne ne perd que 3 772 hommes tandis que l’armée adverse enregistre 87 587 pertes : c’est l’un des désastres militaires les plus spectaculaires de la campagne."
   }
 };
