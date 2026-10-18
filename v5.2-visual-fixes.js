@@ -8,7 +8,7 @@ const FLAG_URLS={
   "Empire ottoman":new URL("assets/nations/nation-ottomans.svg",import.meta.url).href,
   Russie:"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png",
   Castille:"https://eu4.paradoxwikis.com/images/thumb/e/ee/Castile.png/330px-Castile.png",
-  Angleterre:"https://eu4.paradoxwikis.com/images/thumb/2/21/England.png/330px-England.png",
+  Angleterre:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Royal_standard_of_England_%281406%E2%80%931603%29.svg",
   Brandebourg:"https://eu4.paradoxwikis.com/images/thumb/e/e3/Brandenburg.png/330px-Brandenburg.png",
   Moscovie:"https://eu4.paradoxwikis.com/images/thumb/4/41/Muscovy.png/330px-Muscovy.png"
 };
