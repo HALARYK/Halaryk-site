@@ -830,5 +830,70 @@ export const EVENT_CONTEXT={
     "status": "Grande victoire britannique au moment où les guerres d’Italie s’achèvent historiquement",
     "history": "L’année 1559 est historiquement celle de la paix du Cateau-Cambrésis, qui met fin aux longues guerres d’Italie entre Habsbourg et Valois. Il n’existe aucune bataille britannique de Trentino comparable à celle de la campagne.",
     "campaign": "À Trentino, l’armée britannique commandée par Ippolito Bartolini engage près de 176 000 hommes face à l’armée autrichienne de Maximilian Ier. La Grande-Bretagne ne perd que 3 772 hommes tandis que l’armée adverse enregistre 87 587 pertes : c’est l’un des désastres militaires les plus spectaculaires de la campagne."
+  },
+  "LAN|1542-05-01": {
+    "status": "Florence attaque directement les États pontificaux",
+    "history": "Dans l’histoire réelle, Florence est alors le duché de Florence, dirigé par Cosme Ier de Médicis depuis 1537. Rome reste le cœur des États pontificaux sous Paul III. Une guerre florentine visant explicitement Rome en 1542 n’a pas d’équivalent historique.",
+    "campaign": "Narcisse transforme Florence en puissance territoriale agressive d’Italie centrale. Avec l’appui de plusieurs alliés italiens et russes, il ouvre une guerre contre le pape pour pousser son influence jusque dans le Latium."
+  },
+  "LAN|1542-05-31": {
+    "status": "Victoire florentine à Pérouse",
+    "history": "Pérouse vient justement de perdre une grande partie de son autonomie face au pape Paul III après la guerre du Sel de 1540. En 1542, la ville est donc historiquement plus fermement intégrée aux États pontificaux.",
+    "campaign": "Florence affronte directement l’armée pontificale autour de Pérouse. Leopoldo Ludovisi engage 60 000 hommes et remporte le combat malgré près de 4 000 pertes florentines."
+  },
+  "LAN|1543-02-19": {
+    "status": "Destruction de l’armée pontificale à Terracine",
+    "history": "Terracina appartient alors aux États pontificaux et contrôle un axe côtier important entre Rome et Naples. Aucun affrontement florentino-pontifical de cette ampleur n’y a lieu historiquement en 1543.",
+    "campaign": "Leopoldo Ludovisi surprend les forces pontificales et les anéantit sans perte florentine enregistrée. La bataille accélère l’effondrement militaire du camp pontifical dans cette guerre."
+  },
+  "LAN|1544-11-03": {
+    "status": "Florence s’impose sur la côte pontificale",
+    "history": "Ancône est définitivement soumise à l’autorité pontificale en 1532, tandis que Terracina reste elle aussi dans les États de l’Église. Leur annexion par Florence en 1544 représente donc une rupture nette avec l’évolution historique de l’Italie centrale.",
+    "campaign": "La guerre de Rome se conclut en faveur de Florence. Ancône et Terracine sont annexées, donnant à Narcisse deux positions stratégiques supplémentaires sur les façades adriatique et tyrrhénienne."
+  },
+  "LAN|1550-11-01": {
+    "status": "Offensive florentine contre la Savoie",
+    "history": "Le Piémont est l’un des grands théâtres des guerres d’Italie. Turin est occupée par les Français à partir de 1536 et ne redevient pleinement savoyarde qu’après la paix du Cateau-Cambrésis en 1559 ; Emmanuel-Philibert en fait ensuite sa capitale en 1563.",
+    "campaign": "Florence profite du morcellement de l’Italie du Nord pour attaquer la Savoie. L’objectif est Torino, mais la guerre vise plus largement à ouvrir à Florence un bloc territorial dans le Piémont."
+  },
+  "LAN|1552-05-05": {
+    "status": "Florence s’étend dans le Piémont",
+    "history": "Nice, Turin et Coni appartiennent à l’espace savoyard. Dans l’histoire réelle, la maison de Savoie retrouve progressivement ces territoires après 1559 et consolide ensuite Turin comme centre politique de l’État.",
+    "campaign": "La victoire donne Nizza, Torino et Coni à Florence. Narcisse franchit ainsi les Alpes occidentales et relie davantage sa puissance italienne aux routes vers la France et la Méditerranée."
+  },
+  "LAN|1557-11-12": {
+    "status": "Deuxième tentative contre Mantoue",
+    "history": "Le duché de Mantoue est une principauté des Gonzague et reste indépendant tout au long du XVIe siècle. Florence, devenue duché puis grand-duché sous les Médicis, ne mène pas historiquement de campagne de conquête contre Mantoue à cette date.",
+    "campaign": "Après l’échec de 1534, Narcisse revient avec une coalition plus large. La guerre prend rapidement une dimension internationale lorsque l’Autriche rejoint Mantoue et que la Grande-Bretagne entre ensuite aux côtés de Florence."
+  },
+  "LAN|1557-12-23": {
+    "status": "Victoire florentine à Venise",
+    "history": "La République de Venise reste indépendante au XVIe siècle et cherche souvent à conserver une certaine neutralité dans les dernières guerres d’Italie. La ville n’est pas le théâtre historique d’une bataille florentino-milanaise en 1557.",
+    "campaign": "Vitale Tonelli rencontre une petite armée milanaise à Venise et la détruit intégralement sans perte florentine enregistrée. Ce succès masque toutefois la montée en puissance de l’intervention autrichienne."
+  },
+  "LAN|1558-04-01": {
+    "status": "Annexion du duché d’Urbino avec plusieurs décennies d’avance",
+    "history": "Le duché d’Urbino reste gouverné par la maison della Rovere jusqu’en 1631, date à laquelle il revient aux États pontificaux. Il n’est jamais annexé par Florence au XVIe siècle.",
+    "campaign": "Urbino, jusque-là allié de Florence, est directement intégré au domaine de Narcisse. L’annexion renforce la continuité territoriale florentine en Italie centrale pendant que la guerre de Mantoue se poursuit."
+  },
+  "LAN|1558-04-07": {
+    "status": "Premier désastre florentin devant Venise",
+    "history": "À la fin des guerres d’Italie, les Habsbourg imposent réellement une forte domination politique sur la péninsule, surtout après 1559. La bataille elle-même est uchronique, mais le rapport de force reflète cette montée en puissance autrichienne.",
+    "campaign": "Vitale Tonelli attaque une armée autrichienne de 125 000 hommes avec seulement 30 000 Florentins. Florence perd plus de la moitié de sa force engagée et subit une lourde défaite."
+  },
+  "LAN|1558-04-28": {
+    "status": "Deuxième échec florentin à Venise",
+    "history": "Il n’existe pas de seconde bataille de Venise en 1558 entre Florence et l’Autriche. Historiquement, les derniers grands conflits italiens approchent alors de leur conclusion diplomatique.",
+    "campaign": "Ippolito Bartolini tente de renverser la situation trois semaines après la première défaite. Il échoue à son tour : 12 039 pertes florentines contre 6 804 autrichiennes."
+  },
+  "LAN|1558-11-20": {
+    "status": "Florence reprend l’initiative à Trévise",
+    "history": "Trévise appartient historiquement à la République de Venise et constitue l’une de ses principales possessions de Terre Ferme. Elle ne devient pas un champ de bataille florentino-autrichien en 1558.",
+    "campaign": "Après les deux revers de Venise, Ippolito Bartolini engage une armée comparable à la sienne et remporte enfin une grande victoire contre l’Autriche, infligeant 12 734 pertes pour 8 021 subies."
+  },
+  "LAN|1559-06-12": {
+    "status": "La guerre italienne continue après la paix historique de 1559",
+    "history": "Dans l’histoire réelle, les traités du Cateau-Cambrésis d’avril 1559 mettent fin aux longues guerres d’Italie et consacrent largement la prépondérance des Habsbourg dans la péninsule. En juin, une grande guerre de conquête autour de Mantoue ne serait donc plus en cours.",
+    "campaign": "Votre chronologie diverge totalement : la deuxième conquête de Mantoue est toujours active au 12 juin 1559. Florence, appuyée par la Grande-Bretagne et la Flandre, affronte encore Mantoue, l’Autriche et leurs alliés."
   }
 };
