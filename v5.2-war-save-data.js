@@ -4567,5 +4567,169 @@ export const WAR_EVENT_DATA={
     "battles": 2,
     "winner": "Camp ottoman",
     "peace": "Dix-huit territoires d’Éthiopie, de Nubie et de la Corne de l’Afrique passent sous contrôle ottoman."
+  },
+  "MOS|1542-05-01": {
+    "mode": "join",
+    "war": "Conquête florentine de Rome",
+    "start": "1542-05-01",
+    "joinDate": "1542-05-01",
+    "statusDate": "1544-11-03",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Rome",
+    "attackers": [
+      "Florence",
+      "Montferrat",
+      "Saluzzo",
+      "Russie",
+      "Finlande",
+      "Sibir",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "États pontificaux",
+      "Hambourg",
+      "Milan",
+      "Brabant"
+    ],
+    "lossesAttackers": 70077,
+    "lossesDefenders": 50193,
+    "losses": {
+      "Florence": 31789,
+      "Montferrat": 8402,
+      "Saluzzo": 1743,
+      "Russie": 17203,
+      "Finlande": 1285,
+      "Sibir": 147,
+      "Kazakh": 8614,
+      "Chagataï": 894,
+      "États pontificaux": 20096,
+      "Hambourg": 5455,
+      "Milan": 10730,
+      "Brabant": 13912
+    },
+    "battles": 10,
+    "winner": "Victoire du camp florentin et russe le 3 novembre 1544.",
+    "peace": "Ancône et Terracine passent sous contrôle florentin."
+  },
+  "MOS|1554-08-23": {
+    "mode": "start",
+    "war": "Conquête russe de Vilnius",
+    "start": "1554-08-23",
+    "end": "1555-12-20",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Vilnius",
+    "attackers": [
+      "Russie et ses alliés"
+    ],
+    "defenders": [
+      "Lituanie et ses alliés"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Camp russe",
+    "peace": "Huit provinces passent sous contrôle russe, dont Vilno, Trakai, Kovno et Volodymyr."
+  },
+  "MOS|1555-12-20": {
+    "mode": "end",
+    "war": "Conquête russe de Vilnius",
+    "start": "1554-08-23",
+    "end": "1555-12-20",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Vilnius",
+    "attackers": [
+      "Russie et ses alliés"
+    ],
+    "defenders": [
+      "Lituanie et ses alliés"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Camp russe",
+    "peace": "Huit provinces passent sous contrôle russe, dont Vilno, Trakai, Kovno et Volodymyr."
+  },
+  "MOS|1555-06-29": {
+    "mode": "start",
+    "war": "Conquête russe de Barnaoul",
+    "start": "1555-06-29",
+    "end": "1557-03-27",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Barnaoul",
+    "attackers": [
+      "Russie et ses alliés sibériens"
+    ],
+    "defenders": [
+      "Adversaires d’Asie centrale"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Camp russe",
+    "peace": "Dix territoires passent sous contrôle russe, dont Novosibirsk, Barnaoul, Kemerovo et Khovsgol."
+  },
+  "MOS|1557-03-27": {
+    "mode": "end",
+    "war": "Conquête russe de Barnaoul",
+    "start": "1555-06-29",
+    "end": "1557-03-27",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Barnaoul",
+    "attackers": [
+      "Russie et ses alliés sibériens"
+    ],
+    "defenders": [
+      "Adversaires d’Asie centrale"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Camp russe",
+    "peace": "Dix territoires passent sous contrôle russe, dont Novosibirsk, Barnaoul, Kemerovo et Khovsgol."
+  },
+  "MOS|1557-05-29": {
+    "mode": "start",
+    "war": "Conquête russe d’Azov",
+    "start": "1557-05-29",
+    "end": "1558-06-28",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Azov",
+    "attackers": [
+      "Russie et ses alliés"
+    ],
+    "defenders": [
+      "Adversaires de la mer Noire et du Caucase"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Camp russe",
+    "peace": "Dix territoires passent à la Russie, dont Azov, Ochakov, Taman et Vladikavkaz."
+  },
+  "MOS|1558-06-28": {
+    "mode": "end",
+    "war": "Conquête russe d’Azov",
+    "start": "1557-05-29",
+    "end": "1558-06-28",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Azov",
+    "attackers": [
+      "Russie et ses alliés"
+    ],
+    "defenders": [
+      "Adversaires de la mer Noire et du Caucase"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Camp russe",
+    "peace": "Dix territoires passent à la Russie, dont Azov, Ochakov, Taman et Vladikavkaz."
   }
 };
