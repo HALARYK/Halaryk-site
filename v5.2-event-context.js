@@ -895,5 +895,60 @@ export const EVENT_CONTEXT={
     "status": "La guerre italienne continue après la paix historique de 1559",
     "history": "Dans l’histoire réelle, les traités du Cateau-Cambrésis d’avril 1559 mettent fin aux longues guerres d’Italie et consacrent largement la prépondérance des Habsbourg dans la péninsule. En juin, une grande guerre de conquête autour de Mantoue ne serait donc plus en cours.",
     "campaign": "Votre chronologie diverge totalement : la deuxième conquête de Mantoue est toujours active au 12 juin 1559. Florence, appuyée par la Grande-Bretagne et la Flandre, affronte encore Mantoue, l’Autriche et leurs alliés."
+  },
+  "HAB|1541-10-18": {
+    "status": "Montée en puissance navale d’une Autriche devenue adriatique",
+    "history": "L’Autriche des Habsbourg n’est pas encore une grande puissance navale au milieu du XVIe siècle. Ses ambitions maritimes passent surtout par l’Adriatique et les possessions des Habsbourg autour de Trieste ; la marine impériale permanente se développe beaucoup plus tard.",
+    "campaign": "Avec Michael Ketterer, Alan donne néanmoins à l’Autriche un véritable commandement naval. Cet amiral sera directement engagé quelques années plus tard contre Venise puis contre la flotte britannique dans la guerre de Mantoue."
+  },
+  "HAB|1544-10-13": {
+    "status": "Affrontement direct Habsbourg–Venise totalement uchronique",
+    "history": "Venise et les Habsbourg connaissent de fortes rivalités en Adriatique et en Italie du Nord, mais l’Autriche ne conquiert pas la ville de Venise au XVIe siècle. La République conserve son indépendance jusqu’à sa chute face à Napoléon en 1797.",
+    "campaign": "Alan profite de la puissance acquise en Italie pour viser directement la cité lagunaire. Avec Moldavie, Bourgogne, Champagne et Herzégovine, l’Autriche lance une guerre de conquête dont l’objectif est Venise elle-même."
+  },
+  "HAB|1544-11-10": {
+    "status": "Victoire autrichienne décisive devant Venise",
+    "history": "Il n’existe pas de bataille terrestre austro-vénitienne à Venise en novembre 1544. La République demeure alors l’une des grandes puissances maritimes de Méditerranée et cherche à préserver ses possessions face aux Ottomans et aux Habsbourg.",
+    "campaign": "Johann Leopold von Neippberg écrase l’armée de Domenico Garda. L’Autriche ne perd que 714 hommes, tandis que les 10 000 soldats vénitiens engagés sont tous perdus."
+  },
+  "HAB|1545-06-07": {
+    "status": "Venise tombe aux mains des Habsbourg plus de deux siècles avant 1797",
+    "history": "La République de Venise reste indépendante jusqu’au traité de Campo-Formio de 1797, lorsque ses anciens territoires sont partagés après la campagne de Napoléon. Une Venise autrichienne dès 1545 bouleverse donc profondément l’équilibre italien.",
+    "campaign": "Après quatre batailles enregistrées, Alan remporte la guerre et annexe directement Venise. L’Autriche acquiert ainsi la cité, son accès maritime et une position majeure au cœur de l’Italie du Nord."
+  },
+  "HAB|1549-05-08": {
+    "status": "Nouveau général propre à la campagne",
+    "history": "Karl von Schönburg n’est pas une figure historique majeure du commandement habsbourgeois du XVIe siècle. Les armées impériales réelles sont alors marquées par des chefs comme Ferdinand de Habsbourg, Alfonso d’Avalos ou les commandants engagés dans les guerres d’Italie.",
+    "campaign": "Karl von Schönburg rejoint le haut commandement avec un profil très complet : trois en feu, deux en choc, quatre en manœuvre et surtout trois en siège. Il renforce la capacité autrichienne à mener des campagnes rapides et à réduire les places fortes."
+  },
+  "HAB|1557-11-12": {
+    "status": "L’Autriche protège Mantoue au moment où l’ordre italien historique se stabilise",
+    "history": "Mantoue reste réellement sous les Gonzague et ne devient pas un enjeu d’une guerre florentino-autrichienne en 1557. À cette époque, les dernières guerres d’Italie opposent surtout Habsbourg et Valois avant la paix du Cateau-Cambrésis de 1559.",
+    "campaign": "Lorsque Narcisse relance sa conquête de Mantoue, Alan rejoint immédiatement le camp défenseur. L’intervention autrichienne transforme une guerre locale en affrontement majeur, bientôt internationalisé par l’arrivée de la Grande-Bretagne aux côtés de Florence."
+  },
+  "HAB|1558-04-07": {
+    "status": "L’Autriche domine Florence devant Venise",
+    "history": "L’Italie du Nord est bien un espace de forte influence habsbourgeoise dans les années 1550. Après 1559, la prépondérance espagnole et impériale sur une grande partie de la péninsule est reconnue, même si Venise reste indépendante.",
+    "campaign": "Johann Leopold von Neippberg dispose d’une armée de 125 000 hommes face aux 30 000 Florentins de Vitale Tonelli. La disproportion se traduit par une lourde défaite de Florence : 15 473 pertes contre 4 731 côté autrichien."
+  },
+  "HAB|1558-04-27": {
+    "status": "La puissance terrestre autrichienne bute sur la Royal Navy uchronique",
+    "history": "L’Angleterre n’intervient pas historiquement avec une grande flotte dans l’Adriatique en 1558. Cette année-là, elle achève plutôt sa guerre contre la France et vient de perdre Calais. L’Autriche, de son côté, ne possède pas encore une marine capable de rivaliser durablement avec les grandes puissances maritimes.",
+    "campaign": "La flotte de Michael Ketterer rencontre celle d’Horatio Baffin dans le golfe de Venise. Les Britanniques alignent 105 navires contre 32 Autrichiens et remportent le combat sans perdre un seul bâtiment, tandis que l’Autriche en perd six."
+  },
+  "HAB|1558-11-20": {
+    "status": "Revers autrichien à Trévise",
+    "history": "Trévise appartient alors à la République de Venise et ne constitue pas un champ de bataille austro-florentin historique. La péninsule réelle approche de la conclusion des guerres d’Italie.",
+    "campaign": "Après les victoires autrichiennes du printemps, Ippolito Bartolini reprend l’initiative. À Trévise, Florence inflige 12 734 pertes aux Autrichiens pour 8 021 pertes propres et remporte une victoire importante."
+  },
+  "HAB|1558-12-16": {
+    "status": "Guerre de Ligue prolongée après la paix d’Augsbourg",
+    "history": "La grande confrontation historique entre Charles Quint et les princes protestants est la guerre de Smalkalde de 1546–1547. La paix d’Augsbourg de 1555 établit ensuite le principe selon lequel le prince détermine la religion de son territoire. Une nouvelle guerre générale de Ligue dès 1558 est donc uchronique.",
+    "campaign": "La Saxe ouvre la Guerre de la Ligue protestante et l’Autriche devient le chef naturel du camp défenseur catholique. Espagne, Pologne, Lituanie et plusieurs princes impériaux se rangent derrière Alan."
+  },
+  "HAB|1559-05-11": {
+    "status": "Catastrophe militaire autrichienne à la veille d’un nouvel ordre européen",
+    "history": "En 1559, les traités du Cateau-Cambrésis mettent historiquement fin aux guerres d’Italie et consacrent la puissance des Habsbourg en Europe occidentale. Il n’existe évidemment pas de bataille de Trentino où une armée britannique détruit une armée impériale.",
+    "campaign": "Maximilian Ier engage 87 587 hommes face à une armée britannique presque deux fois plus nombreuse. Les Autrichiens enregistrent exactement 87 587 pertes : l’armée engagée est entièrement détruite, contre seulement 3 772 pertes britanniques. C’est l’un des plus grands désastres militaires de la campagne."
   }
 };
