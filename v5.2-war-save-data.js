@@ -3979,5 +3979,226 @@ export const WAR_EVENT_DATA={
     "battles": 0,
     "winner": "Conflit toujours en cours au 12 juin 1559.",
     "peace": "Aucune paix : la deuxième conquête florentine de Mantoue est encore active dans la sauvegarde."
+  },
+  "LAN|1542-05-01": {
+    "mode": "start",
+    "war": "Conquête florentine de Rome",
+    "start": "1542-05-01",
+    "end": "1544-11-03",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Rome",
+    "attackers": [
+      "Florence",
+      "Montferrat",
+      "Saluzzo",
+      "Russie",
+      "Finlande",
+      "Sibir",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "États pontificaux",
+      "Hambourg",
+      "Milan",
+      "Brabant"
+    ],
+    "lossesAttackers": 70077,
+    "lossesDefenders": 50193,
+    "losses": {
+      "Florence": 31789,
+      "Montferrat": 8402,
+      "Saluzzo": 1743,
+      "Russie": 17203,
+      "Finlande": 1285,
+      "Sibir": 147,
+      "Kazakh": 8614,
+      "Chagataï": 894,
+      "États pontificaux": 20096,
+      "Hambourg": 5455,
+      "Milan": 10730,
+      "Brabant": 13912
+    },
+    "battles": 10,
+    "winner": "Camp florentin",
+    "peace": "Ancône et Terracine passent sous contrôle florentin."
+  },
+  "LAN|1544-11-03": {
+    "mode": "end",
+    "war": "Conquête florentine de Rome",
+    "start": "1542-05-01",
+    "end": "1544-11-03",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Rome",
+    "attackers": [
+      "Florence",
+      "Montferrat",
+      "Saluzzo",
+      "Russie",
+      "Finlande",
+      "Sibir",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "États pontificaux",
+      "Hambourg",
+      "Milan",
+      "Brabant"
+    ],
+    "lossesAttackers": 70077,
+    "lossesDefenders": 50193,
+    "losses": {
+      "Florence": 31789,
+      "Montferrat": 8402,
+      "Saluzzo": 1743,
+      "Russie": 17203,
+      "Finlande": 1285,
+      "Sibir": 147,
+      "Kazakh": 8614,
+      "Chagataï": 894,
+      "États pontificaux": 20096,
+      "Hambourg": 5455,
+      "Milan": 10730,
+      "Brabant": 13912
+    },
+    "battles": 10,
+    "winner": "Camp florentin",
+    "peace": "Ancône et Terracine passent sous contrôle florentin."
+  },
+  "LAN|1550-11-01": {
+    "mode": "start",
+    "war": "Conquête florentine de Torino",
+    "start": "1550-11-01",
+    "end": "1552-05-05",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Torino",
+    "attackers": [
+      "Florence",
+      "Urbino",
+      "Montferrat",
+      "Saluzzo",
+      "Spolète",
+      "Pérouse"
+    ],
+    "defenders": [
+      "Savoie",
+      "Munich"
+    ],
+    "lossesAttackers": 12717,
+    "lossesDefenders": 7474,
+    "losses": {
+      "Florence": 8610,
+      "Urbino": 796,
+      "Montferrat": 72,
+      "Saluzzo": 3000,
+      "Spolète": 60,
+      "Pérouse": 179,
+      "Savoie": 7474,
+      "Munich": 0
+    },
+    "battles": 3,
+    "winner": "Camp florentin",
+    "peace": "Nizza, Torino et Coni passent sous contrôle florentin."
+  },
+  "LAN|1552-05-05": {
+    "mode": "end",
+    "war": "Conquête florentine de Torino",
+    "start": "1550-11-01",
+    "end": "1552-05-05",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Torino",
+    "attackers": [
+      "Florence",
+      "Urbino",
+      "Montferrat",
+      "Saluzzo",
+      "Spolète",
+      "Pérouse"
+    ],
+    "defenders": [
+      "Savoie",
+      "Munich"
+    ],
+    "lossesAttackers": 12717,
+    "lossesDefenders": 7474,
+    "losses": {
+      "Florence": 8610,
+      "Urbino": 796,
+      "Montferrat": 72,
+      "Saluzzo": 3000,
+      "Spolète": 60,
+      "Pérouse": 179,
+      "Savoie": 7474,
+      "Munich": 0
+    },
+    "battles": 3,
+    "winner": "Camp florentin",
+    "peace": "Nizza, Torino et Coni passent sous contrôle florentin."
+  },
+  "LAN|1557-11-12": {
+    "mode": "start",
+    "war": "2e conquête florentine de Mantoue",
+    "start": "1557-11-12",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Mantoue",
+    "attackers": [
+      "Florence",
+      "Urbino",
+      "Montferrat",
+      "Spolète",
+      "Pérouse",
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Milan",
+      "Ingolstadt",
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Conflit toujours en cours au 12 juin 1559.",
+    "peace": "Aucune paix : la guerre est toujours active dans la sauvegarde du 12 juin 1559."
+  },
+  "LAN|1559-06-12": {
+    "mode": "join",
+    "war": "2e conquête florentine de Mantoue",
+    "start": "1557-11-12",
+    "joinDate": "1557-11-12",
+    "statusDate": "1559-06-12",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Mantoue",
+    "attackers": [
+      "Florence",
+      "Spolète",
+      "Pérouse",
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Ingolstadt",
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Conflit toujours en cours au 12 juin 1559.",
+    "peace": "Aucune paix : la guerre reste active à la date de la sauvegarde."
   }
 };
