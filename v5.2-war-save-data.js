@@ -3889,5 +3889,95 @@ export const WAR_EVENT_DATA={
     "battles": 0,
     "winner": "Conflit toujours en cours au 12 juin 1559.",
     "peace": "Aucune paix : la guerre est encore active dans la sauvegarde."
+  },
+  "ENG|1544-10-24": {
+    "mode": "start",
+    "war": "Conquête britannique de Muko-Muko",
+    "start": "1544-10-24",
+    "end": "1547-06-02",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Muko-Muko",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Indrapura",
+      "Sunda"
+    ],
+    "lossesAttackers": 22400,
+    "lossesDefenders": 11638,
+    "losses": {
+      "Grande-Bretagne": 22202,
+      "Flandre": 0,
+      "Colonies britanniques": 198,
+      "Indrapura": 11638,
+      "Sunda": 0
+    },
+    "battles": 3,
+    "winner": "Camp britannique",
+    "peace": "Muko-Muko et Indrapura passent sous contrôle direct de la Grande-Bretagne."
+  },
+  "ENG|1547-06-02": {
+    "mode": "end",
+    "war": "Conquête britannique de Muko-Muko",
+    "start": "1544-10-24",
+    "end": "1547-06-02",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Muko-Muko",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Indrapura",
+      "Sunda"
+    ],
+    "lossesAttackers": 22400,
+    "lossesDefenders": 11638,
+    "losses": {
+      "Grande-Bretagne": 22202,
+      "Flandre": 0,
+      "Colonies britanniques": 198,
+      "Indrapura": 11638,
+      "Sunda": 0
+    },
+    "battles": 3,
+    "winner": "Camp britannique",
+    "peace": "Muko-Muko et Indrapura passent sous contrôle direct de la Grande-Bretagne."
+  },
+  "ENG|1557-11-22": {
+    "mode": "join",
+    "war": "2e conquête florentine de Mantoue",
+    "start": "1557-11-12",
+    "joinDate": "1557-11-22",
+    "statusDate": "1559-06-12",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Mantoue",
+    "attackers": [
+      "Florence",
+      "Grande-Bretagne",
+      "Flandre",
+      "Alliés italiens de Florence",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Autriche",
+      "Milan",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine",
+      "Autres alliés impériaux"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Conflit toujours en cours au 12 juin 1559.",
+    "peace": "Aucune paix : la deuxième conquête florentine de Mantoue est encore active dans la sauvegarde."
   }
 };
