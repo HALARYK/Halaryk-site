@@ -1085,5 +1085,80 @@ export const EVENT_CONTEXT={
     "status": "Un empire russe de la mer Noire avec deux siècles d’avance",
     "history": "Azov n’est conquise temporairement par la Russie qu’à la fin du XVIIe siècle ; Ochakov tombe aux Russes en 1788, tandis que Vladikavkaz n’est fondée qu’en 1784. Ces quatre noms appartiennent donc à des étapes très tardives de l’expansion impériale russe.",
     "campaign": "La victoire donne dix territoires à la Russie, dont Azov, Ochakov, Taman et Vladikavkaz. En une seule campagne, Doug sécurise un vaste arc autour de la mer Noire et du Caucase et anticipe plusieurs siècles de conquêtes historiques."
+  },
+  "BRA|1538-10-11": {
+    "status": "Succession hohenzollern propre à la campagne",
+    "history": "En 1538, le Brandebourg historique est gouverné par Joachim II Hector de Hohenzollern, tandis que le duché de Prusse est dirigé par Albert de Prusse. La succession de votre Prusse unifiée ne correspond donc pas directement à la chronologie réelle des Hohenzollern.",
+    "campaign": "Friedrich IV devient souverain de la Prusse et Friedrich Wilhelm est aussitôt désigné héritier avec une prétention maximale. La continuité dynastique des Hohenzollern est ainsi solidement assurée dans le nouvel État prussien."
+  },
+  "BRA|1539-11-11": {
+    "status": "Politique marchande inspirée d’un modèle surtout anglais",
+    "history": "Les Merchant Adventurers sont historiquement une compagnie de marchands anglais active dans le commerce textile avec les Pays-Bas et l’Allemagne du Nord. Il n’existe pas d’équivalent prussien exact portant ce nom en 1539.",
+    "campaign": "Dans la partie, la mesure représente l’ouverture commerciale de la Prusse et la volonté de donner davantage de poids aux marchands dans l’économie du royaume."
+  },
+  "BRA|1542-10-05": {
+    "status": "Nationalisme moderne transposé à l’époque moderne",
+    "history": "Le nationalisme au sens politique moderne appartient surtout aux XVIIIe et XIXe siècles. Dans l’Europe du XVIe siècle, la loyauté se structure davantage autour de la dynastie, de la religion, des privilèges locaux et de l’appartenance impériale.",
+    "campaign": "Le choix de Tchoupi peut être lu comme un renforcement de la cohésion de l’État prussien et de sa mobilisation militaire, plutôt que comme un nationalisme moderne au sens strict."
+  },
+  "BRA|1545-03-04": {
+    "status": "Référence à Adam Smith près de deux siècles trop tôt",
+    "history": "Adam Smith naît en 1723 et publie La Richesse des nations en 1776. Une doctrine explicitement « smithienne » en 1545 est donc un anachronisme assumé des mécanismes d’EU4.",
+    "campaign": "La mesure sert ici à représenter une politique économique plus rationnelle et favorable à la production et au commerce, cohérente avec la transformation progressive de la Prusse en État administratif efficace."
+  },
+  "BRA|1547-12-04": {
+    "status": "Mercantilisme crédible, intitulé générique",
+    "history": "Les politiques mercantilistes se développent réellement en Europe à partir de l’époque moderne, même si le terme et les doctrines sont formalisés plus tard. Les princes allemands cherchent déjà à protéger leurs revenus, leurs villes et leurs routes commerciales.",
+    "campaign": "La Prusse formalise une politique commerciale nationale et complète ainsi plusieurs années de réformes économiques. L’objectif est moins l’expansion territoriale immédiate que le renforcement durable de la puissance de l’État."
+  },
+  "BRA|1548-02-12": {
+    "status": "Intitulé britannique appliqué à une Prusse protestante",
+    "history": "Le terme « Popery » appartient surtout au vocabulaire polémique protestant britannique. La Prusse du XVIe siècle connaît bien une rupture confessionnelle avec Rome, mais aucune loi prussienne de 1548 ne porte historiquement ce nom.",
+    "campaign": "Après sa conversion précoce au protestantisme, la Prusse durcit encore sa ligne confessionnelle. Cette décision renforce son identité protestante à l’intérieur d’un Saint-Empire toujours profondément divisé par la Réforme."
+  },
+  "BRA|1548-06-27": {
+    "status": "Expansion prussienne dans l’Allemagne du Nord",
+    "history": "Brême reste une ville et principauté importante du nord du Saint-Empire et ne tombe pas sous domination prussienne au milieu du XVIe siècle. L’expansion brandebourgeo-prussienne vers les régions de l’Elbe et de la Weser est beaucoup plus tardive.",
+    "campaign": "Tchoupi attaque Brême pour récupérer Stade et affronter une coalition de puissances nord-allemandes. La guerre devient une étape majeure de la consolidation territoriale prussienne après la formation du royaume."
+  },
+  "BRA|1548-07-11": {
+    "status": "Victoire prussienne écrasante à Rostock",
+    "history": "Rostock appartient au duché de Mecklembourg et constitue une importante ville hanséatique. Il n’existe pas de bataille prusso-lubeckoise de cette nature en 1548.",
+    "campaign": "Paul Perlkowski engage 31 000 Prussiens contre 10 000 soldats de Lübeck et détruit entièrement l’armée adverse pour seulement 800 pertes. La guerre de Brême commence sous un net avantage militaire prussien."
+  },
+  "BRA|1549-04-04": {
+    "status": "Stettin devient un champ de bataille prussien",
+    "history": "Stettin, aujourd’hui Szczecin, appartient alors à la Poméranie des Griffons. La ville ne passe sous contrôle brandebourgeois qu’au XVIIe siècle après les guerres de succession de Poméranie.",
+    "campaign": "La Prusse affronte directement l’armée de Brême à Stettin. Paul Perlkowski obtient une nouvelle victoire majeure : 1 257 pertes prussiennes contre 9 906 adverses."
+  },
+  "BRA|1550-07-11": {
+    "status": "Dernière grande bataille de la guerre de Brême",
+    "history": "Oldenbourg reste au XVIe siècle un comté indépendant du nord-ouest de l’Empire. Une bataille prusso-brêmoise de cette ampleur n’y a pas d’équivalent historique.",
+    "campaign": "À quelques semaines de la paix, Perlkowski détruit une armée de 10 000 hommes à Oldenbourg en ne perdant que 1 123 soldats. Cette victoire achève pratiquement la résistance militaire de Brême."
+  },
+  "BRA|1550-08-01": {
+    "status": "Stade entre dans la Prusse plus de deux siècles avant l’expansion réelle",
+    "history": "Stade appartient historiquement à l’espace de Brême-Verden puis passe sous domination suédoise après la guerre de Trente Ans. La Prusse ne construit sa grande puissance territoriale dans le nord-ouest allemand que bien plus tard.",
+    "campaign": "Après six batailles, Tchoupi obtient Stade. La victoire est d’autant plus nette que la Prusse ne subit que 20 145 pertes sur l’ensemble du conflit contre 49 039 pour ses adversaires."
+  },
+  "BRA|1551-05-13": {
+    "status": "La Prusse se tourne vers le cœur saxon du Saint-Empire",
+    "history": "Magdebourg et Halle sont des centres majeurs de l’Allemagne centrale et de la Réforme. Ils ne deviennent pas des conquêtes prussiennes au milieu du XVIe siècle ; Magdebourg ne passe au Brandebourg-Prusse qu’à la fin du XVIIe siècle.",
+    "campaign": "Friedrich IV déclare la guerre à Magdebourg pour Halle et se retrouve face à la Pologne, la Lituanie, le Palatinat et la Thuringe. La guerre élargit donc fortement le rayon d’action prussien."
+  },
+  "BRA|1551-10-31": {
+    "status": "Victoire prussienne contre la Lituanie à Dantzig",
+    "history": "Dantzig appartient alors à la Prusse royale sous la Couronne polonaise et constitue l’un des grands ports de la Baltique. La région reste un enjeu durable entre Pologne, Prusse et puissances baltiques, mais cette bataille de 1551 est propre à la campagne.",
+    "campaign": "Paul Perlkowski affronte une armée lituanienne plus nombreuse en cavalerie et en artillerie. La Prusse l’emporte en infligeant 13 166 pertes pour 3 553 subies."
+  },
+  "BRA|1555-11-23": {
+    "status": "Magdebourg et Halle deviennent prussiennes avec plus d’un siècle d’avance",
+    "history": "Magdebourg ne passe à la maison de Brandebourg qu’en 1680 après l’extinction de son administration ducale prévue par la paix de Westphalie. Halle appartient ensuite également à la monarchie brandebourgeo-prussienne.",
+    "campaign": "La victoire de Tchoupi anticipe cette expansion d’environ cent vingt-cinq ans. Après quatre batailles et plus de quatre ans de guerre, Magdebourg et Halle passent directement à la Prusse."
+  },
+  "BRA|1557-01-10": {
+    "status": "La Prusse soutient une indépendance suédoise très tardive",
+    "history": "La Suède historique rompt l’union de Kalmar bien plus tôt : Gustav Vasa devient roi en 1523 après la guerre de libération suédoise contre le Danemark. Une guerre d’indépendance suédoise commencée en 1557 est donc décalée de plus de trente ans.",
+    "campaign": "Dans votre monde, la Suède reste encore liée au Danemark et reçoit l’appui militaire direct de la Prusse. Tchoupi rejoint le conflit dès son déclenchement ; au 12 juin 1559, la guerre est toujours en cours et la Prusse a déjà subi 15 655 pertes."
   }
 };
