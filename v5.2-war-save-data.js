@@ -3678,5 +3678,216 @@ export const WAR_EVENT_DATA={
     "battles": 2,
     "winner": "Camp russe",
     "peace": "Douze provinces d’Asie centrale passent à la Russie."
+  },
+  "CAS|1539-01-29": {
+    "mode": "start",
+    "war": "Conquête espagnole d’Auia",
+    "start": "1539-01-29",
+    "end": "1543-10-26",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Auia",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes Espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade"
+    ],
+    "defenders": [
+      "Hasinais",
+      "Caddos",
+      "Chactas",
+      "Natchez"
+    ],
+    "lossesAttackers": 3814,
+    "lossesDefenders": 1592,
+    "losses": {
+      "Espagne": 1958,
+      "Marrakech": 0,
+      "Caraïbes Espagnoles": 656,
+      "Brésil espagnol": 1200,
+      "Nouvelle-Grenade": 0,
+      "Hasinais": 412,
+      "Caddos": 0,
+      "Chactas": 0,
+      "Natchez": 1180
+    },
+    "battles": 2,
+    "winner": "Camp espagnol",
+    "peace": "La Bahia, Los Tejas, Isla de Malhado, Rio Grande, Los Ais, Hasinai, Tanu et Nabaydacu passent sous contrôle espagnol."
+  },
+  "CAS|1543-10-26": {
+    "mode": "end",
+    "war": "Conquête espagnole d’Auia",
+    "start": "1539-01-29",
+    "end": "1543-10-26",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Auia",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes Espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade"
+    ],
+    "defenders": [
+      "Hasinais",
+      "Caddos",
+      "Chactas",
+      "Natchez"
+    ],
+    "lossesAttackers": 3814,
+    "lossesDefenders": 1592,
+    "losses": {
+      "Espagne": 1958,
+      "Marrakech": 0,
+      "Caraïbes Espagnoles": 656,
+      "Brésil espagnol": 1200,
+      "Nouvelle-Grenade": 0,
+      "Hasinais": 412,
+      "Caddos": 0,
+      "Chactas": 0,
+      "Natchez": 1180
+    },
+    "battles": 2,
+    "winner": "Camp espagnol",
+    "peace": "La Bahia, Los Tejas, Isla de Malhado, Rio Grande, Los Ais, Hasinai, Tanu et Nabaydacu passent sous contrôle espagnol."
+  },
+  "CAS|1550-06-05": {
+    "mode": "join",
+    "war": "Guerre caddo contre l’invasion de Nouvelle-Espagne",
+    "start": "1548-11-05",
+    "end": "1550-07-31",
+    "joinDate": "1550-06-05",
+    "statusDate": "1550-07-31",
+    "casusBelli": "Repousser les colonisateurs",
+    "warGoal": "Repousser l’expansion de Nouvelle-Espagne",
+    "attackers": [
+      "Caddos",
+      "Anilcos"
+    ],
+    "defenders": [
+      "Nouvelle-Espagne",
+      "Espagne",
+      "Marrakech",
+      "Caraïbes Espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade"
+    ],
+    "lossesAttackers": 27148,
+    "lossesDefenders": 4846,
+    "losses": {
+      "Caddos": 13068,
+      "Anilcos": 14080,
+      "Nouvelle-Espagne": 4037,
+      "Espagne": 809,
+      "Marrakech": 0,
+      "Caraïbes Espagnoles": 0,
+      "Brésil espagnol": 0,
+      "Nouvelle-Grenade": 0
+    },
+    "battles": 4,
+    "winner": "Le conflit est clôturé le 31 juillet 1550 ; aucun transfert territorial espagnol n’est associé à cette paix.",
+    "peace": "Aucun gain territorial direct pour l’Espagne n’est enregistré à la fin de cette guerre."
+  },
+  "CAS|1550-12-04": {
+    "mode": "start",
+    "war": "Conquête espagnole de Coatzacualco",
+    "start": "1550-12-04",
+    "end": "1555-04-10",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Coatzacualco",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes Espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade",
+      "Nouvelle-Espagne"
+    ],
+    "defenders": [
+      "Chontals",
+      "Quichés"
+    ],
+    "lossesAttackers": 4470,
+    "lossesDefenders": 4484,
+    "losses": {
+      "Espagne": 2782,
+      "Marrakech": 0,
+      "Caraïbes Espagnoles": 0,
+      "Brésil espagnol": 0,
+      "Nouvelle-Grenade": 0,
+      "Nouvelle-Espagne": 1688,
+      "Chontals": 4484,
+      "Quichés": 0
+    },
+    "battles": 1,
+    "winner": "Camp espagnol",
+    "peace": "Tuxpan, Tochtepec, Coatzacualco, Xicallanco, Metztitlan et Xilotepec passent sous contrôle espagnol."
+  },
+  "CAS|1555-04-10": {
+    "mode": "end",
+    "war": "Conquête espagnole de Coatzacualco",
+    "start": "1550-12-04",
+    "end": "1555-04-10",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Coatzacualco",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes Espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade",
+      "Nouvelle-Espagne"
+    ],
+    "defenders": [
+      "Chontals",
+      "Quichés"
+    ],
+    "lossesAttackers": 4470,
+    "lossesDefenders": 4484,
+    "losses": {
+      "Espagne": 2782,
+      "Marrakech": 0,
+      "Caraïbes Espagnoles": 0,
+      "Brésil espagnol": 0,
+      "Nouvelle-Grenade": 0,
+      "Nouvelle-Espagne": 1688,
+      "Chontals": 4484,
+      "Quichés": 0
+    },
+    "battles": 1,
+    "winner": "Camp espagnol",
+    "peace": "Tuxpan, Tochtepec, Coatzacualco, Xicallanco, Metztitlan et Xilotepec passent sous contrôle espagnol."
+  },
+  "CAS|1558-12-16": {
+    "mode": "join",
+    "war": "Guerre de la Ligue protestante",
+    "start": "1558-12-16",
+    "joinDate": "1558-12-16",
+    "statusDate": "1559-06-12",
+    "casusBelli": "Guerre de Ligue religieuse",
+    "warGoal": "Imposer l’issue confessionnelle de la Ligue dans le Saint-Empire",
+    "attackers": [
+      "Saxe et ses alliés protestants",
+      "Danemark",
+      "Bavière",
+      "Clèves",
+      "Bade",
+      "Hesse"
+    ],
+    "defenders": [
+      "Autriche et ses alliés catholiques",
+      "Espagne",
+      "Pologne",
+      "Lituanie",
+      "Bourgogne"
+    ],
+    "lossesAttackers": 0,
+    "lossesDefenders": 0,
+    "losses": {},
+    "battles": 0,
+    "winner": "Conflit toujours en cours au 12 juin 1559.",
+    "peace": "Aucune paix : la guerre est encore active dans la sauvegarde."
   }
 };
