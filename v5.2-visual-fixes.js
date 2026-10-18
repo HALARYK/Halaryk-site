@@ -7,10 +7,10 @@ const FLAG_URLS={
   Autriche:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Austria.svg",
   "Empire ottoman":new URL("assets/nations/nation-ottomans.svg",import.meta.url).href,
   Russie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg",
-  Castille:"https://wiki.cmdz.top/images/thumb/e/ee/Castile.png/120px-Castile.png",import.meta.url).href,
-  Angleterre:"https://wiki.cmdz.top/images/thumb/2/21/England.png/120px-England.png",import.meta.url).href,
-  Brandebourg:"https://wiki.cmdz.top/images/thumb/e/e3/Brandenburg.png/120px-Brandenburg.png",import.meta.url).href,
-  Moscovie:"https://wiki.cmdz.top/images/thumb/4/41/Muscovy.png/120px-Muscovy.png",import.meta.url).href
+  Castille:"https://wiki.cmdz.top/images/thumb/e/ee/Castile.png/120px-Castile.png",
+  Angleterre:"https://wiki.cmdz.top/images/thumb/2/21/England.png/120px-England.png",
+  Brandebourg:"https://wiki.cmdz.top/images/thumb/e/e3/Brandenburg.png/120px-Brandenburg.png",
+  Moscovie:"https://wiki.cmdz.top/images/thumb/4/41/Muscovy.png/120px-Muscovy.png"
 };
 const MAP_URL=new URL("assets/eu4/europe-1444-event-map.png",import.meta.url).href;
 function cleanText(v=""){return String(v).replace(/\s+/g," ").trim().toLowerCase()}
