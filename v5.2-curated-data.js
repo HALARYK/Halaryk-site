@@ -3069,6 +3069,402 @@ export const CURATED_EVENTS={
           "Aucun gain territorial florentin"
         ]
       ]
+    },
+    {
+      "date": "1542-05-01",
+      "type": "guerre",
+      "title": "Début de la conquête florentine de Rome",
+      "summary": "Florence ouvre une nouvelle guerre contre les États pontificaux afin d’imposer son expansion en Italie centrale.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Rome"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Rome"
+        ],
+        [
+          "Camp florentin",
+          "Florence · Montferrat · Saluzzo · Russie et alliés russes"
+        ],
+        [
+          "Camp adverse",
+          "États pontificaux · Hambourg · Milan · Brabant"
+        ]
+      ]
+    },
+    {
+      "date": "1542-05-31",
+      "type": "bataille",
+      "title": "Bataille de Pérouse",
+      "summary": "Leopoldo Ludovisi remporte pour Florence une importante victoire sur l’armée pontificale à Pérouse.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête florentine de Rome"
+        ],
+        [
+          "Lieu",
+          "Pérouse"
+        ],
+        [
+          "Attaquant",
+          "Florence — Leopoldo Ludovisi — 50 000 infanterie · 10 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "États pontificaux — Iohannes Argenta — 7 000 infanterie · 6 000 cavalerie · 3 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 3 952 · États pontificaux : 7 868"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1543-02-19",
+      "type": "bataille",
+      "title": "Bataille de Terracine",
+      "summary": "Leopoldo Ludovisi anéantit l’armée pontificale à Terracine sans qu’aucune perte florentine ne soit enregistrée.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête florentine de Rome"
+        ],
+        [
+          "Lieu",
+          "Terracine"
+        ],
+        [
+          "Attaquant",
+          "Florence — Leopoldo Ludovisi — 21 190 infanterie · 4 296 artillerie"
+        ],
+        [
+          "Défenseur",
+          "États pontificaux — Iohannes Argenta — 2 649 infanterie · 887 cavalerie · 1 428 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 0 · États pontificaux : 4 964"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1544-11-03",
+      "type": "guerre",
+      "title": "Victoire dans la conquête florentine de Rome",
+      "summary": "Après deux ans et demi de guerre, le camp florentin l’emporte et Florence obtient Ancône et Terracine.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Rome"
+        ],
+        [
+          "Issue",
+          "Victoire du camp florentin"
+        ],
+        [
+          "Batailles enregistrées",
+          "10"
+        ],
+        [
+          "Pertes de Florence",
+          "31 789 pertes humaines"
+        ],
+        [
+          "Pertes des deux camps",
+          "70 077 contre 50 193"
+        ],
+        [
+          "Territoires acquis",
+          "Ancône · Terracine"
+        ]
+      ]
+    },
+    {
+      "date": "1550-11-01",
+      "type": "guerre",
+      "title": "Début de la conquête florentine de Torino",
+      "summary": "Florence attaque la Savoie pour s’emparer de Torino et étendre sa domination sur le Piémont.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Torino"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Torino"
+        ],
+        [
+          "Camp florentin",
+          "Florence · Urbino · Montferrat · Saluzzo · alliés italiens"
+        ],
+        [
+          "Camp adverse",
+          "Savoie · Munich"
+        ]
+      ]
+    },
+    {
+      "date": "1552-05-05",
+      "type": "guerre",
+      "title": "Victoire dans la conquête florentine de Torino",
+      "summary": "La guerre contre la Savoie s’achève par une victoire florentine : Nizza, Torino et Coni passent à Florence.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Torino"
+        ],
+        [
+          "Issue",
+          "Victoire du camp florentin"
+        ],
+        [
+          "Batailles enregistrées",
+          "3"
+        ],
+        [
+          "Pertes de Florence",
+          "8 610 pertes humaines"
+        ],
+        [
+          "Pertes des deux camps",
+          "12 717 contre 7 474"
+        ],
+        [
+          "Territoires acquis",
+          "Nizza · Torino · Coni"
+        ]
+      ]
+    },
+    {
+      "date": "1557-11-12",
+      "type": "guerre",
+      "title": "Début de la deuxième conquête florentine de Mantoue",
+      "summary": "Après l’échec de 1534, Florence tente une seconde fois de s’emparer de Mantoue et déclenche une guerre majeure contre le bloc autrichien.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Mantoue"
+        ],
+        [
+          "Camp florentin initial",
+          "Florence · Urbino · Montferrat · Spolète · Pérouse"
+        ],
+        [
+          "Principaux défenseurs",
+          "Mantoue · Milan · Autriche · Moldavie · Bourgogne · Champagne · Herzégovine"
+        ]
+      ]
+    },
+    {
+      "date": "1557-12-23",
+      "type": "bataille",
+      "title": "Bataille de Venise",
+      "summary": "Vitale Tonelli détruit une armée milanaise à Venise sans subir de perte enregistrée.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Venise"
+        ],
+        [
+          "Attaquant",
+          "Florence — Vitale Tonelli — 25 000 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Milan — Vittorio Sforza — 3 364 infanterie · 649 cavalerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 0 · Milan : 4 013"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1558-04-01",
+      "type": "territoire",
+      "title": "Urbino passe sous contrôle florentin",
+      "summary": "L’ancien allié d’Urbino est intégré directement au domaine florentin pendant la guerre de Mantoue.",
+      "facts": [
+        [
+          "Territoire",
+          "Urbino"
+        ],
+        [
+          "Ancienne puissance",
+          "Urbino"
+        ],
+        [
+          "Nouvelle puissance",
+          "Florence"
+        ],
+        [
+          "Culture",
+          "Ombrienne"
+        ],
+        [
+          "Religion",
+          "Catholique"
+        ]
+      ]
+    },
+    {
+      "date": "1558-04-07",
+      "type": "bataille",
+      "title": "Bataille de Venise",
+      "summary": "L’armée de Vitale Tonelli subit une lourde défaite face aux forces autrichiennes de Johann Leopold von Neippberg.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Venise"
+        ],
+        [
+          "Attaquant",
+          "Florence — Vitale Tonelli — 25 000 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Autriche — Johann Leopold von Neippberg — 50 000 infanterie · 50 000 cavalerie · 25 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 15 473 · Autriche : 4 731"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1558-04-28",
+      "type": "bataille",
+      "title": "Deuxième bataille de Venise",
+      "summary": "Trois semaines après la première défaite, Florence attaque de nouveau à Venise mais est une seconde fois repoussée par l’armée autrichienne.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Venise"
+        ],
+        [
+          "Attaquant",
+          "Florence — Ippolito Bartolini — 25 000 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Autriche — Johann Leopold von Neippberg — 47 172 infanterie · 48 097 cavalerie · 25 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 12 039 · Autriche : 6 804"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1558-11-20",
+      "type": "bataille",
+      "title": "Bataille de Trévise",
+      "summary": "Ippolito Bartolini prend sa revanche sur l’Autriche et remporte une grande bataille à Trévise.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Trévise"
+        ],
+        [
+          "Attaquant",
+          "Florence — Ippolito Bartolini — 76 000 infanterie · 6 000 cavalerie · 12 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Autriche — 79 000 infanterie · 8 919 cavalerie · 8 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 8 021 · Autriche : 12 734"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1559-06-12",
+      "type": "guerre",
+      "title": "La deuxième conquête de Mantoue est toujours en cours",
+      "summary": "À la date de la sauvegarde, la guerre déclenchée en novembre 1557 n’est toujours pas terminée et oppose encore le bloc florentino-britannique au camp autrichien.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Début",
+          "12 novembre 1557"
+        ],
+        [
+          "Situation",
+          "Guerre toujours active"
+        ],
+        [
+          "Camp florentin au 12 juin 1559",
+          "Florence · Spolète · Pérouse · Grande-Bretagne · Flandre · colonies britanniques"
+        ],
+        [
+          "Camp adverse au 12 juin 1559",
+          "Mantoue · Ingolstadt · Autriche · Moldavie · Bourgogne · Champagne · Herzégovine"
+        ]
+      ]
     }
   ],
   "BRA": [
