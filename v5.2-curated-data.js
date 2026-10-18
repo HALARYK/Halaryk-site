@@ -6376,6 +6376,374 @@ export const CURATED_EVENTS={
           "Accueil de populations musulmanes déplacées vers les territoires ottomans"
         ]
       ]
+    },
+    {
+      "date": "1537-08-24",
+      "type": "bataille",
+      "title": "Bataille de Dîv",
+      "summary": "L’armée ottomane remporte à Dîv une victoire écrasante contre les forces de Jangladesh pendant la conquête de Bela.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête ottomane de Bela"
+        ],
+        [
+          "Lieu",
+          "Dîv"
+        ],
+        [
+          "Attaquant",
+          "Empire ottoman — 16 596 infanterie · 5 532 cavalerie · 4 610 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Jangladesh — Mandalika Mulraj — 6 000 infanterie · 3 000 cavalerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Empire ottoman : 2 004 · Jangladesh : 9 000"
+        ],
+        [
+          "Vainqueur",
+          "Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1538-08-18",
+      "type": "guerre",
+      "title": "Victoire dans la conquête ottomane de Bela",
+      "summary": "Après plus de cinq ans de guerre, l’Empire ottoman remporte la campagne de Bela contre le Sindh et ses alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Bela"
+        ],
+        [
+          "Issue",
+          "Victoire du camp ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "3"
+        ],
+        [
+          "Pertes de l’Empire ottoman",
+          "176 589 pertes humaines"
+        ],
+        [
+          "Camp adverse",
+          "Sindh · Jangladesh · Afghanistan"
+        ],
+        [
+          "Objectif",
+          "Bela"
+        ]
+      ]
+    },
+    {
+      "date": "1540-04-15",
+      "type": "guerre",
+      "title": "Victoire dans la conquête ottomane de Bojnourd",
+      "summary": "La longue guerre de Bojnourd s’achève par une victoire ottomane contre la Transoxiane et Ormuz.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Bojnourd"
+        ],
+        [
+          "Issue",
+          "Victoire du camp ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "4"
+        ],
+        [
+          "Pertes de l’Empire ottoman",
+          "108 292 pertes humaines"
+        ],
+        [
+          "Pertes des deux camps",
+          "115 879 contre 29 969"
+        ],
+        [
+          "Adversaires principaux",
+          "Transoxiane · Ormuz"
+        ]
+      ]
+    },
+    {
+      "date": "1541-10-29",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane de Hoveyzeh",
+      "summary": "L’Empire ottoman lance une nouvelle offensive vers le Khuzestan et l’Iran occidental afin de s’emparer de Hoveyzeh.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Hoveyzeh"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Hoveyzeh"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Crimée · Maroc"
+        ],
+        [
+          "Camp adverse",
+          "Mushasha · Qara Qoyunlu · Tabarestan"
+        ]
+      ]
+    },
+    {
+      "date": "1542-09-18",
+      "type": "bataille",
+      "title": "Bataille de Zanjân",
+      "summary": "Amin Cobanzade remporte pour l’Empire ottoman une bataille sanglante contre les forces de Mushasha à Zanjân.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête ottomane de Hoveyzeh"
+        ],
+        [
+          "Lieu",
+          "Zanjân"
+        ],
+        [
+          "Attaquant",
+          "Empire ottoman — Amin Cobanzade — 22 000 infanterie · 8 000 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Mushasha — Iskander I Qara Qoyunlu — 13 000 infanterie · 9 000 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Empire ottoman : 6 470 · Mushasha : 15 142"
+        ],
+        [
+          "Vainqueur",
+          "Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1543-06-02",
+      "type": "guerre",
+      "title": "Victoire dans la conquête ottomane de Hoveyzeh",
+      "summary": "La guerre de Hoveyzeh s’achève par une vaste expansion ottomane en Iran occidental et en Irak méridional.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Hoveyzeh"
+        ],
+        [
+          "Issue",
+          "Victoire du camp ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "4"
+        ],
+        [
+          "Pertes de l’Empire ottoman",
+          "89 433 pertes humaines"
+        ],
+        [
+          "Principaux territoires acquis",
+          "Basrah · Ahvaz · Hoveyzeh · Qurna · Shushtar"
+        ],
+        [
+          "Portée",
+          "Renforcement massif de la présence ottomane autour de la basse Mésopotamie et du Khuzestan"
+        ]
+      ]
+    },
+    {
+      "date": "1544-05-13",
+      "type": "territoire",
+      "title": "Tunis passe sous contrôle ottoman",
+      "summary": "L’Empire ottoman reprend directement Tunis et renforce sa domination sur le Maghreb central.",
+      "facts": [
+        [
+          "Territoire",
+          "Tunis"
+        ],
+        [
+          "Nouvelle puissance",
+          "Empire ottoman"
+        ],
+        [
+          "Région",
+          "Ifriqiya · Maghreb central"
+        ],
+        [
+          "Portée",
+          "Consolidation de la présence ottomane en Méditerranée occidentale"
+        ]
+      ]
+    },
+    {
+      "date": "1550-07-08",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane de Kazerun",
+      "summary": "L’Empire ottoman ouvre une nouvelle campagne en Perse méridionale contre le Fars et la Transoxiane.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Kazerun"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Kazerun"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Maroc"
+        ],
+        [
+          "Camp adverse",
+          "Fars · Transoxiane"
+        ],
+        [
+          "Fin du conflit",
+          "25 septembre 1551 — victoire ottomane"
+        ]
+      ]
+    },
+    {
+      "date": "1552-02-01",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane de Kouhistan",
+      "summary": "L’Empire ottoman poursuit son avancée vers l’est et attaque les Timourides pour le contrôle de Kouhistan.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Kouhistan"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Kouhistan"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Maroc"
+        ],
+        [
+          "Camp adverse",
+          "Timourides"
+        ],
+        [
+          "Fin du conflit",
+          "3 août 1552 — victoire ottomane"
+        ]
+      ]
+    },
+    {
+      "date": "1553-08-15",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane de Gondar",
+      "summary": "Valoche ouvre une nouvelle guerre vers les hauts plateaux éthiopiens avec pour objectif Gondar.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Gondar"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Gondar"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Maroc"
+        ],
+        [
+          "Camp adverse",
+          "Éthiopie"
+        ]
+      ]
+    },
+    {
+      "date": "1555-10-02",
+      "type": "bataille",
+      "title": "Bataille de Sidamo",
+      "summary": "Ferhad Salih remporte une bataille majeure contre l’armée éthiopienne de Iyas Ier Solomonid à Sidamo.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête ottomane de Gondar"
+        ],
+        [
+          "Lieu",
+          "Sidamo"
+        ],
+        [
+          "Attaquant",
+          "Empire ottoman — Ferhad Salih — 18 000 infanterie · 6 000 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Éthiopie — Iyas I Solomonid — 18 000 infanterie · 5 000 cavalerie · 7 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Empire ottoman : 3 337 · Éthiopie : 14 358"
+        ],
+        [
+          "Vainqueur",
+          "Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1555-10-31",
+      "type": "guerre",
+      "title": "Victoire dans la conquête ottomane de Gondar",
+      "summary": "Après deux ans de guerre, l’Empire ottoman bat l’Éthiopie et s’empare de dix-huit territoires en Éthiopie, Nubie et dans la Corne de l’Afrique.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Gondar"
+        ],
+        [
+          "Issue",
+          "Victoire du camp ottoman"
+        ],
+        [
+          "Batailles enregistrées",
+          "2"
+        ],
+        [
+          "Pertes de l’Empire ottoman",
+          "85 762 pertes humaines"
+        ],
+        [
+          "Pertes de l’Éthiopie",
+          "23 033 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "18 territoires d’Éthiopie, de Nubie et de la Corne de l’Afrique"
+        ]
+      ]
     }
   ],
   "MOS": [
