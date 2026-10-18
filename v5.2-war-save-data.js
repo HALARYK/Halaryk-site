@@ -4337,5 +4337,235 @@ export const WAR_EVENT_DATA={
     "battles": 0,
     "winner": "Conflit toujours en cours au 12 juin 1559.",
     "peace": "Aucune paix : la Guerre de la Ligue protestante est toujours active dans la sauvegarde."
+  },
+  "TUR|1538-08-18": {
+    "mode": "end",
+    "war": "Conquête ottomane de Bela",
+    "start": "1533-02-11",
+    "end": "1538-08-18",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Bela",
+    "attackers": [
+      "Empire ottoman",
+      "Égypte",
+      "Sistan",
+      "Qom"
+    ],
+    "defenders": [
+      "Sindh",
+      "Jangladesh",
+      "Afghanistan"
+    ],
+    "lossesAttackers": 181220,
+    "lossesDefenders": 14598,
+    "losses": {
+      "Empire ottoman": 176589,
+      "Égypte": 3,
+      "Sistan": 2024,
+      "Qom": 2604,
+      "Sindh": 4598,
+      "Jangladesh": 10000,
+      "Afghanistan": 0
+    },
+    "battles": 3,
+    "winner": "Camp ottoman",
+    "peace": "La guerre de Bela s’achève par une victoire ottomane contre le Sindh et ses alliés."
+  },
+  "TUR|1540-04-15": {
+    "mode": "end",
+    "war": "Conquête ottomane de Bojnourd",
+    "start": "1536-06-30",
+    "end": "1540-04-15",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Bojnourd",
+    "attackers": [
+      "Empire ottoman",
+      "Égypte",
+      "Sistan",
+      "Qom",
+      "Aden"
+    ],
+    "defenders": [
+      "Transoxiane",
+      "Ormuz"
+    ],
+    "lossesAttackers": 115879,
+    "lossesDefenders": 29969,
+    "losses": {
+      "Empire ottoman": 108292,
+      "Égypte": 0,
+      "Sistan": 2473,
+      "Qom": 716,
+      "Aden": 4398,
+      "Transoxiane": 10200,
+      "Ormuz": 19769
+    },
+    "battles": 4,
+    "winner": "Camp ottoman",
+    "peace": "La conquête de Bojnourd s’achève le 15 avril 1540 par une victoire du camp ottoman."
+  },
+  "TUR|1541-10-29": {
+    "mode": "start",
+    "war": "Conquête ottomane de Hoveyzeh",
+    "start": "1541-10-29",
+    "end": "1543-06-02",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Hoveyzeh",
+    "attackers": [
+      "Empire ottoman",
+      "Crimée",
+      "Maroc"
+    ],
+    "defenders": [
+      "Mushasha",
+      "Qara Qoyunlu",
+      "Tabarestan"
+    ],
+    "lossesAttackers": 90448,
+    "lossesDefenders": 36563,
+    "losses": {
+      "Empire ottoman": 89433,
+      "Crimée": 1015,
+      "Maroc": 0,
+      "Mushasha": 11903,
+      "Qara Qoyunlu": 17236,
+      "Tabarestan": 7424
+    },
+    "battles": 4,
+    "winner": "Camp ottoman",
+    "peace": "Basrah, Ahvaz, Hoveyzeh, Qurna et Shushtar figurent parmi les principaux gains ottomans."
+  },
+  "TUR|1543-06-02": {
+    "mode": "end",
+    "war": "Conquête ottomane de Hoveyzeh",
+    "start": "1541-10-29",
+    "end": "1543-06-02",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Hoveyzeh",
+    "attackers": [
+      "Empire ottoman",
+      "Crimée",
+      "Maroc"
+    ],
+    "defenders": [
+      "Mushasha",
+      "Qara Qoyunlu",
+      "Tabarestan"
+    ],
+    "lossesAttackers": 90448,
+    "lossesDefenders": 36563,
+    "losses": {
+      "Empire ottoman": 89433,
+      "Crimée": 1015,
+      "Maroc": 0,
+      "Mushasha": 11903,
+      "Qara Qoyunlu": 17236,
+      "Tabarestan": 7424
+    },
+    "battles": 4,
+    "winner": "Camp ottoman",
+    "peace": "Basrah, Ahvaz, Hoveyzeh, Qurna et Shushtar figurent parmi les principaux gains ottomans."
+  },
+  "TUR|1550-07-08": {
+    "mode": "start",
+    "war": "Conquête ottomane de Kazerun",
+    "start": "1550-07-08",
+    "end": "1551-09-25",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Kazerun",
+    "attackers": [
+      "Empire ottoman",
+      "Maroc"
+    ],
+    "defenders": [
+      "Fars",
+      "Transoxiane"
+    ],
+    "lossesAttackers": 24360,
+    "lossesDefenders": 1677,
+    "losses": {
+      "Empire ottoman": 24360,
+      "Maroc": 0,
+      "Fars": 120,
+      "Transoxiane": 1557
+    },
+    "battles": 0,
+    "winner": "Camp ottoman",
+    "peace": "Kazerun passe sous contrôle ottoman à la fin du conflit."
+  },
+  "TUR|1552-02-01": {
+    "mode": "start",
+    "war": "Conquête ottomane de Kouhistan",
+    "start": "1552-02-01",
+    "end": "1552-08-03",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Kouhistan",
+    "attackers": [
+      "Empire ottoman",
+      "Maroc"
+    ],
+    "defenders": [
+      "Timourides"
+    ],
+    "lossesAttackers": 3379,
+    "lossesDefenders": 4000,
+    "losses": {
+      "Empire ottoman": 3379,
+      "Maroc": 0,
+      "Timourides": 4000
+    },
+    "battles": 1,
+    "winner": "Camp ottoman",
+    "peace": "La conquête de Kouhistan s’achève le 3 août 1552 par une victoire ottomane."
+  },
+  "TUR|1553-08-15": {
+    "mode": "start",
+    "war": "Conquête ottomane de Gondar",
+    "start": "1553-08-15",
+    "end": "1555-10-31",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Gondar",
+    "attackers": [
+      "Empire ottoman",
+      "Maroc"
+    ],
+    "defenders": [
+      "Éthiopie"
+    ],
+    "lossesAttackers": 85762,
+    "lossesDefenders": 23033,
+    "losses": {
+      "Empire ottoman": 85762,
+      "Maroc": 0,
+      "Éthiopie": 23033
+    },
+    "battles": 2,
+    "winner": "Camp ottoman",
+    "peace": "Dix-huit territoires d’Éthiopie, de Nubie et de la Corne de l’Afrique passent sous contrôle ottoman."
+  },
+  "TUR|1555-10-31": {
+    "mode": "end",
+    "war": "Conquête ottomane de Gondar",
+    "start": "1553-08-15",
+    "end": "1555-10-31",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Gondar",
+    "attackers": [
+      "Empire ottoman",
+      "Maroc"
+    ],
+    "defenders": [
+      "Éthiopie"
+    ],
+    "lossesAttackers": 85762,
+    "lossesDefenders": 23033,
+    "losses": {
+      "Empire ottoman": 85762,
+      "Maroc": 0,
+      "Éthiopie": 23033
+    },
+    "battles": 2,
+    "winner": "Camp ottoman",
+    "peace": "Dix-huit territoires d’Éthiopie, de Nubie et de la Corne de l’Afrique passent sous contrôle ottoman."
   }
 };
