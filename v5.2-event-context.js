@@ -1010,5 +1010,80 @@ export const EVENT_CONTEXT={
     "status": "Conquête des hauts plateaux éthiopiens au-delà de l’expansion ottomane réelle",
     "history": "L’eyalet ottoman de Habesh, établi à partir du milieu du XVIe siècle, reste principalement centré sur les ports et territoires de la mer Rouge comme Massawa et Suakin. L’Empire ottoman ne soumet pas historiquement Gondar, Sidamo et le cœur de l’Éthiopie.",
     "campaign": "La paix bouleverse complètement l’équilibre régional : dix-huit territoires d’Éthiopie, de Nubie et de la Corne de l’Afrique passent sous contrôle ottoman. Valoche transforme une présence maritime en véritable empire territorial africain."
+  },
+  "MOS|1537-03-09": {
+    "status": "Yermak apparaît près d’un demi-siècle trop tôt",
+    "history": "Le véritable Yermak Timofeyevich est associé à la conquête du khanat de Sibir au début des années 1580. Son expédition ouvre symboliquement la grande avancée russe au-delà de l’Oural, plusieurs décennies après la date retenue dans la campagne.",
+    "campaign": "Dans votre partie, Doug dispose de Yermak dès 1537, avec des statistiques exceptionnelles. Il devient l’incarnation de l’expansion russe vers l’est, au moment où la Russie contrôle déjà d’immenses territoires sibériens."
+  },
+  "MOS|1541-07-30": {
+    "status": "Colonisation sibérienne accélérée de plusieurs générations",
+    "history": "La pénétration russe profonde en Sibérie s’accélère surtout après les campagnes de Yermak dans les années 1580, puis avec la fondation de villes et forts au XVIIe siècle. Krasnoïarsk, par exemple, n’est fondée qu’en 1628.",
+    "campaign": "La Russie étend dès 1541 son contrôle sur la Toungouska occidentale, Uchaminskiy et Krasnoyarsk. La frontière sibérienne avance donc à une vitesse sans commune mesure avec la chronologie réelle."
+  },
+  "MOS|1542-05-01": {
+    "status": "Intervention russe en Italie entièrement uchronique",
+    "history": "La Russie du milieu du XVIe siècle n’intervient pas militairement dans les guerres d’Italie. Ses grands enjeux sont alors la Volga, les khanats tatars, la Baltique et les steppes méridionales.",
+    "campaign": "Doug rejoint pourtant Florence contre les États pontificaux. Cette intervention projette la puissance russe jusqu’au cœur de l’Italie et montre que la Russie de la campagne est déjà capable d’agir loin de son espace traditionnel."
+  },
+  "MOS|1542-11-17": {
+    "status": "Une bataille de Pavie sans rapport avec celle de 1525",
+    "history": "La célèbre bataille historique de Pavie a lieu en 1525 et oppose François Ier à l’armée impériale de Charles Quint ; le roi de France y est capturé. Il n’existe pas de bataille russe à Pavie en 1542.",
+    "campaign": "Dans la guerre florentine contre Rome, l’armée russe remporte à Pavie une victoire sans perte enregistrée. Le nom du lieu rappelle donc un grand affrontement des guerres d’Italie, mais l’épisode de votre campagne est entièrement distinct."
+  },
+  "MOS|1543-04-02": {
+    "status": "La Russie intervient dans la Baltique avant la guerre de Livonie",
+    "history": "Goldingen, aujourd’hui Kuldīga en Lettonie, se trouve dans l’espace livonien. La grande offensive historique d’Ivan IV contre la Livonie ne commence qu’en 1558 avec la guerre de Livonie.",
+    "campaign": "La Russie obtient déjà une victoire militaire importante à Goldingen en 1543. Avec 3 701 pertes contre 11 419 adverses, Doug démontre que son influence baltique est solidement installée quinze ans avant le grand conflit historique de Livonie."
+  },
+  "MOS|1546-06-05": {
+    "status": "Un héritier nommé Ivan dans une chronologie dynastique alternative",
+    "history": "En 1546, l’Ivan le plus célèbre de l’histoire russe est Ivan IV, déjà grand-prince de Moscou depuis 1533 et couronné tsar en janvier 1547. Il n’est donc pas un simple héritier à cette date.",
+    "campaign": "La Russie de Doug suit une succession entièrement différente, dominée par la dynastie von Hohenzollern. La désignation d’un héritier nommé Ivan rappelle l’histoire réelle sans correspondre directement à Ivan IV."
+  },
+  "MOS|1550-02-05": {
+    "status": "La Russie atteint la Sibérie centrale bien avant les implantations historiques",
+    "history": "L’Angara, la Toungouska et les régions autour du Saïan ne sont intégrées durablement à l’espace russe qu’au XVIIe siècle, avec la progression des cosaques et la construction d’ostrogs.",
+    "campaign": "En 1550, la Russie contrôle déjà Toungouska orientale, Angara, Saïan et Vanavara. La campagne place ainsi Doug plusieurs décennies, voire près d’un siècle, en avance sur la progression historique."
+  },
+  "MOS|1554-08-23": {
+    "status": "Nouvelle guerre russo-lituanienne dans une rivalité historique bien réelle",
+    "history": "Moscou et le grand-duché de Lituanie s’affrontent à plusieurs reprises aux XVe et XVIe siècles pour la domination des terres ruthènes. Vilnius, cependant, ne tombe pas durablement aux mains de la Russie au milieu du XVIe siècle.",
+    "campaign": "Doug lance directement une guerre de conquête pour Vilnius. Après plusieurs décennies d’expansion asiatique, la Russie revient ainsi massivement vers l’ouest et cherche à briser le cœur politique lituanien."
+  },
+  "MOS|1555-06-29": {
+    "status": "Barnaoul conquise près de deux siècles avant sa fondation",
+    "history": "Barnaoul se développe réellement au XVIIIe siècle autour des exploitations minières de l’Altaï, notamment dans les années 1730. Novossibirsk, autre nom présent parmi les gains de la campagne, n’est fondée qu’en 1893.",
+    "campaign": "La Russie ouvre pourtant dès 1555 une guerre pour Barnaoul. La chronologie de Doug transforme donc la Sibérie méridionale en espace de conquête étatique plusieurs siècles avant son urbanisation historique."
+  },
+  "MOS|1555-10-20": {
+    "status": "Intégration accélérée des populations tatares de la Volga",
+    "history": "Après les conquêtes historiques de Kazan en 1552 et d’Astrakhan en 1556, l’État russe doit administrer et intégrer de nombreuses populations tatares et musulmanes. Ce processus est long, complexe et ne correspond pas à une acceptation culturelle instantanée.",
+    "campaign": "La partie condense ce processus en quelques jours : les cultures mishary, kazani et nogaybak sont successivement acceptées. Cela traduit une Russie devenue multiethnique après ses vastes conquêtes de la Volga et des steppes."
+  },
+  "MOS|1555-12-10": {
+    "status": "Victoire russe en Prusse orientale avant la guerre de Livonie",
+    "history": "Ermland, ou Warmie, appartient alors à la Prusse royale sous la Couronne polonaise. La Russie n’y mène pas de grande bataille en 1555 ; ses affrontements majeurs dans la région baltique commencent surtout avec la guerre de Livonie à partir de 1558.",
+    "campaign": "Doug obtient à Ermland une victoire presque totale : seulement 250 pertes russes contre 12 893 adverses. L’épisode confirme l’avantage militaire russe sur son front occidental."
+  },
+  "MOS|1555-12-20": {
+    "status": "Vilnius passe dans l’orbite russe deux siècles avant les partitions",
+    "history": "Vilnius demeure le cœur politique du grand-duché de Lituanie au XVIe siècle. La ville ne passe sous domination de l’Empire russe qu’à la suite du troisième partage de la Pologne-Lituanie en 1795.",
+    "campaign": "La victoire russe donne huit provinces à Doug, dont Vilno, Trakai, Kovno et Volodymyr. La Russie impose ainsi dès 1555 une domination directe sur une partie majeure de l’espace lituanien."
+  },
+  "MOS|1557-03-27": {
+    "status": "La Russie atteint l’Altaï et la Mongolie avec plusieurs siècles d’avance",
+    "history": "La colonisation russe de l’Altaï s’accélère surtout aux XVIIe et XVIIIe siècles. Barnaoul est fondée dans les années 1730 et Novossibirsk seulement à la fin du XIXe siècle ; Khovsgol appartient quant à lui à l’espace mongol.",
+    "campaign": "La paix ajoute dix territoires à la Russie, dont Novosibirsk, Barnaoul, Kemerovo et Khovsgol. La frontière de Doug atteint donc très tôt les marges de la Mongolie et de l’Altaï."
+  },
+  "MOS|1557-05-29": {
+    "status": "La poussée russe vers Azov précède de plus d’un siècle Pierre le Grand",
+    "history": "La Russie tente historiquement de prendre Azov aux Ottomans sous Pierre le Grand en 1695–1696. Le contrôle durable de la mer Noire et les grandes conquêtes autour d’Ochakov et du Caucase sont encore plus tardifs, surtout au XVIIIe siècle.",
+    "campaign": "Doug ouvre dès 1557 une guerre pour Azov. Cette campagne vise à transformer la Russie en puissance de la mer Noire bien avant les guerres russo-ottomanes de l’époque moderne tardive."
+  },
+  "MOS|1558-06-28": {
+    "status": "Un empire russe de la mer Noire avec deux siècles d’avance",
+    "history": "Azov n’est conquise temporairement par la Russie qu’à la fin du XVIIe siècle ; Ochakov tombe aux Russes en 1788, tandis que Vladikavkaz n’est fondée qu’en 1784. Ces quatre noms appartiennent donc à des étapes très tardives de l’expansion impériale russe.",
+    "campaign": "La victoire donne dix territoires à la Russie, dont Azov, Ochakov, Taman et Vladikavkaz. En une seule campagne, Doug sécurise un vaste arc autour de la mer Noire et du Caucase et anticipe plusieurs siècles de conquêtes historiques."
   }
 };
