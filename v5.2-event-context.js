@@ -950,5 +950,65 @@ export const EVENT_CONTEXT={
     "status": "Catastrophe militaire autrichienne à la veille d’un nouvel ordre européen",
     "history": "En 1559, les traités du Cateau-Cambrésis mettent historiquement fin aux guerres d’Italie et consacrent la puissance des Habsbourg en Europe occidentale. Il n’existe évidemment pas de bataille de Trentino où une armée britannique détruit une armée impériale.",
     "campaign": "Maximilian Ier engage 87 587 hommes face à une armée britannique presque deux fois plus nombreuse. Les Autrichiens enregistrent exactement 87 587 pertes : l’armée engagée est entièrement détruite, contre seulement 3 772 pertes britanniques. C’est l’un des plus grands désastres militaires de la campagne."
+  },
+  "TUR|1537-08-24": {
+    "status": "Écho direct aux luttes historiques autour de Diu",
+    "history": "Diu est alors un point stratégique majeur de l’océan Indien. Les Portugais y disposent d’une forteresse et affrontent en 1538 une coalition comprenant le Gujarat et une flotte ottomane envoyée depuis la mer Rouge. Le siège historique de 1538 échoue finalement face aux Portugais.",
+    "campaign": "Dans votre partie, l’affrontement tourne au contraire à l’avantage de Valoche. L’armée ottomane bat totalement les forces de Jangladesh à Dîv et ne perd que 2 004 hommes contre 9 000 adverses."
+  },
+  "TUR|1538-08-18": {
+    "status": "Percée ottomane jusqu’au Baloutchistan",
+    "history": "L’Empire ottoman historique cherche à contester les Portugais dans l’océan Indien et intervient en mer Rouge, au Yémen et dans le golfe Persique, mais il ne conquiert pas durablement Bela ni le Sindh au XVIe siècle.",
+    "campaign": "La guerre commencée en 1533 se termine par une victoire ottomane contre le Sindh, Jangladesh et l’Afghanistan. Malgré un coût humain très élevé, Valoche pousse ainsi l’influence ottomane jusqu’aux marges du sous-continent indien."
+  },
+  "TUR|1540-04-15": {
+    "status": "Expansion vers le Khorasan bien au-delà de la frontière ottomane réelle",
+    "history": "Sous Süleyman, les Ottomans mènent de vastes campagnes contre les Safavides et prennent notamment Bagdad en 1534. En revanche, Bojnourd et le Khorasan restent beaucoup trop à l’est pour devenir des conquêtes ottomanes durables au XVIe siècle.",
+    "campaign": "La campagne de Bojnourd, commencée en 1536, se conclut après quatre batailles. L’Empire ottoman et ses alliés battent la Transoxiane et Ormuz, confirmant la poussée de Valoche vers l’Asie centrale."
+  },
+  "TUR|1541-10-29": {
+    "status": "Nouvelle offensive dans le théâtre ottomano-iranien",
+    "history": "Les années 1530 et 1540 correspondent réellement aux grandes guerres entre l’Empire ottoman et la Perse safavide. Les Ottomans contrôlent l’Irak après la prise de Bagdad, mais le Khuzestan et l’Iran occidental restent des zones de rivalité plutôt que des possessions ottomanes stabilisées.",
+    "campaign": "Valoche ouvre une nouvelle guerre pour Hoveyzeh avec l’appui de la Crimée et du Maroc. L’objectif est de transformer les gains mésopotamiens en véritable expansion territoriale vers l’Iran."
+  },
+  "TUR|1542-09-18": {
+    "status": "Bataille uchronique au cœur de l’Azerbaïdjan iranien",
+    "history": "Zanjân se situe dans l’espace safavide et fait partie du grand théâtre des guerres ottomano-persanes. Les Ottomans peuvent y mener des campagnes et des occupations temporaires, mais la ville ne devient pas une possession ottomane durable au milieu du XVIe siècle.",
+    "campaign": "Amin Cobanzade engage 35 000 Ottomans contre 27 000 hommes de Mushasha. La victoire est coûteuse mais nette : 6 470 pertes ottomanes contre 15 142 adverses."
+  },
+  "TUR|1543-06-02": {
+    "status": "Conquête massive du Khuzestan dans une guerre historiquement disputée",
+    "history": "L’Empire ottoman consolide réellement son contrôle sur Bagdad et la basse Mésopotamie au XVIe siècle. Basra passe progressivement sous influence ottomane à partir du milieu du siècle, mais Ahvaz, Hoveyzeh et une grande partie du Khuzestan restent dans une zone de rivalité avec les Safavides.",
+    "campaign": "La victoire de Hoveyzeh donne à Valoche un ensemble beaucoup plus vaste : Basrah, Ahvaz, Hoveyzeh, Qurna et Shushtar figurent parmi les gains. L’Empire ottoman domine désormais largement la basse Mésopotamie et déborde profondément en Iran occidental."
+  },
+  "TUR|1544-05-13": {
+    "status": "Retour ottoman à Tunis entre deux dates historiques",
+    "history": "Hayreddin Barberousse prend Tunis pour les Ottomans en 1534, mais Charles Quint la reprend en 1535 et rétablit le souverain hafside. Les Ottomans ne conquièrent définitivement Tunis qu’en 1574.",
+    "campaign": "Dans votre chronologie, Tunis repasse sous contrôle ottoman dès 1544. Valoche restaure donc la présence directe du sultan bien avant la conquête définitive historique et renforce sa position en Méditerranée occidentale."
+  },
+  "TUR|1550-07-08": {
+    "status": "Progression ottomane vers le Fars",
+    "history": "Les guerres ottomano-safavides portent surtout sur l’Anatolie orientale, l’Azerbaïdjan, l’Irak et le Caucase. Kazerun, dans le Fars méridional, se trouve bien plus profondément en Perse que les zones de domination ottomane durable.",
+    "campaign": "L’Empire ottoman attaque le Fars et la Transoxiane pour Kazerun. Même sans grande bataille enregistrée, la campagne se termine en 1551 par une victoire et confirme l’avancée continue de Valoche vers l’est."
+  },
+  "TUR|1552-02-01": {
+    "status": "Conquête ottomane de l’Iran oriental entièrement uchronique",
+    "history": "Le Kouhistan appartient à l’Iran oriental et se situe hors de la zone normalement disputée entre Ottomans et Safavides. L’Empire ottoman historique ne projette pas son autorité aussi loin vers le Khorasan au XVIe siècle.",
+    "campaign": "Valoche attaque les Timourides avec l’appui du Maroc. La guerre est courte et se décide presque entièrement lors de la bataille de Kouhistan, remportée avec seulement 48 pertes ottomanes."
+  },
+  "TUR|1553-08-15": {
+    "status": "Début d’une expansion ottomane vers les hauts plateaux éthiopiens",
+    "history": "Les Ottomans interviennent réellement dans la Corne de l’Afrique au XVIe siècle et créent l’eyalet de Habesh autour de la mer Rouge. Ils soutiennent également les adversaires musulmans de l’Éthiopie, mais ne conquièrent ni Gondar ni le cœur des hauts plateaux éthiopiens.",
+    "campaign": "L’Empire de Valoche dépasse largement la logique historique de contrôle côtier. Il attaque directement l’Éthiopie pour Gondar et cherche à transformer son influence en mer Rouge en conquête continentale."
+  },
+  "TUR|1555-10-02": {
+    "status": "Grande bataille ottomano-éthiopienne uchronique",
+    "history": "La guerre entre l’Éthiopie chrétienne et le sultanat d’Adal dans les années 1520–1540 implique à la fois des soutiens ottomans et portugais. En revanche, aucune armée ottomane de cette taille n’affronte directement l’empereur d’Éthiopie à Sidamo en 1555.",
+    "campaign": "Ferhad Salih engage 29 000 Ottomans contre 30 000 Éthiopiens commandés par Iyas Ier Solomonid. L’armée ottomane perd 3 337 hommes et inflige 14 358 pertes, ouvrant la voie à la victoire finale."
+  },
+  "TUR|1555-10-31": {
+    "status": "Conquête des hauts plateaux éthiopiens au-delà de l’expansion ottomane réelle",
+    "history": "L’eyalet ottoman de Habesh, établi à partir du milieu du XVIe siècle, reste principalement centré sur les ports et territoires de la mer Rouge comme Massawa et Suakin. L’Empire ottoman ne soumet pas historiquement Gondar, Sidamo et le cœur de l’Éthiopie.",
+    "campaign": "La paix bouleverse complètement l’équilibre régional : dix-huit territoires d’Éthiopie, de Nubie et de la Corne de l’Afrique passent sous contrôle ottoman. Valoche transforme une présence maritime en véritable empire territorial africain."
   }
 };
