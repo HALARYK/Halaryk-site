@@ -730,5 +730,55 @@ export const EVENT_CONTEXT={
     "history": "Pas de lien historique.",
     "campaign": "Pyotr Ier poursuit la trajectoire dynastique atypique de la Russie de Doug. Son accession confirme que la monarchie russe s’est éloignée de la succession historique des Rurikides et des futurs Romanov.",
     "game": "La sauvegarde donne Pyotr Ier von Hohenzollern à 3 ADM, 3 DIP et 4 MIL, de religion orthodoxe, avec le trait zélote."
+  },
+  "CAS|1538-01-04": {
+    "status": "Engagement catholique avant le concile de Trente",
+    "history": "La Réforme catholique est déjà engagée dans les années 1530, mais le concile de Trente — grand jalon institutionnel de la Contre-Réforme — ne s’ouvre qu’en 1545. Dans l’histoire réelle, la monarchie espagnole des Habsbourg devient l’un des principaux soutiens politiques du catholicisme en Europe.",
+    "campaign": "L’Espagne de HALARYK formalise très tôt ce positionnement. Après être devenue une puissance mondiale et avoir institué la Societas Jesu dans la campagne, elle assume désormais ouvertement le rôle de grande monarchie catholique face aux réformes protestantes."
+  },
+  "CAS|1538-09-13": {
+    "status": "Mesure anglaise transposée à l’Espagne par EU4",
+    "history": "Les Acts of Uniformity sont historiquement des lois anglaises liées à la Réforme : le premier grand texte imposant le Book of Common Prayer date de 1549, puis de nouveaux textes suivent en 1552 et 1559. L’Espagne n’a pas adopté de loi portant ce nom ; son uniformité religieuse reposait sur d’autres institutions, notamment l’Inquisition et la politique confessionnelle de la Couronne.",
+    "campaign": "Dans la partie, l’intitulé mécanique sert à représenter un nouveau durcissement de la politique religieuse espagnole. Il prolonge logiquement l’entrée dans la Contre-Réforme quelques mois plus tôt."
+  },
+  "CAS|1539-01-29": {
+    "status": "Conquête espagnole du Texas avec plus d’un siècle d’avance",
+    "history": "Les Espagnols reconnaissent le golfe du Mexique dès le début du XVIe siècle, notamment avec l’expédition d’Alonso Álvarez de Pineda en 1519. En revanche, une présence coloniale durable en territoire caddo et dans l’est du Texas ne se développe que beaucoup plus tard, avec les premières missions espagnoles de 1690 puis celles du début du XVIIIe siècle.",
+    "campaign": "L’Espagne est déjà solidement implantée en Amérique et lance directement une guerre contre les Hasinais, les Caddos, les Chactas et les Natchez. Cette offensive transforme très tôt les terres du futur Texas en véritable frontière impériale espagnole."
+  },
+  "CAS|1543-10-26": {
+    "status": "Une Nouvelle-Espagne étendue jusqu’au cœur du Texas",
+    "history": "Dans la chronologie réelle, la Couronne espagnole revendique très tôt une grande partie de l’Amérique du Nord, mais son occupation effective du Texas reste tardive et discontinue. Les établissements permanents et missions de l’est texan appartiennent surtout aux XVIIe et XVIIIe siècles.",
+    "campaign": "La victoire change complètement cette histoire : La Bahia, Los Tejas, Isla de Malhado, Rio Grande, Los Ais, Hasinai, Tanu et Nabaydacu passent au camp espagnol. L’Espagne dispose désormais d’une continuité territoriale et politique beaucoup plus forte sur le golfe et l’intérieur nord-américain."
+  },
+  "CAS|1550-06-05": {
+    "status": "Soulèvement colonial caddo entièrement uchronique",
+    "history": "Les Caddos constituent au contact européen des sociétés agricoles puissantes d’East Texas et de la vallée de la Red River. Les contacts espagnols soutenus et les tentatives missionnaires n’interviennent réellement qu’à la fin du XVIIe siècle ; la première mission espagnole durablement tentée auprès des Caddos date de 1690.",
+    "campaign": "Dans votre partie, la présence espagnole est déjà suffisamment avancée pour provoquer une guerre visant à repousser Nouvelle-Espagne. HALARYK intervient personnellement le 5 juin 1550 afin de soutenir sa colonie, avec Marrakech et plusieurs colonies espagnoles."
+  },
+  "CAS|1550-07-08": {
+    "status": "Bataille propre à la campagne",
+    "history": "Il n’existe pas de bataille historique de Tziccoac opposant une armée espagnole à une coalition caddo en 1550. Les affrontements durables entre Espagnols et peuples caddo se situent beaucoup plus tard et prennent souvent la forme de rivalités de frontière, de missions, d’alliances et de commerce.",
+    "campaign": "Francisco Pizarro commande la défense espagnole avec 20 000 hommes. Les Anilcos attaquent avec un peu plus de 13 000 soldats mais sont pratiquement anéantis : 13 216 pertes contre seulement 809 pour l’Espagne."
+  },
+  "CAS|1550-12-04": {
+    "status": "Nouvelle conquête du Mexique après une survivance autochtone prolongée",
+    "history": "Dans l’histoire réelle, la chute de Tenochtitlan en 1521 ouvre une conquête rapide du centre du Mexique et la Nouvelle-Espagne est organisée dans les années suivantes. La région de Coatzacoalcos est intégrée très tôt dans cette expansion espagnole, même si de nombreuses sociétés autochtones conservent longtemps leurs structures locales.",
+    "campaign": "Votre Mexique reste politiquement beaucoup plus fragmenté en 1550. Après la guerre caddo, l’Espagne repart immédiatement à l’offensive contre les Chontals et les Quichés afin de sécuriser Coatzacualco et d’achever sa domination régionale."
+  },
+  "CAS|1553-06-27": {
+    "status": "Écrasement de l’armée chontale à Xicallanco",
+    "history": "Xicallanco est connu comme un important espace d’échanges du monde mésoaméricain avant la conquête espagnole. Il n’existe toutefois pas de bataille historique de 1553 correspondant à celle enregistrée par la campagne.",
+    "campaign": "Francisco Pizarro mène 20 000 Espagnols contre 4 000 soldats chontals. L’affrontement est totalement déséquilibré : l’Espagne ne perd que 62 hommes tandis que l’armée adverse est entièrement détruite."
+  },
+  "CAS|1555-04-10": {
+    "status": "Consolidation tardive d’un Mexique espagnol alternatif",
+    "history": "En 1555, la Nouvelle-Espagne historique existe déjà depuis plusieurs décennies et une grande partie du centre et de l’est du Mexique est sous domination coloniale espagnole. La survivance d’États chontals et quichés capables de mener une guerre conventionnelle aussi tardive est donc propre à la partie.",
+    "campaign": "La paix donne à l’Espagne Tuxpan, Tochtepec, Coatzacualco, Xicallanco, Metztitlan et Xilotepec. Après les conquêtes nord-américaines des années 1540, HALARYK verrouille ainsi un nouveau bloc territorial majeur au Mexique."
+  },
+  "CAS|1558-12-16": {
+    "status": "Une guerre de religion impériale prolongée au-delà de 1555",
+    "history": "Le parallèle historique le plus proche est la guerre de Smalkalde de 1546–1547, opposant Charles Quint à la ligue protestante de Smalkalde. La paix d’Augsbourg de 1555 établit ensuite un compromis religieux dans le Saint-Empire. Une grande guerre des Ligues en 1558 constitue donc une prolongation uchronique de ces tensions.",
+    "campaign": "L’Espagne rejoint immédiatement le camp défensif mené par l’Autriche face à la Saxe et à la Ligue protestante. Ce choix confirme la cohérence de la politique espagnole depuis 1538 : défense du catholicisme et soutien direct au bloc impérial catholique."
   }
 };
