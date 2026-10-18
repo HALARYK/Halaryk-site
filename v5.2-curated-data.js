@@ -7615,6 +7615,414 @@ export const CURATED_EVENTS={
           "Zélote"
         ]
       ]
+    },
+    {
+      "date": "1537-03-09",
+      "type": "exploration",
+      "title": "Yermak Timofeyevich devient conquistador russe",
+      "summary": "La Russie confie son expansion orientale à Yermak Timofeyevich, conquistador exceptionnel chargé d’ouvrir la route de la Sibérie.",
+      "facts": [
+        [
+          "Conquistador",
+          "Yermak Timofeyevich"
+        ],
+        [
+          "Feu",
+          "6"
+        ],
+        [
+          "Choc",
+          "6"
+        ],
+        [
+          "Manœuvre",
+          "5"
+        ],
+        [
+          "Rôle",
+          "Exploration et conquête des territoires sibériens"
+        ],
+        [
+          "Portée",
+          "Accélération majeure de l’expansion russe vers l’est"
+        ]
+      ]
+    },
+    {
+      "date": "1541-07-30",
+      "type": "colonisation",
+      "title": "Nouvelle poussée russe en Sibérie",
+      "summary": "La Russie étend simultanément son contrôle sur plusieurs territoires de Sibérie centrale et orientale.",
+      "facts": [
+        [
+          "Territoires concernés",
+          "Toungouska occidentale · Uchaminskiy · Krasnoyarsk"
+        ],
+        [
+          "Période",
+          "30 juillet → 5 septembre 1541"
+        ],
+        [
+          "Région",
+          "Sibérie centrale"
+        ],
+        [
+          "Portée",
+          "Progression continue de la frontière russe vers l’est"
+        ]
+      ]
+    },
+    {
+      "date": "1542-05-01",
+      "type": "guerre",
+      "title": "La Russie rejoint Florence dans la conquête de Rome",
+      "summary": "La Russie intervient aux côtés de Florence dans sa guerre contre les États pontificaux et leurs alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête florentine de Rome"
+        ],
+        [
+          "Rôle russe",
+          "Allié de Florence"
+        ],
+        [
+          "Entrée dans le conflit",
+          "1er mai 1542"
+        ],
+        [
+          "Camp florentin",
+          "Florence · Montferrat · Saluzzo · Russie et alliés russes"
+        ],
+        [
+          "Camp adverse",
+          "États pontificaux · Hambourg · Milan · Brabant"
+        ]
+      ]
+    },
+    {
+      "date": "1542-11-17",
+      "type": "bataille",
+      "title": "Bataille de Pavie",
+      "summary": "L’armée russe remporte à Pavie une victoire sans perte enregistrée pendant la conquête florentine de Rome.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête florentine de Rome"
+        ],
+        [
+          "Lieu",
+          "Pavie"
+        ],
+        [
+          "Résultat",
+          "Victoire russe"
+        ],
+        [
+          "Pertes russes",
+          "0 perte enregistrée"
+        ],
+        [
+          "Portée",
+          "Succès russe sur le théâtre italien"
+        ]
+      ]
+    },
+    {
+      "date": "1543-04-02",
+      "type": "bataille",
+      "title": "Bataille de Goldingen",
+      "summary": "La Russie remporte une victoire importante à Goldingen, infligeant de lourdes pertes à l’armée adverse.",
+      "facts": [
+        [
+          "Lieu",
+          "Goldingen"
+        ],
+        [
+          "Pertes russes",
+          "3 701"
+        ],
+        [
+          "Pertes adverses",
+          "11 419"
+        ],
+        [
+          "Vainqueur",
+          "Russie"
+        ],
+        [
+          "Théâtre",
+          "Baltique"
+        ]
+      ]
+    },
+    {
+      "date": "1546-06-05",
+      "type": "dynastie",
+      "title": "Ivan est désigné héritier de Russie",
+      "summary": "La succession russe se précise avec la désignation d’Ivan comme héritier du trône.",
+      "facts": [
+        [
+          "Héritier",
+          "Ivan"
+        ],
+        [
+          "État",
+          "Russie"
+        ],
+        [
+          "Portée",
+          "Préparation de la succession dynastique"
+        ],
+        [
+          "Contexte",
+          "La Russie est déjà engagée dans une forte expansion européenne et sibérienne"
+        ]
+      ]
+    },
+    {
+      "date": "1550-02-05",
+      "type": "colonisation",
+      "title": "Nouvelle progression sibérienne",
+      "summary": "La Russie poursuit sa marche vers l’est avec une série de nouvelles implantations en Sibérie.",
+      "facts": [
+        [
+          "Territoires concernés",
+          "Toungouska orientale · Angara · Saïan · Vanavara"
+        ],
+        [
+          "Période",
+          "5 février → 12 mai 1550"
+        ],
+        [
+          "Région",
+          "Sibérie centrale et orientale"
+        ],
+        [
+          "Portée",
+          "Approfondissement du contrôle russe sur les bassins sibériens"
+        ]
+      ]
+    },
+    {
+      "date": "1554-08-23",
+      "type": "guerre",
+      "title": "Début de la conquête russe de Vilnius",
+      "summary": "La Russie ouvre une nouvelle guerre vers l’ouest avec Vilnius comme objectif principal.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Vilnius"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Vilnius"
+        ],
+        [
+          "Théâtre",
+          "Lituanie et Europe orientale"
+        ],
+        [
+          "Fin du conflit",
+          "20 décembre 1555 — victoire russe"
+        ]
+      ]
+    },
+    {
+      "date": "1555-06-29",
+      "type": "guerre",
+      "title": "Début de la conquête russe de Barnaoul",
+      "summary": "Alors que la guerre de Vilnius est toujours en cours, la Russie ouvre une nouvelle campagne en Sibérie méridionale pour Barnaoul.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Barnaoul"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Barnaoul"
+        ],
+        [
+          "Théâtre",
+          "Sibérie méridionale et Asie centrale"
+        ],
+        [
+          "Fin du conflit",
+          "27 mars 1557 — victoire russe"
+        ]
+      ]
+    },
+    {
+      "date": "1555-10-20",
+      "type": "culture",
+      "title": "La Russie intègre plusieurs cultures de la Volga et de la steppe",
+      "summary": "En quelques jours, la Russie accepte successivement les cultures mishary, kazani et nogaybak.",
+      "facts": [
+        [
+          "Cultures acceptées",
+          "Mishary · Kazani · Nogaybak"
+        ],
+        [
+          "Période",
+          "20 → 22 octobre 1555"
+        ],
+        [
+          "Portée",
+          "Intégration administrative et politique de populations turco-tatares"
+        ],
+        [
+          "Contexte",
+          "Consolidation des conquêtes russes autour de la Volga et des steppes"
+        ]
+      ]
+    },
+    {
+      "date": "1555-12-10",
+      "type": "bataille",
+      "title": "Bataille d’Ermland",
+      "summary": "La Russie remporte à Ermland une victoire écrasante en ne subissant que 250 pertes.",
+      "facts": [
+        [
+          "Lieu",
+          "Ermland"
+        ],
+        [
+          "Pertes russes",
+          "250"
+        ],
+        [
+          "Pertes adverses",
+          "12 893"
+        ],
+        [
+          "Vainqueur",
+          "Russie"
+        ],
+        [
+          "Théâtre",
+          "Baltique et Europe du Nord-Est"
+        ]
+      ]
+    },
+    {
+      "date": "1555-12-20",
+      "type": "guerre",
+      "title": "Victoire dans la conquête russe de Vilnius",
+      "summary": "La guerre se termine par une victoire russe et huit provinces passent sous contrôle de la Russie.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Vilnius"
+        ],
+        [
+          "Issue",
+          "Victoire russe"
+        ],
+        [
+          "Territoires acquis",
+          "8 provinces"
+        ],
+        [
+          "Principales acquisitions",
+          "Vilno · Trakai · Kovno · Volodymyr"
+        ],
+        [
+          "Portée",
+          "Avancée majeure vers la Lituanie et l’ouest"
+        ]
+      ]
+    },
+    {
+      "date": "1557-03-27",
+      "type": "guerre",
+      "title": "Victoire dans la conquête russe de Barnaoul",
+      "summary": "La Russie remporte sa campagne sibérienne et annexe dix nouveaux territoires autour de Barnaoul.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Barnaoul"
+        ],
+        [
+          "Issue",
+          "Victoire russe"
+        ],
+        [
+          "Territoires acquis",
+          "10 territoires"
+        ],
+        [
+          "Principales acquisitions",
+          "Novosibirsk · Barnaoul · Kemerovo · Khovsgol"
+        ],
+        [
+          "Portée",
+          "Extension profonde de la Russie en Sibérie méridionale"
+        ]
+      ]
+    },
+    {
+      "date": "1557-05-29",
+      "type": "guerre",
+      "title": "Début de la conquête russe d’Azov",
+      "summary": "La Russie lance une nouvelle guerre vers la mer Noire afin de s’emparer d’Azov et de renforcer sa présence dans le Caucase.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe d’Azov"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Azov"
+        ],
+        [
+          "Théâtre",
+          "Mer Noire et Caucase"
+        ],
+        [
+          "Fin du conflit",
+          "28 juin 1558 — victoire russe"
+        ]
+      ]
+    },
+    {
+      "date": "1558-06-28",
+      "type": "guerre",
+      "title": "Victoire dans la conquête russe d’Azov",
+      "summary": "La Russie remporte la guerre d’Azov et annexe dix territoires autour de la mer Noire et du Caucase.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe d’Azov"
+        ],
+        [
+          "Issue",
+          "Victoire russe"
+        ],
+        [
+          "Territoires acquis",
+          "10 territoires"
+        ],
+        [
+          "Principales acquisitions",
+          "Azov · Ochakov · Taman · Vladikavkaz"
+        ],
+        [
+          "Portée",
+          "Accès et contrôle russe renforcés autour de la mer Noire et du Caucase"
+        ]
+      ]
     }
   ]
 };
