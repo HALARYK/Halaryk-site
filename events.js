@@ -17,6 +17,7 @@ let activeEvents=[];
 let activeIndex=0;
 
 const crestByTag={CAS:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",SPA:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",ENG:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",GBR:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",LAN:"assets/nations/nation-florence.svg",ITA:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Italy.svg",BRA:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",PRU:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",HAB:"assets/nations/nation-autriche.svg",TUR:"assets/nations/nation-ottomans.svg",MOS:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg",RUS:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg"};
+const snapshotCrestByTag={CAS:"assets/nations/nation-castille.svg",SPA:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",ENG:"assets/nations/nation-angleterre.svg",GBR:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",LAN:"assets/nations/nation-florence.svg",ITA:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Italy.svg",BRA:"assets/nations/nation-brandebourg.svg",PRU:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",HAB:"assets/nations/nation-autriche.svg",TUR:"assets/nations/nation-ottomans.svg",MOS:"assets/nations/nation-moscovie.svg",RUS:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg"};
 const tagOrder=["CAS","ENG","LAN","BRA","HAB","TUR","MOS"];
 const kindLabel={guerre:"Guerre",dynastie:"Dynastie",union_personnelle:"Union personnelle","désastre":"Désastre",religion:"Religion",politique:"Politique",autre:"Événement"};
 const kindIcon={guerre:"⚔",dynastie:"♛",union_personnelle:"◆","désastre":"!",religion:"✝",politique:"✦",autre:"•"};
@@ -111,7 +112,7 @@ function techDelta(a,b){
 }
 function nationCard(p,start,end,startSnapshot,endSnapshot){
   const a=start?.stats||{},b=end?.stats||{},tech=b.technologies||{};const annualA=Number(a.annual_gross_income),annualB=Number(b.annual_gross_income);
-  const nationName=b.country_name||p.title,nationTag=b.current_tag||p.participant_key,crestPath=crestByTag[nationTag]||crestByTag[p.participant_key],img=crestPath?asset(crestPath):"";
+  const nationName=b.country_name||p.title,nationTag=b.current_tag||p.participant_key,crestPath=snapshotCrestByTag[nationTag]||crestByTag[nationTag]||crestByTag[p.participant_key],img=crestPath?asset(crestPath):"";
   const startYear=year(startSnapshot?.snapshot_date),endYear=year(endSnapshot?.snapshot_date);
   return `<article class="v52-nation-card" data-nation="${esc(p.participant_key||"")}">
     <div class="v52-nation-head">${img?`<img src="${img}" alt="Emblème de ${esc(nationName)}">`:""}<div><h3>${esc(nationName)}</h3><p>${esc(p.player_name||"")}</p></div></div>
