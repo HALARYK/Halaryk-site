@@ -1918,6 +1918,298 @@ export const CURATED_EVENTS={
           "Renforcement de la représentation au sein du système politique britannique"
         ]
       ]
+    },
+    {
+      "date": "1538-02-12",
+      "type": "dynastie",
+      "title": "Henry VII est désigné héritier",
+      "summary": "La succession britannique se précise : Henry VII de la maison d’York est officiellement placé dans la ligne de succession.",
+      "facts": [
+        [
+          "Héritier",
+          "Henry VII"
+        ],
+        [
+          "Dynastie",
+          "York"
+        ],
+        [
+          "Compétences",
+          "ADM 5 · DIP 5 · MIL 5"
+        ],
+        [
+          "Religion",
+          "Anglicanisme"
+        ],
+        [
+          "Prétention",
+          "100"
+        ],
+        [
+          "Traits",
+          "Réformateur · cruel"
+        ]
+      ]
+    },
+    {
+      "date": "1540-07-09",
+      "type": "colonisation",
+      "title": "Roanoke passe sous contrôle britannique",
+      "summary": "La Grande-Bretagne établit une nouvelle implantation sur la côte atlantique de l’Amérique du Nord à Roanoke.",
+      "facts": [
+        [
+          "Territoire",
+          "Roanoke"
+        ],
+        [
+          "Nouvelle puissance",
+          "Grande-Bretagne"
+        ],
+        [
+          "Culture implantée",
+          "Anglaise"
+        ],
+        [
+          "Religion implantée",
+          "Anglicane"
+        ],
+        [
+          "Région",
+          "Côte atlantique de l’Amérique du Nord"
+        ]
+      ]
+    },
+    {
+      "date": "1544-10-24",
+      "type": "guerre",
+      "title": "Début de la conquête britannique de Muko-Muko",
+      "summary": "La Grande-Bretagne ouvre une guerre à Sumatra contre Indrapura et Sunda afin de s’emparer de Muko-Muko.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Muko-Muko"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Muko-Muko"
+        ],
+        [
+          "Camp britannique",
+          "Grande-Bretagne · Flandre · colonies britanniques"
+        ],
+        [
+          "Camp adverse",
+          "Indrapura · Sunda"
+        ]
+      ]
+    },
+    {
+      "date": "1544-11-29",
+      "type": "bataille",
+      "title": "Bataille de Muko-Muko",
+      "summary": "George William Rodney remporte une victoire décisive dès le début de la campagne britannique à Sumatra.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête britannique de Muko-Muko"
+        ],
+        [
+          "Lieu",
+          "Muko-Muko"
+        ],
+        [
+          "Attaquant",
+          "Grande-Bretagne — George William Rodney — 11 000 infanterie · 4 000 cavalerie · 4 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Indrapura — Tsalenggathu Azmi — 5 565 infanterie · 2 000 cavalerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Grande-Bretagne : 733 · Indrapura : 7 565"
+        ],
+        [
+          "Vainqueur",
+          "Grande-Bretagne"
+        ]
+      ]
+    },
+    {
+      "date": "1545-07-31",
+      "type": "bataille",
+      "title": "Bataille de Bengkulu",
+      "summary": "L’armée britannique écrase les dernières forces d’Indrapura à Bengkulu avec des pertes extrêmement faibles.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête britannique de Muko-Muko"
+        ],
+        [
+          "Lieu",
+          "Bengkulu"
+        ],
+        [
+          "Attaquant",
+          "Grande-Bretagne — George William Rodney — 10 585 infanterie · 3 884 cavalerie · 3 884 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Indrapura — Tsalenggathu Azmi — 3 000 infanterie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Grande-Bretagne : 183 · Indrapura : 3 000"
+        ],
+        [
+          "Vainqueur",
+          "Grande-Bretagne"
+        ]
+      ]
+    },
+    {
+      "date": "1547-06-02",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Muko-Muko",
+      "summary": "La guerre s’achève par une victoire britannique : Muko-Muko et Indrapura passent sous contrôle direct de la Grande-Bretagne.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Muko-Muko"
+        ],
+        [
+          "Issue",
+          "Victoire du camp britannique"
+        ],
+        [
+          "Batailles enregistrées",
+          "3"
+        ],
+        [
+          "Pertes britanniques",
+          "22 202 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "11 638 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Muko-Muko · Indrapura"
+        ]
+      ]
+    },
+    {
+      "date": "1547-07-08",
+      "type": "politique",
+      "title": "Ouverture du débat sur le Spice Act",
+      "summary": "Le Parlement britannique ouvre un débat consacré au commerce des épices, reflet de l’expansion maritime croissante de la Grande-Bretagne en Asie.",
+      "facts": [
+        [
+          "Débat parlementaire",
+          "Spice Act"
+        ],
+        [
+          "Contexte",
+          "Expansion commerciale britannique en Asie du Sud-Est"
+        ],
+        [
+          "Portée",
+          "Renforcement du rôle du Parlement dans l’orientation commerciale de l’empire"
+        ]
+      ]
+    },
+    {
+      "date": "1550-04-15",
+      "type": "colonisation",
+      "title": "Florès passe sous contrôle britannique",
+      "summary": "La Grande-Bretagne fonde une nouvelle implantation dans les Petites îles de la Sonde et étend son réseau asiatique jusqu’à Florès.",
+      "facts": [
+        [
+          "Territoire",
+          "Florès"
+        ],
+        [
+          "Nouvelle puissance",
+          "Grande-Bretagne"
+        ],
+        [
+          "Culture implantée",
+          "Anglaise"
+        ],
+        [
+          "Religion implantée",
+          "Anglicane"
+        ],
+        [
+          "Région",
+          "Petites îles de la Sonde"
+        ]
+      ]
+    },
+    {
+      "date": "1557-11-22",
+      "type": "guerre",
+      "title": "La Grande-Bretagne rejoint la deuxième conquête florentine de Mantoue",
+      "summary": "Matvala engage la Grande-Bretagne aux côtés de Florence dans une guerre majeure en Italie contre Mantoue, l’Autriche et leurs alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Rôle britannique",
+          "Allié de Florence"
+        ],
+        [
+          "Guerre déclenchée",
+          "12 novembre 1557"
+        ],
+        [
+          "Entrée britannique",
+          "22 novembre 1557"
+        ],
+        [
+          "Situation au 12 juin 1559",
+          "Conflit toujours en cours"
+        ]
+      ]
+    },
+    {
+      "date": "1559-05-11",
+      "type": "bataille",
+      "title": "Bataille de Trentino",
+      "summary": "La Grande-Bretagne remporte une victoire écrasante sur l’armée autrichienne de Maximilian Ier au Trentino.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Trentino"
+        ],
+        [
+          "Attaquant",
+          "Grande-Bretagne — Ippolito Bartolini — 141 088 infanterie · 8 930 cavalerie · 25 854 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Autriche — Maximilian I von Habsburg — 69 587 infanterie · 5 000 cavalerie · 13 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Grande-Bretagne : 3 772 · Autriche : 87 587"
+        ],
+        [
+          "Vainqueur",
+          "Grande-Bretagne"
+        ]
+      ]
     }
   ],
   "LAN": [
