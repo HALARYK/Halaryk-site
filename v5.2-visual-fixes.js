@@ -1,16 +1,16 @@
 const FLAG_URLS={
-  Espagne:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",
-  "Grande-Bretagne":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",
-  Florence:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Florence.svg",
-  Italie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Italy.svg",
-  Prusse:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",
+  Espagne:"https://eu4.paradoxwikis.com/images/thumb/5/58/Spain.png/330px-Spain.png",
+  "Grande-Bretagne":"https://eu4.paradoxwikis.com/images/thumb/2/2b/Great_Britain.png/330px-Great_Britain.png",
+  Florence:"https://eu4.paradoxwikis.com/images/thumb/d/d9/Florence.png/330px-Florence.png",
+  Italie:"https://eu4.paradoxwikis.com/images/thumb/2/2a/Italy.png/330px-Italy.png",
+  Prusse:"https://eu4.paradoxwikis.com/images/thumb/2/28/Prussia.png/330px-Prussia.png",
   Autriche:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Austria.svg",
   "Empire ottoman":new URL("assets/nations/nation-ottomans.svg",import.meta.url).href,
-  Russie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg",
-  Castille:"https://wiki.cmdz.top/images/thumb/e/ee/Castile.png/120px-Castile.png",
-  Angleterre:"https://wiki.cmdz.top/images/thumb/2/21/England.png/120px-England.png",
-  Brandebourg:"https://wiki.cmdz.top/images/thumb/e/e3/Brandenburg.png/120px-Brandenburg.png",
-  Moscovie:"https://wiki.cmdz.top/images/thumb/4/41/Muscovy.png/120px-Muscovy.png"
+  Russie:"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png",
+  Castille:"https://eu4.paradoxwikis.com/images/thumb/e/ee/Castile.png/330px-Castile.png",
+  Angleterre:"https://eu4.paradoxwikis.com/images/thumb/2/21/England.png/330px-England.png",
+  Brandebourg:"https://eu4.paradoxwikis.com/images/thumb/e/e3/Brandenburg.png/330px-Brandenburg.png",
+  Moscovie:"https://eu4.paradoxwikis.com/images/thumb/4/41/Muscovy.png/330px-Muscovy.png"
 };
 const MAP_URL=new URL("assets/eu4/europe-1444-event-map.png",import.meta.url).href;
 function cleanText(v=""){return String(v).replace(/\s+/g," ").trim().toLowerCase()}
