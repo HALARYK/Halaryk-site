@@ -2,14 +2,15 @@ const FLAG_URLS={
   Espagne:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",
   "Grande-Bretagne":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",
   Florence:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Florence.svg",
+  Italie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Italy.svg",
   Prusse:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",
   Autriche:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Austria.svg",
   "Empire ottoman":new URL("assets/nations/nation-ottomans.svg",import.meta.url).href,
   Russie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg",
-  Castille:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Spain.svg",
-  Angleterre:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Great_Britain_(1707%E2%80%931800).svg",
-  Brandebourg:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Prussia.svg",
-  Moscovie:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Russia.svg"
+  Castille:new URL("assets/nations/nation-castille.svg",import.meta.url).href,
+  Angleterre:new URL("assets/nations/nation-angleterre.svg",import.meta.url).href,
+  Brandebourg:new URL("assets/nations/nation-brandebourg.svg",import.meta.url).href,
+  Moscovie:new URL("assets/nations/nation-moscovie.svg",import.meta.url).href
 };
 const MAP_URL=new URL("assets/eu4/europe-1444-event-map.png",import.meta.url).href;
 function cleanText(v=""){return String(v).replace(/\s+/g," ").trim().toLowerCase()}
