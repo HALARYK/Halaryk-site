@@ -5231,6 +5231,358 @@ export const CURATED_EVENTS={
           "La Frise devient une monarchie"
         ]
       ]
+    },
+    {
+      "date": "1541-10-18",
+      "type": "dynastie",
+      "title": "Michael Ketterer devient amiral autrichien",
+      "summary": "L’Autriche se dote d’un nouvel amiral, Michael Ketterer, qui commandera ensuite sa flotte pendant les guerres d’Italie.",
+      "facts": [
+        [
+          "Amiral",
+          "Michael Ketterer"
+        ],
+        [
+          "Feu",
+          "3"
+        ],
+        [
+          "Manœuvre",
+          "1"
+        ],
+        [
+          "Siège",
+          "1"
+        ],
+        [
+          "Personnalité",
+          "Spécialiste de l’éperonnage"
+        ],
+        [
+          "Naissance",
+          "25 juillet 1517"
+        ]
+      ]
+    },
+    {
+      "date": "1544-10-13",
+      "type": "guerre",
+      "title": "Début de la conquête autrichienne de Venise",
+      "summary": "L’Autriche attaque Venise afin de s’emparer directement de la cité lagunaire et d’étendre son influence sur l’Italie du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête autrichienne de Venise"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Venise"
+        ],
+        [
+          "Camp autrichien",
+          "Autriche · Moldavie · Bourgogne · Champagne · Herzégovine"
+        ],
+        [
+          "Camp adverse",
+          "Venise · Ratisbonne"
+        ]
+      ]
+    },
+    {
+      "date": "1544-11-10",
+      "type": "bataille",
+      "title": "Bataille de Venise",
+      "summary": "Johann Leopold von Neippberg remporte une victoire totale devant Venise et détruit l’armée vénitienne.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête autrichienne de Venise"
+        ],
+        [
+          "Lieu",
+          "Venise"
+        ],
+        [
+          "Attaquant",
+          "Autriche — Johann Leopold von Neippberg — 10 000 infanterie · 10 000 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Venise — Domenico Garda — 6 000 infanterie · 2 000 cavalerie · 2 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Autriche : 714 · Venise : 10 000"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1545-06-07",
+      "type": "guerre",
+      "title": "Victoire dans la conquête autrichienne de Venise",
+      "summary": "La guerre s’achève par une victoire autrichienne et Venise passe sous le contrôle direct de l’Autriche.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête autrichienne de Venise"
+        ],
+        [
+          "Issue",
+          "Victoire du camp autrichien"
+        ],
+        [
+          "Batailles enregistrées",
+          "4"
+        ],
+        [
+          "Résultat territorial",
+          "Venise passe sous contrôle autrichien"
+        ],
+        [
+          "Portée",
+          "L’Autriche obtient un accès direct à la lagune vénitienne et renforce son poids en Italie"
+        ]
+      ]
+    },
+    {
+      "date": "1549-05-08",
+      "type": "dynastie",
+      "title": "Karl von Schönburg devient général autrichien",
+      "summary": "Karl von Schönburg rejoint le haut commandement autrichien comme général particulièrement compétent en siège et en manœuvre.",
+      "facts": [
+        [
+          "Général",
+          "Karl von Schönburg"
+        ],
+        [
+          "Feu",
+          "3"
+        ],
+        [
+          "Choc",
+          "2"
+        ],
+        [
+          "Manœuvre",
+          "4"
+        ],
+        [
+          "Siège",
+          "3"
+        ],
+        [
+          "Personnalité",
+          "Défenseur de première ligne"
+        ],
+        [
+          "Naissance",
+          "2 décembre 1517"
+        ]
+      ]
+    },
+    {
+      "date": "1557-11-12",
+      "type": "guerre",
+      "title": "L’Autriche devient le principal défenseur face à la deuxième conquête florentine de Mantoue",
+      "summary": "Lorsque Florence relance sa conquête de Mantoue, l’Autriche rejoint immédiatement le camp défenseur et transforme le conflit en guerre majeure d’Italie du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Rôle autrichien",
+          "Principal allié de Mantoue"
+        ],
+        [
+          "Début du conflit",
+          "12 novembre 1557"
+        ],
+        [
+          "Camp florentin initial",
+          "Florence · Urbino · Montferrat · Spolète · Pérouse"
+        ],
+        [
+          "Camp défenseur",
+          "Mantoue · Milan · Ingolstadt · Autriche"
+        ],
+        [
+          "Situation au 12 juin 1559",
+          "Guerre toujours active"
+        ]
+      ]
+    },
+    {
+      "date": "1558-04-07",
+      "type": "bataille",
+      "title": "Bataille de Venise",
+      "summary": "Johann Leopold von Neippberg inflige une lourde défaite à l’armée florentine de Vitale Tonelli devant Venise.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Venise"
+        ],
+        [
+          "Attaquant",
+          "Florence — Vitale Tonelli — 25 000 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Autriche — Johann Leopold von Neippberg — 50 000 infanterie · 50 000 cavalerie · 25 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 15 473 · Autriche : 4 731"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1558-04-27",
+      "type": "bataille",
+      "title": "Bataille navale du golfe de Venise",
+      "summary": "La flotte autrichienne de Michael Ketterer est battue par la Grande-Bretagne dans le golfe de Venise.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Golfe de Venise"
+        ],
+        [
+          "Attaquant",
+          "Grande-Bretagne — Horatio Baffin — 20 vaisseaux lourds · 43 galères · 11 navires légers · 31 transports"
+        ],
+        [
+          "Défenseur",
+          "Autriche — Michael Ketterer — 10 vaisseaux lourds · 7 galères · 15 transports"
+        ],
+        [
+          "Pertes de la bataille",
+          "Grande-Bretagne : 0 navire · Autriche : 6 navires"
+        ],
+        [
+          "Vainqueur",
+          "Grande-Bretagne"
+        ]
+      ]
+    },
+    {
+      "date": "1558-11-20",
+      "type": "bataille",
+      "title": "Bataille de Trévise",
+      "summary": "Après ses succès de printemps, l’Autriche est battue à Trévise par l’armée florentine d’Ippolito Bartolini.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Trévise"
+        ],
+        [
+          "Attaquant",
+          "Florence — Ippolito Bartolini — 76 000 infanterie · 6 000 cavalerie · 12 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Autriche — 79 000 infanterie · 8 919 cavalerie · 8 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Florence : 8 021 · Autriche : 12 734"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1558-12-16",
+      "type": "guerre",
+      "title": "L’Autriche devient le principal défenseur de la Guerre de la Ligue protestante",
+      "summary": "La Saxe déclenche la grande guerre confessionnelle du Saint-Empire ; l’Autriche devient le chef du camp défenseur catholique.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre de la Ligue protestante"
+        ],
+        [
+          "Casus belli",
+          "Guerre de Ligue religieuse"
+        ],
+        [
+          "Rôle autrichien",
+          "Défenseur principal"
+        ],
+        [
+          "Chef du camp attaquant",
+          "Saxe"
+        ],
+        [
+          "Principaux soutiens catholiques",
+          "Espagne · Pologne · Lituanie · Bourgogne · Moldavie"
+        ],
+        [
+          "Situation au 12 juin 1559",
+          "Conflit toujours en cours"
+        ]
+      ]
+    },
+    {
+      "date": "1559-05-11",
+      "type": "bataille",
+      "title": "Bataille de Trentino",
+      "summary": "L’armée de Maximilian Ier est anéantie par les Britanniques au Trentino dans l’une des plus lourdes défaites autrichiennes de la campagne.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Lieu",
+          "Trentino"
+        ],
+        [
+          "Attaquant",
+          "Grande-Bretagne — Ippolito Bartolini — 141 088 infanterie · 8 930 cavalerie · 25 854 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Autriche — Maximilian I von Habsburg — 69 587 infanterie · 5 000 cavalerie · 13 000 artillerie"
+        ],
+        [
+          "Pertes de la bataille",
+          "Grande-Bretagne : 3 772 · Autriche : 87 587"
+        ],
+        [
+          "Vainqueur",
+          "Grande-Bretagne"
+        ],
+        [
+          "Conséquence",
+          "L’armée autrichienne engagée est entièrement détruite"
+        ]
+      ]
     }
   ],
   "TUR": [
