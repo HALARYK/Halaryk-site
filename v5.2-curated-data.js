@@ -1021,6 +1021,394 @@ export const CURATED_EVENTS={
           "Conflit toujours en cours"
         ]
       ]
+    },
+    {
+      "date": "1559-06-12",
+      "type": "culture",
+      "title": "Le catalan devient une culture acceptée",
+      "summary": "L’Espagne reconnaît officiellement le catalan parmi ses cultures acceptées, renforçant l’intégration interne de la monarchie.",
+      "facts": [
+        [
+          "Culture acceptée",
+          "Catalan"
+        ],
+        [
+          "État",
+          "Espagne"
+        ],
+        [
+          "Portée",
+          "Meilleure intégration des territoires catalans dans la monarchie espagnole"
+        ]
+      ]
+    },
+    {
+      "date": "1560-12-22",
+      "type": "guerre",
+      "title": "Début de la conquête espagnole de Cacaxtes",
+      "summary": "L’Espagne ouvre une nouvelle campagne au nord du Mexique contre les Guamares et les Tarasques.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole de Cacaxtes"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Cacaxtes"
+        ],
+        [
+          "Camp espagnol",
+          "Espagne · Marrakech · colonies espagnoles"
+        ],
+        [
+          "Camp adverse",
+          "Guamares · Tarasques"
+        ]
+      ]
+    },
+    {
+      "date": "1562-04-29",
+      "type": "bataille",
+      "title": "Bataille navale du cap Finisterre",
+      "summary": "Alfonso Palafox intercepte une petite escadre danoise et remporte une victoire navale sans aucune perte espagnole.",
+      "facts": [
+        [
+          "Guerre",
+          "Guerre de la Ligue protestante"
+        ],
+        [
+          "Lieu",
+          "Cap Finisterre"
+        ],
+        [
+          "Attaquant",
+          "Danemark — Hans Høegh — 3 navires légers"
+        ],
+        [
+          "Défenseur",
+          "Espagne — Alfonso Palafox — 26 vaisseaux lourds"
+        ],
+        [
+          "Pertes",
+          "Danemark : 4 navires · Espagne : 0"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1562-05-14",
+      "type": "militaire",
+      "title": "Inés de Suárez devient générale espagnole",
+      "summary": "Inés de Suárez rejoint le haut commandement espagnol avec un profil particulièrement complet et une forte aptitude au siège.",
+      "facts": [
+        [
+          "Générale",
+          "Inés de Suárez"
+        ],
+        [
+          "Feu",
+          "4"
+        ],
+        [
+          "Choc",
+          "3"
+        ],
+        [
+          "Manœuvre",
+          "4"
+        ],
+        [
+          "Siège",
+          "2"
+        ],
+        [
+          "Spécialité",
+          "Spécialiste du siège"
+        ]
+      ]
+    },
+    {
+      "date": "1562-08-27",
+      "type": "guerre",
+      "title": "Victoire dans la conquête espagnole de Cacaxtes",
+      "summary": "La campagne s’achève par une victoire espagnole et quatre territoires passent sous contrôle de la Nouvelle-Espagne.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole de Cacaxtes"
+        ],
+        [
+          "Issue",
+          "Victoire du camp espagnol"
+        ],
+        [
+          "Pertes du camp espagnol",
+          "5 240 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "9 129 pertes humaines"
+        ],
+        [
+          "Territoires acquis par la Nouvelle-Espagne",
+          "Coahuila · Nuevo León · Laredo · Chichitames"
+        ]
+      ]
+    },
+    {
+      "date": "1562-12-22",
+      "type": "guerre",
+      "title": "Fin de la Guerre de la Ligue protestante",
+      "summary": "Après quatre années de guerre confessionnelle dans le Saint-Empire, le conflit prend fin sans victoire décisive nette.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre de la Ligue protestante"
+        ],
+        [
+          "Camp espagnol",
+          "Défenseurs catholiques menés par l’Autriche"
+        ],
+        [
+          "Pertes espagnoles",
+          "20 311 pertes humaines"
+        ],
+        [
+          "Pertes du camp protestant",
+          "135 884 pertes humaines"
+        ],
+        [
+          "Pertes du camp catholique",
+          "159 369 pertes humaines"
+        ],
+        [
+          "Issue",
+          "Paix sans victoire militaire décisive clairement attribuée"
+        ]
+      ]
+    },
+    {
+      "date": "1564-11-21",
+      "type": "guerre",
+      "title": "Début de la conquête espagnole de Campeche",
+      "summary": "L’Espagne attaque Can Pech et ses alliés afin d’achever sa domination du Yucatán.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole de Campeche"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Campeche"
+        ],
+        [
+          "Camp espagnol",
+          "Espagne · Marrakech · colonies espagnoles"
+        ],
+        [
+          "Camp adverse",
+          "Can Pech · Xiu · Lacandons"
+        ]
+      ]
+    },
+    {
+      "date": "1566-07-25",
+      "type": "bataille",
+      "title": "Bataille de Kobox",
+      "summary": "Francisco Pizarro détruit l’armée de Can Pech à Kobox et ne subit que des pertes minimes.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête espagnole de Campeche"
+        ],
+        [
+          "Lieu",
+          "Kobox"
+        ],
+        [
+          "Attaquant",
+          "Espagne — Francisco Pizarro — 12 000 infanterie · 4 000 cavalerie · 4 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Can Pech — Conache Mochcouoh — 7 000 infanterie · 3 000 cavalerie · 1 000 artillerie"
+        ],
+        [
+          "Pertes",
+          "Espagne : 251 · Can Pech : 11 000"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1567-09-24",
+      "type": "guerre",
+      "title": "Victoire dans la conquête espagnole de Campeche",
+      "summary": "La guerre du Yucatán se termine par une victoire espagnole et sept territoires entrent dans la sphère espagnole.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole de Campeche"
+        ],
+        [
+          "Issue",
+          "Victoire du camp espagnol"
+        ],
+        [
+          "Batailles enregistrées",
+          "9"
+        ],
+        [
+          "Pertes du camp espagnol",
+          "26 064 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "29 377 pertes humaines"
+        ],
+        [
+          "Acquisitions directes",
+          "Petén · Campeche · Lacandons · Tzotzil · Kobox"
+        ],
+        [
+          "Acquisitions de Nouvelle-Espagne",
+          "Chanputun · Ah Canul"
+        ]
+      ]
+    },
+    {
+      "date": "1570-03-30",
+      "type": "bataille",
+      "title": "Bataille du Narbonnais",
+      "summary": "L’armée espagnole d’Emilio Patiño remporte une bataille majeure contre la France au cœur du Narbonnais.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête espagnole du Narbonnais"
+        ],
+        [
+          "Lieu",
+          "Narbonnais"
+        ],
+        [
+          "Attaquant",
+          "Espagne — Emilio Patiño — 52 452 infanterie · 8 000 cavalerie · 12 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "France — 20 836 infanterie · 6 656 cavalerie · 12 944 artillerie"
+        ],
+        [
+          "Pertes",
+          "Espagne : 9 305 · France : 12 178"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1572-12-07",
+      "type": "bataille",
+      "title": "Bataille de Béarn",
+      "summary": "Inés de Suárez inflige une défaite écrasante à l’armée française à Béarn.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête espagnole du Narbonnais"
+        ],
+        [
+          "Lieu",
+          "Béarn"
+        ],
+        [
+          "Attaquant",
+          "Espagne — Inés de Suárez — 59 069 infanterie · 4 465 cavalerie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "France — 7 757 infanterie · 2 704 cavalerie · 7 462 artillerie"
+        ],
+        [
+          "Pertes",
+          "Espagne : 1 204 · France : 17 923"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1580-08-18",
+      "type": "guerre",
+      "title": "Début de la conquête espagnole d’Abancay",
+      "summary": "L’Espagne lance une nouvelle campagne dans les Andes avec Abancay comme objectif principal.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole d’Abancay"
+        ],
+        [
+          "Casus belli",
+          "Conquête territoriale"
+        ],
+        [
+          "Objectif",
+          "Abancay"
+        ],
+        [
+          "Camp espagnol",
+          "Espagne · Marrakech · colonies espagnoles"
+        ],
+        [
+          "Camp adverse",
+          "Cuzco et ses alliés andins"
+        ]
+      ]
+    },
+    {
+      "date": "1584-07-21",
+      "type": "guerre",
+      "title": "Victoire dans la conquête espagnole d’Abancay",
+      "summary": "La campagne des Andes s’achève par une victoire espagnole et sept territoires majeurs passent directement sous contrôle de l’Espagne.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole d’Abancay"
+        ],
+        [
+          "Issue",
+          "Victoire du camp espagnol"
+        ],
+        [
+          "Pertes du camp espagnol",
+          "23 287 pertes humaines"
+        ],
+        [
+          "Pertes du camp adverse",
+          "17 524 pertes humaines"
+        ],
+        [
+          "Territoires acquis",
+          "Abancay · Cuzco · Lima · Huancavelica · Ayaviri · Quero · Macaya"
+        ]
+      ]
     }
   ],
   "ENG": [
