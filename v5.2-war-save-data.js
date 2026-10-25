@@ -4879,5 +4879,226 @@ export const WAR_EVENT_DATA={
     "battles": 0,
     "winner": "Conflit toujours en cours au 12 juin 1559.",
     "peace": "Aucune paix : la Guerre d’indépendance suédoise est encore active dans la sauvegarde."
+  },
+  "CAS|1560-12-22": {
+    "mode": "start",
+    "war": "Conquête espagnole de Cacaxtes",
+    "start": "1560-12-22",
+    "end": "1562-08-27",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Cacaxtes",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade",
+      "Nouvelle-Espagne"
+    ],
+    "defenders": [
+      "Guamares",
+      "Tarasques"
+    ],
+    "lossesAttackers": 5240,
+    "lossesDefenders": 9129,
+    "losses": {
+      "Espagne": 3155,
+      "Caraïbes espagnoles": 885,
+      "Nouvelle-Espagne": 1200,
+      "Guamares": 1109,
+      "Tarasques": 8020
+    },
+    "battles": 2,
+    "winner": "Camp espagnol",
+    "peace": "Coahuila, Nuevo León, Laredo et Chichitames passent sous contrôle de la Nouvelle-Espagne."
+  },
+  "CAS|1562-08-27": {
+    "mode": "end",
+    "war": "Conquête espagnole de Cacaxtes",
+    "start": "1560-12-22",
+    "end": "1562-08-27",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Cacaxtes",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade",
+      "Nouvelle-Espagne"
+    ],
+    "defenders": [
+      "Guamares",
+      "Tarasques"
+    ],
+    "lossesAttackers": 5240,
+    "lossesDefenders": 9129,
+    "losses": {
+      "Espagne": 3155,
+      "Caraïbes espagnoles": 885,
+      "Nouvelle-Espagne": 1200,
+      "Guamares": 1109,
+      "Tarasques": 8020
+    },
+    "battles": 2,
+    "winner": "Camp espagnol",
+    "peace": "Coahuila, Nuevo León, Laredo et Chichitames passent sous contrôle de la Nouvelle-Espagne."
+  },
+  "CAS|1562-12-22": {
+    "mode": "end",
+    "war": "Guerre de la Ligue protestante",
+    "start": "1558-12-16",
+    "end": "1562-12-22",
+    "casusBelli": "Guerre de Ligue religieuse",
+    "warGoal": "Imposer l’issue confessionnelle de la Ligue dans le Saint-Empire",
+    "attackers": [
+      "Saxe et ses alliés protestants",
+      "Danemark",
+      "Suède",
+      "Norvège",
+      "Bavière",
+      "Hesse"
+    ],
+    "defenders": [
+      "Autriche et ses alliés catholiques",
+      "Espagne",
+      "Pologne",
+      "Lituanie",
+      "Bourgogne"
+    ],
+    "lossesAttackers": 135884,
+    "lossesDefenders": 159369,
+    "losses": {
+      "Espagne": 20311
+    },
+    "battles": 13,
+    "winner": "Paix sans victoire militaire décisive clairement attribuée",
+    "peace": "La Guerre de la Ligue protestante prend fin le 22 décembre 1562."
+  },
+  "CAS|1564-11-21": {
+    "mode": "start",
+    "war": "Conquête espagnole de Campeche",
+    "start": "1564-11-21",
+    "end": "1567-09-24",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Campeche",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade",
+      "Nouvelle-Espagne",
+      "Pérou espagnol"
+    ],
+    "defenders": [
+      "Can Pech",
+      "Xiu",
+      "Lacandons"
+    ],
+    "lossesAttackers": 26064,
+    "lossesDefenders": 29377,
+    "losses": {
+      "Espagne": 17564,
+      "Caraïbes espagnoles": 3596,
+      "Nouvelle-Grenade": 2196,
+      "Nouvelle-Espagne": 2708,
+      "Can Pech": 14492,
+      "Xiu": 5781,
+      "Lacandons": 9104
+    },
+    "battles": 9,
+    "winner": "Camp espagnol",
+    "peace": "Petén, Campeche, Lacandons, Tzotzil et Kobox passent à l’Espagne ; Chanputun et Ah Canul à la Nouvelle-Espagne."
+  },
+  "CAS|1567-09-24": {
+    "mode": "end",
+    "war": "Conquête espagnole de Campeche",
+    "start": "1564-11-21",
+    "end": "1567-09-24",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Campeche",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Caraïbes espagnoles",
+      "Brésil espagnol",
+      "Nouvelle-Grenade",
+      "Nouvelle-Espagne",
+      "Pérou espagnol"
+    ],
+    "defenders": [
+      "Can Pech",
+      "Xiu",
+      "Lacandons"
+    ],
+    "lossesAttackers": 26064,
+    "lossesDefenders": 29377,
+    "losses": {
+      "Espagne": 17564,
+      "Caraïbes espagnoles": 3596,
+      "Nouvelle-Grenade": 2196,
+      "Nouvelle-Espagne": 2708,
+      "Can Pech": 14492,
+      "Xiu": 5781,
+      "Lacandons": 9104
+    },
+    "battles": 9,
+    "winner": "Camp espagnol",
+    "peace": "Petén, Campeche, Lacandons, Tzotzil et Kobox passent à l’Espagne ; Chanputun et Ah Canul à la Nouvelle-Espagne."
+  },
+  "CAS|1580-08-18": {
+    "mode": "start",
+    "war": "Conquête espagnole d’Abancay",
+    "start": "1580-08-18",
+    "end": "1584-07-21",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Abancay",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "colonies espagnoles"
+    ],
+    "defenders": [
+      "Cuzco et alliés andins"
+    ],
+    "lossesAttackers": 23287,
+    "lossesDefenders": 17524,
+    "losses": {
+      "Espagne": 17926,
+      "Marrakech": 3028,
+      "Colonies espagnoles": 2333,
+      "Cuzco et alliés andins": 17524
+    },
+    "battles": 1,
+    "winner": "Camp espagnol",
+    "peace": "Abancay, Cuzco, Lima, Huancavelica, Ayaviri, Quero et Macaya passent sous contrôle direct de l’Espagne."
+  },
+  "CAS|1584-07-21": {
+    "mode": "end",
+    "war": "Conquête espagnole d’Abancay",
+    "start": "1580-08-18",
+    "end": "1584-07-21",
+    "casusBelli": "Conquête territoriale",
+    "warGoal": "Abancay",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "colonies espagnoles"
+    ],
+    "defenders": [
+      "Cuzco et alliés andins"
+    ],
+    "lossesAttackers": 23287,
+    "lossesDefenders": 17524,
+    "losses": {
+      "Espagne": 17926,
+      "Marrakech": 3028,
+      "Colonies espagnoles": 2333,
+      "Cuzco et alliés andins": 17524
+    },
+    "battles": 1,
+    "winner": "Camp espagnol",
+    "peace": "Abancay, Cuzco, Lima, Huancavelica, Ayaviri, Quero et Macaya passent sous contrôle direct de l’Espagne."
   }
 };
