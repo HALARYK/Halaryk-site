@@ -1160,5 +1160,70 @@ export const EVENT_CONTEXT={
     "status": "La Prusse soutient une indépendance suédoise très tardive",
     "history": "La Suède historique rompt l’union de Kalmar bien plus tôt : Gustav Vasa devient roi en 1523 après la guerre de libération suédoise contre le Danemark. Une guerre d’indépendance suédoise commencée en 1557 est donc décalée de plus de trente ans.",
     "campaign": "Dans votre monde, la Suède reste encore liée au Danemark et reçoit l’appui militaire direct de la Prusse. Tchoupi rejoint le conflit dès son déclenchement ; au 12 juin 1559, la guerre est toujours en cours et la Prusse a déjà subi 15 655 pertes."
+  },
+  "CAS|1559-06-12": {
+    "status": "Intégration interne d’une monarchie composite",
+    "history": "La monarchie espagnole du XVIe siècle reste un ensemble de couronnes, royaumes et territoires dotés de lois et d’institutions propres. La Catalogne conserve notamment ses institutions au sein de la Couronne d’Aragon ; parler de « culture acceptée » est une abstraction propre à EU4.",
+    "campaign": "HALARYK choisit ici d’intégrer davantage les territoires catalans au fonctionnement du royaume. La décision renforce la cohésion interne de l’Espagne sans effacer les particularismes régionaux."
+  },
+  "CAS|1560-12-22": {
+    "status": "Poursuite de l’expansion espagnole au nord du Mexique",
+    "history": "Après la conquête du Mexique central, l’expansion espagnole vers le nord rencontre de nombreuses résistances indigènes. Les guerres du Mixtón et de Chichimèque montrent que la domination espagnole de ces régions reste progressive et coûteuse au XVIe siècle.",
+    "campaign": "L’Espagne attaque les Guamares et les Tarasques pour Cacaxtes. Cette guerre prolonge directement l’expansion mexicaine engagée lors de la session précédente et vise à consolider la frontière septentrionale de la Nouvelle-Espagne."
+  },
+  "CAS|1562-04-29": {
+    "status": "Victoire navale espagnole dans une guerre impériale uchronique",
+    "history": "Il n’existe pas de bataille hispano-danoise du cap Finisterre en 1562. L’Espagne possède cependant l’une des grandes marines européennes du XVIe siècle et doit défendre ses communications atlantiques et ses routes impériales.",
+    "campaign": "Alfonso Palafox rencontre une petite escadre danoise pendant la Guerre de la Ligue protestante. Ses 26 vaisseaux lourds remportent le combat sans perdre un seul bâtiment."
+  },
+  "CAS|1562-05-14": {
+    "status": "Une figure historique chilienne transformée en grande générale",
+    "history": "Inés de Suárez est une conquistadora espagnole bien réelle, célèbre pour son rôle dans la conquête du Chili et la défense de Santiago en 1541. Elle n’exerce cependant pas historiquement le commandement d’une grande armée royale européenne.",
+    "campaign": "La partie fait d’Inés de Suárez l’une des meilleures cheffes militaires espagnoles : 4 en feu, 3 en choc, 4 en manœuvre et 2 en siège. Elle jouera ensuite un rôle majeur dans la longue guerre contre la France."
+  },
+  "CAS|1562-08-27": {
+    "status": "La frontière de Nouvelle-Espagne avance vers le nord",
+    "history": "La conquête et la colonisation du nord du Mexique restent incomplètes pendant une grande partie du XVIe siècle. Les Espagnols progressent par missions, villes minières, alliances locales et campagnes contre les peuples chichimèques.",
+    "campaign": "La victoire ajoute Coahuila, Nuevo León, Laredo et Chichitames à la Nouvelle-Espagne. HALARYK élargit donc son espace colonial sans intégrer directement ces provinces à la métropole."
+  },
+  "CAS|1562-12-22": {
+    "status": "La guerre confessionnelle impériale se termine après quatre ans",
+    "history": "Dans l’histoire réelle, le compromis majeur du milieu du siècle est la paix d’Augsbourg de 1555, qui reconnaît juridiquement le luthéranisme dans le Saint-Empire. Une guerre générale des Ligues entre 1558 et 1562 constitue donc une forte divergence.",
+    "campaign": "L’Espagne termine le conflit dans le camp catholique autrichien après 20 311 pertes. La sauvegarde enregistre la fin de la guerre sans victoire militaire décisive nette, après plus de 295 000 pertes cumulées dans les deux camps."
+  },
+  "CAS|1564-11-21": {
+    "status": "Dernière phase de la conquête espagnole du Yucatán",
+    "history": "La conquête espagnole du Yucatán s’étend historiquement sur plusieurs décennies. Les Montejo imposent progressivement leur domination dans les années 1520–1540, mais certaines régions mayas restent longtemps hors de contrôle espagnol.",
+    "campaign": "La guerre de Campeche vise Can Pech, les Xiu et les Lacandons. Elle représente dans la campagne la volonté d’achever l’unification du Yucatán sous domination espagnole."
+  },
+  "CAS|1566-07-25": {
+    "status": "Effondrement militaire de Can Pech à Kobox",
+    "history": "Les guerres de conquête du Yucatán sont marquées par une forte résistance maya, des révoltes et des campagnes longues. La bataille de Kobox telle qu’elle apparaît ici n’a pas d’équivalent historique direct.",
+    "campaign": "Francisco Pizarro engage 20 000 Espagnols contre 11 000 soldats de Can Pech. L’armée adverse est entièrement détruite pour seulement 251 pertes espagnoles."
+  },
+  "CAS|1567-09-24": {
+    "status": "Le Yucatán bascule presque entièrement dans la sphère espagnole",
+    "history": "L’Espagne historique consolide progressivement ses villes et encomiendas au Yucatán au XVIe siècle, mais plusieurs communautés mayas indépendantes subsistent longtemps, notamment dans le Petén.",
+    "campaign": "La paix apporte sept territoires à la sphère espagnole. Petén, Campeche, Lacandons, Tzotzil et Kobox deviennent directement espagnols, tandis que Chanputun et Ah Canul sont rattachés à la Nouvelle-Espagne."
+  },
+  "CAS|1570-03-30": {
+    "status": "Reprise de la guerre franco-espagnole après Cateau-Cambrésis",
+    "history": "Le traité du Cateau-Cambrésis de 1559 met historiquement fin aux longues guerres d’Italie entre les Valois et les Habsbourg. La France entre ensuite dans les guerres de Religion ; une grande guerre offensive espagnole pour le Narbonnais en 1569 est donc une divergence majeure.",
+    "campaign": "Au Narbonnais, Emilio Patiño bat une armée française importante. L’Espagne perd 9 305 hommes mais inflige 12 178 pertes et maintient son offensive au-delà des Pyrénées."
+  },
+  "CAS|1572-12-07": {
+    "status": "Béarn devient un champ de bataille majeur",
+    "history": "Le Béarn est réellement un foyer important du protestantisme français sous Jeanne d’Albret, puis Henri de Navarre. Dans les années 1560–1570, la région est directement liée aux guerres de Religion françaises.",
+    "campaign": "Inés de Suárez remporte l’une des victoires les plus nettes de la guerre : 1 204 pertes espagnoles contre 17 923 Français. La bataille ouvre largement le front pyrénéen à l’Espagne."
+  },
+  "CAS|1580-08-18": {
+    "status": "Nouvelle conquête andine après la disparition historique de l’État néo-inca",
+    "history": "Dans l’histoire réelle, le dernier État inca de Vilcabamba est conquis par les Espagnols en 1572 et Túpac Amaru est exécuté la même année. Une grande guerre indépendante autour de Cuzco et d’Abancay en 1580 est donc une divergence importante.",
+    "campaign": "HALARYK relance une campagne andine avec Abancay comme objectif. L’Espagne affronte Cuzco et plusieurs alliés locaux pour achever son contrôle du cœur péruvien."
+  },
+  "CAS|1584-07-21": {
+    "status": "Le cœur andin passe directement sous contrôle espagnol",
+    "history": "Cuzco et Lima sont déjà au centre du système colonial espagnol dans le Pérou historique du XVIe siècle. Leur conquête à cette date traduit donc une chronologie coloniale très différente de la réalité.",
+    "campaign": "La paix donne directement Abancay, Cuzco, Lima, Huancavelica, Ayaviri, Quero et Macaya à l’Espagne. La victoire achève une expansion spectaculaire dans les Andes au terme de quatre années de guerre."
   }
 };
