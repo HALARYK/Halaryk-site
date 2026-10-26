@@ -5100,5 +5100,1325 @@ export const WAR_EVENT_DATA={
     "battles": 1,
     "winner": "Camp espagnol",
     "peace": "Abancay, Cuzco, Lima, Huancavelica, Ayaviri, Quero et Macaya passent sous contrôle direct de l’Espagne."
+  },
+  "CAS|1569-04-04": {
+    "mode": "start",
+    "war": "Conquête espagnole du Narbonnais",
+    "start": "1569-04-04",
+    "end": "1576-01-01",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "espagnole du Narbonnais",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Sujets coloniaux espagnols"
+    ],
+    "defenders": [
+      "France",
+      "Lorraine"
+    ],
+    "lossesAttackers": 273615,
+    "lossesDefenders": 160301,
+    "losses": {},
+    "battles": 26,
+    "winner": "Camp de la nation suivie",
+    "peace": "Armagnac, Béarn, Toulouse, Narbonne, Foix et Carcassonne passent sous contrôle espagnol."
+  },
+  "CAS|1576-01-01": {
+    "mode": "end",
+    "war": "Conquête espagnole du Narbonnais",
+    "start": "1569-04-04",
+    "end": "1576-01-01",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "espagnole du Narbonnais",
+    "attackers": [
+      "Espagne",
+      "Marrakech",
+      "Sujets coloniaux espagnols"
+    ],
+    "defenders": [
+      "France",
+      "Lorraine"
+    ],
+    "lossesAttackers": 273615,
+    "lossesDefenders": 160301,
+    "losses": {},
+    "battles": 26,
+    "winner": "Camp de la nation suivie",
+    "peace": "Armagnac, Béarn, Toulouse, Narbonne, Foix et Carcassonne passent sous contrôle espagnol."
+  },
+  "ENG|1559-06-27": {
+    "mode": "end",
+    "war": "2e conquête florentine de Mantoue",
+    "start": "1557-11-12",
+    "end": "1559-06-27",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête florentine de Mantoue",
+    "attackers": [
+      "Florence",
+      "Grande-Bretagne",
+      "Alliés florentins et britanniques"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Milan",
+      "Autriche",
+      "Alliés impériaux"
+    ],
+    "lossesAttackers": 106913,
+    "lossesDefenders": 212872,
+    "losses": {},
+    "battles": 9,
+    "winner": "Camp de la nation suivie",
+    "peace": "Le conflit s’achève le 27 juin 1559."
+  },
+  "ENG|1562-05-28": {
+    "mode": "start",
+    "war": "Conquête britannique de Bintulu",
+    "start": "1562-05-28",
+    "end": "1566-05-24",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Bintulu",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Brunei",
+      "Makassar",
+      "Sulu",
+      "Demak"
+    ],
+    "lossesAttackers": 53717,
+    "lossesDefenders": 50193,
+    "losses": {},
+    "battles": 15,
+    "winner": "Camp de la nation suivie",
+    "peace": "Neuf territoires de Bornéo et des environs passent sous contrôle britannique."
+  },
+  "ENG|1566-05-24": {
+    "mode": "end",
+    "war": "Conquête britannique de Bintulu",
+    "start": "1562-05-28",
+    "end": "1566-05-24",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Bintulu",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Brunei",
+      "Makassar",
+      "Sulu",
+      "Demak"
+    ],
+    "lossesAttackers": 53717,
+    "lossesDefenders": 50193,
+    "losses": {},
+    "battles": 15,
+    "winner": "Camp de la nation suivie",
+    "peace": "Neuf territoires de Bornéo et des environs passent sous contrôle britannique."
+  },
+  "ENG|1573-01-09": {
+    "mode": "start",
+    "war": "Conquête britannique de Cowasuk",
+    "start": "1573-01-09",
+    "end": "1574-12-30",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Cowasuk",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Pequots",
+      "Mi'kmaq",
+      "Iroquois",
+      "Autres nations autochtones"
+    ],
+    "lossesAttackers": 22228,
+    "lossesDefenders": 32251,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Oswego, Fort Stanwix et Schenectady passent notamment sous contrôle britannique."
+  },
+  "ENG|1574-12-30": {
+    "mode": "end",
+    "war": "Conquête britannique de Cowasuk",
+    "start": "1573-01-09",
+    "end": "1574-12-30",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Cowasuk",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Pequots",
+      "Mi'kmaq",
+      "Iroquois",
+      "Autres nations autochtones"
+    ],
+    "lossesAttackers": 22228,
+    "lossesDefenders": 32251,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Oswego, Fort Stanwix et Schenectady passent notamment sous contrôle britannique."
+  },
+  "ENG|1577-08-08": {
+    "mode": "start",
+    "war": "Guerre coloniale britannique contre la France",
+    "start": "1577-08-08",
+    "end": "1579-01-05",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "Guerre coloniale britannique contre la France",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "France"
+    ],
+    "lossesAttackers": 13639,
+    "lossesDefenders": 4000,
+    "losses": {},
+    "battles": 3,
+    "winner": "Camp de la nation suivie",
+    "peace": "La Grande-Bretagne obtient notamment Touraine ainsi que plusieurs positions coloniales."
+  },
+  "ENG|1579-01-05": {
+    "mode": "end",
+    "war": "Guerre coloniale britannique contre la France",
+    "start": "1577-08-08",
+    "end": "1579-01-05",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "Guerre coloniale britannique contre la France",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "France"
+    ],
+    "lossesAttackers": 13639,
+    "lossesDefenders": 4000,
+    "losses": {},
+    "battles": 3,
+    "winner": "Camp de la nation suivie",
+    "peace": "La Grande-Bretagne obtient notamment Touraine ainsi que plusieurs positions coloniales."
+  },
+  "ENG|1581-01-01": {
+    "mode": "start",
+    "war": "Conquête britannique de Saluda",
+    "start": "1581-01-01",
+    "end": "1582-03-21",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Saluda",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Cherokee",
+      "Creek"
+    ],
+    "lossesAttackers": 8611,
+    "lossesDefenders": 15182,
+    "losses": {},
+    "battles": 5,
+    "winner": "Camp de la nation suivie",
+    "peace": "La campagne se termine victorieusement ; Keowee passe sous contrôle britannique."
+  },
+  "ENG|1582-03-21": {
+    "mode": "end",
+    "war": "Conquête britannique de Saluda",
+    "start": "1581-01-01",
+    "end": "1582-03-21",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Saluda",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Cherokee",
+      "Creek"
+    ],
+    "lossesAttackers": 8611,
+    "lossesDefenders": 15182,
+    "losses": {},
+    "battles": 5,
+    "winner": "Camp de la nation suivie",
+    "peace": "La campagne se termine victorieusement ; Keowee passe sous contrôle britannique."
+  },
+  "ENG|1582-09-19": {
+    "mode": "start",
+    "war": "Conquête britannique de Meliau",
+    "start": "1582-09-19",
+    "end": "1584-04-02",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Meliau",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Sambas",
+      "Kutai"
+    ],
+    "lossesAttackers": 6875,
+    "lossesDefenders": 9024,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Sambas et Meliau passent sous contrôle britannique."
+  },
+  "ENG|1584-04-02": {
+    "mode": "end",
+    "war": "Conquête britannique de Meliau",
+    "start": "1582-09-19",
+    "end": "1584-04-02",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Meliau",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Sambas",
+      "Kutai"
+    ],
+    "lossesAttackers": 6875,
+    "lossesDefenders": 9024,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Sambas et Meliau passent sous contrôle britannique."
+  },
+  "ENG|1584-08-13": {
+    "mode": "end",
+    "war": "Conquête britannique de Calicula",
+    "start": "1582-06-01",
+    "end": "1584-08-13",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "britannique de Calicula",
+    "attackers": [
+      "Grande-Bretagne",
+      "Flandre",
+      "Colonies britanniques"
+    ],
+    "defenders": [
+      "Confédération autochtone",
+      "Hurons"
+    ],
+    "lossesAttackers": 22105,
+    "lossesDefenders": 17588,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "New Orleans, Adai, Calicula, Pittsburgh et Mohetan passent sous contrôle britannique."
+  },
+  "LAN|1559-06-27": {
+    "mode": "end",
+    "war": "2e conquête florentine de Mantoue",
+    "start": "1557-11-12",
+    "end": "1559-06-27",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête florentine de Mantoue",
+    "attackers": [
+      "Florence",
+      "Grande-Bretagne",
+      "Alliés florentins"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Milan",
+      "Autriche",
+      "Alliés impériaux"
+    ],
+    "lossesAttackers": 106913,
+    "lossesDefenders": 212872,
+    "losses": {},
+    "battles": 9,
+    "winner": "Camp de la nation suivie",
+    "peace": "Le conflit s’achève le 27 juin 1559."
+  },
+  "LAN|1565-03-19": {
+    "mode": "start",
+    "war": "3e conquête florentine de Mantoue",
+    "start": "1565-03-19",
+    "end": "1566-10-12",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête florentine de Mantoue",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Palatinat",
+      "Milan",
+      "Ingolstadt"
+    ],
+    "lossesAttackers": 17489,
+    "lossesDefenders": 22935,
+    "losses": {},
+    "battles": 3,
+    "winner": "Camp de la nation suivie",
+    "peace": "Mantoue passe sous contrôle florentin."
+  },
+  "LAN|1566-10-12": {
+    "mode": "end",
+    "war": "3e conquête florentine de Mantoue",
+    "start": "1565-03-19",
+    "end": "1566-10-12",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête florentine de Mantoue",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "Mantoue",
+      "Palatinat",
+      "Milan",
+      "Ingolstadt"
+    ],
+    "lossesAttackers": 17489,
+    "lossesDefenders": 22935,
+    "losses": {},
+    "battles": 3,
+    "winner": "Camp de la nation suivie",
+    "peace": "Mantoue passe sous contrôle florentin."
+  },
+  "LAN|1571-08-18": {
+    "mode": "start",
+    "war": "2e conquête florentine de Rome",
+    "start": "1571-08-18",
+    "end": "1574-05-11",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête florentine de Rome",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "États pontificaux",
+      "Trèves",
+      "Milan"
+    ],
+    "lossesAttackers": 25242,
+    "lossesDefenders": 24030,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "Rome passe sous contrôle florentin."
+  },
+  "LAN|1574-05-11": {
+    "mode": "end",
+    "war": "2e conquête florentine de Rome",
+    "start": "1571-08-18",
+    "end": "1574-05-11",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête florentine de Rome",
+    "attackers": [
+      "Florence"
+    ],
+    "defenders": [
+      "États pontificaux",
+      "Trèves",
+      "Milan"
+    ],
+    "lossesAttackers": 25242,
+    "lossesDefenders": 24030,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "Rome passe sous contrôle florentin."
+  },
+  "LAN|1577-07-31": {
+    "mode": "start",
+    "war": "Conquête italienne des Abruzzes",
+    "start": "1577-07-31",
+    "end": "1579-12-31",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "italienne des Abruzzes",
+    "attackers": [
+      "Italie"
+    ],
+    "defenders": [
+      "France"
+    ],
+    "lossesAttackers": 35264,
+    "lossesDefenders": 27026,
+    "losses": {},
+    "battles": 12,
+    "winner": "Camp de la nation suivie",
+    "peace": "La guerre des Abruzzes s’achève le 31 décembre 1579."
+  },
+  "LAN|1579-12-31": {
+    "mode": "end",
+    "war": "Conquête italienne des Abruzzes",
+    "start": "1577-07-31",
+    "end": "1579-12-31",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "italienne des Abruzzes",
+    "attackers": [
+      "Italie"
+    ],
+    "defenders": [
+      "France"
+    ],
+    "lossesAttackers": 35264,
+    "lossesDefenders": 27026,
+    "losses": {},
+    "battles": 12,
+    "winner": "Camp de la nation suivie",
+    "peace": "La guerre des Abruzzes s’achève le 31 décembre 1579."
+  },
+  "BRA|1560-03-28": {
+    "mode": "end",
+    "war": "Guerre d’indépendance suédoise",
+    "start": "1557-01-10",
+    "end": "1560-03-28",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "Guerre d’indépendance suédoise",
+    "attackers": [
+      "Suède",
+      "Prusse"
+    ],
+    "defenders": [
+      "Danemark",
+      "Norvège",
+      "Ansbach",
+      "Frise orientale",
+      "Lübeck"
+    ],
+    "lossesAttackers": 52114,
+    "lossesDefenders": 23839,
+    "losses": {},
+    "battles": 13,
+    "winner": "Camp de la nation suivie",
+    "peace": "La Guerre d’indépendance suédoise prend fin le 28 mars 1560."
+  },
+  "BRA|1560-08-26": {
+    "mode": "start",
+    "war": "Conquête prussienne de Hambourg",
+    "start": "1560-08-26",
+    "end": "1564-09-04",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "prussienne de Hambourg",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "Hambourg",
+      "Brabant",
+      "États pontificaux",
+      "Utrecht",
+      "Ansbach"
+    ],
+    "lossesAttackers": 94713,
+    "lossesDefenders": 30037,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Hambourg passe sous contrôle prussien."
+  },
+  "BRA|1564-09-04": {
+    "mode": "end",
+    "war": "Conquête prussienne de Hambourg",
+    "start": "1560-08-26",
+    "end": "1564-09-04",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "prussienne de Hambourg",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "Hambourg",
+      "Brabant",
+      "États pontificaux",
+      "Utrecht",
+      "Ansbach"
+    ],
+    "lossesAttackers": 94713,
+    "lossesDefenders": 30037,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Hambourg passe sous contrôle prussien."
+  },
+  "BRA|1564-12-20": {
+    "mode": "start",
+    "war": "Conquête prussienne de Goslar",
+    "start": "1564-12-20",
+    "end": "1567-03-31",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "prussienne de Goslar",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Saxe",
+      "Bade",
+      "Bavière",
+      "Nuremberg",
+      "Bayreuth",
+      "Ansbach"
+    ],
+    "lossesAttackers": 86997,
+    "lossesDefenders": 66448,
+    "losses": {},
+    "battles": 7,
+    "winner": "Camp de la nation suivie",
+    "peace": "Wittenberg et Dresde passent sous contrôle prussien."
+  },
+  "BRA|1567-03-31": {
+    "mode": "end",
+    "war": "Conquête prussienne de Goslar",
+    "start": "1564-12-20",
+    "end": "1567-03-31",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "prussienne de Goslar",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Saxe",
+      "Bade",
+      "Bavière",
+      "Nuremberg",
+      "Bayreuth",
+      "Ansbach"
+    ],
+    "lossesAttackers": 86997,
+    "lossesDefenders": 66448,
+    "losses": {},
+    "battles": 7,
+    "winner": "Camp de la nation suivie",
+    "peace": "Wittenberg et Dresde passent sous contrôle prussien."
+  },
+  "BRA|1569-02-15": {
+    "mode": "start",
+    "war": "2e conquête prussienne de Brême",
+    "start": "1569-02-15",
+    "end": "1572-02-14",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête prussienne de Brême",
+    "attackers": [
+      "Prusse"
+    ],
+    "defenders": [
+      "Brême",
+      "Frise orientale",
+      "Lübeck"
+    ],
+    "lossesAttackers": 21045,
+    "lossesDefenders": 15616,
+    "losses": {},
+    "battles": 1,
+    "winner": "Camp de la nation suivie",
+    "peace": "Rostock passe sous contrôle prussien."
+  },
+  "BRA|1572-02-14": {
+    "mode": "end",
+    "war": "2e conquête prussienne de Brême",
+    "start": "1569-02-15",
+    "end": "1572-02-14",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête prussienne de Brême",
+    "attackers": [
+      "Prusse"
+    ],
+    "defenders": [
+      "Brême",
+      "Frise orientale",
+      "Lübeck"
+    ],
+    "lossesAttackers": 21045,
+    "lossesDefenders": 15616,
+    "losses": {},
+    "battles": 1,
+    "winner": "Camp de la nation suivie",
+    "peace": "Rostock passe sous contrôle prussien."
+  },
+  "BRA|1579-09-08": {
+    "mode": "start",
+    "war": "2e conquête prussienne de Goslar",
+    "start": "1579-09-08",
+    "end": "1582-03-28",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête prussienne de Goslar",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Saxe",
+      "Bade",
+      "Bavière",
+      "Hesse",
+      "Nuremberg",
+      "Bayreuth",
+      "Ansbach"
+    ],
+    "lossesAttackers": 157052,
+    "lossesDefenders": 63483,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "Goslar et Zwickau passent sous contrôle prussien."
+  },
+  "BRA|1582-03-28": {
+    "mode": "end",
+    "war": "2e conquête prussienne de Goslar",
+    "start": "1579-09-08",
+    "end": "1582-03-28",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête prussienne de Goslar",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Saxe",
+      "Bade",
+      "Bavière",
+      "Hesse",
+      "Nuremberg",
+      "Bayreuth",
+      "Ansbach"
+    ],
+    "lossesAttackers": 157052,
+    "lossesDefenders": 63483,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "Goslar et Zwickau passent sous contrôle prussien."
+  },
+  "BRA|1582-09-11": {
+    "mode": "start",
+    "war": "Conquête prussienne du Jutland occidental",
+    "start": "1582-09-11",
+    "end": "1584-07-12",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "prussienne du Jutland occidental",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Danemark",
+      "Suède",
+      "Norvège",
+      "Ansbach"
+    ],
+    "lossesAttackers": 66538,
+    "lossesDefenders": 28924,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Mitteljütland, Jutland septentrional, Jutland oriental et Kolding passent sous contrôle prussien."
+  },
+  "BRA|1584-07-12": {
+    "mode": "end",
+    "war": "Conquête prussienne du Jutland occidental",
+    "start": "1582-09-11",
+    "end": "1584-07-12",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "prussienne du Jutland occidental",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Danemark",
+      "Suède",
+      "Norvège",
+      "Ansbach"
+    ],
+    "lossesAttackers": 66538,
+    "lossesDefenders": 28924,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Mitteljütland, Jutland septentrional, Jutland oriental et Kolding passent sous contrôle prussien."
+  },
+  "HAB|1562-12-22": {
+    "mode": "end",
+    "war": "Guerre de la Ligue protestante",
+    "start": "1558-12-16",
+    "end": "1562-12-22",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "la Ligue protestante",
+    "attackers": [
+      "Saxe",
+      "Danemark",
+      "Suède",
+      "Principaux princes protestants"
+    ],
+    "defenders": [
+      "Autriche",
+      "Espagne",
+      "Pologne",
+      "Lituanie",
+      "Principaux princes catholiques"
+    ],
+    "lossesAttackers": 135884,
+    "lossesDefenders": 159369,
+    "losses": {},
+    "battles": 14,
+    "winner": "Camp de la nation suivie",
+    "peace": "La Guerre de la Ligue protestante s’achève le 22 décembre 1562."
+  },
+  "HAB|1566-01-16": {
+    "mode": "start",
+    "war": "Guerre de soumission de la Suisse au Saint-Empire",
+    "start": "1566-01-16",
+    "end": "1568-02-08",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "soumission de la Suisse au Saint-Empire",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Suisse",
+      "Avignon",
+      "Bade"
+    ],
+    "lossesAttackers": 49775,
+    "lossesDefenders": 14959,
+    "losses": {},
+    "battles": 5,
+    "winner": "Camp de la nation suivie",
+    "peace": "La guerre de soumission de la Suisse s’achève le 8 février 1568."
+  },
+  "HAB|1568-02-08": {
+    "mode": "end",
+    "war": "Guerre de soumission de la Suisse au Saint-Empire",
+    "start": "1566-01-16",
+    "end": "1568-02-08",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "soumission de la Suisse au Saint-Empire",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Herzégovine"
+    ],
+    "defenders": [
+      "Suisse",
+      "Avignon",
+      "Bade"
+    ],
+    "lossesAttackers": 49775,
+    "lossesDefenders": 14959,
+    "losses": {},
+    "battles": 5,
+    "winner": "Camp de la nation suivie",
+    "peace": "La guerre de soumission de la Suisse s’achève le 8 février 1568."
+  },
+  "HAB|1576-01-23": {
+    "mode": "start",
+    "war": "Conquête autrichienne de Barrois",
+    "start": "1576-01-23",
+    "end": "1577-07-06",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "autrichienne de Barrois",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Mayence"
+    ],
+    "defenders": [
+      "France",
+      "Lorraine"
+    ],
+    "lossesAttackers": 27977,
+    "lossesDefenders": 47293,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "La conquête autrichienne de Barrois s’achève le 6 juillet 1577."
+  },
+  "HAB|1577-07-06": {
+    "mode": "end",
+    "war": "Conquête autrichienne de Barrois",
+    "start": "1576-01-23",
+    "end": "1577-07-06",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "autrichienne de Barrois",
+    "attackers": [
+      "Autriche",
+      "Moldavie",
+      "Bourgogne",
+      "Champagne",
+      "Mayence"
+    ],
+    "defenders": [
+      "France",
+      "Lorraine"
+    ],
+    "lossesAttackers": 27977,
+    "lossesDefenders": 47293,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "La conquête autrichienne de Barrois s’achève le 6 juillet 1577."
+  },
+  "TUR|1559-10-08": {
+    "mode": "start",
+    "war": "Conquête ottomane d’Ormuz",
+    "start": "1559-10-08",
+    "end": "1567-11-22",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "ottomane d’Ormuz",
+    "attackers": [
+      "Empire ottoman"
+    ],
+    "defenders": [
+      "Ormuz",
+      "Transoxiane",
+      "Ajuran",
+      "Delhi"
+    ],
+    "lossesAttackers": 249948,
+    "lossesDefenders": 87733,
+    "losses": {},
+    "battles": 10,
+    "winner": "Camp de la nation suivie",
+    "peace": "Banî Yâs, Qawasim, Suhar, Liwa et Buraïmi passent sous contrôle ottoman."
+  },
+  "TUR|1567-11-22": {
+    "mode": "end",
+    "war": "Conquête ottomane d’Ormuz",
+    "start": "1559-10-08",
+    "end": "1567-11-22",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "ottomane d’Ormuz",
+    "attackers": [
+      "Empire ottoman"
+    ],
+    "defenders": [
+      "Ormuz",
+      "Transoxiane",
+      "Ajuran",
+      "Delhi"
+    ],
+    "lossesAttackers": 249948,
+    "lossesDefenders": 87733,
+    "losses": {},
+    "battles": 10,
+    "winner": "Camp de la nation suivie",
+    "peace": "Banî Yâs, Qawasim, Suhar, Liwa et Buraïmi passent sous contrôle ottoman."
+  },
+  "TUR|1576-09-02": {
+    "mode": "start",
+    "war": "2e conquête ottomane de Kouhistan",
+    "start": "1576-09-02",
+    "end": "1577-12-19",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête ottomane de Kouhistan",
+    "attackers": [
+      "Empire ottoman",
+      "Rassides"
+    ],
+    "defenders": [
+      "Timourides",
+      "Ormuz"
+    ],
+    "lossesAttackers": 77183,
+    "lossesDefenders": 21710,
+    "losses": {},
+    "battles": 5,
+    "winner": "Camp de la nation suivie",
+    "peace": "Masqat, Qishn, Massira et Hürmüz passent sous contrôle ottoman."
+  },
+  "TUR|1577-12-19": {
+    "mode": "end",
+    "war": "2e conquête ottomane de Kouhistan",
+    "start": "1576-09-02",
+    "end": "1577-12-19",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête ottomane de Kouhistan",
+    "attackers": [
+      "Empire ottoman",
+      "Rassides"
+    ],
+    "defenders": [
+      "Timourides",
+      "Ormuz"
+    ],
+    "lossesAttackers": 77183,
+    "lossesDefenders": 21710,
+    "losses": {},
+    "battles": 5,
+    "winner": "Camp de la nation suivie",
+    "peace": "Masqat, Qishn, Massira et Hürmüz passent sous contrôle ottoman."
+  },
+  "TUR|1578-06-21": {
+    "mode": "start",
+    "war": "Conquête ottomane de Dawaro",
+    "start": "1578-06-21",
+    "end": "1581-04-20",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "ottomane de Dawaro",
+    "attackers": [
+      "Empire ottoman",
+      "Rassides",
+      "Mali"
+    ],
+    "defenders": [
+      "Adal",
+      "Zimbabwe"
+    ],
+    "lossesAttackers": 283491,
+    "lossesDefenders": 108709,
+    "losses": {},
+    "battles": 10,
+    "winner": "Camp de la nation suivie",
+    "peace": "Degehabur, Dawaro, Awsa et Mora passent sous contrôle ottoman."
+  },
+  "TUR|1581-04-20": {
+    "mode": "end",
+    "war": "Conquête ottomane de Dawaro",
+    "start": "1578-06-21",
+    "end": "1581-04-20",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "ottomane de Dawaro",
+    "attackers": [
+      "Empire ottoman",
+      "Rassides",
+      "Mali"
+    ],
+    "defenders": [
+      "Adal",
+      "Zimbabwe"
+    ],
+    "lossesAttackers": 283491,
+    "lossesDefenders": 108709,
+    "losses": {},
+    "battles": 10,
+    "winner": "Camp de la nation suivie",
+    "peace": "Degehabur, Dawaro, Awsa et Mora passent sous contrôle ottoman."
+  },
+  "TUR|1583-10-19": {
+    "mode": "end",
+    "war": "Conquête ottomane d’El Buur",
+    "start": "1582-11-29",
+    "end": "1583-10-19",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "ottomane d’El Buur",
+    "attackers": [
+      "Empire ottoman",
+      "Rassides",
+      "Zimbabwe"
+    ],
+    "defenders": [
+      "Ajuran",
+      "Ormuz"
+    ],
+    "lossesAttackers": 41057,
+    "lossesDefenders": 18193,
+    "losses": {},
+    "battles": 8,
+    "winner": "Camp de la nation suivie",
+    "peace": "Nizwa, Charqiya et Ibra passent sous contrôle ottoman."
+  },
+  "MOS|1563-10-06": {
+    "mode": "start",
+    "war": "Conquête russe d’Onon Gol",
+    "start": "1563-10-06",
+    "end": "1566-09-02",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe d’Onon Gol",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "Mandchourie",
+      "Alliés d’Asie orientale"
+    ],
+    "lossesAttackers": 86921,
+    "lossesDefenders": 51300,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Sept territoires d’Extrême-Orient passent sous contrôle russe."
+  },
+  "MOS|1566-09-02": {
+    "mode": "end",
+    "war": "Conquête russe d’Onon Gol",
+    "start": "1563-10-06",
+    "end": "1566-09-02",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe d’Onon Gol",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï"
+    ],
+    "defenders": [
+      "Mandchourie",
+      "Alliés d’Asie orientale"
+    ],
+    "lossesAttackers": 86921,
+    "lossesDefenders": 51300,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Sept territoires d’Extrême-Orient passent sous contrôle russe."
+  },
+  "MOS|1569-04-16": {
+    "mode": "start",
+    "war": "Reconquête russe d’Alxa",
+    "start": "1569-04-16",
+    "end": "1571-03-26",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe d’Alxa",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï",
+      "Alliés sibériens"
+    ],
+    "defenders": [
+      "Oïrats",
+      "Kashgar"
+    ],
+    "lossesAttackers": 80503,
+    "lossesDefenders": 31393,
+    "losses": {},
+    "battles": 3,
+    "winner": "Camp de la nation suivie",
+    "peace": "Neuf territoires de Mongolie et d’Asie centrale passent sous contrôle russe."
+  },
+  "MOS|1571-03-26": {
+    "mode": "end",
+    "war": "Reconquête russe d’Alxa",
+    "start": "1569-04-16",
+    "end": "1571-03-26",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe d’Alxa",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï",
+      "Alliés sibériens"
+    ],
+    "defenders": [
+      "Oïrats",
+      "Kashgar"
+    ],
+    "lossesAttackers": 80503,
+    "lossesDefenders": 31393,
+    "losses": {},
+    "battles": 3,
+    "winner": "Camp de la nation suivie",
+    "peace": "Neuf territoires de Mongolie et d’Asie centrale passent sous contrôle russe."
+  },
+  "MOS|1573-03-16": {
+    "mode": "start",
+    "war": "Conquête russe de Boukhara",
+    "start": "1573-03-16",
+    "end": "1574-01-21",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe de Boukhara",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï",
+      "Alliés sibériens"
+    ],
+    "defenders": [
+      "Transoxiane",
+      "Crimée",
+      "Ormuz"
+    ],
+    "lossesAttackers": 16534,
+    "lossesDefenders": 13859,
+    "losses": {},
+    "battles": 2,
+    "winner": "Camp de la nation suivie",
+    "peace": "Khiva, Boukhara, Karchi, Samarcande, Kulob et Termez passent sous contrôle russe."
+  },
+  "MOS|1574-01-21": {
+    "mode": "end",
+    "war": "Conquête russe de Boukhara",
+    "start": "1573-03-16",
+    "end": "1574-01-21",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe de Boukhara",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï",
+      "Alliés sibériens"
+    ],
+    "defenders": [
+      "Transoxiane",
+      "Crimée",
+      "Ormuz"
+    ],
+    "lossesAttackers": 16534,
+    "lossesDefenders": 13859,
+    "losses": {},
+    "battles": 2,
+    "winner": "Camp de la nation suivie",
+    "peace": "Khiva, Boukhara, Karchi, Samarcande, Kulob et Termez passent sous contrôle russe."
+  },
+  "MOS|1576-02-15": {
+    "mode": "start",
+    "war": "Conquête russe de Lyda",
+    "start": "1576-02-15",
+    "end": "1576-12-09",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe de Lyda",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï",
+      "Alliés sibériens"
+    ],
+    "defenders": [
+      "Lituanie",
+      "Pologne",
+      "Brabant",
+      "Alliés"
+    ],
+    "lossesAttackers": 22736,
+    "lossesDefenders": 31000,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Drohiczyn, Brest, Pinsk, Grodno, Lyda et Nowogrodek passent sous contrôle russe."
+  },
+  "MOS|1576-12-09": {
+    "mode": "end",
+    "war": "Conquête russe de Lyda",
+    "start": "1576-02-15",
+    "end": "1576-12-09",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "russe de Lyda",
+    "attackers": [
+      "Russie",
+      "Finlande",
+      "Kazakh",
+      "Chagataï",
+      "Alliés sibériens"
+    ],
+    "defenders": [
+      "Lituanie",
+      "Pologne",
+      "Brabant",
+      "Alliés"
+    ],
+    "lossesAttackers": 22736,
+    "lossesDefenders": 31000,
+    "losses": {},
+    "battles": 4,
+    "winner": "Camp de la nation suivie",
+    "peace": "Drohiczyn, Brest, Pinsk, Grodno, Lyda et Nowogrodek passent sous contrôle russe."
+  },
+  "MOS|1579-09-08": {
+    "mode": "join",
+    "war": "2e conquête prussienne de Goslar",
+    "start": "1579-09-08",
+    "end": "1582-03-28",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête prussienne de Goslar",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Saxe",
+      "Bade",
+      "Bavière",
+      "Hesse",
+      "Nuremberg",
+      "Bayreuth",
+      "Ansbach"
+    ],
+    "lossesAttackers": 157052,
+    "lossesDefenders": 63483,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "Victoire du camp prusso-russe ; Goslar et Zwickau passent à la Prusse.",
+    "joinDate": "1579-09-08",
+    "statusDate": "1582-03-28"
+  },
+  "MOS|1582-03-28": {
+    "mode": "end",
+    "war": "2e conquête prussienne de Goslar",
+    "start": "1579-09-08",
+    "end": "1582-03-28",
+    "casusBelli": "Conflit de la campagne",
+    "warGoal": "conquête prussienne de Goslar",
+    "attackers": [
+      "Prusse",
+      "Russie",
+      "Alliés orientaux"
+    ],
+    "defenders": [
+      "Saxe",
+      "Bade",
+      "Bavière",
+      "Hesse",
+      "Nuremberg",
+      "Bayreuth",
+      "Ansbach"
+    ],
+    "lossesAttackers": 157052,
+    "lossesDefenders": 63483,
+    "losses": {},
+    "battles": 6,
+    "winner": "Camp de la nation suivie",
+    "peace": "Victoire du camp prusso-russe ; Goslar et Zwickau passent à la Prusse."
   }
 };
