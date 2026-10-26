@@ -1046,27 +1046,51 @@ export const CURATED_EVENTS={
       "date": "1560-12-22",
       "type": "guerre",
       "title": "Début de la conquête espagnole de Cacaxtes",
-      "summary": "L’Espagne ouvre une nouvelle campagne au nord du Mexique contre les Guamares et les Tarasques.",
+      "summary": "L’Espagne ouvre une nouvelle campagne au Mexique contre les Cacaxtes et leurs alliés.",
       "facts": [
         [
           "Conflit",
           "Conquête espagnole de Cacaxtes"
         ],
         [
-          "Casus belli",
-          "Conquête territoriale"
-        ],
-        [
-          "Objectif",
-          "Cacaxtes"
-        ],
-        [
           "Camp espagnol",
-          "Espagne · Marrakech · colonies espagnoles"
+          "Espagne · Marrakech · sujets coloniaux espagnols"
         ],
         [
           "Camp adverse",
-          "Guamares · Tarasques"
+          "Cacaxtes · Tarasques"
+        ],
+        [
+          "Fin du conflit",
+          "27 août 1562 — victoire espagnole"
+        ]
+      ]
+    },
+    {
+      "date": "1561-01-24",
+      "type": "bataille",
+      "title": "Bataille de Pátzcuaro",
+      "summary": "Francisco Pizarro écrase l’armée tarasque à Pátzcuaro au début de la guerre de Cacaxtes.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête espagnole de Cacaxtes"
+        ],
+        [
+          "Attaquant",
+          "Espagne — Francisco Pizarro — 12 000 infanterie · 4 000 cavalerie · 4 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Tarasques — Ngolbex An Binech — 5 000 infanterie · 1 000 cavalerie"
+        ],
+        [
+          "Pertes",
+          "Espagne : 70 · Tarasques : 6 000"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
         ]
       ]
     },
@@ -1137,28 +1161,24 @@ export const CURATED_EVENTS={
     {
       "date": "1562-08-27",
       "type": "guerre",
-      "title": "Victoire dans la conquête espagnole de Cacaxtes",
-      "summary": "La campagne s’achève par une victoire espagnole et quatre territoires passent sous contrôle de la Nouvelle-Espagne.",
+      "title": "Victoire dans la conquête de Cacaxtes",
+      "summary": "Après près de deux ans de campagne, le camp espagnol remporte la guerre de Cacaxtes.",
       "facts": [
         [
           "Conflit",
           "Conquête espagnole de Cacaxtes"
         ],
         [
+          "Pertes espagnoles",
+          "3 155"
+        ],
+        [
+          "Pertes adverses enregistrées",
+          "9 129"
+        ],
+        [
           "Issue",
           "Victoire du camp espagnol"
-        ],
-        [
-          "Pertes du camp espagnol",
-          "5 240 pertes humaines"
-        ],
-        [
-          "Pertes du camp adverse",
-          "9 129 pertes humaines"
-        ],
-        [
-          "Territoires acquis par la Nouvelle-Espagne",
-          "Coahuila · Nuevo León · Laredo · Chichitames"
         ]
       ]
     },
@@ -1166,31 +1186,23 @@ export const CURATED_EVENTS={
       "date": "1562-12-22",
       "type": "guerre",
       "title": "Fin de la Guerre de la Ligue protestante",
-      "summary": "Après quatre années de guerre confessionnelle dans le Saint-Empire, le conflit prend fin sans victoire décisive nette.",
+      "summary": "La grande guerre confessionnelle du Saint-Empire s’achève après quatre années de combats ; l’Espagne a combattu dans le camp catholique.",
       "facts": [
         [
           "Conflit",
           "Guerre de la Ligue protestante"
         ],
         [
-          "Camp espagnol",
-          "Défenseurs catholiques menés par l’Autriche"
+          "Rôle",
+          "Défenseur du camp catholique"
         ],
         [
           "Pertes espagnoles",
-          "20 311 pertes humaines"
+          "20 311"
         ],
         [
-          "Pertes du camp protestant",
-          "135 884 pertes humaines"
-        ],
-        [
-          "Pertes du camp catholique",
-          "159 369 pertes humaines"
-        ],
-        [
-          "Issue",
-          "Paix sans victoire militaire décisive clairement attribuée"
+          "Durée",
+          "16 décembre 1558 → 22 décembre 1562"
         ]
       ]
     },
@@ -1198,27 +1210,23 @@ export const CURATED_EVENTS={
       "date": "1564-11-21",
       "type": "guerre",
       "title": "Début de la conquête espagnole de Campeche",
-      "summary": "L’Espagne attaque Can Pech et ses alliés afin d’achever sa domination du Yucatán.",
+      "summary": "L’Espagne relance son expansion en Mésoamérique avec une guerre contre Campeche, Xiu et les Lacandons.",
       "facts": [
         [
           "Conflit",
           "Conquête espagnole de Campeche"
         ],
         [
-          "Casus belli",
-          "Conquête territoriale"
-        ],
-        [
-          "Objectif",
-          "Campeche"
-        ],
-        [
           "Camp espagnol",
-          "Espagne · Marrakech · colonies espagnoles"
+          "Espagne · Marrakech · sujets coloniaux"
         ],
         [
           "Camp adverse",
-          "Can Pech · Xiu · Lacandons"
+          "Campeche · Xiu · Lacandons"
+        ],
+        [
+          "Fin du conflit",
+          "24 septembre 1567"
         ]
       ]
     },
@@ -1226,27 +1234,23 @@ export const CURATED_EVENTS={
       "date": "1566-07-25",
       "type": "bataille",
       "title": "Bataille de Kobox",
-      "summary": "Francisco Pizarro détruit l’armée de Can Pech à Kobox et ne subit que des pertes minimes.",
+      "summary": "Francisco Pizarro détruit l’armée de Campeche à Kobox.",
       "facts": [
         [
           "Guerre",
           "Conquête espagnole de Campeche"
         ],
         [
-          "Lieu",
-          "Kobox"
-        ],
-        [
           "Attaquant",
-          "Espagne — Francisco Pizarro — 12 000 infanterie · 4 000 cavalerie · 4 000 artillerie"
+          "Espagne — Francisco Pizarro — 20 000 hommes"
         ],
         [
           "Défenseur",
-          "Can Pech — Conache Mochcouoh — 7 000 infanterie · 3 000 cavalerie · 1 000 artillerie"
+          "Campeche — Conache Mochcouoh — 11 000 hommes"
         ],
         [
           "Pertes",
-          "Espagne : 251 · Can Pech : 11 000"
+          "Espagne : 251 · Campeche : 11 000"
         ],
         [
           "Vainqueur",
@@ -1255,38 +1259,74 @@ export const CURATED_EVENTS={
       ]
     },
     {
+      "date": "1567-06-30",
+      "type": "dynastie",
+      "title": "Carlos est désigné héritier d’Espagne",
+      "summary": "La succession des Trastámara est assurée par la naissance et la désignation de Carlos, futur Carlos II dans la chronologie de la partie.",
+      "facts": [
+        [
+          "Héritier",
+          "Carlos de Trastámara"
+        ],
+        [
+          "Compétences",
+          "ADM 4 · DIP 3 · MIL 3"
+        ],
+        [
+          "Religion",
+          "Catholique"
+        ],
+        [
+          "Prétention",
+          "100"
+        ]
+      ]
+    },
+    {
       "date": "1567-09-24",
       "type": "guerre",
-      "title": "Victoire dans la conquête espagnole de Campeche",
-      "summary": "La guerre du Yucatán se termine par une victoire espagnole et sept territoires entrent dans la sphère espagnole.",
+      "title": "Victoire dans la conquête de Campeche",
+      "summary": "La paix consacre une nouvelle avancée espagnole en Mésoamérique avec cinq territoires directement annexés.",
       "facts": [
         [
           "Conflit",
           "Conquête espagnole de Campeche"
         ],
         [
-          "Issue",
-          "Victoire du camp espagnol"
+          "Pertes espagnoles",
+          "17 564"
         ],
         [
-          "Batailles enregistrées",
-          "9"
-        ],
-        [
-          "Pertes du camp espagnol",
-          "26 064 pertes humaines"
-        ],
-        [
-          "Pertes du camp adverse",
-          "29 377 pertes humaines"
-        ],
-        [
-          "Acquisitions directes",
+          "Territoires acquis",
           "Petén · Campeche · Lacandons · Tzotzil · Kobox"
         ],
         [
-          "Acquisitions de Nouvelle-Espagne",
-          "Chanputun · Ah Canul"
+          "Issue",
+          "Victoire espagnole"
+        ]
+      ]
+    },
+    {
+      "date": "1569-04-04",
+      "type": "guerre",
+      "title": "Début de la conquête espagnole du Narbonnais",
+      "summary": "L’Espagne attaque la France et la Lorraine dans une guerre majeure pour le sud du royaume de France.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole du Narbonnais"
+        ],
+        [
+          "Camp espagnol",
+          "Espagne · Marrakech · sujets coloniaux"
+        ],
+        [
+          "Camp adverse",
+          "France · Lorraine"
+        ],
+        [
+          "Fin du conflit",
+          "1er janvier 1576"
         ]
       ]
     },
@@ -1315,6 +1355,34 @@ export const CURATED_EVENTS={
         [
           "Pertes",
           "Espagne : 9 305 · France : 12 178"
+        ],
+        [
+          "Vainqueur",
+          "Espagne"
+        ]
+      ]
+    },
+    {
+      "date": "1572-10-01",
+      "type": "bataille",
+      "title": "Bataille de Foix",
+      "summary": "Inés de Suárez remporte à Foix une victoire majeure sur l’armée française de Marc de Richemont.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête espagnole du Narbonnais"
+        ],
+        [
+          "Attaquant",
+          "Espagne — Inés de Suárez — 110 859 infanterie · 6 000 cavalerie · 8 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "France — Marc de Richemont — 27 672 infanterie · 12 000 cavalerie · 27 000 artillerie"
+        ],
+        [
+          "Pertes",
+          "Espagne : 12 102 · France : 13 661"
         ],
         [
           "Vainqueur",
@@ -1355,58 +1423,74 @@ export const CURATED_EVENTS={
       ]
     },
     {
+      "date": "1576-01-01",
+      "type": "guerre",
+      "title": "Victoire dans la conquête du Narbonnais",
+      "summary": "Après près de sept ans de guerre, l’Espagne impose une paix très favorable à la France et annexe six provinces du Midi.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête espagnole du Narbonnais"
+        ],
+        [
+          "Pertes espagnoles",
+          "246 339"
+        ],
+        [
+          "Territoires acquis",
+          "Armagnac · Béarn · Toulouse · Narbonne · Foix · Carcassonne"
+        ],
+        [
+          "Issue",
+          "Victoire espagnole"
+        ]
+      ]
+    },
+    {
       "date": "1580-08-18",
       "type": "guerre",
       "title": "Début de la conquête espagnole d’Abancay",
-      "summary": "L’Espagne lance une nouvelle campagne dans les Andes avec Abancay comme objectif principal.",
+      "summary": "L’Espagne ouvre une nouvelle campagne dans les Andes afin d’étendre son contrôle direct sur le Pérou.",
       "facts": [
         [
           "Conflit",
           "Conquête espagnole d’Abancay"
         ],
         [
-          "Casus belli",
-          "Conquête territoriale"
+          "Camp espagnol",
+          "Espagne · Marrakech · sujets coloniaux"
         ],
         [
           "Objectif",
           "Abancay"
         ],
         [
-          "Camp espagnol",
-          "Espagne · Marrakech · colonies espagnoles"
-        ],
-        [
-          "Camp adverse",
-          "Cuzco et ses alliés andins"
+          "Fin du conflit",
+          "21 juillet 1584"
         ]
       ]
     },
     {
       "date": "1584-07-21",
       "type": "guerre",
-      "title": "Victoire dans la conquête espagnole d’Abancay",
-      "summary": "La campagne des Andes s’achève par une victoire espagnole et sept territoires majeurs passent directement sous contrôle de l’Espagne.",
+      "title": "Victoire dans la conquête d’Abancay",
+      "summary": "La campagne andine se termine par l’annexion de sept nouveaux territoires péruviens.",
       "facts": [
         [
           "Conflit",
           "Conquête espagnole d’Abancay"
         ],
         [
-          "Issue",
-          "Victoire du camp espagnol"
-        ],
-        [
-          "Pertes du camp espagnol",
-          "23 287 pertes humaines"
-        ],
-        [
-          "Pertes du camp adverse",
-          "17 524 pertes humaines"
+          "Pertes espagnoles",
+          "17 926"
         ],
         [
           "Territoires acquis",
           "Abancay · Cuzco · Lima · Huancavelica · Ayaviri · Quero · Macaya"
+        ],
+        [
+          "Issue",
+          "Victoire espagnole"
         ]
       ]
     }
