@@ -22,7 +22,7 @@ const tagOrder=["CAS","ENG","LAN","BRA","HAB","TUR","MOS"];
 const kindLabel={guerre:"Guerre",dynastie:"Dynastie",union_personnelle:"Union personnelle","désastre":"Désastre",religion:"Religion",politique:"Politique",autre:"Événement"};
 const kindIcon={guerre:"⚔",dynastie:"♛",union_personnelle:"◆","désastre":"!",religion:"✝",politique:"✦",autre:"•"};
 const diplomaticTypes=new Set(["diplomatie","congrès","traité","déclaration","correspondance"]);
-const publicEndYear="1481";
+
 
 const manualCastile=[
   {id:"cas-infantes-v52",entry_type:"politique",title:"Crise des Infants d’Aragon",world_year:null,world_date_label:"Session I · date exacte à consolider",summary:"Événement intérieur majeur signalé pendant la première session de la Castille. La date précise sera consolidée depuis la sauvegarde de fin de session.",sort_order:998,data:{participants:["CAS"]}},
@@ -59,7 +59,7 @@ function spotlight(e,fromHome=false){
         <div><strong>1444 → ${year(e.world_current_date)}</strong><span>Période jouée</span></div>
         <div><strong>${sessionsCount(e)}</strong><span>Sessions terminées</span></div>
         <div><strong>${players.length||7}</strong><span>Nations jouées</span></div>
-        <div><strong>${publicEndYear}</strong><span>Chronologie publique</span></div>
+        <div><strong>${year(e.public_chronicle_cutoff_date||e.world_current_date)}</strong><span>Chronologie publique</span></div>
       </div>
       <a class="button button-primary v52-campaign-cta" href="${eventHref(e,fromHome)}">Découvrir la campagne →</a>
     </div>
