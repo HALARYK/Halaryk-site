@@ -2682,6 +2682,366 @@ export const CURATED_EVENTS={
           "Grande-Bretagne"
         ]
       ]
+    },
+    {
+      "date": "1559-06-27",
+      "type": "guerre",
+      "title": "Fin de la 2e conquête florentine de Mantoue",
+      "summary": "La guerre de Mantoue s’achève après une intervention britannique particulièrement coûteuse.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Rôle",
+          "Allié de Florence"
+        ],
+        [
+          "Pertes britanniques",
+          "42 688"
+        ],
+        [
+          "Fin du conflit",
+          "27 juin 1559"
+        ]
+      ]
+    },
+    {
+      "date": "1561-02-21",
+      "type": "militaire",
+      "title": "Gráinne Ní Mháille devient amirale britannique",
+      "summary": "La Grande-Bretagne confie une partie de sa puissance navale à Gráinne Ní Mháille.",
+      "facts": [
+        [
+          "Amirale",
+          "Gráinne Ní Mháille"
+        ],
+        [
+          "Feu",
+          "4"
+        ],
+        [
+          "Choc",
+          "4"
+        ],
+        [
+          "Manœuvre",
+          "3"
+        ],
+        [
+          "Trait",
+          "Marin accompli"
+        ]
+      ]
+    },
+    {
+      "date": "1562-05-28",
+      "type": "guerre",
+      "title": "Début de la conquête britannique de Bintulu",
+      "summary": "La Grande-Bretagne ouvre une vaste guerre en Asie du Sud-Est pour renforcer sa présence à Bornéo.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Bintulu"
+        ],
+        [
+          "Camp britannique",
+          "Grande-Bretagne · Flandre · colonies britanniques"
+        ],
+        [
+          "Adversaires",
+          "Brunei · Makassar · Sulu · Demak"
+        ],
+        [
+          "Fin",
+          "24 mai 1566"
+        ]
+      ]
+    },
+    {
+      "date": "1565-07-20",
+      "type": "bataille",
+      "title": "Bataille de Lahad Datu",
+      "summary": "Oliver Cavendish détruit l’armée de Sulu à Lahad Datu.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête britannique de Bintulu"
+        ],
+        [
+          "Attaquant",
+          "Grande-Bretagne — Oliver Cavendish — 22 000 hommes"
+        ],
+        [
+          "Défenseur",
+          "Sulu — Shihab ud Din Yuda — 12 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Grande-Bretagne : 1 537 · Sulu : 12 000"
+        ],
+        [
+          "Vainqueur",
+          "Grande-Bretagne"
+        ]
+      ]
+    },
+    {
+      "date": "1566-05-24",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Bintulu",
+      "summary": "La victoire britannique se traduit par une très forte expansion à Bornéo.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Bintulu"
+        ],
+        [
+          "Pertes britanniques",
+          "53 389"
+        ],
+        [
+          "Territoires acquis",
+          "Brunei · Api-Api · Palawan · Lahad Datu · Sibu · Sigalang · Kuching · Bintulu · Kapit"
+        ],
+        [
+          "Issue",
+          "Victoire britannique"
+        ]
+      ]
+    },
+    {
+      "date": "1570-07-03",
+      "type": "dynastie",
+      "title": "Marie Ire monte sur le trône de Grande-Bretagne",
+      "summary": "Marie Ire d’York devient souveraine de Grande-Bretagne.",
+      "facts": [
+        [
+          "Souveraine",
+          "Marie Ire d’York"
+        ],
+        [
+          "Compétences",
+          "ADM 4 · DIP 3 · MIL 3"
+        ],
+        [
+          "Religion",
+          "Anglicane"
+        ],
+        [
+          "Traits",
+          "Naïve · mécène des arts"
+        ]
+      ]
+    },
+    {
+      "date": "1573-01-09",
+      "type": "guerre",
+      "title": "Début de la conquête britannique de Cowasuk",
+      "summary": "La Grande-Bretagne lance une nouvelle campagne coloniale en Amérique du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Cowasuk"
+        ],
+        [
+          "Camp britannique",
+          "Grande-Bretagne · Flandre · colonies britanniques"
+        ],
+        [
+          "Adversaires",
+          "Pequots · autres nations autochtones du Nord-Est"
+        ],
+        [
+          "Fin",
+          "30 décembre 1574"
+        ]
+      ]
+    },
+    {
+      "date": "1574-12-30",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Cowasuk",
+      "summary": "La campagne de Cowasuk s’achève par une nouvelle avancée britannique en Amérique du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Cowasuk"
+        ],
+        [
+          "Pertes britanniques",
+          "12 967"
+        ],
+        [
+          "Territoires acquis ce jour",
+          "Oswego · Fort Stanwix · Schenectady"
+        ],
+        [
+          "Issue",
+          "Victoire britannique"
+        ]
+      ]
+    },
+    {
+      "date": "1577-08-08",
+      "type": "guerre",
+      "title": "Début de la guerre coloniale britannique contre la France",
+      "summary": "La rivalité coloniale entre Londres et Paris dégénère en guerre ouverte.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre coloniale britannique contre la France"
+        ],
+        [
+          "Camp britannique",
+          "Grande-Bretagne · Flandre · colonies britanniques"
+        ],
+        [
+          "Adversaire principal",
+          "France"
+        ],
+        [
+          "Fin",
+          "5 janvier 1579"
+        ]
+      ]
+    },
+    {
+      "date": "1579-01-05",
+      "type": "guerre",
+      "title": "Victoire britannique dans la guerre coloniale contre la France",
+      "summary": "La Grande-Bretagne remporte la guerre et obtient notamment Touraine, en plus de plusieurs positions coloniales.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre coloniale britannique contre la France"
+        ],
+        [
+          "Pertes britanniques",
+          "7 487"
+        ],
+        [
+          "Territoires acquis ce jour",
+          "Bermudes · Fernando Po · Cape Sable · St. John · Touraine"
+        ],
+        [
+          "Issue",
+          "Victoire britannique"
+        ]
+      ]
+    },
+    {
+      "date": "1581-01-01",
+      "type": "guerre",
+      "title": "Début de la conquête britannique de Saluda",
+      "summary": "La Grande-Bretagne poursuit son expansion dans le sud-est de l’Amérique du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Saluda"
+        ],
+        [
+          "Adversaires",
+          "Cherokee · Creek"
+        ],
+        [
+          "Fin",
+          "21 mars 1582"
+        ]
+      ]
+    },
+    {
+      "date": "1582-03-21",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Saluda",
+      "summary": "La guerre de Saluda s’achève par une nouvelle victoire britannique.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Saluda"
+        ],
+        [
+          "Pertes britanniques",
+          "3 572"
+        ],
+        [
+          "Territoire acquis à la fin du conflit",
+          "Keowee"
+        ],
+        [
+          "Issue",
+          "Victoire britannique"
+        ]
+      ]
+    },
+    {
+      "date": "1582-09-19",
+      "type": "guerre",
+      "title": "Début de la conquête britannique de Meliau",
+      "summary": "La Grande-Bretagne ouvre une nouvelle guerre à Bornéo contre Sambas et Kutai.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Meliau"
+        ],
+        [
+          "Adversaires",
+          "Sambas · Kutai"
+        ],
+        [
+          "Fin",
+          "2 avril 1584"
+        ]
+      ]
+    },
+    {
+      "date": "1584-04-02",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Meliau",
+      "summary": "La Grande-Bretagne annexe Sambas et Meliau à l’issue de la guerre.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Meliau"
+        ],
+        [
+          "Pertes britanniques",
+          "5 663"
+        ],
+        [
+          "Territoires acquis",
+          "Sambas · Meliau"
+        ],
+        [
+          "Issue",
+          "Victoire britannique"
+        ]
+      ]
+    },
+    {
+      "date": "1584-08-13",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Calicula",
+      "summary": "Une autre campagne coloniale britannique s’achève par l’acquisition de cinq territoires.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête britannique de Calicula"
+        ],
+        [
+          "Pertes britanniques",
+          "8 012"
+        ],
+        [
+          "Territoires acquis",
+          "New Orleans · Adai · Calicula · Pittsburgh · Mohetan"
+        ],
+        [
+          "Issue",
+          "Victoire britannique"
+        ]
+      ]
     }
   ],
   "LAN": [
@@ -3935,6 +4295,338 @@ export const CURATED_EVENTS={
         [
           "Camp adverse au 12 juin 1559",
           "Mantoue · Ingolstadt · Autriche · Moldavie · Bourgogne · Champagne · Herzégovine"
+        ]
+      ]
+    },
+    {
+      "date": "1559-06-27",
+      "type": "guerre",
+      "title": "Fin de la 2e conquête florentine de Mantoue",
+      "summary": "La longue guerre de Mantoue s’achève après des pertes très lourdes pour Florence et ses alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Mantoue"
+        ],
+        [
+          "Pertes florentines",
+          "57 409"
+        ],
+        [
+          "Pertes autrichiennes",
+          "179 795"
+        ],
+        [
+          "Fin",
+          "27 juin 1559"
+        ]
+      ]
+    },
+    {
+      "date": "1561-08-21",
+      "type": "militaire",
+      "title": "Sergio Pazzi devient général florentin",
+      "summary": "Florence se dote d’un général exceptionnel en puissance de feu.",
+      "facts": [
+        [
+          "Général",
+          "Sergio Pazzi"
+        ],
+        [
+          "Feu",
+          "6"
+        ],
+        [
+          "Choc",
+          "1"
+        ],
+        [
+          "Siège",
+          "1"
+        ],
+        [
+          "Trait",
+          "Guerrier robuste"
+        ]
+      ]
+    },
+    {
+      "date": "1563-03-16",
+      "type": "politique",
+      "title": "Florence devient électeur du Saint-Empire",
+      "summary": "Florence obtient la dignité électorale dans le Saint-Empire.",
+      "facts": [
+        [
+          "Statut",
+          "Électeur"
+        ],
+        [
+          "Portée",
+          "Influence accrue dans la politique impériale"
+        ]
+      ]
+    },
+    {
+      "date": "1565-03-19",
+      "type": "guerre",
+      "title": "Début de la 3e conquête florentine de Mantoue",
+      "summary": "Florence attaque une nouvelle fois Mantoue et ses alliés pour achever sa domination en Italie du Nord.",
+      "facts": [
+        [
+          "Conflit",
+          "3e conquête florentine de Mantoue"
+        ],
+        [
+          "Adversaires",
+          "Mantoue · Palatinat · Milan · Ingolstadt"
+        ],
+        [
+          "Fin",
+          "12 octobre 1566"
+        ]
+      ]
+    },
+    {
+      "date": "1565-06-18",
+      "type": "bataille",
+      "title": "Bataille de Pavie",
+      "summary": "Danilo Lessi remporte une victoire décisive sur Mantoue à Pavie.",
+      "facts": [
+        [
+          "Guerre",
+          "3e conquête florentine de Mantoue"
+        ],
+        [
+          "Attaquant",
+          "Florence — Danilo Lessi — 25 000 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Mantoue — Ferdinando de Rossi — 9 591 hommes"
+        ],
+        [
+          "Pertes",
+          "Florence : 1 250 · Mantoue : 9 591"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1566-10-12",
+      "type": "guerre",
+      "title": "Mantoue passe sous contrôle florentin",
+      "summary": "La troisième guerre de Mantoue s’achève et Mantoue est directement intégrée au domaine florentin.",
+      "facts": [
+        [
+          "Conflit",
+          "3e conquête florentine de Mantoue"
+        ],
+        [
+          "Pertes florentines",
+          "17 489"
+        ],
+        [
+          "Territoire acquis",
+          "Mantoue"
+        ],
+        [
+          "Issue",
+          "Victoire florentine"
+        ]
+      ]
+    },
+    {
+      "date": "1571-08-18",
+      "type": "guerre",
+      "title": "Début de la 2e conquête florentine de Rome",
+      "summary": "Florence lance une nouvelle guerre contre les États pontificaux pour s’emparer de Rome.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Rome"
+        ],
+        [
+          "Adversaires",
+          "États pontificaux · Trèves · Milan"
+        ],
+        [
+          "Fin",
+          "11 mai 1574"
+        ]
+      ]
+    },
+    {
+      "date": "1571-09-06",
+      "type": "bataille",
+      "title": "Bataille de Rome",
+      "summary": "Sergio Pazzi bat l’armée pontificale directement devant Rome.",
+      "facts": [
+        [
+          "Guerre",
+          "2e conquête florentine de Rome"
+        ],
+        [
+          "Attaquant",
+          "Florence — Sergio Pazzi — 27 000 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "États pontificaux — Benedictus Cremona — 11 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Florence : 1 311 · États pontificaux : 5 140"
+        ],
+        [
+          "Vainqueur",
+          "Florence"
+        ]
+      ]
+    },
+    {
+      "date": "1574-05-11",
+      "type": "guerre",
+      "title": "Rome passe sous contrôle florentin",
+      "summary": "La deuxième conquête de Rome se termine par la prise directe de la Ville éternelle.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête florentine de Rome"
+        ],
+        [
+          "Pertes florentines",
+          "25 242"
+        ],
+        [
+          "Territoire acquis",
+          "Rome"
+        ],
+        [
+          "Issue",
+          "Victoire florentine"
+        ]
+      ]
+    },
+    {
+      "date": "1575-02-13",
+      "type": "dynastie",
+      "title": "Francesco Stefano Ier monte sur le trône",
+      "summary": "Francesco Stefano de’ Medici devient souverain de Florence peu avant la formation de l’Italie.",
+      "facts": [
+        [
+          "Souverain",
+          "Francesco Stefano Ier de’ Medici"
+        ],
+        [
+          "Compétences",
+          "ADM 3 · DIP 1 · MIL 2"
+        ],
+        [
+          "Religion",
+          "Catholique"
+        ],
+        [
+          "Traits",
+          "Malveillant · navigateur"
+        ]
+      ]
+    },
+    {
+      "date": "1575-10-10",
+      "type": "politique",
+      "title": "Florence forme l’Italie",
+      "summary": "Le joueur florentin unifie ses possessions sous un nouvel État : l’Italie.",
+      "facts": [
+        [
+          "État précédent",
+          "Florence"
+        ],
+        [
+          "Nouvel État",
+          "Italie"
+        ],
+        [
+          "Nouvelle capitale enregistrée",
+          "Rome"
+        ],
+        [
+          "Portée",
+          "Transformation politique majeure de la campagne"
+        ]
+      ]
+    },
+    {
+      "date": "1577-07-31",
+      "type": "guerre",
+      "title": "Début de la conquête italienne des Abruzzes",
+      "summary": "La nouvelle Italie attaque directement la France pour les Abruzzes.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête italienne des Abruzzes"
+        ],
+        [
+          "Adversaire",
+          "France"
+        ],
+        [
+          "Fin",
+          "31 décembre 1579"
+        ]
+      ]
+    },
+    {
+      "date": "1578-12-27",
+      "type": "bataille",
+      "title": "Bataille de Molise",
+      "summary": "Sergio Pazzi inflige une lourde défaite aux Français à Molise.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête italienne des Abruzzes"
+        ],
+        [
+          "Attaquant",
+          "Italie — Sergio Pazzi — 27 000 infanterie · 5 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "France — Nicolas de La Barthe — 11 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Italie : 1 506 · France : 7 643"
+        ],
+        [
+          "Vainqueur",
+          "Italie"
+        ]
+      ]
+    },
+    {
+      "date": "1579-12-31",
+      "type": "guerre",
+      "title": "Fin de la conquête italienne des Abruzzes",
+      "summary": "La première grande guerre menée sous le nom d’Italie s’achève après plus de deux ans de combats.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête italienne des Abruzzes"
+        ],
+        [
+          "Pertes italiennes",
+          "35 264"
+        ],
+        [
+          "Pertes françaises",
+          "27 026"
+        ],
+        [
+          "Fin",
+          "31 décembre 1579"
         ]
       ]
     }
@@ -5208,6 +5900,374 @@ export const CURATED_EVENTS={
         [
           "Situation au 12 juin 1559",
           "Guerre toujours en cours"
+        ]
+      ]
+    },
+    {
+      "date": "1560-03-28",
+      "type": "guerre",
+      "title": "Fin de la Guerre d’indépendance suédoise",
+      "summary": "La guerre d’indépendance suédoise prend fin après trois ans de combats ; la Prusse y a subi des pertes importantes.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre d’indépendance suédoise"
+        ],
+        [
+          "Camp soutenu",
+          "Suède"
+        ],
+        [
+          "Pertes prussiennes",
+          "23 782"
+        ],
+        [
+          "Fin",
+          "28 mars 1560"
+        ]
+      ]
+    },
+    {
+      "date": "1560-08-26",
+      "type": "guerre",
+      "title": "Début de la conquête prussienne de Hambourg",
+      "summary": "La Prusse attaque Hambourg avec le soutien de la Russie et de ses alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Hambourg"
+        ],
+        [
+          "Allié majeur",
+          "Russie"
+        ],
+        [
+          "Adversaires",
+          "Hambourg · Brabant · États pontificaux · Utrecht · Ansbach"
+        ],
+        [
+          "Fin",
+          "4 septembre 1564"
+        ]
+      ]
+    },
+    {
+      "date": "1560-09-12",
+      "type": "bataille",
+      "title": "Bataille de Hambourg",
+      "summary": "Paul Perlkowski détruit l’armée hambourgeoise devant la ville.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête prussienne de Hambourg"
+        ],
+        [
+          "Attaquant",
+          "Prusse — Paul Perlkowski — 31 000 hommes"
+        ],
+        [
+          "Défenseur",
+          "Hambourg — Friedrich Bagebuhr — 10 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Prusse : 1 253 · Hambourg : 10 000"
+        ],
+        [
+          "Vainqueur",
+          "Prusse"
+        ]
+      ]
+    },
+    {
+      "date": "1564-09-04",
+      "type": "guerre",
+      "title": "Hambourg passe sous contrôle prussien",
+      "summary": "La conquête de Hambourg s’achève par l’annexion directe de la ville.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Hambourg"
+        ],
+        [
+          "Pertes prussiennes",
+          "19 621"
+        ],
+        [
+          "Territoire acquis",
+          "Hambourg"
+        ],
+        [
+          "Issue",
+          "Victoire prussienne"
+        ]
+      ]
+    },
+    {
+      "date": "1564-12-20",
+      "type": "guerre",
+      "title": "Début de la conquête prussienne de Goslar",
+      "summary": "La Prusse relance immédiatement son expansion dans le Saint-Empire.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Goslar"
+        ],
+        [
+          "Allié majeur",
+          "Russie"
+        ],
+        [
+          "Adversaires",
+          "Saxe · Bade · Bavière · Nuremberg · Bayreuth · Ansbach"
+        ],
+        [
+          "Fin",
+          "31 mars 1567"
+        ]
+      ]
+    },
+    {
+      "date": "1566-04-02",
+      "type": "bataille",
+      "title": "Bataille de Lübeck",
+      "summary": "Paul Perlkowski anéantit l’armée de Bayreuth à Lübeck.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête prussienne de Goslar"
+        ],
+        [
+          "Attaquant",
+          "Prusse — Paul Perlkowski — 31 000 hommes"
+        ],
+        [
+          "Défenseur",
+          "Bayreuth — Maximilian Teichmann — 17 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Prusse : 1 553 · Bayreuth : 17 000"
+        ],
+        [
+          "Vainqueur",
+          "Prusse"
+        ]
+      ]
+    },
+    {
+      "date": "1567-03-31",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Goslar",
+      "summary": "La paix apporte Wittenberg et Dresde à la Prusse.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne de Goslar"
+        ],
+        [
+          "Pertes prussiennes",
+          "15 394"
+        ],
+        [
+          "Territoires acquis",
+          "Wittenberg · Dresde"
+        ],
+        [
+          "Issue",
+          "Victoire prussienne"
+        ]
+      ]
+    },
+    {
+      "date": "1569-02-15",
+      "type": "guerre",
+      "title": "Début de la 2e conquête prussienne de Brême",
+      "summary": "La Prusse repart en guerre contre Brême, la Frise orientale et Lübeck.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête prussienne de Brême"
+        ],
+        [
+          "Adversaires",
+          "Brême · Frise orientale · Lübeck"
+        ],
+        [
+          "Fin",
+          "14 février 1572"
+        ]
+      ]
+    },
+    {
+      "date": "1572-02-14",
+      "type": "guerre",
+      "title": "Victoire dans la 2e conquête de Brême",
+      "summary": "La deuxième guerre contre Brême se termine par l’intégration de Rostock à la Prusse.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête prussienne de Brême"
+        ],
+        [
+          "Pertes prussiennes",
+          "21 045"
+        ],
+        [
+          "Territoire acquis",
+          "Rostock"
+        ],
+        [
+          "Issue",
+          "Victoire prussienne"
+        ]
+      ]
+    },
+    {
+      "date": "1574-06-02",
+      "type": "militaire",
+      "title": "Karl von Derfflinger devient général prussien",
+      "summary": "La Prusse obtient l’un des meilleurs commandants de la campagne.",
+      "facts": [
+        [
+          "Général",
+          "Karl von Derfflinger"
+        ],
+        [
+          "Feu",
+          "5"
+        ],
+        [
+          "Choc",
+          "6"
+        ],
+        [
+          "Manœuvre",
+          "4"
+        ],
+        [
+          "Siège",
+          "3"
+        ],
+        [
+          "Trait",
+          "Canonnier"
+        ]
+      ]
+    },
+    {
+      "date": "1575-04-30",
+      "type": "dynastie",
+      "title": "Friedrich Wilhelm Ier monte sur le trône de Prusse",
+      "summary": "Friedrich Wilhelm Ier von Hohenzollern succède à la tête de la Prusse.",
+      "facts": [
+        [
+          "Souverain",
+          "Friedrich Wilhelm Ier von Hohenzollern"
+        ],
+        [
+          "Compétences",
+          "ADM 6 · DIP 3 · MIL 6"
+        ],
+        [
+          "Religion",
+          "Protestante"
+        ],
+        [
+          "Traits",
+          "Génie tactique · secret"
+        ]
+      ]
+    },
+    {
+      "date": "1579-09-08",
+      "type": "guerre",
+      "title": "Début de la 2e conquête prussienne de Goslar",
+      "summary": "La Prusse et la Russie attaquent de nouveau la Saxe et ses alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête prussienne de Goslar"
+        ],
+        [
+          "Allié majeur",
+          "Russie"
+        ],
+        [
+          "Fin",
+          "28 mars 1582"
+        ]
+      ]
+    },
+    {
+      "date": "1582-03-28",
+      "type": "guerre",
+      "title": "Victoire dans la 2e conquête de Goslar",
+      "summary": "Goslar et Zwickau passent sous contrôle prussien après une guerre très coûteuse.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête prussienne de Goslar"
+        ],
+        [
+          "Pertes prussiennes",
+          "54 336"
+        ],
+        [
+          "Territoires acquis",
+          "Goslar · Zwickau"
+        ],
+        [
+          "Issue",
+          "Victoire prussienne"
+        ]
+      ]
+    },
+    {
+      "date": "1582-09-11",
+      "type": "guerre",
+      "title": "Début de la conquête prussienne du Jutland occidental",
+      "summary": "La Prusse ouvre une nouvelle guerre contre le Danemark, la Suède et la Norvège.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne du Jutland occidental"
+        ],
+        [
+          "Allié majeur",
+          "Russie"
+        ],
+        [
+          "Adversaires",
+          "Danemark · Suède · Norvège"
+        ],
+        [
+          "Fin",
+          "12 juillet 1584"
+        ]
+      ]
+    },
+    {
+      "date": "1584-07-12",
+      "type": "guerre",
+      "title": "Victoire dans la conquête du Jutland occidental",
+      "summary": "La Prusse prend quatre territoires danois et s’installe durablement dans la péninsule du Jutland.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête prussienne du Jutland occidental"
+        ],
+        [
+          "Pertes prussiennes",
+          "1 870"
+        ],
+        [
+          "Territoires acquis",
+          "Mitteljütland · Jutland septentrional · Jutland oriental · Kolding"
+        ],
+        [
+          "Issue",
+          "Victoire prussienne"
         ]
       ]
     }
