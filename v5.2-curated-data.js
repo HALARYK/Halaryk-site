@@ -7527,6 +7527,298 @@ export const CURATED_EVENTS={
           "L’armée autrichienne engagée est entièrement détruite"
         ]
       ]
+    },
+    {
+      "date": "1562-12-22",
+      "type": "guerre",
+      "title": "Fin de la Guerre de la Ligue protestante",
+      "summary": "La grande guerre confessionnelle du Saint-Empire s’achève avec l’Autriche à la tête du camp catholique.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre de la Ligue protestante"
+        ],
+        [
+          "Rôle",
+          "Chef du camp défenseur catholique"
+        ],
+        [
+          "Pertes autrichiennes",
+          "31 625"
+        ],
+        [
+          "Fin",
+          "22 décembre 1562"
+        ]
+      ]
+    },
+    {
+      "date": "1566-01-16",
+      "type": "guerre",
+      "title": "Début de la guerre de soumission de la Suisse au Saint-Empire",
+      "summary": "L’Autriche mène une guerre visant à ramener la Suisse dans l’orbite impériale.",
+      "facts": [
+        [
+          "Conflit",
+          "Guerre de soumission de la Suisse au Saint-Empire"
+        ],
+        [
+          "Camp autrichien",
+          "Autriche · Moldavie · Bourgogne · Champagne · Herzégovine"
+        ],
+        [
+          "Adversaires",
+          "Suisse · Avignon · Bade"
+        ],
+        [
+          "Fin",
+          "8 février 1568"
+        ]
+      ]
+    },
+    {
+      "date": "1566-06-17",
+      "type": "bataille",
+      "title": "Bataille d’Istrie",
+      "summary": "L’armée autrichienne remporte une victoire importante contre Avignon en Istrie.",
+      "facts": [
+        [
+          "Guerre",
+          "Soumission de la Suisse au Saint-Empire"
+        ],
+        [
+          "Pertes autrichiennes",
+          "5 085"
+        ],
+        [
+          "Pertes adverses",
+          "10 573"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1568-02-08",
+      "type": "guerre",
+      "title": "Fin de la guerre de soumission de la Suisse",
+      "summary": "La guerre contre la Suisse et ses alliés s’achève après deux années de combats.",
+      "facts": [
+        [
+          "Conflit",
+          "Soumission de la Suisse au Saint-Empire"
+        ],
+        [
+          "Pertes autrichiennes",
+          "25 910"
+        ],
+        [
+          "Pertes suisses",
+          "10 039"
+        ],
+        [
+          "Fin",
+          "8 février 1568"
+        ]
+      ]
+    },
+    {
+      "date": "1568-06-21",
+      "type": "militaire",
+      "title": "Albrecht Poll devient général autrichien",
+      "summary": "L’Autriche obtient un commandant particulièrement puissant dans le choc et le siège.",
+      "facts": [
+        [
+          "Général",
+          "Albrecht Poll"
+        ],
+        [
+          "Feu",
+          "3"
+        ],
+        [
+          "Choc",
+          "6"
+        ],
+        [
+          "Manœuvre",
+          "3"
+        ],
+        [
+          "Siège",
+          "3"
+        ]
+      ]
+    },
+    {
+      "date": "1575-04-01",
+      "type": "territoire",
+      "title": "L’Autriche absorbe six territoires en Bosnie et Herzégovine",
+      "summary": "Une importante intégration territoriale renforce la présence autrichienne dans les Balkans.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "Zachlumie · Doboj · Donji Kraji · Herzégovine · Visoko · Podrinje"
+        ],
+        [
+          "Région",
+          "Bosnie et Herzégovine"
+        ],
+        [
+          "Portée",
+          "Consolidation de l’axe balkanique autrichien"
+        ]
+      ]
+    },
+    {
+      "date": "1576-01-23",
+      "type": "guerre",
+      "title": "Début de la conquête autrichienne de Barrois",
+      "summary": "L’Autriche attaque la France et la Lorraine dans une nouvelle guerre à l’ouest.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête autrichienne de Barrois"
+        ],
+        [
+          "Camp autrichien",
+          "Autriche · Moldavie · Bourgogne · Champagne · Mayence"
+        ],
+        [
+          "Adversaires",
+          "France · Lorraine"
+        ],
+        [
+          "Fin",
+          "6 juillet 1577"
+        ]
+      ]
+    },
+    {
+      "date": "1577-03-03",
+      "type": "bataille",
+      "title": "Bataille de Split",
+      "summary": "Franz Karl Kolin détruit une armée française de 32 000 hommes à Split.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête autrichienne de Barrois"
+        ],
+        [
+          "Attaquant",
+          "Autriche — Franz Karl Kolin — 30 000 infanterie · 10 000 cavalerie · 10 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "France — Nicolas de La Barthe — 32 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Autriche : 2 133 · France : 32 000"
+        ],
+        [
+          "Vainqueur",
+          "Autriche"
+        ]
+      ]
+    },
+    {
+      "date": "1577-07-06",
+      "type": "guerre",
+      "title": "Fin de la conquête autrichienne de Barrois",
+      "summary": "La guerre contre la France et la Lorraine s’achève après une campagne favorable au camp autrichien.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête autrichienne de Barrois"
+        ],
+        [
+          "Pertes autrichiennes",
+          "19 752"
+        ],
+        [
+          "Pertes françaises",
+          "40 497"
+        ],
+        [
+          "Fin",
+          "6 juillet 1577"
+        ]
+      ]
+    },
+    {
+      "date": "1582-06-06",
+      "type": "dynastie",
+      "title": "Ferdinand II monte sur le trône d’Autriche",
+      "summary": "Ferdinand II von Habsburg succède à la tête de l’Autriche ; Ferdinand III est désigné héritier.",
+      "facts": [
+        [
+          "Souverain",
+          "Ferdinand II von Habsburg"
+        ],
+        [
+          "Compétences",
+          "ADM 0 · DIP 3 · MIL 3"
+        ],
+        [
+          "Religion",
+          "Catholique"
+        ],
+        [
+          "Héritier",
+          "Ferdinand III — ADM 3 · DIP 4 · MIL 2"
+        ]
+      ]
+    },
+    {
+      "date": "1586-03-14",
+      "type": "militaire",
+      "title": "Johann Karl Arenberg devient général autrichien",
+      "summary": "L’Autriche renforce son haut commandement avec Johann Karl Arenberg.",
+      "facts": [
+        [
+          "Général",
+          "Johann Karl Arenberg"
+        ],
+        [
+          "Feu",
+          "3"
+        ],
+        [
+          "Choc",
+          "6"
+        ],
+        [
+          "Manœuvre",
+          "3"
+        ],
+        [
+          "Siège",
+          "2"
+        ]
+      ]
+    },
+    {
+      "date": "1586-05-20",
+      "type": "politique",
+      "title": "L’Autriche adopte un corps diplomatique renforcé",
+      "summary": "Le gouvernement autrichien formalise un appareil diplomatique plus structuré à la fin de la session.",
+      "facts": [
+        [
+          "Réforme",
+          "Diplomatic Corps"
+        ],
+        [
+          "Orientation",
+          "Diplomatie"
+        ],
+        [
+          "Portée",
+          "Renforcement durable de l’action extérieure autrichienne"
+        ]
+      ]
     }
   ],
   "TUR": [
@@ -8686,6 +8978,350 @@ export const CURATED_EVENTS={
         [
           "Territoires acquis",
           "18 territoires d’Éthiopie, de Nubie et de la Corne de l’Afrique"
+        ]
+      ]
+    },
+    {
+      "date": "1559-07-29",
+      "type": "culture",
+      "title": "L’Empire ottoman élargit fortement ses cultures reconnues",
+      "summary": "En quelques semaines, le sultanat accepte successivement les cultures géorgienne, serbe, azerbaïdjanaise et arménienne.",
+      "facts": [
+        [
+          "Cultures acceptées",
+          "Géorgienne · Serbe · Azerbaïdjanaise · Arménienne"
+        ],
+        [
+          "Période",
+          "14 juin → 29 juillet 1559"
+        ],
+        [
+          "Portée",
+          "Intégration administrative accrue d’un empire très multiethnique"
+        ]
+      ]
+    },
+    {
+      "date": "1559-10-08",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane d’Ormuz",
+      "summary": "L’Empire ottoman engage une immense campagne vers le golfe Persique et l’Inde.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane d’Ormuz"
+        ],
+        [
+          "Adversaires",
+          "Ormuz · Transoxiane · Ajuran · Delhi"
+        ],
+        [
+          "Fin",
+          "22 novembre 1567"
+        ]
+      ]
+    },
+    {
+      "date": "1562-02-04",
+      "type": "bataille",
+      "title": "Bataille de Qûmis",
+      "summary": "Les Ottomans infligent une lourde défaite à Ormuz à Qûmis.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête ottomane d’Ormuz"
+        ],
+        [
+          "Pertes ottomanes",
+          "1 044"
+        ],
+        [
+          "Pertes d’Ormuz",
+          "13 229"
+        ],
+        [
+          "Vainqueur",
+          "Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1567-06-01",
+      "type": "territoire",
+      "title": "L’Empire ottoman absorbe vingt-quatre territoires persans",
+      "summary": "Une intégration territoriale gigantesque fait basculer une grande partie de la Perse sous contrôle ottoman.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "24"
+        ],
+        [
+          "Parmi les principales acquisitions",
+          "Téhéran · Ispahan · Chiraz · Kerman · Yazd · Mashhad · Lorestan · Bojnourd"
+        ],
+        [
+          "Région",
+          "Perse et Khorasan"
+        ]
+      ]
+    },
+    {
+      "date": "1567-11-22",
+      "type": "guerre",
+      "title": "Victoire dans la conquête ottomane d’Ormuz",
+      "summary": "Après huit ans de guerre, l’Empire ottoman termine la campagne d’Ormuz et annexe cinq territoires d’Oman.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane d’Ormuz"
+        ],
+        [
+          "Pertes ottomanes",
+          "249 948"
+        ],
+        [
+          "Territoires acquis",
+          "Banî Yâs · Qawasim · Suhar · Liwa · Buraïmi"
+        ],
+        [
+          "Issue",
+          "Victoire ottomane"
+        ]
+      ]
+    },
+    {
+      "date": "1569-06-01",
+      "type": "territoire",
+      "title": "Intégration massive de l’Égypte et de l’Arabie",
+      "summary": "Soixante-huit territoires passent simultanément sous contrôle direct ottoman, transformant radicalement la structure de l’empire.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "68"
+        ],
+        [
+          "Régions",
+          "Égypte · Levant · Hedjaz · Arabie · mer Rouge"
+        ],
+        [
+          "Parmi les principales villes",
+          "Le Caire · Alexandrie · Jérusalem · La Mecque · Djeddah · Suez"
+        ],
+        [
+          "Portée",
+          "Centralisation territoriale majeure"
+        ]
+      ]
+    },
+    {
+      "date": "1572-01-03",
+      "type": "dynastie",
+      "title": "Süleyman Ier monte sur le trône ottoman",
+      "summary": "Süleyman Ier Osmanoglu devient sultan de l’Empire ottoman.",
+      "facts": [
+        [
+          "Souverain",
+          "Süleyman Ier Osmanoglu"
+        ],
+        [
+          "Compétences",
+          "ADM 3 · DIP 6 · MIL 2"
+        ],
+        [
+          "Religion",
+          "Sunnite"
+        ],
+        [
+          "Prétention",
+          "100"
+        ]
+      ]
+    },
+    {
+      "date": "1572-03-13",
+      "type": "religion",
+      "title": "Nouvelle séquence de réformes religieuses ottomanes",
+      "summary": "Le sultanat renforce successivement l’unité religieuse, condamne les pratiques sectaires et développe un centre islamique d’érudition.",
+      "facts": [
+        [
+          "Décisions",
+          "Renforcement religieux · condamnation des pratiques sectaires · centre islamique d’érudition"
+        ],
+        [
+          "Période",
+          "13 janvier → 13 mars 1572"
+        ],
+        [
+          "Portée",
+          "Consolidation institutionnelle du sunnisme impérial"
+        ]
+      ]
+    },
+    {
+      "date": "1576-09-02",
+      "type": "guerre",
+      "title": "Début de la 2e conquête ottomane de Kouhistan",
+      "summary": "L’Empire ottoman relance son expansion orientale contre les Timourides et Ormuz.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête ottomane de Kouhistan"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Rassides"
+        ],
+        [
+          "Adversaires",
+          "Timourides · Ormuz"
+        ],
+        [
+          "Fin",
+          "19 décembre 1577"
+        ]
+      ]
+    },
+    {
+      "date": "1577-12-19",
+      "type": "guerre",
+      "title": "Victoire dans la 2e conquête de Kouhistan",
+      "summary": "La campagne s’achève par l’annexion de quatre territoires omanais.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête ottomane de Kouhistan"
+        ],
+        [
+          "Pertes ottomanes",
+          "76 947"
+        ],
+        [
+          "Territoires acquis",
+          "Masqat · Qishn · Massira · Hürmüz"
+        ],
+        [
+          "Issue",
+          "Victoire ottomane"
+        ]
+      ]
+    },
+    {
+      "date": "1578-06-21",
+      "type": "guerre",
+      "title": "Début de la conquête ottomane de Dawaro",
+      "summary": "L’Empire ottoman poursuit sa poussée en Afrique orientale contre Adal et le Zimbabwe.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Dawaro"
+        ],
+        [
+          "Camp ottoman",
+          "Empire ottoman · Rassides · Mali"
+        ],
+        [
+          "Adversaires",
+          "Adal · Zimbabwe"
+        ],
+        [
+          "Fin",
+          "20 avril 1581"
+        ]
+      ]
+    },
+    {
+      "date": "1579-12-14",
+      "type": "bataille",
+      "title": "Bataille de Sidamo",
+      "summary": "Ali Kaymak remporte une gigantesque bataille contre le Zimbabwe à Sidamo.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête ottomane de Dawaro"
+        ],
+        [
+          "Attaquant",
+          "Empire ottoman — Ali Kaymak — 88 542 infanterie · 28 566 cavalerie · 46 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Zimbabwe — Muksedi Jumbe — 67 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Empire ottoman : 11 604 · Zimbabwe : 28 558"
+        ],
+        [
+          "Vainqueur",
+          "Empire ottoman"
+        ]
+      ]
+    },
+    {
+      "date": "1581-04-20",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Dawaro",
+      "summary": "La guerre se termine par l’acquisition de quatre territoires supplémentaires en Afrique orientale.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane de Dawaro"
+        ],
+        [
+          "Pertes ottomanes",
+          "273 341"
+        ],
+        [
+          "Territoires acquis",
+          "Degehabur · Dawaro · Awsa · Mora"
+        ],
+        [
+          "Issue",
+          "Victoire ottomane"
+        ]
+      ]
+    },
+    {
+      "date": "1582-09-01",
+      "type": "territoire",
+      "title": "Treize territoires du Maghreb passent sous contrôle ottoman",
+      "summary": "Une nouvelle intégration massive consolide le contrôle ottoman sur l’Algérie, la Tunisie et la Tripolitaine.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "13"
+        ],
+        [
+          "Parmi les principales acquisitions",
+          "Kabylie · Constantine · Kairouan · Sfax · Djerba · Tripoli · Annaba"
+        ],
+        [
+          "Région",
+          "Maghreb central et oriental"
+        ]
+      ]
+    },
+    {
+      "date": "1583-10-19",
+      "type": "guerre",
+      "title": "Victoire dans la conquête ottomane d’El Buur",
+      "summary": "La guerre contre Ajuran et Ormuz s’achève par l’acquisition de trois nouveaux territoires en Oman.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête ottomane d’El Buur"
+        ],
+        [
+          "Pertes ottomanes",
+          "28 433"
+        ],
+        [
+          "Territoires acquis",
+          "Nizwa · Charqiya · Ibra"
+        ],
+        [
+          "Issue",
+          "Victoire ottomane"
         ]
       ]
     }
@@ -9965,6 +10601,374 @@ export const CURATED_EVENTS={
         [
           "Portée",
           "Accès et contrôle russe renforcés autour de la mer Noire et du Caucase"
+        ]
+      ]
+    },
+    {
+      "date": "1561-07-01",
+      "type": "dynastie",
+      "title": "Ivan IV monte sur le trône de Russie",
+      "summary": "Ivan IV von Hohenzollern devient souverain de Russie dans cette chronologie alternative.",
+      "facts": [
+        [
+          "Souverain",
+          "Ivan IV von Hohenzollern"
+        ],
+        [
+          "Compétences",
+          "ADM 5 · DIP 2 · MIL 3"
+        ],
+        [
+          "Religion",
+          "Orthodoxe"
+        ],
+        [
+          "Traits",
+          "Doué pour l’argent · zélote · navigateur"
+        ]
+      ]
+    },
+    {
+      "date": "1561-11-17",
+      "type": "territoire",
+      "title": "Nouvelle avancée russe en Sibérie",
+      "summary": "La Russie prend directement le contrôle de Verkhneangarsk, Bargouzine et Chita.",
+      "facts": [
+        [
+          "Territoires acquis",
+          "Verkhneangarsk · Bargouzine · Chita"
+        ],
+        [
+          "Région",
+          "Sibérie orientale"
+        ],
+        [
+          "Portée",
+          "Progression vers le lac Baïkal et au-delà"
+        ]
+      ]
+    },
+    {
+      "date": "1563-10-06",
+      "type": "guerre",
+      "title": "Début de la conquête russe d’Onon Gol",
+      "summary": "La Russie lance une vaste campagne contre la Mandchourie et ses alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe d’Onon Gol"
+        ],
+        [
+          "Camp russe",
+          "Russie · Finlande · Kazakh · Chagataï"
+        ],
+        [
+          "Adversaires",
+          "Mandchourie · autres puissances d’Asie orientale"
+        ],
+        [
+          "Fin",
+          "2 septembre 1566"
+        ]
+      ]
+    },
+    {
+      "date": "1566-08-17",
+      "type": "bataille",
+      "title": "Bataille de Yan’an",
+      "summary": "Stanislav Skopin inflige une défaite dévastatrice à l’armée mandchoue.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête russe d’Onon Gol"
+        ],
+        [
+          "Attaquant",
+          "Russie — Stanislav Skopin — 30 779 infanterie · 7 934 cavalerie · 20 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Mandchourie — Nanying Xu — 21 397 hommes"
+        ],
+        [
+          "Pertes",
+          "Russie : 750 · Mandchourie : 21 397"
+        ],
+        [
+          "Vainqueur",
+          "Russie"
+        ]
+      ]
+    },
+    {
+      "date": "1566-09-02",
+      "type": "guerre",
+      "title": "Victoire dans la conquête d’Onon Gol",
+      "summary": "La guerre se termine par l’annexion de sept territoires d’Extrême-Orient.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe d’Onon Gol"
+        ],
+        [
+          "Pertes russes",
+          "83 906"
+        ],
+        [
+          "Territoires acquis",
+          "Miyoo Gasan · Blagoveshensk · Onon Gol · Albazin · Udi · Tulutingshan · Halacha"
+        ],
+        [
+          "Issue",
+          "Victoire russe"
+        ]
+      ]
+    },
+    {
+      "date": "1569-04-16",
+      "type": "guerre",
+      "title": "Début de la reconquête russe d’Alxa",
+      "summary": "La Russie repart en campagne contre les Oïrats et leurs alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête russe d’Alxa"
+        ],
+        [
+          "Camp russe",
+          "Russie · Finlande · Kazakh · Chagataï · alliés sibériens"
+        ],
+        [
+          "Adversaires",
+          "Oïrats · Kashgar"
+        ],
+        [
+          "Fin",
+          "26 mars 1571"
+        ]
+      ]
+    },
+    {
+      "date": "1570-04-23",
+      "type": "bataille",
+      "title": "Bataille de Petrovsk",
+      "summary": "Iosif Osterman-Tolstoy détruit l’armée de Kashgar à Petrovsk.",
+      "facts": [
+        [
+          "Guerre",
+          "Reconquête russe d’Alxa"
+        ],
+        [
+          "Attaquant",
+          "Russie — Iosif Osterman-Tolstoy — 25 000 hommes"
+        ],
+        [
+          "Défenseur",
+          "Kashgar — Abdul-Latif Qadancher — 13 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Russie : 1 406 · Kashgar : 13 000"
+        ],
+        [
+          "Vainqueur",
+          "Russie"
+        ]
+      ]
+    },
+    {
+      "date": "1571-03-26",
+      "type": "guerre",
+      "title": "Victoire dans la reconquête d’Alxa",
+      "summary": "La Russie remporte la guerre et annexe neuf nouveaux territoires de Mongolie et d’Asie centrale.",
+      "facts": [
+        [
+          "Conflit",
+          "Reconquête russe d’Alxa"
+        ],
+        [
+          "Pertes russes",
+          "67 274"
+        ],
+        [
+          "Territoires acquis",
+          "9"
+        ],
+        [
+          "Parmi les acquisitions",
+          "Uliastay · Qaraqorum · Bayanhongor · Govi · Ekibastuz"
+        ],
+        [
+          "Issue",
+          "Victoire russe"
+        ]
+      ]
+    },
+    {
+      "date": "1573-03-16",
+      "type": "guerre",
+      "title": "Début de la conquête russe de Boukhara",
+      "summary": "La Russie poursuit son expansion en Asie centrale contre la Transoxiane, la Crimée et Ormuz.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Boukhara"
+        ],
+        [
+          "Camp russe",
+          "Russie · Finlande · Kazakh · Chagataï · alliés sibériens"
+        ],
+        [
+          "Adversaires",
+          "Transoxiane · Crimée · Ormuz"
+        ],
+        [
+          "Fin",
+          "21 janvier 1574"
+        ]
+      ]
+    },
+    {
+      "date": "1574-01-21",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Boukhara",
+      "summary": "La Russie s’empare de six grandes provinces d’Asie centrale.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Boukhara"
+        ],
+        [
+          "Pertes russes",
+          "15 450"
+        ],
+        [
+          "Territoires acquis",
+          "Khiva · Boukhara · Karchi · Samarcande · Kulob · Termez"
+        ],
+        [
+          "Issue",
+          "Victoire russe"
+        ]
+      ]
+    },
+    {
+      "date": "1576-02-15",
+      "type": "guerre",
+      "title": "Début de la conquête russe de Lyda",
+      "summary": "La Russie se retourne vers l’ouest et attaque la Lituanie, la Pologne et leurs alliés.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Lyda"
+        ],
+        [
+          "Adversaires",
+          "Lituanie · Pologne · Brabant · alliés"
+        ],
+        [
+          "Fin",
+          "9 décembre 1576"
+        ]
+      ]
+    },
+    {
+      "date": "1576-11-23",
+      "type": "bataille",
+      "title": "Bataille de Gniezno",
+      "summary": "Epifaniy Baryatiski remporte une grande victoire russe sur l’armée lituanienne.",
+      "facts": [
+        [
+          "Guerre",
+          "Conquête russe de Lyda"
+        ],
+        [
+          "Attaquant",
+          "Russie — Epifaniy Baryatiski — 80 000 infanterie · 20 000 cavalerie · 50 000 artillerie"
+        ],
+        [
+          "Défenseur",
+          "Lituanie — Henryk I Piast — 30 000 hommes"
+        ],
+        [
+          "Pertes",
+          "Russie : 5 507 · Lituanie : 12 670"
+        ],
+        [
+          "Vainqueur",
+          "Russie"
+        ]
+      ]
+    },
+    {
+      "date": "1576-12-09",
+      "type": "guerre",
+      "title": "Victoire dans la conquête de Lyda",
+      "summary": "La guerre occidentale s’achève par l’annexion de six territoires lituaniens.",
+      "facts": [
+        [
+          "Conflit",
+          "Conquête russe de Lyda"
+        ],
+        [
+          "Pertes russes",
+          "22 736"
+        ],
+        [
+          "Territoires acquis",
+          "Drohiczyn · Brest · Pinsk · Grodno · Lyda · Nowogrodek"
+        ],
+        [
+          "Issue",
+          "Victoire russe"
+        ]
+      ]
+    },
+    {
+      "date": "1579-09-08",
+      "type": "guerre",
+      "title": "La Russie rejoint la 2e conquête prussienne de Goslar",
+      "summary": "Doug engage la Russie aux côtés de la Prusse dans une nouvelle guerre majeure au sein du Saint-Empire.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête prussienne de Goslar"
+        ],
+        [
+          "Rôle",
+          "Allié majeur de la Prusse"
+        ],
+        [
+          "Adversaires",
+          "Saxe · Bade · Bavière · Hesse · Nuremberg · Bayreuth · Ansbach"
+        ],
+        [
+          "Fin",
+          "28 mars 1582"
+        ]
+      ]
+    },
+    {
+      "date": "1582-03-28",
+      "type": "guerre",
+      "title": "Fin de la 2e conquête prussienne de Goslar",
+      "summary": "La guerre se termine victorieusement, mais l’intervention russe a été extrêmement coûteuse.",
+      "facts": [
+        [
+          "Conflit",
+          "2e conquête prussienne de Goslar"
+        ],
+        [
+          "Pertes russes",
+          "102 716"
+        ],
+        [
+          "Pertes prussiennes",
+          "54 336"
+        ],
+        [
+          "Issue",
+          "Victoire du camp prusso-russe"
         ]
       ]
     }
