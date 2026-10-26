@@ -1225,5 +1225,460 @@ export const EVENT_CONTEXT={
     "status": "Le cœur andin passe directement sous contrôle espagnol",
     "history": "Cuzco et Lima sont déjà au centre du système colonial espagnol dans le Pérou historique du XVIe siècle. Leur conquête à cette date traduit donc une chronologie coloniale très différente de la réalité.",
     "campaign": "La paix donne directement Abancay, Cuzco, Lima, Huancavelica, Ayaviri, Quero et Macaya à l’Espagne. La victoire achève une expansion spectaculaire dans les Andes au terme de quatre années de guerre."
+  },
+  "CAS|1561-01-24": {
+    "status": "Bataille de Pátzcuaro",
+    "history": "À l’époque de Philippe II, l’Espagne historique est une grande puissance européenne et coloniale. Ses guerres se concentrent surtout en Europe, en Méditerranée et dans l’expansion américaine, mais les frontières et campagnes de cette partie divergent rapidement de cette chronologie.",
+    "campaign": "Francisco Pizarro écrase l’armée tarasque à Pátzcuaro au début de la guerre de Cacaxtes. Guerre : Conquête espagnole de Cacaxtes · Attaquant : Espagne — Francisco Pizarro — 12 000 infanterie · 4 000 cavalerie · 4 000 artillerie · Défenseur : Tarasques — Ngolbex An Binech — 5 000 infanterie · 1 000 cavalerie."
+  },
+  "CAS|1567-06-30": {
+    "status": "Carlos est désigné héritier d’Espagne",
+    "history": "À l’époque de Philippe II, l’Espagne historique est une grande puissance européenne et coloniale. Ses guerres se concentrent surtout en Europe, en Méditerranée et dans l’expansion américaine, mais les frontières et campagnes de cette partie divergent rapidement de cette chronologie.",
+    "campaign": "La succession des Trastámara est assurée par la naissance et la désignation de Carlos, futur Carlos II dans la chronologie de la partie. Héritier : Carlos de Trastámara · Compétences : ADM 4 · DIP 3 · MIL 3 · Religion : Catholique."
+  },
+  "CAS|1569-04-04": {
+    "status": "Début de la conquête espagnole du Narbonnais",
+    "history": "À l’époque de Philippe II, l’Espagne historique est une grande puissance européenne et coloniale. Ses guerres se concentrent surtout en Europe, en Méditerranée et dans l’expansion américaine, mais les frontières et campagnes de cette partie divergent rapidement de cette chronologie.",
+    "campaign": "L’Espagne attaque la France et la Lorraine dans une guerre majeure pour le sud du royaume de France. Conflit : Conquête espagnole du Narbonnais · Camp espagnol : Espagne · Marrakech · sujets coloniaux · Camp adverse : France · Lorraine."
+  },
+  "CAS|1572-10-01": {
+    "status": "Bataille de Foix",
+    "history": "À l’époque de Philippe II, l’Espagne historique est une grande puissance européenne et coloniale. Ses guerres se concentrent surtout en Europe, en Méditerranée et dans l’expansion américaine, mais les frontières et campagnes de cette partie divergent rapidement de cette chronologie.",
+    "campaign": "Inés de Suárez remporte à Foix une victoire majeure sur l’armée française de Marc de Richemont. Guerre : Conquête espagnole du Narbonnais · Attaquant : Espagne — Inés de Suárez — 110 859 infanterie · 6 000 cavalerie · 8 000 artillerie · Défenseur : France — Marc de Richemont — 27 672 infanterie · 12 000 cavalerie · 27 000 artillerie."
+  },
+  "CAS|1576-01-01": {
+    "status": "Victoire dans la conquête du Narbonnais",
+    "history": "À l’époque de Philippe II, l’Espagne historique est une grande puissance européenne et coloniale. Ses guerres se concentrent surtout en Europe, en Méditerranée et dans l’expansion américaine, mais les frontières et campagnes de cette partie divergent rapidement de cette chronologie.",
+    "campaign": "Après près de sept ans de guerre, l’Espagne impose une paix très favorable à la France et annexe six provinces du Midi. Conflit : Conquête espagnole du Narbonnais · Pertes espagnoles : 246 339 · Territoires acquis : Armagnac · Béarn · Toulouse · Narbonne · Foix · Carcassonne."
+  },
+  "ENG|1559-06-27": {
+    "status": "Fin de la 2e conquête florentine de Mantoue",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La guerre de Mantoue s’achève après une intervention britannique particulièrement coûteuse. Conflit : 2e conquête florentine de Mantoue · Rôle : Allié de Florence · Pertes britanniques : 42 688."
+  },
+  "ENG|1561-02-21": {
+    "status": "Gráinne Ní Mháille devient amirale britannique",
+    "history": "Gráinne Ní Mháille, ou Grace O’Malley, est une figure historique irlandaise du XVIe siècle, cheffe maritime du Connacht. Elle n’a jamais été amirale de la Couronne britannique : son rôle dans la partie constitue une réinterprétation spectaculaire.",
+    "campaign": "La Grande-Bretagne confie une partie de sa puissance navale à Gráinne Ní Mháille. Amirale : Gráinne Ní Mháille · Feu : 4 · Choc : 4."
+  },
+  "ENG|1562-05-28": {
+    "status": "Début de la conquête britannique de Bintulu",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La Grande-Bretagne ouvre une vaste guerre en Asie du Sud-Est pour renforcer sa présence à Bornéo. Conflit : Conquête britannique de Bintulu · Camp britannique : Grande-Bretagne · Flandre · colonies britanniques · Adversaires : Brunei · Makassar · Sulu · Demak."
+  },
+  "ENG|1565-07-20": {
+    "status": "Bataille de Lahad Datu",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "Oliver Cavendish détruit l’armée de Sulu à Lahad Datu. Guerre : Conquête britannique de Bintulu · Attaquant : Grande-Bretagne — Oliver Cavendish — 22 000 hommes · Défenseur : Sulu — Shihab ud Din Yuda — 12 000 hommes."
+  },
+  "ENG|1566-05-24": {
+    "status": "Victoire dans la conquête de Bintulu",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La victoire britannique se traduit par une très forte expansion à Bornéo. Conflit : Conquête britannique de Bintulu · Pertes britanniques : 53 389 · Territoires acquis : Brunei · Api-Api · Palawan · Lahad Datu · Sibu · Sigalang · Kuching · Bintulu · Kapit."
+  },
+  "ENG|1570-07-03": {
+    "status": "Marie Ire monte sur le trône de Grande-Bretagne",
+    "history": "La Marie Tudor historique règne sur l’Angleterre de 1553 à 1558 et meurt sans héritier. En 1570, la souveraine réelle est Élisabeth Ire ; cette Marie d’York appartient donc entièrement à la dynastie alternative de la campagne.",
+    "campaign": "Marie Ire d’York devient souveraine de Grande-Bretagne. Souveraine : Marie Ire d’York · Compétences : ADM 4 · DIP 3 · MIL 3 · Religion : Anglicane."
+  },
+  "ENG|1573-01-09": {
+    "status": "Début de la conquête britannique de Cowasuk",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La Grande-Bretagne lance une nouvelle campagne coloniale en Amérique du Nord. Conflit : Conquête britannique de Cowasuk · Camp britannique : Grande-Bretagne · Flandre · colonies britanniques · Adversaires : Pequots · autres nations autochtones du Nord-Est."
+  },
+  "ENG|1574-12-30": {
+    "status": "Victoire dans la conquête de Cowasuk",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La campagne de Cowasuk s’achève par une nouvelle avancée britannique en Amérique du Nord. Conflit : Conquête britannique de Cowasuk · Pertes britanniques : 12 967 · Territoires acquis ce jour : Oswego · Fort Stanwix · Schenectady."
+  },
+  "ENG|1577-08-08": {
+    "status": "Début de la guerre coloniale britannique contre la France",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La rivalité coloniale entre Londres et Paris dégénère en guerre ouverte. Conflit : Guerre coloniale britannique contre la France · Camp britannique : Grande-Bretagne · Flandre · colonies britanniques · Adversaire principal : France."
+  },
+  "ENG|1579-01-05": {
+    "status": "Victoire britannique dans la guerre coloniale contre la France",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La Grande-Bretagne remporte la guerre et obtient notamment Touraine, en plus de plusieurs positions coloniales. Conflit : Guerre coloniale britannique contre la France · Pertes britanniques : 7 487 · Territoires acquis ce jour : Bermudes · Fernando Po · Cape Sable · St. John · Touraine."
+  },
+  "ENG|1581-01-01": {
+    "status": "Début de la conquête britannique de Saluda",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La Grande-Bretagne poursuit son expansion dans le sud-est de l’Amérique du Nord. Conflit : Conquête britannique de Saluda · Adversaires : Cherokee · Creek · Fin : 21 mars 1582."
+  },
+  "ENG|1582-03-21": {
+    "status": "Victoire dans la conquête de Saluda",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La guerre de Saluda s’achève par une nouvelle victoire britannique. Conflit : Conquête britannique de Saluda · Pertes britanniques : 3 572 · Territoire acquis à la fin du conflit : Keowee."
+  },
+  "ENG|1582-09-19": {
+    "status": "Début de la conquête britannique de Meliau",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La Grande-Bretagne ouvre une nouvelle guerre à Bornéo contre Sambas et Kutai. Conflit : Conquête britannique de Meliau · Adversaires : Sambas · Kutai · Fin : 2 avril 1584."
+  },
+  "ENG|1584-04-02": {
+    "status": "Victoire dans la conquête de Meliau",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "La Grande-Bretagne annexe Sambas et Meliau à l’issue de la guerre. Conflit : Conquête britannique de Meliau · Pertes britanniques : 5 663 · Territoires acquis : Sambas · Meliau."
+  },
+  "ENG|1584-08-13": {
+    "status": "Victoire dans la conquête de Calicula",
+    "history": "L’Angleterre élisabéthaine connaît alors une montée en puissance maritime et commerciale. La colonisation anglaise permanente reste toutefois encore limitée avant le début du XVIIe siècle, ce qui rend l’expansion britannique de la campagne particulièrement précoce.",
+    "campaign": "Une autre campagne coloniale britannique s’achève par l’acquisition de cinq territoires. Conflit : Conquête britannique de Calicula · Pertes britanniques : 8 012 · Territoires acquis : New Orleans · Adai · Calicula · Pittsburgh · Mohetan."
+  },
+  "LAN|1559-06-27": {
+    "status": "Fin de la 2e conquête florentine de Mantoue",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "La longue guerre de Mantoue s’achève après des pertes très lourdes pour Florence et ses alliés. Conflit : 2e conquête florentine de Mantoue · Pertes florentines : 57 409 · Pertes autrichiennes : 179 795."
+  },
+  "LAN|1561-08-21": {
+    "status": "Sergio Pazzi devient général florentin",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "Florence se dote d’un général exceptionnel en puissance de feu. Général : Sergio Pazzi · Feu : 6 · Choc : 1."
+  },
+  "LAN|1563-03-16": {
+    "status": "Florence devient électeur du Saint-Empire",
+    "history": "Florence n’a jamais été un électorat du Saint-Empire. Les princes-électeurs constituent un collège très fermé défini par la Bulle d’or et progressivement modifié au fil des siècles.",
+    "campaign": "Florence obtient la dignité électorale dans le Saint-Empire. Statut : Électeur · Portée : Influence accrue dans la politique impériale."
+  },
+  "LAN|1565-03-19": {
+    "status": "Début de la 3e conquête florentine de Mantoue",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "Florence attaque une nouvelle fois Mantoue et ses alliés pour achever sa domination en Italie du Nord. Conflit : 3e conquête florentine de Mantoue · Adversaires : Mantoue · Palatinat · Milan · Ingolstadt · Fin : 12 octobre 1566."
+  },
+  "LAN|1565-06-18": {
+    "status": "Bataille de Pavie",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "Danilo Lessi remporte une victoire décisive sur Mantoue à Pavie. Guerre : 3e conquête florentine de Mantoue · Attaquant : Florence — Danilo Lessi — 25 000 infanterie · 5 000 artillerie · Défenseur : Mantoue — Ferdinando de Rossi — 9 591 hommes."
+  },
+  "LAN|1566-10-12": {
+    "status": "Mantoue passe sous contrôle florentin",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "La troisième guerre de Mantoue s’achève et Mantoue est directement intégrée au domaine florentin. Conflit : 3e conquête florentine de Mantoue · Pertes florentines : 17 489 · Territoire acquis : Mantoue."
+  },
+  "LAN|1571-08-18": {
+    "status": "Début de la 2e conquête florentine de Rome",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "Florence lance une nouvelle guerre contre les États pontificaux pour s’emparer de Rome. Conflit : 2e conquête florentine de Rome · Adversaires : États pontificaux · Trèves · Milan · Fin : 11 mai 1574."
+  },
+  "LAN|1571-09-06": {
+    "status": "Bataille de Rome",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "Sergio Pazzi bat l’armée pontificale directement devant Rome. Guerre : 2e conquête florentine de Rome · Attaquant : Florence — Sergio Pazzi — 27 000 infanterie · 5 000 artillerie · Défenseur : États pontificaux — Benedictus Cremona — 11 000 hommes."
+  },
+  "LAN|1574-05-11": {
+    "status": "Rome passe sous contrôle florentin",
+    "history": "Rome reste historiquement la capitale des États pontificaux jusqu’au XIXe siècle. Sa conquête par Florence en 1574 constitue l’une des ruptures les plus nettes avec l’histoire réelle de la péninsule.",
+    "campaign": "La deuxième conquête de Rome se termine par la prise directe de la Ville éternelle. Conflit : 2e conquête florentine de Rome · Pertes florentines : 25 242 · Territoire acquis : Rome."
+  },
+  "LAN|1575-02-13": {
+    "status": "Francesco Stefano Ier monte sur le trône",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "Francesco Stefano de’ Medici devient souverain de Florence peu avant la formation de l’Italie. Souverain : Francesco Stefano Ier de’ Medici · Compétences : ADM 3 · DIP 1 · MIL 2 · Religion : Catholique."
+  },
+  "LAN|1575-10-10": {
+    "status": "Florence forme l’Italie",
+    "history": "L’Italie ne devient un État unifié qu’en 1861, puis Rome est annexée en 1870. Une Italie unifiée dès 1575 avance donc le Risorgimento de près de trois siècles.",
+    "campaign": "Le joueur florentin unifie ses possessions sous un nouvel État : l’Italie. État précédent : Florence · Nouvel État : Italie · Nouvelle capitale enregistrée : Rome."
+  },
+  "LAN|1577-07-31": {
+    "status": "Début de la conquête italienne des Abruzzes",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "La nouvelle Italie attaque directement la France pour les Abruzzes. Conflit : Conquête italienne des Abruzzes · Adversaire : France · Fin : 31 décembre 1579."
+  },
+  "LAN|1578-12-27": {
+    "status": "Bataille de Molise",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "Sergio Pazzi inflige une lourde défaite aux Français à Molise. Guerre : Conquête italienne des Abruzzes · Attaquant : Italie — Sergio Pazzi — 27 000 infanterie · 5 000 artillerie · Défenseur : France — Nicolas de La Barthe — 11 000 hommes."
+  },
+  "LAN|1579-12-31": {
+    "status": "Fin de la conquête italienne des Abruzzes",
+    "history": "L’Italie réelle du XVIe siècle reste morcelée entre plusieurs États, tandis que Florence est dominée par les Médicis et devient le grand-duché de Toscane en 1569. Une unification politique italienne à cette époque est donc profondément uchronique.",
+    "campaign": "La première grande guerre menée sous le nom d’Italie s’achève après plus de deux ans de combats. Conflit : Conquête italienne des Abruzzes · Pertes italiennes : 35 264 · Pertes françaises : 27 026."
+  },
+  "BRA|1560-03-28": {
+    "status": "Fin de la Guerre d’indépendance suédoise",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La guerre d’indépendance suédoise prend fin après trois ans de combats ; la Prusse y a subi des pertes importantes. Conflit : Guerre d’indépendance suédoise · Camp soutenu : Suède · Pertes prussiennes : 23 782."
+  },
+  "BRA|1560-08-26": {
+    "status": "Début de la conquête prussienne de Hambourg",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La Prusse attaque Hambourg avec le soutien de la Russie et de ses alliés. Conflit : Conquête prussienne de Hambourg · Allié majeur : Russie · Adversaires : Hambourg · Brabant · États pontificaux · Utrecht · Ansbach."
+  },
+  "BRA|1560-09-12": {
+    "status": "Bataille de Hambourg",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "Paul Perlkowski détruit l’armée hambourgeoise devant la ville. Guerre : Conquête prussienne de Hambourg · Attaquant : Prusse — Paul Perlkowski — 31 000 hommes · Défenseur : Hambourg — Friedrich Bagebuhr — 10 000 hommes."
+  },
+  "BRA|1564-09-04": {
+    "status": "Hambourg passe sous contrôle prussien",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La conquête de Hambourg s’achève par l’annexion directe de la ville. Conflit : Conquête prussienne de Hambourg · Pertes prussiennes : 19 621 · Territoire acquis : Hambourg."
+  },
+  "BRA|1564-12-20": {
+    "status": "Début de la conquête prussienne de Goslar",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La Prusse relance immédiatement son expansion dans le Saint-Empire. Conflit : Conquête prussienne de Goslar · Allié majeur : Russie · Adversaires : Saxe · Bade · Bavière · Nuremberg · Bayreuth · Ansbach."
+  },
+  "BRA|1566-04-02": {
+    "status": "Bataille de Lübeck",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "Paul Perlkowski anéantit l’armée de Bayreuth à Lübeck. Guerre : Conquête prussienne de Goslar · Attaquant : Prusse — Paul Perlkowski — 31 000 hommes · Défenseur : Bayreuth — Maximilian Teichmann — 17 000 hommes."
+  },
+  "BRA|1567-03-31": {
+    "status": "Victoire dans la conquête de Goslar",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La paix apporte Wittenberg et Dresde à la Prusse. Conflit : Conquête prussienne de Goslar · Pertes prussiennes : 15 394 · Territoires acquis : Wittenberg · Dresde."
+  },
+  "BRA|1569-02-15": {
+    "status": "Début de la 2e conquête prussienne de Brême",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La Prusse repart en guerre contre Brême, la Frise orientale et Lübeck. Conflit : 2e conquête prussienne de Brême · Adversaires : Brême · Frise orientale · Lübeck · Fin : 14 février 1572."
+  },
+  "BRA|1572-02-14": {
+    "status": "Victoire dans la 2e conquête de Brême",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La deuxième guerre contre Brême se termine par l’intégration de Rostock à la Prusse. Conflit : 2e conquête prussienne de Brême · Pertes prussiennes : 21 045 · Territoire acquis : Rostock."
+  },
+  "BRA|1574-06-02": {
+    "status": "Karl von Derfflinger devient général prussien",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La Prusse obtient l’un des meilleurs commandants de la campagne. Général : Karl von Derfflinger · Feu : 5 · Choc : 6."
+  },
+  "BRA|1575-04-30": {
+    "status": "Friedrich Wilhelm Ier monte sur le trône de Prusse",
+    "history": "Le nom Friedrich Wilhelm rappelle plusieurs souverains historiques de Brandebourg-Prusse, mais la succession de cette campagne ne correspond pas à la chronologie réelle des Hohenzollern.",
+    "campaign": "Friedrich Wilhelm Ier von Hohenzollern succède à la tête de la Prusse. Souverain : Friedrich Wilhelm Ier von Hohenzollern · Compétences : ADM 6 · DIP 3 · MIL 6 · Religion : Protestante."
+  },
+  "BRA|1579-09-08": {
+    "status": "Début de la 2e conquête prussienne de Goslar",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La Prusse et la Russie attaquent de nouveau la Saxe et ses alliés. Conflit : 2e conquête prussienne de Goslar · Allié majeur : Russie · Fin : 28 mars 1582."
+  },
+  "BRA|1582-03-28": {
+    "status": "Victoire dans la 2e conquête de Goslar",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "Goslar et Zwickau passent sous contrôle prussien après une guerre très coûteuse. Conflit : 2e conquête prussienne de Goslar · Pertes prussiennes : 54 336 · Territoires acquis : Goslar · Zwickau."
+  },
+  "BRA|1582-09-11": {
+    "status": "Début de la conquête prussienne du Jutland occidental",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La Prusse ouvre une nouvelle guerre contre le Danemark, la Suède et la Norvège. Conflit : Conquête prussienne du Jutland occidental · Allié majeur : Russie · Adversaires : Danemark · Suède · Norvège."
+  },
+  "BRA|1584-07-12": {
+    "status": "Victoire dans la conquête du Jutland occidental",
+    "history": "Au XVIe siècle, le Brandebourg et le duché de Prusse sont encore deux entités distinctes de la maison de Hohenzollern. Leur union dynastique n’intervient qu’en 1618 et le royaume de Prusse n’est proclamé qu’en 1701.",
+    "campaign": "La Prusse prend quatre territoires danois et s’installe durablement dans la péninsule du Jutland. Conflit : Conquête prussienne du Jutland occidental · Pertes prussiennes : 1 870 · Territoires acquis : Mitteljütland · Jutland septentrional · Jutland oriental · Kolding."
+  },
+  "HAB|1562-12-22": {
+    "status": "Fin de la Guerre de la Ligue protestante",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "La grande guerre confessionnelle du Saint-Empire s’achève avec l’Autriche à la tête du camp catholique. Conflit : Guerre de la Ligue protestante · Rôle : Chef du camp défenseur catholique · Pertes autrichiennes : 31 625."
+  },
+  "HAB|1566-01-16": {
+    "status": "Début de la guerre de soumission de la Suisse au Saint-Empire",
+    "history": "La Confédération suisse avait déjà obtenu une forte autonomie de fait après la guerre de Souabe de 1499. Sa reconnaissance formelle comme indépendante du Saint-Empire intervient en 1648.",
+    "campaign": "L’Autriche mène une guerre visant à ramener la Suisse dans l’orbite impériale. Conflit : Guerre de soumission de la Suisse au Saint-Empire · Camp autrichien : Autriche · Moldavie · Bourgogne · Champagne · Herzégovine · Adversaires : Suisse · Avignon · Bade."
+  },
+  "HAB|1566-06-17": {
+    "status": "Bataille d’Istrie",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "L’armée autrichienne remporte une victoire importante contre Avignon en Istrie. Guerre : Soumission de la Suisse au Saint-Empire · Pertes autrichiennes : 5 085 · Pertes adverses : 10 573."
+  },
+  "HAB|1568-02-08": {
+    "status": "Fin de la guerre de soumission de la Suisse",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "La guerre contre la Suisse et ses alliés s’achève après deux années de combats. Conflit : Soumission de la Suisse au Saint-Empire · Pertes autrichiennes : 25 910 · Pertes suisses : 10 039."
+  },
+  "HAB|1568-06-21": {
+    "status": "Albrecht Poll devient général autrichien",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "L’Autriche obtient un commandant particulièrement puissant dans le choc et le siège. Général : Albrecht Poll · Feu : 3 · Choc : 6."
+  },
+  "HAB|1575-04-01": {
+    "status": "L’Autriche absorbe six territoires en Bosnie et Herzégovine",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "Une importante intégration territoriale renforce la présence autrichienne dans les Balkans. Territoires acquis : Zachlumie · Doboj · Donji Kraji · Herzégovine · Visoko · Podrinje · Région : Bosnie et Herzégovine · Portée : Consolidation de l’axe balkanique autrichien."
+  },
+  "HAB|1576-01-23": {
+    "status": "Début de la conquête autrichienne de Barrois",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "L’Autriche attaque la France et la Lorraine dans une nouvelle guerre à l’ouest. Conflit : Conquête autrichienne de Barrois · Camp autrichien : Autriche · Moldavie · Bourgogne · Champagne · Mayence · Adversaires : France · Lorraine."
+  },
+  "HAB|1577-03-03": {
+    "status": "Bataille de Split",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "Franz Karl Kolin détruit une armée française de 32 000 hommes à Split. Guerre : Conquête autrichienne de Barrois · Attaquant : Autriche — Franz Karl Kolin — 30 000 infanterie · 10 000 cavalerie · 10 000 artillerie · Défenseur : France — Nicolas de La Barthe — 32 000 hommes."
+  },
+  "HAB|1577-07-06": {
+    "status": "Fin de la conquête autrichienne de Barrois",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "La guerre contre la France et la Lorraine s’achève après une campagne favorable au camp autrichien. Conflit : Conquête autrichienne de Barrois · Pertes autrichiennes : 19 752 · Pertes françaises : 40 497."
+  },
+  "HAB|1582-06-06": {
+    "status": "Ferdinand II monte sur le trône d’Autriche",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "Ferdinand II von Habsburg succède à la tête de l’Autriche ; Ferdinand III est désigné héritier. Souverain : Ferdinand II von Habsburg · Compétences : ADM 0 · DIP 3 · MIL 3 · Religion : Catholique."
+  },
+  "HAB|1586-03-14": {
+    "status": "Johann Karl Arenberg devient général autrichien",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "L’Autriche renforce son haut commandement avec Johann Karl Arenberg. Général : Johann Karl Arenberg · Feu : 3 · Choc : 6."
+  },
+  "HAB|1586-05-20": {
+    "status": "L’Autriche adopte un corps diplomatique renforcé",
+    "history": "L’Autriche des Habsbourg demeure l’un des centres de gravité du Saint-Empire après la paix d’Augsbourg de 1555. Elle doit composer avec les divisions confessionnelles, les rivalités impériales et la pression ottomane.",
+    "campaign": "Le gouvernement autrichien formalise un appareil diplomatique plus structuré à la fin de la session. Réforme : Diplomatic Corps · Orientation : Diplomatie · Portée : Renforcement durable de l’action extérieure autrichienne."
+  },
+  "TUR|1559-07-29": {
+    "status": "L’Empire ottoman élargit fortement ses cultures reconnues",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "En quelques semaines, le sultanat accepte successivement les cultures géorgienne, serbe, azerbaïdjanaise et arménienne. Cultures acceptées : Géorgienne · Serbe · Azerbaïdjanaise · Arménienne · Période : 14 juin → 29 juillet 1559 · Portée : Intégration administrative accrue d’un empire très multiethnique."
+  },
+  "TUR|1559-10-08": {
+    "status": "Début de la conquête ottomane d’Ormuz",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "L’Empire ottoman engage une immense campagne vers le golfe Persique et l’Inde. Conflit : Conquête ottomane d’Ormuz · Adversaires : Ormuz · Transoxiane · Ajuran · Delhi · Fin : 22 novembre 1567."
+  },
+  "TUR|1562-02-04": {
+    "status": "Bataille de Qûmis",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "Les Ottomans infligent une lourde défaite à Ormuz à Qûmis. Guerre : Conquête ottomane d’Ormuz · Pertes ottomanes : 1 044 · Pertes d’Ormuz : 13 229."
+  },
+  "TUR|1567-06-01": {
+    "status": "L’Empire ottoman absorbe vingt-quatre territoires persans",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "Une intégration territoriale gigantesque fait basculer une grande partie de la Perse sous contrôle ottoman. Territoires acquis : 24 · Parmi les principales acquisitions : Téhéran · Ispahan · Chiraz · Kerman · Yazd · Mashhad · Lorestan · Bojnourd · Région : Perse et Khorasan."
+  },
+  "TUR|1567-11-22": {
+    "status": "Victoire dans la conquête ottomane d’Ormuz",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "Après huit ans de guerre, l’Empire ottoman termine la campagne d’Ormuz et annexe cinq territoires d’Oman. Conflit : Conquête ottomane d’Ormuz · Pertes ottomanes : 249 948 · Territoires acquis : Banî Yâs · Qawasim · Suhar · Liwa · Buraïmi."
+  },
+  "TUR|1569-06-01": {
+    "status": "Intégration massive de l’Égypte et de l’Arabie",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "Soixante-huit territoires passent simultanément sous contrôle direct ottoman, transformant radicalement la structure de l’empire. Territoires acquis : 68 · Régions : Égypte · Levant · Hedjaz · Arabie · mer Rouge · Parmi les principales villes : Le Caire · Alexandrie · Jérusalem · La Mecque · Djeddah · Suez."
+  },
+  "TUR|1572-01-03": {
+    "status": "Süleyman Ier monte sur le trône ottoman",
+    "history": "Le Soliman Ier historique meurt en 1566 après un règne commencé en 1520. Le Süleyman Ier qui accède au trône en 1572 dans la campagne est donc un souverain alternatif portant le même nom.",
+    "campaign": "Süleyman Ier Osmanoglu devient sultan de l’Empire ottoman. Souverain : Süleyman Ier Osmanoglu · Compétences : ADM 3 · DIP 6 · MIL 2 · Religion : Sunnite."
+  },
+  "TUR|1572-03-13": {
+    "status": "Nouvelle séquence de réformes religieuses ottomanes",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "Le sultanat renforce successivement l’unité religieuse, condamne les pratiques sectaires et développe un centre islamique d’érudition. Décisions : Renforcement religieux · condamnation des pratiques sectaires · centre islamique d’érudition · Période : 13 janvier → 13 mars 1572 · Portée : Consolidation institutionnelle du sunnisme impérial."
+  },
+  "TUR|1576-09-02": {
+    "status": "Début de la 2e conquête ottomane de Kouhistan",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "L’Empire ottoman relance son expansion orientale contre les Timourides et Ormuz. Conflit : 2e conquête ottomane de Kouhistan · Camp ottoman : Empire ottoman · Rassides · Adversaires : Timourides · Ormuz."
+  },
+  "TUR|1577-12-19": {
+    "status": "Victoire dans la 2e conquête de Kouhistan",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "La campagne s’achève par l’annexion de quatre territoires omanais. Conflit : 2e conquête ottomane de Kouhistan · Pertes ottomanes : 76 947 · Territoires acquis : Masqat · Qishn · Massira · Hürmüz."
+  },
+  "TUR|1578-06-21": {
+    "status": "Début de la conquête ottomane de Dawaro",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "L’Empire ottoman poursuit sa poussée en Afrique orientale contre Adal et le Zimbabwe. Conflit : Conquête ottomane de Dawaro · Camp ottoman : Empire ottoman · Rassides · Mali · Adversaires : Adal · Zimbabwe."
+  },
+  "TUR|1579-12-14": {
+    "status": "Bataille de Sidamo",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "Ali Kaymak remporte une gigantesque bataille contre le Zimbabwe à Sidamo. Guerre : Conquête ottomane de Dawaro · Attaquant : Empire ottoman — Ali Kaymak — 88 542 infanterie · 28 566 cavalerie · 46 000 artillerie · Défenseur : Zimbabwe — Muksedi Jumbe — 67 000 hommes."
+  },
+  "TUR|1581-04-20": {
+    "status": "Victoire dans la conquête de Dawaro",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "La guerre se termine par l’acquisition de quatre territoires supplémentaires en Afrique orientale. Conflit : Conquête ottomane de Dawaro · Pertes ottomanes : 273 341 · Territoires acquis : Degehabur · Dawaro · Awsa · Mora."
+  },
+  "TUR|1582-09-01": {
+    "status": "Treize territoires du Maghreb passent sous contrôle ottoman",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "Une nouvelle intégration massive consolide le contrôle ottoman sur l’Algérie, la Tunisie et la Tripolitaine. Territoires acquis : 13 · Parmi les principales acquisitions : Kabylie · Constantine · Kairouan · Sfax · Djerba · Tripoli · Annaba · Région : Maghreb central et oriental."
+  },
+  "TUR|1583-10-19": {
+    "status": "Victoire dans la conquête ottomane d’El Buur",
+    "history": "Dans la seconde moitié du XVIe siècle, l’Empire ottoman reste une superpuissance méditerranéenne et proche-orientale. Après la mort historique de Soliman le Magnifique en 1566, Selim II puis Murad III poursuivent l’expansion et la consolidation impériales.",
+    "campaign": "La guerre contre Ajuran et Ormuz s’achève par l’acquisition de trois nouveaux territoires en Oman. Conflit : Conquête ottomane d’El Buur · Pertes ottomanes : 28 433 · Territoires acquis : Nizwa · Charqiya · Ibra."
+  },
+  "MOS|1561-07-01": {
+    "status": "Ivan IV monte sur le trône de Russie",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "Ivan IV von Hohenzollern devient souverain de Russie dans cette chronologie alternative. Souverain : Ivan IV von Hohenzollern · Compétences : ADM 5 · DIP 2 · MIL 3 · Religion : Orthodoxe."
+  },
+  "MOS|1561-11-17": {
+    "status": "Nouvelle avancée russe en Sibérie",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La Russie prend directement le contrôle de Verkhneangarsk, Bargouzine et Chita. Territoires acquis : Verkhneangarsk · Bargouzine · Chita · Région : Sibérie orientale · Portée : Progression vers le lac Baïkal et au-delà."
+  },
+  "MOS|1563-10-06": {
+    "status": "Début de la conquête russe d’Onon Gol",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La Russie lance une vaste campagne contre la Mandchourie et ses alliés. Conflit : Conquête russe d’Onon Gol · Camp russe : Russie · Finlande · Kazakh · Chagataï · Adversaires : Mandchourie · autres puissances d’Asie orientale."
+  },
+  "MOS|1566-08-17": {
+    "status": "Bataille de Yan’an",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "Stanislav Skopin inflige une défaite dévastatrice à l’armée mandchoue. Guerre : Conquête russe d’Onon Gol · Attaquant : Russie — Stanislav Skopin — 30 779 infanterie · 7 934 cavalerie · 20 000 artillerie · Défenseur : Mandchourie — Nanying Xu — 21 397 hommes."
+  },
+  "MOS|1566-09-02": {
+    "status": "Victoire dans la conquête d’Onon Gol",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La guerre se termine par l’annexion de sept territoires d’Extrême-Orient. Conflit : Conquête russe d’Onon Gol · Pertes russes : 83 906 · Territoires acquis : Miyoo Gasan · Blagoveshensk · Onon Gol · Albazin · Udi · Tulutingshan · Halacha."
+  },
+  "MOS|1569-04-16": {
+    "status": "Début de la reconquête russe d’Alxa",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La Russie repart en campagne contre les Oïrats et leurs alliés. Conflit : Reconquête russe d’Alxa · Camp russe : Russie · Finlande · Kazakh · Chagataï · alliés sibériens · Adversaires : Oïrats · Kashgar."
+  },
+  "MOS|1570-04-23": {
+    "status": "Bataille de Petrovsk",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "Iosif Osterman-Tolstoy détruit l’armée de Kashgar à Petrovsk. Guerre : Reconquête russe d’Alxa · Attaquant : Russie — Iosif Osterman-Tolstoy — 25 000 hommes · Défenseur : Kashgar — Abdul-Latif Qadancher — 13 000 hommes."
+  },
+  "MOS|1571-03-26": {
+    "status": "Victoire dans la reconquête d’Alxa",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La Russie remporte la guerre et annexe neuf nouveaux territoires de Mongolie et d’Asie centrale. Conflit : Reconquête russe d’Alxa · Pertes russes : 67 274 · Territoires acquis : 9."
+  },
+  "MOS|1573-03-16": {
+    "status": "Début de la conquête russe de Boukhara",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La Russie poursuit son expansion en Asie centrale contre la Transoxiane, la Crimée et Ormuz. Conflit : Conquête russe de Boukhara · Camp russe : Russie · Finlande · Kazakh · Chagataï · alliés sibériens · Adversaires : Transoxiane · Crimée · Ormuz."
+  },
+  "MOS|1574-01-21": {
+    "status": "Victoire dans la conquête de Boukhara",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La Russie s’empare de six grandes provinces d’Asie centrale. Conflit : Conquête russe de Boukhara · Pertes russes : 15 450 · Territoires acquis : Khiva · Boukhara · Karchi · Samarcande · Kulob · Termez."
+  },
+  "MOS|1576-02-15": {
+    "status": "Début de la conquête russe de Lyda",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La Russie se retourne vers l’ouest et attaque la Lituanie, la Pologne et leurs alliés. Conflit : Conquête russe de Lyda · Adversaires : Lituanie · Pologne · Brabant · alliés · Fin : 9 décembre 1576."
+  },
+  "MOS|1576-11-23": {
+    "status": "Bataille de Gniezno",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "Epifaniy Baryatiski remporte une grande victoire russe sur l’armée lituanienne. Guerre : Conquête russe de Lyda · Attaquant : Russie — Epifaniy Baryatiski — 80 000 infanterie · 20 000 cavalerie · 50 000 artillerie · Défenseur : Lituanie — Henryk I Piast — 30 000 hommes."
+  },
+  "MOS|1576-12-09": {
+    "status": "Victoire dans la conquête de Lyda",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La guerre occidentale s’achève par l’annexion de six territoires lituaniens. Conflit : Conquête russe de Lyda · Pertes russes : 22 736 · Territoires acquis : Drohiczyn · Brest · Pinsk · Grodno · Lyda · Nowogrodek."
+  },
+  "MOS|1579-09-08": {
+    "status": "La Russie rejoint la 2e conquête prussienne de Goslar",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "Doug engage la Russie aux côtés de la Prusse dans une nouvelle guerre majeure au sein du Saint-Empire. Conflit : 2e conquête prussienne de Goslar · Rôle : Allié majeur de la Prusse · Adversaires : Saxe · Bade · Bavière · Hesse · Nuremberg · Bayreuth · Ansbach."
+  },
+  "MOS|1582-03-28": {
+    "status": "Fin de la 2e conquête prussienne de Goslar",
+    "history": "La Russie historique d’Ivan IV étend alors son contrôle vers la Volga, la Sibérie et la Baltique. La guerre de Livonie de 1558 à 1583 absorbe une grande partie de ses ressources, tandis que l’expansion profonde vers l’Asie reste plus progressive que dans cette campagne.",
+    "campaign": "La guerre se termine victorieusement, mais l’intervention russe a été extrêmement coûteuse. Conflit : 2e conquête prussienne de Goslar · Pertes russes : 102 716 · Pertes prussiennes : 54 336."
   }
 };
