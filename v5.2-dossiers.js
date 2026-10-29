@@ -8,7 +8,7 @@ const ROOT=new URL("./",import.meta.url);
 if(!document.querySelector('link[href$="v5.2-dossiers.css"]')){const l=document.createElement("link");l.rel="stylesheet";l.href=new URL("v5.2-dossiers.css",ROOT).href;document.head.appendChild(l)}
 
 const iconByType={guerre:"⚔",bataille:"⚔",dynastie:"♛",désastre:"!",crise:"!",politique:"✦",exploration:"✧",événement:"◆",religion:"✝",empire:"♜",puissance:"★",capitale:"◆",population:"◈",révolte:"⚑",culture:"◉",diplomatie:"✉"};
-const tagByCountry={"espagne":"CAS","castille":"CAS","grande-bretagne":"ENG","angleterre":"ENG","florence":"LAN","prusse":"BRA","brandebourg":"BRA","autriche":"HAB","empire ottoman":"TUR","russie":"MOS","moscovie":"MOS"};
+const tagByCountry={"espagne":"CAS","castille":"CAS","grande-bretagne":"ENG","angleterre":"ENG","florence":"LAN","prusse":"BRA","brandebourg":"BRA","autriche":"HAB","autriche-hongrie":"HAB","empire ottoman":"TUR","russie":"MOS","moscovie":"MOS"};
 function norm(v=""){return String(v).trim().toLowerCase()}
 function isoFromFr(v=""){const m=String(v).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);return m?`${m[3]}-${m[2].padStart(2,"0")}-${m[1].padStart(2,"0")}`:""}
 function longDate(iso=""){const m=String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)return iso||"—";return new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(Date.UTC(+m[1],+m[2]-1,+m[3])))}
@@ -38,6 +38,10 @@ function warLayout(w){
   return `<div class="v52-war-end"><div class="v52-war-result"><span>ISSUE DU CONFLIT</span><strong>${esc(w.winner)}</strong></div>${camps}<div class="v52-war-intro">${factCard("Période",`${longDate(w.start)} → ${longDate(w.end)}`,"is-wide")}${factCard("Batailles enregistrées",plural(w.battles,"bataille","batailles"))}${factCard("Casus belli",w.casusBelli)}${factCard("Objectif",w.warGoal)}</div>${(w.lossesAttackers||w.lossesDefenders)?`${sectionTitle("Pertes par camp")}<div class="v52-war-losses">${lossSide("Camp attaquant",w.lossesAttackers,attackerLosses)}${lossSide("Camp défenseur",w.lossesDefenders,defenderLosses)}</div>`:""}${w.peace?`<div class="v52-peace-box"><span>RÈGLEMENT / PAIX</span><strong>${esc(w.peace)}</strong></div>`:""}</div>`;
 }
 function battleLayout(facts,map){
+  if(!map.has("attaquant")&&!map.has("défenseur")){
+    const useful=facts.filter(([k])=>!isTechnical(k)),tech=facts.filter(([k])=>isTechnical(k));
+    return `<div class="v52-battle-file"><p class="v52-dossier-kicker">BATAILLE ENREGISTRÉE DANS LA SAUVEGARDE</p><div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div>${sourceBlock(tech)}</div>`;
+  }
   const war=map.get("guerre")||"Conflit non renseigné",place=map.get("lieu")||"—",terrain=map.get("terrain")||"—",att=map.get("attaquant")||"—",def=map.get("défenseur")||"—",loss=map.get("pertes de la bataille")||"—",winner=map.get("vainqueur")||"—";
   const used=new Set(["guerre","lieu","terrain","attaquant","défenseur","pertes de la bataille","vainqueur"]);const rest=facts.filter(([k])=>!used.has(norm(k))&&!isTechnical(k));const tech=facts.filter(([k])=>isTechnical(k));
   return `<div class="v52-battle-file"><p class="v52-dossier-kicker">AFFRONTEMENT</p><div class="v52-battle-context">${factCard("Guerre",war,"is-wide")}${factCard("Lieu",place)}${factCard("Terrain",terrain)}</div><div class="v52-battle-camps"><article><span>Attaquant</span><strong>${esc(att)}</strong></article><div><b>${esc(winner)}</b><span>vainqueur</span></div><article><span>Défenseur</span><strong>${esc(def)}</strong></article></div><div class="v52-battle-loss"><span>Pertes de la bataille</span><strong>${esc(loss)}</strong></div>${rest.length?`<div class="v52-dossier-facts">${rest.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
