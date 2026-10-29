@@ -122,7 +122,9 @@ function playerNameAtSnapshot(p,snapshot){
 }
 function nationCard(p,start,end,startSnapshot,endSnapshot){
   const a=start?.stats||{},b=end?.stats||{},tech=b.technologies||{};const annualA=Number(a.annual_gross_income),annualB=Number(b.annual_gross_income);
-  const nationName=b.country_name||p.title,nationTag=b.current_tag||p.participant_key,crestPath=snapshotCrestByTag[nationTag]||crestByTag[nationTag]||crestByTag[p.participant_key],img=crestPath?asset(crestPath):"";
+  const nationTag=b.current_tag||(p.participant_key==="HAB"&&String(endSnapshot?.snapshot_date||"")>="1613-06-12"?"AUH":p.participant_key);
+  const nationName=b.country_name||(p.participant_key==="HAB"&&nationTag!=="AUH"?"Autriche":p.title);
+  const crestPath=snapshotCrestByTag[nationTag]||crestByTag[nationTag]||crestByTag[p.participant_key],img=crestPath?asset(crestPath):"";
   const startYear=year(startSnapshot?.snapshot_date),endYear=year(endSnapshot?.snapshot_date);
   return `<article class="v52-nation-card" data-nation="${esc(p.participant_key||"")}">
     <div class="v52-nation-head">${img?`<img src="${img}" alt="Emblème de ${esc(nationName)}">`:""}<div><h3>${esc(nationName)}</h3><p>${esc(playerNameAtSnapshot(p,endSnapshot))}</p></div></div>
