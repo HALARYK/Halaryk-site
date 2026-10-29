@@ -110,12 +110,22 @@ function techDelta(a,b){
   const d=k=>{const x=Number(aa[k]),y=Number(bb[k]);if(!Number.isFinite(x)||!Number.isFinite(y))return "—";const v=y-x;return `${v>=0?"+":""}${v}`};
   return `${d("administrative")} / ${d("diplomatic")} / ${d("military")}`;
 }
+function playerNameAtSnapshot(p,snapshot){
+  const current=p?.player_name||"";
+  const session=Number(snapshot?.session_number);
+  const change=Number(p?.metadata?.player_change_session);
+  const history=p?.metadata?.player_history;
+  if(Array.isArray(history)&&Number.isFinite(session)&&Number.isFinite(change)&&change>0&&session<change){
+    return history.find(h=>h?.role==="former")?.player_name||current;
+  }
+  return current;
+}
 function nationCard(p,start,end,startSnapshot,endSnapshot){
   const a=start?.stats||{},b=end?.stats||{},tech=b.technologies||{};const annualA=Number(a.annual_gross_income),annualB=Number(b.annual_gross_income);
   const nationName=b.country_name||p.title,nationTag=b.current_tag||p.participant_key,crestPath=snapshotCrestByTag[nationTag]||crestByTag[nationTag]||crestByTag[p.participant_key],img=crestPath?asset(crestPath):"";
   const startYear=year(startSnapshot?.snapshot_date),endYear=year(endSnapshot?.snapshot_date);
   return `<article class="v52-nation-card" data-nation="${esc(p.participant_key||"")}">
-    <div class="v52-nation-head">${img?`<img src="${img}" alt="Emblème de ${esc(nationName)}">`:""}<div><h3>${esc(nationName)}</h3><p>${esc(p.player_name||"")}</p></div></div>
+    <div class="v52-nation-head">${img?`<img src="${img}" alt="Emblème de ${esc(nationName)}">`:""}<div><h3>${esc(nationName)}</h3><p>${esc(playerNameAtSnapshot(p,endSnapshot))}</p></div></div>
     <div class="v52-nation-period"><strong>${startYear} → ${endYear}</strong><span>${esc(snapshotBadge(endSnapshot))}</span></div>
     <div class="v52-nation-stats">
       ${nationStat("Provinces",fmt(b.province_count),delta(a,b,"province_count"))}
