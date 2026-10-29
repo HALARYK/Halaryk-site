@@ -16,8 +16,8 @@ let participantMap=new Map();
 let activeEvents=[];
 let activeIndex=0;
 
-const crestByTag={"CAS":"https://eu4.paradoxwikis.com/images/thumb/5/58/Spain.png/330px-Spain.png","SPA":"https://eu4.paradoxwikis.com/images/thumb/5/58/Spain.png/330px-Spain.png","ENG":"https://eu4.paradoxwikis.com/images/thumb/2/2b/Great_Britain.png/330px-Great_Britain.png","GBR":"https://eu4.paradoxwikis.com/images/thumb/2/2b/Great_Britain.png/330px-Great_Britain.png","LAN":"https://eu4.paradoxwikis.com/images/thumb/d/d9/Florence.png/330px-Florence.png","ITA":"https://eu4.paradoxwikis.com/images/thumb/2/2a/Italy.png/330px-Italy.png","BRA":"https://eu4.paradoxwikis.com/images/thumb/2/28/Prussia.png/330px-Prussia.png","PRU":"https://eu4.paradoxwikis.com/images/thumb/2/28/Prussia.png/330px-Prussia.png","HAB":"assets/nations/nation-autriche.svg","TUR":"assets/nations/nation-ottomans.svg","MOS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png","RUS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png"};
-const snapshotCrestByTag={"CAS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Castile.png/330px-Castile.png","SPA":"https://eu4.paradoxwikis.com/images/thumb/5/58/Spain.png/330px-Spain.png","ENG":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Royal_standard_of_England_%281406%E2%80%931603%29.svg","GBR":"https://eu4.paradoxwikis.com/images/thumb/2/2b/Great_Britain.png/330px-Great_Britain.png","LAN":"https://eu4.paradoxwikis.com/images/thumb/d/d9/Florence.png/330px-Florence.png","ITA":"https://eu4.paradoxwikis.com/images/thumb/2/2a/Italy.png/330px-Italy.png","BRA":"https://eu4.paradoxwikis.com/images/thumb/e/e3/Brandenburg.png/330px-Brandenburg.png","PRU":"https://eu4.paradoxwikis.com/images/thumb/2/28/Prussia.png/330px-Prussia.png","MOS":"https://eu4.paradoxwikis.com/images/thumb/4/41/Muscovy.png/330px-Muscovy.png","RUS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png","HAB":"assets/nations/nation-autriche.svg","TUR":"assets/nations/nation-ottomans.svg"};
+const crestByTag={"CAS":"https://eu4.paradoxwikis.com/images/thumb/5/58/Spain.png/330px-Spain.png","SPA":"https://eu4.paradoxwikis.com/images/thumb/5/58/Spain.png/330px-Spain.png","ENG":"https://eu4.paradoxwikis.com/images/thumb/2/2b/Great_Britain.png/330px-Great_Britain.png","GBR":"https://eu4.paradoxwikis.com/images/thumb/2/2b/Great_Britain.png/330px-Great_Britain.png","LAN":"https://eu4.paradoxwikis.com/images/thumb/d/d9/Florence.png/330px-Florence.png","ITA":"https://eu4.paradoxwikis.com/images/thumb/2/2a/Italy.png/330px-Italy.png","BRA":"https://eu4.paradoxwikis.com/images/thumb/2/28/Prussia.png/330px-Prussia.png","PRU":"https://eu4.paradoxwikis.com/images/thumb/2/28/Prussia.png/330px-Prussia.png","HAB":"assets/nations/nation-autriche.svg","AUH":"https://www.eu4cn.com/images/f/f1/Austria-Hungary.png","TUR":"assets/nations/nation-ottomans.svg","MOS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png","RUS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png"};
+const snapshotCrestByTag={"CAS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Castile.png/330px-Castile.png","SPA":"https://eu4.paradoxwikis.com/images/thumb/5/58/Spain.png/330px-Spain.png","ENG":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Royal_standard_of_England_%281406%E2%80%931603%29.svg","GBR":"https://eu4.paradoxwikis.com/images/thumb/2/2b/Great_Britain.png/330px-Great_Britain.png","LAN":"https://eu4.paradoxwikis.com/images/thumb/d/d9/Florence.png/330px-Florence.png","ITA":"https://eu4.paradoxwikis.com/images/thumb/2/2a/Italy.png/330px-Italy.png","BRA":"https://eu4.paradoxwikis.com/images/thumb/e/e3/Brandenburg.png/330px-Brandenburg.png","PRU":"https://eu4.paradoxwikis.com/images/thumb/2/28/Prussia.png/330px-Prussia.png","MOS":"https://eu4.paradoxwikis.com/images/thumb/4/41/Muscovy.png/330px-Muscovy.png","RUS":"https://eu4.paradoxwikis.com/images/thumb/e/ee/Russia.png/330px-Russia.png","HAB":"assets/nations/nation-autriche.svg","AUH":"https://www.eu4cn.com/images/f/f1/Austria-Hungary.png","TUR":"assets/nations/nation-ottomans.svg"};
 const tagOrder=["CAS","ENG","LAN","BRA","HAB","TUR","MOS"];
 const kindLabel={guerre:"Guerre",dynastie:"Dynastie",union_personnelle:"Union personnelle","désastre":"Désastre",religion:"Religion",politique:"Politique",autre:"Événement"};
 const kindIcon={guerre:"⚔",dynastie:"♛",union_personnelle:"◆","désastre":"!",religion:"✝",politique:"✦",autre:"•"};
@@ -33,7 +33,7 @@ function eventUrl(e){return e.slug==="ppo-europe"?"chroniques-europe/":`fiche/?s
 function eventHref(e,fromHome=false){return fromHome?`evenements/${eventUrl(e)}`:eventUrl(e)}
 function campaignTitle(e){return e.slug==="ppo-europe"?"Chroniques de l’Europe":(e.title||"Événement HALARYK")}
 function campaignSubtitle(e){return e.slug==="ppo-europe"?"Campagne multijoueur RP sur Europa Universalis IV":(e.subtitle||e.game_name||"")}
-function crest(p){const path=crestByTag[p?.participant_key];return path?asset(path):""}
+function crest(p){const key=p?.participant_key==="HAB"&&/Autriche-Hongrie/i.test(p?.title||"")?"AUH":p?.participant_key;const path=crestByTag[key];return path?asset(path):""}
 function sessionsCount(e){const n=Number(e?.metadata?.current_session);return Number.isFinite(n)&&n>0?n:2}
 function participantsFor(eventId){return participantMap.get(eventId)||[]}
 
@@ -56,7 +56,7 @@ function spotlight(e,fromHome=false){
     <div class="v52-campaign-card-bottom">
       <div class="v52-campaign-players"><p>LES 7 NATIONS EN JEU</p><div class="v52-player-row">${players.map(playerTile).join("")}</div></div>
       <div class="v52-campaign-metrics">
-        <div><strong>1444 → ${year(e.world_current_date)}</strong><span>Période jouée</span></div>
+        <div><strong>1444 → ${year(e.world_current_date)}</strong><span>Dernier relevé connu</span></div>
         <div><strong>${sessionsCount(e)}</strong><span>Sessions terminées</span></div>
         <div><strong>${players.length||7}</strong><span>Nations jouées</span></div>
         <div><strong>${year(e.public_chronicle_cutoff_date||e.world_current_date)}</strong><span>Chronologie publique</span></div>
@@ -164,24 +164,25 @@ function initNationCarousel(host){
   const prev=document.createElement("button"),next=document.createElement("button"),status=document.createElement("span");
   prev.type=next.type="button";prev.className="v52-nation-arrow v52-nation-prev";next.className="v52-nation-arrow v52-nation-next";prev.textContent="‹";next.textContent="›";prev.setAttribute("aria-label","Nations précédentes");next.setAttribute("aria-label","Nations suivantes");status.className="v52-nation-count";
   host.prepend(prev);host.append(next,status);
-  let page=0;
+  let page=Math.max(0,Number.parseInt(host.dataset.nationPage||"0",10)||0);
   const pageSize=()=>innerWidth<650?1:innerWidth<1050?2:4;
-  const render=()=>{const size=pageSize(),max=Math.max(0,Math.ceil(cards.length/size)-1);page=Math.min(page,max);cards.forEach((card,i)=>card.classList.toggle("v52-nation-hidden",i<page*size||i>=(page+1)*size));prev.disabled=page===0;next.disabled=page===max;status.textContent=`${page+1} / ${max+1}`};
+  const render=()=>{const size=pageSize(),max=Math.max(0,Math.ceil(cards.length/size)-1);page=Math.min(page,max);host.dataset.nationPage=String(page);cards.forEach((card,i)=>card.classList.toggle("v52-nation-hidden",i<page*size||i>=(page+1)*size));prev.disabled=page===0;next.disabled=page===max;status.textContent=`${page+1} / ${max+1}`};
   prev.addEventListener("click",()=>{page=Math.max(0,page-1);render()});next.addEventListener("click",()=>{page+=1;render()});if(host._v52ResizeHandler)removeEventListener("resize",host._v52ResizeHandler);host._v52ResizeHandler=render;addEventListener("resize",host._v52ResizeHandler,{passive:true});render();
 }
 
-function overviewMarkup(event,participants,chapters){
-  const sessions=chapters.filter(c=>c.kind==="session"&&c.status==="complete").length||sessionsCount(event);
+function overviewMarkup(event,participants,chapters,snapshots=[]){
+  const sessions=Math.max(sessionsCount(event),chapters.filter(c=>c.kind==="session"&&c.status==="complete").length);
+  const publicSessions=Math.max(0,...snapshots.map(s=>Number(s.session_number)||0));
   return `<div class="v52-overview">
     <div class="v52-overview-title"><p class="eyebrow">APERÇU</p><h2>Comprendre la campagne</h2><p>Europa Universalis IV est un jeu de grande stratégie couvrant la période 1444–1821. Ici, sept joueurs incarnent chacun une puissance et écrivent une histoire commune faite de diplomatie, de guerres, d’économie et de décisions politiques.</p></div>
     <div class="v52-overview-stats">
-      <div><span>Campagne</span><strong>1444 → ${year(event.world_current_date)}</strong><small>Période jouée</small></div>
-      <div><span>Sessions</span><strong>${sessions}</strong><small>Sessions terminées</small></div>
+      <div><span>Campagne</span><strong>1444 → ${year(event.world_current_date)}</strong><small>Dernier relevé connu</small></div>
+      <div><span>Sessions</span><strong>${sessions}</strong><small>Terminées · ${publicSessions} publiées</small></div>
       <div><span>Nations</span><strong>${participants.length||7}</strong><small>Puissances jouées</small></div>
       <div><span>Statistiques</span><strong>${year(event.public_snapshot_date)}</strong><small>Dernier relevé public</small></div>
     </div>
     <article class="v52-overview-story v52-overview-story-final">
-      <div class="v52-overview-copy"><h3>Une grande stratégie, des histoires humaines</h3><p>La partie se déroule sur plusieurs sessions et se prolonge entre elles par un véritable RP diplomatique : alliances, rivalités, traités, congrès et négociations. Le but n’est pas d’afficher un simple ledger, mais de raconter l’évolution de cette Europe alternative.</p><p>Les relevés statistiques publics couvrent la période de <strong>1444</strong> à <strong>${year(event.public_snapshot_date)}</strong>. L’onglet Nations permet de comparer librement les relevés de chacune des sessions. La chronologie narrative reste publiée séparément afin de ne rendre visibles que les événements retenus.</p></div>
+      <div class="v52-overview-copy"><h3>Une grande stratégie, des histoires humaines</h3><p>La partie se déroule sur plusieurs sessions et se prolonge entre elles par un véritable RP diplomatique : alliances, rivalités, traités, congrès et négociations. Le but n’est pas d’afficher un simple ledger, mais de raconter l’évolution de cette Europe alternative.</p><p>Les relevés statistiques publics couvrent la période de <strong>1444</strong> à <strong>${year(event.public_snapshot_date)}</strong>. L’onglet Nations permet de comparer librement les relevés publiés, indépendamment des sessions déjà jouées mais non encore documentées. La chronologie narrative reste publiée séparément afin de ne rendre visibles que les événements retenus.</p></div>
       <aside class="v52-publication-note"><strong>PUBLICATION DIFFÉRÉE</strong><span>Les relevés et événements des sessions terminées sont publiés après sélection, dans le respect de la règle « no ledger » en cours de partie.</span></aside>
     </article>
   </div>`;
@@ -252,7 +253,7 @@ async function loadEventDetail(){
   ]);
   const participants=pr.data||[],chapters=ch.data||[],snapshots=sn.data||[],entries=en.data||[],media=me.data||[],participantsById=new Map(participants.map(p=>[p.id,p]));
   const hero=$(".event-hero");if(hero){hero.classList.add("v52-event-hero-clean");const inner=$(".event-hero-inner",hero);if(inner)inner.innerHTML=`<p class="eyebrow v52-event-hero-kicker">CAMPAGNE MULTIJOUEUR RP</p><p class="v52-event-game">EUROPA UNIVERSALIS IV</p><h1>${esc(campaignTitle(event))}</h1><p class="v52-event-hero-lead">Une campagne où chaque décision compte, mais où le temps lui-même garde ses secrets.</p>`}
-  const overview=$("#apercu .section-shell");if(overview)overview.innerHTML=overviewMarkup(event,participants,chapters);
+  const overview=$("#apercu .section-shell");if(overview)overview.innerHTML=overviewMarkup(event,participants,chapters,snapshots);
   const snapshotIds=snapshots.map(s=>s.id);let stats=[];if(snapshotIds.length){const r=await db.from("site_event_snapshot_stats").select("*").in("snapshot_id",snapshotIds);stats=r.data||[]}
   const statsMap=new Map(stats.map(s=>[`${s.snapshot_id}:${s.participant_id}`,s])),nations=$("#event-nations-grid");if(nations)initNationComparison(nations,participants,snapshots,statsMap)
   const timeline=$("#event-timeline");if(timeline)renderCountryTimeline(timeline,participants,entries);
