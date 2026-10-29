@@ -102,7 +102,7 @@ function nationStat(label,value,change=""){return `<div class="v52-nation-stat">
 function snapshotBadge(snapshot){
   const n=Number(snapshot?.session_number);
   if(n===0)return "DÉBUT DE CAMPAGNE";
-  if(Number.isFinite(n)&&n>0)return `FIN SESSION ${["","I","II","III","IV","V"][n]||n}`;
+  if(Number.isFinite(n)&&n>0)return `FIN SESSION ${["","I","II","III","IV","V","VI","VII","VIII","IX","X"][n]||n}`;
   return snapshot?.label||"RELEVÉ";
 }
 function techDelta(a,b){
