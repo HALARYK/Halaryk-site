@@ -75,13 +75,14 @@ function curatedNode(ev,i){
 }
 function entryDocDate(e){return e.world_date_label||e.world_year||typeLabel(e.entry_type)}
 
-function renderChronology(host,participants,docs,byId,chapterById,overrideMap){
+function renderChronology(host,participants,docs,byId,chapterById,overrideMap,sessionEvents){
   const byTag=new Map(participants.map(p=>[p.participant_key,p]));
   let active=host.dataset.activeCountry||"CAS";
   if(!byTag.has(active))active=participants[0]?.participant_key||"CAS";
   host.dataset.activeCountry=active;
   const country=byTag.get(active)||{participant_key:active,title:active,player_name:""};
-  const events=[...(CURATED_EVENTS[active]||[])].map(base=>{
+  const sessionSix=(sessionEvents||[]).filter(e=>e.participant_id===country.id).map(e=>({date:e.world_date,type:e.entry_type,title:e.title,summary:e.summary,facts:e.data?.facts||[],context:e.data?.context||null,war:e.data?.war||null}));
+  const events=[...(CURATED_EVENTS[active]||[]),...sessionSix].map(base=>{
     const ov=overrideMap?.get(`${active}|${base.date}`),data=ov?.data||{};
     return {...base,
       type:ov?.entry_type||base.type,
@@ -117,6 +118,7 @@ async function bootCurated(){
   const ps=participants||[],byId=new Map(ps.map(p=>[p.id,p])),chapterById=new Map((chapters||[]).map(c=>[c.id,c]));
   const rows=entries||[];
   const docs=rows.filter(e=>DIPLO_TYPES.has(e.entry_type));
+  const sessionEvents=rows.filter(e=>e.source_type==="curated_session_vi"&&e.world_date&&e.data?.session===6);
   const overrideMap=new Map();
   for(const e of rows){
     if(e.source_type!=="curated_override")continue;
@@ -124,7 +126,7 @@ async function bootCurated(){
     if(m)overrideMap.set(`${m[1]}|${m[2]}`,e);
   }
   let applying=false;
-  const apply=()=>{if(applying||host.querySelector(".v52-curated-track"))return;applying=true;renderChronology(host,ps,docs,byId,chapterById,overrideMap);applying=false};
+  const apply=()=>{if(applying||host.querySelector(".v52-curated-track"))return;applying=true;renderChronology(host,ps,docs,byId,chapterById,overrideMap,sessionEvents);applying=false};
   new MutationObserver(()=>requestAnimationFrame(apply)).observe(host,{childList:true,subtree:true});
   setTimeout(apply,0);setTimeout(apply,900);
 }
