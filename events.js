@@ -181,8 +181,8 @@ function overviewMarkup(event,participants,chapters){
       <div><span>Statistiques</span><strong>${year(event.public_snapshot_date)}</strong><small>Dernier relevé public</small></div>
     </div>
     <article class="v52-overview-story v52-overview-story-final">
-      <div class="v52-overview-copy"><h3>Une grande stratégie, des histoires humaines</h3><p>La partie se déroule sur plusieurs sessions et se prolonge entre elles par un véritable RP diplomatique : alliances, rivalités, traités, congrès et négociations. Le but n’est pas d’afficher un simple ledger, mais de raconter l’évolution de cette Europe alternative.</p><p>Les relevés statistiques publics couvrent désormais <strong>1444</strong>, <strong>1481</strong> et <strong>${year(event.public_snapshot_date)}</strong>. L’onglet Nations permet de comparer librement deux de ces dates. La chronologie narrative reste publiée séparément afin de ne rendre visibles que les événements retenus.</p></div>
-      <aside class="v52-publication-note"><strong>PUBLICATION DIFFÉRÉE</strong><span>Les données récentes restent cachées pour préserver la diplomatie, la découverte et la règle « no ledger ».</span></aside>
+      <div class="v52-overview-copy"><h3>Une grande stratégie, des histoires humaines</h3><p>La partie se déroule sur plusieurs sessions et se prolonge entre elles par un véritable RP diplomatique : alliances, rivalités, traités, congrès et négociations. Le but n’est pas d’afficher un simple ledger, mais de raconter l’évolution de cette Europe alternative.</p><p>Les relevés statistiques publics couvrent la période de <strong>1444</strong> à <strong>${year(event.public_snapshot_date)}</strong>. L’onglet Nations permet de comparer librement les relevés de chacune des sessions. La chronologie narrative reste publiée séparément afin de ne rendre visibles que les événements retenus.</p></div>
+      <aside class="v52-publication-note"><strong>PUBLICATION DIFFÉRÉE</strong><span>Les relevés et événements des sessions terminées sont publiés après sélection, dans le respect de la règle « no ledger » en cours de partie.</span></aside>
     </article>
   </div>`;
 }
