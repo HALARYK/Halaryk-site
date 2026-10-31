@@ -174,7 +174,7 @@
   .admin-header>div{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
   .admin-shell{width:100%!important;margin:0 auto 36px!important}
   .admin-sidebar{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;position:sticky!important;top:68px!important;z-index:40;width:100%;padding:10px;gap:6px;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin}
-  .admin-sidebar button{flex:0 0 auto;min-width:max-content;min-height:45px;padding:12px 15px!important;border:1px solid rgba(183,147,100,.2)!important;border-left:1px solid rgba(183,147,100,.2)!important;scroll-snap-align:start}
+  .admin-sidebar button{flex:0 0 auto;width:auto!important;min-width:max-content;min-height:45px;padding:12px 15px!important;border:1px solid rgba(183,147,100,.2)!important;border-left:1px solid rgba(183,147,100,.2)!important;scroll-snap-align:start}
   .admin-sidebar button.active{border-color:#b79364!important;box-shadow:inset 0 -2px #b79364}
   .admin-content{min-width:0;padding:20px 16px!important}
   .admin-content>section,.admin-card,.admin-subform,.v52-event-panel{min-width:0;max-width:100%;overflow-wrap:anywhere}
