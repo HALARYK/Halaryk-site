@@ -46,14 +46,14 @@ function redirectLegacyHash(){
 }
 function initNavigation(){
   const menu=$(".menu-toggle"),nav=$(".nav"),drop=$(".nav-dropdown"),dropBtn=$(".nav-dropdown-button"),menuText=$(".menu-toggle .sr-only");
-  const isMobile=()=>innerWidth<=880;
+  const isMobile=()=>innerWidth<=900;
   const closeNav=()=>{nav?.classList.remove("open");document.body.classList.remove("menu-open");menu?.setAttribute("aria-expanded","false");if(menuText)menuText.textContent="Ouvrir le menu";if(!isMobile()){drop?.classList.remove("open");dropBtn?.setAttribute("aria-expanded","false")}};
   menu?.addEventListener("click",()=>{const open=nav.classList.toggle("open");document.body.classList.toggle("menu-open",open);menu.setAttribute("aria-expanded",String(open));if(menuText)menuText.textContent=open?"Fermer le menu":"Ouvrir le menu";if(open&&isMobile()){drop?.classList.add("open");dropBtn?.setAttribute("aria-expanded","true")}});
   dropBtn?.addEventListener("click",e=>{if(isMobile())return;e.stopPropagation();const open=drop.classList.toggle("open");dropBtn.setAttribute("aria-expanded",String(open))});
   document.addEventListener("click",e=>{if(!isMobile()&&drop&&!drop.contains(e.target)){drop.classList.remove("open");dropBtn?.setAttribute("aria-expanded","false")}});
   document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
   $$(".nav a").forEach(a=>a.addEventListener("click",()=>closeNav()));
-  window.addEventListener("resize",()=>{if(innerWidth>880)closeNav()});
+  window.addEventListener("resize",()=>{if(innerWidth>900)closeNav()});
   const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");ro.unobserve(e.target)}}),{threshold:.1});
   $$(".reveal").forEach(e=>ro.observe(e));
 }
