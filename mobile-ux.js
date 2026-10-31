@@ -154,7 +154,16 @@ function enhanceChronology() {
     const track = $(".v52-curated-track", host);
     if (!track || track === lastTrack) return;
     lastTrack = track;
-    const items = $$(".v52-curated-node", track);
+    // Après un changement de pays, garder l'onglet sélectionné visible.
+    const tabs = $(".v52-country-tabs", host);
+    const currentTab = $(".v52-country-tabs button.active", host);
+    if (onPhone() && tabs && currentTab) requestAnimationFrame(() => {
+      const left = currentTab.getBoundingClientRect().left -
+        tabs.getBoundingClientRect().left + tabs.scrollLeft -
+        (tabs.clientWidth - currentTab.clientWidth) / 2;
+      tabs.scrollLeft = Math.max(0, left);
+    });
+    const items = $(".v52-curated-node", track);
     const wrapper = track.parentElement;
     wrapper.querySelector(".mobile-ux-chronology-more")?.remove();
     if (items.length <= 12) return;
