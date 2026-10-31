@@ -85,7 +85,7 @@ function enhanceNavigation() {
   });
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && nav.classList.contains("open")) closeNavigation({returnFocus:true});
-  });
+  }, true);
   window.addEventListener("hashchange", () => closeNavigation());
   window.addEventListener("resize", () => { if (!onPhone()) closeNavigation(); }, {passive:true});
   menu.addEventListener("click", () => {
