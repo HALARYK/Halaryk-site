@@ -1,3 +1,8 @@
+/* Helpers hors breakpoint : aucun élément mobile visible sur ordinateur. */
+.mobile-ux-dock,.mobile-ux-chronology-more{display:none}
+.mobile-ux-chronology-more[hidden]{display:none!important}
+.mobile-ux-skip-link{position:fixed;z-index:20000;left:14px;top:-80px;padding:13px 17px;border:1px solid #b79364;background:#100c0b;color:#fff;font:600 13px var(--sans);text-decoration:none}
+.mobile-ux-skip-link:focus{top:12px}
 /* HALARYK — ergonomie mobile V5.3
    Couleurs et typographies existantes conservées.
    Ne s'applique au site public que sous 900px. */
@@ -8,6 +13,7 @@
   body:not(.admin-body){overflow-x:clip;padding-bottom:calc(var(--mobile-dock-h) + env(safe-area-inset-bottom,0px))}
   body:not(.admin-body).menu-open{overflow:hidden}
   body:not(.admin-body) .topbar{height:var(--mobile-header-h);padding-inline:16px;gap:12px;z-index:1001}
+  body:not(.admin-body) .topbar .v52-header-socials{display:none!important}
   body:not(.admin-body) .brand{min-width:0;flex:0 0 auto}
   body:not(.admin-body) .brand-name{display:inline;font-size:12px;letter-spacing:.13em}
   body:not(.admin-body) .menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;order:3;margin-left:0;width:46px;height:46px;padding:10px;border:1px solid rgba(183,147,100,.22);background:rgba(19,13,12,.62);z-index:1002;cursor:pointer}
@@ -33,7 +39,7 @@
   body:not(.admin-body) .nav .v52-menu-popover a{display:flex;align-items:center;min-height:46px;padding:10px 13px;border:0;color:#c8baac;font:500 14px/1.3 var(--sans);text-transform:none;letter-spacing:0}
   body:not(.admin-body) .nav .v52-menu-popover a:active,body:not(.admin-body) .nav .v52-menu-popover a:focus-visible{background:rgba(118,25,25,.22);color:#fff}
   body:not(.admin-body) .nav .mobile-nav-footer{margin-top:20px;flex:0 0 auto;justify-content:center;padding-top:20px}
-  body:not(.admin-body) .nav .v52-social-icon{width:44px;height:44px;border:1px solid rgba(183,147,100,.22)!important}
+  body:not(.admin-body) .nav .v52-social-icon{width:44px;height:44px;min-height:44px!important;padding:0!important;border:1px solid rgba(183,147,100,.22)!important}
   body:not(.admin-body) .nav .v52-social-icon svg{width:19px;height:19px}
   body:not(.admin-body) .user-menu{right:0;max-width:min(310px,calc(100vw - 20px))}
   .mobile-ux-dock{position:fixed;z-index:999;inset:auto 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));height:calc(var(--mobile-dock-h) + env(safe-area-inset-bottom,0px));padding:5px max(9px,env(safe-area-inset-left,0px)) calc(5px + env(safe-area-inset-bottom,0px)) max(9px,env(safe-area-inset-right,0px));border-top:1px solid rgba(183,147,100,.28);background:rgba(7,6,6,.97);backdrop-filter:blur(20px);box-shadow:0 -9px 40px rgba(0,0,0,.52)}
@@ -164,10 +170,10 @@
 /* Administration — la gestion reste utilisable sur téléphone. */
 @media(max-width:900px){
   .admin-body,.admin-body main,.admin-shell,.admin-content,.admin-card{min-width:0;max-width:100%}
-  .admin-header{height:auto;min-height:68px;gap:10px;flex-wrap:wrap;padding:12px 15px}
+  .admin-header{position:sticky!important;top:0;z-index:50!important;height:auto;min-height:68px;gap:10px;flex-wrap:wrap;padding:12px 15px}
   .admin-header>div{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
   .admin-shell{width:100%!important;margin:0 auto 36px!important}
-  .admin-sidebar{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;position:sticky;top:0;z-index:40;width:100%;padding:10px;gap:6px;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin}
+  .admin-sidebar{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;position:sticky!important;top:68px!important;z-index:40;width:100%;padding:10px;gap:6px;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin}
   .admin-sidebar button{flex:0 0 auto;min-width:max-content;min-height:45px;padding:12px 15px!important;border:1px solid rgba(183,147,100,.2)!important;border-left:1px solid rgba(183,147,100,.2)!important;scroll-snap-align:start}
   .admin-sidebar button.active{border-color:#b79364!important;box-shadow:inset 0 -2px #b79364}
   .admin-content{min-width:0;padding:20px 16px!important}
