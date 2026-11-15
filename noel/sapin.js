@@ -192,6 +192,7 @@ function buildModal(root,api){
   root.querySelectorAll('[data-christmas-close]').forEach(b=>b.addEventListener('click',()=>hide(b.closest('.christmas-modal,.christmas-message'))));
   [modal,viewer].forEach(m=>m.addEventListener('click',e=>{if(e.target===m)hide(m);}));
   window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!viewer.hidden)hide(viewer);else if(!modal.hidden)hide(modal);}});
+  start.disabled=false;
   start.addEventListener('click',()=>show(modal));
   form.addEventListener('submit',e=>{
     e.preventDefault();if(active)return;
