@@ -52,3 +52,4 @@
 @media (max-width:950px){.christmas-layout{grid-template-columns:1fr}.christmas-stage{min-height:600px}.christmas-info{max-width:650px;margin:auto;text-align:center}.christmas-steps{max-width:460px;margin:20px auto 26px;text-align:left}}
 @media (max-width:620px){.christmas-home .christmas-shell{width:calc(100% - 26px)}.christmas-home{padding:48px 0}.christmas-stage{min-height:min(72dvh,550px);border-radius:13px}.christmas-heading>p:last-child{font-size:12px}.christmas-stage .stage-caption{font-size:10px;left:10px;right:10px}.christmas-info h3{font-size:38px}}
 @media (prefers-reduced-motion:reduce){.christmas-cta,.christmas-modal button[type="submit"]{transition:none}}
+.christmas-stage .christmas-loading[hidden]{display:none!important}
