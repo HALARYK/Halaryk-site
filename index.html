@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="v5.1.css">
   <link rel="stylesheet" href="v5.2-redesign.css">
   <link rel="stylesheet" href="v5.2-final.css">
+  <link rel="stylesheet" href="noel/sapin.css">
 </head>
 <body data-page="home">
 <header class="topbar" id="top">
@@ -37,11 +38,63 @@
     <p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
   </div>
 </section>
-<section class="section home-event-section v52-home-event-section" aria-label="Événement à la une">
-  <div class="section-shell reveal"><div id="home-feature-event" class="home-feature-event"><div class="empty-state"><strong>Chargement de l’événement…</strong></div></div></div>
+<section class="christmas-home" id="sapin-communautaire" data-christmas-root aria-label="Le sapin communautaire de Noël">
+  <div class="christmas-shell">
+    <header class="christmas-heading">
+      <p class="christmas-eyebrow">HALARYK · NOËL 2026</p>
+      <h2>Notre sapin <em>communautaire</em></h2>
+      <p>Cette année, ce sont les viewers qui feront briller le sapin. Une boule, un message, une petite place dans l'histoire de la communauté.</p>
+    </header>
+    <div class="christmas-layout">
+      <div class="christmas-stage" data-christmas-stage>
+        <div class="christmas-loading" data-christmas-loading>Chargement du sapin 3D…</div>
+        <div class="stage-caption"><span>Faites glisser pour tourner le sapin</span><span data-christmas-count>Aucune boule · Avant-première</span></div>
+      </div>
+      <div class="christmas-info">
+        <span class="christmas-number">01 / DÉCEMBRE</span>
+        <h3>Une boule. Un mot.<br>Un souvenir.</h3>
+        <p>Un sapin vert, de la lumière et des cadeaux. Les décorations viendront de vous, une par une, à partir de décembre.</p>
+        <ol class="christmas-steps">
+          <li><span>01</span> Connectez-vous avec votre compte Twitch.</li>
+          <li><span>02</span> Choisissez une boule dans notre collection.</li>
+          <li><span>03</span> Laissez votre message, signé ou anonyme.</li>
+          <li><span>04</span> Votre boule rejoindra le sapin. Chacun pourra la découvrir.</li>
+        </ol>
+        <button class="christmas-cta" type="button" data-christmas-add>Essayer une boule en avant-première</button>
+        <small class="christmas-footnote">Aperçu uniquement : les messages d'essai ne sont ni publiés ni enregistrés. La participation ouvrira le 1er décembre.</small>
+        <a class="christmas-return" href="evenements/chroniques-europe/" data-christmas-eu4>Retrouver les Chroniques de l'Europe</a>
+      </div>
+    </div>
+  </div>
+  <div class="christmas-modal" data-christmas-modal hidden role="dialog" aria-modal="true" aria-label="Prévisualiser une boule">
+    <div class="christmas-dialog">
+      <button class="christmas-close" type="button" data-christmas-close aria-label="Fermer">×</button>
+      <p class="christmas-eyebrow">UNE BOULE POUR LE SAPIN</p>
+      <h3>Choisis ta décoration</h3>
+      <p>Fais défiler la collection de gauche à droite pour choisir ton style.</p>
+      <form data-christmas-form>
+        <div class="christmas-swatches" data-christmas-swatches aria-label="Choix de la boule"></div>
+        <label for="christmas-preview-message">Ton message</label>
+        <textarea name="message" id="christmas-preview-message" required maxlength="180" placeholder="Un mot à laisser sur le sapin…"></textarea>
+        <label class="anonymous-label"><input type="checkbox" name="anonymous"> Afficher mon message anonymement</label>
+        <p class="christmas-note">Démonstration locale : ce message ne sera jamais envoyé à Supabase.</p>
+        <button type="submit">Placer ma boule d'essai</button>
+      </form>
+    </div>
+  </div>
+  <div class="christmas-message" data-christmas-message hidden role="dialog" aria-modal="true" aria-label="Message accroché au sapin">
+    <div class="christmas-dialog christmas-message-card">
+      <button class="christmas-close" type="button" data-christmas-close aria-label="Fermer">×</button>
+      <p class="christmas-eyebrow">UN MESSAGE SUR LE SAPIN</p>
+      <h3>Une pensée de Noël</h3>
+      <div class="message-body" data-message-content></div>
+      <p class="message-author" data-message-author></p>
+    </div>
+  </div>
 </section>
 <footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
 </main>
 <script type="module" src="app.js"></script>
 <script type="module" src="events.js"></script>
+<script type="module" src="noel/sapin.js"></script>
 </body></html>
