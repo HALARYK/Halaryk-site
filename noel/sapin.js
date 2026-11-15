@@ -162,8 +162,13 @@
   }
   function create3D(){
     if(!globalThis.THREE)throw new Error('Three.js est indisponible.');
-    const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.35));
+    let renderer;
+    try {
+      renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'default'});
+    } catch(firstError) {
+      renderer=new THREE.WebGLRenderer({alpha:true,antialias:false,powerPreference:'default'});
+    }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.2));
     renderer.setClearColor(0x000000,0);
     renderer.outputEncoding=THREE.sRGBEncoding;
     renderer.toneMapping=THREE.ACESFilmicToneMapping;
@@ -320,7 +325,16 @@
     finally{submit.disabled=false;}
   });
   // Une seule initialisation WebGL, sans attente d'authentification.
-  try{sceneApi=create3D();}catch(err){console.error('Sapin 3D :',err);loading.textContent='Affichage 3D indisponible. Le reste du site reste accessible.';}
+  try {
+    sceneApi=create3D();
+  } catch(err) {
+    console.error('Sapin 3D :',err);
+    const reason=String(err?.message||err||'').toLowerCase();
+    const hasWebGL=/webgl|context|gpu|render/i.test(reason);
+    loading.textContent=hasWebGL
+      ? 'WebGL est indisponible sur ce navigateur ou cet appareil. Active l’accélération graphique puis recharge la page.'
+      : 'Le sapin 3D n’a pas pu démarrer. Ouvre la console du navigateur pour voir l’erreur.';
+  }
   updateAuthState();
   if(location.protocol!=='file:'){
     getDb().then(async client=>{
