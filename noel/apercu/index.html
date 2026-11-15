@@ -1,35 +1,63 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Avant-première — Sapin communautaire HALARYK</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../sapin.css"><style>body{margin:0;background:#080808;color:#eee}*{box-sizing:border-box}.preview-top{padding:15px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:#0a0909;border-bottom:1px solid #79615d39;font:600 12px Inter,sans-serif;letter-spacing:.14em}.preview-top span{color:#bda79f;font-weight:400;font-size:11px;letter-spacing:0}.preview-footer{text-align:center;color:#a68b82;padding:32px;font:12px Inter,sans-serif}</style></head>
-<body><div class="preview-top">HALARYK <span>BRANCHE DE PRÉVISUALISATION · NON PUBLIÉ</span></div>
-<section class="christmas-home" id="sapin-communautaire" data-christmas-root aria-label="Le sapin communautaire de Noël">
-  <div class="christmas-shell">
-    <header class="christmas-heading">
-      <p class="christmas-eyebrow">HALARYK · NOËL 2026</p>
-      <h2>Notre sapin <em>communautaire</em></h2>
-      <p>Cette année, ce sont les viewers qui feront briller le sapin. Une boule, un message, une petite place dans l'histoire de la communauté.</p>
-    </header>
-    <div class="christmas-layout">
+<html lang="fr">
+<head>
+  <base href="../../">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.igdb.com https://static-cdn.jtvnw.net https:; frame-src https://clips.twitch.tv https://player.twitch.tv; connect-src 'self' https://cdn.jsdelivr.net https://elnyjjasqfizkimoljvz.supabase.co wss://elnyjjasqfizkimoljvz.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080707">
+  <meta name="description" content="Site officiel de HALARYK : Twitch, événements, contenu et communauté.">
+  <title>Aperçu de Noël — HALARYK (non publié)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="v5.1.css">
+  <link rel="stylesheet" href="v5.2-redesign.css">
+  <link rel="stylesheet" href="v5.2-final.css">
+  <link rel="stylesheet" href="noel/sapin.css">
+</head>
+<body data-page="home">
+<header class="topbar" id="top">
+  <a class="brand" href=""><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
+  <div class="v52-header-socials" data-social-target="header" aria-label="Réseaux sociaux"></div>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
+  <nav id="main-nav" class="nav"><a class="active" href="">Accueil</a><a href="evenements/">Événements</a><a href="contenu/">Contenu</a><a href="communaute/">Communauté</a><a href="infos/">Infos</a></nav>
+  <div class="auth-slot"><button id="login-button" class="auth-button" type="button">Connexion Twitch</button><button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button><div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div></div>
+</header>
+<main>
+<section id="accueil" class="hero home-hero v52-home-hero">
+  <div class="hero-background" aria-hidden="true"></div><div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content reveal">
+    <p class="hero-kicker">STREAMER TWITCH FRANÇAIS</p>
+    <h1>HALARYK</h1>
+    <p class="hero-genres">STRATÉGIE · HORREUR · GESTION · MULTIJOUEUR · DÉCOUVERTES</p>
+    <p class="hero-description">Je streame principalement de la stratégie, de la gestion, de l’horreur et du multijoueur, dans une ambiance posée et sans prise de tête.</p>
+    <div id="live-card" class="live-card"><span id="live-dot" class="live-dot"></span><div><strong id="live-label">Statut Twitch</strong><span id="live-detail">Chargement du statut…</span></div></div>
+    <div class="hero-actions"><a class="button button-primary" href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer">Regarder sur Twitch ↗</a><a class="button button-ghost" href="evenements/">Explorer le site</a></div>
+    <p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
+  </div>
+</section>
+<section class="section home-event-section v52-home-event-section halaryk-tree" id="sapin-communautaire" data-christmas-root aria-label="Le sapin communautaire de Noël">
+  <div class="section-shell">
+    <div class="section-heading">
+      <span class="section-number" aria-hidden="true">✦</span>
+      <div><p class="eyebrow">NOËL 2026 · HALARYK</p><h2>Le sapin communautaire</h2></div>
+    </div>
+    <div class="halaryk-tree-frame">
       <div class="christmas-stage" data-christmas-stage>
-        <div class="christmas-loading" data-christmas-loading>Chargement du sapin 3D…</div>
-        <div class="stage-caption"><span>Faites glisser pour tourner le sapin</span><span data-christmas-count>Aucune boule · Avant-première</span></div>
+        <div class="christmas-loading" data-christmas-loading>Le sapin 3D se prépare…</div>
+        <div class="stage-caption"><span>Glisser pour faire tourner</span><span data-christmas-count>Aucune boule · Aperçu</span></div>
       </div>
       <div class="christmas-info">
-        <span class="christmas-number">01 / DÉCEMBRE</span>
-        <h3>Une boule. Un mot.<br>Un souvenir.</h3>
-        <p>Un sapin vert, de la lumière et des cadeaux. Les décorations viendront de vous, une par une, à partir de décembre.</p>
-        <ol class="christmas-steps">
-          <li><span>01</span> Connectez-vous avec votre compte Twitch.</li>
-          <li><span>02</span> Choisissez une boule dans notre collection.</li>
-          <li><span>03</span> Laissez votre message, signé ou anonyme.</li>
-          <li><span>04</span> Votre boule rejoindra le sapin. Chacun pourra la découvrir.</li>
-        </ol>
-        <button class="christmas-cta" type="button" data-christmas-add>Essayer une boule en avant-première</button>
-        <small class="christmas-footnote">Aperçu uniquement : les messages d'essai ne sont ni publiés ni enregistrés. La participation ouvrira le 1er décembre.</small>
-        <a class="christmas-return" href="../../evenements/chroniques-europe/" data-christmas-eu4>Retrouver les Chroniques de l'Europe</a>
+        <p class="eyebrow">UNE PLACE DANS LE SAPIN</p>
+        <h3>Une boule. Un message.</h3>
+        <p>Pour Noël, ce sont les viewers qui décoreront le sapin. Choisis une boule, écris un petit mot et laisse-le découvrir à la communauté.</p>
+        <p>Chaque décoration pourra être ouverte pour lire son message, signé ou anonyme.</p>
+        <button class="button button-primary" type="button" data-christmas-add>Essayer une boule</button>
+        <small class="christmas-footnote">Avant-première : les essais ne sont pas enregistrés. Ouverture le 1er décembre.</small>
+        <a class="christmas-return" href="evenements/chroniques-europe/" data-christmas-eu4>Retrouver les Chroniques de l'Europe</a>
       </div>
     </div>
   </div>
@@ -59,5 +87,12 @@
     </div>
   </div>
 </section>
-<footer class="preview-footer">Noël 2026 — Aperçu graphique et interaction locale uniquement</footer>
-<script type="module" src="../sapin.js"></script></body></html>
+<footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
+</main>
+<script type="module" src="app.js"></script>
+<script type="module" src="events.js"></script>
+<script type="module">
+  const root=document.querySelector("[data-christmas-root]");
+  if(root){const observer=new IntersectionObserver((entries)=>{if(!entries.some(e=>e.isIntersecting))return;observer.disconnect();import("./noel/sapin.js").catch(()=>{const l=root.querySelector("[data-christmas-loading]");if(l)l.textContent="Le sapin 3D ne peut pas se charger sur cet appareil.";});},{rootMargin:"350px"});observer.observe(root);}
+</script>
+</body></html>
