@@ -258,10 +258,13 @@ function bootChristmas(root){
   const resize=()=>{const w=stage.clientWidth,h=stage.clientHeight; if(!w||!h)return;renderer.setSize(w,h,false);camera.aspect=w/h;
     const narrow=w<480;camera.fov=narrow?41:32;camera.position.set(narrow?8.8:8.4,narrow?5.0:5.15,narrow?15.9:13.0);camera.lookAt(0,3.15,0);camera.updateProjectionMatrix();};
   const observer=new ResizeObserver(resize);observer.observe(stage);resize();loading.hidden=true;
+  let visible=true;
+  const observerVisibility=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting??true;},{threshold:.01});
+  observerVisibility.observe(stage);
   let last=performance.now();
   const animate=now=>{requestAnimationFrame(animate);const delta=Math.min(.06,(now-last)/1000);last=now;
     if(!paused&&!drag&&!reduceMotion.matches&&document.visibilityState==='visible')group.rotation.y+=delta*.035;
     glow.material.opacity=.66+Math.sin(now*.00075)*.10;
-    renderer.render(scene,camera);
+    if(visible&&document.visibilityState==='visible')renderer.render(scene,camera);
   };requestAnimationFrame(animate);
 }
