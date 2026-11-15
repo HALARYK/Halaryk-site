@@ -91,8 +91,5 @@
 </main>
 <script type="module" src="app.js"></script>
 <script type="module" src="events.js"></script>
-<script type="module">
-  const root=document.querySelector("[data-christmas-root]");
-  if(root){const observer=new IntersectionObserver((entries)=>{if(!entries.some(e=>e.isIntersecting))return;observer.disconnect();import("./noel/sapin.js").catch(()=>{const l=root.querySelector("[data-christmas-loading]");if(l)l.textContent="Le sapin 3D ne peut pas se charger sur cet appareil.";});},{rootMargin:"350px"});observer.observe(root);}
-</script>
+<script type="module" src="noel/loader.js"></script>
 </body></html>
