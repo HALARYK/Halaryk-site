@@ -25,11 +25,11 @@ const COLOR_STYLES=[
 function makeNeedleCluster(){
   const vertices=[];
   // Faisceaux de fines aiguilles, non pas des cônes : rendu sylvestre de près.
-  for(let ring=0;ring<9;ring++){
+  for(let ring=0;ring<7;ring++){
     const z=ring*.043;
-    const taper=1-ring/10;
-    for(let side=0;side<5;side++){
-      const angle=(side/5)*TAU+(ring%2)*.42;
+    const taper=1-ring/8;
+    for(let side=0;side<4;side++){
+      const angle=(side/4)*TAU+(ring%2)*.42;
       const axis=Math.cos(angle),rise=Math.sin(angle);
       const span=(.075+.075*taper)*(side%2?0.91:1.15);
       const zTip=z+.055+.035*taper;
@@ -61,10 +61,10 @@ function createFir(group){
   const helper=new THREE.Object3D();
   const Z=new THREE.Vector3(0,0,1),out=new THREE.Vector3();
   const foliageColors=['#153b30','#1d4e3a','#26563e','#315a41','#294c3a','#376249','#194535'];
-  for(let layer=0;layer<34;layer++){
-    const y=.48+layer*.171;
+  for(let layer=0;layer<26;layer++){
+    const y=.48+layer*.225;
     const t=y/H, radius=foliageRadius(y);
-    const count=Math.round(16-6*t);
+    const count=Math.round(13-5*t);
     for(let i=0;i<count;i++){
       const angle=TAU*(i/count+layer*.6180339)+(rnd()-.5)*.19;
       const reach=radius*(.83+.20*rnd());
@@ -74,12 +74,12 @@ function createFir(group){
       const primary=b.clone().sub(a);
       branchMatrices.push(makeBranch(lerp(.027,.012,t),primary.length(),a,b));
       const tang=primary.clone().normalize();
-      const positions=Math.max(4,Math.round(14-7*t));
+      const positions=Math.max(4,Math.round(10-5*t));
       for(let k=1;k<=positions;k++){
         const along=k/(positions+.55);
         const origin=a.clone().lerp(b,along);
-        for(let side=0;side<3;side++){
-          const swirl=(side-1)*(.49+.2*rnd());
+        for(let side=0;side<2;side++){
+          const swirl=(side===0?-1:1)*(.49+.2*rnd());
           const yaw=angle+swirl;
           const vector=new THREE.Vector3(Math.cos(yaw),-.08-.12*rnd(),Math.sin(yaw)).normalize();
           const pos=origin.clone().addScaledVector(vector,(rnd()-.5)*.085);
@@ -87,7 +87,7 @@ function createFir(group){
           out.copy(vector).addScaledVector(tang,.19).normalize();
           helper.quaternion.setFromUnitVectors(Z,out);
           helper.rotateZ(rnd()*TAU);
-          helper.scale.setScalar((.77+rnd()*.56)*Math.min(1, .25+.95*(1-t)));
+          helper.scale.setScalar((1.0+rnd()*.60)*Math.min(1, .25+.95*(1-t)));
           helper.updateMatrix();sprigMatrices.push(helper.matrix.clone());
           const c=new THREE.Color(foliageColors[Math.floor(rnd()*foliageColors.length)]);
           c.multiplyScalar(.84+rnd()*.25);sprigColors.push(c);
@@ -114,7 +114,7 @@ function makeGlowTexture(){
   const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;
 }
 function addLights(group,info){
-  const points=[];const samples=550;
+  const points=[];const samples=240;
   for(let i=0;i<=samples;i++){
     const t=i/samples;const y=.68+t*5.65;
     const a=t*TAU*8.9+.7;
@@ -125,8 +125,8 @@ function addLights(group,info){
   group.add(wire);
   const positions=[];const matrices=[];
   const ball=new THREE.Object3D();
-  for(let i=0;i<152;i++){
-    const p=points[Math.floor((i+.5)*samples/152)];positions.push(p.x,p.y,p.z);
+  for(let i=0;i<92;i++){
+    const p=points[Math.floor((i+.5)*samples/92)];positions.push(p.x,p.y,p.z);
     ball.position.copy(p);ball.scale.setScalar(.034+(i%6===0?.011:0));ball.updateMatrix();matrices.push(ball.matrix.clone());
   }
   const lamp=new THREE.InstancedMesh(new THREE.SphereGeometry(1,7,5),new THREE.MeshBasicMaterial({color:0xffe0a0}),matrices.length);
@@ -187,8 +187,8 @@ function buildModal(root,api){
     const label=document.createElement('span');label.textContent=style.name;b.append(mark,label);
     b.addEventListener('click',()=>{selected=i;update();});swatches.append(b);
   });update();
-  function show(m){previousFocus=document.activeElement;m.hidden=false;api.setPaused(true);m.querySelector('[data-christmas-close]')?.focus();}
-  function hide(m){m.hidden=true;api.setPaused(false);previousFocus?.focus?.();}
+  function show(m){previousFocus=document.activeElement;m.hidden=false;root.classList.add('christmas-dialog-open');api.setPaused(true);m.querySelector('[data-christmas-close]')?.focus();}
+  function hide(m){m.hidden=true;root.classList.toggle('christmas-dialog-open',!modal.hidden||!viewer.hidden);api.setPaused(!modal.hidden||!viewer.hidden);previousFocus?.focus?.();}
   root.querySelectorAll('[data-christmas-close]').forEach(b=>b.addEventListener('click',()=>hide(b.closest('.christmas-modal,.christmas-message'))));
   [modal,viewer].forEach(m=>m.addEventListener('click',e=>{if(e.target===m)hide(m);}));
   window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!viewer.hidden)hide(viewer);else if(!modal.hidden)hide(modal);}});
@@ -218,7 +218,7 @@ function bootChristmas(root){
   if(!window.WebGLRenderingContext){loading.textContent='Ce navigateur ne prend pas en charge WebGL.';return;}
   let renderer;
   try{renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'});}catch(err){loading.textContent='Impossible de lancer le rendu 3D sur cet appareil.';return;}
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.7));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.2));
   renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.48;
   renderer.setClearColor(0x000000,0);stage.append(renderer.domElement);
   const scene=new THREE.Scene();
