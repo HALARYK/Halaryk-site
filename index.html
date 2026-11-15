@@ -20,7 +20,11 @@
 <body data-page="home">
 <header class="topbar" id="top">
   <a class="brand" href=""><span class="brand-mark">H</span><span class="brand-name">HALARYK</span></a>
-  <div class="v52-header-socials" data-social-target="header" aria-label="Réseaux sociaux"></div>
+  <div class="v52-header-socials" data-social-target="header" aria-label="Réseaux sociaux">
+    <a class="v52-social-icon" href="https://www.twitch.tv/halaryk" target="_blank" rel="noopener noreferrer" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h17v12l-5 5h-4l-3 3v-3H4V3Zm2 2v13h5v2l2-2h3l3-3V5H6Zm4 3h2v6h-2V8Zm5 0h2v6h-2V8Z"/></svg></a>
+    <a class="v52-social-icon" href="https://www.instagram.com/halaryk_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.8" r="1"/></svg></a>
+    <a class="v52-social-icon" href="https://discord.gg/yCQjxRh6MV" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.3 5.6A14.4 14.4 0 0 1 10 5l.5 1a11 11 0 0 1 3 0l.5-1c1 .1 1.9.3 2.8.6 2 2.7 2.5 5.3 2.2 7.9-1.2 1-2.4 1.6-3.7 2l-.9-1.2c.7-.3 1.3-.6 1.9-1.1-.2.1-.4.2-.6.3-2.4 1.1-5 1.1-7.4 0l-.6-.3c.6.5 1.2.8 1.9 1.1l-.9 1.2a12.8 12.8 0 0 1-3.7-2c-.3-2.6.2-5.2 2.3-7.9ZM9.4 11c0 1 .6 1.8 1.4 1.8.8 0 1.4-.8 1.4-1.8s-.6-1.8-1.4-1.8c-.8 0-1.4.8-1.4 1.8Zm4.4 0c0 1 .6 1.8 1.4 1.8.8 0 1.4-.8 1.4-1.8Z"/></svg></a>
+  </div>
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Ouvrir le menu</span></button>
   <nav id="main-nav" class="nav"><a class="active" href="">Accueil</a><a href="evenements/">Événements</a><a href="contenu/">Contenu</a><a href="communaute/">Communauté</a><a href="infos/">Infos</a></nav>
   <div class="auth-slot"><button id="login-button" class="auth-button" type="button">Connexion Twitch</button><button id="user-button" class="user-chip hidden" type="button"><img id="user-avatar" alt=""><span id="user-name"></span></button><div id="user-menu" class="user-menu hidden"><a id="admin-link" class="hidden" href="admin/">Administration</a><button id="logout-button" type="button">Déconnexion</button></div></div>
@@ -38,57 +42,55 @@
     <p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
   </div>
 </section>
-<section class="section home-event-section v52-home-event-section halaryk-tree" id="sapin-communautaire" data-christmas-root aria-label="Le sapin communautaire de Noël">
+<section class="section home-event-section v52-home-event-section halaryk-tree decor-left" id="sapin-communautaire" data-christmas-root>
   <div class="section-shell">
-    <div class="section-heading">
+    <div class="section-heading halaryk-tree-heading">
       <span class="section-number" aria-hidden="true">✦</span>
-      <div><p class="eyebrow">NOËL 2026 · HALARYK</p><h2>Le sapin communautaire</h2></div>
+      <div><p class="eyebrow">DÉCEMBRE 2026 · HALARYK</p><h2>Le sapin communautaire</h2></div>
     </div>
-    <div class="halaryk-tree-frame">
-      <div class="christmas-stage" data-christmas-stage>
-        <div class="christmas-loading" data-christmas-loading>Le sapin 3D se prépare…</div>
-        <div class="stage-caption"><span>Glisser pour faire tourner</span><span data-christmas-count>Aucune boule · Aperçu</span></div>
+    <div class="halaryk-tree-layout">
+      <div class="halaryk-tree-scene" data-tree-stage role="region" aria-label="Sapin de Noël en trois dimensions">
+        <div class="halaryk-tree-loading" data-tree-loading>Le sapin se prépare…</div>
+        <div class="halaryk-tree-scene-footer">
+          <span>Faire glisser pour tourner le sapin</span>
+          <span data-tree-count>Le sapin attend vos messages</span>
+        </div>
       </div>
-      <div class="christmas-info">
-        <p class="eyebrow">UNE PLACE DANS LE SAPIN</p>
-        <h3>Une boule. Un message.</h3>
-        <p>Pour Noël, ce sont les viewers qui décoreront le sapin. Choisis une boule, écris un petit mot et laisse-le découvrir à la communauté.</p>
-        <p>Chaque décoration pourra être ouverte pour lire son message, signé ou anonyme.</p>
-        <button class="button button-primary" type="button" data-christmas-add disabled>Essayer une boule</button>
-        <small class="christmas-footnote">Avant-première : les essais ne sont pas enregistrés. Ouverture le 1er décembre.</small>
-        <a class="christmas-return" href="evenements/chroniques-europe/" data-christmas-eu4>Retrouver les Chroniques de l'Europe</a>
-      </div>
-    </div>
-  </div>
-  <div class="christmas-modal" data-christmas-modal hidden role="dialog" aria-modal="true" aria-label="Prévisualiser une boule">
-    <div class="christmas-dialog">
-      <button class="christmas-close" type="button" data-christmas-close aria-label="Fermer">×</button>
-      <p class="christmas-eyebrow">UNE BOULE POUR LE SAPIN</p>
-      <h3>Choisis ta décoration</h3>
-      <p>Fais défiler la collection de gauche à droite pour choisir ton style.</p>
-      <form data-christmas-form>
-        <div class="christmas-swatches" data-christmas-swatches aria-label="Choix de la boule"></div>
-        <label for="christmas-preview-message">Ton message</label>
-        <textarea name="message" id="christmas-preview-message" required maxlength="180" placeholder="Un mot à laisser sur le sapin…"></textarea>
-        <label class="anonymous-label"><input type="checkbox" name="anonymous"> Afficher mon message anonymement</label>
-        <p class="christmas-note">Démonstration locale : ce message ne sera jamais envoyé à Supabase.</p>
-        <button type="submit">Placer ma boule d'essai</button>
-      </form>
-    </div>
-  </div>
-  <div class="christmas-message" data-christmas-message hidden role="dialog" aria-modal="true" aria-label="Message accroché au sapin">
-    <div class="christmas-dialog christmas-message-card">
-      <button class="christmas-close" type="button" data-christmas-close aria-label="Fermer">×</button>
-      <p class="christmas-eyebrow">UN MESSAGE SUR LE SAPIN</p>
-      <h3>Une pensée de Noël</h3>
-      <div class="message-body" data-message-content></div>
-      <p class="message-author" data-message-author></p>
+      <aside class="halaryk-tree-panel" aria-label="Décorer le sapin">
+        <p class="eyebrow">UNE BOULE, UNE PENSÉE</p>
+        <h3>Laisse un mot<br>dans notre sapin.</h3>
+        <p class="halaryk-tree-intro">Un souvenir de ton année, un rêve, un souhait pour les autres… Choisis une décoration et accroche ton message au sapin.</p>
+        <form data-tree-form autocomplete="off">
+          <fieldset data-tree-fieldset disabled>
+            <legend>Choisir une boule</legend>
+            <div class="halaryk-tree-swatches" data-tree-swatches aria-label="Modèles de boules"></div>
+            <label for="tree-christmas-message">Ton message <span class="halaryk-tree-charcount" data-tree-chars>0 / 180</span></label>
+            <textarea id="tree-christmas-message" name="message" maxlength="180" rows="4" required placeholder="Une pensée, un vœu, un souvenir…"></textarea>
+            <label class="halaryk-tree-check"><input type="checkbox" name="anonymous"> Publier anonymement</label>
+            <button class="button button-primary" type="submit" data-tree-submit>Accrocher ma boule</button>
+          </fieldset>
+        </form>
+        <div class="halaryk-tree-signin" data-tree-signin>
+          <p>Connecte-toi avec Twitch pour déposer une boule. Les messages restent visibles par tous les visiteurs.</p>
+          <button class="button button-ghost" type="button" data-tree-login>Connexion Twitch</button>
+        </div>
+        <p class="halaryk-tree-feedback" data-tree-feedback role="status" aria-live="polite">Une boule par compte Twitch · Ouverture le 1er décembre.</p>
+      </aside>
     </div>
   </div>
 </section>
+<div class="halaryk-tree-message" data-tree-message-dialog hidden role="dialog" aria-modal="true" aria-labelledby="tree-message-title">
+  <div class="halaryk-tree-message-card">
+    <button type="button" class="halaryk-tree-close" data-tree-close aria-label="Fermer">×</button>
+    <p class="eyebrow">UNE PENSÉE ACCROCHÉE AU SAPIN</p>
+    <h3 id="tree-message-title">Un message pour Noël</h3>
+    <p data-tree-message-text></p>
+    <small data-tree-message-author></small>
+  </div>
+</div>
 <footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
 </main>
 <script type="module" src="app.js"></script>
 <script type="module" src="events.js"></script>
-<script type="module" src="noel/loader.js"></script>
+<script defer src="noel/loader.js"></script>
 </body></html>
