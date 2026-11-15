@@ -1,0 +1,144 @@
+-- HALARYK — sapin communautaire Noël 2026
+-- BROUILLON PRÉPRODUCTION : ne pas exécuter sur Supabase avant la validation.
+-- Aucun champ d'identité privée n'est exposé publiquement.
+begin;
+
+create table if not exists public.christmas_tree_ornaments (
+  id uuid primary key default gen_random_uuid(),
+  author_id uuid not null references auth.users(id) on delete cascade,
+  season_year integer not null default 2026 check (season_year=2026),
+  style text not null check (style in ('Bordeaux','Ivoire','Doré','Rose','Cuivre','Vert')),
+  message text not null check (char_length(btrim(message)) between 1 and 180),
+  anonymous boolean not null default false,
+  position_index integer not null check (position_index between 0 and 479),
+  status text not null default 'visible' check (status in ('visible','hidden')),
+  created_at timestamptz not null default now(),
+  unique (author_id, season_year),
+  unique (season_year, position_index)
+);
+
+alter table public.christmas_tree_ornaments enable row level security;
+revoke all on table public.christmas_tree_ornaments from public, anon, authenticated;
+-- Aucune policy de lecture pour anon/authenticated : toute lecture passe par une RPC filtrée.
+
+-- Contrat public : ni author_id, ni login privé, ni indicateur de pseudonyme caché.
+create or replace function public.christmas_tree_public_2026()
+returns table (
+  id uuid,
+  style text,
+  message text,
+  author text,
+  position_index integer
+)
+language sql stable security definer
+set search_path = ''
+as $fn$
+  select
+    o.id,
+    o.style,
+    o.message,
+    case when o.anonymous then 'Anonyme'
+         else coalesce(nullif(p.display_name,''),nullif(p.twitch_login,''),'Membre de la communauté') end as author,
+    o.position_index
+  from public.christmas_tree_ornaments o
+  left join public.profiles p on p.id=o.author_id
+  where o.season_year=2026 and o.status='visible'
+  order by o.position_index;
+$fn$;
+revoke all on function public.christmas_tree_public_2026() from public;
+grant execute on function public.christmas_tree_public_2026() to anon, authenticated;
+
+-- Contrat écriture : identité dérivée de l'auth réelle, jamais envoyée par le navigateur.
+create or replace function public.christmas_tree_place_2026(
+  p_style text, p_message text, p_anonymous boolean default false
+)
+returns uuid
+language plpgsql security definer
+set search_path = ''
+as $fn$
+declare
+  uid uuid := auth.uid();
+  cleaned text := btrim(coalesce(p_message,''));
+  slot integer;
+  created uuid;
+  trial integer;
+begin
+  if uid is null then raise exception 'Connexion Twitch obligatoire'; end if;
+  if not exists (
+    select 1 from auth.users u
+    where u.id=uid
+      and (
+        u.raw_app_meta_data->>'provider'='twitch'
+        or u.raw_app_meta_data->'providers' @> '["twitch"]'::jsonb
+      )
+  ) then raise exception 'Compte Twitch requis'; end if;
+  if now() < '2026-12-01 00:00:00+01'::timestamptz or now() >= '2027-01-01 00:00:00+01'::timestamptz
+    then raise exception 'Le sapin est fermé'; end if;
+  if p_style not in ('Bordeaux','Ivoire','Doré','Rose','Cuivre','Vert')
+    then raise exception 'Décoration inconnue'; end if;
+  if char_length(cleaned) not between 1 and 180 then raise exception 'Message : 1 à 180 caractères'; end if;
+  if exists(select 1 from public.christmas_tree_ornaments o where o.author_id=uid and o.season_year=2026)
+    then raise exception 'Une seule boule par compte Twitch'; end if;
+
+  -- Choix aléatoire parmi 480 emplacements distincts, résistant aux doubles envois.
+  for trial in 1..7 loop
+    select s.i into slot
+    from generate_series(0,479) as s(i)
+    where not exists (
+      select 1 from public.christmas_tree_ornaments o
+      where o.season_year=2026 and o.position_index=s.i
+    )
+    order by random() limit 1;
+    if slot is null then raise exception 'Le sapin est complet'; end if;
+    insert into public.christmas_tree_ornaments
+      (author_id,season_year,style,message,anonymous,position_index)
+    values (uid,2026,p_style,cleaned,coalesce(p_anonymous,false),slot)
+    on conflict do nothing returning id into created;
+    if created is not null then return created; end if;
+  end loop;
+  raise exception 'Emplacement indisponible, réessayez';
+end;
+$fn$;
+revoke all on function public.christmas_tree_place_2026(text,text,boolean) from public, anon;
+grant execute on function public.christmas_tree_place_2026(text,text,boolean) to authenticated;
+
+-- Lecture privée : identité réelle visible seulement après contrôle administrateur.
+create or replace function public.christmas_tree_admin_2026()
+returns table (
+  id uuid, author_id uuid, author_login text, display_name text,
+  message text, style text, anonymous boolean, status text, created_at timestamptz
+)
+language plpgsql stable security definer
+set search_path = ''
+as $fn$
+begin
+  if auth.uid() is null or not public.current_is_admin()
+    then raise exception 'Accès administrateur requis'; end if;
+  return query
+    select o.id,o.author_id,p.twitch_login,p.display_name,
+           o.message,o.style,o.anonymous,o.status,o.created_at
+    from public.christmas_tree_ornaments o
+    left join public.profiles p on p.id=o.author_id
+    where o.season_year=2026 order by o.created_at desc;
+end;
+$fn$;
+revoke all on function public.christmas_tree_admin_2026() from public, anon;
+grant execute on function public.christmas_tree_admin_2026() to authenticated;
+
+create or replace function public.christmas_tree_set_visibility_2026(p_id uuid,p_visible boolean)
+returns void
+language plpgsql security definer
+set search_path = ''
+as $fn$
+begin
+  if auth.uid() is null or not public.current_is_admin()
+    then raise exception 'Accès administrateur requis'; end if;
+  update public.christmas_tree_ornaments
+    set status=case when p_visible then 'visible' else 'hidden' end
+    where id=p_id and season_year=2026;
+end;
+$fn$;
+revoke all on function public.christmas_tree_set_visibility_2026(uuid,boolean) from public, anon;
+grant execute on function public.christmas_tree_set_visibility_2026(uuid,boolean) to authenticated;
+
+commit;
