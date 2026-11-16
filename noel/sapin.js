@@ -82,17 +82,36 @@
     const body=m.egg?'M60 27C88 28 103 61 100 87C98 112 80 127 60 128C40 127 22 112 20 87C17 61 32 28 60 27Z':'M107 78A47 47 0 1 1 13 78A47 47 0 1 1 107 78Z';
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 141" aria-hidden="true" focusable="false" role="presentation">
       <defs>
-        <linearGradient id="${uid}-body" x1="0" y1="0" x2=".92" y2="1"><stop offset="0" stop-color="${m.top}"/><stop offset=".5" stop-color="${m.base}"/><stop offset="1" stop-color="${m.base}"/></linearGradient>
+        <radialGradient id="${uid}-body" cx=".22" cy=".13" r=".88"><stop offset="0" stop-color="${m.top}"/><stop offset=".27" stop-color="${m.top}"/><stop offset=".68" stop-color="${m.base}"/><stop offset="1" stop-color="#100c0c"/></radialGradient>
         <linearGradient id="${uid}-metal" x1="0" x2="1"><stop stop-color="#716042"/><stop offset=".34" stop-color="#eed5a1"/><stop offset=".65" stop-color="#c29c64"/><stop offset="1" stop-color="#625139"/></linearGradient>
         <radialGradient id="${uid}-shade" cx=".32" cy=".20" r=".92"><stop offset=".1" stop-color="#fff" stop-opacity=".2"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></radialGradient>
+        <radialGradient id="${uid}-specular" cx=".24" cy=".18" r=".61">
+          <stop offset="0" stop-color="#fff9e6" stop-opacity=".68"/>
+          <stop offset=".25" stop-color="#fff9e6" stop-opacity=".22"/>
+          <stop offset=".75" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="${uid}-grain" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency=".32" numOctaves="3" seed="7"/>
+          <feColorMatrix type="saturate" values="0"/>
+          <feComponentTransfer><feFuncA type="linear" slope=".22"/></feComponentTransfer>
+        </filter>
+        <filter id="${uid}-depth" x="-15%" y="-15%" width="130%" height="130%">
+          <feDropShadow dx=".5" dy="1.2" stdDeviation=".85" flood-color="#030202" flood-opacity=".7"/>
+        </filter>
         <clipPath id="${uid}-clip"><path d="${body}"/></clipPath>
       </defs>
       <path d="M60 19V5" stroke="#d9c8a6" stroke-width="2.5" stroke-linecap="round" fill="none"/>
       <circle cx="60" cy="9" r="5" fill="none" stroke="#c6a97b" stroke-width="2"/>
       <path d="${body}" fill="url(#${uid}-body)" fill-opacity="${m.transparent?'.72':'1'}" stroke="#b4a282" stroke-width="1.5"/>
-      <g clip-path="url(#${uid}-clip)">${m.art}<path d="${body}" fill="url(#${uid}-shade)"/>
+      <g clip-path="url(#${uid}-clip)">
+        <g filter="url(#${uid}-depth)">${m.art}</g>
+        <rect x="13" y="28" width="94" height="102" filter="url(#${uid}-grain)" opacity="${m.id==='velours'||m.id==='tartan'?'.08':'.2'}"/>
+        <path d="${body}" fill="url(#${uid}-shade)"/>
+        <ellipse cx="36" cy="44" rx="33" ry="29" fill="url(#${uid}-specular)" opacity="${m.id==='velours'||m.id==='tartan'?'.25':'.72'}"/>
         <path d="M36 48Q22 69 28 87" stroke="#fff9e7" stroke-opacity=".35" stroke-width="5" stroke-linecap="round" fill="none"/>
-        <ellipse cx="45" cy="47" rx="17" ry="5" fill="#fff" opacity=".12" transform="rotate(-34 45 47)"/>
+        <ellipse cx="45" cy="47" rx="17" ry="5" fill="#fff" opacity=".20" transform="rotate(-34 45 47)"/>
+        <path d="M84 109Q97 91 94 77" fill="none" stroke="#f9e5c1" stroke-opacity=".24" stroke-width="3"/>
+        <path d="M32 50Q25 69 29 82" fill="none" stroke="#fff5dd" stroke-opacity="${m.transparent?'.55':'.25'}" stroke-width="2.5" stroke-linecap="round"/>
       </g>
       <path d="${body}" fill="none" stroke="#e9d9b6" stroke-opacity=".45" stroke-width="1.4"/>
       <path d="M50 26V20Q60 16 70 20V26Z" fill="url(#${uid}-metal)" stroke="#6c5639" stroke-width="1"/>
