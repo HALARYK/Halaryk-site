@@ -19,11 +19,9 @@
   async function start(){
     if(started)return;started=true;
     try{
-      // Ne pas charger ~600 Ko de Three.js si ce navigateur n'a pas de WebGL.
-      const canvas=document.createElement('canvas');
-      let gl=null;
-      try{gl=canvas.getContext('webgl2')||canvas.getContext('webgl');}catch{}
-      if(gl&&!globalThis.THREE)await script('vendor/three.min.js');
+      // Éviter le pré-test qui créait un contexte WebGL inutile.
+      // Le moteur essaie WebGL 2 puis WebGL 1 sur des canvas distincts.
+      if(!globalThis.THREE)await script('vendor/three.min.js');
       await script('sapin.js');
     }catch(err){
       console.error('Sapin HALARYK',err);
