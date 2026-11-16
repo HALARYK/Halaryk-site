@@ -1,5 +1,6 @@
 -- HALARYK — sapin communautaire Noël 2026
 -- BROUILLON PRÉPRODUCTION : ne pas exécuter sur Supabase avant la validation.
+-- 40 emplacements déterministes, ordre de pose par saut de 7, sérialisé par verrou transactionnel.
 -- Aucun champ d'identité privée n'est exposé publiquement.
 begin;
 
@@ -10,7 +11,7 @@ create table if not exists public.christmas_tree_ornaments (
   style text not null check (style in ('Bordeaux','Ivoire','Doré','Rose','Cuivre','Vert')),
   message text not null check (char_length(btrim(message)) between 1 and 180),
   anonymous boolean not null default false,
-  position_index integer not null check (position_index between 0 and 479),
+  position_index integer not null check (position_index between 1 and 40),
   status text not null default 'visible' check (status in ('visible','hidden')),
   created_at timestamptz not null default now(),
   unique (author_id, season_year),
@@ -61,7 +62,7 @@ declare
   cleaned text := btrim(coalesce(p_message,''));
   slot integer;
   created uuid;
-  trial integer;
+  used_slots integer;
 begin
   if uid is null then raise exception 'Connexion Twitch obligatoire'; end if;
   if not exists (
@@ -80,23 +81,28 @@ begin
   if exists(select 1 from public.christmas_tree_ornaments o where o.author_id=uid and o.season_year=2026)
     then raise exception 'Une seule boule par compte Twitch'; end if;
 
-  -- Choix aléatoire parmi 480 emplacements distincts, résistant aux doubles envois.
-  for trial in 1..7 loop
-    select s.i into slot
-    from generate_series(0,479) as s(i)
-    where not exists (
-      select 1 from public.christmas_tree_ornaments o
-      where o.season_year=2026 and o.position_index=s.i
-    )
-    order by random() limit 1;
-    if slot is null then raise exception 'Le sapin est complet'; end if;
-    insert into public.christmas_tree_ornaments
-      (author_id,season_year,style,message,anonymous,position_index)
-    values (uid,2026,p_style,cleaned,coalesce(p_anonymous,false),slot)
-    on conflict do nothing returning id into created;
-    if created is not null then return created; end if;
-  end loop;
-  raise exception 'Emplacement indisponible, réessayez';
+  -- Empêcher deux validations simultanées de réclamer la même place.
+  perform pg_catalog.pg_advisory_xact_lock(2026,40);
+
+  -- Contrôler de nouveau sous verrou l'unicité par compte.
+  if exists(select 1 from public.christmas_tree_ornaments o
+            where o.author_id=uid and o.season_year=2026)
+    then raise exception 'Une seule boule par compte Twitch'; end if;
+
+  -- Compter aussi les boules masquées : leur place reste attribuée.
+  select count(*)::integer into used_slots
+  from public.christmas_tree_ornaments o where o.season_year=2026;
+  if used_slots >=40 then raise exception 'Le sapin est complet'; end if;
+
+  -- Emplacements cachés 1..40, rangés de haut en bas et de gauche à droite.
+  -- Les visiteurs 1, 2, 3 ... prennent les places 7, 14, 21, 28, 35, 2 ...
+  -- 7 est premier avec 40 : aucune place n'est attribuée deux fois.
+  slot := (((used_slots+1)*7-1)%40)+1;
+  insert into public.christmas_tree_ornaments
+    (author_id,season_year,style,message,anonymous,position_index)
+  values (uid,2026,p_style,cleaned,coalesce(p_anonymous,false),slot)
+  returning id into created;
+  return created;
 end;
 $fn$;
 revoke all on function public.christmas_tree_place_2026(text,text,boolean) from public, anon;
