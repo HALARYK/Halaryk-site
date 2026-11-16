@@ -404,7 +404,13 @@
   });
   // Une seule initialisation WebGL, sans attente d'authentification.
   try {
-    sceneApi=create3D();
+    // La géométrie procédurale actuelle n'est pas acceptable visuellement :
+    // mode photo réaliste activé en préproduction jusqu'au modèle GLB définitif.
+    if(!new URLSearchParams(location.search).has('tree_legacy_3d')) {
+      sceneApi=createFallback();
+    } else {
+      sceneApi=create3D();
+    }
   } catch(err) {
     console.error('Sapin 3D :',err);
     stage.dataset.treeError=String(err?.message||err||'Erreur inconnue');
