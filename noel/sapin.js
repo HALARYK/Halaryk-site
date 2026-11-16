@@ -8,51 +8,82 @@
   const form=root.querySelector('[data-tree-form]'),fieldset=root.querySelector('[data-tree-fieldset]');
   const login=root.querySelector('[data-tree-login]'),signin=root.querySelector('[data-tree-signin]');
   const feedback=root.querySelector('[data-tree-feedback]'),swatches=root.querySelector('[data-tree-swatches]');
+  const finishesRoot=root.querySelector('[data-tree-finishes]');
+  const previewBall=root.querySelector('[data-tree-preview-ball]'),previewLabel=root.querySelector('[data-tree-preview-label]');
   const chars=root.querySelector('[data-tree-chars]');
   const dialog=document.querySelector('[data-tree-message-dialog]');
   const palette=[
     ['Bordeaux','#8b283b'],['Ivoire','#e8dccb'],['Doré','#c4a66d'],
     ['Rose','#bd8b8b'],['Cuivre','#ae714f'],['Vert','#31594d']
   ];
-  const SEASON_OPEN=Date.parse('2026-11-30T23:00:00Z');
-  // Numérotation discrète de haut en bas et de gauche à droite.
-  // Neuf rangs de 1, 2, 3, 4, 5, 6, 6, 6 et 7 boules = 40 places.
-  // Les positions 1 à 40 sont stables, quel que soit le nombre de visiteurs.
-  const SLOT_ROWS=[
-    [20,0,1],[27,9,2],[34,15,3],[41,21,4],[48,25,5],
-    [55,29,6],[62,31,6],[69,33,6],[76,34,7]
+  const finishes=[
+    ['mat','Mat'],['satin','Satiné'],['laque','Laqué brillant'],
+    ['metal','Métallisé'],['nacre','Nacré'],['givre','Givré'],
+    ['paillete','Paillettes fines'],['velours','Velours'],
+    ['cannele','Cannelé'],['facette','Facetté'],
+    ['mercurise','Verre mercurisé'],['craquele','Craquelé'],
+    ['martele','Martelé'],['marbre','Marbré']
   ];
-  const SLOT_POSITIONS=SLOT_ROWS.flatMap(([top,extent,quantity])=>
-    Array.from({length:quantity},(_,i)=>({
-      left:50+(quantity===1?0:(-extent+(2*extent*i)/(quantity-1))),
-      top
-    }))
-  );
+  const finishChoice=code=>finishes.some(f=>f[0]===code)?code:'mat';
+  const SEASON_OPEN=Date.parse('2026-11-30T23:00:00Z');
+  // Coordonnées fixes et volontairement irrégulières dans la silhouette du sapin.
+  // Les 40 identifiants restent ordonnés du haut vers le bas, mais aucune rangée n'est rectiligne.
+  const SLOT_POSITIONS=[
+    [46.5,18],[56.7,22.1],[44.8,24.4],[52.3,27.2],[44.9,30.6],
+[60.7,32.9],[53.6,34.6],[36.7,35.8],[42.2,40],[52.6,40],
+[60.6,41.4],[31.8,45.3],[69.6,46.2],[40.3,48.1],[50.3,48.5],
+[64.4,50],[31,50.5],[44.9,52.3],[59.8,54.1],[25.4,54.8],
+[69.4,55.3],[31.1,58.4],[74.8,59.7],[48.7,60.2],[59.7,60.6],
+[42.2,63.8],[49.3,65.4],[22.7,65.8],[72.6,66.4],[37.7,68.4],
+[28.6,69.4],[59.2,69.4],[45.8,70],[80.3,72.3],[34.2,73.2],
+[50.4,74.5],[23.2,75.3],[67.2,76.6],[41,77.3],[75,77.8]
+  ].map(([left,top])=>({left,top}));
   const SLOT_COUNT=SLOT_POSITIONS.length;
   // 7 et 40 sont premiers entre eux : chaque place est visitée une seule fois.
   const slotForSubmission=number=>((number*7-1)%SLOT_COUNT)+1;
   const isDemo=root.hasAttribute('data-tree-demo');
   const demoRows=[];
-  let selected=0,db=null,user=null,readyToPost=false,ornamentRows=[];
+  let selectedColor=0,selectedFinish=0,db=null,user=null,readyToPost=false,ornamentRows=[];
   let sceneApi=null;
   const colorChoice=(name)=>palette.find(p=>p[0]===name)||palette[0];
   const setStatus=(s,error=false)=>{feedback.textContent=s;feedback.classList.toggle('is-error',error);};
-  function initSwatches(){
-    palette.forEach(([name,color],index)=>{
+  function updateSelections(){
+    const [name,color]=palette[selectedColor], [code,label]=finishes[selectedFinish];
+    [...swatches.children].forEach((button,i)=>{
+      button.setAttribute('aria-pressed',String(i===selectedColor));
+      button.querySelector('.sample-ball').dataset.finish=code;
+    });
+    [...finishesRoot.children].forEach((button,i)=>{
+      button.setAttribute('aria-pressed',String(i===selectedFinish));
+      button.querySelector('.sample-ball').style.setProperty('--ornament-color',color);
+    });
+    if(previewBall){previewBall.dataset.finish=code;previewBall.style.setProperty('--ornament-color',color);}
+    if(previewLabel)previewLabel.textContent=name+' · '+label;
+  }
+  function initSelectors(){
+    palette.forEach(([name,color],i)=>{
       const button=document.createElement('button');button.type='button';button.className='halaryk-tree-swatch';
-      button.innerHTML='<span class="sample-ball"></span><span></span>';
-      button.querySelector('.sample-ball').style.background=color;
+      button.innerHTML='<span class="sample-ball halaryk-tree-ball-surface"></span><span></span>';
+      button.querySelector('.sample-ball').style.setProperty('--ornament-color',color);
       button.lastChild.textContent=name;
-      button.setAttribute('aria-pressed',String(index===selected));
-      button.addEventListener('click',()=>{
-        selected=index;
-        [...swatches.children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));
-      });
+      button.setAttribute('aria-label','Couleur '+name);
+      button.addEventListener('click',()=>{selectedColor=i;updateSelections();});
       swatches.append(button);
     });
+    finishes.forEach(([code,label],i)=>{
+      const button=document.createElement('button');button.type='button';button.className='halaryk-tree-finish';
+      button.innerHTML='<span class="sample-ball halaryk-tree-ball-surface"></span><span></span>';
+      button.querySelector('.sample-ball').dataset.finish=code;button.lastChild.textContent=label;
+      button.setAttribute('aria-label','Finition '+label);
+      button.addEventListener('click',()=>{selectedFinish=i;updateSelections();});
+      finishesRoot.append(button);
+    });
+    root.querySelector('[data-tree-finish-prev]')?.addEventListener('click',()=>finishesRoot.scrollBy({left:-260,behavior:'smooth'}));
+    root.querySelector('[data-tree-finish-next]')?.addEventListener('click',()=>finishesRoot.scrollBy({left:260,behavior:'smooth'}));
     form.elements.message.addEventListener('input',()=>chars.textContent=form.elements.message.value.length+' / 180');
+    updateSelections();
   }
-  initSwatches();
+  initSelectors();
   const canPost=()=>isDemo
     ? demoRows.length<SLOT_COUNT
     : !!user&&Date.now()>=SEASON_OPEN&&readyToPost&&location.protocol!=='file:';
@@ -88,9 +119,11 @@
       button.style.left=slot.left.toFixed(2)+'%';
       button.style.top=slot.top.toFixed(2)+'%';
       button.style.setProperty('--ornament-color',colorChoice(row.style)[1]);
+      button.dataset.finish=finishChoice(row.finish);
       button.setAttribute('aria-label','Lire un message déposé sur le sapin');
       const orb=document.createElement('span');
-      orb.className='bauble';
+      orb.className='bauble halaryk-tree-ball-surface';
+      orb.dataset.finish=button.dataset.finish;
       button.append(orb);
       button.addEventListener('click',()=>showMessage(String(row.message||''),String(row.author||'Anonyme')));
       if(animated && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -165,12 +198,12 @@
       if(error)throw error;
     }catch(e){setStatus('Connexion Twitch indisponible : '+e.message,true);}
   });
-  function demoPlace(message,style,anonymous=false,animate=true){
+  function demoPlace(message,style,finish,anonymous=false,animate=true){
     if(demoRows.length>=SLOT_COUNT)return null;
     const slot=slotForSubmission(demoRows.length+1);
     const row={
       id:'demo-'+(demoRows.length+1),
-      style,message,author:anonymous?'Anonyme':'Visiteur test',
+      style,finish,message,author:anonymous?'Anonyme':'Visiteur test',
       position_index:slot
     };
     demoRows.push(row);
@@ -181,17 +214,17 @@
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     if(!canPost())return setStatus('Connexion Twitch obligatoire ou sapin complet.',true);
-    const message=form.elements.message.value.trim(),style=palette[selected][0];
+    const message=form.elements.message.value.trim(),style=palette[selectedColor][0],finish=finishes[selectedFinish][0];
     if(!message||message.length>180)return setStatus('Le message doit contenir entre 1 et 180 caractères.',true);
     const anonymous=!!form.elements.anonymous.checked;
     if(isDemo){
-      demoPlace(message,style,anonymous);
+      demoPlace(message,style,finish,anonymous);
       form.reset();chars.textContent='0 / 180';
       return;
     }
     const submit=form.querySelector('[data-tree-submit]');submit.disabled=true;
     try{
-      const {data,error}=await db.rpc('christmas_tree_place_2026',{p_style:style,p_message:message,p_anonymous:anonymous});
+      const {data,error}=await db.rpc('christmas_tree_place_2026',{p_style:style,p_finish:finish,p_message:message,p_anonymous:anonymous});
       if(error)throw error;
       form.reset();chars.textContent='0 / 180';
       await loadOrnaments(String(data));
@@ -208,7 +241,7 @@
       for(let i=0;i<total;i++){
         const n=demoRows.length+1;
         // La dernière boule recule vers sa place ; les quatre autres sont posées sans animation.
-        demoPlace('Un souhait pour Noël — visiteur '+n,palette[(n-1)%palette.length][0],n%3===0,i===total-1);
+        demoPlace('Un souhait pour Noël — visiteur '+n,palette[(n-1)%palette.length][0],finishes[(n-1)%finishes.length][0],n%3===0,i===total-1);
       }
       updateAuthState();
     });
