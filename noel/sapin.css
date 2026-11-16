@@ -100,3 +100,8 @@
   .halaryk-tree-fallback-ornament .bauble{width:22px;height:22px}
   .halaryk-tree-fallback-ornament .bauble:before{left:8px}
 }
+
+/* Priorité à l'alignement sur le bord gauche, après les règles génériques. */
+@media (min-width: 901px) {
+  .halaryk-tree .halaryk-tree-fallback { justify-content: flex-start; }
+}
