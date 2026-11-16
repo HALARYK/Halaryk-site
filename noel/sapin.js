@@ -276,12 +276,27 @@
     let active=true,last=performance.now();
     if('IntersectionObserver' in window)new IntersectionObserver(e=>active=!!e[0]?.isIntersecting,{threshold:.02}).observe(stage);
     const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+    let firstRender=true, renderingFailed=false;
     const frame=now=>{
+      if(renderingFailed)return;
       requestAnimationFrame(frame);const dt=Math.min(.06,(now-last)/1000);last=now;
       if(!active||document.hidden)return;
       if(!dragging&&!paused&&!reduced.matches)group.rotation.y+=dt*.055;
       halo.material.opacity=.83+.13*Math.sin(now/1300);
-      renderer.render(scene,camera);
+      try {
+        renderer.render(scene,camera);
+        if(firstRender){
+          firstRender=false;
+          stage.classList.add('has-webgl'); // Masque l'image uniquement après une vraie image 3D.
+        }
+      } catch(error){
+        renderingFailed=true;
+        console.error('Sapin HALARYK — rendu WebGL interrompu',error);
+        canvas.remove();
+        stage.classList.remove('has-webgl');
+        sceneApi=createFallback();
+        sceneApi.setOrnaments(ornamentRows);
+      }
     };
     requestAnimationFrame(frame);
     loading.hidden=true;
@@ -364,7 +379,6 @@
   // Une seule initialisation WebGL, sans attente d'authentification.
   try {
     sceneApi=create3D();
-    stage.classList.add('has-webgl');
   } catch(err) {
     console.error('Sapin 3D :',err);
     // Le sapin reste affiché : la 3D n'est pas indispensable à la participation.
