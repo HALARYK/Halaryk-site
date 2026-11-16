@@ -204,3 +204,15 @@
   .halaryk-tree-model-option-image{width:73px;height:88px}
   .halaryk-tree-selection-ornament{width:82px;height:97px;flex-basis:82px}
 }
+/* Les dix vrais ornements ont un fond transparent et la même découpe dans
+   le carrousel, la sélection agrandie et les décorations du sapin. */
+.halaryk-tree-ornament-photo{
+  display:block;width:100%;height:100%;
+  background-image:url("assets/ornaments-atlas.webp");
+  background-size:500% 200%;
+  background-position:var(--orn-x,0%) var(--orn-y,0%);
+  background-repeat:no-repeat;background-color:transparent;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.58));
+}
+.halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{overflow:visible}
+.halaryk-tree-model-option-image,.halaryk-tree-selection-ornament{overflow:visible}
