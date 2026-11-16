@@ -199,12 +199,35 @@
   }
   function create3D(){
     if(!globalThis.THREE)throw new Error('Three.js est indisponible.');
-    let renderer;
-    try {
-      renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'default'});
-    } catch(firstError) {
-      renderer=new THREE.WebGLRenderer({alpha:true,antialias:false,powerPreference:'default'});
+    // Tester explicitement les deux versions, avec un canvas neuf à chaque essai.
+    // chrome://gpu indique l'accélération générale, pas forcément le succès de
+    // création d'un contexte pour cette page et cette bibliothèque.
+    let renderer, lastContextError=null, contextMode='';
+    const contextAttributes={
+      alpha:true, antialias:false, depth:true, stencil:false,
+      preserveDrawingBuffer:false, powerPreference:'default',
+      failIfMajorPerformanceCaveat:false
+    };
+    for(const kind of ['webgl2','webgl']){
+      const surface=document.createElement('canvas');
+      try {
+        const gl=surface.getContext(kind,contextAttributes);
+        if(!gl)throw new Error('Contexte '+kind+' non créé par Chrome');
+        const Renderer=(kind==='webgl'&&THREE.WebGL1Renderer)
+          ? THREE.WebGL1Renderer : THREE.WebGLRenderer;
+        renderer=new Renderer({
+          canvas:surface,context:gl,alpha:true,antialias:false,
+          powerPreference:'default',preserveDrawingBuffer:false
+        });
+        contextMode=kind;
+        break;
+      } catch(error){
+        lastContextError=error;
+        console.warn('HALARYK — tentative '+kind+' impossible',error);
+      }
     }
+    if(!renderer)throw new Error('Création WebGL2 et WebGL1 impossible : '+String(lastContextError?.message||'contexte indisponible'));
+    stage.dataset.treeRenderer=contextMode;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.2));
     renderer.setClearColor(0x000000,0);
     renderer.outputEncoding=THREE.sRGBEncoding;
@@ -287,11 +310,14 @@
         renderer.render(scene,camera);
         if(firstRender){
           firstRender=false;
-          stage.classList.add('has-webgl'); // Masque l'image uniquement après une vraie image 3D.
+          stage.classList.add('has-webgl'); // Masque la photo seulement après le premier rendu.
+          stage.dataset.treeStatus='3d-ready';
         }
       } catch(error){
         renderingFailed=true;
         console.error('Sapin HALARYK — rendu WebGL interrompu',error);
+        stage.dataset.treeError=String(error?.message||error);
+        stage.dataset.treeRenderer='fallback';
         canvas.remove();
         stage.classList.remove('has-webgl');
         sceneApi=createFallback();
@@ -381,10 +407,15 @@
     sceneApi=create3D();
   } catch(err) {
     console.error('Sapin 3D :',err);
-    // Le sapin reste affiché : la 3D n'est pas indispensable à la participation.
-    // Message diagnostique complet conservé uniquement dans la console.
-    stage.querySelector('canvas')?.remove();
+    stage.dataset.treeError=String(err?.message||err||'Erreur inconnue');
+    stage.dataset.treeRenderer='fallback';
+    // Ne retirer que le canvas WebGL, sans détruire les textures DOM du sapin.
+    stage.querySelectorAll(':scope > canvas').forEach(canvas=>canvas.remove());
     sceneApi=createFallback();
+    if(new URLSearchParams(location.search).has('tree_debug')){
+      loading.hidden=false;
+      loading.textContent='Mode image : '+stage.dataset.treeError;
+    }
   }
   updateAuthState();
   if(location.protocol!=='file:'){
