@@ -15,7 +15,24 @@
     ['Rose','#bd8b8b'],['Cuivre','#ae714f'],['Vert','#31594d']
   ];
   const SEASON_OPEN=Date.parse('2026-11-30T23:00:00Z');
-  const TAU=Math.PI*2;
+  // Numérotation discrète de haut en bas et de gauche à droite.
+  // Neuf rangs de 1, 2, 3, 4, 5, 6, 6, 6 et 7 boules = 40 places.
+  // Les positions 1 à 40 sont stables, quel que soit le nombre de visiteurs.
+  const SLOT_ROWS=[
+    [20,0,1],[27,9,2],[34,15,3],[41,21,4],[48,25,5],
+    [55,29,6],[62,31,6],[69,33,6],[76,34,7]
+  ];
+  const SLOT_POSITIONS=SLOT_ROWS.flatMap(([top,extent,quantity])=>
+    Array.from({length:quantity},(_,i)=>({
+      left:50+(quantity===1?0:(-extent+(2*extent*i)/(quantity-1))),
+      top
+    }))
+  );
+  const SLOT_COUNT=SLOT_POSITIONS.length;
+  // 7 et 40 sont premiers entre eux : chaque place est visitée une seule fois.
+  const slotForSubmission=number=>((number*7-1)%SLOT_COUNT)+1;
+  const isDemo=root.hasAttribute('data-tree-demo');
+  const demoRows=[];
   let selected=0,db=null,user=null,readyToPost=false,ornamentRows=[];
   let sceneApi=null;
   const colorChoice=(name)=>palette.find(p=>p[0]===name)||palette[0];
@@ -36,8 +53,18 @@
     form.elements.message.addEventListener('input',()=>chars.textContent=form.elements.message.value.length+' / 180');
   }
   initSwatches();
-  const canPost=()=>!!user&&Date.now()>=SEASON_OPEN&&readyToPost&&location.protocol!=='file:';
+  const canPost=()=>isDemo
+    ? demoRows.length<SLOT_COUNT
+    : !!user&&Date.now()>=SEASON_OPEN&&readyToPost&&location.protocol!=='file:';
   function updateAuthState(){
+    if(isDemo){
+      signin.hidden=true;
+      fieldset.disabled=!canPost();
+      setStatus(demoRows.length>=SLOT_COUNT
+        ? 'Les 40 places sont occupées. Efface les essais pour recommencer.'
+        : 'Aperçu interactif : '+demoRows.length+' / 40 boules. Aucun message n’est envoyé.');
+      return;
+    }
     const signed=!!user;
     signin.hidden=signed;
     fieldset.disabled=!canPost();
@@ -49,32 +76,33 @@
   function createFallback(){
     const plane=stage.querySelector('[data-tree-fallback-ornaments]');
     const shown=new Set();
-
+    function addOrnament(row,animated){
+      if(!plane||!row||shown.has(row.id))return;
+      const position=Number(row.position_index);
+      const slot=SLOT_POSITIONS[position-1];
+      if(!slot)return;
+      shown.add(row.id);
+      const button=document.createElement('button');
+      button.type='button';
+      button.className='halaryk-tree-fallback-ornament';
+      button.style.left=slot.left.toFixed(2)+'%';
+      button.style.top=slot.top.toFixed(2)+'%';
+      button.style.setProperty('--ornament-color',colorChoice(row.style)[1]);
+      button.setAttribute('aria-label','Lire un message déposé sur le sapin');
+      const orb=document.createElement('span');
+      orb.className='bauble';
+      button.append(orb);
+      button.addEventListener('click',()=>showMessage(String(row.message||''),String(row.author||'Anonyme')));
+      if(animated && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        button.classList.add('is-landing');
+        button.addEventListener('animationend',()=>button.classList.remove('is-landing'),{once:true});
+      }
+      plane.append(button);
+    }
     return {
       removeAll(){if(plane)plane.replaceChildren();shown.clear();},
-      setOrnaments(rows){
-        if(!plane)return;
-        for(const row of rows){
-          if(shown.has(row.id))continue;
-          shown.add(row.id);
-          const idx=Math.max(0,Number(row.position_index)||0);
-          const progress=((idx*97)%367)/367;
-          const angle=(idx*2.39996323)%TAU;
-          const top=79-progress*64;
-          const width=31*(1-progress);
-          const left=50+Math.cos(angle)*width;
-          const button=document.createElement('button');
-          button.type='button';
-          button.className='halaryk-tree-fallback-ornament';
-          button.style.left=left.toFixed(2)+'%';
-          button.style.top=top.toFixed(2)+'%';
-          button.style.setProperty('--ornament-color',colorChoice(row.style)[1]);
-          button.setAttribute('aria-label','Lire un message sur le sapin');
-          const orb=document.createElement('span');orb.className='bauble';
-          button.append(orb);
-          button.addEventListener('click',()=>showMessage(String(row.message||''),String(row.author||'Anonyme')));
-          plane.append(button);
-        }
+      setOrnaments(rows,{animateId=null}={}){
+        for(const row of rows)addOrnament(row,animateId===row.id);
       }
     };
   }
@@ -113,15 +141,16 @@
     }catch{user=null;}
     updateAuthState();
   }
-  async function loadOrnaments(){
-    if(!db)return;
+  async function loadOrnaments(animateId=null){
+    if(!db||isDemo)return;
     try{
       const {data,error}=await db.rpc('christmas_tree_public_2026');
       if(error)throw error;
       ornamentRows=Array.isArray(data)?data:[];
-      sceneApi?.setOrnaments(ornamentRows);
-      readyToPost=true;
-    }catch{
+      sceneApi?.setOrnaments(ornamentRows,{animateId});
+      readyToPost=ornamentRows.length<SLOT_COUNT;
+    }catch(error){
+      console.warn('Sapin HALARYK : lecture des décorations impossible',error);
       readyToPost=false;
     }
     updateAuthState();
@@ -136,27 +165,69 @@
       if(error)throw error;
     }catch(e){setStatus('Connexion Twitch indisponible : '+e.message,true);}
   });
+  function demoPlace(message,style,anonymous=false){
+    if(demoRows.length>=SLOT_COUNT)return null;
+    const slot=slotForSubmission(demoRows.length+1);
+    const row={
+      id:'demo-'+(demoRows.length+1),
+      style,message,author:anonymous?'Anonyme':'Visiteur test',
+      position_index:slot
+    };
+    demoRows.push(row);
+    sceneApi?.setOrnaments([row],{animateId:row.id});
+    updateAuthState();
+    return row;
+  }
   form.addEventListener('submit',async e=>{
-    e.preventDefault();if(!canPost())return setStatus('Connexion Twitch obligatoire. Participation ouverte le 1er décembre.',true);
+    e.preventDefault();
+    if(!canPost())return setStatus('Connexion Twitch obligatoire ou sapin complet.',true);
     const message=form.elements.message.value.trim(),style=palette[selected][0];
     if(!message||message.length>180)return setStatus('Le message doit contenir entre 1 et 180 caractères.',true);
+    const anonymous=!!form.elements.anonymous.checked;
+    if(isDemo){
+      demoPlace(message,style,anonymous);
+      form.reset();chars.textContent='0 / 180';
+      return;
+    }
     const submit=form.querySelector('[data-tree-submit]');submit.disabled=true;
     try{
-      const {data,error}=await db.rpc('christmas_tree_place_2026',{p_style:style,p_message:message,p_anonymous:!!form.elements.anonymous.checked});
+      const {data,error}=await db.rpc('christmas_tree_place_2026',{p_style:style,p_message:message,p_anonymous:anonymous});
       if(error)throw error;
-      setStatus('Ta boule est accrochée au sapin.');
-      form.reset();chars.textContent='0 / 180';await loadOrnaments();
+      form.reset();chars.textContent='0 / 180';
+      await loadOrnaments(String(data));
       fieldset.disabled=true;
+      setStatus('Ta boule est accrochée au sapin.');
     }catch(err){setStatus('Publication impossible : '+err.message,true);}
     finally{submit.disabled=false;}
   });
+  if(isDemo){
+    const addFive=root.querySelector('[data-tree-demo-five]');
+    const reset=root.querySelector('[data-tree-demo-reset]');
+    addFive?.addEventListener('click',()=>{
+      for(let i=0;i<5&&demoRows.length<SLOT_COUNT;i++){
+        const n=demoRows.length+1;
+        // Une seule animation pour ne pas saturer la page de 5 effets simultanés.
+        const row=demoPlace('Un souhait pour Noël — visiteur '+n,palette[(n-1)%palette.length][0],n%3===0);
+        if(i<4)sceneApi?.setOrnaments([row]); 
+      }
+      updateAuthState();
+    });
+    reset?.addEventListener('click',()=>{
+      demoRows.length=0;
+      sceneApi?.removeAll();
+      form.reset();chars.textContent='0 / 180';
+      updateAuthState();
+    });
+  }
   // Sapin photoréaliste fixe ; les décorations restent interactives.
   sceneApi=createFallback();
   updateAuthState();
-  if(location.protocol!=='file:'){
+  if(!isDemo && location.protocol!=='file:'){
     getDb().then(async client=>{
       await refreshUser();await loadOrnaments();
       client.auth.onAuthStateChange(()=>setTimeout(refreshUser,0));
     }).catch(err=>console.warn('Sapin communauté : backend indisponible',err));
-  }else setStatus('Aperçu local : connexion et publication Twitch disponibles uniquement sur le site hébergé.');
+  } else if(!isDemo){
+    setStatus('Aperçu local : connexion et publication Twitch disponibles uniquement sur le site hébergé.');
+  }
 })();
