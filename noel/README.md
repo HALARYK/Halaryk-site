@@ -7,6 +7,8 @@
 - Seule la section de mise en avant d'événement sur l'accueil est remplacée par le sapin.
 - Aucune référence visible à EU4 sur l'accueil ; EU4 reste dans la rubrique Événements.
 - Sapin Three.js r149 embarqué localement (`noel/vendor/three.min.js`, licence MIT).
+- Sapin réaliste de secours (`noel/assets/sapin-realiste.webp`) visible immédiatement en l'absence de WebGL, sans bibliothèque à télécharger.
+- Boules également interactives sur le rendu de secours ; seule la rotation 3D exige WebGL.
 - Sapin transparent sans encadrement, placé à gauche ; formulaire encadré à droite.
 - Feuillage composé de rameaux texturés instanciés (chargement beaucoup plus léger que la version précédente).
 - Guirlande lumineuse, cadeaux au pied, rotation lente, glisser-déposer horizontal pour tourner, support des boules cliquables.
@@ -28,7 +30,7 @@ Les RPC prévues sont :
 Il reste à ajouter les commandes de modération dans l'administration, puis réaliser un test en conditions réelles sur mobile et ordinateur.
 
 ## Pourquoi l'ancien aperçu semblait cassé
-L'ancienne prévisualisation était ouverte en `file://` tout en important des modules JavaScript locaux (`app.js` et `noel/loader.js`). Les navigateurs bloquent ces imports, d'où la disparition du contenu dépendant du JS et l'absence du sapin. Le nouvel aperçu utilise des scripts classiques intégrés au fichier et force la visibilité du hero. En production, la 3D est chargée à la demande depuis le dépôt.
+L'ancienne prévisualisation était ouverte en `file://` tout en important des modules JavaScript locaux (`app.js` et `noel/loader.js`). Les navigateurs bloquent ces imports, d'où la disparition du contenu dépendant du JS et l'absence du sapin. Le nouvel aperçu intègre les scripts ET la photo de secours directement dans un seul fichier HTML, qui s'affiche même sans WebGL. Les erreurs de rendu 3D restent disponibles dans la console. En production, la 3D est chargée à la demande depuis le dépôt.
 
 ## Livraison
 Publication uniquement après contrôle visuel du rendu et tests des RPC ; cible : 1er décembre 2026.
