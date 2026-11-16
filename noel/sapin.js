@@ -165,7 +165,7 @@
       if(error)throw error;
     }catch(e){setStatus('Connexion Twitch indisponible : '+e.message,true);}
   });
-  function demoPlace(message,style,anonymous=false){
+  function demoPlace(message,style,anonymous=false,animate=true){
     if(demoRows.length>=SLOT_COUNT)return null;
     const slot=slotForSubmission(demoRows.length+1);
     const row={
@@ -174,7 +174,7 @@
       position_index:slot
     };
     demoRows.push(row);
-    sceneApi?.setOrnaments([row],{animateId:row.id});
+    sceneApi?.setOrnaments([row],{animateId:animate?row.id:null});
     updateAuthState();
     return row;
   }
@@ -204,11 +204,11 @@
     const addFive=root.querySelector('[data-tree-demo-five]');
     const reset=root.querySelector('[data-tree-demo-reset]');
     addFive?.addEventListener('click',()=>{
-      for(let i=0;i<5&&demoRows.length<SLOT_COUNT;i++){
+      const total=Math.min(5,SLOT_COUNT-demoRows.length);
+      for(let i=0;i<total;i++){
         const n=demoRows.length+1;
-        // Une seule animation pour ne pas saturer la page de 5 effets simultanés.
-        const row=demoPlace('Un souhait pour Noël — visiteur '+n,palette[(n-1)%palette.length][0],n%3===0);
-        if(i<4)sceneApi?.setOrnaments([row]); 
+        // La dernière boule recule vers sa place ; les quatre autres sont posées sans animation.
+        demoPlace('Un souhait pour Noël — visiteur '+n,palette[(n-1)%palette.length][0],n%3===0,i===total-1);
       }
       updateAuthState();
     });
