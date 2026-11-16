@@ -35,3 +35,9 @@ Aucune publication de la version Noël ou modification de la base de données n'
 
 ## Ajustement visuel du 16 novembre
 Les dix modèles bénéficient désormais de dégradés volumétriques, de reflets plus affirmés, d'un relief discret et de matière (grain de verre, patine, textile). Les boules sur le sapin sont agrandies d'environ 22 % sans changer les 40 coordonnées ni l'ordre d'attribution. Les dix modèles utilisent maintenant le véritable atlas photographique détouré `noel/assets/ornaments-atlas.webp`, identique dans le carrousel, l'aperçu grand format et le sapin. L'aperçu HTML autonome embarque les images sans requête externe.
+
+## Correction de netteté — 16 novembre 2026
+- 10 fichiers WebP RGBA indépendants de 512 × 512 px dans `noel/assets/ornaments/` : finis l'atlas 500 × 232 et son étirement.
+- Même image HD dans le carrousel, l'aperçu et le sapin, avec 40 positions stables et pose par saut de 7.
+- L'aperçu autonome embarque les dix nouvelles images en data URI, alors que la feuille CSS du site référence les dix fichiers.
+- Les objets ont été refaits à partir de rendus détaillés et détourés ; leur qualité dépend de l'affichage final du navigateur.
