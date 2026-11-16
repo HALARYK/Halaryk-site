@@ -19,11 +19,15 @@
   async function start(){
     if(started)return;started=true;
     try{
-      if(!globalThis.THREE)await script('vendor/three.min.js');
+      // Ne pas charger ~600 Ko de Three.js si ce navigateur n'a pas de WebGL.
+      const canvas=document.createElement('canvas');
+      let gl=null;
+      try{gl=canvas.getContext('webgl2')||canvas.getContext('webgl');}catch{}
+      if(gl&&!globalThis.THREE)await script('vendor/three.min.js');
       await script('sapin.js');
     }catch(err){
       console.error('Sapin HALARYK',err);
-      if(loading)loading.textContent='Le rendu 3D est indisponible. Réessayez avec un navigateur récent.';
+      if(loading)loading.hidden=true; // La photo réaliste de secours est déjà affichée.
     }
   }
   if('IntersectionObserver' in window){
