@@ -44,6 +44,48 @@
 @media(max-width:700px){.halaryk-tree-layout{display:flex;flex-direction:column;gap:0}.halaryk-tree-scene{height:min(102vw,590px);min-height:340px}.halaryk-tree-panel{width:min(440px,100%);margin-top:0}.halaryk-tree-scene-footer{bottom:3px;font-size:9px}.halaryk-tree .halaryk-tree-heading{margin-bottom:3px}.halaryk-tree-panel h3{font-size:37px}}
 @media(prefers-reduced-motion:reduce){.halaryk-tree-swatch{scroll-behavior:auto}}
 
+
+/* Noël — version grand sapin collé à gauche, sur écran de bureau uniquement.
+   Le titre reste aligné sur le site ; seule la scène du sapin devient pleine largeur. */
+@media (min-width: 901px) {
+  .halaryk-tree { overflow-x: clip; }
+  .halaryk-tree-layout {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    padding: 0 clamp(35px, 5vw, 100px) 0 0;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 385px);
+    column-gap: clamp(20px, 2.7vw, 54px);
+    align-items: center;
+  }
+  .halaryk-tree-scene {
+    height: clamp(860px, 82vw, 1510px);
+    overflow: visible;
+  }
+  .halaryk-tree-fallback { justify-content: flex-start; }
+  .halaryk-tree-fallback-figure {
+    height: 100%;
+    max-width: none;
+    flex: none;
+    margin-left: clamp(-32px, -1.55vw, -14px);
+  }
+  .halaryk-tree-panel { align-self: center; }
+}
+@media (min-width: 901px) and (max-width: 1319px) {
+  .halaryk-tree-scene { height: min(78vw, 1100px); }
+  .halaryk-tree-layout {
+    column-gap: 14px;
+    padding-right: clamp(20px, 3vw, 38px);
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+}
+@media (max-width: 900px) {
+  .halaryk-tree-scene { height: min(110vw, 710px); }
+  .halaryk-tree-fallback { justify-content: center; }
+  .halaryk-tree-fallback-figure { height: 100%; }
+}
+
 /* Sapin fixe photoréaliste avec boules interactives. */
 .halaryk-tree-fallback{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .halaryk-tree-fallback-figure{position:relative;height:97%;max-width:100%;aspect-ratio:680/914}
