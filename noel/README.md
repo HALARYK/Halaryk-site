@@ -8,7 +8,7 @@ Le sapin reste **en 2D**, avec une grande image réaliste éclairée et des cade
 Le reste de l'accueil HALARYK reste inchangé : titre, planning, Twitch, navigation, réseaux et direction artistique. La section EU4 disparaît uniquement de la page d'accueil et reste accessible depuis Événements.
 
 ## Fonctionnement attendu
-- Six couleurs sobres conservées, combinables avec 14 finitions (mat, satiné, laqué, métallisé, nacré, givré, pailleté, velours, cannelé, facetté, mercurisé, craquelé, martelé, marbré), soit 84 possibilités. Aperçu CSS de la combinaison choisie.
+- **10 créations illustrées originales**, inspirées de décorations de Noël sélectionnées : Herbier sous verre, Nuit céleste, Verre ancien, Petit monde miniature, Joyau baroque, Ruban de velours, Tartan écossais, Roses anciennes, Œuf précieux, Petite maison d’hiver. Le visiteur choisit un **modèle complet**, pas une couleur + texture ; illustration vectorielle détaillée dans les miniatures, l'aperçu et sur le sapin. Aucun achat d'ornement ni réutilisation d'image commerciale.
 - Un message de 1 à 180 caractères par compte Twitch
 - Option « Publier anonymement » ; identité vérifiable par l'administrateur uniquement
 - **40 emplacements fixes** à coordonnées irrégulières sur tout le feuillage, numérotation cachée globalement du haut vers le bas. Aucun alignement en rangées droites.
@@ -24,7 +24,7 @@ Le reste de l'accueil HALARYK reste inchangé : titre, planning, Twitch, navigat
 `noel/apercu/index.html` est autonome : elle intègre les styles et l'image du sapin. **Mode démonstration actif** : choisir une boule, écrire un message, valider pour voir sa pose animée ; le bouton « Ajouter 5 boules fictives » permet de visualiser le remplissage jusqu'à 40, et « Effacer les essais » réinitialise la page. Aucune authentification Twitch ni base de données n'est utilisée dans l'aperçu. Les tests sont volatils et ne survivent pas au rechargement.
 
 ## À terminer pour publication
-1. Tester placement, lecture, animation, 14 finitions et visibilité des 40 boules sur PC et mobile.
+1. Tester placement, lecture, animation, 10 modèles et visibilité des 40 boules sur PC et mobile.
 2. Contrôler les règles de participation et les collisions entre décorations.
 3. Tester l'attribution transactionnelle des emplacements, les RPC et RLS proposées dans `noel/schema_sapin_2026.sql` dans un environnement Supabase approprié. **Le SQL n'a pas été exécuté**.
 4. Ajouter les outils de modération des messages et d'identification privée dans l'administration.
