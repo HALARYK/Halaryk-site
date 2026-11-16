@@ -52,7 +52,7 @@
   function makePineTexture(){
     // Une texture d'aiguilles 256 px partagée entre ~1000 rameaux en 3D.
     const c=document.createElement('canvas');c.width=c.height=256;
-    const x=c.getContext('2d');x.clearRect(0,0);
+    const x=c.getContext('2d');x.clearRect(0,0,c.width,c.height);
     const r=rng(54011);
     x.lineCap='round';
     x.strokeStyle='rgba(65,82,49,.98)';x.lineWidth=2.6;
