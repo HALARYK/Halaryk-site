@@ -21,7 +21,9 @@
     try{
       // Éviter le pré-test qui créait un contexte WebGL inutile.
       // Le moteur essaie WebGL 2 puis WebGL 1 sur des canvas distincts.
-      if(!globalThis.THREE)await script('vendor/three.min.js');
+      // Prototype 3D procédural retiré du rendu standard tant que le modèle réaliste n'est pas intégré.
+      // La photo du sapin et les boules interactives restent disponibles.
+      if(new URLSearchParams(location.search).has('tree_legacy_3d')&&!globalThis.THREE)await script('vendor/three.min.js');
       await script('sapin.js');
     }catch(err){
       console.error('Sapin HALARYK',err);
