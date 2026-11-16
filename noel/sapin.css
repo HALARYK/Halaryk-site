@@ -186,3 +186,21 @@
 .halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb:before{content:none}
 @media(max-width:700px){.halaryk-tree-model-option{flex-basis:96px}.halaryk-tree-selection-ornament{flex-basis:78px;width:78px;height:91px}.halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{width:25px;height:31px}}
 @media(prefers-reduced-motion:reduce){.halaryk-tree-models{scroll-behavior:auto}}
+
+/* Boules plus grandes d'environ 22 %, rendu premium : sélection et sapin. */
+.halaryk-tree-fallback-ornament{width:clamp(42px,3.5vw,55px);height:clamp(47px,4.1vw,63px)}
+.halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{
+  width:clamp(36px,3.05vw,47px);height:clamp(43px,3.6vw,57px);
+  filter:drop-shadow(0 4px 3px rgba(0,0,0,.65));
+}
+.halaryk-tree-model-option{flex-basis:113px;min-height:148px}
+.halaryk-tree-model-option-image{width:82px;height:101px}
+.halaryk-tree-selection-ornament{width:106px;height:120px;flex-basis:106px}
+.halaryk-tree-selection-preview{min-height:143px}
+@media(max-width:700px){
+  .halaryk-tree-fallback-ornament{width:37px;height:43px}
+  .halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{width:30px;height:38px}
+  .halaryk-tree-model-option{flex-basis:99px}
+  .halaryk-tree-model-option-image{width:73px;height:88px}
+  .halaryk-tree-selection-ornament{width:82px;height:97px;flex-basis:82px}
+}
