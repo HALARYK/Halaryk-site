@@ -9,6 +9,7 @@ create table if not exists public.christmas_tree_ornaments (
   author_id uuid not null references auth.users(id) on delete cascade,
   season_year integer not null default 2026 check (season_year=2026),
   style text not null check (style in ('Bordeaux','Ivoire','Doré','Rose','Cuivre','Vert')),
+  finish text not null default 'mat' check (finish in ('mat','satin','laque','metal','nacre','givre','paillete','velours','cannele','facette','mercurise','craquele','martele','marbre')),
   message text not null check (char_length(btrim(message)) between 1 and 180),
   anonymous boolean not null default false,
   position_index integer not null check (position_index between 1 and 40),
@@ -27,6 +28,7 @@ create or replace function public.christmas_tree_public_2026()
 returns table (
   id uuid,
   style text,
+  finish text,
   message text,
   author text,
   position_index integer
@@ -37,6 +39,7 @@ as $fn$
   select
     o.id,
     o.style,
+    o.finish,
     o.message,
     case when o.anonymous then 'Anonyme'
          else coalesce(nullif(p.display_name,''),nullif(p.twitch_login,''),'Membre de la communauté') end as author,
@@ -51,7 +54,7 @@ grant execute on function public.christmas_tree_public_2026() to anon, authentic
 
 -- Contrat écriture : identité dérivée de l'auth réelle, jamais envoyée par le navigateur.
 create or replace function public.christmas_tree_place_2026(
-  p_style text, p_message text, p_anonymous boolean default false
+  p_style text, p_message text, p_anonymous boolean default false, p_finish text default 'mat'
 )
 returns uuid
 language plpgsql security definer
@@ -77,6 +80,8 @@ begin
     then raise exception 'Le sapin est fermé'; end if;
   if p_style not in ('Bordeaux','Ivoire','Doré','Rose','Cuivre','Vert')
     then raise exception 'Décoration inconnue'; end if;
+  if p_finish not in ('mat','satin','laque','metal','nacre','givre','paillete','velours','cannele','facette','mercurise','craquele','martele','marbre')
+    then raise exception 'Finition inconnue'; end if;
   if char_length(cleaned) not between 1 and 180 then raise exception 'Message : 1 à 180 caractères'; end if;
   if exists(select 1 from public.christmas_tree_ornaments o where o.author_id=uid and o.season_year=2026)
     then raise exception 'Une seule boule par compte Twitch'; end if;
@@ -99,20 +104,20 @@ begin
   -- 7 est premier avec 40 : aucune place n'est attribuée deux fois.
   slot := (((used_slots+1)*7-1)%40)+1;
   insert into public.christmas_tree_ornaments
-    (author_id,season_year,style,message,anonymous,position_index)
-  values (uid,2026,p_style,cleaned,coalesce(p_anonymous,false),slot)
+    (author_id,season_year,style,finish,message,anonymous,position_index)
+  values (uid,2026,p_style,p_finish,cleaned,coalesce(p_anonymous,false),slot)
   returning id into created;
   return created;
 end;
 $fn$;
-revoke all on function public.christmas_tree_place_2026(text,text,boolean) from public, anon;
-grant execute on function public.christmas_tree_place_2026(text,text,boolean) to authenticated;
+revoke all on function public.christmas_tree_place_2026(text,text,boolean,text) from public, anon;
+grant execute on function public.christmas_tree_place_2026(text,text,boolean,text) to authenticated;
 
 -- Lecture privée : identité réelle visible seulement après contrôle administrateur.
 create or replace function public.christmas_tree_admin_2026()
 returns table (
   id uuid, author_id uuid, author_login text, display_name text,
-  message text, style text, anonymous boolean, status text, created_at timestamptz
+  message text, style text, finish text, anonymous boolean, status text, created_at timestamptz
 )
 language plpgsql stable security definer
 set search_path = ''
@@ -122,7 +127,7 @@ begin
     then raise exception 'Accès administrateur requis'; end if;
   return query
     select o.id,o.author_id,p.twitch_login,p.display_name,
-           o.message,o.style,o.anonymous,o.status,o.created_at
+           o.message,o.style,o.finish,o.anonymous,o.status,o.created_at
     from public.christmas_tree_ornaments o
     left join public.profiles p on p.id=o.author_id
     where o.season_year=2026 order by o.created_at desc;
