@@ -8,7 +8,7 @@
   const form=root.querySelector('[data-tree-form]'),fieldset=root.querySelector('[data-tree-fieldset]');
   const login=root.querySelector('[data-tree-login]'),signin=root.querySelector('[data-tree-signin]');
   const feedback=root.querySelector('[data-tree-feedback]'),swatches=root.querySelector('[data-tree-swatches]');
-  const count=root.querySelector('[data-tree-count]'),chars=root.querySelector('[data-tree-chars]');
+  const chars=root.querySelector('[data-tree-chars]');
   const dialog=document.querySelector('[data-tree-message-dialog]');
   const palette=[
     ['Bordeaux','#8b283b'],['Ivoire','#e8dccb'],['Doré','#c4a66d'],
@@ -49,8 +49,6 @@
   function createFallback(){
     const plane=stage.querySelector('[data-tree-fallback-ornaments]');
     const shown=new Set();
-    const instructions=stage.querySelector('.halaryk-tree-scene-footer span');
-    if(instructions)instructions.textContent='Clique sur une boule pour lire son message';
 
     return {
       removeAll(){if(plane)plane.replaceChildren();shown.clear();},
@@ -122,11 +120,9 @@
       if(error)throw error;
       ornamentRows=Array.isArray(data)?data:[];
       sceneApi?.setOrnaments(ornamentRows);
-      count.textContent=ornamentRows.length+' boule'+(ornamentRows.length>1?'s':'')+' accrochée'+(ornamentRows.length>1?'s':'');
       readyToPost=true;
     }catch{
       readyToPost=false;
-      count.textContent='Le sapin attend vos messages';
     }
     updateAuthState();
   }
