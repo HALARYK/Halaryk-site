@@ -48,3 +48,23 @@
 @media(max-width:900px){.halaryk-tree-layout{grid-template-columns:minmax(0,1fr) 330px;gap:12px}.halaryk-tree-scene{height:580px}.halaryk-tree-panel{padding:24px}}
 @media(max-width:700px){.halaryk-tree-layout{display:flex;flex-direction:column;gap:0}.halaryk-tree-scene{height:min(102vw,590px);min-height:340px}.halaryk-tree-panel{width:min(440px,100%);margin-top:0}.halaryk-tree-scene-footer{bottom:3px;font-size:9px}.halaryk-tree .halaryk-tree-heading{margin-bottom:3px}.halaryk-tree-panel h3{font-size:37px}}
 @media(prefers-reduced-motion:reduce){.halaryk-tree-swatch{scroll-behavior:auto}}
+
+/* Secours photoréaliste : visible immédiatement, indépendamment de WebGL. */
+.halaryk-tree-fallback{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.halaryk-tree-fallback-figure{position:relative;height:97%;max-width:100%;aspect-ratio:680/914}
+.halaryk-tree-fallback-photo{position:absolute;inset:0;background-image:url("assets/sapin-realiste.webp");background-size:100% 100%;background-position:center;background-repeat:no-repeat;filter:drop-shadow(0 21px 27px rgba(0,0,0,.34))}
+.halaryk-tree-fallback-ornaments{position:absolute;inset:0;pointer-events:none}
+.halaryk-tree-fallback-ornament{position:absolute;z-index:2;transform:translate(-50%,-50%);width:28px;height:34px;border:0;padding:0;background:none;cursor:pointer;pointer-events:auto}
+.halaryk-tree-fallback-ornament:focus-visible{outline:2px solid var(--gold-light);outline-offset:5px}
+.halaryk-tree-fallback-ornament .bauble{position:relative;display:block;width:26px;height:26px;border-radius:50%;background:var(--ornament-color);box-shadow:inset -7px -7px 10px rgba(0,0,0,.58),inset 5px 5px 8px rgba(255,255,255,.45),0 2px 7px rgba(0,0,0,.68)}
+.halaryk-tree-fallback-ornament .bauble:before{content:"";position:absolute;top:-5px;left:10px;width:7px;height:7px;border-radius:2px 2px 0 0;background:#bea16e}
+.halaryk-tree-scene.has-webgl .halaryk-tree-fallback{display:none}
+.halaryk-tree-scene canvas{z-index:2}
+.halaryk-tree-scene-footer{z-index:4}
+.halaryk-tree-scene .halaryk-tree-loading{z-index:3;top:auto;bottom:36px;height:auto;inset-inline:5%;display:block;pointer-events:none;text-align:center;font-size:11px}
+@media(max-width:700px){
+  .halaryk-tree-fallback-figure{height:98%}
+  .halaryk-tree-fallback-ornament{width:23px;height:27px}
+  .halaryk-tree-fallback-ornament .bauble{width:22px;height:22px}
+  .halaryk-tree-fallback-ornament .bauble:before{left:8px}
+}
