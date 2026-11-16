@@ -8,7 +8,7 @@ Le sapin reste **en 2D**, avec une grande image réaliste éclairée et des cade
 Le reste de l'accueil HALARYK reste inchangé : titre, planning, Twitch, navigation, réseaux et direction artistique. La section EU4 disparaît uniquement de la page d'accueil et reste accessible depuis Événements.
 
 ## Fonctionnement attendu
-- **10 créations illustrées originales**, inspirées de décorations de Noël sélectionnées : Herbier sous verre, Nuit céleste, Verre ancien, Petit monde miniature, Joyau baroque, Ruban de velours, Tartan écossais, Roses anciennes, Œuf précieux, Petite maison d’hiver. Le visiteur choisit un **modèle complet**, pas une couleur + texture ; illustration vectorielle détaillée dans les miniatures, l'aperçu et sur le sapin. Aucun achat d'ornement ni réutilisation d'image commerciale.
+- **10 décorations illustrées à partir de rendus réalistes**, inspirées de décorations de Noël sélectionnées : Herbier sous verre, Nuit céleste, Verre ancien, Petit monde miniature, Joyau baroque, Ruban de velours, Tartan écossais, Roses anciennes, Œuf précieux, Petite maison d’hiver. Le visiteur choisit un **modèle complet**, pas une couleur + texture ; illustration détourée réaliste dans les miniatures, l'aperçu et sur le sapin. Aucun achat d'ornement ni réutilisation d'image commerciale.
 - Un message de 1 à 180 caractères par compte Twitch
 - Option « Publier anonymement » ; identité vérifiable par l'administrateur uniquement
 - **40 emplacements fixes** à coordonnées irrégulières sur tout le feuillage, numérotation cachée globalement du haut vers le bas. Aucun alignement en rangées droites.
@@ -34,4 +34,4 @@ Le reste de l'accueil HALARYK reste inchangé : titre, planning, Twitch, navigat
 Aucune publication de la version Noël ou modification de la base de données n'est impliquée par ces fichiers de préparation.
 
 ## Ajustement visuel du 16 novembre
-Les dix modèles bénéficient désormais de dégradés volumétriques, de reflets plus affirmés, d'un relief discret et de matière (grain de verre, patine, textile). Les boules sur le sapin sont agrandies d'environ 22 % sans changer les 40 coordonnées ni l'ordre d'attribution. Les modèles restent générés en SVG : les rendus photo conçus séparément constituent une référence artistique, pas les fichiers du site.
+Les dix modèles bénéficient désormais de dégradés volumétriques, de reflets plus affirmés, d'un relief discret et de matière (grain de verre, patine, textile). Les boules sur le sapin sont agrandies d'environ 22 % sans changer les 40 coordonnées ni l'ordre d'attribution. Les dix modèles utilisent maintenant le véritable atlas photographique détouré `noel/assets/ornaments-atlas.webp`, identique dans le carrousel, l'aperçu grand format et le sapin. L'aperçu HTML autonome embarque les images sans requête externe.
