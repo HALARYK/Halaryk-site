@@ -32,3 +32,6 @@ Le reste de l'accueil HALARYK reste inchangé : titre, planning, Twitch, navigat
 6. Tester le fonctionnement complet avant fusion sur `main` au 1er décembre.
 
 Aucune publication de la version Noël ou modification de la base de données n'est impliquée par ces fichiers de préparation.
+
+## Ajustement visuel du 16 novembre
+Les dix modèles bénéficient désormais de dégradés volumétriques, de reflets plus affirmés, d'un relief discret et de matière (grain de verre, patine, textile). Les boules sur le sapin sont agrandies d'environ 22 % sans changer les 40 coordonnées ni l'ordre d'attribution. Les modèles restent générés en SVG : les rendus photo conçus séparément constituent une référence artistique, pas les fichiers du site.
