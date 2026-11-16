@@ -160,6 +160,43 @@
     const ground=new THREE.Mesh(new THREE.PlaneGeometry(8.4,8.4),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(canvas),transparent:true,depthWrite:false,opacity:.9}));
     ground.rotation.x=-Math.PI/2;ground.position.y=-.015;scene.add(ground);
   }
+
+  // Mode secours : la photo réaliste reste visible même lorsque WebGL est bloqué.
+  function createFallback(){
+    const plane=stage.querySelector('[data-tree-fallback-ornaments]');
+    const shown=new Set();
+    const instructions=stage.querySelector('.halaryk-tree-scene-footer span');
+    if(instructions)instructions.textContent='Clique sur une boule pour lire son message';
+    loading.hidden=true;
+    return {
+      setPaused(){},
+      removeAll(){if(plane)plane.replaceChildren();shown.clear();},
+      setOrnaments(rows){
+        if(!plane)return;
+        for(const row of rows){
+          if(shown.has(row.id))continue;
+          shown.add(row.id);
+          const idx=Math.max(0,Number(row.position_index)||0);
+          const progress=((idx*97)%367)/367;
+          const angle=(idx*2.39996323)%TAU;
+          const top=79-progress*64;
+          const width=31*(1-progress);
+          const left=50+Math.cos(angle)*width;
+          const button=document.createElement('button');
+          button.type='button';
+          button.className='halaryk-tree-fallback-ornament';
+          button.style.left=left.toFixed(2)+'%';
+          button.style.top=top.toFixed(2)+'%';
+          button.style.setProperty('--ornament-color',colorChoice(row.style)[1]);
+          button.setAttribute('aria-label','Lire un message sur le sapin');
+          const orb=document.createElement('span');orb.className='bauble';
+          button.append(orb);
+          button.addEventListener('click',()=>showMessage(String(row.message||''),String(row.author||'Anonyme')));
+          plane.append(button);
+        }
+      }
+    };
+  }
   function create3D(){
     if(!globalThis.THREE)throw new Error('Three.js est indisponible.');
     let renderer;
@@ -327,13 +364,13 @@
   // Une seule initialisation WebGL, sans attente d'authentification.
   try {
     sceneApi=create3D();
+    stage.classList.add('has-webgl');
   } catch(err) {
     console.error('Sapin 3D :',err);
-    const reason=String(err?.message||err||'').toLowerCase();
-    const hasWebGL=/webgl|context|gpu|render/i.test(reason);
-    loading.textContent=hasWebGL
-      ? 'WebGL est indisponible sur ce navigateur ou cet appareil. Active l’accélération graphique puis recharge la page.'
-      : 'Le sapin 3D n’a pas pu démarrer. Ouvre la console du navigateur pour voir l’erreur.';
+    // Le sapin reste affiché : la 3D n'est pas indispensable à la participation.
+    // Message diagnostique complet conservé uniquement dans la console.
+    stage.querySelector('canvas')?.remove();
+    sceneApi=createFallback();
   }
   updateAuthState();
   if(location.protocol!=='file:'){
