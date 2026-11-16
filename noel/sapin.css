@@ -5,11 +5,6 @@
 .halaryk-tree .halaryk-tree-heading h2{color:var(--text)}
 .halaryk-tree-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,385px);align-items:center;gap:clamp(10px,2vw,36px)}
 .halaryk-tree-scene{position:relative;width:100%;min-width:0;height:clamp(520px,68vw,790px);background:transparent;isolation:isolate}
-.halaryk-tree-scene canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
-.halaryk-tree-scene canvas:active{cursor:grabbing}
-.halaryk-tree-scene canvas:focus-visible{outline:2px solid var(--gold-light);outline-offset:-2px}
-.halaryk-tree-loading{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font:500 13px/1.6 var(--sans)}
-.halaryk-tree-loading[hidden]{display:none!important}
 .halaryk-tree-scene-footer{position:absolute;bottom:16px;left:10px;right:10px;display:flex;justify-content:space-between;gap:10px;pointer-events:none;color:var(--dim);font:500 10px/1.5 var(--sans);letter-spacing:.02em}
 .halaryk-tree-panel{position:relative;z-index:2;padding:clamp(24px,3vw,38px);border:1px solid var(--line);background:linear-gradient(145deg,rgba(16,10,10,.96),rgba(5,4,4,.94));box-shadow:var(--shadow)}
 .halaryk-tree-panel h3{margin:8px 0 15px;color:var(--text);font:600 clamp(31px,3.2vw,45px)/.99 var(--serif)}
@@ -49,7 +44,7 @@
 @media(max-width:700px){.halaryk-tree-layout{display:flex;flex-direction:column;gap:0}.halaryk-tree-scene{height:min(102vw,590px);min-height:340px}.halaryk-tree-panel{width:min(440px,100%);margin-top:0}.halaryk-tree-scene-footer{bottom:3px;font-size:9px}.halaryk-tree .halaryk-tree-heading{margin-bottom:3px}.halaryk-tree-panel h3{font-size:37px}}
 @media(prefers-reduced-motion:reduce){.halaryk-tree-swatch{scroll-behavior:auto}}
 
-/* Secours photoréaliste : visible immédiatement, indépendamment de WebGL. */
+/* Sapin fixe photoréaliste avec boules interactives. */
 .halaryk-tree-fallback{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .halaryk-tree-fallback-figure{position:relative;height:97%;max-width:100%;aspect-ratio:680/914}
 .halaryk-tree-fallback-photo{position:absolute;inset:0;background-image:url("assets/sapin-realiste.webp");background-size:100% 100%;background-position:center;background-repeat:no-repeat;filter:drop-shadow(0 21px 27px rgba(0,0,0,.34))}
@@ -58,10 +53,7 @@
 .halaryk-tree-fallback-ornament:focus-visible{outline:2px solid var(--gold-light);outline-offset:5px}
 .halaryk-tree-fallback-ornament .bauble{position:relative;display:block;width:26px;height:26px;border-radius:50%;background:var(--ornament-color);box-shadow:inset -7px -7px 10px rgba(0,0,0,.58),inset 5px 5px 8px rgba(255,255,255,.45),0 2px 7px rgba(0,0,0,.68)}
 .halaryk-tree-fallback-ornament .bauble:before{content:"";position:absolute;top:-5px;left:10px;width:7px;height:7px;border-radius:2px 2px 0 0;background:#bea16e}
-.halaryk-tree-scene.has-webgl .halaryk-tree-fallback{display:none}
-.halaryk-tree-scene canvas{z-index:2}
 .halaryk-tree-scene-footer{z-index:4}
-.halaryk-tree-scene .halaryk-tree-loading{z-index:3;top:auto;bottom:36px;height:auto;inset-inline:5%;display:block;pointer-events:none;text-align:center;font-size:11px}
 @media(max-width:700px){
   .halaryk-tree-fallback-figure{height:98%}
   .halaryk-tree-fallback-ornament{width:23px;height:27px}
