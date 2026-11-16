@@ -1067,6 +1067,40 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
   .halaryk-tree-fallback-ornament.is-landing .bauble{animation:none}
 }
 
+/* Fin 2026 : choix de finition indépendant de la couleur. */
+.halaryk-tree-finish-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:13px 0 8px}
+.halaryk-tree-finish-title{margin:0;color:var(--gold-light);font:600 10px/1.4 var(--sans);letter-spacing:.13em;text-transform:uppercase}
+.halaryk-tree-finish-nav{display:flex;gap:5px}
+.halaryk-tree-finish-nav button{width:29px;height:27px;border:1px solid var(--line);background:rgba(25,15,15,.7);color:var(--gold-light);cursor:pointer}
+.halaryk-tree-finishes{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent;scroll-snap-type:x proximity;padding:4px 1px 11px}
+.halaryk-tree-finish{flex:0 0 81px;min-height:82px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:rgba(8,7,7,.65);color:var(--muted);cursor:pointer;scroll-snap-align:start;font:500 10px/1.2 var(--sans);padding:7px 5px;text-align:center}
+.halaryk-tree-finish[aria-pressed=true],.halaryk-tree-swatch[aria-pressed=true]{border-color:var(--gold);background:rgba(111,20,20,.26);color:var(--text)}
+.halaryk-tree-finish .sample-ball{display:block;width:34px;height:34px;border-radius:50%;flex:none}
+.halaryk-tree-selection-preview{display:flex;align-items:center;gap:14px;padding:10px 13px;margin:8px 0 19px;border:1px solid rgba(183,147,100,.21);background:linear-gradient(125deg,rgba(27,19,16,.7),rgba(11,9,9,.7))}
+.halaryk-tree-selection-preview small{display:block;margin-bottom:3px;font:600 9px/1.4 var(--sans);letter-spacing:.13em;color:var(--gold-light)}
+.halaryk-tree-selection-preview strong{display:block;font:500 16px/1.3 var(--serif);color:var(--text)}
+.halaryk-tree-selection-ball{display:block;flex:0 0 52px;width:52px;height:52px;border-radius:50%}
+.halaryk-tree .halaryk-tree-ball-surface{position:relative;isolation:isolate;background-color:var(--ornament-color);background-image:radial-gradient(circle at 30% 21%,rgba(255,255,255,.37),transparent 36%),radial-gradient(circle at 75% 84%,rgba(0,0,0,.5),transparent 54%);box-shadow:inset -7px -7px 10px rgba(0,0,0,.46),inset 4px 5px 7px rgba(255,255,255,.22),0 2px 7px rgba(0,0,0,.63)}
+.halaryk-tree .halaryk-tree-ball-surface:before{content:"";position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:24%;height:20%;min-width:6px;min-height:5px;border-radius:2px 2px 0 0;background:linear-gradient(90deg,#675436,#dbc69a 45%,#8d6c43);box-shadow:0 0 2px rgba(0,0,0,.5);z-index:3}
+.halaryk-tree .halaryk-tree-ball-surface:after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:1}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="mat"]{background-image:radial-gradient(circle at 27% 24%,rgba(255,255,255,.19),transparent 51%),radial-gradient(circle at 75% 79%,rgba(0,0,0,.47),transparent 63%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="satin"]:after{background:linear-gradient(107deg,transparent 8%,rgba(255,249,235,.25) 31%,transparent 58%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="laque"]:after{background:radial-gradient(ellipse at 29% 22%,rgba(255,255,255,.93) 0%,rgba(255,255,255,.39) 10%,transparent 28%),linear-gradient(100deg,transparent 38%,rgba(255,255,255,.18) 45%,transparent 53%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="metal"]:after{background:linear-gradient(95deg,rgba(0,0,0,.44),rgba(255,255,255,.65) 25%,rgba(0,0,0,.25) 41%,rgba(255,255,255,.7) 61%,rgba(0,0,0,.37) 83%);opacity:.88}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="nacre"]:after{background:conic-gradient(from 25deg at 45% 43%,rgba(245,196,214,.52),rgba(252,238,180,.4),rgba(190,227,222,.52),rgba(255,255,255,.36),rgba(245,196,214,.52));mix-blend-mode:screen;opacity:.7}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="givre"]:after{background:radial-gradient(circle,rgba(255,255,255,.65) .6px,transparent 1.5px);background-size:3.5px 3.5px;opacity:.45}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="paillete"]:after{background:radial-gradient(circle,rgba(255,247,210,.95) .9px,transparent 1.7px),radial-gradient(circle,rgba(255,255,255,.75) .65px,transparent 1.4px),radial-gradient(circle,rgba(243,193,135,.85) .7px,transparent 1.4px);background-size:7px 9px,11px 8px,9px 13px;background-position:0 0,3px 4px,5px 2px}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="velours"]{background-image:radial-gradient(circle at 28% 25%,rgba(255,255,255,.12),transparent 50%),radial-gradient(circle at 76% 80%,rgba(0,0,0,.5),transparent 60%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="velours"]:after{background:radial-gradient(circle,rgba(0,0,0,.4) .5px,rgba(255,255,255,.12) .9px,transparent 1.3px);background-size:3px 3px;opacity:.6}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="cannele"]:after{background:repeating-linear-gradient(93deg,rgba(0,0,0,.30) 0px,rgba(255,255,255,.35) 3px,rgba(0,0,0,.3) 7px,transparent 10px);opacity:.78}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="facette"]:after{background:repeating-conic-gradient(from 10deg at 40% 46%,rgba(255,255,255,.33) 0deg 24deg,rgba(0,0,0,.22) 25deg 49deg,transparent 50deg 72deg);opacity:.62}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="mercurise"]:after{background:radial-gradient(circle at 32% 23%,rgba(255,255,255,.75),transparent 32%),radial-gradient(circle at 66% 51%,rgba(34,23,18,.66) 0 2px,transparent 5px),radial-gradient(circle at 28% 77%,rgba(30,22,17,.6) 0 2px,transparent 5px),radial-gradient(circle at 68% 79%,rgba(255,255,255,.5),transparent 35%);opacity:.85}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="craquele"]:after{background:repeating-linear-gradient(37deg,transparent 0 7px,rgba(30,14,11,.45) 7px 7.6px,transparent 8px 14px),repeating-linear-gradient(139deg,transparent 0 10px,rgba(255,240,214,.4) 10px 10.8px,transparent 11px 17px);opacity:.67}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="martele"]:after{background:radial-gradient(circle at 24% 27%,rgba(255,255,255,.43) 0 8%,rgba(0,0,0,.22) 10%,transparent 18%),radial-gradient(circle at 69% 33%,rgba(255,255,255,.48) 0 12%,rgba(0,0,0,.24) 14%,transparent 22%),radial-gradient(circle at 46% 72%,rgba(255,255,255,.3) 0 11%,rgba(0,0,0,.28) 14%,transparent 23%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="marbre"]:after{background:repeating-linear-gradient(129deg,transparent 0 8px,rgba(255,247,218,.54) 8px 9px,transparent 10px 17px,rgba(20,15,15,.35) 17px 18px,transparent 19px 27px);opacity:.6}
+.halaryk-tree-finish:focus-visible,.halaryk-tree-swatch:focus-visible,.halaryk-tree-finish-nav button:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+@media(max-width:700px){.halaryk-tree-finish{flex-basis:76px}.halaryk-tree-selection-ball{width:45px;height:45px;flex-basis:45px}}
+
 /* aperçu local seulement, les modules dynamiques restent sur le site hébergé */
 .reveal{opacity:1!important;transform:none!important;visibility:visible!important}
 </style></head><body data-page="home">
@@ -1116,8 +1150,20 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
         <p class="halaryk-tree-intro">Un souvenir de ton année, un rêve, un souhait pour les autres… Choisis une décoration et accroche ton message au sapin.</p>
         <form data-tree-form autocomplete="off">
           <fieldset data-tree-fieldset disabled>
-            <legend>Choisir une boule</legend>
-            <div class="halaryk-tree-swatches" data-tree-swatches aria-label="Modèles de boules"></div>
+            <legend>Couleur de la boule</legend>
+            <div class="halaryk-tree-swatches" data-tree-swatches aria-label="Couleurs des boules"></div>
+            <div class="halaryk-tree-finish-head">
+              <p class="halaryk-tree-finish-title">Finition de la boule</p>
+              <div class="halaryk-tree-finish-nav">
+                <button type="button" data-tree-finish-prev aria-label="Finitions précédentes">‹</button>
+                <button type="button" data-tree-finish-next aria-label="Finitions suivantes">›</button>
+              </div>
+            </div>
+            <div class="halaryk-tree-finishes" data-tree-finishes aria-label="14 finitions de boules"></div>
+            <div class="halaryk-tree-selection-preview" aria-live="polite">
+              <span class="halaryk-tree-selection-ball halaryk-tree-ball-surface" data-tree-preview-ball aria-hidden="true"></span>
+              <span><small>TA DÉCORATION</small><strong data-tree-preview-label>Bordeaux · Mat</strong></span>
+            </div>
             <label for="tree-christmas-message">Ton message <span class="halaryk-tree-charcount" data-tree-chars>0 / 180</span></label>
             <textarea id="tree-christmas-message" name="message" maxlength="180" rows="4" required placeholder="Une pensée, un vœu, un souvenir…"></textarea>
             <label class="halaryk-tree-check"><input type="checkbox" name="anonymous"> Publier anonymement</label>
@@ -1161,51 +1207,82 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
   const form=root.querySelector('[data-tree-form]'),fieldset=root.querySelector('[data-tree-fieldset]');
   const login=root.querySelector('[data-tree-login]'),signin=root.querySelector('[data-tree-signin]');
   const feedback=root.querySelector('[data-tree-feedback]'),swatches=root.querySelector('[data-tree-swatches]');
+  const finishesRoot=root.querySelector('[data-tree-finishes]');
+  const previewBall=root.querySelector('[data-tree-preview-ball]'),previewLabel=root.querySelector('[data-tree-preview-label]');
   const chars=root.querySelector('[data-tree-chars]');
   const dialog=document.querySelector('[data-tree-message-dialog]');
   const palette=[
     ['Bordeaux','#8b283b'],['Ivoire','#e8dccb'],['Doré','#c4a66d'],
     ['Rose','#bd8b8b'],['Cuivre','#ae714f'],['Vert','#31594d']
   ];
-  const SEASON_OPEN=Date.parse('2026-11-30T23:00:00Z');
-  // Numérotation discrète de haut en bas et de gauche à droite.
-  // Neuf rangs de 1, 2, 3, 4, 5, 6, 6, 6 et 7 boules = 40 places.
-  // Les positions 1 à 40 sont stables, quel que soit le nombre de visiteurs.
-  const SLOT_ROWS=[
-    [20,0,1],[27,9,2],[34,15,3],[41,21,4],[48,25,5],
-    [55,29,6],[62,31,6],[69,33,6],[76,34,7]
+  const finishes=[
+    ['mat','Mat'],['satin','Satiné'],['laque','Laqué brillant'],
+    ['metal','Métallisé'],['nacre','Nacré'],['givre','Givré'],
+    ['paillete','Paillettes fines'],['velours','Velours'],
+    ['cannele','Cannelé'],['facette','Facetté'],
+    ['mercurise','Verre mercurisé'],['craquele','Craquelé'],
+    ['martele','Martelé'],['marbre','Marbré']
   ];
-  const SLOT_POSITIONS=SLOT_ROWS.flatMap(([top,extent,quantity])=>
-    Array.from({length:quantity},(_,i)=>({
-      left:50+(quantity===1?0:(-extent+(2*extent*i)/(quantity-1))),
-      top
-    }))
-  );
+  const finishChoice=code=>finishes.some(f=>f[0]===code)?code:'mat';
+  const SEASON_OPEN=Date.parse('2026-11-30T23:00:00Z');
+  // Coordonnées fixes et volontairement irrégulières dans la silhouette du sapin.
+  // Les 40 identifiants restent ordonnés du haut vers le bas, mais aucune rangée n'est rectiligne.
+  const SLOT_POSITIONS=[
+    [46.5,18],[56.7,22.1],[44.8,24.4],[52.3,27.2],[44.9,30.6],
+[60.7,32.9],[53.6,34.6],[36.7,35.8],[42.2,40],[52.6,40],
+[60.6,41.4],[31.8,45.3],[69.6,46.2],[40.3,48.1],[50.3,48.5],
+[64.4,50],[31,50.5],[44.9,52.3],[59.8,54.1],[25.4,54.8],
+[69.4,55.3],[31.1,58.4],[74.8,59.7],[48.7,60.2],[59.7,60.6],
+[42.2,63.8],[49.3,65.4],[22.7,65.8],[72.6,66.4],[37.7,68.4],
+[28.6,69.4],[59.2,69.4],[45.8,70],[80.3,72.3],[34.2,73.2],
+[50.4,74.5],[23.2,75.3],[67.2,76.6],[41,77.3],[75,77.8]
+  ].map(([left,top])=>({left,top}));
   const SLOT_COUNT=SLOT_POSITIONS.length;
   // 7 et 40 sont premiers entre eux : chaque place est visitée une seule fois.
   const slotForSubmission=number=>((number*7-1)%SLOT_COUNT)+1;
   const isDemo=root.hasAttribute('data-tree-demo');
   const demoRows=[];
-  let selected=0,db=null,user=null,readyToPost=false,ornamentRows=[];
+  let selectedColor=0,selectedFinish=0,db=null,user=null,readyToPost=false,ornamentRows=[];
   let sceneApi=null;
   const colorChoice=(name)=>palette.find(p=>p[0]===name)||palette[0];
   const setStatus=(s,error=false)=>{feedback.textContent=s;feedback.classList.toggle('is-error',error);};
-  function initSwatches(){
-    palette.forEach(([name,color],index)=>{
+  function updateSelections(){
+    const [name,color]=palette[selectedColor], [code,label]=finishes[selectedFinish];
+    [...swatches.children].forEach((button,i)=>{
+      button.setAttribute('aria-pressed',String(i===selectedColor));
+      button.querySelector('.sample-ball').dataset.finish=code;
+    });
+    [...finishesRoot.children].forEach((button,i)=>{
+      button.setAttribute('aria-pressed',String(i===selectedFinish));
+      button.querySelector('.sample-ball').style.setProperty('--ornament-color',color);
+    });
+    if(previewBall){previewBall.dataset.finish=code;previewBall.style.setProperty('--ornament-color',color);}
+    if(previewLabel)previewLabel.textContent=name+' · '+label;
+  }
+  function initSelectors(){
+    palette.forEach(([name,color],i)=>{
       const button=document.createElement('button');button.type='button';button.className='halaryk-tree-swatch';
-      button.innerHTML='<span class="sample-ball"></span><span></span>';
-      button.querySelector('.sample-ball').style.background=color;
+      button.innerHTML='<span class="sample-ball halaryk-tree-ball-surface"></span><span></span>';
+      button.querySelector('.sample-ball').style.setProperty('--ornament-color',color);
       button.lastChild.textContent=name;
-      button.setAttribute('aria-pressed',String(index===selected));
-      button.addEventListener('click',()=>{
-        selected=index;
-        [...swatches.children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));
-      });
+      button.setAttribute('aria-label','Couleur '+name);
+      button.addEventListener('click',()=>{selectedColor=i;updateSelections();});
       swatches.append(button);
     });
+    finishes.forEach(([code,label],i)=>{
+      const button=document.createElement('button');button.type='button';button.className='halaryk-tree-finish';
+      button.innerHTML='<span class="sample-ball halaryk-tree-ball-surface"></span><span></span>';
+      button.querySelector('.sample-ball').dataset.finish=code;button.lastChild.textContent=label;
+      button.setAttribute('aria-label','Finition '+label);
+      button.addEventListener('click',()=>{selectedFinish=i;updateSelections();});
+      finishesRoot.append(button);
+    });
+    root.querySelector('[data-tree-finish-prev]')?.addEventListener('click',()=>finishesRoot.scrollBy({left:-260,behavior:'smooth'}));
+    root.querySelector('[data-tree-finish-next]')?.addEventListener('click',()=>finishesRoot.scrollBy({left:260,behavior:'smooth'}));
     form.elements.message.addEventListener('input',()=>chars.textContent=form.elements.message.value.length+' / 180');
+    updateSelections();
   }
-  initSwatches();
+  initSelectors();
   const canPost=()=>isDemo
     ? demoRows.length<SLOT_COUNT
     : !!user&&Date.now()>=SEASON_OPEN&&readyToPost&&location.protocol!=='file:';
@@ -1241,9 +1318,11 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
       button.style.left=slot.left.toFixed(2)+'%';
       button.style.top=slot.top.toFixed(2)+'%';
       button.style.setProperty('--ornament-color',colorChoice(row.style)[1]);
+      button.dataset.finish=finishChoice(row.finish);
       button.setAttribute('aria-label','Lire un message déposé sur le sapin');
       const orb=document.createElement('span');
-      orb.className='bauble';
+      orb.className='bauble halaryk-tree-ball-surface';
+      orb.dataset.finish=button.dataset.finish;
       button.append(orb);
       button.addEventListener('click',()=>showMessage(String(row.message||''),String(row.author||'Anonyme')));
       if(animated && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -1318,12 +1397,12 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
       if(error)throw error;
     }catch(e){setStatus('Connexion Twitch indisponible : '+e.message,true);}
   });
-  function demoPlace(message,style,anonymous=false,animate=true){
+  function demoPlace(message,style,finish,anonymous=false,animate=true){
     if(demoRows.length>=SLOT_COUNT)return null;
     const slot=slotForSubmission(demoRows.length+1);
     const row={
       id:'demo-'+(demoRows.length+1),
-      style,message,author:anonymous?'Anonyme':'Visiteur test',
+      style,finish,message,author:anonymous?'Anonyme':'Visiteur test',
       position_index:slot
     };
     demoRows.push(row);
@@ -1334,17 +1413,17 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     if(!canPost())return setStatus('Connexion Twitch obligatoire ou sapin complet.',true);
-    const message=form.elements.message.value.trim(),style=palette[selected][0];
+    const message=form.elements.message.value.trim(),style=palette[selectedColor][0],finish=finishes[selectedFinish][0];
     if(!message||message.length>180)return setStatus('Le message doit contenir entre 1 et 180 caractères.',true);
     const anonymous=!!form.elements.anonymous.checked;
     if(isDemo){
-      demoPlace(message,style,anonymous);
+      demoPlace(message,style,finish,anonymous);
       form.reset();chars.textContent='0 / 180';
       return;
     }
     const submit=form.querySelector('[data-tree-submit]');submit.disabled=true;
     try{
-      const {data,error}=await db.rpc('christmas_tree_place_2026',{p_style:style,p_message:message,p_anonymous:anonymous});
+      const {data,error}=await db.rpc('christmas_tree_place_2026',{p_style:style,p_finish:finish,p_message:message,p_anonymous:anonymous});
       if(error)throw error;
       form.reset();chars.textContent='0 / 180';
       await loadOrnaments(String(data));
@@ -1361,7 +1440,7 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
       for(let i=0;i<total;i++){
         const n=demoRows.length+1;
         // La dernière boule recule vers sa place ; les quatre autres sont posées sans animation.
-        demoPlace('Un souhait pour Noël — visiteur '+n,palette[(n-1)%palette.length][0],n%3===0,i===total-1);
+        demoPlace('Un souhait pour Noël — visiteur '+n,palette[(n-1)%palette.length][0],finishes[(n-1)%finishes.length][0],n%3===0,i===total-1);
       }
       updateAuthState();
     });
