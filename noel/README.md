@@ -34,3 +34,8 @@ L'ancienne prévisualisation était ouverte en `file://` tout en important des m
 
 ## Livraison
 Publication uniquement après contrôle visuel du rendu et tests des RPC ; cible : 1er décembre 2026.
+
+## Correction WebGL du 16 novembre 2026
+Le journal chrome://gpu du testeur confirme WebGL accéléré sur RTX 3050 mais contient aussi `eglCreateContext: Requested version is not supported`. La vérification initiale qui créait un contexte inutile a été supprimée. Le moteur utilise désormais un canvas neuf par tentative : WebGL2, puis WebGL1 avec `THREE.WebGL1Renderer` si nécessaire. L'image de secours reste visible jusqu'à la première image 3D effectivement rendue.
+
+Pour diagnostiquer un échec restant dans l'aperçu local, ouvrir l'URL du fichier avec `?tree_debug=1` à la fin : le message d'erreur de création du moteur est alors affiché sous le sapin. Dans la console, lire les avertissements préfixés `HALARYK`. Le rapport GPU seul ne prouve pas qu'un contexte WebGL a été créé pour chaque page.
