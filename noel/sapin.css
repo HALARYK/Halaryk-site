@@ -204,15 +204,31 @@
   .halaryk-tree-model-option-image{width:73px;height:88px}
   .halaryk-tree-selection-ornament{width:82px;height:97px;flex-basis:82px}
 }
-/* Les dix vrais ornements ont un fond transparent et la même découpe dans
-   le carrousel, la sélection agrandie et les décorations du sapin. */
+
+/* La même image WebP 512px par boule, pas d'atlas ni de zoom sur une miniature. */
 .halaryk-tree-ornament-photo{
   display:block;width:100%;height:100%;
-  background-image:url("assets/ornaments-atlas.webp");
-  background-size:500% 200%;
-  background-position:var(--orn-x,0%) var(--orn-y,0%);
+  background-size:contain;background-position:center center;
   background-repeat:no-repeat;background-color:transparent;
-  filter:drop-shadow(0 2px 3px rgba(0,0,0,.58));
 }
-.halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{overflow:visible}
+.halaryk-tree-ornament-photo[data-model="herbier"]{background-image:url("assets/ornaments/herbier.webp")}
+.halaryk-tree-ornament-photo[data-model="celeste"]{background-image:url("assets/ornaments/celeste.webp")}
+.halaryk-tree-ornament-photo[data-model="ancien"]{background-image:url("assets/ornaments/ancien.webp")}
+.halaryk-tree-ornament-photo[data-model="monde"]{background-image:url("assets/ornaments/monde.webp")}
+.halaryk-tree-ornament-photo[data-model="baroque"]{background-image:url("assets/ornaments/baroque.webp")}
+.halaryk-tree-ornament-photo[data-model="velours"]{background-image:url("assets/ornaments/velours.webp")}
+.halaryk-tree-ornament-photo[data-model="tartan"]{background-image:url("assets/ornaments/tartan.webp")}
+.halaryk-tree-ornament-photo[data-model="roses"]{background-image:url("assets/ornaments/roses.webp")}
+.halaryk-tree-ornament-photo[data-model="oeuf"]{background-image:url("assets/ornaments/oeuf.webp")}
+.halaryk-tree-ornament-photo[data-model="maison"]{background-image:url("assets/ornaments/maison.webp")}
 .halaryk-tree-model-option-image,.halaryk-tree-selection-ornament{overflow:visible}
+.halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{overflow:visible;filter:none}
+.halaryk-tree-fallback-ornament .halaryk-tree-ornament-photo{filter:drop-shadow(0 1px 1px rgba(0,0,0,.58))}
+.halaryk-tree-fallback-ornament{width:clamp(48px,4vw,65px);height:clamp(53px,4.5vw,73px)}
+.halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{
+  width:clamp(46px,3.8vw,62px);height:clamp(50px,4.2vw,70px);
+}
+@media(max-width:700px){
+  .halaryk-tree-fallback-ornament{width:40px;height:47px}
+  .halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{width:36px;height:43px}
+}
