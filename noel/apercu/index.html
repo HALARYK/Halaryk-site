@@ -1005,6 +1005,11 @@ body[data-page="event"] .section{min-height:0!important;padding:46px clamp(24px,
   .halaryk-tree-fallback-ornament .bauble:before{left:8px}
 }
 
+
+/* Priorité à l'alignement sur le bord gauche, après les règles génériques. */
+@media (min-width: 901px) {
+  .halaryk-tree .halaryk-tree-fallback { justify-content: flex-start; }
+}
 /* aperçu local seulement, les modules dynamiques restent sur le site hébergé */
 .reveal{opacity:1!important;transform:none!important;visibility:visible!important}
 </style></head><body data-page="home">
