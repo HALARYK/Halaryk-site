@@ -113,3 +113,51 @@
 @media (min-width: 901px) {
   .halaryk-tree .halaryk-tree-fallback { justify-content: flex-start; }
 }
+
+/* Décoration communautaire : apparition à sa position définitive,
+   puis retrait en profondeur (dézoom), sur le sapin 2D existant. */
+.halaryk-tree-fallback-ornament{
+  width:clamp(32px,3vw,43px);
+  height:clamp(32px,3vw,43px);
+  display:grid;
+  place-items:center;
+  transition:filter .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.halaryk-tree-fallback-ornament .bauble{
+  width:clamp(25px,2.25vw,33px);
+  height:clamp(25px,2.25vw,33px);
+  transform-origin:center;
+  backface-visibility:hidden;
+}
+.halaryk-tree-fallback-ornament:hover .bauble{filter:brightness(1.2)}
+.halaryk-tree-fallback-ornament.is-landing{z-index:10}
+.halaryk-tree-fallback-ornament.is-landing .bauble{
+  animation:halaryk-bauble-landing .78s cubic-bezier(.17,.82,.27,1) both;
+  pointer-events:none;
+}
+@keyframes halaryk-bauble-landing{
+  0%{opacity:0;transform:scale(3.5);filter:blur(2.1px) brightness(1.5)}
+  12%{opacity:1;filter:blur(1.4px) brightness(1.45)}
+  68%{opacity:1;filter:blur(0) brightness(1.1)}
+  100%{opacity:1;transform:scale(1);filter:blur(0) brightness(1)}
+}
+.halaryk-tree-demo-actions{
+  display:flex;flex-wrap:wrap;gap:9px;margin-top:15px;padding:12px 0;
+  border-top:1px solid var(--line);
+}
+.halaryk-tree-demo-actions .button{
+  flex:1;min-width:145px;justify-content:center;font-size:11px;
+  cursor:pointer;
+}
+.halaryk-tree-demo-badge{
+  color:var(--gold-light);margin:0 0 7px;
+  font:600 10px/1.5 var(--sans);text-transform:uppercase;letter-spacing:.11em;
+}
+@media(max-width:700px){
+  .halaryk-tree-fallback-ornament{width:32px;height:32px}
+  .halaryk-tree-fallback-ornament .bauble{width:24px;height:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .halaryk-tree-fallback-ornament.is-landing .bauble{animation:none}
+}
