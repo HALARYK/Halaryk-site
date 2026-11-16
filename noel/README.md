@@ -39,3 +39,10 @@ Publication uniquement après contrôle visuel du rendu et tests des RPC ; cible
 Le journal chrome://gpu du testeur confirme WebGL accéléré sur RTX 3050 mais contient aussi `eglCreateContext: Requested version is not supported`. La vérification initiale qui créait un contexte inutile a été supprimée. Le moteur utilise désormais un canvas neuf par tentative : WebGL2, puis WebGL1 avec `THREE.WebGL1Renderer` si nécessaire. L'image de secours reste visible jusqu'à la première image 3D effectivement rendue.
 
 Pour diagnostiquer un échec restant dans l'aperçu local, ouvrir l'URL du fichier avec `?tree_debug=1` à la fin : le message d'erreur de création du moteur est alors affiché sous le sapin. Dans la console, lire les avertissements préfixés `HALARYK`. Le rapport GPU seul ne prouve pas qu'un contexte WebGL a été créé pour chaque page.
+
+## Modèle 3D définitif (à intégrer)
+Le prototype procédural avec feuillage dessiné en canvas est rejeté pour sa qualité graphique : aiguilles plates et vert surexposé. Il est désactivé dans l'aperçu standard et sur la branche, sauf avec `?tree_legacy_3d=1` (diagnostic uniquement).
+
+En attendant, le sapin réaliste photoréférencé `assets/sapin-realiste.webp` reste affiché et les futures boules restent interactives. La rotation 3D n'est **pas** implémentée avec ce rendu.
+
+Piste prioritaire de remplacement : vrai modèle GLB « Fir Tree », non décoré, 623 Ko, licence CC0 (auteur/source : TerrainTale, pack Realistic Surfaces & Structure ; arbres via ez-tree). Page de téléchargement : https://terraintale.com/library/realistic-surfaces/fir-tree . **Le fichier 3D n'a pas encore été intégré**. Vérifier la géométrie et le rendu dans le navigateur avant de fusionner la branche.
