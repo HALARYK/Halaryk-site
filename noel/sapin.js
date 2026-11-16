@@ -1,10 +1,10 @@
 /* HALARYK Noël 2026 — Sapin réaliste 2D et décorations interactives.
-   Aucun moteur 3D / WebGL. Connexion Twitch et droits gérés côté Supabase. */
+   Connexion Twitch et droits gérés côté Supabase. */
 (() => {
   'use strict';
   const root=document.querySelector('[data-christmas-root]');
   if(!root)return;
-  const stage=root.querySelector('[data-tree-stage]'),loading=root.querySelector('[data-tree-loading]');
+  const stage=root.querySelector('[data-tree-stage]');
   const form=root.querySelector('[data-tree-form]'),fieldset=root.querySelector('[data-tree-fieldset]');
   const login=root.querySelector('[data-tree-login]'),signin=root.querySelector('[data-tree-signin]');
   const feedback=root.querySelector('[data-tree-feedback]'),swatches=root.querySelector('[data-tree-swatches]');
@@ -51,7 +51,7 @@
     const shown=new Set();
     const instructions=stage.querySelector('.halaryk-tree-scene-footer span');
     if(instructions)instructions.textContent='Clique sur une boule pour lire son message';
-    loading.hidden=true;
+
     return {
       removeAll(){if(plane)plane.replaceChildren();shown.clear();},
       setOrnaments(rows){
