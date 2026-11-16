@@ -69,7 +69,14 @@
     flex: none;
     margin-left: clamp(-94px, -4.5vw, -52px);
   }
-  .halaryk-tree-panel { align-self: center; }
+  .halaryk-tree-panel {
+    align-self: center;
+    justify-self: end;
+    width: clamp(435px, 30vw, 525px);
+    max-width: none;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
 @media (min-width: 901px) and (max-width: 1319px) {
   .halaryk-tree-scene { height: min(78vw, 1100px); }
@@ -78,6 +85,7 @@
     padding-right: clamp(20px, 3vw, 38px);
     grid-template-columns: minmax(0, 1fr) clamp(360px, 32vw, 425px);
   }
+  .halaryk-tree-panel { width: clamp(360px, 32vw, 425px); }
 }
 @media (max-width: 900px) {
   .halaryk-tree-scene { height: min(110vw, 710px); }
