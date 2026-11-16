@@ -162,3 +162,37 @@
 @media(prefers-reduced-motion:reduce){
   .halaryk-tree-fallback-ornament.is-landing .bauble{animation:none}
 }
+
+/* Fin 2026 : choix de finition indépendant de la couleur. */
+.halaryk-tree-finish-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:13px 0 8px}
+.halaryk-tree-finish-title{margin:0;color:var(--gold-light);font:600 10px/1.4 var(--sans);letter-spacing:.13em;text-transform:uppercase}
+.halaryk-tree-finish-nav{display:flex;gap:5px}
+.halaryk-tree-finish-nav button{width:29px;height:27px;border:1px solid var(--line);background:rgba(25,15,15,.7);color:var(--gold-light);cursor:pointer}
+.halaryk-tree-finishes{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent;scroll-snap-type:x proximity;padding:4px 1px 11px}
+.halaryk-tree-finish{flex:0 0 81px;min-height:82px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:rgba(8,7,7,.65);color:var(--muted);cursor:pointer;scroll-snap-align:start;font:500 10px/1.2 var(--sans);padding:7px 5px;text-align:center}
+.halaryk-tree-finish[aria-pressed=true],.halaryk-tree-swatch[aria-pressed=true]{border-color:var(--gold);background:rgba(111,20,20,.26);color:var(--text)}
+.halaryk-tree-finish .sample-ball{display:block;width:34px;height:34px;border-radius:50%;flex:none}
+.halaryk-tree-selection-preview{display:flex;align-items:center;gap:14px;padding:10px 13px;margin:8px 0 19px;border:1px solid rgba(183,147,100,.21);background:linear-gradient(125deg,rgba(27,19,16,.7),rgba(11,9,9,.7))}
+.halaryk-tree-selection-preview small{display:block;margin-bottom:3px;font:600 9px/1.4 var(--sans);letter-spacing:.13em;color:var(--gold-light)}
+.halaryk-tree-selection-preview strong{display:block;font:500 16px/1.3 var(--serif);color:var(--text)}
+.halaryk-tree-selection-ball{display:block;flex:0 0 52px;width:52px;height:52px;border-radius:50%}
+.halaryk-tree .halaryk-tree-ball-surface{position:relative;isolation:isolate;background-color:var(--ornament-color);background-image:radial-gradient(circle at 30% 21%,rgba(255,255,255,.37),transparent 36%),radial-gradient(circle at 75% 84%,rgba(0,0,0,.5),transparent 54%);box-shadow:inset -7px -7px 10px rgba(0,0,0,.46),inset 4px 5px 7px rgba(255,255,255,.22),0 2px 7px rgba(0,0,0,.63)}
+.halaryk-tree .halaryk-tree-ball-surface:before{content:"";position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:24%;height:20%;min-width:6px;min-height:5px;border-radius:2px 2px 0 0;background:linear-gradient(90deg,#675436,#dbc69a 45%,#8d6c43);box-shadow:0 0 2px rgba(0,0,0,.5);z-index:3}
+.halaryk-tree .halaryk-tree-ball-surface:after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:1}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="mat"]{background-image:radial-gradient(circle at 27% 24%,rgba(255,255,255,.19),transparent 51%),radial-gradient(circle at 75% 79%,rgba(0,0,0,.47),transparent 63%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="satin"]:after{background:linear-gradient(107deg,transparent 8%,rgba(255,249,235,.25) 31%,transparent 58%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="laque"]:after{background:radial-gradient(ellipse at 29% 22%,rgba(255,255,255,.93) 0%,rgba(255,255,255,.39) 10%,transparent 28%),linear-gradient(100deg,transparent 38%,rgba(255,255,255,.18) 45%,transparent 53%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="metal"]:after{background:linear-gradient(95deg,rgba(0,0,0,.44),rgba(255,255,255,.65) 25%,rgba(0,0,0,.25) 41%,rgba(255,255,255,.7) 61%,rgba(0,0,0,.37) 83%);opacity:.88}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="nacre"]:after{background:conic-gradient(from 25deg at 45% 43%,rgba(245,196,214,.52),rgba(252,238,180,.4),rgba(190,227,222,.52),rgba(255,255,255,.36),rgba(245,196,214,.52));mix-blend-mode:screen;opacity:.7}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="givre"]:after{background:radial-gradient(circle,rgba(255,255,255,.65) .6px,transparent 1.5px);background-size:3.5px 3.5px;opacity:.45}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="paillete"]:after{background:radial-gradient(circle,rgba(255,247,210,.95) .9px,transparent 1.7px),radial-gradient(circle,rgba(255,255,255,.75) .65px,transparent 1.4px),radial-gradient(circle,rgba(243,193,135,.85) .7px,transparent 1.4px);background-size:7px 9px,11px 8px,9px 13px;background-position:0 0,3px 4px,5px 2px}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="velours"]{background-image:radial-gradient(circle at 28% 25%,rgba(255,255,255,.12),transparent 50%),radial-gradient(circle at 76% 80%,rgba(0,0,0,.5),transparent 60%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="velours"]:after{background:radial-gradient(circle,rgba(0,0,0,.4) .5px,rgba(255,255,255,.12) .9px,transparent 1.3px);background-size:3px 3px;opacity:.6}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="cannele"]:after{background:repeating-linear-gradient(93deg,rgba(0,0,0,.30) 0px,rgba(255,255,255,.35) 3px,rgba(0,0,0,.3) 7px,transparent 10px);opacity:.78}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="facette"]:after{background:repeating-conic-gradient(from 10deg at 40% 46%,rgba(255,255,255,.33) 0deg 24deg,rgba(0,0,0,.22) 25deg 49deg,transparent 50deg 72deg);opacity:.62}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="mercurise"]:after{background:radial-gradient(circle at 32% 23%,rgba(255,255,255,.75),transparent 32%),radial-gradient(circle at 66% 51%,rgba(34,23,18,.66) 0 2px,transparent 5px),radial-gradient(circle at 28% 77%,rgba(30,22,17,.6) 0 2px,transparent 5px),radial-gradient(circle at 68% 79%,rgba(255,255,255,.5),transparent 35%);opacity:.85}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="craquele"]:after{background:repeating-linear-gradient(37deg,transparent 0 7px,rgba(30,14,11,.45) 7px 7.6px,transparent 8px 14px),repeating-linear-gradient(139deg,transparent 0 10px,rgba(255,240,214,.4) 10px 10.8px,transparent 11px 17px);opacity:.67}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="martele"]:after{background:radial-gradient(circle at 24% 27%,rgba(255,255,255,.43) 0 8%,rgba(0,0,0,.22) 10%,transparent 18%),radial-gradient(circle at 69% 33%,rgba(255,255,255,.48) 0 12%,rgba(0,0,0,.24) 14%,transparent 22%),radial-gradient(circle at 46% 72%,rgba(255,255,255,.3) 0 11%,rgba(0,0,0,.28) 14%,transparent 23%)}
+.halaryk-tree .halaryk-tree-ball-surface[data-finish="marbre"]:after{background:repeating-linear-gradient(129deg,transparent 0 8px,rgba(255,247,218,.54) 8px 9px,transparent 10px 17px,rgba(20,15,15,.35) 17px 18px,transparent 19px 27px);opacity:.6}
+.halaryk-tree-finish:focus-visible,.halaryk-tree-swatch:focus-visible,.halaryk-tree-finish-nav button:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+@media(max-width:700px){.halaryk-tree-finish{flex-basis:76px}.halaryk-tree-selection-ball{width:45px;height:45px;flex-basis:45px}}
