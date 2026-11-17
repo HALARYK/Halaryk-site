@@ -302,3 +302,19 @@
 #confirm-modal.is-open{z-index:240}
 .game-search-existing{display:block;margin:8px 0;color:var(--gold-light)}
 .game-search-card button:disabled{opacity:.5;cursor:not-allowed;border-color:var(--line);background:#080707}
+
+/* Modération saisonnière : aucun contenu privé exposé dans le site public. */
+.christmas-admin-intro p{max-width:800px}
+.christmas-admin-tools{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:17px}
+.christmas-admin-tools strong{font-size:13px;color:var(--gold-light)}
+.christmas-admin-list{display:grid;gap:12px}
+.christmas-admin-item{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.christmas-admin-item button{flex-shrink:0}
+.christmas-admin-message{min-width:0;flex:1}
+.christmas-admin-message-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.christmas-admin-message-head strong{color:var(--text)}
+.christmas-admin-message small{display:block;color:var(--muted);margin:6px 0}
+.christmas-admin-message p{margin:9px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.5}
+.christmas-badge-visible,.christmas-badge-hidden{border:1px solid var(--line);font:600 9px var(--sans);letter-spacing:.06em;padding:5px 9px;color:var(--muted)}
+.christmas-badge-visible{color:var(--gold-light)}
+@media(max-width:650px){.christmas-admin-item{flex-direction:column;align-items:stretch}.christmas-admin-item button{align-self:start}}
