@@ -14,7 +14,7 @@ function isoFromFr(v=""){const m=String(v).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})
 function longDate(iso=""){const m=String(iso).match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)return iso||"—";return new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(Date.UTC(+m[1],+m[2]-1,+m[3])))}
 function n(v){return new Intl.NumberFormat("fr-FR").format(Number(v||0))}
 function plural(v,sing,plur){return `${n(v)} ${Number(v)>1?plur:sing}`}
-function isTechnical(label="",value=""){return /(?:source|trace de|données techniques|flag|modificateur|drapeau|progression conservée|limite de la sauvegarde|preuve|code de|décision eu4|mesure eu4|type d’unités)/i.test(label)||/(?:\.eu4\b|\.sav\b|_flag\b|_modifier\b|changed_tag_from=|elector=no|government_rank=|^national_focus=)/i.test(String(value))}
+function isTechnical(label="",value=""){return /(?:source|trace de|données techniques|flag|modificateur|drapeau|progression conservée|limite de la sauvegarde|preuve|code de|décision eu4|mesure eu4|type d’unités)/i.test(label)||/(?:\.eu4\b|\.sav\b|_flag\b|_modifier\b|[a-z]{2,}(?:_[a-z0-9]+){2,}|changed_tag_from=|elector=no|government_rank=|^national_focus=)/i.test(String(value))}
 function factCard(label,value,cls=""){return `<div class="v52-dossier-fact ${cls}"><span>${esc(label)}</span><strong>${esc(value)}</strong></div>`}
 function sectionTitle(label){return `<h4 class="v52-dossier-section-title">${esc(label)}</h4>`}
 function sourceBlock(items){return ""} // Métadonnées de sauvegarde réservées à l’administration.
