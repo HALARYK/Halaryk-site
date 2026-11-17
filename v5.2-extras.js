@@ -97,7 +97,7 @@ function renderChronology(host,participants,docs,byId,chapterById,overrideMap,se
   const countryDocs=docs.filter(e=>entryTags(e,byId).includes(active)&&isPre1482(e,chapterById));
 
   host.className="v52-curated-timeline";
-  const endYear=events.reduce((m,e)=>Math.max(m,Number(String(e.date||"").slice(0,4))||0),1481);
+  const endYear=Math.max(Number(host.dataset.publicEndYear)||0,events.reduce((m,e)=>Math.max(m,Number(String(e.date||"").slice(0,4))||0),1481));
   host.innerHTML=`<div class="v52-country-tabs">${participants.filter(p=>TAGS.includes(p.participant_key)).sort((a,b)=>TAGS.indexOf(a.participant_key)-TAGS.indexOf(b.participant_key)).map(p=>`<button type="button" class="${p.participant_key===active?"active":""}" data-country="${p.participant_key}"><img src="${asset(participantCrest(p))}" alt=""><span><b>${esc(p.title)}</b><small>${esc(p.player_name||"")}</small></span></button>`).join("")}</div><div class="v52-country-range"><strong>${esc(country.title)} · 1444 → ${endYear}</strong><span>${events.length} faits retenus · clique sur un événement pour ouvrir son dossier détaillé.</span></div>${countryDocs.length?`<div class="v52-diplomacy-strip"><div class="v52-diplomacy-strip-label">Documents RP</div><div class="v52-diplomacy-bubbles">${countryDocs.map(e=>`<button type="button" class="v52-diplomacy-bubble" data-doc-id="${esc(e.id)}"><span class="v52-diplomacy-bubble-icon">✉</span><span><span>${esc(entryDocDate(e))}</span><strong>${esc(e.title||typeLabel(e.entry_type))}</strong></span></button>`).join("")}</div></div>`:""}<div class="v52-curated-shell"><div class="v52-curated-track">${events.map(curatedNode).join("")}</div></div>`;
 
   $$(".v52-country-tabs button",host).forEach(b=>b.addEventListener("click",()=>{host.dataset.activeCountry=b.dataset.country;renderChronology(host,participants,docs,byId,chapterById,overrideMap,sessionEvents)}));
@@ -110,7 +110,8 @@ async function bootCurated(){
   if(document.body.dataset.eventSlug!=="ppo-europe"||!BACKEND_CONFIGURED)return;
   const host=$("#event-timeline");if(!host)return;
   const db=createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_PUBLISHABLE_KEY,{auth:{persistSession:false,detectSessionInUrl:false,autoRefreshToken:false}});
-  const {data:event}=await db.from("site_events").select("id").eq("slug","ppo-europe").maybeSingle();if(!event)return;
+  const {data:event}=await db.from("site_events").select("id,public_chronicle_cutoff_date").eq("slug","ppo-europe").maybeSingle();if(!event)return;
+  host.dataset.publicEndYear=String(event.public_chronicle_cutoff_date||"").slice(0,4);
   const [{data:participants},{data:entries},{data:chapters}]=await Promise.all([
     db.from("site_event_participants").select("id,participant_key,player_name,title,sort_order").eq("event_id",event.id).eq("public",true).order("sort_order"),
     db.from("site_event_entries").select("*").eq("event_id",event.id).eq("public",true).order("world_year",{ascending:true,nullsFirst:false}).order("sort_order"),
