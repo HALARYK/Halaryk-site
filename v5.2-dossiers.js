@@ -42,19 +42,24 @@ function battleLayout(facts,map){
     const useful=facts.filter(([k,v])=>!isTechnical(k,v)),tech=facts.filter(([k,v])=>isTechnical(k,v));
     return `<div class="v52-battle-file"><p class="v52-dossier-kicker">BATAILLE ENREGISTRÉE DANS LA SAUVEGARDE</p><div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div>${sourceBlock(tech)}</div>`;
   }
-  const war=map.get("guerre")||"Conflit non renseigné",place=map.get("lieu")||"—",terrain=map.get("terrain")||"—",att=map.get("attaquant")||"—",def=map.get("défenseur")||"—",loss=map.get("pertes de la bataille")||"—",winner=map.get("vainqueur")||"—";
-  const used=new Set(["guerre","lieu","terrain","attaquant","défenseur","pertes de la bataille","vainqueur"]);const rest=facts.filter(([k,v])=>!used.has(norm(k))&&!isTechnical(k,v));const tech=facts.filter(([k,v])=>isTechnical(k,v));
-  return `<div class="v52-battle-file"><p class="v52-dossier-kicker">AFFRONTEMENT</p><div class="v52-battle-context">${factCard("Guerre",war,"is-wide")}${factCard("Lieu",place)}${factCard("Terrain",terrain)}</div><div class="v52-battle-camps"><article><span>Attaquant</span><strong>${esc(att)}</strong></article><div><b>${esc(winner)}</b><span>vainqueur</span></div><article><span>Défenseur</span><strong>${esc(def)}</strong></article></div><div class="v52-battle-loss"><span>Pertes de la bataille</span><strong>${esc(loss)}</strong></div>${rest.length?`<div class="v52-dossier-facts">${rest.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
+  const war=map.get("guerre")||"Conflit non renseigné",place=map.get("lieu")||"—",terrain=map.get("terrain")||"—",att=map.get("attaquant")||"—",def=map.get("défenseur")||"—",loss=map.get("pertes de la bataille")||map.get("pertes")||"—",winner=map.get("vainqueur")||"—";
+  const used=new Set(["guerre","lieu","terrain","attaquant","défenseur","pertes de la bataille","pertes","vainqueur"]);const rest=facts.filter(([k,v])=>!used.has(norm(k))&&!isTechnical(k,v));const tech=facts.filter(([k,v])=>isTechnical(k,v));
+  return `<div class="v52-battle-file"><p class="v52-dossier-kicker">AFFRONTEMENT</p><div class="v52-battle-context">${factCard("Guerre",war,"is-wide")}${factCard("Lieu",place)}${factCard("Terrain",terrain)}</div><div class="v52-battle-camps"><article><span>Attaquant</span><strong>${esc(att)}</strong></article><div><b>${esc(winner)}</b><span>vainqueur</span></div><article><span>Défenseur</span><strong>${esc(def)}</strong></article></div><div class="v52-battle-loss"><span>${/navire/i.test(loss)?"Navires perdus":"Pertes de la bataille"}</span><strong>${esc(loss)}</strong></div>${rest.length?`<div class="v52-dossier-facts">${rest.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
+}
+function cleanHistoricalParagraph(value){
+  return String(value||"").split(/(?<=[.!?])\s+/u)
+    .filter(sentence=>!/(?:\.eu4\b|_flag\b|_modifier\b|changed_tag_from=|elector=no|government_rank=|source\s*:\s*mp_|trace de sauvegarde)/i.test(sentence))
+    .join(" ").trim();
 }
 function contextLayout(ctx,facts){
   const tech=facts.filter(([k,v])=>isTechnical(k,v));const useful=facts.filter(([k,v])=>!isTechnical(k,v)&&!/conséquence|résultat observable/i.test(k));
-  return `<div class="v52-context-file"><div class="v52-context-status">${esc(ctx.status||"Repère de campagne")}</div><div class="v52-context-columns"><article><span>REPÈRE HISTORIQUE</span><p>${esc(ctx.history||"")}</p></article><article><span>DANS LA CAMPAGNE</span><p>${esc(ctx.campaign||"")}</p></article></div>${useful.length?`${sectionTitle("Données utiles de la partie")}<div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
+  return `<div class="v52-context-file"><div class="v52-context-status">${esc(ctx.status||"Repère de campagne")}</div><div class="v52-context-columns"><article><span>REPÈRE HISTORIQUE</span><p>${esc(cleanHistoricalParagraph(ctx.history))}</p></article><article><span>DANS LA CAMPAGNE</span><p>${esc(cleanHistoricalParagraph(ctx.campaign))}</p></article></div>${useful.length?`${sectionTitle("Données utiles de la partie")}<div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
 }
 function editorialWarLayout(facts){
   const list=facts.filter(([k,v])=>!isTechnical(k,v)&&!/situation|en cours/i.test(k));
   const weight=k=>/issue|résultat|vainqueur|victoire|défaite|pertes|batailles/i.test(k)?0:/conflit|guerre|adversaire|allié/i.test(k)?1:2;
   list.sort((a,b)=>weight(a[0])-weight(b[0]));
-  return list.length?`<div class="v52-war-opening"><p class="v52-dossier-kicker">BILAN DU CONFLIT</p><div class="v52-war-intro">${list.map(([k,v])=>factCard(k,v)).join("")}</div></div>`:"";
+  return list.length?`<div class="v52-war-opening"><p class="v52-dossier-kicker">${list.some(([k])=>/issue|résultat|paix/i.test(k))?"BILAN DU CONFLIT":"GUERRE ET COMBATS"}</p><div class="v52-war-intro">${list.map(([k,v])=>factCard(k,v)).join("")}</div></div>`:"";
 }
 function genericLayout(facts){const tech=facts.filter(([k,v])=>isTechnical(k,v));const main=facts.filter(([k,v])=>!isTechnical(k,v));return `${main.length?`<div class="v52-dossier-facts">${main.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}`}
 function enhanceDossier(box){
