@@ -13,7 +13,7 @@
   const previewLabel=root.querySelector('[data-tree-preview-label]');
   const previewDescription=root.querySelector('[data-tree-preview-description]');
   const chars=root.querySelector('[data-tree-chars]');
-  const dialog=document.querySelector('[data-tree-message-dialog]');
+  const bubble=document.querySelector('[data-tree-message-bubble]');
   // Collection HALARYK — dix modèles dessinés pour cette édition,
   // chacun avec un motif et une silhouette, sans déclinaison artificielle de teinte.
   const models=[
@@ -35,7 +35,7 @@
     const model=modelById(modelId);
     return '<span class="halaryk-tree-ornament-photo" aria-hidden="true" data-model="'+model.id+'"></span>';
   }
-  const SEASON_OPEN=Date.parse('2026-11-30T23:00:00Z');
+  const SEASON_OPEN=Date.parse('2026-11-21T09:00:00+01:00');
   // Coordonnées fixes et volontairement irrégulières dans la silhouette du sapin.
   // Les 40 identifiants restent ordonnés du haut vers le bas, mais aucune rangée n'est rectiligne.
   const SLOT_POSITIONS=[
@@ -101,8 +101,8 @@
     const signed=!!user;
     signin.hidden=signed;
     fieldset.disabled=!canPost();
-    if(signed&&!readyToPost)setStatus('Le sapin ouvre le 1er décembre. La publication sera activée après installation du service sécurisé.');
-    else if(signed&&Date.now()<SEASON_OPEN)setStatus('Tu es connecté à Twitch. Les décorations ouvrent le 1er décembre.');
+    if(signed&&!readyToPost)setStatus('Publication indisponible : service sécurisé à vérifier dans l’administration.');
+    else if(signed&&Date.now()<SEASON_OPEN)setStatus('Tu es connecté à Twitch. Ouverture le 21 novembre à 9 h (heure de Paris).');
     else if(signed)setStatus('Une boule par compte Twitch. Ton message pourra être anonyme pour les autres visiteurs.');
     else setStatus('Connecte-toi avec Twitch pour laisser ton message.');
   }
@@ -126,7 +126,12 @@
       orb.className='bauble halaryk-tree-model-orb';
       orb.innerHTML=ornamentMarkup(decoration.id);
       button.append(orb);
-      button.addEventListener('click',()=>showMessage(String(row.message||''),String(row.author||'Anonyme')));
+      button.addEventListener('click',e=>{
+        e.stopPropagation();
+        showMessage(String(row.message||''),String(row.author||'Anonyme'),button);
+      });
+      button.addEventListener('pointerenter',()=>cancelHideMessage());
+      button.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')scheduleHideMessage();});
       if(animated && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
         button.classList.add('is-landing');
         button.addEventListener('animationend',()=>button.classList.remove('is-landing'),{once:true});
@@ -140,22 +145,53 @@
       }
     };
   }
-  let lastFocus=null;
-  function showMessage(message,author){
-    if(!dialog)return;
-    lastFocus=document.activeElement;
-    dialog.querySelector('[data-tree-message-text]').textContent=message;
-    dialog.querySelector('[data-tree-message-author]').textContent=author;
-    dialog.hidden=false;
-    dialog.querySelector('[data-tree-close]').focus();
+  // Une bulle de message non modale, placée à côté de la boule cliquée.
+  // Souris : elle disparaît quand on quitte la boule/la bulle.
+  // Tactile ou clavier : fermer avec la croix, Échap ou un clic extérieur.
+  let activeOrnament=null,hideTimer=null;
+  function cancelHideMessage(){
+    if(hideTimer!==null){clearTimeout(hideTimer);hideTimer=null;}
   }
   function closeMessage(){
-    if(!dialog)return;
-    dialog.hidden=true;lastFocus?.focus?.();
+    cancelHideMessage();
+    if(bubble)bubble.hidden=true;
+    activeOrnament=null;
   }
-  dialog?.querySelector('[data-tree-close]')?.addEventListener('click',closeMessage);
-  dialog?.addEventListener('click',e=>{if(e.target===dialog)closeMessage();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog&&!dialog.hidden)closeMessage();});
+  function scheduleHideMessage(){
+    cancelHideMessage();
+    hideTimer=setTimeout(closeMessage,200);
+  }
+  function showMessage(message,author,button){
+    if(!bubble)return;
+    if(activeOrnament===button&&!bubble.hidden){closeMessage();return;}
+    cancelHideMessage();
+    activeOrnament=button;
+    bubble.querySelector('[data-tree-message-text]').textContent=message;
+    bubble.querySelector('[data-tree-message-author]').textContent=author;
+    bubble.hidden=false;
+    const buttonRect=button.getBoundingClientRect();
+    const pop=bubble.getBoundingClientRect();
+    const gap=11,margin=12;
+    const availableRight=window.innerWidth-buttonRect.right-gap-margin;
+    let left=availableRight>=pop.width
+      ?buttonRect.right+gap
+      :buttonRect.left-pop.width-gap;
+    left=Math.max(margin,Math.min(left,window.innerWidth-pop.width-margin));
+    let top=buttonRect.top+buttonRect.height/2-pop.height/2;
+    top=Math.max(margin,Math.min(top,window.innerHeight-pop.height-margin));
+    bubble.style.left=Math.round(left)+'px';
+    bubble.style.top=Math.round(top)+'px';
+  }
+  bubble?.querySelector('[data-tree-close]')?.addEventListener('click',closeMessage);
+  bubble?.addEventListener('pointerenter',cancelHideMessage);
+  bubble?.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')scheduleHideMessage();});
+  document.addEventListener('pointerdown',e=>{
+    if(bubble&&!bubble.hidden&&!bubble.contains(e.target)
+       &&!e.target.closest('[data-tree-fallback-ornaments]'))closeMessage();
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMessage();});
+  window.addEventListener('resize',closeMessage);
+  window.addEventListener('scroll',closeMessage,{passive:true});
   async function getDb(){
     if(db)return db;
     const config=await import(new URL('config.js',document.baseURI).href);
@@ -253,6 +289,10 @@
       updateAuthState();
     });
   }
+  window.addEventListener('halaryk:christmas-open',()=>{
+    updateAuthState();
+    if(db&&!isDemo)loadOrnaments().catch(()=>{});
+  });
   // Sapin photoréaliste fixe ; les décorations restent interactives.
   sceneApi=createFallback();
   updateAuthState();
