@@ -42,11 +42,26 @@
     <p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
   </div>
 </section>
-<section class="section home-event-section v52-home-event-section halaryk-tree decor-left" id="sapin-communautaire" data-christmas-root>
+<section class="section home-event-section v52-home-event-section halaryk-launch decor-left" data-christmas-countdown aria-labelledby="launch-title">
+  <div class="section-shell">
+    <p class="eyebrow halaryk-launch-kicker">RENDEZ-VOUS · SAMEDI 21 NOVEMBRE 2026</p>
+    <h2 id="launch-title">La campagne de Noël approche.</h2>
+    <p class="halaryk-launch-intro">Reprise des lives et ouverture du sapin communautaire. Rendez-vous à 9 h, heure de Paris, pour découvrir la mise à jour.</p>
+    <div class="halaryk-launch-clock" role="timer" aria-label="Temps restant avant la reprise et l'ouverture du site">
+      <div><strong data-countdown-days>--</strong><span>Jours</span></div>
+      <div><strong data-countdown-hours>--</strong><span>Heures</span></div>
+      <div><strong data-countdown-minutes>--</strong><span>Minutes</span></div>
+      <div><strong data-countdown-seconds>--</strong><span>Secondes</span></div>
+    </div>
+    <p class="halaryk-launch-detail"><time datetime="2026-11-21T09:00:00+01:00">21 novembre · 09:00</time> · Heure de France métropolitaine</p>
+    <a href="https://www.twitch.tv/halaryk" class="button button-ghost" target="_blank" rel="noopener noreferrer">Retrouver la chaîne Twitch</a>
+  </div>
+</section>
+<section class="section home-event-section v52-home-event-section halaryk-tree decor-left" id="sapin-communautaire" data-christmas-root hidden>
   <div class="section-shell">
     <div class="section-heading halaryk-tree-heading">
       <span class="section-number" aria-hidden="true">✦</span>
-      <div><p class="eyebrow">DÉCEMBRE 2026 · HALARYK</p><h2>Le sapin communautaire</h2></div>
+      <div><p class="eyebrow">NOËL 2026 · COMMUNAUTÉ</p><h2>Le sapin communautaire</h2></div>
     </div>
     <div class="halaryk-tree-layout">
       <div class="halaryk-tree-scene" data-tree-stage role="region" aria-label="Sapin de Noël communautaire interactif">
@@ -64,8 +79,23 @@
         <p class="halaryk-tree-intro">Un souvenir de ton année, un rêve, un souhait pour les autres… Choisis une décoration et accroche ton message au sapin.</p>
         <form data-tree-form autocomplete="off">
           <fieldset data-tree-fieldset disabled>
-            <legend>Choisir une boule</legend>
-            <div class="halaryk-tree-swatches" data-tree-swatches aria-label="Modèles de boules"></div>
+            <legend>Choisir une décoration</legend>
+            <div class="halaryk-tree-model-heading">
+              <p>LA COLLECTION DE NOËL</p>
+              <div class="halaryk-tree-model-nav">
+                <button type="button" data-tree-model-prev aria-label="Modèles précédents">‹</button>
+                <button type="button" data-tree-model-next aria-label="Modèles suivants">›</button>
+              </div>
+            </div>
+            <div class="halaryk-tree-models" data-tree-models aria-label="Dix modèles de décorations"></div>
+            <div class="halaryk-tree-selection-preview" aria-live="polite">
+              <span class="halaryk-tree-selection-ornament" data-tree-preview-ornament aria-hidden="true"></span>
+              <span>
+                <small>TA DÉCORATION</small>
+                <strong data-tree-preview-label>Herbier sous verre</strong>
+                <p data-tree-preview-description>Fleurs séchées et feuillage délicat dans un globe translucide.</p>
+              </span>
+            </div>
             <label for="tree-christmas-message">Ton message <span class="halaryk-tree-charcount" data-tree-chars>0 / 180</span></label>
             <textarea id="tree-christmas-message" name="message" maxlength="180" rows="4" required placeholder="Une pensée, un vœu, un souvenir…"></textarea>
             <label class="halaryk-tree-check"><input type="checkbox" name="anonymous"> Publier anonymement</label>
@@ -76,23 +106,19 @@
           <p>Connecte-toi avec Twitch pour déposer une boule. Les messages restent visibles par tous les visiteurs.</p>
           <button class="button button-ghost" type="button" data-tree-login>Connexion Twitch</button>
         </div>
-        <p class="halaryk-tree-feedback" data-tree-feedback role="status" aria-live="polite">Une boule par compte Twitch · Ouverture le 1er décembre.</p>
+        <p class="halaryk-tree-feedback" data-tree-feedback role="status" aria-live="polite">Une boule par compte Twitch · Ouverture le 21 novembre à 9 h.</p>
       </aside>
     </div>
   </div>
 </section>
-<div class="halaryk-tree-message" data-tree-message-dialog hidden role="dialog" aria-modal="true" aria-labelledby="tree-message-title">
-  <div class="halaryk-tree-message-card">
-    <button type="button" class="halaryk-tree-close" data-tree-close aria-label="Fermer">×</button>
-    <p class="eyebrow">UNE PENSÉE ACCROCHÉE AU SAPIN</p>
-    <h3 id="tree-message-title">Un message pour Noël</h3>
-    <p data-tree-message-text></p>
-    <small data-tree-message-author></small>
-  </div>
+<div class="halaryk-tree-chat-bubble" data-tree-message-bubble hidden role="status" aria-live="polite">
+  <div class="halaryk-tree-chat-top"><span data-tree-message-author>Anonyme</span><button class="halaryk-tree-chat-close" type="button" data-tree-close aria-label="Fermer le message">×</button></div>
+  <p data-tree-message-text></p>
 </div>
 <footer class="footer"><div class="footer-decor"></div><div class="footer-content"><span class="brand-mark footer-mark">H</span><strong>HALARYK</strong><span>Streamer Twitch français</span><a href="#top">Retour en haut ↑</a></div></footer>
 </main>
 <script type="module" src="app.js"></script>
 <script type="module" src="events.js"></script>
+<script defer src="noel/lancement.js"></script>
 <script defer src="noel/sapin.js"></script>
 </body></html>
