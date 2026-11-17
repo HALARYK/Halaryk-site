@@ -512,7 +512,7 @@ export const WAR_EVENT_DATA={
       "Silésie": 6924
     },
     "battles": 20,
-    "winner": "Camp attaquant",
+    "winner": "Victoire du camp attaquant",
     "peace": "Stargard passe sous le contrôle du Brandebourg."
   },
   "HAB|1445-03-14": {
@@ -578,7 +578,7 @@ export const WAR_EVENT_DATA={
       "Cologne": 430
     },
     "battles": 5,
-    "winner": "Camp attaquant",
+    "winner": "Victoire du camp attaquant",
     "peace": "La Bohême entre en union personnelle sous l’Autriche à la date de paix."
   },
   "HAB|1449-08-12": {
@@ -644,7 +644,7 @@ export const WAR_EVENT_DATA={
       "Palatinat": 2720
     },
     "battles": 5,
-    "winner": "Camp attaquant",
+    "winner": "Victoire du camp attaquant",
     "peace": "La victoire autrichienne est enregistrée, mais l’union personnelle hongroise n’apparaît dans la sauvegarde qu’en 1454 : le détail exact de la paix de 1451 n’est pas conservé."
   },
   "HAB|1453-12-26": {
@@ -693,7 +693,7 @@ export const WAR_EVENT_DATA={
       "Hollande": 5296
     },
     "battles": 19,
-    "winner": "Camp défensif / objectif attaquant repoussé",
+    "winner": "Victoire du camp défensif",
     "peace": "L’objectif territorial n’est pas atteint : Szepes reste sous le contrôle de la Hongrie."
   },
   "TUR|1444-11-11": {
@@ -904,7 +904,7 @@ export const WAR_EVENT_DATA={
       "Crimée": 11748
     },
     "battles": 13,
-    "winner": "Camp attaquant",
+    "winner": "Victoire du camp attaquant",
     "peace": "Simbirsk passe sous le contrôle de la Moscovie."
   },
   "MOS|1460-11-13": {
@@ -1148,7 +1148,7 @@ export const WAR_EVENT_DATA={
       "Tunis": 21397
     },
     "battles": 16,
-    "winner": "Camp attaquant",
+    "winner": "Victoire du camp attaquant",
     "peace": "La sauvegarde enregistre une victoire du camp attaquant, mais Mazagan est de nouveau marocaine en 1507 ; le détail exact du traité de paix n’est pas conservé."
   },
   "CAS|1502-05-31": {
@@ -1209,7 +1209,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 4023
     },
     "battles": 19,
-    "winner": "Camp mené par l’Angleterre",
+    "winner": "Victoire de la coalition menée par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
     "joinDate": "1502-05-31",
@@ -1274,7 +1274,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 4023
     },
     "battles": 19,
-    "winner": "Camp mené par l’Angleterre",
+    "winner": "Victoire de la coalition menée par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
     "attackerLabel": "Coalition menée par l’Angleterre",
@@ -1401,7 +1401,7 @@ export const WAR_EVENT_DATA={
       "Utrecht": 11834
     },
     "battles": 31,
-    "winner": "Camp attaquant anglais",
+    "winner": "Victoire anglaise",
     "peace": "La sauvegarde enregistre une victoire anglaise et l’humiliation d’un rival le 9 février 1495. Akureyri reste toutefois norvégienne ; les concessions exactes de paix ne sont pas conservées."
   },
   "ENG|1502-05-31": {
@@ -1462,7 +1462,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 4023
     },
     "battles": 19,
-    "winner": "Camp mené par l’Angleterre",
+    "winner": "Victoire de la coalition menée par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
     "attackerLabel": "Coalition menée par l’Angleterre",
@@ -1526,7 +1526,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 4023
     },
     "battles": 19,
-    "winner": "Camp mené par l’Angleterre",
+    "winner": "Victoire de la coalition menée par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
     "attackerLabel": "Coalition menée par l’Angleterre",
@@ -1708,7 +1708,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 4023
     },
     "battles": 19,
-    "winner": "Camp mené par l’Angleterre",
+    "winner": "Victoire de la coalition menée par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
     "joinDate": "1502-05-31",
@@ -1773,7 +1773,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 4023
     },
     "battles": 19,
-    "winner": "Camp mené par l’Angleterre",
+    "winner": "Victoire de la coalition menée par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
     "joinDate": "1502-05-31",
@@ -1838,7 +1838,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 4023
     },
     "battles": 19,
-    "winner": "Camp mené par l’Angleterre",
+    "winner": "Victoire de la coalition menée par l’Angleterre",
     "peace": "La sauvegarde attribue la victoire de guerre au camp anglais. Girid reste ottomane, ce qui est cohérent avec l’objectif RP : la conquête de l’île n’était qu’un casus belli mécanique choisi pour déclencher la guerre ; l’objectif annoncé était d’affaiblir l’Empire ottoman.",
     "showFullSummary": true,
     "joinDate": "1502-05-31",
@@ -1899,7 +1899,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 1023
     },
     "battles": 8,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
     "showFullSummary": true
   },
@@ -1957,7 +1957,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 1023
     },
     "battles": 8,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
     "showFullSummary": true
   },
@@ -2015,7 +2015,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 1023
     },
     "battles": 8,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
     "showFullSummary": true
   },
@@ -2073,7 +2073,7 @@ export const WAR_EVENT_DATA={
       "Égypte": 1023
     },
     "battles": 8,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "Victoire ottomane enregistrée le 11 avril 1505 ; Zeta reste sous contrôle ottoman.",
     "showFullSummary": true
   },
@@ -2632,7 +2632,7 @@ export const WAR_EVENT_DATA={
       "Brabant": 154
     },
     "battles": 7,
-    "winner": "Camp russe et allié",
+    "winner": "Victoire du camp russe et allié",
     "peace": "La Russie obtient une large série de provinces finlandaises et l’Angleterre reçoit Reykjavik et Akureyri. Le Brandebourg avait déjà obtenu Celle lors de la paix séparée avec Lunebourg le 12 novembre 1520."
   },
   "BRA|1522-01-03": {
@@ -3035,7 +3035,7 @@ export const WAR_EVENT_DATA={
       "Lorraine": 17186
     },
     "battles": 12,
-    "winner": "Camp autrichien",
+    "winner": "Victoire autrichienne",
     "peace": "Rémois et Rethélois passent à Champagne ; le Nivernais passe directement à l’Autriche."
   },
   "HAB|1534-03-12": {
@@ -3245,7 +3245,7 @@ export const WAR_EVENT_DATA={
       "Tabarestan": 9666
     },
     "battles": 5,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "Erivan, Gence, Tiflis, Karabagh, Kars, Nakhitchevan, Mush, Van, Bitlis et Bayazit passent sous contrôle ottoman."
   },
   "TUR|1519-12-07": {
@@ -3469,7 +3469,7 @@ export const WAR_EVENT_DATA={
       "Fars": 6216
     },
     "battles": 16,
-    "winner": "Camp moscovite",
+    "winner": "Victoire moscovite",
     "peace": "La reconquête de Baganaly s’achève par une victoire de la Moscovie et de ses alliés."
   },
   "MOS|1515-12-21": {
@@ -3606,7 +3606,7 @@ export const WAR_EVENT_DATA={
       "Brabant": 154
     },
     "battles": 7,
-    "winner": "Camp russe et allié",
+    "winner": "Victoire du camp russe et allié",
     "peace": "Onze provinces finlandaises passent à la Russie ; les alliés anglais et brandebourgeois obtiennent également des gains séparés."
   },
   "MOS|1531-10-27": {
@@ -4063,7 +4063,7 @@ export const WAR_EVENT_DATA={
       "Brabant": 13912
     },
     "battles": 10,
-    "winner": "Camp florentin",
+    "winner": "Victoire florentine",
     "peace": "Ancône et Terracine passent sous contrôle florentin."
   },
   "LAN|1550-11-01": {
@@ -4368,7 +4368,7 @@ export const WAR_EVENT_DATA={
       "Afghanistan": 0
     },
     "battles": 3,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "La guerre de Bela s’achève par une victoire ottomane contre le Sindh et ses alliés."
   },
   "TUR|1540-04-15": {
@@ -4401,7 +4401,7 @@ export const WAR_EVENT_DATA={
       "Ormuz": 19769
     },
     "battles": 4,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "La conquête de Bojnourd s’achève le 15 avril 1540 par une victoire du camp ottoman."
   },
   "TUR|1541-10-29": {
@@ -4463,7 +4463,7 @@ export const WAR_EVENT_DATA={
       "Tabarestan": 7424
     },
     "battles": 4,
-    "winner": "Camp ottoman",
+    "winner": "Victoire ottomane",
     "peace": "Basrah, Ahvaz, Hoveyzeh, Qurna et Shushtar figurent parmi les principaux gains ottomans."
   },
   "TUR|1550-07-08": {
@@ -4649,7 +4649,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 0,
     "losses": {},
     "battles": 0,
-    "winner": "Camp russe",
+    "winner": "Victoire russe",
     "peace": "Huit provinces passent sous contrôle russe, dont Vilno, Trakai, Kovno et Volodymyr."
   },
   "MOS|1555-06-29": {
@@ -5121,7 +5121,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 160301,
     "losses": {},
     "battles": 26,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire espagnole",
     "peace": "Armagnac, Béarn, Toulouse, Narbonne, Foix et Carcassonne passent sous contrôle espagnol."
   },
   "CAS|1576-01-01": {
@@ -5144,7 +5144,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 160301,
     "losses": {},
     "battles": 26,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire espagnole",
     "peace": "Armagnac, Béarn, Toulouse, Narbonne, Foix et Carcassonne passent sous contrôle espagnol."
   },
   "ENG|1559-06-27": {
@@ -5169,7 +5169,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 212872,
     "losses": {},
     "battles": 9,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire de la coalition florentino-britannique",
     "peace": "Le conflit s’achève le 27 juin 1559."
   },
   "ENG|1562-05-28": {
@@ -5453,7 +5453,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 212872,
     "losses": {},
     "battles": 9,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire italienne et alliée",
     "peace": "Le conflit s’achève le 27 juin 1559."
   },
   "LAN|1565-03-19": {
@@ -5608,7 +5608,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 23839,
     "losses": {},
     "battles": 13,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire prussienne et alliée",
     "peace": "La Guerre d’indépendance suédoise prend fin le 28 mars 1560."
   },
   "BRA|1560-08-26": {
@@ -5664,7 +5664,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 30037,
     "losses": {},
     "battles": 4,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire prussienne et alliée",
     "peace": "Hambourg passe sous contrôle prussien."
   },
   "BRA|1564-12-20": {
@@ -5718,7 +5718,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 66448,
     "losses": {},
     "battles": 7,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire prussienne et alliée",
     "peace": "Wittenberg et Dresde passent sous contrôle prussien."
   },
   "BRA|1569-02-15": {
@@ -5818,7 +5818,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 63483,
     "losses": {},
     "battles": 6,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire prussienne et alliée",
     "peace": "Goslar et Zwickau passent sous contrôle prussien."
   },
   "BRA|1582-09-11": {
@@ -5895,7 +5895,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 159369,
     "losses": {},
     "battles": 14,
-    "winner": "Camp de la nation suivie",
+    "winner": "Paix sans victoire militaire décisive clairement attribuée",
     "peace": "La Guerre de la Ligue protestante s’achève le 22 décembre 1562."
   },
   "HAB|1566-01-16": {
@@ -6043,7 +6043,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 87733,
     "losses": {},
     "battles": 10,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire ottomane",
     "peace": "Banî Yâs, Qawasim, Suhar, Liwa et Buraïmi passent sous contrôle ottoman."
   },
   "TUR|1576-09-02": {
@@ -6133,7 +6133,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 108709,
     "losses": {},
     "battles": 10,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire ottomane",
     "peace": "Degehabur, Dawaro, Awsa et Mora passent sous contrôle ottoman."
   },
   "TUR|1583-10-19": {
@@ -6204,7 +6204,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 51300,
     "losses": {},
     "battles": 4,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire russe et alliée",
     "peace": "Sept territoires d’Extrême-Orient passent sous contrôle russe."
   },
   "MOS|1569-04-16": {
@@ -6254,7 +6254,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 31393,
     "losses": {},
     "battles": 3,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire russe et alliée",
     "peace": "Neuf territoires de Mongolie et d’Asie centrale passent sous contrôle russe."
   },
   "MOS|1573-03-16": {
@@ -6418,7 +6418,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 63483,
     "losses": {},
     "battles": 6,
-    "winner": "Camp de la nation suivie",
+    "winner": "Victoire de la coalition prusso-russe",
     "peace": "Victoire du camp prusso-russe ; Goslar et Zwickau passent à la Prusse."
   }
 };
