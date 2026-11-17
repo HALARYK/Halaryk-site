@@ -53,7 +53,7 @@
   const slotForSubmission=number=>((number*7-1)%SLOT_COUNT)+1;
   const isDemo=root.hasAttribute('data-tree-demo');
   const demoRows=[];
-  let selectedModel=0,db=null,user=null,readyToPost=false,ornamentRows=[];
+  let selectedModel=0,db=null,user=null,readyToPost=false,hasPlaced=false,totalUsed=0,ornamentRows=[],lastFingerprint='';
   let sceneApi=null;
   const setStatus=(s,error=false)=>{feedback.textContent=s;feedback.classList.toggle('is-error',error);};
   function updateSelection(){
@@ -88,7 +88,7 @@
   initModels();
   const canPost=()=>isDemo
     ? demoRows.length<SLOT_COUNT
-    : !!user&&Date.now()>=SEASON_OPEN&&readyToPost&&location.protocol!=='file:';
+    : !!user&&Date.now()>=SEASON_OPEN&&readyToPost&&!hasPlaced&&totalUsed<SLOT_COUNT&&location.protocol!=='file:';
   function updateAuthState(){
     if(isDemo){
       signin.hidden=true;
@@ -101,7 +101,9 @@
     const signed=!!user;
     signin.hidden=signed;
     fieldset.disabled=!canPost();
-    if(signed&&!readyToPost)setStatus('Publication indisponible : service sécurisé à vérifier dans l’administration.');
+    if(signed&&hasPlaced)setStatus('Ta décoration est déjà accrochée au sapin. Merci pour ta participation.');
+    else if(totalUsed>=SLOT_COUNT)setStatus('Le sapin est complet : les 40 emplacements sont réservés.');
+    else if(signed&&!readyToPost)setStatus('Publication indisponible : service sécurisé à vérifier dans l’administration.');
     else if(signed&&Date.now()<SEASON_OPEN)setStatus('Tu es connecté à Twitch. Ouverture le 21 novembre à 9 h (heure de Paris).');
     else if(signed)setStatus('Une boule par compte Twitch. Ton message pourra être anonyme pour les autres visiteurs.');
     else setStatus('Connecte-toi avec Twitch pour laisser ton message.');
@@ -209,16 +211,34 @@
       const providers=u?.app_metadata?.providers||[];
       user=u&&(u.app_metadata?.provider==='twitch'||providers.includes('twitch'))?u:null;
     }catch{user=null;}
+    hasPlaced=false;
+    if(user){
+      const {data,error}=await db.rpc('christmas_tree_has_placed_2026');
+      if(!error)hasPlaced=Boolean(data);
+      else console.warn('Contrôle des participations indisponible :',error.message);
+    }
     updateAuthState();
   }
   async function loadOrnaments(animateId=null){
     if(!db||isDemo)return;
     try{
-      const {data,error}=await db.rpc('christmas_tree_public_2026');
-      if(error)throw error;
-      ornamentRows=Array.isArray(data)?data:[];
-      sceneApi?.setOrnaments(ornamentRows,{animateId});
-      readyToPost=ornamentRows.length<SLOT_COUNT;
+      const [publicResult,usedResult]=await Promise.all([
+        db.rpc('christmas_tree_public_2026'),
+        db.rpc('christmas_tree_used_slots_2026')
+      ]);
+      if(publicResult.error)throw publicResult.error;
+      if(usedResult.error)throw usedResult.error;
+      const nextRows=Array.isArray(publicResult.data)?publicResult.data:[];
+      const fingerprint=JSON.stringify(nextRows.map(row=>[row.id,row.model,row.message,row.author,row.position_index]));
+      if(fingerprint!==lastFingerprint||animateId){
+        sceneApi?.removeAll();
+        closeMessage();
+        sceneApi?.setOrnaments(nextRows,{animateId});
+        lastFingerprint=fingerprint;
+      }
+      ornamentRows=nextRows;
+      totalUsed=Number(usedResult.data)||0;
+      readyToPost=totalUsed<SLOT_COUNT;
     }catch(error){
       console.warn('Sapin HALARYK : lecture des décorations impossible',error);
       readyToPost=false;
@@ -264,6 +284,7 @@
       const {data,error}=await db.rpc('christmas_tree_place_2026',{p_model:model,p_message:message,p_anonymous:anonymous});
       if(error)throw error;
       form.reset();chars.textContent='0 / 180';
+      hasPlaced=true;
       await loadOrnaments(String(data));
       fieldset.disabled=true;
       setStatus('Ta boule est accrochée au sapin.');
@@ -293,6 +314,10 @@
     updateAuthState();
     if(db&&!isDemo)loadOrnaments().catch(()=>{});
   });
+  // Synchroniser les messages masqués ou ajoutés par d'autres visiteurs.
+  if(!isDemo)setInterval(()=>{
+    if(db&&!document.hidden&&!root.hidden)loadOrnaments().catch(()=>{});
+  },30000);
   // Sapin photoréaliste fixe ; les décorations restent interactives.
   sceneApi=createFallback();
   updateAuthState();
