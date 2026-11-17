@@ -952,7 +952,7 @@ async function loadChristmasAdmin(){
     return `<article class="admin-card christmas-admin-item" data-christmas-row="${safeId}">
       <div class="christmas-admin-message">
         <div class="christmas-admin-message-head">
-          <strong>${esc(row.model||"Décoration")} · ${name}</strong>
+          <strong>${esc(row.model||"Décoration")} · Place ${Number(row.position_index)||"?"} · ${name}</strong>
           <span class="${visible?"christmas-badge-visible":"christmas-badge-hidden"}">${visible?"Visible":"Masqué"}</span>
         </div>
         <small>${login?"@"+login+" · ":""}${row.anonymous?"Publié anonymement · identité privée":"Identité visible"} · ${esc(formatDate(row.created_at))}</small>
