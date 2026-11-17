@@ -1,43 +1,51 @@
-# HALARYK — Sapin communautaire de Noël 2026
+# HALARYK — Sapin communautaire Noël 2026
 
-Branche de préparation : `feature/sapin-noel-2026` — ne pas fusionner avec `main` avant l'ouverture prévue le 1er décembre 2026.
+Branche de travail : `feature/sapin-noel-2026` (ne pas fusionner sans validation).
+Site public : `main`, actuellement inchangé.
 
-## Choix final retenu
-Le sapin reste **en 2D**, avec une grande image réaliste éclairée et des cadeaux, sur la gauche de la section Noël. **Aucun Three.js, moteur WebGL ni rotation 3D**.
+## Calendrier de lancement
 
-Le reste de l'accueil HALARYK reste inchangé : titre, planning, Twitch, navigation, réseaux et direction artistique. La section EU4 disparaît uniquement de la page d'accueil et reste accessible depuis Événements.
+- **Samedi 21 novembre 2026 à 09:00 (heure de Paris, CET / UTC+01)** :
+  reprise des lives et ouverture des contributions.
+- Avant cet instant, l'emplacement de l'événement de la page d'accueil affiche un compte à rebours.
+- À l'heure prévue, `noel/lancement.js` remplace automatiquement le compte à rebours par le sapin, y compris sur une page déjà ouverte.
+- Le serveur Supabase refuse toute publication anticipée, indépendamment de l'horloge du navigateur.
+- **Point de déploiement essentiel** : la branche doit être fusionnée/déployée sur le site public **avant** le 21 novembre à 09:00. Une branche GitHub non déployée ne peut pas modifier le site public automatiquement. GitHub Actions « schedule » n'est pas une garantie de déclenchement à la seconde.
 
-## Fonctionnement attendu
-- **10 décorations illustrées à partir de rendus réalistes**, inspirées de décorations de Noël sélectionnées : Herbier sous verre, Nuit céleste, Verre ancien, Petit monde miniature, Joyau baroque, Ruban de velours, Tartan écossais, Roses anciennes, Œuf précieux, Petite maison d’hiver. Le visiteur choisit un **modèle complet**, pas une couleur + texture ; illustration détourée réaliste dans les miniatures, l'aperçu et sur le sapin. Aucun achat d'ornement ni réutilisation d'image commerciale.
-- Un message de 1 à 180 caractères par compte Twitch
-- Option « Publier anonymement » ; identité vérifiable par l'administrateur uniquement
-- **40 emplacements fixes** à coordonnées irrégulières sur tout le feuillage, numérotation cachée globalement du haut vers le bas. Aucun alignement en rangées droites.
-- Attribution par saut de 7 sur 40 : positions **7, 14, 21, 28, 35, 2, 9…**, jusqu'à remplir toutes les places une fois
-- Position définitive, sans déplacer les décorations d'autrui
-- Courte animation CSS (0,78 s) : la boule apparaît grande à son emplacement puis recule et réduit jusqu'à sa taille finale
-- Consultation des messages au clic, accessible à tous les visiteurs
-- Formulaire bloqué sans connexion Twitch et avant ouverture officielle
-- Image de fond `noel/assets/sapin-realiste.webp` (sans boules)
-- Site public non modifié pendant la préparation
+## Collection et expérience visiteur
 
-## Prévisualisation
-`noel/apercu/index.html` est autonome : elle intègre les styles et l'image du sapin. **Mode démonstration actif** : choisir une boule, écrire un message, valider pour voir sa pose animée ; le bouton « Ajouter 5 boules fictives » permet de visualiser le remplissage jusqu'à 40, et « Effacer les essais » réinitialise la page. Aucune authentification Twitch ni base de données n'est utilisée dans l'aperçu. Les tests sont volatils et ne survivent pas au rechargement.
+- Image réaliste en 2D, sans Three.js ni WebGL.
+- Dix boules illustrées haute définition en dix fichiers WebP transparents de 512 × 512 px dans `noel/assets/ornaments/` : herbier, céleste, verre ancien, monde miniature, baroque, velours, tartan, roses, œuf précieux, petite maison d'hiver.
+- Quarante emplacements fixes irréguliers, ordonnés de haut en bas, identifiants cachés ; distribution par saut de 7 : **7, 14, 21, 28, 35, 2, 9...** sans déplacer les autres boules.
+- Une boule et un message de 1 à 180 caractères par compte Twitch. L'option « Publier anonymement » cache l'identité aux visiteurs, mais pas à l'administrateur.
+- Animation de pose d'environ 0,78 seconde, avec prise en compte de `prefers-reduced-motion`.
+- Clic sur une boule : petite bulle de discussion positionnée près de l'ornement. À la souris, elle s'efface en quittant la zone ; tactile et clavier : bouton fermer, Échap ou appui extérieur.
+- Actualisation des décorations publiques toutes les 30 secondes, sauf onglet non visible. Les messages masqués par l'administration ne sont pas réaffichés à la synchronisation suivante.
+- Le titre de la section n'affiche plus le pseudo du propriétaire. L'identité des auteurs apparaît uniquement dans les messages publics non anonymes.
 
-## À terminer pour publication
-1. Tester placement, lecture, animation, 10 modèles et visibilité des 40 boules sur PC et mobile.
-2. Contrôler les règles de participation et les collisions entre décorations.
-3. Tester l'attribution transactionnelle des emplacements, les RPC et RLS proposées dans `noel/schema_sapin_2026.sql` dans un environnement Supabase approprié. **Le SQL n'a pas été exécuté**.
-4. Ajouter les outils de modération des messages et d'identification privée dans l'administration.
-5. Vérifier l'accès Twitch, l'anti-spam, les restrictions de période et l'anonymat réel au niveau réseau.
-6. Tester le fonctionnement complet avant fusion sur `main` au 1er décembre.
+## Administration et Supabase
 
-Aucune publication de la version Noël ou modification de la base de données n'est impliquée par ces fichiers de préparation.
+- Onglet **Sapin de Noël** dans l'administration : voir les messages, leur auteur réel (y compris les contributions anonymes), leur emplacement et leur visibilité ; masquer/restaurer.
+- Base Supabase `elnyjjasqfizkimoljvz` : migration `halaryk_christmas_tree_2026_secure_launch` appliquée le 17 novembre 2026.
+- Table avec RLS et sans accès direct `anon`/`authenticated`, recours exclusivement aux RPC filtrées.
+- RPC de lecture publique, insertion, compteur de 40 places, contrôle « déjà participé », lecture privée admin et modération admin.
+- Les boules masquées conservent leur emplacement pour ne jamais déplacer un autre utilisateur.
+- Contrôle initial : 0 place occupée, privilèges RPC vérifiés et refus des publications sans authentification vérifié. Ceci n'est **pas** un test complet du parcours OAuth et de publication depuis un compte Twitch réel.
 
-## Ajustement visuel du 16 novembre
-Les dix modèles bénéficient désormais de dégradés volumétriques, de reflets plus affirmés, d'un relief discret et de matière (grain de verre, patine, textile). Les boules sur le sapin sont agrandies d'environ 22 % sans changer les 40 coordonnées ni l'ordre d'attribution. Les dix modèles utilisent maintenant le véritable atlas photographique détouré `noel/assets/ornaments-atlas.webp`, identique dans le carrousel, l'aperçu grand format et le sapin. L'aperçu HTML autonome embarque les images sans requête externe.
+## Aperçu
 
-## Correction de netteté — 16 novembre 2026
-- 10 fichiers WebP RGBA indépendants de 512 × 512 px dans `noel/assets/ornaments/` : finis l'atlas 500 × 232 et son étirement.
-- Même image HD dans le carrousel, l'aperçu et le sapin, avec 40 positions stables et pose par saut de 7.
-- L'aperçu autonome embarque les dix nouvelles images en data URI, alors que la feuille CSS du site référence les dix fichiers.
-- Les objets ont été refaits à partir de rendus détaillés et détourés ; leur qualité dépend de l'affichage final du navigateur.
+- `noel/apercu/index.html` est autonome (images, CSS et JS intégrés) et fonctionne en démonstration sans publication réelle.
+- Par défaut, la page montre le sapin, permet de choisir une boule, d'ajouter des messages fictifs et de tester leur bulle.
+- Le paramètre `?mode=decompte` montre le compte à rebours jusqu'au 21 novembre à 09:00.
+- Les essais du mode aperçu ne sont enregistrés dans aucune base.
+
+## Vérifications restant à effectuer avant diffusion publique
+
+1. Sur la version hébergée, **tester une vraie connexion Twitch** avec un compte visiteur, puis avec le compte administrateur.
+2. Au moins un essai d'enregistrement réel après l'ouverture : vérifier message public, anonymat, unicité, refus du second message et persistance après rechargement. Ne pas placer de message de test sur le vrai sapin avant le lancement.
+3. Vérifier dans l'admin qu'un message anonyme affiche l'auteur réel, qu'il peut être masqué puis rétabli, et qu'il disparaît côté visiteurs.
+4. Vérifier l'affichage de 40 boules sur PC et mobile ainsi que l'ouverture/fermeture des petites bulles, au doigt, à la souris et au clavier.
+5. Confirmer le domaine public, la configuration des redirections OAuth Twitch, le cache et le déploiement de `main` **avant** samedi à 09:00.
+6. Sur la page publique, contrôler l'heure du compteur sur un appareil en France et un appareil en décalage horaire ; le déclenchement doit viser 08:00 UTC.
+
+Aucun automatisme de fusion GitHub n'a été créé. Le code de lancement est prêt sur la branche, **pas encore publié sur `main`**.
