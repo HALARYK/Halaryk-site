@@ -13,7 +13,7 @@ export const EVENT_CONTEXT={
   },
   "CAS|1459-05-30": {
     "status": "Personnage historique réinterprété",
-    "history": "Isabelle Ire de Castille a réellement existé : née en 1451, elle devient reine en 1474, épouse Ferdinand d’Aragon et participe à l’achèvement de la conquête de Grenade en 1492. La chronologie de la partie diverge toutefois nettement : l’Isabel enregistrée par la sauvegarde est née en 1454 et entre plus tôt dans une succession alternative.",
+    "history": "Isabelle Ire de Castille naît en 1451, devient reine en 1474, épouse Ferdinand d’Aragon et achève la conquête de Grenade en 1492. Dans la partie, une Isabel née en 1454 entre plus tôt dans une succession dynastique différente.",
     "campaign": "Son arrivée comme héritière sécurise la succession des Trastámara. Ses caractéristiques élevées et sa forte prétention en font surtout un pivot dynastique pour la Castille et un personnage central du RP à venir.",
     "game": "Les compétences, traits et dates affichés sont ceux de la partie, pas ceux de la biographie historique d’Isabelle."
   },
@@ -116,7 +116,7 @@ export const EVENT_CONTEXT={
   "HAB|1451-11-01": {
     "status": "Pas de lien historique",
     "history": "Pas de lien historique.",
-    "campaign": "L’entrée de l’Autriche dans le groupe des huit puissances dominantes matérialise son changement d’échelle après ses succès en Europe centrale. La sauvegarde ne permet cependant pas de savoir quelle puissance précise a été évincée au même instant.",
+    "campaign": "L’Autriche rejoint les huit principales puissances après ses succès en Europe centrale. Les données historiques de la partie n’identifient pas avec certitude la puissance évincée à cette date.",
     "game": "Entre 1444 et 1481, Aragon, les Timourides et les Mamelouks sortent du groupe tandis que l’Autriche, la Moscovie et la Pologne y entrent ; le remplacement exact au 1er novembre 1451 n’est pas conservé."
   },
   "HAB|1453-08-12": {
@@ -158,7 +158,7 @@ export const EVENT_CONTEXT={
   "TUR|1447-07-02": {
     "status": "Divergence religieuse majeure",
     "history": "Après la conquête historique de Constantinople, Mehmed II maintient le patriarcat orthodoxe et installe Gennadios II Scholarios comme patriarche, afin notamment d’organiser la communauté orthodoxe de l’Empire.",
-    "campaign": "Dans votre partie, l’événement sur le sort du Patriarcat est suivi quelques jours plus tard d’un drapeau indiquant sa fermeture. L’Empire ottoman choisit donc une voie plus dure que celle suivie historiquement par Mehmed II.",
+    "campaign": "Dans la partie, le sultan choisit de fermer le Patriarcat orthodoxe de Constantinople en juillet 1447, à rebours de la politique historiquement suivie par Mehmed II.",
     "game": "Le choix de campagne est particulièrement intéressant pour le RP religieux et les relations avec les puissances orthodoxes."
   },
   "TUR|1462-07-30": {
@@ -206,7 +206,7 @@ export const EVENT_CONTEXT={
   "LAN|1496-11-01": {
     "status": "Pas de lien historique",
     "history": "Pas de lien historique.",
-    "campaign": "Florence entre dans le top 8 le 1er novembre 1496. Le relevé de 1481 plaçait encore la Pologne au 8e rang ; celui de 1507 place Florence 8e à sa place. La sauvegarde ne contient pas une ligne « Pologne déchue » datée au même jour, mais Florence est la seule nouvelle entrée de Grande Puissance enregistrée entre les deux relevés : le remplacement identifiable est donc celui de la Pologne.",
+    "campaign": "Le 1er novembre 1496, Florence rejoint les huit principales puissances, marquant un changement d’échelle politique, diplomatique et financier. La Pologne ne figure plus au même rang dans les relevés suivants.",
     "game": "En 1507, Florence possède un score de Grande Puissance de 247,419. Son passage d’une petite république italienne à une puissance du top 8 matérialise l’ampleur de son expansion et de son développement pendant les deux premières sessions."
   },
   "CAS|1508-07-02": {
@@ -1189,7 +1189,7 @@ export const EVENT_CONTEXT={
   "CAS|1562-12-22": {
     "status": "La guerre confessionnelle impériale se termine après quatre ans",
     "history": "Dans l’histoire réelle, le compromis majeur du milieu du siècle est la paix d’Augsbourg de 1555, qui reconnaît juridiquement le luthéranisme dans le Saint-Empire. Une guerre générale des Ligues entre 1558 et 1562 constitue donc une forte divergence.",
-    "campaign": "L’Espagne termine le conflit dans le camp catholique autrichien après 20 311 pertes. La sauvegarde enregistre la fin de la guerre sans victoire militaire décisive nette, après plus de 295 000 pertes cumulées dans les deux camps."
+    "campaign": "L’Espagne quitte la guerre aux côtés du camp catholique autrichien après 20 311 pertes. Le conflit se termine sans victoire militaire décisive établie, après plus de 295 000 pertes humaines au total."
   },
   "CAS|1564-11-21": {
     "status": "Dernière phase de la conquête espagnole du Yucatán",
