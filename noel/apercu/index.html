@@ -978,6 +978,36 @@ main > section{
 @media(max-width:700px){.halaryk-tree-chat-bubble{font-size:13px;min-width:170px}.halaryk-tree-chat-bubble p{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.halaryk-tree-chat-bubble{animation:none}}
 
+/* Dernière vérification responsive : conserver le ratio photographique,
+   dimensionner les boules selon la largeur réelle du sapin sur mobile. */
+@media(max-width:700px){
+  .halaryk-tree-scene{
+    width:min(100%,500px);
+    max-width:500px;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:680/914;
+    margin-inline:auto;
+  }
+  .halaryk-tree-fallback{inset:0;width:100%;height:100%}
+  .halaryk-tree-fallback-figure{
+    width:100%;
+    max-width:none;
+    height:100%;
+    aspect-ratio:680/914;
+    margin:0;
+  }
+  .halaryk-tree-fallback-ornament{
+    width:clamp(26px,7vw,40px);
+    height:clamp(27px,7.5vw,42px);
+    touch-action:manipulation;
+  }
+  .halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{
+    width:clamp(20px,6vw,33px);
+    height:clamp(23px,6.7vw,37px);
+  }
+}
+
 .reveal{opacity:1!important;transform:none!important;visibility:visible!important}
 </style></head>
 <body data-page="home">
@@ -1070,10 +1100,9 @@ main > section{
           <button class="button button-ghost" type="button" data-tree-login>Connexion Twitch</button>
         </div>
         <p class="halaryk-tree-feedback" data-tree-feedback role="status" aria-live="polite">Une boule par compte Twitch · Ouverture le 21 novembre à 9 h.</p><div class="halaryk-tree-demo-actions">
-  <span class="halaryk-tree-demo-badge">DÉMONSTRATION · Aucun compte ni base de données</span>
-  <button type="button" class="button button-ghost" data-tree-demo-five>Ajouter 5 boules fictives</button>
-  <button type="button" class="button button-ghost" data-tree-demo-reset>Effacer les essais</button>
-  </div>
+<span class="halaryk-tree-demo-badge">APERÇU · PAS DE VRAIE PUBLICATION</span>
+<button type="button" class="button button-ghost" data-tree-demo-five>Ajouter 5 boules fictives</button>
+<button type="button" class="button button-ghost" data-tree-demo-reset>Effacer les essais</button></div>
       </aside>
     </div>
   </div>
@@ -1089,29 +1118,27 @@ main > section{
 
 
 <script>
-(function(){
- const tree=document.querySelector('[data-christmas-root]');
- const countdown=document.querySelector('[data-christmas-countdown]');
- tree.setAttribute('data-tree-demo','');
- if(new URLSearchParams(location.search).get('mode')!=='decompte'){
-   countdown.hidden=true;tree.hidden=false;
- }else{
-   const launch=Date.parse('2026-11-21T09:00:00+01:00');
-   function tick(){
-     const left=Math.max(0,launch-Date.now());
-     if(!left){countdown.hidden=true;tree.hidden=false;return;}
-     countdown.hidden=false;tree.hidden=true;
-     const n=Math.floor(left/1000);
-     const parts=[Math.floor(n/86400),Math.floor(n%86400/3600),Math.floor(n%3600/60),n%60];
-     ['days','hours','minutes','seconds'].forEach((part,i)=>{
-       countdown.querySelector('[data-countdown-'+part+']').textContent=String(parts[i]).padStart(2,'0');
-     });
-   }
-   tick();setInterval(tick,1000);
- }
+(()=>{
+const root=document.querySelector('[data-christmas-root]');
+const countdown=document.querySelector('[data-christmas-countdown]');
+root.setAttribute('data-tree-demo','');
+if(new URLSearchParams(location.search).get('mode')!=='decompte'){
+  countdown.hidden=true;root.hidden=false;
+}else{
+  const t=Date.parse('2026-11-21T09:00:00+01:00');
+  function render(){
+    const n=Math.max(0,Math.floor((t-Date.now())/1000));
+    if(n===0){countdown.hidden=true;root.hidden=false;return;}
+    countdown.hidden=false;root.hidden=true;
+    const parts=[Math.floor(n/86400),Math.floor(n%86400/3600),Math.floor(n%3600/60),n%60];
+    ['days','hours','minutes','seconds'].forEach((v,i)=>{
+      countdown.querySelector('[data-countdown-'+v+']').textContent=String(parts[i]).padStart(2,'0');
+    });
+  }
+  render();setInterval(render,1000);
+}
 })();
-</script>
-<script>
+</script><script>
 /* HALARYK Noël 2026 — Sapin réaliste 2D et décorations interactives.
    Connexion Twitch et droits gérés côté Supabase. */
 (() => {
@@ -1444,5 +1471,4 @@ main > section{
     setStatus('Aperçu local : connexion et publication Twitch disponibles uniquement sur le site hébergé.');
   }
 })();
-</script>
-</body></html>
+</script></body></html>
