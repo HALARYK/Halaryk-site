@@ -189,7 +189,7 @@
   bubble?.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')scheduleHideMessage();});
   document.addEventListener('pointerdown',e=>{
     if(bubble&&!bubble.hidden&&!bubble.contains(e.target)
-       &&!e.target.closest('[data-tree-fallback-ornaments]'))closeMessage();
+       &&!e.target.closest('.halaryk-tree-fallback-ornament'))closeMessage();
   });
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMessage();});
   window.addEventListener('resize',closeMessage);
