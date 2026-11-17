@@ -1,4 +1,4 @@
-export const CURATED_EVENTS={
+const ARCHIVED_CURATED_EVENTS={
   "CAS": [
     {
       "date": "1445-09-04",
@@ -10974,3 +10974,23 @@ export const CURATED_EVENTS={
     }
   ]
 };
+
+// Révision éditoriale de la chronologie, 1444–1586.
+// Les données originales restent archivées ci-dessus; seules les dates retenues sont publiées.
+// Chaque date a été confrontée aux conséquences politiques, dynastiques et militaires
+// ainsi qu'aux données de pertes du fichier de guerres historique.
+const REVIEWED_EVENT_KEYS = new Set(["CAS|1445-09-04","CAS|1446-02-11","CAS|1459-05-30","CAS|1466-12-11","CAS|1473-03-03","CAS|1496-05-30","CAS|1502-05-31","CAS|1504-05-27","CAS|1507-01-15","CAS|1514-07-12","CAS|1522-04-01","CAS|1527-04-09","CAS|1528-08-28","CAS|1532-01-17","CAS|1538-01-04","CAS|1562-12-22","CAS|1567-06-30","CAS|1569-04-04","CAS|1570-03-30","CAS|1572-10-01","CAS|1572-12-07","CAS|1576-01-01","ENG|1446-06-29","ENG|1463-03-01","ENG|1463-03-22","ENG|1464-06-28","ENG|1468-07-24","ENG|1495-02-09","ENG|1502-05-31","ENG|1503-06-23","ENG|1507-01-15","ENG|1524-10-12","ENG|1526-02-27","ENG|1528-07-01","ENG|1559-05-11","ENG|1559-06-27","ENG|1570-07-03","LAN|1459-05-01","LAN|1459-05-06","LAN|1460-04-01","LAN|1460-04-07","LAN|1476-12-11","LAN|1496-11-01","LAN|1502-05-31","LAN|1506-07-05","LAN|1507-01-29","LAN|1513-03-22","LAN|1524-05-07","LAN|1544-11-03","LAN|1558-04-07","LAN|1558-04-28","LAN|1558-11-20","LAN|1559-06-27","LAN|1563-03-16","LAN|1575-02-13","LAN|1575-10-10","BRA|1469-12-03","BRA|1502-05-31","BRA|1504-09-22","BRA|1509-01-21","BRA|1521-05-04","BRA|1532-09-09","BRA|1538-10-11","BRA|1560-03-28","BRA|1564-09-04","BRA|1567-03-31","BRA|1575-04-30","BRA|1582-03-28","HAB|1446-10-29","HAB|1451-10-03","HAB|1451-11-01","HAB|1453-08-12","HAB|1453-12-26","HAB|1468-11-25","HAB|1470-09-21","HAB|1491-12-30","HAB|1502-04-20","HAB|1503-01-12","HAB|1504-03-06","HAB|1505-04-11","HAB|1525-09-06","HAB|1526-05-18","HAB|1527-05-22","HAB|1528-09-01","HAB|1532-09-01","HAB|1558-04-07","HAB|1558-11-20","HAB|1559-05-11","HAB|1562-12-22","HAB|1577-03-03","HAB|1582-06-06","TUR|1444-11-11","TUR|1445-04-03","TUR|1446-08-26","TUR|1447-07-02","TUR|1462-07-30","TUR|1475-11-19","TUR|1500-11-15","TUR|1502-04-20","TUR|1502-05-31","TUR|1503-06-23","TUR|1505-04-11","TUR|1512-10-11","TUR|1515-06-25","TUR|1536-11-13","TUR|1538-08-18","TUR|1540-04-15","TUR|1543-06-02","TUR|1567-11-22","TUR|1569-06-01","TUR|1572-01-03","TUR|1579-12-14","TUR|1581-04-20","MOS|1445-11-01","MOS|1446-02-28","MOS|1455-12-09","MOS|1492-11-07","MOS|1496-09-30","MOS|1515-07-07","MOS|1518-01-29","MOS|1518-04-28","MOS|1521-02-10","MOS|1521-05-04","MOS|1535-10-22","MOS|1537-03-09","MOS|1555-12-20","MOS|1561-07-01","MOS|1566-08-17","MOS|1566-09-02","MOS|1571-03-26","MOS|1576-11-23","MOS|1582-03-28"]);
+function cleanPublishedHistoricEvent(event){
+  const isTechnical=(label,value)=>{
+    const k=String(label||""),v=String(value||"");
+    return /(?:source|trace|flag|drapeau|modificateur|preuve|code|historique national de la sauvegarde|durée de la sauvegarde|statut interne|décision eu4|mesure eu4)/i.test(k)
+      || /(?:\.eu4\b|_flag\b|_modifier\b|changed_tag_from=|elector=no|government_rank=|\b[A-Z]{3}[0-9]{1,2}\b)/i.test(v);
+  };
+  const facts=(event.facts||[]).filter(item=>Array.isArray(item)&&item.length>=2&&!isTechnical(item[0],item[1]));
+  let summary=event.summary||"";
+  if(/(?:la sauvegarde|la save|le fichier de sauvegarde|la trace (?:de sauvegarde|historique)|le drapeau|le modificateur)/i.test(summary)) summary="";
+  return {...event,summary,facts};
+}
+export const CURATED_EVENTS=Object.fromEntries(Object.entries(ARCHIVED_CURATED_EVENTS).map(([tag,events])=>[
+  tag,events.filter(ev=>REVIEWED_EVENT_KEYS.has(tag+"|"+ev.date)).map(cleanPublishedHistoricEvent)
+]));
