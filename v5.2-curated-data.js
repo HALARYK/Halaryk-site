@@ -10984,7 +10984,7 @@ function cleanPublishedHistoricEvent(event){
   const isTechnical=(label,value)=>{
     const k=String(label||""),v=String(value||"");
     return /(?:source|trace|flag|drapeau|modificateur|preuve|code|historique national de la sauvegarde|durée de la sauvegarde|statut interne|décision eu4|mesure eu4)/i.test(k)
-      || /(?:\.eu4\b|_flag\b|_modifier\b|changed_tag_from=|elector=no|government_rank=|\b[A-Z]{3}[0-9]{1,2}\b)/i.test(v);
+      || /(?:\.eu4\b|_flag\b|_modifier\b|[a-z]{2,}(?:_[a-z0-9]+){2,}|changed_tag_from=|elector=no|government_rank=|\b[A-Z]{3}[0-9]{1,2}\b)/i.test(v);
   };
   const facts=(event.facts||[]).filter(item=>Array.isArray(item)&&item.length>=2&&!isTechnical(item[0],item[1]));
   let summary=event.summary||"";
