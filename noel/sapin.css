@@ -232,3 +232,26 @@
   .halaryk-tree-fallback-ornament{width:40px;height:47px}
   .halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{width:36px;height:43px}
 }
+
+/* Le compte à rebours remplace l'affichage de l'événement principal jusqu'au lancement. */
+[data-christmas-root][hidden],[data-christmas-countdown][hidden],[data-tree-message-bubble][hidden]{display:none!important}
+.halaryk-launch{text-align:center;min-height:660px!important;display:grid;align-content:center;padding:clamp(82px,9vw,135px) 24px!important}
+.halaryk-launch .section-shell{max-width:900px!important}
+.halaryk-launch-kicker{color:var(--gold-light)!important;font-size:11px!important;letter-spacing:.19em}
+.halaryk-launch h2{margin:16px 0 18px;font:600 clamp(43px,6vw,79px)/.99 var(--serif);color:var(--text)}
+.halaryk-launch-intro{margin:0 auto 34px;color:var(--muted);max-width:650px;font:500 clamp(17px,2vw,23px)/1.4 var(--serif)}
+.halaryk-launch-clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.6vw,18px);max-width:730px;margin:0 auto 22px}
+.halaryk-launch-clock>div{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:125px;background:linear-gradient(160deg,rgba(34,23,21,.86),rgba(7,5,5,.9));border:1px solid var(--line);box-shadow:0 12px 45px rgba(0,0,0,.24)}
+.halaryk-launch-clock strong{color:var(--text);font:600 clamp(41px,5vw,67px)/.98 var(--serif);font-variant-numeric:tabular-nums}
+.halaryk-launch-clock span{margin-top:8px;color:var(--gold-light);font:600 10px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.13em}
+.halaryk-launch-detail{font:500 12px/1.5 var(--sans);color:var(--muted);margin:0 0 24px}
+.halaryk-launch .button{display:inline-flex;justify-content:center}
+@media(max-width:700px){.halaryk-launch{min-height:530px!important;padding:78px 17px!important}.halaryk-launch-clock>div{min-height:92px}.halaryk-launch-clock span{font-size:8px;letter-spacing:.04em}.halaryk-launch-clock strong{font-size:36px}}
+/* Message de Noël : bulle discrète proche de la décoration sélectionnée. */
+.halaryk-tree-chat-bubble{position:fixed;z-index:9998;max-width:min(330px,calc(100vw - 24px));min-width:min(190px,calc(100vw - 24px));padding:12px 15px 13px;border:1px solid rgba(203,177,135,.51);border-radius:15px 15px 15px 4px;background:linear-gradient(145deg,rgba(42,28,26,.98),rgba(17,12,12,.98));box-shadow:0 12px 35px rgba(0,0,0,.66);color:var(--text);pointer-events:auto;animation:halaryk-chat-pop .16s ease-out both}
+.halaryk-tree-chat-top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:8px;color:var(--gold-light);font:600 11px/1.2 var(--sans)}
+.halaryk-tree-chat-bubble p{font:400 15px/1.52 var(--sans);color:var(--text);white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.halaryk-tree-chat-close{background:none;border:0;color:var(--muted);padding:0 2px;cursor:pointer;font-size:19px;line-height:1}
+@keyframes halaryk-chat-pop{from{opacity:0;transform:translateY(5px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:700px){.halaryk-tree-chat-bubble{font-size:13px;min-width:170px}.halaryk-tree-chat-bubble p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.halaryk-tree-chat-bubble{animation:none}}
