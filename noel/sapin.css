@@ -255,3 +255,33 @@
 @keyframes halaryk-chat-pop{from{opacity:0;transform:translateY(5px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:700px){.halaryk-tree-chat-bubble{font-size:13px;min-width:170px}.halaryk-tree-chat-bubble p{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.halaryk-tree-chat-bubble{animation:none}}
+
+/* Dernière vérification responsive : conserver le ratio photographique,
+   dimensionner les boules selon la largeur réelle du sapin sur mobile. */
+@media(max-width:700px){
+  .halaryk-tree-scene{
+    width:min(100%,500px);
+    max-width:500px;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:680/914;
+    margin-inline:auto;
+  }
+  .halaryk-tree-fallback{inset:0;width:100%;height:100%}
+  .halaryk-tree-fallback-figure{
+    width:100%;
+    max-width:none;
+    height:100%;
+    aspect-ratio:680/914;
+    margin:0;
+  }
+  .halaryk-tree-fallback-ornament{
+    width:clamp(26px,7vw,40px);
+    height:clamp(27px,7.5vw,42px);
+    touch-action:manipulation;
+  }
+  .halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{
+    width:clamp(20px,6vw,33px);
+    height:clamp(23px,6.7vw,37px);
+  }
+}
