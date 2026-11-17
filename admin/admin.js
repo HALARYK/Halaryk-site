@@ -166,7 +166,7 @@ async function boot() {
 }
 
 async function refreshAll() {
-  await Promise.all([loadStats(), loadSuggestions(), loadLibrary(), loadPolls(), loadReputation(), loadCollaborators(), loadClipsAdmin(), loadEventsAdmin()]);
+  await Promise.all([loadStats(), loadSuggestions(), loadLibrary(), loadPolls(), loadReputation(), loadCollaborators(), loadClipsAdmin(), loadEventsAdmin(), loadChristmasAdmin()]);
 }
 
 async function loadStats() {
@@ -926,6 +926,60 @@ async function createEventChapter(ev){ev.preventDefault();if(!currentEventId)ret
 async function createEventEntry(ev){ev.preventDefault();if(!currentEventId)return;const publish=$("#event-entry-public").checked;const payload={event_id:currentEventId,chapter_id:$("#event-entry-chapter").value||null,entry_type:$("#event-entry-type").value,title:$("#event-entry-title").value.trim(),summary:$("#event-entry-summary").value.trim()||null,world_date_label:$("#event-entry-date-label").value.trim()||null,source_type:"manual_rp",importance:$("#event-entry-importance").value,review_status:publish?"approved":"needs_review",public:publish,sort_order:0};const{error}=await supabase.from("site_event_entries").insert(payload);if(error)toast(error.message);else{ev.target.reset();toast("Événement ajouté.");await loadEventEditor(currentEventId)}}
 async function createSiteEvent(ev){ev.preventDefault();const title=$("#event-create-title").value.trim(),slug=$("#event-create-slug").value.trim().toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-+|-+$/g,'');const payload={title,slug,event_type:$("#event-create-type").value.trim()||"community",status:"draft",featured:false};const{data,error}=await supabase.from("site_events").insert(payload).select("id").single();if(error)toast(error.message);else{currentEventId=data.id;ev.target.reset();toast("Événement créé en brouillon.");await loadEventsAdmin()}}
 
+
+/* Modération du sapin : la vérification des rôles et l'identité restent côté SQL.
+   Les fonctions sont appelées seulement depuis la session admin vérifiée. */
+async function loadChristmasAdmin(){
+  const host=$("#christmas-admin-list"),status=$("#christmas-admin-status");
+  const counter=$("[data-christmas-admin-counter]");
+  if(!host||!status||!supabase)return;
+  status.textContent="Chargement des messages…";
+  const {data,error}=await supabase.rpc("christmas_tree_admin_2026");
+  if(error){
+    status.textContent="Service de modération indisponible : "+error.message;
+    host.replaceChildren();
+    if(counter)counter.textContent="—";
+    return;
+  }
+  const rows=Array.isArray(data)?data:[];
+  const count=rows.filter(row=>row.status==="visible").length;
+  if(counter)counter.textContent=count+" visible(s) sur "+rows.length+" participation(s) / 40 places";
+  status.textContent=rows.length?"Chaque action est enregistrée et contrôlée par Supabase.":"Aucune participation pour le moment.";
+  host.innerHTML=rows.map(row=>{
+    const safeId=esc(row.id),visible=row.status==="visible";
+    const name=esc(row.display_name||row.author_login||"Compte Twitch");
+    const login=esc(row.author_login||"");
+    return `<article class="admin-card christmas-admin-item" data-christmas-row="${safeId}">
+      <div class="christmas-admin-message">
+        <div class="christmas-admin-message-head">
+          <strong>${esc(row.model||"Décoration")} · ${name}</strong>
+          <span class="${visible?"christmas-badge-visible":"christmas-badge-hidden"}">${visible?"Visible":"Masqué"}</span>
+        </div>
+        <small>${login?"@"+login+" · ":""}${row.anonymous?"Publié anonymement · identité privée":"Identité visible"} · ${esc(formatDate(row.created_at))}</small>
+        <p>${esc(row.message||"")}</p>
+      </div>
+      <button type="button" class="button ${visible?"button-ghost":"button-primary"}"
+        data-christmas-toggle="${safeId}" data-visible="${visible?"false":"true"}">${visible?"Masquer ce message":"Rétablir ce message"}</button>
+    </article>`;
+  }).join("");
+  $("[data-christmas-toggle]",host).forEach(button=>{
+    button.onclick=async()=>{
+      button.disabled=true;
+      const visible=button.dataset.visible==="true";
+      const {error:saveError}=await supabase.rpc("christmas_tree_set_visibility_2026",{
+        p_id:button.dataset.christmasToggle,p_visible:visible
+      });
+      if(saveError){
+        toast("Modération impossible : "+saveError.message);
+        button.disabled=false;
+      }else{
+        toast(visible?"Message rétabli.":"Message masqué.");
+        await loadChristmasAdmin();
+      }
+    };
+  });
+}
+
 // V4.2.4 — fail-safe : un retour BFCache / un ancien CSS ne doit jamais laisser une modale fantôme ouverte.
 resetAdminModals();
 window.addEventListener("pageshow", () => resetAdminModals());
@@ -970,5 +1024,7 @@ $("#event-chapter-form")?.addEventListener("submit",createEventChapter);
 $("#event-entry-form")?.addEventListener("submit",createEventEntry);
 $("#event-create-form")?.addEventListener("submit",createSiteEvent);
 $("#event-media-form")?.addEventListener("submit",createEventMedia);
+
+$("#christmas-admin-refresh")?.addEventListener("click",loadChristmasAdmin);
 
 boot();
