@@ -264,6 +264,16 @@ async function loadEventDetail(){
     db.from("site_event_media").select("*").eq("event_id",event.id).eq("public",true).order("sort_order")
   ]);
   const participants=pr.data||[],chapters=ch.data||[],snapshots=sn.data||[],entries=en.data||[],media=me.data||[],participantsById=new Map(participants.map(p=>[p.id,p]));
+  // Les légendes suivent les relevés réellement publiés : aucune date/session figée dans le HTML.
+  if(slug==="ppo-europe"){
+    const firstYear=year(snapshots[0]?.snapshot_date||event.world_start_date);
+    const lastYear=year(snapshots[snapshots.length-1]?.snapshot_date||event.public_snapshot_date);
+    const publicSessions=Math.max(0,...snapshots.map(s=>Number(s.session_number)||0));
+    const nationsLead=$("#nations .section-lead");
+    if(nationsLead)nationsLead.textContent=`Compare les relevés de ${firstYear} à ${lastYear} pour suivre l’évolution des ${participants.length} nations au cours des ${publicSessions} sessions publiées.`;
+    const chronologyLead=$("#chronologie .section-lead");
+    if(chronologyLead)chronologyLead.textContent=`De ${firstYear} à ${year(event.public_chronicle_cutoff_date||event.public_snapshot_date)}, retrouve les grands tournants de la campagne : conflits déterminants, batailles majeures, successions et bouleversements politiques. Un contexte historique est ajouté lorsque c’est pertinent.`;
+  }
   const hero=$(".event-hero");if(hero){hero.classList.add("v52-event-hero-clean");const inner=$(".event-hero-inner",hero);if(inner)inner.innerHTML=`<p class="eyebrow v52-event-hero-kicker">CAMPAGNE MULTIJOUEUR RP</p><p class="v52-event-game">EUROPA UNIVERSALIS IV</p><h1>${esc(campaignTitle(event))}</h1><p class="v52-event-hero-lead">Une campagne où chaque décision compte, mais où le temps lui-même garde ses secrets.</p>`}
   const overview=$("#apercu .section-shell");if(overview)overview.innerHTML=overviewMarkup(event,participants,chapters,snapshots);
   const snapshotIds=snapshots.map(s=>s.id);let stats=[];if(snapshotIds.length){const r=await db.from("site_event_snapshot_stats").select("*").in("snapshot_id",snapshotIds);stats=r.data||[]}
