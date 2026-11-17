@@ -100,7 +100,7 @@ function renderChronology(host,participants,docs,byId,chapterById,overrideMap,se
   const endYear=events.reduce((m,e)=>Math.max(m,Number(String(e.date||"").slice(0,4))||0),1481);
   host.innerHTML=`<div class="v52-country-tabs">${participants.filter(p=>TAGS.includes(p.participant_key)).sort((a,b)=>TAGS.indexOf(a.participant_key)-TAGS.indexOf(b.participant_key)).map(p=>`<button type="button" class="${p.participant_key===active?"active":""}" data-country="${p.participant_key}"><img src="${asset(participantCrest(p))}" alt=""><span><b>${esc(p.title)}</b><small>${esc(p.player_name||"")}</small></span></button>`).join("")}</div><div class="v52-country-range"><strong>${esc(country.title)} · 1444 → ${endYear}</strong><span>${events.length} faits retenus · clique sur un événement pour ouvrir son dossier détaillé.</span></div>${countryDocs.length?`<div class="v52-diplomacy-strip"><div class="v52-diplomacy-strip-label">Documents RP</div><div class="v52-diplomacy-bubbles">${countryDocs.map(e=>`<button type="button" class="v52-diplomacy-bubble" data-doc-id="${esc(e.id)}"><span class="v52-diplomacy-bubble-icon">✉</span><span><span>${esc(entryDocDate(e))}</span><strong>${esc(e.title||typeLabel(e.entry_type))}</strong></span></button>`).join("")}</div></div>`:""}<div class="v52-curated-shell"><div class="v52-curated-track">${events.map(curatedNode).join("")}</div></div>`;
 
-  $$(".v52-country-tabs button",host).forEach(b=>b.addEventListener("click",()=>{host.dataset.activeCountry=b.dataset.country;renderChronology(host,participants,docs,byId,chapterById,overrideMap)}));
+  $$(".v52-country-tabs button",host).forEach(b=>b.addEventListener("click",()=>{host.dataset.activeCountry=b.dataset.country;renderChronology(host,participants,docs,byId,chapterById,overrideMap,sessionEvents)}));
   $$(".v52-curated-node",host).forEach(b=>b.addEventListener("click",()=>openEvent(events[Number(b.dataset.eventIndex)],country)));
   const docMap=new Map(countryDocs.map(e=>[String(e.id),e]));
   $$(".v52-diplomacy-bubble",host).forEach(b=>b.addEventListener("click",()=>openDocument(docMap.get(b.dataset.docId),country)));
@@ -119,7 +119,7 @@ async function bootCurated(){
   const ps=participants||[],byId=new Map(ps.map(p=>[p.id,p])),chapterById=new Map((chapters||[]).map(c=>[c.id,c]));
   const rows=entries||[];
   const docs=rows.filter(e=>DIPLO_TYPES.has(e.entry_type));
-  const sessionEvents=rows.filter(e=>["curated_session_vi","curated_session_vii"].includes(e.source_type)&&e.world_date&&[6,7].includes(e.data?.session));
+  const sessionEvents=rows.filter(e=>["curated_session_vi","curated_session_vii","curated_session_viii","curated_session_ix","curated_session_x"].includes(e.source_type)&&e.world_date&&[6,7,8,9,10].includes(e.data?.session));
   const overrideMap=new Map();
   for(const e of rows){
     if(e.source_type!=="curated_override")continue;
