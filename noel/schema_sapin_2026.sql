@@ -3,8 +3,6 @@
 -- Ne pas publier le front avant validation de l'auth Twitch et du déploiement.
 -- 40 emplacements déterministes, ordre de pose par saut de 7, sérialisé par verrou transactionnel.
 -- Aucun champ d'identité privée n'est exposé publiquement.
-begin;
-
 create table if not exists public.christmas_tree_ornaments (
   id uuid primary key default gen_random_uuid(),
   author_id uuid not null references auth.users(id) on delete cascade,
