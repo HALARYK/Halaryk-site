@@ -10991,6 +10991,30 @@ function cleanPublishedHistoricEvent(event){
   if(/(?:la sauvegarde|la save|le fichier de sauvegarde|la trace (?:de sauvegarde|historique)|le drapeau|le modificateur)/i.test(summary)) summary="";
   return {...event,summary,facts};
 }
+
+// Batailles des premières sessions : effectifs et pertes revérifiés dans l'historique
+// des guerres conservé par la sauvegarde corrigée du 30 novembre 1680.
+const VERIFIED_EARLY_BATTLES=[["CAS","1504-05-27","Pest","Conquête anglaise de Girid","CAS",96792,34677,"TUR",197679,9636,"TUR"],["CAS","1570-03-30","Narbonnais","Conquête espagnole de Narbonnais","SPA",72452,9305,"FRA",40436,12178,"SPA"],["CAS","1572-10-01","Foix","Conquête espagnole de Narbonnais","SPA",124859,12102,"FRA",66672,13661,"SPA"],["CAS","1572-12-07","Béarn","Conquête espagnole de Narbonnais","SPA",68534,1204,"FRA",17923,17923,"SPA"],["ENG","1503-06-23","Pest","Conquête anglaise de Girid","ENG",162307,28577,"TUR",130689,31017,"TUR"],["ENG","1559-05-11","Trentino","2ème Conquête florentine de Mantova","GBR",175872,3772,"HAB",87587,87587,"GBR"],["LAN","1506-07-05","Kostantiniyye","Conquête anglaise de Girid","LAN",25000,9760,"TUR",56308,17527,"TUR"],["LAN","1513-03-22","Ferrare","Conquête florentine de Brescia","LAN",52000,4847,"PAP",29523,29523,"LAN"],["LAN","1558-04-07","Venedig","2ème Conquête florentine de Mantova","LAN",30000,15473,"HAB",125000,4731,"HAB"],["LAN","1558-04-28","Venedig","2ème Conquête florentine de Mantova","LAN",30000,12039,"HAB",120269,6804,"HAB"],["LAN","1558-11-20","Trévise","2ème Conquête florentine de Mantova","LAN",94000,8021,"HAB",95919,12734,"LAN"],["BRA","1504-09-22","Vienne","Conquête anglaise de Girid","BRA",111726,13536,"TUR",132691,19060,"TUR"],["HAB","1503-01-12","Nándorfehérvár","Conquête autrichienne de Zeta","HAB",103326,12396,"TUR",119477,12534,"TUR"],["HAB","1504-03-06","Zágráb","Conquête autrichienne de Zeta","HAB",114216,13863,"TUR",24822,14646,"HAB"],["HAB","1525-09-06","Champagne","Reconquête autrichienne de Rémois","HAB",106000,4565,"KLE",24000,14000,"HAB"],["HAB","1558-04-07","Venedig","2ème Conquête florentine de Mantova","LAN",30000,15473,"HAB",125000,4731,"HAB"],["HAB","1558-11-20","Trévise","2ème Conquête florentine de Mantova","LAN",94000,8021,"HAB",95919,12734,"LAN"],["HAB","1559-05-11","Trentino","2ème Conquête florentine de Mantova","GBR",175872,3772,"HAB",87587,87587,"GBR"],["HAB","1577-03-03","Split","Conquête autrichienne de Barrois","HAB",50000,2133,"FRA",32000,32000,"HAB"],["TUR","1500-11-15","Vilnius","Conquête ottomane de Edisanas","TUR",55866,11271,"POL",38198,13845,"TUR"],["TUR","1503-06-23","Pest","Conquête anglaise de Girid","ENG",162307,28577,"TUR",130689,31017,"TUR"],["TUR","1579-12-14","Sidamo","Conquête ottomane de Dawaro","TUR",163108,11604,"ZAN",67000,28558,"TUR"],["MOS","1521-02-10","Elfsborg","Conquête russe de Birkaland","RUS",59000,7365,"SWE",35815,14362,"RUS"],["MOS","1566-08-17","Yan’an","Conquête russe de Onon Gol","RUS",58713,750,"MCH",21397,21397,"RUS"],["MOS","1576-11-23","Gniezno","Conquête russe de Lyda","RUS",150000,5507,"LIT",30000,12670,"RUS"]];
+const EARLY_BATTLE_BY_KEY=new Map(VERIFIED_EARLY_BATTLES.map(row=>[row[0]+"|"+row[1],row]));
+const BATTLE_COUNTRY_NAMES={CAS:"Castille",SPA:"Espagne",ENG:"Angleterre",GBR:"Grande-Bretagne",LAN:"Florence",ITA:"Italie",BRA:"Brandebourg",PRU:"Prusse",HAB:"Autriche",AUH:"Autriche-Hongrie",TUR:"Empire ottoman",MOS:"Moscovie",RUS:"Russie",FRA:"France",KLE:"Clèves",SWE:"Suède",MCH:"Mandchourie",LIT:"Lituanie",PAP:"États pontificaux",ZAN:"Zanzibar"};
+const numbersFR=new Intl.NumberFormat("fr-FR");
+function enrichHistoricalBattle(tag,event){
+  if(event.type!=="bataille")return event;
+  const b=EARLY_BATTLE_BY_KEY.get(tag+"|"+event.date);if(!b)return event;
+  const [current,date,place,war,att,aCount,aLost,def,dCount,dLost,win]=b;
+  const aName=BATTLE_COUNTRY_NAMES[att]||att,dName=BATTLE_COUNTRY_NAMES[def]||def,wName=BATTLE_COUNTRY_NAMES[win]||win;
+  const fmt=n=>numbersFR.format(n);
+  return {...event,
+    summary:`${wName} remporte la bataille de ${place}.`,
+    facts:[
+      ["Guerre",war],["Lieu",place],["Attaquant",aName],["Défenseur",dName],
+      ["Effectifs engagés",`${aName} : ${fmt(aCount)} hommes · ${dName} : ${fmt(dCount)} hommes`],
+      ["Pertes de la bataille",`${aName} : ${fmt(aLost)} hommes · ${dName} : ${fmt(dLost)} hommes`],
+      ["Vainqueur",wName]
+    ]
+  };
+}
+
 export const CURATED_EVENTS=Object.fromEntries(Object.entries(ARCHIVED_CURATED_EVENTS).map(([tag,events])=>[
-  tag,events.filter(ev=>REVIEWED_EVENT_KEYS.has(tag+"|"+ev.date)).map(cleanPublishedHistoricEvent)
+  tag,events.filter(ev=>REVIEWED_EVENT_KEYS.has(tag+"|"+ev.date)).map(ev=>cleanPublishedHistoricEvent(enrichHistoricalBattle(tag,ev)))
 ]));
