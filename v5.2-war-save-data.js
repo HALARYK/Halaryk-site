@@ -5169,7 +5169,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 212872,
     "losses": {},
     "battles": 9,
-    "winner": "Victoire de la coalition florentino-britannique",
+    "winner": "Paix sans vainqueur décisif identifié dans la sauvegarde",
     "peace": "Le conflit s’achève le 27 juin 1559."
   },
   "ENG|1562-05-28": {
@@ -5453,7 +5453,7 @@ export const WAR_EVENT_DATA={
     "lossesDefenders": 212872,
     "losses": {},
     "battles": 9,
-    "winner": "Victoire italienne et alliée",
+    "winner": "Paix sans vainqueur décisif identifié dans la sauvegarde",
     "peace": "Le conflit s’achève le 27 juin 1559."
   },
   "LAN|1565-03-19": {
