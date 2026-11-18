@@ -64,6 +64,7 @@ function openEvent(ev,country){
   box._v52Event=ev;
   const facts=(ev.facts||[]).filter(x=>Array.isArray(x)&&x.length>=2&&x[0]&&x[1]);
   box.innerHTML=`<div class="v52-detail-meta"><span>${esc(country.title)}</span><span>${esc(typeLabel(ev.type))}</span><span>${esc(frDate(ev.date))}</span></div><h3>${esc(ev.title)}</h3>${ev.summary?`<p class="v52-detail-summary">${esc(ev.summary)}</p>`:""}${facts.length?`<div class="v52-fact-grid">${facts.map(([k,v])=>`<div><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div>`:""}`;
+  if(ev.treatyBody)box.insertAdjacentHTML("beforeend",`<details class="v52-treaty-details"><summary>Lire le Traité de Trente — texte intégral des dix articles</summary><div class="v52-document-body v52-rich-document">${renderRichText(ev.treatyBody)}</div></details>`);
   modal.hidden=false;document.body.style.overflow="hidden";
 }
 function openDocument(entry,country){
@@ -82,7 +83,12 @@ function renderChronology(host,participants,docs,byId,chapterById,overrideMap,se
   if(!byTag.has(active))active=participants[0]?.participant_key||"CAS";
   host.dataset.activeCountry=active;
   const country=byTag.get(active)||{participant_key:active,title:active,player_name:""};
-  const sessionPublished=(sessionEvents||[]).filter(e=>e.participant_id===country.id).map(e=>({date:e.world_date,type:e.entry_type,title:e.title,summary:e.summary,facts:e.data?.facts||[],context:e.data?.context||null,war:e.data?.war||null}));
+  const treatyDoc=docs.find(e=>e.external_key==="rp-traite-de-trente-1680");
+  const sessionPublished=(sessionEvents||[]).filter(e=>e.participant_id===country.id).map(e=>({
+    date:e.world_date,type:e.entry_type,title:e.title,summary:e.summary,
+    facts:e.data?.facts||[],context:e.data?.context||null,war:e.data?.war||null,
+    treatyBody:e.data?.treaty_document_key==="rp-traite-de-trente-1680"?(treatyDoc?.body||""):""
+  }));
   const events=[...(CURATED_EVENTS[active]||[]),...sessionPublished].map(base=>{
     const ov=overrideMap?.get(`${active}|${base.date}`),data=ov?.data||{};
     return {...base,
@@ -94,7 +100,7 @@ function renderChronology(host,participants,docs,byId,chapterById,overrideMap,se
       war:data.war||null
     };
   }).sort((a,b)=>parseDate(a.date)-parseDate(b.date));
-  const countryDocs=docs.filter(e=>entryTags(e,byId).includes(active)&&isPre1482(e,chapterById));
+  const countryDocs=docs.filter(e=>entryTags(e,byId).includes(active)&&(isPre1482(e,chapterById)||e.external_key==="rp-traite-de-trente-1680"));
 
   host.className="v52-curated-timeline";
   const endYear=Math.max(Number(host.dataset.publicEndYear)||0,events.reduce((m,e)=>Math.max(m,Number(String(e.date||"").slice(0,4))||0),1481));
