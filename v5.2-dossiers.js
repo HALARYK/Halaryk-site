@@ -39,12 +39,25 @@ function warLayout(w){
 }
 function battleLayout(facts,map){
   if(!map.has("attaquant")&&!map.has("défenseur")){
-    const useful=facts.filter(([k,v])=>!isTechnical(k,v)),tech=facts.filter(([k,v])=>isTechnical(k,v));
-    return `<div class="v52-battle-file"><p class="v52-dossier-kicker">BATAILLE ENREGISTRÉE DANS LA SAUVEGARDE</p><div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div>${sourceBlock(tech)}</div>`;
+    const useful=facts.filter(([k,v])=>!isTechnical(k,v));
+    return `<div class="v52-battle-file"><div class="v52-dossier-facts">${useful.map(([k,v])=>factCard(k,v)).join("")}</div></div>`;
   }
-  const war=map.get("guerre")||"Conflit non renseigné",place=map.get("lieu")||"—",terrain=map.get("terrain")||"—",att=map.get("attaquant")||"—",def=map.get("défenseur")||"—",loss=map.get("pertes de la bataille")||map.get("pertes")||"—",winner=map.get("vainqueur")||"—";
-  const used=new Set(["guerre","lieu","terrain","attaquant","défenseur","pertes de la bataille","pertes","vainqueur"]);const rest=facts.filter(([k,v])=>!used.has(norm(k))&&!isTechnical(k,v));const tech=facts.filter(([k,v])=>isTechnical(k,v));
-  return `<div class="v52-battle-file"><p class="v52-dossier-kicker">AFFRONTEMENT</p><div class="v52-battle-context">${factCard("Guerre",war,"is-wide")}${factCard("Lieu",place)}${factCard("Terrain",terrain)}</div><div class="v52-battle-camps"><article><span>Attaquant</span><strong>${esc(att)}</strong></article><div><b>${esc(winner)}</b><span>vainqueur</span></div><article><span>Défenseur</span><strong>${esc(def)}</strong></article></div><div class="v52-battle-loss"><span>${/navire/i.test(loss)?"Navires perdus":"Pertes de la bataille"}</span><strong>${esc(loss)}</strong></div>${rest.length?`<div class="v52-dossier-facts">${rest.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}${sourceBlock(tech)}</div>`;
+  const naval=map.has("navires engagés")||map.has("navires perdus");
+  const war=map.get("guerre")||"Conflit",place=map.get("lieu")||"—";
+  const att=map.get("attaquant")||"—",def=map.get("défenseur")||"—";
+  const winner=map.get("vainqueur")||"—";
+  const losses=naval?(map.get("navires perdus")||"—"):(map.get("pertes de la bataille")||map.get("pertes")||"—");
+  const troops=naval?map.get("navires engagés"):map.get("effectifs engagés");
+  const used=new Set(["guerre","lieu","terrain","attaquant","défenseur","effectifs engagés","navires engagés","navires perdus","pertes de la bataille","pertes","vainqueur"]);
+  const rest=facts.filter(([k,v])=>!used.has(norm(k))&&!isTechnical(k,v));
+  return `<div class="v52-battle-file">
+    <p class="v52-dossier-kicker">${naval?"BATAILLE NAVALE":"BATAILLE TERRESTRE"}</p>
+    <div class="v52-battle-context">${factCard("Guerre",war,"is-wide")}${factCard("Lieu",place)}${map.has("terrain")?factCard("Terrain",map.get("terrain")):""}</div>
+    <div class="v52-battle-camps"><article><span>Attaquant</span><strong>${esc(att)}</strong></article><div><b>${esc(winner)}</b><span>vainqueur</span></div><article><span>Défenseur</span><strong>${esc(def)}</strong></article></div>
+    ${troops?`<div class="v52-dossier-facts">${factCard(naval?"Flottes engagées":"Hommes engagés",troops,"is-wide")}</div>`:""}
+    <div class="v52-battle-loss"><span>${naval?"Navires perdus":"Pertes humaines"}</span><strong>${esc(losses)}</strong></div>
+    ${rest.length?`<div class="v52-dossier-facts">${rest.map(([k,v])=>factCard(k,v)).join("")}</div>`:""}
+  </div>`;
 }
 function cleanHistoricalParagraph(value){
   return String(value||"").split(/(?<=[.!?])\s+/u)
