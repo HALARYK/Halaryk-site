@@ -11004,10 +11004,12 @@ function enrichHistoricalBattle(tag,event){
   const [current,date,place,war,att,aCount,aLost,def,dCount,dLost,win,naval=false]=b;
   const aName=BATTLE_COUNTRY_NAMES[att]||att,dName=BATTLE_COUNTRY_NAMES[def]||def,wName=BATTLE_COUNTRY_NAMES[win]||win;
   const fmt=n=>numbersFR.format(n);
+  const displayedWar=war==="Conquête anglaise de Girid"?"Croisade contre l’Empire ottoman":war==="Conquête autrichienne de Zeta"?"Croisade autrichienne contre l’Empire ottoman":war==="2ème Conquête florentine de Mantova"?"Deuxième conquête florentine de Mantoue":war;
+  const displayedPlace=place==="Kostantiniyye"?"Constantinople":place==="Venedig"?"Venise":place;
   return {...event,
-    summary:`${wName} remporte la bataille ${naval?"navale ":""}de ${place}.`,
+    summary:`${wName} remporte la bataille ${naval?"navale ":""}de ${displayedPlace}.`,
     facts:[
-      ["Guerre",war],["Lieu",place],["Attaquant",aName],["Défenseur",dName],
+      ["Guerre",displayedWar],["Lieu",displayedPlace],["Attaquant",aName],["Défenseur",dName],
       [naval?"Navires engagés":"Effectifs engagés",`${aName} : ${fmt(aCount)} ${naval?"navires":"hommes"} · ${dName} : ${fmt(dCount)} ${naval?"navires":"hommes"}`],
       [naval?"Navires perdus":"Pertes de la bataille",`${aName} : ${fmt(aLost)} ${naval?"navires":"hommes"} · ${dName} : ${fmt(dLost)} ${naval?"navires":"hommes"}`],
       ["Vainqueur",wName]
