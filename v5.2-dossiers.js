@@ -1,5 +1,6 @@
 import { WAR_EVENT_DATA } from "./v5.2-war-save-data.js";
 import { EVENT_CONTEXT } from "./v5.2-event-context.js";
+import { renderRichText } from "./v5.2-richtext.js";
 
 const $=(s,c=document)=>c.querySelector(s);
 const $$=(s,c=document)=>[...c.querySelectorAll(s)];
@@ -80,7 +81,8 @@ function enhanceDossier(box){
   const meta=$$(".v52-detail-meta span",box).map(x=>x.textContent.trim());const country=meta[0]||"",type=meta[1]||"Événement",dateFr=meta[2]||"",iso=isoFromFr(dateFr),tag=tagByCountry[norm(country)]||"",key=tag&&iso?`${tag}|${iso}`:"";const title=$("h3",box)?.textContent?.trim()||"Événement";
   const facts=$(":scope > div",grid).map(cell=>[$("span",cell)?.textContent?.trim()||"",$("strong",cell)?.textContent?.trim()||""]).filter(([k,v])=>k&&v&&!isTechnical(k,v));const map=new Map(facts.map(([k,v])=>[norm(k),v]));const t=norm(type),eventData=box._v52Event||{},war=eventData.war||WAR_EVENT_DATA[key],ctx=eventData.context||EVENT_CONTEXT[key];const signature=`${key}|${title}`;if(box.dataset.v52DossierSignature===signature)return;
   let body;if(war)body=`${ctx?contextLayout(ctx,[]):""}${warLayout(war)}`;else if(t.includes("guerre"))body=`${ctx?contextLayout(ctx,[]):""}${editorialWarLayout(facts)}`;else if(t.includes("bataille"))body=`${ctx?contextLayout(ctx,[]):""}${battleLayout(facts,map)}`;else if(ctx)body=contextLayout(ctx,facts);else body=genericLayout(facts);
-  box.innerHTML=`<header class="v52-dossier-header" data-type="${esc(t)}"><div class="v52-dossier-icon">${esc(iconByType[t]||"◆")}</div><div class="v52-dossier-heading"><div class="v52-detail-meta"><span>${esc(country)}</span><span>${esc(type)}</span><span>${esc(dateFr)}</span></div><h3>${esc(title)}</h3></div></header><div class="v52-dossier-body">${body}</div>`;box.dataset.v52DossierSignature=signature;
+  const treaty=eventData.treatyBody?`<details class="v52-treaty-details"><summary>Lire le Traité de Trente — texte intégral des dix articles</summary><div class="v52-document-body v52-rich-document">${renderRichText(eventData.treatyBody)}</div></details>`:"";
+  box.innerHTML=`<header class="v52-dossier-header" data-type="${esc(t)}"><div class="v52-dossier-icon">${esc(iconByType[t]||"◆")}</div><div class="v52-dossier-heading"><div class="v52-detail-meta"><span>${esc(country)}</span><span>${esc(type)}</span><span>${esc(dateFr)}</span></div><h3>${esc(title)}</h3></div></header><div class="v52-dossier-body">${body}</div>${treaty}`;box.dataset.v52DossierSignature=signature;
 }
 function scan(){const box=$("#v52-detail-modal .v52-detail-content");if(box?.querySelector('.v52-fact-grid')){delete box.dataset.v52DossierSignature;enhanceDossier(box)}}
 const observer=new MutationObserver(()=>requestAnimationFrame(scan));observer.observe(document.documentElement,{childList:true,subtree:true});document.addEventListener("click",e=>{if(e.target.closest(".v52-curated-node"))setTimeout(scan,0)},true);if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",scan,{once:true});else scan();
