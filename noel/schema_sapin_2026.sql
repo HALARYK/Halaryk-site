@@ -1,5 +1,5 @@
 -- HALARYK — sapin communautaire Noël 2026
--- Migration opérationnelle : ouverture des contributions à partir du 21 novembre 2026 à 09:00 (Europe/Paris).
+-- Migration opérationnelle : ouverture des contributions le 1er décembre 2026 à 00:00 (Europe/Paris).
 -- Ne pas publier le front avant validation de l'auth Twitch et du déploiement.
 -- 40 emplacements déterministes, ordre de pose par saut de 7, sérialisé par verrou transactionnel.
 -- Aucun champ d'identité privée n'est exposé publiquement.
@@ -43,7 +43,7 @@ as $fn$
   from public.christmas_tree_ornaments o
   left join public.profiles p on p.id=o.author_id
   where o.season_year=2026 and o.status='visible'
-    and now() >= '2026-11-21 09:00:00+01'::timestamptz
+    and now() >= '2026-12-01 00:00:00+01'::timestamptz
   order by o.position_index;
 $fn$;
 revoke all on function public.christmas_tree_public_2026() from public;
@@ -73,7 +73,7 @@ begin
         or u.raw_app_meta_data->'providers' @> '["twitch"]'::jsonb
       )
   ) then raise exception 'Compte Twitch requis'; end if;
-  if now() < '2026-11-21 09:00:00+01'::timestamptz or now() >= '2027-01-01 00:00:00+01'::timestamptz
+  if now() < '2026-12-01 00:00:00+01'::timestamptz or now() >= '2027-01-01 00:00:00+01'::timestamptz
     then raise exception 'Le sapin est fermé'; end if;
   if p_model not in ('herbier','celeste','ancien','monde','baroque','velours','tartan','roses','oeuf','maison')
     then raise exception 'Modèle de décoration inconnu'; end if;
