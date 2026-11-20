@@ -955,20 +955,7 @@ main > section{
   .halaryk-tree-fallback-ornament .bauble.halaryk-tree-model-orb{width:36px;height:43px}
 }
 
-/* Le compte à rebours remplace l'affichage de l'événement principal jusqu'au lancement. */
-[data-christmas-root][hidden],[data-christmas-countdown][hidden],[data-tree-message-bubble][hidden]{display:none!important}
-.halaryk-launch{text-align:center;min-height:660px!important;display:grid;align-content:center;padding:clamp(82px,9vw,135px) 24px!important}
-.halaryk-launch .section-shell{max-width:900px!important}
-.halaryk-launch-kicker{color:var(--gold-light)!important;font-size:11px!important;letter-spacing:.19em}
-.halaryk-launch h2{margin:16px 0 18px;font:600 clamp(43px,6vw,79px)/.99 var(--serif);color:var(--text)}
-.halaryk-launch-intro{margin:0 auto 34px;color:var(--muted);max-width:650px;font:500 clamp(17px,2vw,23px)/1.4 var(--serif)}
-.halaryk-launch-clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.6vw,18px);max-width:730px;margin:0 auto 22px}
-.halaryk-launch-clock>div{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:125px;background:linear-gradient(160deg,rgba(34,23,21,.86),rgba(7,5,5,.9));border:1px solid var(--line);box-shadow:0 12px 45px rgba(0,0,0,.24)}
-.halaryk-launch-clock strong{color:var(--text);font:600 clamp(41px,5vw,67px)/.98 var(--serif);font-variant-numeric:tabular-nums}
-.halaryk-launch-clock span{margin-top:8px;color:var(--gold-light);font:600 10px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.13em}
-.halaryk-launch-detail{font:500 12px/1.5 var(--sans);color:var(--muted);margin:0 0 24px}
-.halaryk-launch .button{display:inline-flex;justify-content:center}
-@media(max-width:700px){.halaryk-launch{min-height:530px!important;padding:78px 17px!important}.halaryk-launch-clock>div{min-height:92px}.halaryk-launch-clock span{font-size:8px;letter-spacing:.04em}.halaryk-launch-clock strong{font-size:36px}}
+[data-tree-message-bubble][hidden]{display:none!important}
 /* Message de Noël : bulle discrète proche de la décoration sélectionnée. */
 .halaryk-tree-chat-bubble{position:fixed;z-index:9998;max-width:min(330px,calc(100vw - 24px));min-width:min(190px,calc(100vw - 24px));padding:12px 15px 13px;border:1px solid rgba(203,177,135,.51);border-radius:15px 15px 15px 4px;background:linear-gradient(145deg,rgba(42,28,26,.98),rgba(17,12,12,.98));box-shadow:0 12px 35px rgba(0,0,0,.66);color:var(--text);pointer-events:auto;animation:halaryk-chat-pop .16s ease-out both}
 .halaryk-tree-chat-top{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:8px;color:var(--gold-light);font:600 11px/1.2 var(--sans)}
@@ -1035,22 +1022,7 @@ main > section{
     <p class="hero-schedule">Lundi & mercredi : horaires variables · Dimanche : 20h30</p>
   </div>
 </section>
-<section class="section home-event-section v52-home-event-section halaryk-launch decor-left" data-christmas-countdown aria-labelledby="launch-title">
-  <div class="section-shell">
-    <p class="eyebrow halaryk-launch-kicker">RENDEZ-VOUS · SAMEDI 21 NOVEMBRE 2026</p>
-    <h2 id="launch-title">La campagne de Noël approche.</h2>
-    <p class="halaryk-launch-intro">Reprise des lives et ouverture du sapin communautaire. Rendez-vous à 9 h, heure de Paris, pour découvrir la mise à jour.</p>
-    <div class="halaryk-launch-clock" role="timer" aria-label="Temps restant avant la reprise et l'ouverture du site">
-      <div><strong data-countdown-days>--</strong><span>Jours</span></div>
-      <div><strong data-countdown-hours>--</strong><span>Heures</span></div>
-      <div><strong data-countdown-minutes>--</strong><span>Minutes</span></div>
-      <div><strong data-countdown-seconds>--</strong><span>Secondes</span></div>
-    </div>
-    <p class="halaryk-launch-detail"><time datetime="2026-11-21T09:00:00+01:00">21 novembre · 09:00</time> · Heure de France métropolitaine</p>
-    <a href="https://www.twitch.tv/halaryk" class="button button-ghost" target="_blank" rel="noopener noreferrer">Retrouver la chaîne Twitch</a>
-  </div>
-</section>
-<section class="section home-event-section v52-home-event-section halaryk-tree decor-left" id="sapin-communautaire" data-christmas-root hidden>
+<section class="section home-event-section v52-home-event-section halaryk-tree decor-left" id="sapin-communautaire" data-christmas-root>
   <div class="section-shell">
     <div class="section-heading halaryk-tree-heading">
       <span class="section-number" aria-hidden="true">✦</span>
@@ -1099,7 +1071,7 @@ main > section{
           <p>Connecte-toi avec Twitch pour déposer une boule. Les messages restent visibles par tous les visiteurs.</p>
           <button class="button button-ghost" type="button" data-tree-login>Connexion Twitch</button>
         </div>
-        <p class="halaryk-tree-feedback" data-tree-feedback role="status" aria-live="polite">Une boule par compte Twitch · Ouverture le 21 novembre à 9 h.</p><div class="halaryk-tree-demo-actions">
+        <p class="halaryk-tree-feedback" data-tree-feedback role="status" aria-live="polite">Une boule par compte Twitch · Ouverture le 1er décembre.</p><div class="halaryk-tree-demo-actions">
 <span class="halaryk-tree-demo-badge">APERÇU · PAS DE VRAIE PUBLICATION</span>
 <button type="button" class="button button-ghost" data-tree-demo-five>Ajouter 5 boules fictives</button>
 <button type="button" class="button button-ghost" data-tree-demo-reset>Effacer les essais</button></div>
@@ -1117,28 +1089,8 @@ main > section{
 
 
 
+<script>document.querySelector('[data-christmas-root]').setAttribute('data-tree-demo','');</script>
 <script>
-(()=>{
-const root=document.querySelector('[data-christmas-root]');
-const countdown=document.querySelector('[data-christmas-countdown]');
-root.setAttribute('data-tree-demo','');
-if(new URLSearchParams(location.search).get('mode')!=='decompte'){
-  countdown.hidden=true;root.hidden=false;
-}else{
-  const t=Date.parse('2026-11-21T09:00:00+01:00');
-  function render(){
-    const n=Math.max(0,Math.floor((t-Date.now())/1000));
-    if(n===0){countdown.hidden=true;root.hidden=false;return;}
-    countdown.hidden=false;root.hidden=true;
-    const parts=[Math.floor(n/86400),Math.floor(n%86400/3600),Math.floor(n%3600/60),n%60];
-    ['days','hours','minutes','seconds'].forEach((v,i)=>{
-      countdown.querySelector('[data-countdown-'+v+']').textContent=String(parts[i]).padStart(2,'0');
-    });
-  }
-  render();setInterval(render,1000);
-}
-})();
-</script><script>
 /* HALARYK Noël 2026 — Sapin réaliste 2D et décorations interactives.
    Connexion Twitch et droits gérés côté Supabase. */
 (() => {
@@ -1176,7 +1128,7 @@ if(new URLSearchParams(location.search).get('mode')!=='decompte'){
     const model=modelById(modelId);
     return '<span class="halaryk-tree-ornament-photo" aria-hidden="true" data-model="'+model.id+'"></span>';
   }
-  const SEASON_OPEN=Date.parse('2026-11-21T09:00:00+01:00');
+  const SEASON_OPEN=Date.parse('2026-12-01T00:00:00+01:00');
   // Coordonnées fixes et volontairement irrégulières dans la silhouette du sapin.
   // Les 40 identifiants restent ordonnés du haut vers le bas, mais aucune rangée n'est rectiligne.
   const SLOT_POSITIONS=[
@@ -1245,7 +1197,7 @@ if(new URLSearchParams(location.search).get('mode')!=='decompte'){
     if(signed&&hasPlaced)setStatus('Ta décoration est déjà accrochée au sapin. Merci pour ta participation.');
     else if(totalUsed>=SLOT_COUNT)setStatus('Le sapin est complet : les 40 emplacements sont réservés.');
     else if(signed&&!readyToPost)setStatus('Publication indisponible : service sécurisé à vérifier dans l’administration.');
-    else if(signed&&Date.now()<SEASON_OPEN)setStatus('Tu es connecté à Twitch. Ouverture le 21 novembre à 9 h (heure de Paris).');
+    else if(signed&&Date.now()<SEASON_OPEN)setStatus('Tu es connecté à Twitch. Ouverture le 1er décembre (heure de Paris).');
     else if(signed)setStatus('Une boule par compte Twitch. Ton message pourra être anonyme pour les autres visiteurs.');
     else setStatus('Connecte-toi avec Twitch pour laisser ton message.');
   }
@@ -1451,10 +1403,6 @@ if(new URLSearchParams(location.search).get('mode')!=='decompte'){
       updateAuthState();
     });
   }
-  window.addEventListener('halaryk:christmas-open',()=>{
-    updateAuthState();
-    if(db&&!isDemo)loadOrnaments().catch(()=>{});
-  });
   // Synchroniser les messages masqués ou ajoutés par d'autres visiteurs.
   if(!isDemo)setInterval(()=>{
     if(db&&!document.hidden&&!root.hidden)loadOrnaments().catch(()=>{});
