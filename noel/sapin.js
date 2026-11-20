@@ -35,7 +35,7 @@
     const model=modelById(modelId);
     return '<span class="halaryk-tree-ornament-photo" aria-hidden="true" data-model="'+model.id+'"></span>';
   }
-  const SEASON_OPEN=Date.parse('2026-11-21T09:00:00+01:00');
+  const SEASON_OPEN=Date.parse('2026-12-01T00:00:00+01:00');
   // Coordonnées fixes et volontairement irrégulières dans la silhouette du sapin.
   // Les 40 identifiants restent ordonnés du haut vers le bas, mais aucune rangée n'est rectiligne.
   const SLOT_POSITIONS=[
@@ -104,7 +104,7 @@
     if(signed&&hasPlaced)setStatus('Ta décoration est déjà accrochée au sapin. Merci pour ta participation.');
     else if(totalUsed>=SLOT_COUNT)setStatus('Le sapin est complet : les 40 emplacements sont réservés.');
     else if(signed&&!readyToPost)setStatus('Publication indisponible : service sécurisé à vérifier dans l’administration.');
-    else if(signed&&Date.now()<SEASON_OPEN)setStatus('Tu es connecté à Twitch. Ouverture le 21 novembre à 9 h (heure de Paris).');
+    else if(signed&&Date.now()<SEASON_OPEN)setStatus('Tu es connecté à Twitch. Ouverture le 1er décembre (heure de Paris).');
     else if(signed)setStatus('Une boule par compte Twitch. Ton message pourra être anonyme pour les autres visiteurs.');
     else setStatus('Connecte-toi avec Twitch pour laisser ton message.');
   }
@@ -310,10 +310,6 @@
       updateAuthState();
     });
   }
-  window.addEventListener('halaryk:christmas-open',()=>{
-    updateAuthState();
-    if(db&&!isDemo)loadOrnaments().catch(()=>{});
-  });
   // Synchroniser les messages masqués ou ajoutés par d'autres visiteurs.
   if(!isDemo)setInterval(()=>{
     if(db&&!document.hidden&&!root.hidden)loadOrnaments().catch(()=>{});
